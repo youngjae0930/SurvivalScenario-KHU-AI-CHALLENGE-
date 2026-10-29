@@ -1,0 +1,214 @@
+{
+  "id": "encounter.warehouse",
+  "title": "납품표 뒤의 길",
+  "locationIds": [
+    "warehouse"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.warehouse.route",
+          "goalId": "confirm",
+          "label": "납품표의 남쪽 운송 경로를 확인한다",
+          "intention": "상자를 건드리지 않고 실제 운송 통로를 기억한다.",
+          "target": "물류창고",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.warehouse.route",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "warehouse-route": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.warehouse.food",
+          "goalId": "salvage",
+          "label": "기울어진 상자 더미에서 밀봉 식품을 꺼낸다",
+          "intention": "상자가 쏟아질 위험을 감수하고 식량을 확보한다.",
+          "target": "물류창고",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.warehouse.food",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "stocked",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "supply",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.warehouse.route",
+          "goalId": "confirm",
+          "label": "납품표의 남쪽 운송 경로를 확인한다",
+          "intention": "상자를 건드리지 않고 실제 운송 통로를 기억한다.",
+          "target": "물류창고",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.warehouse.route",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "warehouse-route": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

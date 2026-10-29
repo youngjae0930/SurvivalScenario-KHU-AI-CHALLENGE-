@@ -1,0 +1,97 @@
+{
+  "id": "encounter.shelter",
+  "title": "어느 문을 나설 것인가",
+  "locationIds": [
+    "shelter"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "route",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.shelter.hospital",
+          "goalId": "hospital",
+          "label": "병원 구역을 거쳐 남쪽으로 간다",
+          "intention": "병원에서는 처치 도구와 이송 기록을 찾을 수 있다. 깨진 약장과 불안정한 장비에 접근할지는 몸 상태를 보고 정한다.",
+          "target": "다음 경로",
+          "judgment": null,
+          "destinationSegmentId": "hospital",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.shelter.hospital",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.shelter.department",
+          "goalId": "department",
+          "label": "백화점 구역을 거쳐 남쪽으로 간다",
+          "intention": "백화점에서는 식품 회수와 배분을 두고 판단한다. 남은 물자를 얻으려면 진열대와 넓은 홀의 움직임을 살펴야 한다.",
+          "target": "다음 경로",
+          "judgment": null,
+          "destinationSegmentId": "department",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.shelter.department",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

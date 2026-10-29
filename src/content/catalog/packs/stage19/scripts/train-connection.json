@@ -1,0 +1,1012 @@
+[
+  {
+    "id": "local.text.669",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "객차 연결부에서 한 사람이 쓰러지자 뒤의 좀비들이 연달아 문으로 밀려든다. 비틀린 연결문 반대쪽에는 일어서지 못하는 생존자가 있다. 문을 닫고 거리를 벌릴지 그를 데려올지 결정해야 한다."
+    ]
+  },
+  {
+    "id": "local.text.670",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "객차 연결부에서 한 사람이 쓰러지자 뒤의 좀비들이 연달아 문으로 밀려든다. 비틀린 연결문 반대쪽에는 일어서지 못하는 생존자가 있다. 문을 닫고 거리를 벌릴지 그를 데려올지 결정해야 한다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.671",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "객차 연결부에서 한 사람이 쓰러지자 뒤의 좀비들이 연달아 문으로 밀려든다. 비틀린 연결문 반대쪽에는 일어서지 못하는 생존자가 있다. 문을 닫고 거리를 벌릴지 그를 데려올지 결정해야 한다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.672",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "객차 연결부에서 한 사람이 쓰러지자 뒤의 좀비들이 연달아 문으로 밀려든다. 비틀린 연결문 반대쪽에는 일어서지 못하는 생존자가 있다. 문을 닫고 거리를 벌릴지 그를 데려올지 결정해야 한다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.673",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.674",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.675",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.676",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "엄폐물을 옮겨 닫을 공간을 확보했다. 남은 사람에게 손을 내밀지는 못한 채 다음 객차로 빠졌다."
+    ]
+  },
+  {
+    "id": "local.text.677",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "엄폐물을 옮겨 닫을 공간을 확보했다. 남은 사람에게 손을 내밀지는 못한 채 다음 객차로 빠졌다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.678",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우리가 빠질 자리부터 만들어야 해. 문에 끼면 아무도 못 나가."
+    ]
+  },
+  {
+    "id": "local.text.679",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.680",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.681",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.682",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품 한 몫을 버려 연결문 앞을 비웠다. 배낭은 조금 가벼워졌지만 남겨 둔 사람의 손은 눈에 남았다."
+    ]
+  },
+  {
+    "id": "local.text.683",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품 한 몫을 버려 연결문 앞을 비웠다. 배낭은 조금 가벼워졌지만 남겨 둔 사람의 손은 눈에 남았다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.684",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐이 문에 걸리고 있어. 물품 하나를 버려서라도 지금 빠져야 한다고 생각해."
+    ]
+  },
+  {
+    "id": "local.text.685",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.686",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.687",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.688",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "비틀린 문틀을 확인하고 닫히는 쪽으로 몸을 뺐다. 연결부 반대편 사람은 데려오지 못했다."
+    ]
+  },
+  {
+    "id": "local.text.689",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "비틀린 문틀을 확인하고 닫히는 쪽으로 몸을 뺐다. 연결부 반대편 사람은 데려오지 못했다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.690",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히는지부터 확인하자. 다음 객차까지 밀려들면 돌아갈 곳도 없어."
+    ]
+  },
+  {
+    "id": "local.text.691",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.692",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.693",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.694",
+    "eventId": "E09",
+    "choiceId": "E09.comply",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문을 닫고 다음 객차로 물러났다. 반대편에서 두드리는 손이 보였지만 다시 열지는 않았다."
+    ]
+  },
+  {
+    "id": "local.text.695",
+    "eventId": "E09",
+    "choiceId": "E09.comply",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문을 닫고 다음 객차로 물러났다. 반대편에서 두드리는 손이 보였지만 다시 열지는 않았다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.696",
+    "eventId": "E09",
+    "choiceId": "E09.comply",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "한꺼번에 밀려오고 있어. 저 문을 열어 두면 다음 객차까지 무너질 거야."
+    ]
+  },
+  {
+    "id": "local.text.697",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "생존자를 문틈에서 끌어 다음 객차로 데려왔다. 그가 스스로 문을 잡자 몸에서 힘이 조금 풀렸다."
+    ]
+  },
+  {
+    "id": "local.text.698",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "생존자를 문틈에서 끌어 다음 객차로 데려왔다. 그가 스스로 문을 잡자 몸에서 힘이 조금 풀렸다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.699",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "아직 손을 뻗고 있잖아. 문을 닫기 전에 저 사람만이라도 데려오자."
+    ]
+  },
+  {
+    "id": "local.text.700",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.701",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.702",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.703",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕대로 다리를 받친 생존자를 문 너머로 옮겼다. 문을 닫은 뒤에야 짧게 숨을 돌렸다."
+    ]
+  },
+  {
+    "id": "local.text.704",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕대로 다리를 받친 생존자를 문 너머로 옮겼다. 문을 닫은 뒤에야 짧게 숨을 돌렸다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.705",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리 때문에 못 움직이는 것 같아. 도구로 받쳐서 넘기면 혼자 두지 않아도 돼."
+    ]
+  },
+  {
+    "id": "local.text.706",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.707",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연결문에 좀비가 밀려들었다. 급히 몸을 빼다 문틀에 상처를 입었다. 반대편 사람을 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.708",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.709",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.710",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.711",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.712",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.713",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.714",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.715",
+    "eventId": "E09",
+    "choiceId": "E09.comply",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.716",
+    "eventId": "E09",
+    "choiceId": "E09.comply",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.717",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.718",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.719",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.720",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "route.text.23",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "subway-map",
+        "value": true
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "객차 연결부에서 한 사람이 쓰러지자 뒤의 좀비들이 연달아 문으로 밀려든다. 비틀린 연결문 반대쪽에는 일어서지 못하는 생존자가 있다. 문을 닫고 거리를 벌릴지 그를 데려올지 결정해야 한다.",
+      "개찰구 옆에서 확인한 작업 통로 진입점이 떠오른다. 그곳으로 가려면 우선 이 연결부를 지나야 한다."
+    ]
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "id": "encounter.department-parking",
+  "title": "하역차 너머의 출구",
+  "locationIds": [
+    "department-parking"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "route",
+      "priority": 0,
+      "conditions": [],
+      "notices": [
+        "백화점에서 이어지는 길은 지하철과 학교 접선지다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.department-parking.subway",
+          "goalId": "subway",
+          "label": "지하철 비상 출입구로 향한다",
+          "intention": "지하철은 닫힌 객차와 연결문을 지나는 길이다. 작업 통로의 정보를 확인하며 갈지, 쉬거나 주변을 살피며 갈지 고른다.",
+          "target": "다음 경로",
+          "judgment": null,
+          "destinationSegmentId": "subway",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-parking.subway",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.department-parking.school",
+          "goalId": "school",
+          "label": "학교 운동장의 외곽 행렬을 찾아간다",
+          "intention": "학교 운동장에서 외곽 행렬에 합류한다. 자신의 몸을 돌볼지 다른 생존자를 도울지 고르며 노출된 도로를 함께 이동한다.",
+          "target": "다음 경로",
+          "judgment": null,
+          "destinationSegmentId": "school",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-parking.school",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

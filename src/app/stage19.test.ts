@@ -60,6 +60,9 @@ it.each([6, 13])('%i번 인덱스 경로 선택은 저장 실패 동안 확정�
   expect((await client.dispatch({ type: 'retry-save', operationId: commit.operationId })).ok).toBe(true)
   expect(env.raw()).toBe(candidate)
   expect(decodeCatalogSave(env.raw(), resolveAnswers).run.route).toHaveLength(index === 6 ? 14 : 19)
+  const pinned = decodeCatalogSave(env.raw(), resolveAnswers).run
+  expect(pinned.route).toContain(pinned.opportunities!['research-transport'])
+  expect(decodeCatalogSave(candidate!, resolveAnswers).run.opportunities).toEqual(pinned.opportunities)
   const reloaded = createProductClient({ store: env.store })
   expect((await reloaded.dispatch({ type: 'resume' })).ok).toBe(true)
   expect(reloaded.getSnapshot().view).toEqual(client.getSnapshot().view)
@@ -85,7 +88,7 @@ it('이전12사건 결말은 유지하고 명시적 다음 회차 출발부터19
   await client.dispatch({ type: 'prepare-next-run', sourceRunId: view.runId, sourceResultId: view.resultId })
   expect((await client.dispatch({ type: 'start-next-run', sourceRunId: view.runId, sourceResultId: view.resultId, name: '새 생존자', answers: origin.answers })).ok).toBe(true)
   const saved = decodeCatalogSave(env.raw(), resolveAnswers)
-  expect(saved.pack.manifest.revision).toBe('catalog-stage19-1')
+  expect(saved.pack.manifest.revision).toBe('catalog-playtest-1')
   expect(saved.run.companion?.name).toBe(origin.name)
   expect(client.getSnapshot().presentation!.journey).toHaveLength(19)
 })

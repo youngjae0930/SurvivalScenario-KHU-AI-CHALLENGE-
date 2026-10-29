@@ -30,6 +30,7 @@ const ruleEvent = { ...str(3), pattern: '^E(0[1-9]|1[0-2])$' }
 const axis = enumeration('risk', 'cognition', 'affect')
 const flag = enumeration('access', 'data', 'helpEstablished', 'routeKnown')
 const condition: Shape = one(
+  object({ kind: enumeration('opportunity'), id }),
   object({ kind: enumeration('number'), subject: enumeration('protagonist', 'companion'), stat: enumeration('stress', 'stamina', 'injury', 'risk', 'cognition', 'affect', 'trust'), min: int(0, 100), max: int(0, 100) }),
   object({ kind: enumeration('resource'), resource: enumeration('supply', 'medkit'), min: int(0, 3), max: int(0, 3) }),
   object({ kind: enumeration('companion'), present: bool }), object({ kind: enumeration('weapon'), value: bool }),
@@ -47,6 +48,9 @@ export const autonomySchema = one(
 const impact = one(object({ kind: enumeration('value'), axis, pole: enumeration('left', 'right'), magnitude: int(1, 3), reason: str(200) }),
   object({ kind: enumeration('support'), magnitude: int(-3, 3), reason: str(200) }))
 export const relationshipSchema = object({ success: array(impact, 0, 5), failure: array(impact, 0, 5) })
+export const infectionSchema = array(object({ source: enumeration('infected-person', 'protagonist', 'companion', 'actor'),
+  target: enumeration('protagonist', 'companion', 'actor', 'other'), contact: enumeration('bite', 'blood') }), 1, 4)
+export const endingSchema = object({ conditions, kind: enumeration('cure-discovery', 'tunnel-escape', 'outskirts-escape') })
 const effect: Shape = one(
   object({ kind: enumeration('add'), stat: enumeration('stress', 'stamina', 'injury', 'supply', 'medkit'), amount: int(-100, 100) }),
   object({ kind: enumeration('set-flag'), flag, value: bool }), object({ kind: enumeration('set-weapon'), value: bool }),
@@ -82,6 +86,8 @@ function makeEventSchema(minChoices: number, maxChoices: number): Shape { return
       ), successFacts: factUpdates, failureFacts: factUpdates,
       execution: executionSchema,
       relationship: relationshipSchema,
+      infection: infectionSchema,
+      ending: endingSchema,
     }, ['id', 'goalId', 'label', 'intention', 'target', 'judgment', 'behavior', 'successFacts', 'failureFacts']), minChoices, maxChoices),
   }), 1, 20),
 }, ['id', 'title', 'locationIds', 'locationTags', 'conditions', 'weight', 'groups']) }
@@ -91,11 +97,16 @@ const savedEventSchema = makeEventSchema(1, 20)
 export const scriptSchema = object({ id, eventId: id, choiceId: nullable(id), slot: enumeration('scene', 'success', 'failure', 'opinion', 'hesitation', 'departure-warning', 'departure', 'absent', 'reunion'), conditions,
   priority: int(0, 1000), weight: int(1, 1000), once: bool, text: array(str(), 1, 20) })
 export const manifestSchema = object({ formatVersion: enumeration(1), id, revision: id, rulesVersion: enumeration('1.2-stress-1'), title: str(100), startLocationId: id,
+  reactionVersion: enumeration('responsibility-1'),
+  infectionVersion: enumeration('immediate-1'),
+  researchVersion: enumeration('research-1'),
+  endingVersion: enumeration('routes-1'),
+  opportunities: array(object({ id, locationTags: array(id, 1, 30) }), 1, 20),
   dialogueVersion: enumeration('scripts-1'),
   routeVersion: enumeration('stages-1', 'slots-1'),
   slotPlan: object({ startSegmentId: id, segments: array(object({ id, stage,
     slots: array(object({ number: int(1, 48), candidates: array(id, 1, 20) }), 1, 16),
-    nextSegmentIds: array(id, 0, 20), lockedReason: str(),
+    nextSegmentIds: array(id, 0, 20), lockedReason: str(), entry: object({ conditions, reason: str() }),
   }, ['id', 'stage', 'slots', 'nextSegmentIds']), 1, 20) }),
   trustVersion: enumeration('outcome-1'),
   executionVersion: enumeration('command-1'),

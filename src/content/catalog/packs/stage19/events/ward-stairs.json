@@ -1,0 +1,276 @@
+{
+  "id": "encounter.ward-stairs",
+  "title": "층계 사이의 틈",
+  "locationIds": [
+    "ward-stairs"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.ward-stairs.wall",
+          "goalId": "inspect",
+          "label": "벽 쪽 온전한 층계를 따라 내려간다",
+          "intention": "난간을 기대지 않고 발판을 하나씩 확인한다.",
+          "target": "병동 비상계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.ward-stairs.wall",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow"
+        },
+        {
+          "id": "encounter.ward-stairs.step",
+          "goalId": "cross",
+          "label": "짧은 단차를 건너 아래층으로 간다",
+          "intention": "착지할 공간을 보고 단번에 이동한다.",
+          "target": "병동 비상계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.ward-stairs.step",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-transport",
+      "priority": 100,
+      "conditions": [
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.ward-stairs.wall",
+          "goalId": "inspect",
+          "label": "벽 쪽 온전한 층계를 따라 내려간다",
+          "intention": "난간을 기대지 않고 발판을 하나씩 확인한다.",
+          "target": "병동 비상계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.ward-stairs.wall",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow"
+        },
+        {
+          "id": "encounter.ward-stairs.step",
+          "goalId": "cross",
+          "label": "짧은 단차를 건너 아래층으로 간다",
+          "intention": "착지할 공간을 보고 단번에 이동한다.",
+          "target": "병동 비상계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.ward-stairs.step",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.ward-stairs.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "ward-stairs",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.ward-stairs.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

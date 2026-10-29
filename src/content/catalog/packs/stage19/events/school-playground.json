@@ -1,0 +1,377 @@
+{
+  "id": "encounter.school-playground",
+  "title": "운동장 끝의 접선",
+  "locationIds": [
+    "school-playground"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.school-playground.maintain",
+          "goalId": "E04.maintain",
+          "label": "집단의 출발을 기다리며 벤치에서 정비한다",
+          "intention": "운동장 바깥으로 떠날 채비를 한다.",
+          "target": "학교 운동장",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {
+            "convoy-met": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.school-playground.join",
+          "goalId": "quarantine",
+          "label": "인원 확인을 마치고 외곽 행렬에 합류한다",
+          "intention": "가져온 짐을 메고 곧바로 운동장을 떠난다.",
+          "target": "학교 운동장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.school-playground.join",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "convoy-met": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "자신의 이동 준비를 마치고 행렬에 합류함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.school-playground.help-load",
+          "goalId": "E02.help",
+          "label": "지친 생존자와 물자를 나누고 출발을 돕는다",
+          "intention": "나눌 물자가 없으면 운동장 수도에서 물을 길어 와 돕는다. 정비하거나 바로 합류할 수도 있다.",
+          "target": "학교 운동장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [
+                  {
+                    "kind": "resource",
+                    "resource": "supply",
+                    "min": 1,
+                    "max": 3
+                  }
+                ],
+                "action": {
+                  "id": "encounter.school-playground.help-load",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              },
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.school-playground.help-load",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "convoy-supported": true,
+            "convoy-met": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "normal-companion",
+      "priority": 1,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.school-playground.maintain",
+          "goalId": "E04.maintain",
+          "label": "집단의 출발을 기다리며 벤치에서 정비한다",
+          "intention": "운동장 바깥으로 떠날 채비를 한다.",
+          "target": "학교 운동장",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {
+            "convoy-met": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.school-playground.join",
+          "goalId": "quarantine",
+          "label": "인원 확인을 마치고 외곽 행렬에 합류한다",
+          "intention": "가져온 짐을 메고 곧바로 운동장을 떠난다.",
+          "target": "학교 운동장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.school-playground.join",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "convoy-met": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "자신의 이동 준비를 마치고 행렬에 합류함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.school-playground.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "target": "학교 운동장",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.school-playground.help-load",
+          "goalId": "E02.help",
+          "label": "지친 생존자와 물자를 나누고 출발을 돕는다",
+          "intention": "나눌 물자가 없으면 운동장 수도에서 물을 길어 와 돕는다. 정비하거나 바로 합류할 수도 있다.",
+          "target": "학교 운동장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [
+                  {
+                    "kind": "resource",
+                    "resource": "supply",
+                    "min": 1,
+                    "max": 3
+                  }
+                ],
+                "action": {
+                  "id": "encounter.school-playground.help-load",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              },
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.school-playground.help-load",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "convoy-supported": true,
+            "convoy-met": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

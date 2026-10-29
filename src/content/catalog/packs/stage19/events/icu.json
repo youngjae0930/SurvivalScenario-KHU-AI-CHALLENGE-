@@ -1,0 +1,770 @@
+{
+  "id": "encounter.icu",
+  "title": "울리지 않는 호출 버튼",
+  "locationIds": [
+    "icu"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.kit",
+          "goalId": "salvage",
+          "label": "가림막 뒤 비상 처치함을 꺼낸다",
+          "intention": "기울어진 가림막을 지나 밀봉 도구를 확보한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.kit",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "stocked",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "medkit",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-companion",
+      "priority": 1,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.kit",
+          "goalId": "salvage",
+          "label": "가림막 뒤 비상 처치함을 꺼낸다",
+          "intention": "기울어진 가림막을 지나 밀봉 도구를 확보한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.kit",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "stocked-companion",
+      "priority": 11,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "medkit",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "normal-transport",
+      "priority": 100,
+      "conditions": [
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.kit",
+          "goalId": "salvage",
+          "label": "가림막 뒤 비상 처치함을 꺼낸다",
+          "intention": "기울어진 가림막을 지나 밀봉 도구를 확보한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.kit",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "icu",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "stocked-transport",
+      "priority": 110,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "medkit",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "icu",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-companion-transport",
+      "priority": 101,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        },
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.kit",
+          "goalId": "salvage",
+          "label": "가림막 뒤 비상 처치함을 꺼낸다",
+          "intention": "기울어진 가림막을 지나 밀봉 도구를 확보한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.kit",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.icu.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "icu",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "stocked-companion-transport",
+      "priority": 111,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "medkit",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "kind": "companion",
+          "present": true
+        },
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.icu.maintain",
+          "goalId": "E04.maintain",
+          "label": "빈 침상 옆에서 몸을 추스른다",
+          "intention": "가져온 물자로 회복하고 장비를 정리한다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.icu.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "target": "중환자실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.icu.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "icu",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.icu.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

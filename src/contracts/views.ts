@@ -11,6 +11,8 @@ export interface TraitViewModel {
 }
 
 export interface StatusViewModel {
+  /** Absent on historical packs whose rules contain no infection mechanic. */
+  readonly infection?: { readonly protagonist: 'clear' | 'dead'; readonly companion: { readonly name: string; readonly status: 'clear' | 'dead' } | null }
   readonly name: string
   readonly traits: readonly TraitViewModel[]
   readonly stress: number

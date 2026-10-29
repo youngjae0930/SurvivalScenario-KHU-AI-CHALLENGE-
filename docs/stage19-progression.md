@@ -1,5 +1,19 @@
 # 19스테이지 최소 확장 — 2026-10-30
 
+## 최신 연구동 연결 (2026-10-30)
+
+현재 기본 팩은 `catalog-research-1`이다. 병원 무작위 여분 장소에서 수송 기록을 조사해야 연구동에 들어가며 백화점에서는 진입하지 못한다.54장소 전부 활성화했고 기록·시료·최종 회수·헬기 탑승으로 치료제 발견 결말을 연결했다. 아래 연구동 예약/미정은 이전 상태다. [최신 구현·검증](research-route.md)을 우선한다.
+
+## 최신 콘텐츠: catalog-route-identity-1
+
+현재 기본 팩은 `stage19/catalog-route-identity-1`이다.54사건·1018스크립트이며 네 경로 입구 전용 행동/후속 회상을 연결했다. 경로 구조·저장 런타임은 아래와 같고 [경로별 특징](route-identities.md)을 먼저 읽는다. 기존 저장에는 새 행동을 삽입하지 않는다.
+
+## 장소별 최초 집필: catalog-local-stories-1
+
+현재 기본 팩은 `stage19/catalog-local-stories-1`이다. 활성47곳 각각에 고유 기본 사건·선택·결과·의견이 있으며54사건·994스크립트다. 기존 슬롯 배치/분기/저장 규칙은 그대로 사용한다. `events/<locationId>.json`과 `scripts/<locationId>.json`을 수정하면 자동 수집된다. 예: 약제실은 `events/pharmacy.json` + `scripts/pharmacy.json`, 식품관은 `events/food-hall.json` + `scripts/food-hall.json`이다. 이전 두 bulk 배열 파일은 대체되었으므로 다시 추가하면 중복ID가 발생한다.
+
+장소와 행동/실제 효과의 괴리는 [47곳 검토표](location-content-audit.md)를 읽는다. `src/engine/catalog/local-stories.test.ts`가 새 콘텐츠의 효과·조건·일반4경로/계승 완주·저장 복원을 검사한다. `slots.test.ts`는 이전19팩 fixture에 고정해 과거 저장의 경로·원문을 보존한다. 기존 저장은 이전 내용으로 이어하고 새 출발/명시적 다음 회차부터 새 팩을 사용한다. 아래 catalog-stage19-1·51사건/1100문구와 검증 결과는 최초 최소 확장 당시 기록이다.
+
 신규 기본 팩은 `stage19 / catalog-stage19-1`이다. 기존12사건 팩 `opening / catalog-dialogue-1`과 모든 과거 저장은 유지한다. 새로 출발하거나 결말에서 다음 회차를 명시적으로 시작할 때19스테이지 팩을 사용한다. 진행 중인 기존 회차에 장소를 끼워 넣지 않는다.
 
 ## 지금 플레이할 수 있는 범위

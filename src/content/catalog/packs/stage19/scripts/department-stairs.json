@@ -1,0 +1,308 @@
+[
+  {
+    "id": "local.text.423",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다."
+    ]
+  },
+  {
+    "id": "local.text.424",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.425",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.426",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.427",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.428",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.429",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.430",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 손을 짚고 온전한 발판을 따라 내려갔다. 아래층 발소리가 멀어진 뒤 계단문 앞에 섰다."
+    ]
+  },
+  {
+    "id": "local.text.431",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 손을 짚고 온전한 발판을 따라 내려갔다. 아래층 발소리가 멀어진 뒤 계단문 앞에 섰다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.432",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간 쪽으로 기대지 말자. 벽에 붙으면 발 디딜 곳은 확인할 수 있어."
+    ]
+  },
+  {
+    "id": "local.text.433",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "층계가 더 무너지기 전에 참으로 내려섰다. 길게 돌아갈 힘을 조금 아꼈다."
+    ]
+  },
+  {
+    "id": "local.text.434",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "층계가 더 무너지기 전에 참으로 내려섰다. 길게 돌아갈 힘을 조금 아꼈다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.435",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 참까지는 닿겠어. 여기서 소리만 기다리다 지치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "local.text.436",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "내디딘 층계가 부서졌다. 난간에 몸을 부딪쳐 상처를 입고 참까지 내려왔다."
+    ]
+  },
+  {
+    "id": "local.text.437",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "내디딘 층계가 부서졌다. 난간에 몸을 부딪쳐 상처를 입고 참까지 내려왔다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.438",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "id": "local.text.806",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": "encounter.inpatient-ward.subway",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병동을 나와 지하철 비상 출입구 방향으로 걸었다. 선로를 따라 도시 남쪽으로 갈 길을 찾아야 한다."
+    ]
+  },
+  {
+    "id": "local.text.807",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": "encounter.inpatient-ward.subway",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거리의 무리가 걱정돼. 아래쪽 통로를 찾아보고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.808",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": "encounter.inpatient-ward.school",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병동을 나와 학교 운동장으로 향했다. 접선 뒤에는 생존자들과 외곽으로 이동할 생각이다."
+    ]
+  },
+  {
+    "id": "local.text.809",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": "encounter.inpatient-ward.school",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "운동장에 떠날 사람들이 모인다잖아. 같은 방향으로 걷는 사람을 만나고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.810",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": "encounter.inpatient-ward.research",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수송 기록에 적힌 직원 출입로를 찾았다. 봉쇄문 안쪽으로 날카로운 긁는 소리가 이어진다."
+    ]
+  },
+  {
+    "id": "local.text.811",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": "encounter.inpatient-ward.research",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "길을 확인했으니 들어갈 수는 있어. 하지만 안쪽 소리가 이상해. 치료제 기록을 찾으려면 돌아올 길부터 기억하자."
+    ]
+  },
+  {
+    "id": "local.text.812",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 게시판의 봉쇄된 연구동 수송 표지는 출입 기록과 대조해야 길을 알 수 있다."
+    ]
+  },
+  {
+    "id": "local.text.813",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 게시판의 봉쇄된 연구동 수송 표지는 출입 기록과 대조해야 길을 알 수 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.814",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 게시판의 봉쇄된 연구동 수송 표지는 출입 기록과 대조해야 길을 알 수 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.815",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 게시판의 봉쇄된 연구동 수송 표지는 출입 기록과 대조해야 길을 알 수 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.816",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.817",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.818",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "encounter.inpatient-ward.clue-scene.0",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-clue",
+        "value": true
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 앞서 조사한 수송 기록과 표식이 일치한다. 봉쇄된 연구동으로 들어갈 직원 출입로를 찾았다."
+    ]
+  },
+  {
+    "id": "encounter.inpatient-ward.clue-scene.1",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      },
+      {
+        "kind": "fact",
+        "id": "research-clue",
+        "value": true
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 앞서 조사한 수송 기록과 표식이 일치한다. 봉쇄된 연구동으로 들어갈 직원 출입로를 찾았다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "encounter.inpatient-ward.clue-scene.2",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "kind": "fact",
+        "id": "research-clue",
+        "value": true
+      }
+    ],
+    "priority": 102,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 앞서 조사한 수송 기록과 표식이 일치한다. 봉쇄된 연구동으로 들어갈 직원 출입로를 찾았다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "encounter.inpatient-ward.clue-scene.3",
+    "eventId": "encounter.inpatient-ward",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      },
+      {
+        "kind": "fact",
+        "id": "research-clue",
+        "value": true
+      }
+    ],
+    "priority": 103,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "입원 병동 끝 지도에는 지하철 진입로와 학교 운동장 접선지가 표시돼 있다. 앞서 조사한 수송 기록과 표식이 일치한다. 봉쇄된 연구동으로 들어갈 직원 출입로를 찾았다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  }
+]

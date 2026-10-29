@@ -1,0 +1,78 @@
+{
+  "id": "E12",
+  "title": "터널 끝의 바깥 공기",
+  "locationIds": [
+    "southern-tunnel"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "escape",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E12.short",
+          "goalId": "escape",
+          "label": "자갈이 쌓인 짧은 터널로 빠져나간다",
+          "intention": "남은 체력과 상처가 짧고 거친 통로를 버틸 수 있어야 한다.",
+          "target": "남부 지하터널",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "short"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "balanced",
+          "ending": {
+            "conditions": [],
+            "kind": "tunnel-escape"
+          }
+        },
+        {
+          "id": "E12.detour",
+          "goalId": "escape",
+          "label": "확인해 둔 작업자 통로로 돌아 나간다",
+          "intention": "알아 둔 진입점을 따라 더 길지만 거친 자갈을 피하는 길을 간다.",
+          "target": "남부 지하터널",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "detour"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow",
+          "ending": {
+            "conditions": [],
+            "kind": "tunnel-escape"
+          }
+        },
+        {
+          "id": "E12.request",
+          "goalId": "request",
+          "label": "터널 안쪽 엄폐물에서 구조 신호를 보낸다",
+          "intention": "걸어서 나가지 못한 채 응답을 기다린다.",
+          "target": "남부 지하터널",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "request"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "risk"
+  }
+}

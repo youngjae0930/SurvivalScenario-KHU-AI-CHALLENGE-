@@ -9,8 +9,11 @@ import { catalogFirstExtreme, catalogReflection } from '../../engine/catalog/ref
 import { reflectionCopy } from '../../content/texts/reflection'
 import { generalRecommendationCopy, rememberedChoiceCopy } from '../../content/texts/recommendation'
 import { usesNarrative, companionOpinion, companionHesitation, companionAfter, relationshipSummary, narrativeJourney } from '../../content/texts/companion-narrative'
+import { recommendationResponsibility } from '../../content/texts/companion-responsibility'
 import { extremeChanges, toActionPreview, toChange, toStatus } from './opening'
 import { catalogVisitLimit } from '../../engine/catalog/slots'
+import { infectionState } from '../../engine/catalog/infection'
+import { infectionOutcome, infectionRisk } from '../../content/texts/infection'
 
 const stageLabels = { early: '전반부', middle: '중반부', late: '후반부' }
 const traitLabels = { risk: '모험–안정', cognition: '분석–직관', affect: '이성–감정' }
@@ -58,19 +61,19 @@ export function catalogPreviewView(pack: CatalogPack, run: CatalogRun, preview: 
     options: [{ actor: 'protagonist' as const, label: '직접 실행', availability: { kind: 'available' as const } },
       { actor: 'companion' as const, label: `동료에게 ${offer.policy.role} 맡기기`, availability: offer.allowed ? { kind: 'available' as const } : { kind: 'locked' as const, reasons: offer.reasons } }] } : undefined
   const authored = pack.manifest.dialogueVersion === 'scripts-1'
-  const warnings = [...(departure && run.companion ? authored ? catalogDialogue(pack, run, 'departure-warning', preview.choice.id) : [...(departure.reason ? [departure.reason] : []), (usesNarrative(pack) ? narrativeJourney : companionJourneyCopy).warning(run.companion.name)] : []),
+  const warnings = [...infectionRisk(run, preview.infectionDeathsOnFailure ?? []), ...(departure && run.companion ? authored ? catalogDialogue(pack, run, 'departure-warning', preview.choice.id) : [...(departure.reason ? [departure.reason] : []), (usesNarrative(pack) ? narrativeJourney : companionJourneyCopy).warning(run.companion.name)] : []),
     ...(preview.executionActor === 'companion' && offer ? [`동료 선행 실행 · ${offer.policy.sharedRisk}`, '비용·성공률·피해는 직접 실행과 같습니다. 동료를 보내도 주인공의 위험은 사라지지 않습니다.'] : [])]
   if (preview.choice.behavior.kind === 'escape') {
     const request = preview.choice.behavior.route === 'request'
     return { ...view, risk: { kind: 'certain', explanation: '현재 상태와 공개된 조건으로 결정합니다. 새 성공/실패 추첨은 없습니다.' },
-      outcomes: { success: [...view.outcomes.success, ...trustLines(preview.trustOutcomes?.success, usesNarrative(pack), pack.manifest.dialogueVersion === 'scripts-1'), request ? '탈출 실패 · 구조 대기 결말로 종료' : run.core.flags.data ? '연구 자료를 지닌 탈출 결말로 종료' : '탈출 결말로 종료'], failure: [] } }
+      outcomes: { success: [...view.outcomes.success, ...trustLines(preview.trustOutcomes?.success, usesNarrative(pack), pack.manifest.dialogueVersion === 'scripts-1'), request ? '탈출 실패 · 구조 대기 결말로 종료' : preview.escapeEnding === 'tunnel-escape' ? '지하터널 탈출 결말로 종료' : preview.escapeEnding === 'outskirts-escape' ? '도시 외곽 탈출 결말로 종료' : preview.escapeEnding === 'cure-discovery' ? '치료제 발견 · 연구물 인계 결말로 종료' : run.core.flags.data ? '연구 자료를 지닌 탈출 결말로 종료' : '탈출 결말로 종료'], failure: [] } }
   }
   return { ...view, ...(execution ? { execution } : {}),
     ...(preview.executionActor === 'companion' && offer ? { participation: { kind: offer.allowed ? 'cooperate' as const : 'refuse' as const,
       explanation: offer.allowed ? '동료가 선행 실행을 맡습니다. 주인공도 공동 위험을 감수합니다.' : offer.reasons.join(' '), contribution: ['별도의 성공률 보너스는 없습니다.'] } } : {}),
     warnings: [...view.warnings, ...warnings], outcomes: {
     success: [...view.outcomes.success, ...trustLines(preview.trustOutcomes?.success ?? preview.trustChange, usesNarrative(pack), pack.manifest.dialogueVersion === 'scripts-1'), ...Object.keys(preview.choice.successFacts).map(() => '이후 사건의 이야기 조건 변화')],
-    failure: [...view.outcomes.failure, ...trustLines(preview.trustOutcomes?.failure, usesNarrative(pack), pack.manifest.dialogueVersion === 'scripts-1'), ...Object.keys(preview.choice.failureFacts).map(() => '이후 사건의 이야기 조건 변화')],
+    failure: [...view.outcomes.failure, ...infectionRisk(run, preview.infectionDeathsOnFailure ?? []), ...trustLines(preview.trustOutcomes?.failure, usesNarrative(pack), pack.manifest.dialogueVersion === 'scripts-1'), ...Object.keys(preview.choice.failureFacts).map(() => '이후 사건의 이야기 조건 변화')],
   } }
 }
 export function catalogGameView(pack: CatalogPack, run: CatalogRun, nextRunAllowed = false): GameViewModel {
@@ -78,9 +81,14 @@ export function catalogGameView(pack: CatalogPack, run: CatalogRun, nextRunAllow
   const narrative = usesNarrative(pack)
   const authored = pack.manifest.dialogueVersion === 'scripts-1'
   const journeyCopy = narrative ? narrativeJourney : companionJourneyCopy
-  const journeyNotices = run.companionJourney?.separation && run.companion ? (authored ? catalogDialogue(pack, run, 'absent') : [journeyCopy.absent(run.companion.name)])
+  const infected = infectionState(run)
+  const journeyNotices = infected.companion ? [`${run.companion!.name}은(는) 감염으로 세상을 떠났다. 이제 혼자 길을 이어가야 한다.`] : run.companionJourney?.separation && run.companion ? (authored ? catalogDialogue(pack, run, 'absent') : [journeyCopy.absent(run.companion.name)])
     : run.companion && run.companionJourney?.reunions.at(-1)?.visitIndex === run.visitIndex ? (authored ? catalogDialogue(pack, run, 'reunion') : [journeyCopy.reunion(run.companion.name)]) : []
-  const status = toStatus(run.core)
+  const status = { ...toStatus(run.core), ...(pack.manifest.infectionVersion ? { infection: {
+    protagonist: infected.protagonist ? 'dead' as const : 'clear' as const,
+    companion: run.companion ? { name: run.companion.name, status: infected.companion ? 'dead' as const : 'clear' as const } : null,
+  } } : {}) }
+  const outcomeText = run.result?.infectionDeaths?.length ? infectionOutcome(run, run.result.infectionDeaths) : run.result ? renderCatalogScript(pack, run, run.result.resultScriptId) : []
   const context = catalogChoiceContext(pack, run)
   const location = catalogContext(pack, run).location
   const event = currentEvent(pack, run)
@@ -90,9 +98,9 @@ export function catalogGameView(pack: CatalogPack, run: CatalogRun, nextRunAllow
     const legacy = catalogLegacy(pack, run)!
     const ending = legacy.ending
     const inherited = catalogInheritance(pack, run)!
-    const title = ending === 'data-and-escape' ? '자료를 지니고 도시를 벗어났다' : ending === 'escape' ? '도시를 벗어났다' : run.result.escape ? '구조를 기다리며' : '도시를 벗어나지 못했다'
+    const title = ending === 'tunnel-escape' ? '지하터널 탈출 · 어둠 너머의 새벽' : ending === 'outskirts-escape' ? '도시 외곽 탈출 · 차단선 너머로' : ending === 'cure-discovery' ? '치료제 발견 · 이어지는 생존' : ending === 'infection-death' ? '감염 · 끝나 버린 여정' : ending === 'data-and-escape' ? '자료를 지니고 도시를 벗어났다' : ending === 'escape' ? '도시를 벗어났다' : run.result.escape ? '구조를 기다리며' : '도시를 벗어나지 못했다'
     return { kind: 'ending', runId: run.runId, resultId: run.result.resultId, ending, title,
-      text: [...(run.result.execution && !authored ? [narrative ? `동료가 앞을 살피는 동안 당신은 퇴로를 지켰다.` : `동료가 ${run.result.execution.role}에 앞장섰다. ${run.result.execution.sharedRisk}`] : []), ...renderCatalogScript(pack, run, run.result.resultScriptId), ...(narrative && companion ? companionAfter(findCatalogChoice(pack, run.result.eventId, run.result.actionId), run.result, true) : !authored && run.result.trustChange ? [run.result.trustChange.reason] : []), ...(!run.result.escape ? ['상처가 겹쳐 더는 이동을 이어갈 수 없었다. 이번 여정은 여기서 끝난다.'] : []), ...(pack.manifest.presentationVersion ? extremeGuidance(run) : [])],
+      text: [...(run.result.execution && !authored ? [narrative ? `동료가 앞을 살피는 동안 당신은 퇴로를 지켰다.` : `동료가 ${run.result.execution.role}에 앞장섰다. ${run.result.execution.sharedRisk}`] : []), ...outcomeText, ...(narrative && companion && !run.result.infectionDeaths?.length ? companionAfter(findCatalogChoice(pack, run.result.eventId, run.result.actionId), run.result, true) : !authored && run.result.trustChange ? [run.result.trustChange.reason] : []), ...(!run.result.escape && ending !== 'infection-death' ? ['상처가 겹쳐 더는 이동을 이어갈 수 없었다. 이번 여정은 여기서 끝난다.'] : []), ...(pack.manifest.presentationVersion ? extremeGuidance(run) : [])],
       changes: [...run.result.resolution.changes.map(toChange), ...trustChanges(run.result.trustChange)], status,
       legacySummary: pack.manifest.presentationVersion ? briefReflection(pack, run) : [`${legacy.name}의 최종 성향과 실제 선택 기록을 남겼습니다.`, `실제 도달 사건 ${run.history.length}개의 선택을 기록했습니다. 미도달 사건은 미기록입니다.`,
         ...(['E02', 'E07', 'E10'] as const).flatMap(id => { const actionId = legacy.representativeActions[id]; return actionId ? [`${id} · ${findCatalogChoice(pack, id, actionId).label}`] : [] }),
@@ -108,8 +116,9 @@ export function catalogGameView(pack: CatalogPack, run: CatalogRun, nextRunAllow
     const choice = findCatalogChoice(pack, result.eventId, result.actionId)
     const nextLocation = pack.locations.find(item => item.id === run.route[run.visitIndex + 1])
     return { kind: 'result', context, resultId: result.resultId, actionLabel: choice.label, outcome: result.resolution.check.outcome,
-      text: [...(result.execution && !authored ? [narrative ? '동료가 앞을 살피는 동안 당신은 퇴로를 지켰다.' : `동료가 ${result.execution.role}에 앞장섰다. ${result.execution.sharedRisk}`] : []), ...renderCatalogScript(pack, run, result.resultScriptId), ...(result.treat ? ['치료 도구를 사용해 상처를 처치했다.'] : []),
-        ...(narrative && companion && !result.companionDeparture ? companionAfter(choice, result) : []),
+      text: [...(result.execution && !authored ? [narrative ? '동료가 앞을 살피는 동안 당신은 퇴로를 지켰다.' : `동료가 ${result.execution.role}에 앞장섰다. ${result.execution.sharedRisk}`] : []), ...outcomeText, ...(result.treat ? ['치료 도구를 사용해 상처를 처치했다.'] : []),
+        ...(narrative && companion && !result.companionDeparture && !result.infectionDeaths?.length ? companionAfter(choice, result) : []),
+        ...(pack.manifest.reactionVersion && companion ? recommendationResponsibility(result) : []),
         ...(result.companionDeparture && run.companion ? authored ? catalogDialogue(pack, run, 'departure', result.actionId) : [...(result.companionDeparture.reason ? [result.companionDeparture.reason] : []), journeyCopy.departure(run.companion.name)] : [])],
       changes: [...result.resolution.changes.map(toChange), ...trustChanges(result.trustChange)],
       trustReasons: !authored && result.trustChange ? [narrative ? relationshipSummary(result.trustChange) : result.trustChange.reason] : [], consequences: pack.manifest.presentationVersion ? extremeGuidance(run) : extremeChanges(result.resolution.changes), status,

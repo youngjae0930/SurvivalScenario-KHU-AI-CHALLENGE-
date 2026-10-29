@@ -1,0 +1,429 @@
+[
+  {
+    "id": "local.text.173",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
+      "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
+    ]
+  },
+  {
+    "id": "local.text.174",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다.",
+      "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
+    ]
+  },
+  {
+    "id": "local.text.175",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다.",
+      "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
+    ]
+  },
+  {
+    "id": "local.text.176",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다.",
+      "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
+    ]
+  },
+  {
+    "id": "local.text.177",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.178",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.179",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.180",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.roster",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 대피 시간이 적힌 줄을 찾았다. 발소리가 멀어진 뒤 의자를 피해 벽 쪽으로 지나갔다."
+    ]
+  },
+  {
+    "id": "local.text.181",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.roster",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 대피 시간이 적힌 줄을 찾았다. 발소리가 멀어진 뒤 의자를 피해 벽 쪽으로 지나갔다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.182",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.roster",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이름이 지워진 순서부터 보자. 어디로 빠져나갔는지 흔적이 남아 있을 거야."
+    ]
+  },
+  {
+    "id": "local.text.183",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의자가 기울기 전에 틈을 통과했다. 넓게 돌아갈 힘을 아끼고 병동 표지 앞으로 나왔다."
+    ]
+  },
+  {
+    "id": "local.text.184",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의자가 기울기 전에 틈을 통과했다. 넓게 돌아갈 힘을 아끼고 병동 표지 앞으로 나왔다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.185",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의자 밑으로 틈이 보여. 오래 소리를 듣고 있기보다 지금 빠져나가고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.186",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸이 걸린 의자가 무너졌다. 넘어지며 팔을 다친 채 통로 바깥으로 기어 나왔다."
+    ]
+  },
+  {
+    "id": "local.text.187",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸이 걸린 의자가 무너졌다. 넘어지며 팔을 다친 채 통로 바깥으로 기어 나왔다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.188",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "route.text.1",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.cabinet",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "보관대를 넘고 접수대 뒤 비상 처치함의 밀봉 도구를 꺼냈다. 병동으로 들어가기 전 배낭 안쪽에 넣었다."
+    ]
+  },
+  {
+    "id": "route.text.2",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.cabinet",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "보관대를 넘고 접수대 뒤 비상 처치함의 밀봉 도구를 꺼냈다. 병동으로 들어가기 전 배낭 안쪽에 넣었다.",
+      "동료가 짐을 고쳐 멘다. “이제 다음 길을 보자. 오래 머물고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "route.text.3",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.cabinet",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병동 안까지 들어가도 도구가 남았을지는 모르잖아. 눈앞의 처치함을 확인하고 싶어."
+    ]
+  },
+  {
+    "id": "route.text.4",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.cabinet",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "보관대가 갑자기 기울었다. 금속 모서리에 팔을 긁힌 채 몸을 뺐고 처치함은 꺼내지 못했다."
+    ]
+  },
+  {
+    "id": "route.text.5",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.cabinet",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "보관대가 갑자기 기울었다. 금속 모서리에 팔을 긁힌 채 몸을 뺐고 처치함은 꺼내지 못했다.",
+      "동료가 걸음을 멈춘다. “이렇게 될 줄은 몰랐어. 먼저 저 모서리에서 떨어지자. 네 상처부터 봐야겠어.”"
+    ]
+  },
+  {
+    "id": "route.text.6",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.cabinet",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 빼려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 출구를 향하던 시선이 바닥으로 내려앉았다."
+    ]
+  }
+]

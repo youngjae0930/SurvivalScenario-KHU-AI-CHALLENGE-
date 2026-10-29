@@ -1,5 +1,6 @@
-import type { CatalogPack, CatalogSegment } from '../../domain/catalog'
+import type { CatalogContext, CatalogPack, CatalogSegment } from '../../domain/catalog'
 import { weightedPick } from './random'
+import { matches } from './conditions'
 
 export function slotSegment(pack: CatalogPack, id: string): CatalogSegment {
   const segment = pack.manifest.slotPlan?.segments.find(item => item.id === id)
@@ -22,10 +23,13 @@ export function catalogVisitLimit(pack: CatalogPack): number {
   return pack.manifest.slotPlan ? Math.max(...pack.manifest.slotPlan.segments.flatMap(segment => segment.slots.map(slot => slot.number)))
     : pack.manifest.stages.reduce((sum, stage) => sum + stage.maxVisits, 0)
 }
-export function destinationLock(pack: CatalogPack, locationId: string, destinationId: string): string | null {
+export function destinationLock(pack: CatalogPack, locationId: string, destinationId: string, context?: CatalogContext): string | null {
   const source = pack.manifest.slotPlan?.segments.find(segment => segment.slots.at(-1)?.candidates.includes(locationId))
   const destination = pack.manifest.slotPlan?.segments.find(segment => segment.id === destinationId)
-  return !source?.nextSegmentIds.includes(destinationId) || !destination ? '현재 장소에서 연결되지 않는 경로입니다.' : destination.lockedReason ?? null
+  if (!source?.nextSegmentIds.includes(destinationId) || !destination) return '현재 장소에서 연결되지 않는 경로입니다.'
+  if (destination.lockedReason) return destination.lockedReason
+  if (destination.entry && (!context || !matches(destination.entry.conditions, context))) return destination.entry.reason
+  return null
 }
 
 /** Validate every branch and every candidate, without pretending mutually exclusive rooms are all required. */
@@ -49,6 +53,10 @@ export function validateSlotPlan(pack: CatalogPack): string[] {
     check(segment.slots.length >= stage.minVisits && segment.slots.length <= stage.maxVisits, `${segment.id} 구간 길이`)
     check(new Set(segment.nextSegmentIds).size === segment.nextSegmentIds.length, `${segment.id} 중복 연결`)
     check(segment.nextSegmentIds.length === 0 || segment.nextSegmentIds.some(id => segments.has(id) && !segments.get(id)!.lockedReason), `${segment.id} 실행 가능한 후속 구간이 없음`)
+    check(segment.nextSegmentIds.length === 0 || segment.nextSegmentIds.some(id => {
+      const next = segments.get(id)
+      return !!next && !next.lockedReason && !next.entry?.conditions.length
+    }), `${segment.id} 조건 없이 이동 가능한 후속 구간이 필요함`)
     for (const [index, slot] of segment.slots.entries()) {
       check(index === 0 || slot.number === segment.slots[index - 1].number + 1, `${segment.id} 슬롯 순서`)
       check(new Set(slot.candidates).size === slot.candidates.length, `${segment.id} 중복 후보`)

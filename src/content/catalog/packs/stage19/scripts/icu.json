@@ -1,0 +1,495 @@
+[
+  {
+    "id": "local.text.253",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다."
+    ]
+  },
+  {
+    "id": "local.text.254",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.255",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.256",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.257",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.258",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.259",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.260",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "빈 침상 옆 의자에 앉아 몸을 추슬렀다. 호출 버튼을 누르는 대신 가지고 온 짐을 정리했다."
+    ]
+  },
+  {
+    "id": "local.text.261",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "빈 침상 옆 의자에 앉아 몸을 추슬렀다. 호출 버튼을 누르는 대신 가지고 온 짐을 정리했다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.262",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침상을 봐도 누가 올 것 같지는 않네. 가진 걸로 몸부터 돌보자."
+    ]
+  },
+  {
+    "id": "local.text.263",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.kit",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림막을 넘어 비상 처치함의 밀봉 도구를 꺼냈다. 비어 있는 병상을 돌아 통로로 나왔다."
+    ]
+  },
+  {
+    "id": "local.text.264",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림막을 넘어 비상 처치함의 밀봉 도구를 꺼냈다. 비어 있는 병상을 돌아 통로로 나왔다.",
+      "동료가 주변을 살피며 낮게 말한다. “이 도구는 잘 넣어 두자. 급할 때 찾을 수 있는 자리에.”"
+    ]
+  },
+  {
+    "id": "local.text.265",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.kit",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 처치함은 남아 있어. 병원에 왔다고 안심할 수는 없으니 쓸 도구를 확보하자."
+    ]
+  },
+  {
+    "id": "local.text.266",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.kit",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림막이 쓰러지며 발을 걸었다. 상처를 입고 몸을 빼는 동안 처치함은 손에서 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.267",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림막이 쓰러지며 발을 걸었다. 상처를 입고 몸을 빼는 동안 처치함은 손에서 멀어졌다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.268",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.269",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다."
+    ]
+  },
+  {
+    "id": "local.text.270",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.271",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "네 몫이 줄어드는 건 알아. 그래도 지금 나눠 준다면 잊지 않을게."
+    ]
+  },
+  {
+    "id": "encounter.icu.transport-record.success",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.transport-record",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수송 기록의 뒷면에서 연구동 출입로와 비상 인계 표식을 찾았다. 병동 끝 갈림길에서 이 길로 들어갈 수 있을 것이다."
+    ]
+  },
+  {
+    "id": "encounter.icu.transport-record.opinion",
+    "eventId": "encounter.icu",
+    "choiceId": "encounter.icu.transport-record",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이 표식, 평범한 물품 기록이 아니야. 잠깐만 읽어 보자. 막힌 길을 피할 방법이 있을지도 몰라."
+    ]
+  },
+  {
+    "id": "encounter.icu.transport-scene.0",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.icu.transport-scene.1",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.icu.transport-scene.2",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 102,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.icu.transport-scene.3",
+    "eventId": "encounter.icu",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 103,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중환자실의 침상은 비어 있다. 호출 버튼은 반응하지 않고, 접힌 가림막 뒤에는 비상 처치함이 걸려 있다. 여기서 치료를 받을 사람은 보이지 않는다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  }
+]

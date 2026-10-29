@@ -1,0 +1,435 @@
+[
+  {
+    "id": "local.text.189",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.190",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.191",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.192",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.193",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.194",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.195",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.196",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "번호표가 널린 바닥을 피해 칸막이 안에 앉았다. 짐을 다시 묶고 호흡을 고른 뒤 발소리가 멀어지는 것을 기다렸다."
+    ]
+  },
+  {
+    "id": "local.text.197",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "번호표가 널린 바닥을 피해 칸막이 안에 앉았다. 짐을 다시 묶고 호흡을 고른 뒤 발소리가 멀어지는 것을 기다렸다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.198",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의자가 비어 있다고 안전한 건 아니겠지. 칸막이 뒤에서 잠깐 쉬며 소리를 듣자."
+    ]
+  },
+  {
+    "id": "local.text.199",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.exit",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료실 문 아래의 그림자를 피해 대기실을 벗어났다. 누가 안에 있는지 확인하지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.200",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.exit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료실 문 아래의 그림자를 피해 대기실을 벗어났다. 누가 안에 있는지 확인하지는 못했다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.201",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.exit",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문 안에서 나는 소리가 싫어. 지금은 지나갈 길만 보고 나가자."
+    ]
+  },
+  {
+    "id": "local.text.202",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다."
+    ]
+  },
+  {
+    "id": "local.text.203",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.204",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "네 몫이 줄어드는 건 알아. 그래도 지금 나눠 준다면 잊지 않을게."
+    ]
+  },
+  {
+    "id": "encounter.er-waiting.transport-record.success",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.transport-record",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수송 기록의 뒷면에서 연구동 출입로와 비상 인계 표식을 찾았다. 병동 끝 갈림길에서 이 길로 들어갈 수 있을 것이다."
+    ]
+  },
+  {
+    "id": "encounter.er-waiting.transport-record.opinion",
+    "eventId": "encounter.er-waiting",
+    "choiceId": "encounter.er-waiting.transport-record",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이 표식, 평범한 물품 기록이 아니야. 잠깐만 읽어 보자. 막힌 길을 피할 방법이 있을지도 몰라."
+    ]
+  },
+  {
+    "id": "encounter.er-waiting.transport-scene.0",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.er-waiting.transport-scene.1",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.er-waiting.transport-scene.2",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 102,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.er-waiting.transport-scene.3",
+    "eventId": "encounter.er-waiting",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 103,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "진료 번호판은 꺼졌고 대기 의자 뒤로 발소리가 지나간다. 비어 있는 칸막이 안에는 몸을 잠깐 기댈 자리가 남아 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  }
+]

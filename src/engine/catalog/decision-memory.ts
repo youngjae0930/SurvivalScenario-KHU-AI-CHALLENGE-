@@ -1,5 +1,5 @@
 import type { CatalogDecisionMemory, CatalogRun } from '../../domain/catalog'
-import { autonomySchema, catalogActionSchema, executionSchema, relationshipSchema, validateShape, type Shape } from '../../content/catalog/schema'
+import { autonomySchema, catalogActionSchema, executionSchema, relationshipSchema, infectionSchema, endingSchema, validateShape, type Shape } from '../../content/catalog/schema'
 import { isCoreAction } from '../actions'
 import { buildRecoveryAction } from '../recovery'
 
@@ -27,9 +27,11 @@ const preview = object({ allowed: bool, reasons: array(text(5000), 0, 30), check
 const runtimeAction: Shape = { ...catalogActionSchema, properties: { ...catalogActionSchema.properties, id: commandId } }
 const option = object({ actionId: commandId, goalId: id, judgment: enumeration(null, 'rescue', 'self'), behavior: enumeration('action', 'recovery', 'escape'),
   route: enumeration('short', 'detour', 'request'), pace: enumeration('slow', 'balanced', 'fast'), execution: executionSchema,
-  relationship: relationshipSchema, trustOutcomes: object({ success: int(-5, 5), failure: int(-5, 5) }, ['success', 'failure']),
-  action: runtimeAction, preview }, ['route', 'pace', 'execution', 'relationship', 'trustOutcomes'])
+  relationship: relationshipSchema, infection: infectionSchema, trustOutcomes: object({ success: int(-5, 5), failure: int(-5, 5) }, ['success', 'failure']),
+  ending: endingSchema, action: runtimeAction, preview }, ['route', 'pace', 'execution', 'relationship', 'trustOutcomes', 'infection', 'ending'])
 const context = object({
+  opportunities: array(id, 0, 20),
+  infection: object({ protagonist: bool, companion: bool }),
   optionCount: int(1, 20),
   relationship: object({ version: enumeration('outcome-1'), companion }),
   executionActor: enumeration('companion'), commandTrustSufficient: bool,
@@ -39,7 +41,7 @@ const context = object({
   core, companion: nullable(companion),
   facts: { type: 'object', properties: {}, additionalProperties: bool },
   visitedLocationIds: array(id, 1, 48), options: array(option, 1, 20), selectedAction: runtimeAction,
-}, ['autonomy', 'executionActor', 'commandTrustSufficient', 'relationship', 'optionCount'])
+}, ['autonomy', 'executionActor', 'commandTrustSufficient', 'relationship', 'optionCount', 'infection', 'opportunities'])
 const memorySchema = object({ version: enumeration('context-1'), entries: array(object({ eventId: id, actionId: commandId, treat: bool, context }), 0, 48) })
 
 function sameData(a: unknown, b: unknown): boolean {

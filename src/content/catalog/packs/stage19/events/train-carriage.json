@@ -1,0 +1,184 @@
+{
+  "id": "encounter.train-carriage",
+  "title": "좌석 밑의 손잡이",
+  "locationIds": [
+    "train-carriage"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.train-carriage.aisle",
+          "goalId": "E03.observe",
+          "label": "좌석에 비친 움직임을 보고 통로를 지난다",
+          "intention": "가방을 건드리지 않고 연결부 쪽으로 간다.",
+          "target": "전동차 내부",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.train-carriage.aisle",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.train-carriage.kit",
+          "goalId": "salvage",
+          "label": "여행 가방 뒤 비상 처치함을 회수한다",
+          "intention": "좁은 통로와 유리를 넘어 밀봉 도구를 꺼낸다.",
+          "target": "전동차 내부",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.train-carriage.kit",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "stocked",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "medkit",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.train-carriage.aisle",
+          "goalId": "E03.observe",
+          "label": "좌석에 비친 움직임을 보고 통로를 지난다",
+          "intention": "가방을 건드리지 않고 연결부 쪽으로 간다.",
+          "target": "전동차 내부",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.train-carriage.aisle",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        }
+      ]
+    }
+  ]
+}

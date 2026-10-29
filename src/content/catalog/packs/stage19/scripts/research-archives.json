@@ -1,0 +1,77 @@
+[
+  {
+    "id": "encounter.research-archives.scene",
+    "eventId": "encounter.research-archives",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "책상 위의 연구일지에 변형 사례와 후보 약제의 배합 절차가 남아 있다. 뒤쪽 복도로 통하는 문은 아직 닫혀 있다."
+    ]
+  },
+  {
+    "id": "encounter.research-archives.collect.success",
+    "eventId": "encounter.research-archives",
+    "choiceId": "encounter.research-archives.collect",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "확인한 연구 절차를 접어 배낭에 넣었다. 이것만으로 치료제를 완성할 수는 없지만, 남은 시료와 대조할 근거가 생겼다."
+    ]
+  },
+  {
+    "id": "encounter.research-archives.collect.opinion",
+    "eventId": "encounter.research-archives",
+    "choiceId": "encounter.research-archives.collect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 연구를 이어받을 사람이 필요할 거야. 가져갈 수 있는 건 챙기자."
+    ]
+  },
+  {
+    "id": "encounter.research-archives.leave.success",
+    "eventId": "encounter.research-archives",
+    "choiceId": "encounter.research-archives.leave",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "더 가까이 다가가지 않고 구획을 통과했다. 뒤에 남긴 연구물은 배낭에 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-archives.leave.opinion",
+    "eventId": "encounter.research-archives",
+    "choiceId": "encounter.research-archives.leave",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 우리 상태부터 지키자. 다음 문까지 거리를 벌리는 게 좋겠어."
+    ]
+  }
+]

@@ -1,0 +1,533 @@
+{
+  "id": "encounter.evacuation-convoy",
+  "title": "행렬이 무너지는 순간",
+  "locationIds": [
+    "evacuation-convoy"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "extreme",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "affect",
+          "min": 0,
+          "max": 22
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.evacuation-convoy.protect",
+          "goalId": "quarantine",
+          "label": "쓰러진 가림판을 밀어 빠져나갈 틈을 만든다",
+          "intention": "무리 곁에 접근해 자신이 통과할 공간을 확보한다.",
+          "target": "외곽 이동 행렬",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.evacuation-convoy.protect",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.evacuation-convoy.discard",
+          "goalId": "quarantine",
+          "label": "물품 한 몫을 버려 엉킨 행렬에서 빠져나온다",
+          "intention": "물품 하나를 버리고 몸을 뺄 공간을 확보한다.",
+          "target": "외곽 이동 행렬",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.evacuation-convoy.discard",
+                  "eventId": "E09",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -15
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.evacuation-convoy.verify",
+          "goalId": "quarantine",
+          "label": "차단선 틈을 확인하며 행렬 바깥으로 이동한다",
+          "intention": "주변 위협을 감수하고 통과할 자리를 직접 살핀다.",
+          "target": "외곽 이동 행렬",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.evacuation-convoy.verify",
+                  "eventId": "E09",
+                  "requires": {
+                    "stamina": 20
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.evacuation-convoy.comply",
+          "goalId": "quarantine",
+          "label": "간격을 벌려 차단선 쪽으로 물러난다",
+          "intention": "넘어진 사람을 뒤로하고 밀려드는 무리와 거리를 벌린다.",
+          "target": "외곽 이동 행렬",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.evacuation-convoy.comply",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.evacuation-convoy.help",
+          "goalId": "rescue",
+          "label": "넘어진 사람을 부축해 행렬 바깥으로 옮긴다",
+          "intention": "다가오는 무리를 감수하고 이동을 돕는다. 실패하면 실행자가 좀비에게 물려 감염 즉시 사망한다.",
+          "target": "외곽 이동 행렬",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.evacuation-convoy.help",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          },
+          "infection": [
+            {
+              "source": "infected-person",
+              "target": "actor",
+              "contact": "bite"
+            }
+          ],
+          "execution": {
+            "role": "구조",
+            "conditions": [],
+            "risk": "hazardous",
+            "sharedRisk": "구조를 맡은 동료는 실패하면 좀비에게 물려 감염으로 사망한다. 주인공도 퇴로를 지키며 기존 부상 위험을 감수한다."
+          }
+        },
+        {
+          "id": "encounter.evacuation-convoy.aid",
+          "goalId": "rescue",
+          "label": "처치 도구로 다리를 받치고 사람을 옮긴다",
+          "intention": "다친 다리를 지지해 혼란 속에서 빠져나오게 한다. 실패하면 실행자가 물리며, 함께 붙잡던 다른 동행자의 상처에도 감염 혈액이 닿을 수 있다. 치료 도구는 감염을 막지 못한다.",
+          "target": "외곽 이동 행렬",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.evacuation-convoy.aid",
+                  "eventId": "E09",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 7,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          },
+          "infection": [
+            {
+              "source": "infected-person",
+              "target": "actor",
+              "contact": "bite"
+            },
+            {
+              "source": "actor",
+              "target": "other",
+              "contact": "blood"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "intervention": {
+    "groupId": "extreme",
+    "axis": "affect",
+    "extremePole": "left",
+    "replaceChoiceId": "encounter.evacuation-convoy.verify",
+    "alternatives": [
+      {
+        "groupId": "general",
+        "choiceId": "encounter.evacuation-convoy.help"
+      }
+    ],
+    "judgment": "rescue",
+    "text": "아직 손을 뻗고 있어. 저 사람을 데려올 길을 한 번 더 봐줘.",
+    "notices": [
+      "지금은 한 가지 생각이 다른 판단을 밀어내고 있다. 동료가 곁에 있다면 다른 길을 제안할 수 있다."
+    ],
+    "mode": "companion-choice"
+  },
+  "recommendation": {
+    "axis": "affect"
+  },
+  "autonomy": {
+    "conditions": [],
+    "conflicts": [
+      {
+        "playerGoalId": "quarantine",
+        "companionGoalId": "rescue",
+        "reason": "동료는 아직 도움을 기다리는 사람에게서 발을 떼지 못한다."
+      }
+    ],
+    "reunion": {
+      "conditions": [],
+      "minVisits": 1,
+      "locationTags": [
+        "safe-hub"
+      ]
+    }
+  }
+}

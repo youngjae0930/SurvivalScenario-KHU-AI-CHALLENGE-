@@ -1,0 +1,196 @@
+[
+  {
+    "id": "local.text.819",
+    "eventId": "encounter.department-parking",
+    "choiceId": "encounter.department-parking.subway",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "하역차를 돌아 지하철 표지 쪽으로 나섰다. 지하의 작업 통로가 남쪽으로 이어지는지 확인해야 한다."
+    ]
+  },
+  {
+    "id": "local.text.820",
+    "eventId": "encounter.department-parking",
+    "choiceId": "encounter.department-parking.subway",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "노출된 도로를 오래 걷는 건 걱정돼. 지하로 내려가 보자."
+    ]
+  },
+  {
+    "id": "local.text.821",
+    "eventId": "encounter.department-parking",
+    "choiceId": "encounter.department-parking.school",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "주차장을 나와 학교 운동장 쪽으로 걸었다. 학교 안을 찾는 대신 외곽으로 떠날 사람들을 만날 생각이다."
+    ]
+  },
+  {
+    "id": "local.text.822",
+    "eventId": "encounter.department-parking",
+    "choiceId": "encounter.department-parking.school",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "운동장 접선 시간이 적혀 있어. 늦기 전에 떠날 사람들을 찾아가자."
+    ]
+  },
+  {
+    "id": "local.text.825",
+    "eventId": "encounter.department-parking",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 주차장 출구에는 지하철 표지와 학교 운동장 접선 안내가 남아 있다. 하역차 문에는 연구동 수송 표지가 붙어 있지만 출입 방법은 적혀 있지 않다."
+    ]
+  },
+  {
+    "id": "local.text.826",
+    "eventId": "encounter.department-parking",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 주차장 출구에는 지하철 표지와 학교 운동장 접선 안내가 남아 있다. 하역차 문에는 연구동 수송 표지가 붙어 있지만 출입 방법은 적혀 있지 않다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.827",
+    "eventId": "encounter.department-parking",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 주차장 출구에는 지하철 표지와 학교 운동장 접선 안내가 남아 있다. 하역차 문에는 연구동 수송 표지가 붙어 있지만 출입 방법은 적혀 있지 않다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.828",
+    "eventId": "encounter.department-parking",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 주차장 출구에는 지하철 표지와 학교 운동장 접선 안내가 남아 있다. 하역차 문에는 연구동 수송 표지가 붙어 있지만 출입 방법은 적혀 있지 않다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.829",
+    "eventId": "encounter.department-parking",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.830",
+    "eventId": "encounter.department-parking",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.831",
+    "eventId": "encounter.department-parking",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  }
+]

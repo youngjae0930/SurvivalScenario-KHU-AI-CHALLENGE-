@@ -1,0 +1,249 @@
+[
+  {
+    "id": "local.text.845",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": "encounter.outskirts-checkpoint.short",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차단봉 사이를 넘어 봉쇄 구역 밖 도로에 섰다. 뒤의 행렬 소리가 멀어졌다. 바깥 도로에서도 걸음을 멈추기까지는 시간이 필요했다.",
+      "검문소 바깥에서 사람들이 서로의 이름을 확인한다. 뒤에 남은 도시를 돌아보며, 누구를 돕고 무엇을 지켜 왔는지 잠깐 떠올린다. 당신이 택했던 길은 다음 생존자 곁에서 다시 이어진다."
+    ]
+  },
+  {
+    "id": "local.text.846",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": "encounter.outskirts-checkpoint.short",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 봉만 넘으면 길이 이어져. 몸이 버틸 수 있다면 여기서 빠져나가고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.847",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": "encounter.outskirts-checkpoint.detour",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기억해 둔 진입점을 따라 검문소 바깥으로 돌아 나왔다. 상처를 차단봉에 부딪치지 않고 외곽 도로에 닿았다.",
+      "검문소 바깥에서 사람들이 서로의 이름을 확인한다. 뒤에 남은 도시를 돌아보며, 누구를 돕고 무엇을 지켜 왔는지 잠깐 떠올린다. 당신이 택했던 길은 다음 생존자 곁에서 다시 이어진다."
+    ]
+  },
+  {
+    "id": "local.text.848",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": "encounter.outskirts-checkpoint.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "알아 둔 진입로로 가자. 저 봉을 넘다가 더 다치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "local.text.849",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": "encounter.outskirts-checkpoint.request",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차단선 옆 엄폐물에 몸을 낮추고 구조 신호를 보냈다. 바깥 길은 보였지만 아직 건너지 못했다. 응답은 오지 않았다."
+    ]
+  },
+  {
+    "id": "local.text.850",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": "encounter.outskirts-checkpoint.request",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "더 걸을 힘이 없다면 여기서 신호를 보내자. 무작정 봉을 넘게 할 수는 없어."
+    ]
+  },
+  {
+    "id": "local.text.851",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 검문소 앞에 닿았다. 짧은 길은 거친 차단봉 사이를 넘어야 하고, 우회 진입점은 미리 확인한 경우에만 찾을 수 있다. 검문이나 감염 확인을 해 줄 사람은 보이지 않는다."
+    ]
+  },
+  {
+    "id": "local.text.852",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 검문소 앞에 닿았다. 짧은 길은 거친 차단봉 사이를 넘어야 하고, 우회 진입점은 미리 확인한 경우에만 찾을 수 있다. 검문이나 감염 확인을 해 줄 사람은 보이지 않는다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.853",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 검문소 앞에 닿았다. 짧은 길은 거친 차단봉 사이를 넘어야 하고, 우회 진입점은 미리 확인한 경우에만 찾을 수 있다. 검문이나 감염 확인을 해 줄 사람은 보이지 않는다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.854",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 검문소 앞에 닿았다. 짧은 길은 거친 차단봉 사이를 넘어야 하고, 우회 진입점은 미리 확인한 경우에만 찾을 수 있다. 검문이나 감염 확인을 해 줄 사람은 보이지 않는다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.855",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.856",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.857",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.862",
+    "eventId": "encounter.outskirts-checkpoint",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "routeKnown",
+        "value": true
+      }
+    ],
+    "priority": 4,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 검문소 앞에 닿았다. 짧은 길은 거친 차단봉 사이를 넘어야 하고, 우회 진입점은 미리 확인한 경우에만 찾을 수 있다. 검문이나 감염 확인을 해 줄 사람은 보이지 않는다.",
+      "앞서 확인한 남쪽 우회 진입 표지가 보인다. 거친 차단봉을 넘어야만 하는 것은 아니다."
+    ]
+  }
+]

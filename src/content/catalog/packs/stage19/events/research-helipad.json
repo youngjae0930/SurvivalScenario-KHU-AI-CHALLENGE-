@@ -1,0 +1,108 @@
+{
+  "id": "encounter.research-helipad",
+  "title": "옥상의 마지막 신호",
+  "locationIds": [
+    "research-helipad"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.research-helipad.short",
+          "goalId": "escape",
+          "label": "옥상을 가로질러 헬기로 달려간다",
+          "intention": "남은 체력과 부상 상태로 탑승을 결정한다. 기록·시료·최종 회수를 모두 마치고 탈출해야 치료제 연구를 인계할 수 있다.",
+          "target": "구조 헬기",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "short"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "ending": {
+            "conditions": [
+              {
+                "kind": "fact",
+                "id": "research-record",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "research-sample",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "cure-recovered",
+                "value": true
+              }
+            ],
+            "kind": "cure-discovery"
+          }
+        },
+        {
+          "id": "encounter.research-helipad.detour",
+          "goalId": "escape",
+          "label": "확인한 정비 통로를 돌아 헬기에 오른다",
+          "intention": "남은 체력과 부상 상태로 탑승을 결정한다. 기록·시료·최종 회수를 모두 마치고 탈출해야 치료제 연구를 인계할 수 있다.",
+          "target": "구조 헬기",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "detour"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "ending": {
+            "conditions": [
+              {
+                "kind": "fact",
+                "id": "research-record",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "research-sample",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "cure-recovered",
+                "value": true
+              }
+            ],
+            "kind": "cure-discovery"
+          }
+        },
+        {
+          "id": "encounter.research-helipad.request",
+          "goalId": "escape",
+          "label": "헬기장 아래에서 추가 구조를 기다린다",
+          "intention": "남은 체력과 부상 상태로 탑승을 결정한다. 기록·시료·최종 회수를 모두 마치고 탈출해야 치료제 연구를 인계할 수 있다.",
+          "target": "구조 헬기",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "request"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "risk"
+  }
+}

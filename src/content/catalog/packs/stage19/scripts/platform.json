@@ -1,0 +1,305 @@
+[
+  {
+    "id": "local.text.471",
+    "eventId": "encounter.platform",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "승강장 끝에서 터널 바람이 불어온다. 선로로 내려갈 이유는 없고, 기둥 뒤 벤치에서는 객차 출입문을 살필 수 있다."
+    ]
+  },
+  {
+    "id": "local.text.472",
+    "eventId": "encounter.platform",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "승강장 끝에서 터널 바람이 불어온다. 선로로 내려갈 이유는 없고, 기둥 뒤 벤치에서는 객차 출입문을 살필 수 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.473",
+    "eventId": "encounter.platform",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "승강장 끝에서 터널 바람이 불어온다. 선로로 내려갈 이유는 없고, 기둥 뒤 벤치에서는 객차 출입문을 살필 수 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.474",
+    "eventId": "encounter.platform",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "승강장 끝에서 터널 바람이 불어온다. 선로로 내려갈 이유는 없고, 기둥 뒤 벤치에서는 객차 출입문을 살필 수 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.475",
+    "eventId": "encounter.platform",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.476",
+    "eventId": "encounter.platform",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.477",
+    "eventId": "encounter.platform",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.478",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "선로에서 떨어진 벤치에 앉았다. 터널 바람을 등지고 짐을 다시 묶으며 객차 문을 살폈다."
+    ]
+  },
+  {
+    "id": "local.text.479",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "선로에서 떨어진 벤치에 앉았다. 터널 바람을 등지고 짐을 다시 묶으며 객차 문을 살폈다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.480",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "선로 쪽으로는 가지 말자. 저 기둥 뒤면 객차 문도 보이고 잠깐 쉴 수 있어."
+    ]
+  },
+  {
+    "id": "local.text.481",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.doors",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "객차 문에 비친 그림자가 멀어졌다. 승강장 가장자리 안쪽으로 다음 출입문에 다가갔다."
+    ]
+  },
+  {
+    "id": "local.text.482",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.doors",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "객차 문에 비친 그림자가 멀어졌다. 승강장 가장자리 안쪽으로 다음 출입문에 다가갔다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.483",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.doors",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "터널 소리 때문에 발소리를 놓치겠어. 문 쪽 그림자도 같이 보자."
+    ]
+  },
+  {
+    "id": "local.text.484",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다."
+    ]
+  },
+  {
+    "id": "local.text.485",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.486",
+    "eventId": "encounter.platform",
+    "choiceId": "encounter.platform.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "네 몫이 줄어드는 건 알아. 그래도 지금 나눠 준다면 잊지 않을게."
+    ]
+  }
+]

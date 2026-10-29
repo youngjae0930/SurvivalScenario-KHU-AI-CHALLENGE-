@@ -1,10 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import type { CatalogPack, CatalogRun } from '../../domain/catalog'
-import { readDefaultCatalog } from '../../content/catalog/registry'
 import { resolveAnswers } from '../../app/questionnaire'
 import { catalogPresentation } from '../../app/view-models/catalog'
 import { makeOrigin } from '../../test/opening-paths'
-import { makeDialogueCatalogFixture } from '../../test/catalog-fixtures'
+import { makeDialogueCatalogFixture, makeStage19CatalogFixture } from '../../test/catalog-fixtures'
 import { decodeCatalogSave, encodeCatalogSave } from '../../storage/catalog-save'
 import { compileCatalog } from './compile'
 import { planRoute } from './route'
@@ -12,7 +11,8 @@ import { catalogVisitLimit, planSlotSegment, validateSlotPlan } from './slots'
 import { acknowledgeCatalogResult, catalogChoices, catalogLegacy, createCatalogRun, executeCatalogAction, previewCatalogAction } from './runtime'
 import { createInheritedCatalogRun, isCatalogLegacy } from './inheritance'
 
-const pack = readDefaultCatalog()
+// Frozen first 19-slot pack: existing saves must replay its original content.
+const pack = makeStage19CatalogFixture()
 const origin = makeOrigin(17389)
 const resolved = resolveAnswers(origin.answers)
 if (!resolved.ok) throw new Error('설문 오류')

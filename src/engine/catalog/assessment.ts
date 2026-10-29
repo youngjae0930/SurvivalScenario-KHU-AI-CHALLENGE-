@@ -23,7 +23,7 @@ export interface ChoiceAssessment {
 }
 
 /** Locked choices are not candidates. Resource caps and effect semantics match execution. */
-export function assessChoice(state: CoreState, preview: CoreActionPreview & { readonly action: CoreAction; readonly choice: CatalogChoice }): ChoiceAssessment | null {
+export function assessChoice(state: CoreState, preview: CoreActionPreview & { readonly action: CoreAction; readonly choice: CatalogChoice; readonly infectionDeathsOnFailure?: readonly { readonly subject: string }[] }): ChoiceAssessment | null {
   if (!preview.allowed) return null
   const successPercent = preview.check.kind === 'certain' ? 100 : preview.check.probability.percent
   const branches = [
@@ -33,7 +33,8 @@ export function assessChoice(state: CoreState, preview: CoreActionPreview & { re
   const outcomes = branches.map(branch => {
     const projected = applyStateEffects(state, [...commonEffects(preview.action), ...branch.effects])
     if (!projected.ok) throw new Error(projected.error.message)
-    return { outcome: branch.outcome, percent: branch.percent, state: projected.value.state, fatal: projected.value.fatal }
+    return { outcome: branch.outcome, percent: branch.percent, state: projected.value.state, fatal: projected.value.fatal
+      || (branch.outcome === 'failure' && !!preview.infectionDeathsOnFailure?.some(death => death.subject === 'protagonist')) }
   })
   const expected = (value: (state: CoreState) => number) => outcomes.reduce((sum, outcome) => sum + outcome.percent * value(outcome.state), 0) / 100
   return {

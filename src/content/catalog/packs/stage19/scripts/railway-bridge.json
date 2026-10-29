@@ -1,0 +1,308 @@
+[
+  {
+    "id": "local.text.141",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다."
+    ]
+  },
+  {
+    "id": "local.text.142",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.143",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.144",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.145",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.146",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.147",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.148",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.railing",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간 쪽 발판을 하나씩 밟아 반대편으로 건넜다. 선로의 무리는 아래에 남았다."
+    ]
+  },
+  {
+    "id": "local.text.149",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.railing",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간 쪽 발판을 하나씩 밟아 반대편으로 건넜다. 선로의 무리는 아래에 남았다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.150",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.railing",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 철판 끝이 들린 것 봤어? 난간 쪽으로 돌아가자. 아래로 소리가 울리면 곤란해."
+    ]
+  },
+  {
+    "id": "local.text.151",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철판이 울리기 전에 빈틈을 건넜다. 길게 돌아갈 힘을 조금 아낀 채 육교 끝에 섰다."
+    ]
+  },
+  {
+    "id": "local.text.152",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철판이 울리기 전에 빈틈을 건넜다. 길게 돌아갈 힘을 조금 아낀 채 육교 끝에 섰다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.153",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발판 간격은 건널 만해 보여. 저 흔들림이 멎는 순간을 기다렸다가 가보자."
+    ]
+  },
+  {
+    "id": "local.text.154",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철판이 예상보다 깊이 꺼졌다. 난간을 붙잡고 몸을 끌어올리다 다리를 다쳤다."
+    ]
+  },
+  {
+    "id": "local.text.155",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철판이 예상보다 깊이 꺼졌다. 난간을 붙잡고 몸을 끌어올리다 다리를 다쳤다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.156",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  }
+]

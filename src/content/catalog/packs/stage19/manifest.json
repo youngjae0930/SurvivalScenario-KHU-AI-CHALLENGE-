@@ -1,9 +1,9 @@
 {
   "formatVersion": 1,
   "id": "stage19",
-  "revision": "catalog-stage19-1",
+  "revision": "catalog-playtest-1",
   "rulesVersion": "1.2-stress-1",
-  "title": "19스테이지 · 남쪽으로 가는 길",
+  "title": "19스테이지 · 갈림길의 선택",
   "startLocationId": "villa",
   "stages": [
     {
@@ -23,7 +23,19 @@
     }
   ],
   "facts": [
-    "research-clue"
+    "bus-notes",
+    "convoy-met",
+    "convoy-supported",
+    "cure-recovered",
+    "department-food",
+    "hospital-kit",
+    "hospital-records",
+    "research-clue",
+    "research-record",
+    "research-sample",
+    "subway-map",
+    "symptoms-noticed",
+    "warehouse-route"
   ],
   "boundary": {
     "nextEventId": "post-prototype",
@@ -38,7 +50,7 @@
   "decisionEcho": {
     "version": "echo-1",
     "compatibleRevisions": [
-      "catalog-stage19-1"
+      "catalog-playtest-1"
     ]
   },
   "autonomyVersion": "journey-2",
@@ -215,8 +227,7 @@
         ],
         "nextSegmentIds": [
           "subway",
-          "school",
-          "research"
+          "school"
         ]
       },
       {
@@ -335,8 +346,29 @@
           }
         ],
         "nextSegmentIds": [],
-        "lockedReason": "이번 경로에서는 봉쇄된 연구동의 출입 방법을 확인할 수 없다. 지하철이나 학교 쪽으로 이동해야 한다."
+        "entry": {
+          "conditions": [
+            {
+              "kind": "fact",
+              "id": "research-clue",
+              "value": true
+            }
+          ],
+          "reason": "병원에서 연구동 수송 기록을 조사해야 진입할 수 있습니다."
+        }
       }
     ]
-  }
+  },
+  "infectionVersion": "immediate-1",
+  "researchVersion": "research-1",
+  "opportunities": [
+    {
+      "id": "research-transport",
+      "locationTags": [
+        "research-clue-site"
+      ]
+    }
+  ],
+  "endingVersion": "routes-1",
+  "reactionVersion": "responsibility-1"
 }

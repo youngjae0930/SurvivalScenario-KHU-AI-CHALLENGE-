@@ -1,0 +1,308 @@
+[
+  {
+    "id": "local.text.68",
+    "eventId": "encounter.main-road",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도로 한가운데 뒤엉킨 차량들 너머로 다음 구역이 보인다. 좁은 차 사이로 가면 빠르지만, 보도를 따라가면 발 디딜 곳을 확인할 수 있다."
+    ]
+  },
+  {
+    "id": "local.text.69",
+    "eventId": "encounter.main-road",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도로 한가운데 뒤엉킨 차량들 너머로 다음 구역이 보인다. 좁은 차 사이로 가면 빠르지만, 보도를 따라가면 발 디딜 곳을 확인할 수 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.70",
+    "eventId": "encounter.main-road",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도로 한가운데 뒤엉킨 차량들 너머로 다음 구역이 보인다. 좁은 차 사이로 가면 빠르지만, 보도를 따라가면 발 디딜 곳을 확인할 수 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.71",
+    "eventId": "encounter.main-road",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도로 한가운데 뒤엉킨 차량들 너머로 다음 구역이 보인다. 좁은 차 사이로 가면 빠르지만, 보도를 따라가면 발 디딜 곳을 확인할 수 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.72",
+    "eventId": "encounter.main-road",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.73",
+    "eventId": "encounter.main-road",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.74",
+    "eventId": "encounter.main-road",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.75",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.sidewalk",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "보도의 가로등을 따라 차량 더미 바깥을 돌았다. 오래 걸었지만 날카로운 철판 사이를 지날 필요는 없었다."
+    ]
+  },
+  {
+    "id": "local.text.76",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.sidewalk",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "보도의 가로등을 따라 차량 더미 바깥을 돌았다. 오래 걸었지만 날카로운 철판 사이를 지날 필요는 없었다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.77",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.sidewalk",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차 사이에 끼이면 되돌아오기도 어려워. 조금 더 걷더라도 보도 쪽으로 가자."
+    ]
+  },
+  {
+    "id": "local.text.78",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.gap",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차문이 흔들리기 전에 틈을 빠져나왔다. 먼 길을 도는 대신 쓸 힘을 조금 남겼다."
+    ]
+  },
+  {
+    "id": "local.text.79",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.gap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차문이 흔들리기 전에 틈을 빠져나왔다. 먼 길을 도는 대신 쓸 힘을 조금 남겼다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.80",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.gap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 두 차 사이가 열려 있어. 차문을 밀지 않고 지나갈 수 있을 것 같아. 돌아서 힘을 다 쓰고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "local.text.81",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.gap",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기댄 차문이 갑자기 꺾였다. 몸을 부딪쳐 상처를 입고서야 좁은 틈에서 빠져나왔다."
+    ]
+  },
+  {
+    "id": "local.text.82",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기댄 차문이 갑자기 꺾였다. 몸을 부딪쳐 상처를 입고서야 좁은 틈에서 빠져나왔다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.83",
+    "eventId": "encounter.main-road",
+    "choiceId": "encounter.main-road.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  }
+]

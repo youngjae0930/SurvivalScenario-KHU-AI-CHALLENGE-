@@ -1,0 +1,308 @@
+[
+  {
+    "id": "local.text.503",
+    "eventId": "encounter.train-carriage",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 객차의 좌석 사이로 그림자가 스친다. 문 옆 비상 처치함은 쓰러진 여행 가방 뒤에 있고, 다음 연결부로 가는 바닥에는 유리가 깔려 있다."
+    ]
+  },
+  {
+    "id": "local.text.504",
+    "eventId": "encounter.train-carriage",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 객차의 좌석 사이로 그림자가 스친다. 문 옆 비상 처치함은 쓰러진 여행 가방 뒤에 있고, 다음 연결부로 가는 바닥에는 유리가 깔려 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.505",
+    "eventId": "encounter.train-carriage",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 객차의 좌석 사이로 그림자가 스친다. 문 옆 비상 처치함은 쓰러진 여행 가방 뒤에 있고, 다음 연결부로 가는 바닥에는 유리가 깔려 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.506",
+    "eventId": "encounter.train-carriage",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 객차의 좌석 사이로 그림자가 스친다. 문 옆 비상 처치함은 쓰러진 여행 가방 뒤에 있고, 다음 연결부로 가는 바닥에는 유리가 깔려 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.507",
+    "eventId": "encounter.train-carriage",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.508",
+    "eventId": "encounter.train-carriage",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.509",
+    "eventId": "encounter.train-carriage",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.510",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.aisle",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좌석 끝의 그림자가 반대쪽 문으로 멀어졌다. 유리가 적은 바닥을 따라 연결부로 갔다."
+    ]
+  },
+  {
+    "id": "local.text.511",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.aisle",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좌석 끝의 그림자가 반대쪽 문으로 멀어졌다. 유리가 적은 바닥을 따라 연결부로 갔다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.512",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.aisle",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좌석 밑에 뭐가 있는지 몰라. 그림자가 먼저 지나가게 두자."
+    ]
+  },
+  {
+    "id": "local.text.513",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.kit",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가방을 넘고 밀봉 처치 도구를 꺼냈다. 좌석 밑을 피하며 통로로 돌아왔다."
+    ]
+  },
+  {
+    "id": "local.text.514",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가방을 넘고 밀봉 처치 도구를 꺼냈다. 좌석 밑을 피하며 통로로 돌아왔다.",
+      "동료가 주변을 살피며 낮게 말한다. “이 도구는 잘 넣어 두자. 급할 때 찾을 수 있는 자리에.”"
+    ]
+  },
+  {
+    "id": "local.text.515",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.kit",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "처치함 표시가 보여. 연결부에 가기 전에 도구가 있으면 마음이 놓이겠어."
+    ]
+  },
+  {
+    "id": "local.text.516",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.kit",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발에 걸린 가방이 유리를 밀었다. 팔을 긁힌 채 뒤로 물러났고 처치함은 꺼내지 못했다."
+    ]
+  },
+  {
+    "id": "local.text.517",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발에 걸린 가방이 유리를 밀었다. 팔을 긁힌 채 뒤로 물러났고 처치함은 꺼내지 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.518",
+    "eventId": "encounter.train-carriage",
+    "choiceId": "encounter.train-carriage.kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  }
+]

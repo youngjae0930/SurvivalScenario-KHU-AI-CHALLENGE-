@@ -3,6 +3,7 @@ import type { CatalogContext, Condition } from '../../domain/catalog'
 export function matches(conditions: readonly Condition[], context: CatalogContext): boolean {
   return conditions.every(condition => {
     switch (condition.kind) {
+      case 'opportunity': return context.opportunities?.includes(condition.id) ?? false
       case 'companion': return (context.companion !== null) === condition.present
       case 'weapon': return context.core.inventory.weapon === condition.value
       case 'flag': return context.core.flags[condition.flag] === condition.value
