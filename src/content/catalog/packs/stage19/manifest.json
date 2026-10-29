@@ -1,0 +1,342 @@
+{
+  "formatVersion": 1,
+  "id": "stage19",
+  "revision": "catalog-stage19-1",
+  "rulesVersion": "1.2-stress-1",
+  "title": "19스테이지 · 남쪽으로 가는 길",
+  "startLocationId": "villa",
+  "stages": [
+    {
+      "id": "early",
+      "minVisits": 7,
+      "maxVisits": 7
+    },
+    {
+      "id": "middle",
+      "minVisits": 7,
+      "maxVisits": 7
+    },
+    {
+      "id": "late",
+      "minVisits": 5,
+      "maxVisits": 5
+    }
+  ],
+  "facts": [
+    "research-clue"
+  ],
+  "boundary": {
+    "nextEventId": "post-prototype",
+    "title": "등록된 구간 완료",
+    "text": [
+      "탈출 사건은 실행 즉시 실제 결말과 계승 기록으로 종료합니다. 이 구간 경계는 탈출 결말을 대신하지 않습니다."
+    ]
+  },
+  "presentationVersion": "reflection-1",
+  "recommendationVersion": "survival-1",
+  "decisionMemoryVersion": "context-1",
+  "decisionEcho": {
+    "version": "echo-1",
+    "compatibleRevisions": [
+      "catalog-stage19-1"
+    ]
+  },
+  "autonomyVersion": "journey-2",
+  "executionVersion": "command-1",
+  "trustVersion": "outcome-1",
+  "routeVersion": "slots-1",
+  "dialogueVersion": "scripts-1",
+  "slotPlan": {
+    "startSegmentId": "early",
+    "segments": [
+      {
+        "id": "early",
+        "stage": "early",
+        "slots": [
+          {
+            "number": 1,
+            "candidates": [
+              "villa"
+            ]
+          },
+          {
+            "number": 2,
+            "candidates": [
+              "villa-stairs",
+              "apartment-parking"
+            ]
+          },
+          {
+            "number": 3,
+            "candidates": [
+              "residential-alley",
+              "main-road"
+            ]
+          },
+          {
+            "number": 4,
+            "candidates": [
+              "store"
+            ]
+          },
+          {
+            "number": 5,
+            "candidates": [
+              "bus-stop",
+              "laundromat"
+            ]
+          },
+          {
+            "number": 6,
+            "candidates": [
+              "railway-bridge",
+              "gas-station"
+            ]
+          },
+          {
+            "number": 7,
+            "candidates": [
+              "shelter"
+            ]
+          }
+        ],
+        "nextSegmentIds": [
+          "hospital",
+          "department"
+        ]
+      },
+      {
+        "id": "hospital",
+        "stage": "middle",
+        "slots": [
+          {
+            "number": 8,
+            "candidates": [
+              "hospital-desk"
+            ]
+          },
+          {
+            "number": 9,
+            "candidates": [
+              "er-waiting",
+              "hospital-security"
+            ]
+          },
+          {
+            "number": 10,
+            "candidates": [
+              "pharmacy",
+              "surgery-prep"
+            ]
+          },
+          {
+            "number": 11,
+            "candidates": [
+              "operating-room"
+            ]
+          },
+          {
+            "number": 12,
+            "candidates": [
+              "icu",
+              "medical-records"
+            ]
+          },
+          {
+            "number": 13,
+            "candidates": [
+              "hospital-rooftop-comms",
+              "ward-stairs"
+            ]
+          },
+          {
+            "number": 14,
+            "candidates": [
+              "inpatient-ward"
+            ]
+          }
+        ],
+        "nextSegmentIds": [
+          "subway",
+          "school",
+          "research"
+        ]
+      },
+      {
+        "id": "department",
+        "stage": "middle",
+        "slots": [
+          {
+            "number": 8,
+            "candidates": [
+              "department-hall"
+            ]
+          },
+          {
+            "number": 9,
+            "candidates": [
+              "clothing-store",
+              "department-security"
+            ]
+          },
+          {
+            "number": 10,
+            "candidates": [
+              "escalator",
+              "electronics"
+            ]
+          },
+          {
+            "number": 11,
+            "candidates": [
+              "food-hall"
+            ]
+          },
+          {
+            "number": 12,
+            "candidates": [
+              "warehouse",
+              "staff-lounge"
+            ]
+          },
+          {
+            "number": 13,
+            "candidates": [
+              "department-stairs",
+              "loading-dock"
+            ]
+          },
+          {
+            "number": 14,
+            "candidates": [
+              "department-parking"
+            ]
+          }
+        ],
+        "nextSegmentIds": [
+          "subway",
+          "school",
+          "research"
+        ]
+      },
+      {
+        "id": "subway",
+        "stage": "late",
+        "slots": [
+          {
+            "number": 15,
+            "candidates": [
+              "turnstiles"
+            ]
+          },
+          {
+            "number": 16,
+            "candidates": [
+              "platform",
+              "station-office"
+            ]
+          },
+          {
+            "number": 17,
+            "candidates": [
+              "train-carriage",
+              "subway-control"
+            ]
+          },
+          {
+            "number": 18,
+            "candidates": [
+              "train-connection"
+            ]
+          },
+          {
+            "number": 19,
+            "candidates": [
+              "southern-tunnel"
+            ]
+          }
+        ],
+        "nextSegmentIds": []
+      },
+      {
+        "id": "school",
+        "stage": "late",
+        "slots": [
+          {
+            "number": 15,
+            "candidates": [
+              "school-playground"
+            ]
+          },
+          {
+            "number": 16,
+            "candidates": [
+              "convoy-road",
+              "riverside-path"
+            ]
+          },
+          {
+            "number": 17,
+            "candidates": [
+              "outskirts-crossroads",
+              "temporary-barrier"
+            ]
+          },
+          {
+            "number": 18,
+            "candidates": [
+              "evacuation-convoy"
+            ]
+          },
+          {
+            "number": 19,
+            "candidates": [
+              "outskirts-checkpoint"
+            ]
+          }
+        ],
+        "nextSegmentIds": []
+      },
+      {
+        "id": "research",
+        "stage": "late",
+        "slots": [
+          {
+            "number": 15,
+            "candidates": [
+              "research-wing"
+            ]
+          },
+          {
+            "number": 16,
+            "candidates": [
+              "research-archives",
+              "sample-lab"
+            ]
+          },
+          {
+            "number": 17,
+            "candidates": [
+              "cold-storage",
+              "research-isolation"
+            ]
+          },
+          {
+            "number": 18,
+            "candidates": [
+              "infected-lab"
+            ]
+          },
+          {
+            "number": 19,
+            "candidates": [
+              "research-helipad"
+            ]
+          }
+        ],
+        "nextSegmentIds": [],
+        "lockedReason": "이번 경로에서는 봉쇄된 연구동의 출입 방법을 확인할 수 없다. 지하철이나 학교 쪽으로 이동해야 한다."
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+import { makeDialogueCatalogFixture as readDefaultCatalog } from '../../test/catalog-fixtures'
 import { compileCatalog } from './compile'
 
 it('사용자가 제외한 보호 약속은 새 콘텐츠에 등록하지 않는다', () => {

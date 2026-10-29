@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+import { makeDialogueCatalogFixture as readDefaultCatalog } from '../../test/catalog-fixtures'
 import { catalogGameView } from '../../app/view-models/catalog'
 import { resolveAnswers } from '../../app/questionnaire'
 import { makeOrigin } from '../../test/opening-paths'

@@ -1,6 +1,6 @@
 # JSON 동료 대사 작성 가이드
 
-현재 신규 팩은 `catalog-dialogue-1`, `manifest.dialogueVersion="scripts-1"`이다. 대사는 `src/content/catalog/packs/opening/scripts/E01.json`부터 `E12.json`에 작성한다. 선택 설명과 비용·효과는 같은 팩의 `events/E01.json`부터 `E12.json`에 둔다. 내용 작성 때문에 엔진이나 화면 코드를 수정하지 않는다.
+현재 신규 팩은 `stage19/catalog-stage19-1`, `manifest.dialogueVersion="scripts-1"`이다. 새 팩은 `src/content/catalog/packs/stage19/scripts/`와 `events/`를 편집한다. 공간·슬롯 연결은 [19스테이지 작성 지침](stage19-progression.md)을 따른다. 아래12사건 파일 경로는 기존 팩 참조용이다. 기존 팩 대사는 `src/content/catalog/packs/opening/scripts/E01.json`부터 `E12.json`에 작성한다. 선택 설명과 비용·효과는 같은 팩의 `events/E01.json`부터 `E12.json`에 둔다. 내용 작성 때문에 엔진이나 화면 코드를 수정하지 않는다.
 
 ## 기존 방식으로 유지하는 부분
 

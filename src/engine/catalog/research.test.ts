@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { resolveAnswers } from '../../app/questionnaire'
 import { createCatalogClient, createProductClient } from '../../app/catalog-client'
 import { catalogGameView } from '../../app/view-models/catalog'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+import { readDefaultCatalog as readCurrentCatalog } from '../../content/catalog/registry'
 import type { CatalogRun } from '../../domain/catalog'
 import { makeFourChoiceCatalogFixture, makeResearchCatalogFixture } from '../../test/catalog-fixtures'
 import { makeOrigin } from '../../test/opening-paths'
@@ -198,7 +198,7 @@ describe('E07 병원 선택의 영향과 연구동 자료 조사', () => {
     expect(client.getSnapshot().presentation?.edition).toBe(old.manifest.title)
     expect(client.getSnapshot().presentation?.journey).toHaveLength(6)
     const fresh = createCatalogClient()
-    expect(fresh.getSnapshot().presentation?.edition).toBe(readDefaultCatalog().manifest.title)
+    expect(fresh.getSnapshot().presentation?.edition).toBe(readCurrentCatalog().manifest.title)
     expect(fresh.getSnapshot().view.kind).toBe('start')
     expect(currentEvent(old, run).id).toBe('E01')
   })

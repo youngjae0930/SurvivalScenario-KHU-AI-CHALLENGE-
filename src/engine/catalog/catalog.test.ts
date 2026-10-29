@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+import { makeDialogueCatalogFixture as readDefaultCatalog } from '../../test/catalog-fixtures'
 import type { CatalogPack, CatalogRun } from '../../domain/catalog'
 import { resolveAnswers } from '../../app/questionnaire'
 import { makeCatalogFixture, makeOpeningCatalogFixture } from '../../test/catalog-fixtures'

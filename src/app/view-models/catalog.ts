@@ -10,6 +10,7 @@ import { reflectionCopy } from '../../content/texts/reflection'
 import { generalRecommendationCopy, rememberedChoiceCopy } from '../../content/texts/recommendation'
 import { usesNarrative, companionOpinion, companionHesitation, companionAfter, relationshipSummary, narrativeJourney } from '../../content/texts/companion-narrative'
 import { extremeChanges, toActionPreview, toChange, toStatus } from './opening'
+import { catalogVisitLimit } from '../../engine/catalog/slots'
 
 const stageLabels = { early: '전반부', middle: '중반부', late: '후반부' }
 const traitLabels = { risk: '모험–안정', cognition: '분석–직관', affect: '이성–감정' }
@@ -38,7 +39,12 @@ export function catalogChoiceContext(pack: CatalogPack, run: CatalogRun): Choice
 export function catalogPresentation(pack: CatalogPack, run: CatalogRun | null): AppSnapshot['presentation'] {
   return {
     edition: pack.manifest.title,
-    journey: run ? run.route.map((id, index) => {
+    journey: run ? Array.from({ length: pack.manifest.slotPlan ? catalogVisitLimit(pack) : run.route.length }, (_, index) => {
+      const id = run.route[index]
+      if (!id) {
+        const segment = pack.manifest.slotPlan!.segments.find(segment => segment.slots.some(slot => slot.number === index + 1))!
+        return { id: `pending-slot-${index + 1}`, label: `${stageLabels[segment.stage]} · 경로 선택 후 결정`, state: 'upcoming' as const }
+      }
       const location = pack.locations.find(item => item.id === id)!
       return { id, label: index <= run.visitIndex ? location.name : `${stageLabels[location.stage]} · 이동 예정`, state: index < run.visitIndex || run.phase === 'segment-complete' ? 'visited' : index === run.visitIndex ? 'current' : 'upcoming' }
     }) : [],

@@ -7,12 +7,14 @@ import { createInheritedCatalogRun, isCatalogLegacy } from '../engine/catalog/in
 import { isIntegerInRange, isRecord } from '../domain/validation'
 import type { AnswerResolver, RunOrigin } from './opening-save'
 import { SaveError } from './opening-save'
+import { catalogVisitLimit } from '../engine/catalog/slots'
 
 const MAX_SAVE_LENGTH = 2_000_000
 function hasCompanionChoices(pack: CatalogPack): boolean {
   return pack.events.some(event => event.intervention?.mode === 'companion-choice')
 }
 function companionRuntimeVersion(pack: CatalogPack, succession: boolean) {
+  if (pack.manifest.routeVersion === 'slots-1') return succession ? 'catalog-succession-12' : 'catalog-companion-slots-1'
   if (pack.manifest.dialogueVersion) return succession ? 'catalog-succession-11' : 'catalog-companion-dialogue-1'
   if (pack.manifest.routeVersion) return succession ? 'catalog-succession-10' : 'catalog-companion-stages-1'
   if (pack.manifest.trustVersion) return succession ? 'catalog-succession-9' : 'catalog-companion-outcome-1'
@@ -27,6 +29,7 @@ function companionRuntimeVersion(pack: CatalogPack, succession: boolean) {
       : hasCompanionChoices(pack) ? 'catalog-companion-choice-1' : 'catalog-intervention-1'
 }
 function runtimeVersion(pack: CatalogPack) {
+  if (pack.manifest.routeVersion === 'slots-1') return 'catalog-runtime-6'
   if (pack.manifest.dialogueVersion) return 'catalog-runtime-5'
   if (pack.manifest.routeVersion) return 'catalog-runtime-4'
   if (pack.manifest.decisionMemoryVersion === 'context-1') return 'catalog-runtime-3'
@@ -57,10 +60,10 @@ export function decodeCatalogSave(raw: string, resolveAnswers: AnswerResolver): 
     if (raw.length > MAX_SAVE_LENGTH) throw invalid()
     const data: unknown = JSON.parse(raw)
     if (!isRecord(data) || data.policy !== 'single-slot-v1' || data.randomAlgorithm !== RANDOM_ALGORITHM || !isRecord(data.origin) || !isRecord(data.checkpoint)) throw invalid()
-    const succession = data.schemaVersion === 8 && data.kind === 'catalog-companion' && ['catalog-succession-1', 'catalog-succession-2', 'catalog-succession-3', 'catalog-succession-4', 'catalog-succession-5', 'catalog-succession-6', 'catalog-succession-7', 'catalog-succession-8', 'catalog-succession-9', 'catalog-succession-10', 'catalog-succession-11'].includes(String(data.runtimeVersion))
+    const succession = data.schemaVersion === 8 && data.kind === 'catalog-companion' && ['catalog-succession-1', 'catalog-succession-2', 'catalog-succession-3', 'catalog-succession-4', 'catalog-succession-5', 'catalog-succession-6', 'catalog-succession-7', 'catalog-succession-8', 'catalog-succession-9', 'catalog-succession-10', 'catalog-succession-11', 'catalog-succession-12'].includes(String(data.runtimeVersion))
     if (succession && !isCatalogLegacy(data.previousLegacy)) throw invalid()
-    const companion = succession || (data.schemaVersion === 7 && data.kind === 'catalog-companion' && ['catalog-intervention-1', 'catalog-companion-choice-1', 'catalog-companion-recovery-1', 'catalog-companion-recommendation-1', 'catalog-companion-memory-1', 'catalog-companion-echo-1', 'catalog-companion-autonomy-1', 'catalog-companion-command-1', 'catalog-companion-outcome-1', 'catalog-companion-stages-1', 'catalog-companion-dialogue-1'].includes(String(data.runtimeVersion)))
-    if (companion ? !isCompanionContext(data.companionOrigin) : data.schemaVersion !== 6 || data.kind !== 'catalog-solo' || !['catalog-runtime-1', 'catalog-runtime-2', 'catalog-runtime-3', 'catalog-runtime-4', 'catalog-runtime-5'].includes(String(data.runtimeVersion))) throw invalid()
+    const companion = succession || (data.schemaVersion === 7 && data.kind === 'catalog-companion' && ['catalog-intervention-1', 'catalog-companion-choice-1', 'catalog-companion-recovery-1', 'catalog-companion-recommendation-1', 'catalog-companion-memory-1', 'catalog-companion-echo-1', 'catalog-companion-autonomy-1', 'catalog-companion-command-1', 'catalog-companion-outcome-1', 'catalog-companion-stages-1', 'catalog-companion-dialogue-1', 'catalog-companion-slots-1'].includes(String(data.runtimeVersion)))
+    if (companion ? !isCompanionContext(data.companionOrigin) : data.schemaVersion !== 6 || data.kind !== 'catalog-solo' || !['catalog-runtime-1', 'catalog-runtime-2', 'catalog-runtime-3', 'catalog-runtime-4', 'catalog-runtime-5', 'catalog-runtime-6'].includes(String(data.runtimeVersion))) throw invalid()
     // Existing schema6 packs pin their original two-choice definitions.
     const pack = compileCatalog(data.pack, { allowLegacyChoices: true })
     if (!companion && data.runtimeVersion !== runtimeVersion(pack)) throw invalid()
@@ -77,7 +80,8 @@ export function decodeCatalogSave(raw: string, resolveAnswers: AnswerResolver): 
     let run = succession ? createInheritedCatalogRun(pack, data.previousLegacy as import('../domain/catalog').CatalogLegacy, { ...origin, answers: resolved.value })
       : createCatalogRun(pack, { ...origin, answers: resolved.value, ...(companion ? { companion: data.companionOrigin as import('../domain/catalog').CompanionContext } : {}) })
     const checkpoint = data.checkpoint
-    if (!isIntegerInRange(checkpoint.revision, 0, run.route.length * 2) || !Array.isArray(checkpoint.history) || checkpoint.history.length > run.route.length) throw invalid()
+    const visitLimit = pack.manifest.routeVersion === 'slots-1' ? catalogVisitLimit(pack) : run.route.length
+    if (!isIntegerInRange(checkpoint.revision, 0, visitLimit * 2) || !Array.isArray(checkpoint.history) || checkpoint.history.length > visitLimit) throw invalid()
     while (run.revision < checkpoint.revision) {
       if (run.phase === 'choice') {
         const entry = checkpoint.history[run.history.length]
