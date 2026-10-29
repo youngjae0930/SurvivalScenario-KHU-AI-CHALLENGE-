@@ -199,12 +199,13 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
     const event = events.get(script.eventId)
     check(!!event, `script ${script.id}: 없는 사건 ${script.eventId}`)
     const dialogue = !['scene', 'success', 'failure'].includes(script.slot)
-    const choiceSlot = ['success', 'failure', 'opinion', 'departure-warning', 'departure'].includes(script.slot)
+    const choiceSlot = ['success', 'failure', 'opinion', 'departure-warning', 'departure', 'recommendation-failure', 'infection-ending'].includes(script.slot)
     check(choiceSlot ? !!event && allChoices(event).some(choice => choice.id === script.choiceId) : script.choiceId === null, `script ${script.id}: 잘못된 선택/문구 슬롯 참조`)
     if (dialogue) {
       check(pack.manifest.dialogueVersion === 'scripts-1', `script ${script.id}: dialogueVersion이 필요합니다.`)
       check(script.weight === 1 && !script.once, `script ${script.id}: 대화 채널은 weight=1/once=false여야 합니다.`)
-      check(script.slot === 'absent' || script.conditions.some(c => c.kind === 'companion' && c.present), `script ${script.id}: 동행 대사에는 companion present=true가 필요합니다.`)
+      check(script.slot === 'absent' || script.slot === 'infection-ending' || script.conditions.some(c => c.kind === 'companion' && c.present), `script ${script.id}: 동행 대사에는 companion present=true가 필요합니다.`)
+      if (script.slot === 'recommendation-failure' || script.slot === 'infection-ending') check(pack.manifest.reactionVersion === 'contextual-1', `script ${script.id}: contextual-1 표시 정책이 필요합니다.`)
       if (script.slot === 'absent') check(script.conditions.some(c => c.kind === 'companion' && !c.present), `script ${script.id}: 부재 문구에는 companion present=false가 필요합니다.`)
       if (script.slot === 'departure' || script.slot === 'departure-warning') check(!!event?.autonomy, `script ${script.id}: 이별 정책이 없는 사건입니다.`)
     }

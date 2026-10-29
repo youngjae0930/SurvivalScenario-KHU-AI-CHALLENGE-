@@ -1,5 +1,12 @@
 # 콘텐츠 초안 모델용 작업 지시
 
+## 현재: catalog-story-1 (2026-10-30)
+
+54개 장소의 상황·결과·동료 표현을 보완했다. 고정 슬롯/A·B 후보, 7·14번 분기, 비용·확률·효과·신뢰·이별/재회 계산은 그대로다. 무작위 직전 장소를 단정하지 말고 실제 방문/획득 조건으로 회상을 제한한다. 재회에서 확인되지 않은 부재 중 사건을 만들어 내지 않는다.
+
+manifest.reactionVersion=contextual-1의 recommendation-failure는 실제 추천 행동의 실패와 새 부상에만, infection-ending은 실제 주인공 감염 사망에만 표시한다. 성공·신뢰 감소만으로 책임 대사를 붙이지 않는다. 두 슬롯은 표시 전용이며 난수를 소비하지 않는다. 이전 저장은 저장된 팩의 문구와 반응을 유지한다. 상세 [대사 가이드](dialogue-authoring.md), [변경·검증 기록](story-revision-review.md)을 따른다. 아래 버전별 항목은 이전 기록이다.
+
+
 ## 최신: JSON 동료 대사 연결 (2026-10-29)
 
 신규 팩 catalog-dialogue-1, dialogueVersion=scripts-1을 사용한다. 성향별 결과는 기존 success/failure 조건 문구로 작성하고, 추천·망설임·이별 예고·이별·부재·재회만 새 슬롯으로 작성한다. 상세 [대사 작성 가이드](dialogue-authoring.md)를 우선한다. 콘텐츠 작성은 JSON에서 처리하며 새 대사 슬롯에는 별도의 엔진 연결이 필요하다. 추천 대상·신뢰·이별/재회 판정·성향 효과 공식은 유지한다. 기존 companion-narrative.ts는 catalog-narrative-1 저장 전용으로 동결한다.

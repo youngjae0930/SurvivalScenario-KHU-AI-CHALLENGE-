@@ -1,4 +1,5 @@
 import narrativeSnapshot from './opening-catalog-v21.json'
+import playtestSnapshot from './playtest-catalog-v1.json'
 import type { CatalogChoice, CatalogPack } from '../domain/catalog'
 import { compileCatalog } from '../engine/catalog/compile'
 import openingSnapshot from './opening-catalog-v1.json'
@@ -21,6 +22,8 @@ import companionCommandSnapshot from './opening-catalog-v17.json'
 import companionOutcomeSnapshot from './opening-catalog-v18.json'
 import variableChoicesSnapshot from './opening-catalog-v20.json'
 import flexibleStagesSnapshot from './opening-catalog-v19.json'
+
+export function makePlaytestCatalogFixture(): CatalogPack { return compileCatalog(playtestSnapshot) }
 
 export function makeVariableChoicesCatalogFixture(): CatalogPack { return compileCatalog(variableChoicesSnapshot) }
 

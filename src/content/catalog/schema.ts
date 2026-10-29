@@ -94,10 +94,10 @@ function makeEventSchema(minChoices: number, maxChoices: number): Shape { return
 /** Choice count follows the scene; never pad a group to fill UI slots. */
 export const eventSchema = makeEventSchema(1, 20)
 const savedEventSchema = makeEventSchema(1, 20)
-export const scriptSchema = object({ id, eventId: id, choiceId: nullable(id), slot: enumeration('scene', 'success', 'failure', 'opinion', 'hesitation', 'departure-warning', 'departure', 'absent', 'reunion'), conditions,
+export const scriptSchema = object({ id, eventId: id, choiceId: nullable(id), slot: enumeration('scene', 'success', 'failure', 'opinion', 'hesitation', 'departure-warning', 'departure', 'absent', 'reunion', 'recommendation-failure', 'infection-ending'), conditions,
   priority: int(0, 1000), weight: int(1, 1000), once: bool, text: array(str(), 1, 20) })
 export const manifestSchema = object({ formatVersion: enumeration(1), id, revision: id, rulesVersion: enumeration('1.2-stress-1'), title: str(100), startLocationId: id,
-  reactionVersion: enumeration('responsibility-1'),
+  reactionVersion: enumeration('responsibility-1', 'contextual-1'),
   infectionVersion: enumeration('immediate-1'),
   researchVersion: enumeration('research-1'),
   endingVersion: enumeration('routes-1'),

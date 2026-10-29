@@ -341,6 +341,15 @@ export function renderCatalogScript(pack: CatalogPack, run: CatalogRun, scriptId
 /** Only an actual engine event can open its presentation channel. */
 export function catalogDialogue(pack: CatalogPack, run: CatalogRun, slot: DialogueSlot, actionId: string | null = null): string[] {
   const active = activeCatalogCompanion(run)
+  if (slot === 'recommendation-failure') {
+    const result = run.result
+    if (pack.manifest.reactionVersion !== 'contextual-1' || run.phase !== 'result' || !active || !result
+      || result.actionId !== actionId || !result.followedCompanionRecommendation || result.resolution.check.outcome !== 'failure'
+      || result.companionDeparture || result.infectionDeaths?.length || result.resolution.fatal
+      || !result.resolution.changes.some(change => change.kind === 'number' && change.field === 'injury' && change.delta > 0)) return []
+  }
+  if (slot === 'infection-ending' && (pack.manifest.reactionVersion !== 'contextual-1' || run.phase !== 'ending'
+    || run.result?.actionId !== actionId || !run.result.infectionDeaths?.some(death => death.subject === 'protagonist'))) return []
   if (slot === 'opinion' && (run.phase !== 'choice' || !active || !actionId
     || sourceChoiceId(catalogRecommendedChoice(pack, run)?.id ?? '') !== sourceChoiceId(actionId))) return []
   if (slot === 'hesitation' && (run.phase !== 'choice' || !active || catalogRecommendedChoice(pack, run) || catalogGeneralRecommendation(pack, run).kind !== 'withheld')) return []

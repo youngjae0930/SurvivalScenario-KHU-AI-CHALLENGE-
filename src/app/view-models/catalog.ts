@@ -88,7 +88,9 @@ export function catalogGameView(pack: CatalogPack, run: CatalogRun, nextRunAllow
     protagonist: infected.protagonist ? 'dead' as const : 'clear' as const,
     companion: run.companion ? { name: run.companion.name, status: infected.companion ? 'dead' as const : 'clear' as const } : null,
   } } : {}) }
-  const outcomeText = run.result?.infectionDeaths?.length ? infectionOutcome(run, run.result.infectionDeaths) : run.result ? renderCatalogScript(pack, run, run.result.resultScriptId) : []
+  const outcomeText = run.result?.infectionDeaths?.length ? [...infectionOutcome(run, run.result.infectionDeaths),
+    ...(pack.manifest.reactionVersion === 'contextual-1' ? catalogDialogue(pack, run, 'infection-ending', run.result.actionId) : [])]
+    : run.result ? renderCatalogScript(pack, run, run.result.resultScriptId) : []
   const context = catalogChoiceContext(pack, run)
   const location = catalogContext(pack, run).location
   const event = currentEvent(pack, run)
@@ -118,7 +120,8 @@ export function catalogGameView(pack: CatalogPack, run: CatalogRun, nextRunAllow
     return { kind: 'result', context, resultId: result.resultId, actionLabel: choice.label, outcome: result.resolution.check.outcome,
       text: [...(result.execution && !authored ? [narrative ? '동료가 앞을 살피는 동안 당신은 퇴로를 지켰다.' : `동료가 ${result.execution.role}에 앞장섰다. ${result.execution.sharedRisk}`] : []), ...outcomeText, ...(result.treat ? ['치료 도구를 사용해 상처를 처치했다.'] : []),
         ...(narrative && companion && !result.companionDeparture && !result.infectionDeaths?.length ? companionAfter(choice, result) : []),
-        ...(pack.manifest.reactionVersion && companion ? recommendationResponsibility(result) : []),
+        ...(pack.manifest.reactionVersion === 'contextual-1' ? catalogDialogue(pack, run, 'recommendation-failure', result.actionId)
+          : pack.manifest.reactionVersion && companion ? recommendationResponsibility(result) : []),
         ...(result.companionDeparture && run.companion ? authored ? catalogDialogue(pack, run, 'departure', result.actionId) : [...(result.companionDeparture.reason ? [result.companionDeparture.reason] : []), journeyCopy.departure(run.companion.name)] : [])],
       changes: [...result.resolution.changes.map(toChange), ...trustChanges(result.trustChange)],
       trustReasons: !authored && result.trustChange ? [narrative ? relationshipSummary(result.trustChange) : result.trustChange.reason] : [], consequences: pack.manifest.presentationVersion ? extremeGuidance(run) : extremeChanges(result.resolution.changes), status,

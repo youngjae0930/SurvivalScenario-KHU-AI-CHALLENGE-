@@ -38,7 +38,9 @@
         "departure-warning",
         "departure",
         "absent",
-        "reunion"
+        "reunion",
+        "recommendation-failure",
+        "infection-ending"
       ]
     },
     "conditions": {

@@ -9,7 +9,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다."
+      "행렬 한가운데서 비명이 터진다. 한 사람이 앞사람을 물어뜯자 뒤쪽까지 사람들이 밀려 넘어진다.",
+      "“일으켜 줘요!” 바닥에 주저앉은 사람이 손을 뻗는다. 차단선은 가깝지만, 그쪽으로 바로 물러나면 이 사람을 두고 가야 한다."
     ]
   },
   {
@@ -29,8 +30,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
-      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+      "행렬 한가운데서 비명이 터진다. 한 사람이 앞사람을 물어뜯자 뒤쪽까지 사람들이 밀려 넘어진다.",
+      "“일으켜 줘요!” 바닥에 주저앉은 사람이 손을 뻗는다. 차단선은 가깝지만, 그쪽으로 바로 물러나면 이 사람을 두고 가야 한다.",
+      "배낭 안을 더듬던 손을 거둔다. 꺼내 먹을 것은 남지 않았다."
     ]
   },
   {
@@ -51,8 +53,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
-      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+      "행렬 한가운데서 비명이 터진다. 한 사람이 앞사람을 물어뜯자 뒤쪽까지 사람들이 밀려 넘어진다.",
+      "“일으켜 줘요!” 바닥에 주저앉은 사람이 손을 뻗는다. 차단선은 가깝지만, 그쪽으로 바로 물러나면 이 사람을 두고 가야 한다.",
+      "다친 쪽에 체중이 실리자 걸음이 멈칫한다."
     ]
   },
   {
@@ -73,8 +76,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
-      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+      "행렬 한가운데서 비명이 터진다. 한 사람이 앞사람을 물어뜯자 뒤쪽까지 사람들이 밀려 넘어진다.",
+      "“일으켜 줘요!” 바닥에 주저앉은 사람이 손을 뻗는다. 차단선은 가깝지만, 그쪽으로 바로 물러나면 이 사람을 두고 가야 한다.",
+      "말라붙은 입술을 축인다. 작은 소리까지 구분하려 하니 숨이 짧아진다."
     ]
   },
   {
@@ -92,7 +96,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+      "동료가 차단선 쪽에서 시선을 거둔다. “내 생각도 아직 정리가 안 돼. 너는 어떻게 하고 싶어?”"
     ]
   },
   {
@@ -110,7 +114,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+      "차단선 쪽을 살피다 곁을 돌아본다. 대답할 사람은 아직 없다."
     ]
   },
   {
@@ -128,7 +132,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+      "익숙한 얼굴이 보이자 부르려던 목소리가 멎는다. 동료도 몇 걸음 앞에서 멈춘다. “네가 먼저 간 건 알아. 그래도 여기서 다시 만나고 싶었어.”",
+      "“아직 같은 생각은 아니야.” 말하자 동료가 고개를 끄덕인다. 가방을 고쳐 메며 옆자리를 내준다. 하지 못한 말까지 풀린 것은 아니지만, 다음 길은 다시 나란히 살핀다."
     ]
   },
   {
@@ -167,7 +172,7 @@
     "once": false,
     "text": [
       "가림판을 밀어 빈틈을 만들었다. 넘어진 사람을 뒤로한 채 차단선 쪽으로 빠져나왔다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
     ]
   },
   {
@@ -224,7 +229,7 @@
     "once": false,
     "text": [
       "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 차단선 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -284,7 +289,7 @@
     "once": false,
     "text": [
       "물품 한 몫을 버리고 엉킨 사람들 사이에서 빠져나왔다. 남겨 둔 물건과 목소리가 뒤로 멀어졌다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
     ]
   },
   {
@@ -341,7 +346,7 @@
     "once": false,
     "text": [
       "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 차단선 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -401,7 +406,7 @@
     "once": false,
     "text": [
       "차단선의 열린 틈을 확인하고 몸을 뺐다. 넘어진 사람에게 돌아가지는 못했다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
     ]
   },
   {
@@ -458,7 +463,7 @@
     "once": false,
     "text": [
       "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 차단선 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -518,7 +523,7 @@
     "once": false,
     "text": [
       "행렬에서 빠져나와 차단선 쪽으로 물러났다. 뒤에서는 구조를 청하는 목소리가 이어졌다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
     ]
   },
   {
@@ -575,7 +580,7 @@
     "once": false,
     "text": [
       "넘어진 사람을 일으켜 행렬 바깥으로 옮겼다. 그가 스스로 걷기 시작하자 짧게 숨을 돌렸다.",
-      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+      "동료가 넘어진 사람의 팔을 놓으며 말한다. “천천히 걸어요. 이제 같이 나갈 수 있어요.”"
     ]
   },
   {
@@ -632,7 +637,7 @@
     "once": false,
     "text": [
       "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 차단선 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -692,7 +697,7 @@
     "once": false,
     "text": [
       "다리를 받쳐 준 사람을 차단선 옆까지 옮겼다. 기침은 이어졌지만 당장의 발길질에서는 벗어났다.",
-      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+      "“혼자 일어설 수 있네. 저기까지만 같이 걸어요.”"
     ]
   },
   {
@@ -749,7 +754,7 @@
     "once": false,
     "text": [
       "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 차단선 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -806,7 +811,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
     ]
   },
   {
@@ -842,7 +848,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
     ]
   },
   {
@@ -878,7 +885,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
     ]
   },
   {
@@ -914,7 +922,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
     ]
   },
   {
@@ -950,7 +959,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
     ]
   },
   {
@@ -986,7 +996,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
     ]
   },
   {
@@ -1005,7 +1016,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
+      "행렬 한가운데서 비명이 터진다. 한 사람이 앞사람을 물어뜯자 뒤쪽까지 사람들이 밀려 넘어진다.",
+      "“일으켜 줘요!” 바닥에 주저앉은 사람이 손을 뻗는다. 차단선은 가깝지만, 그쪽으로 바로 물러나면 이 사람을 두고 가야 한다.",
       "조금 전 뒤쪽에서 들었던 기침이 떠오른다. 그 사람인지는 알 수 없다. 지금은 추측보다 밀려드는 무리를 피할 틈을 봐야 한다."
     ]
   },
@@ -1025,8 +1037,521 @@
     "weight": 1,
     "once": false,
     "text": [
-      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
+      "행렬 한가운데서 비명이 터진다. 한 사람이 앞사람을 물어뜯자 뒤쪽까지 사람들이 밀려 넘어진다.",
+      "“일으켜 줘요!” 바닥에 주저앉은 사람이 손을 뻗는다. 차단선은 가깝지만, 그쪽으로 바로 물러나면 이 사람을 두고 가야 한다.",
       "운동장에서 물을 건넸던 사람이 어디 있는지 잠깐 찾는다. 엉킨 사람들 사이로는 보이지 않는다. 함께 출발했다는 기억이 발을 붙든다."
+    ]
+  },
+  {
+    "id": "local.text.729.voice.0",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림판을 밀어 빈틈을 만들었다. 넘어진 사람을 뒤로한 채 차단선 쪽으로 빠져나왔다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.729.voice.1",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림판을 밀어 빈틈을 만들었다. 넘어진 사람을 뒤로한 채 차단선 쪽으로 빠져나왔다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.735.voice.0",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품 한 몫을 버리고 엉킨 사람들 사이에서 빠져나왔다. 남겨 둔 물건과 목소리가 뒤로 멀어졌다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.735.voice.1",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품 한 몫을 버리고 엉킨 사람들 사이에서 빠져나왔다. 남겨 둔 물건과 목소리가 뒤로 멀어졌다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.741.voice.0",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차단선의 열린 틈을 확인하고 몸을 뺐다. 넘어진 사람에게 돌아가지는 못했다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.741.voice.1",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차단선의 열린 틈을 확인하고 몸을 뺐다. 넘어진 사람에게 돌아가지는 못했다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.747.voice.0",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.comply",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬에서 빠져나와 차단선 쪽으로 물러났다. 뒤에서는 구조를 청하는 목소리가 이어졌다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.747.voice.1",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.comply",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬에서 빠져나와 차단선 쪽으로 물러났다. 뒤에서는 구조를 청하는 목소리가 이어졌다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.750.voice.0",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "넘어진 사람을 일으켜 행렬 바깥으로 옮겼다. 그가 스스로 걷기 시작하자 짧게 숨을 돌렸다.",
+      "“일어났어. 밀려드는 줄에서 같이 벗어나자. 오래 버틸 힘은 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.750.voice.1",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "넘어진 사람을 일으켜 행렬 바깥으로 옮겼다. 그가 스스로 걷기 시작하자 짧게 숨을 돌렸다.",
+      "동료가 넘어진 사람의 팔을 놓으며 말한다. “천천히 걸어요. 이제 같이 나갈 수 있어요.”"
+    ]
+  },
+  {
+    "id": "local.text.756.voice.0",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리를 받쳐 준 사람을 차단선 옆까지 옮겼다. 기침은 이어졌지만 당장의 발길질에서는 벗어났다.",
+      "“다리를 받쳤으니 다음 걸음부터는 저 사람도 버텨야 해. 차단선까지 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.756.voice.1",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리를 받쳐 준 사람을 차단선 옆까지 옮겼다. 기침은 이어졌지만 당장의 발길질에서는 벗어났다.",
+      "“혼자 일어설 수 있네. 저기까지만 같이 걸어요.”"
+    ]
+  },
+  {
+    "id": "encounter.evacuation-convoy.advice-injury.encounter.evacuation-convoy.protect",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 차단선 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.evacuation-convoy.advice-injury.encounter.evacuation-convoy.discard",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 차단선 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.evacuation-convoy.advice-injury.encounter.evacuation-convoy.verify",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 차단선 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.evacuation-convoy.advice-injury.encounter.evacuation-convoy.help",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 차단선 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
+    ]
+  },
+  {
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "infection-ending",
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "id": "encounter.evacuation-convoy.infection-end.encounter.evacuation-convoy.help",
+    "conditions": [],
+    "text": [
+      "붙잡으려던 것이 손끝에서 멀어진다. 여기까지 버텨 온 길을 더는 이어갈 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.evacuation-convoy.advice-injury.encounter.evacuation-convoy.aid",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 차단선 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
+    ]
+  },
+  {
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "infection-ending",
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "id": "encounter.evacuation-convoy.infection-end.encounter.evacuation-convoy.aid",
+    "conditions": [],
+    "text": [
+      "붙잡으려던 것이 손끝에서 멀어진다. 여기까지 버텨 온 길을 더는 이어갈 수 없다."
     ]
   }
 ]

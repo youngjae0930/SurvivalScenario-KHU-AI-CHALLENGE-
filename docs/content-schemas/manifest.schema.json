@@ -38,7 +38,8 @@
     },
     "reactionVersion": {
       "enum": [
-        "responsibility-1"
+        "responsibility-1",
+        "contextual-1"
       ]
     },
     "infectionVersion": {

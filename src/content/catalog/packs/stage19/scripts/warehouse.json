@@ -9,7 +9,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다."
+      "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다.",
+      "식품 상자와 납품표가 같은 바닥에 떨어져 있다. 지금 챙길 몫과 밖으로 나갈 길을 함께 가늠한다."
     ]
   },
   {
@@ -30,7 +31,8 @@
     "once": false,
     "text": [
       "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다.",
-      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+      "식품 상자와 납품표가 같은 바닥에 떨어져 있다. 지금 챙길 몫과 밖으로 나갈 길을 함께 가늠한다.",
+      "가벼워진 배낭이 어깨에서 흔들린다. 다음에 쓸 먹을 것을 생각한다."
     ]
   },
   {
@@ -52,7 +54,8 @@
     "once": false,
     "text": [
       "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다.",
-      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+      "식품 상자와 납품표가 같은 바닥에 떨어져 있다. 지금 챙길 몫과 밖으로 나갈 길을 함께 가늠한다.",
+      "상처가 당겨 잠시 자세를 고친다. 서두르는 길은 더 부담스럽다."
     ]
   },
   {
@@ -74,7 +77,8 @@
     "once": false,
     "text": [
       "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다.",
-      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+      "식품 상자와 납품표가 같은 바닥에 떨어져 있다. 지금 챙길 몫과 밖으로 나갈 길을 함께 가늠한다.",
+      "숨을 세어 보지만 뒤쪽이 자꾸 신경 쓰인다."
     ]
   },
   {
@@ -92,7 +96,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+      "“잠깐만 생각해 보자. 나도 지금은 어느 쪽이 낫다고 말하기 어려워.”"
     ]
   },
   {
@@ -110,7 +114,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+      "두 사람 몫의 간격을 두고 걷다가 걸음을 고친다. 지금은 내 발소리만 따라온다."
     ]
   },
   {
@@ -128,7 +132,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+      "익숙한 얼굴이 보이자 부르려던 목소리가 멎는다. 동료도 몇 걸음 앞에서 멈춘다. “네가 먼저 간 건 알아. 그래도 여기서 다시 만나고 싶었어.”",
+      "“아직 같은 생각은 아니야.” 말하자 동료가 고개를 끄덕인다. 가방을 고쳐 메며 옆자리를 내준다. 하지 못한 말까지 풀린 것은 아니지만, 다음 길은 다시 나란히 살핀다."
     ]
   },
   {
@@ -167,7 +172,7 @@
     "once": false,
     "text": [
       "날짜가 남은 납품표에서 남쪽 하역 통로를 확인했다. 외곽 우회 진입점을 기억한 뒤 상자 더미에서 떨어졌다.",
-      "동료가 주변을 살피며 낮게 말한다. “어느 표지를 찾아야 할지는 알겠네. 길에 들어갈 때도 직접 확인하자.”"
+      "“상자에서 확인한 표지는 기억해 둘게. 실제 길에서도 맞는지 보자.”"
     ]
   },
   {
@@ -224,7 +229,7 @@
     "once": false,
     "text": [
       "상자 더미가 기울기 전에 밀봉 식품을 꺼냈다. 옮길 분량만 챙겨 통로로 돌아왔다.",
-      "동료가 주변을 살피며 낮게 말한다. “가지고 갈 몫은 골랐어. 더 뒤지다 여기 갇히고 싶지는 않아.”"
+      "“상자 쪽에서 꺼낸 건 잘 넣어 둬. 흘리고 갈 수는 없잖아.”"
     ]
   },
   {
@@ -281,7 +286,7 @@
     "once": false,
     "text": [
       "상자 더미가 무너지며 통로를 덮었다. 팔을 긁힌 채 빠져나왔고 식량은 가져오지 못했다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 상자 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -303,6 +308,156 @@
     "once": false,
     "text": [
       "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.399.voice.0",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.route",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 남은 납품표에서 남쪽 하역 통로를 확인했다. 외곽 우회 진입점을 기억한 뒤 상자 더미에서 떨어졌다.",
+      "“상자에서 확인한 표지는 기억해 둘게. 실제 길에서도 맞는지 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.399.voice.1",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.route",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 남은 납품표에서 남쪽 하역 통로를 확인했다. 외곽 우회 진입점을 기억한 뒤 상자 더미에서 떨어졌다.",
+      "“길을 하나 알아 두니 덜 막막하네. 입구를 찾을 때 나도 같이 볼게.”"
+    ]
+  },
+  {
+    "id": "local.text.402.voice.0",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자 더미가 기울기 전에 밀봉 식품을 꺼냈다. 옮길 분량만 챙겨 통로로 돌아왔다.",
+      "“상자 쪽에서 꺼낸 건 잘 넣어 둬. 흘리고 갈 수는 없잖아.”"
+    ]
+  },
+  {
+    "id": "local.text.402.voice.1",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자 더미가 기울기 전에 밀봉 식품을 꺼냈다. 옮길 분량만 챙겨 통로로 돌아왔다.",
+      "동료가 배낭을 살핀다. “먹을 게 있으니 마음이 조금 놓여. 몸을 돌볼 때까지 잘 가지고 가자.”"
+    ]
+  },
+  {
+    "id": "encounter.warehouse.advice-injury.encounter.warehouse.food",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 상자 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
     ]
   }
 ]

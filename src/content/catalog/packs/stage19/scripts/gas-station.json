@@ -9,7 +9,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "주유기 옆 금속판이 바람에 부딪힌다. 매점 선반에는 보존식이 남았지만 주유기 아래 새어 나온 액체는 무엇인지 알 수 없다. 불을 쓰거나 시동을 걸기는 어렵다."
+      "주유기 옆 금속판이 바람에 부딪힌다. 매점 선반에는 보존식이 남았지만 주유기 아래 새어 나온 액체는 무엇인지 알 수 없다. 불을 쓰거나 시동을 걸기는 어렵다.",
+      "금속판이 잠깐 멎자 다른 발소리가 들린다. 선반을 향해 옮기려던 발을 잠시 거둔다."
     ]
   },
   {
@@ -30,7 +31,8 @@
     "once": false,
     "text": [
       "주유기 옆 금속판이 바람에 부딪힌다. 매점 선반에는 보존식이 남았지만 주유기 아래 새어 나온 액체는 무엇인지 알 수 없다. 불을 쓰거나 시동을 걸기는 어렵다.",
-      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+      "금속판이 잠깐 멎자 다른 발소리가 들린다. 선반을 향해 옮기려던 발을 잠시 거둔다.",
+      "먹을 것을 찾다가 빈 수납칸을 닫는다."
     ]
   },
   {
@@ -52,7 +54,8 @@
     "once": false,
     "text": [
       "주유기 옆 금속판이 바람에 부딪힌다. 매점 선반에는 보존식이 남았지만 주유기 아래 새어 나온 액체는 무엇인지 알 수 없다. 불을 쓰거나 시동을 걸기는 어렵다.",
-      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+      "금속판이 잠깐 멎자 다른 발소리가 들린다. 선반을 향해 옮기려던 발을 잠시 거둔다.",
+      "발 디딜 곳을 고르다가 다친 곳부터 의식하게 된다."
     ]
   },
   {
@@ -74,7 +77,8 @@
     "once": false,
     "text": [
       "주유기 옆 금속판이 바람에 부딪힌다. 매점 선반에는 보존식이 남았지만 주유기 아래 새어 나온 액체는 무엇인지 알 수 없다. 불을 쓰거나 시동을 걸기는 어렵다.",
-      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+      "금속판이 잠깐 멎자 다른 발소리가 들린다. 선반을 향해 옮기려던 발을 잠시 거둔다.",
+      "움직이는 것을 본 듯해 잠시 멈춘다. 한 번 더 확인해야 마음이 놓일 것 같다."
     ]
   },
   {
@@ -92,7 +96,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+      "“잠깐만 생각해 보자. 나도 지금은 어느 쪽이 낫다고 말하기 어려워.”"
     ]
   },
   {
@@ -110,7 +114,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+      "두 사람 몫의 간격을 두고 걷다가 걸음을 고친다. 지금은 내 발소리만 따라온다."
     ]
   },
   {
@@ -128,7 +132,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+      "익숙한 얼굴이 보이자 부르려던 목소리가 멎는다. 동료도 몇 걸음 앞에서 멈춘다. “네가 먼저 간 건 알아. 그래도 여기서 다시 만나고 싶었어.”",
+      "“아직 같은 생각은 아니야.” 말하자 동료가 고개를 끄덕인다. 가방을 고쳐 메며 옆자리를 내준다. 하지 못한 말까지 풀린 것은 아니지만, 다음 길은 다시 나란히 살핀다."
     ]
   },
   {
@@ -167,7 +172,7 @@
     "once": false,
     "text": [
       "바람 소리 사이로 발소리가 멀어지는 것을 들었다. 액체가 번진 바닥을 피해 주유소 바깥으로 돌았다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "“매점 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
     ]
   },
   {
@@ -224,7 +229,7 @@
     "once": false,
     "text": [
       "금속판이 조용해진 틈에 매점으로 들어가 보존식을 골라 꺼냈다. 불이나 시동을 쓰지 않고 다시 바깥으로 나왔다.",
-      "동료가 주변을 살피며 낮게 말한다. “가지고 갈 몫은 골랐어. 더 뒤지다 여기 갇히고 싶지는 않아.”"
+      "동료가 배낭을 살핀다. “먹을 게 있으니 마음이 조금 놓여. 몸을 돌볼 때까지 잘 가지고 가자.”"
     ]
   },
   {
@@ -281,7 +286,7 @@
     "once": false,
     "text": [
       "흔들린 금속판에 시선이 쏠리는 순간 선반이 무너졌다. 몸을 긁히며 빠져나왔고 식량은 놓쳤다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 매점 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -303,6 +308,156 @@
     "once": false,
     "text": [
       "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.165.voice.0",
+    "eventId": "encounter.gas-station",
+    "choiceId": "encounter.gas-station.listen",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "바람 소리 사이로 발소리가 멀어지는 것을 들었다. 액체가 번진 바닥을 피해 주유소 바깥으로 돌았다.",
+      "동료가 매점 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.165.voice.1",
+    "eventId": "encounter.gas-station",
+    "choiceId": "encounter.gas-station.listen",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "바람 소리 사이로 발소리가 멀어지는 것을 들었다. 액체가 번진 바닥을 피해 주유소 바깥으로 돌았다.",
+      "“매점 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.168.voice.0",
+    "eventId": "encounter.gas-station",
+    "choiceId": "encounter.gas-station.shelf",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "금속판이 조용해진 틈에 매점으로 들어가 보존식을 골라 꺼냈다. 불이나 시동을 쓰지 않고 다시 바깥으로 나왔다.",
+      "“매점 쪽에서 꺼낸 건 잘 넣어 둬. 흘리고 갈 수는 없잖아.”"
+    ]
+  },
+  {
+    "id": "local.text.168.voice.1",
+    "eventId": "encounter.gas-station",
+    "choiceId": "encounter.gas-station.shelf",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "금속판이 조용해진 틈에 매점으로 들어가 보존식을 골라 꺼냈다. 불이나 시동을 쓰지 않고 다시 바깥으로 나왔다.",
+      "동료가 배낭을 살핀다. “먹을 게 있으니 마음이 조금 놓여. 몸을 돌볼 때까지 잘 가지고 가자.”"
+    ]
+  },
+  {
+    "id": "encounter.gas-station.advice-injury.encounter.gas-station.shelf",
+    "eventId": "encounter.gas-station",
+    "choiceId": "encounter.gas-station.shelf",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 매점 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
     ]
   }
 ]

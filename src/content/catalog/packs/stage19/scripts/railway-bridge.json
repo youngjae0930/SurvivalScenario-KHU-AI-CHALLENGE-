@@ -9,7 +9,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다."
+      "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다.",
+      "밑을 내려다보지 않으려 해도 철판 사이로 시선이 빠진다. 난간을 짚기 전에 흔들리는지부터 본다."
     ]
   },
   {
@@ -30,7 +31,8 @@
     "once": false,
     "text": [
       "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다.",
-      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+      "밑을 내려다보지 않으려 해도 철판 사이로 시선이 빠진다. 난간을 짚기 전에 흔들리는지부터 본다.",
+      "먹을 것을 찾다가 빈 수납칸을 닫는다."
     ]
   },
   {
@@ -52,7 +54,8 @@
     "once": false,
     "text": [
       "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다.",
-      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+      "밑을 내려다보지 않으려 해도 철판 사이로 시선이 빠진다. 난간을 짚기 전에 흔들리는지부터 본다.",
+      "발 디딜 곳을 고르다가 다친 곳부터 의식하게 된다."
     ]
   },
   {
@@ -74,7 +77,8 @@
     "once": false,
     "text": [
       "육교 아래에서는 좀비 무리가 선로를 따라 움직인다. 가운데 철판은 들떠 있고, 난간 가장자리에는 온전한 발판이 길게 이어져 있다.",
-      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+      "밑을 내려다보지 않으려 해도 철판 사이로 시선이 빠진다. 난간을 짚기 전에 흔들리는지부터 본다.",
+      "움직이는 것을 본 듯해 잠시 멈춘다. 한 번 더 확인해야 마음이 놓일 것 같다."
     ]
   },
   {
@@ -92,7 +96,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+      "동료가 난간 쪽에서 시선을 거둔다. “내 생각도 아직 정리가 안 돼. 너는 어떻게 하고 싶어?”"
     ]
   },
   {
@@ -110,7 +114,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+      "난간 쪽을 살피다 곁을 돌아본다. 대답할 사람은 아직 없다."
     ]
   },
   {
@@ -128,7 +132,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+      "익숙한 얼굴이 보이자 부르려던 목소리가 멎는다. 동료도 몇 걸음 앞에서 멈춘다. “네가 먼저 간 건 알아. 그래도 여기서 다시 만나고 싶었어.”",
+      "“아직 같은 생각은 아니야.” 말하자 동료가 고개를 끄덕인다. 가방을 고쳐 메며 옆자리를 내준다. 하지 못한 말까지 풀린 것은 아니지만, 다음 길은 다시 나란히 살핀다."
     ]
   },
   {
@@ -167,7 +172,7 @@
     "once": false,
     "text": [
       "난간 쪽 발판을 하나씩 밟아 반대편으로 건넜다. 선로의 무리는 아래에 남았다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "“난간 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
     ]
   },
   {
@@ -224,7 +229,7 @@
     "once": false,
     "text": [
       "철판이 울리기 전에 빈틈을 건넜다. 길게 돌아갈 힘을 조금 아낀 채 육교 끝에 섰다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "“난간 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
     ]
   },
   {
@@ -281,7 +286,7 @@
     "once": false,
     "text": [
       "철판이 예상보다 깊이 꺼졌다. 난간을 붙잡고 몸을 끌어올리다 다리를 다쳤다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 난간 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -303,6 +308,156 @@
     "once": false,
     "text": [
       "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.149.voice.0",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.railing",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간 쪽 발판을 하나씩 밟아 반대편으로 건넜다. 선로의 무리는 아래에 남았다.",
+      "동료가 난간 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.149.voice.1",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.railing",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간 쪽 발판을 하나씩 밟아 반대편으로 건넜다. 선로의 무리는 아래에 남았다.",
+      "“난간 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.152.voice.0",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철판이 울리기 전에 빈틈을 건넜다. 길게 돌아갈 힘을 조금 아낀 채 육교 끝에 섰다.",
+      "동료가 난간 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.152.voice.1",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철판이 울리기 전에 빈틈을 건넜다. 길게 돌아갈 힘을 조금 아낀 채 육교 끝에 섰다.",
+      "“난간 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
+    ]
+  },
+  {
+    "id": "encounter.railway-bridge.advice-injury.encounter.railway-bridge.span",
+    "eventId": "encounter.railway-bridge",
+    "choiceId": "encounter.railway-bridge.span",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 난간 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
     ]
   }
 ]
