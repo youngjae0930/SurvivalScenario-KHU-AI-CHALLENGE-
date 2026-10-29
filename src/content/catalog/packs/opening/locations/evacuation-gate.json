@@ -1,0 +1,16 @@
+{
+  "id": "evacuation-gate",
+  "name": "도시 외곽 · 구조 차량 진입로",
+  "stage": "late",
+  "tags": [
+    "exit"
+  ],
+  "fromTags": [
+    "final-rest"
+  ],
+  "after": [
+    "vehicle-shelter"
+  ],
+  "required": true,
+  "weight": 1
+}

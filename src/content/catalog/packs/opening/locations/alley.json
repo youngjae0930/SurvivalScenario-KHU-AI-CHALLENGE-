@@ -1,0 +1,17 @@
+{
+  "id": "alley",
+  "name": "상가 뒤편 · 연결 골목",
+  "stage": "early",
+  "tags": [
+    "road",
+    "alley"
+  ],
+  "fromTags": [
+    "road"
+  ],
+  "after": [
+    "convenience-store"
+  ],
+  "required": true,
+  "weight": 1
+}

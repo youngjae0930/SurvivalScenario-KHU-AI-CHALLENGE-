@@ -1,0 +1,220 @@
+[
+  {
+    "id": "E09.scene",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕괴 통로를 지나 도시 외곽의 격리 구역에 도착했다. 검문등 아래에는 출입 방향과 물품 폐기 절차가 적혀 있다.",
+      "차단선 옆에 남은 사람이 무거운 가방을 들지 못한 채 앉아 있다. 지정된 동선을 따라 먼저 통과하거나, 위험을 감수하고 그 사람의 이동을 도울 수 있다."
+    ]
+  },
+  {
+    "id": "E09.scene.extreme",
+    "eventId": "E09",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "affect",
+        "min": 0,
+        "max": 22
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "격리 구역의 검문등이 켜진다. 차단선 옆에는 아직 이동하지 못한 사람이 앉아 있지만, 지금은 표시된 규칙을 지켜 통과해야 한다는 생각이 앞선다.",
+      "방호 경로를 따르거나 물자를 폐기할 수 있다. 보호대를 준비하거나 표지를 더 꼼꼼히 대조하는 방식도 있다."
+    ]
+  },
+  {
+    "id": "E09.comply.success",
+    "eventId": "E09",
+    "choiceId": "E09.comply",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지정된 동선을 따라 차단선을 지났다. 뒤쪽 생존자는 아직 자기 가방을 정리하고 있었다. 당신은 다음 구역으로 향할 힘을 남겼다."
+    ]
+  },
+  {
+    "id": "E09.help.success",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가방을 나눠 들고 생존자가 차단선을 벗어나도록 도왔다. 그 사람은 숨을 고른 뒤 고맙다고 짧게 말했다. 당신의 긴장도 조금 누그러졌다."
+    ]
+  },
+  {
+    "id": "E09.help.failure",
+    "eventId": "E09",
+    "choiceId": "E09.help",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가방을 옮기다 거친 차단물에 긁혔다. 생존자는 아직 더 움직일 수 없다며 먼저 가라고 말했다. 당신은 상처와 긴장을 안고 다음 구역으로 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E09.seal.success",
+    "eventId": "E09",
+    "choiceId": "E09.seal",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자 하나로 흐트러진 차단선을 고정하고 표시된 동선을 따라 통과했다. 주변이 정리되자 긴장이 조금 줄었다. 남은 사람은 그 자리에서 가방을 정리했다."
+    ]
+  },
+  {
+    "id": "E09.aid.success",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구로 생존자의 상처를 처치한 뒤 차단선을 벗어나도록 도왔다. 생존자가 고개를 끄덕이며 감사를 전했다. 당신의 상처를 치료한 것은 아니다."
+    ]
+  },
+  {
+    "id": "E09.aid.failure",
+    "eventId": "E09",
+    "choiceId": "E09.aid",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도구를 소모해 생존자를 처치했지만 이동을 끝까지 돕지 못했다. 차단물에 손을 다치자 생존자가 이제 혼자 움직여 보겠다며 손을 놓았다. 긴장을 안고 구역을 나왔다."
+    ]
+  },
+  {
+    "id": "E09.protect.success",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지정된 방호 경로를 끝까지 따라 격리 구역을 지났다. 절차를 따른 안도감이 통과 중 긴장 부담보다 컸고, 스트레스가 10 내려갔다."
+    ]
+  },
+  {
+    "id": "E09.protect.failure",
+    "eventId": "E09",
+    "choiceId": "E09.protect",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "방호 경로의 표지를 잘못 읽어 되돌아 나왔다. 정리되지 않은 차단물에 상처를 입었고 긴장이 더 쌓였다. 간신히 바깥으로 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E09.discard.success",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "공용 물자 하나를 지정 수거함에 넣고 격리 절차를 마쳤다. 물자를 돌려받지는 못했지만 절차를 끝내자 긴장이 줄었다. 무기는 폐기하지 않았다."
+    ]
+  },
+  {
+    "id": "E09.discard.failure",
+    "eventId": "E09",
+    "choiceId": "E09.discard",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자를 수거함에 넣었지만 표지 혼선 때문에 절차를 매끄럽게 마치지 못했다. 차단물에 긁힌 채 구역을 빠져나왔고, 버린 물자는 돌아오지 않았다."
+    ]
+  },
+  {
+    "id": "E09.wrap.success",
+    "eventId": "E09",
+    "choiceId": "E09.wrap",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구로 만든 임시 보호대를 두르고 정해진 절차를 마쳤다. 구역을 벗어나자 긴장이 줄었다. 사용한 도구는 처치용으로 남지 않았으며 기존 상처도 그대로다."
+    ]
+  },
+  {
+    "id": "E09.wrap.failure",
+    "eventId": "E09",
+    "choiceId": "E09.wrap",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "보호대를 준비했지만 격리 절차를 따라가는 데 실패했다. 차단물에 상처를 입고 긴장이 쌓인 채 구역을 벗어났다. 사용한 치료 도구는 돌아오지 않았다."
+    ]
+  },
+  {
+    "id": "E09.verify.success",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "검문 표지와 이동 절차를 끝까지 대조한 뒤 격리선을 통과했다. 체력은 더 썼지만 절차를 마친 안도감으로 긴장이 누그러졌다."
+    ]
+  },
+  {
+    "id": "E09.verify.failure",
+    "eventId": "E09",
+    "choiceId": "E09.verify",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "반복해서 확인했지만 표지 혼선을 해결하지 못했다. 돌아 나오다 차단물에 상처를 입고 큰 긴장을 안은 채 구역을 벗어났다."
+    ]
+  }
+]

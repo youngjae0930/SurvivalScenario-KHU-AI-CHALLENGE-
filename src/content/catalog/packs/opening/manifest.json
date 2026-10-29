@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "id": "opening",
+  "revision": "catalog-flexible-stages-1",
+  "rulesVersion": "1.2-stress-1",
+  "title": "빌라에서 탈출까지",
+  "startLocationId": "villa",
+  "stages": [
+    {
+      "id": "early",
+      "minVisits": 4,
+      "maxVisits": 8
+    },
+    {
+      "id": "middle",
+      "minVisits": 4,
+      "maxVisits": 8
+    },
+    {
+      "id": "late",
+      "minVisits": 4,
+      "maxVisits": 8
+    }
+  ],
+  "facts": [],
+  "boundary": {
+    "nextEventId": "post-prototype",
+    "title": "등록된 구간 완료",
+    "text": [
+      "탈출 사건은 실행 즉시 실제 결말과 계승 기록으로 종료합니다. 이 구간 경계는 탈출 결말을 대신하지 않습니다."
+    ]
+  },
+  "presentationVersion": "reflection-1",
+  "recommendationVersion": "survival-1",
+  "decisionMemoryVersion": "context-1",
+  "decisionEcho": {
+    "version": "echo-1",
+    "compatibleRevisions": [
+      "catalog-flexible-stages-1"
+    ]
+  },
+  "autonomyVersion": "journey-2",
+  "executionVersion": "command-1",
+  "trustVersion": "outcome-1",
+  "routeVersion": "stages-1"
+}

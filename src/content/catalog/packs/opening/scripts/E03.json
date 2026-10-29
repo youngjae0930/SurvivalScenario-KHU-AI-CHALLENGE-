@@ -1,0 +1,81 @@
+[
+  {
+    "id": "E03.scene",
+    "eventId": "E03",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "큰길은 차량으로 막혀 있다. 옆 골목을 통과하면 다음 구역으로 이어질 듯하다. 방금 전까지 들리던 금속 소리는 어느새 멎었다.",
+      "발밑에는 깨진 유리와 흩어진 상자가 보인다. 주변을 관찰하며 건널 수도, 멈추지 않고 곧장 통과할 수도 있다."
+    ]
+  },
+  {
+    "id": "E03.observe.success",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "흔들리는 간판이 벽을 두드리고 있었다. 소리의 근원을 확인하고 장애물을 피해 골목을 건넌다."
+    ]
+  },
+  {
+    "id": "E03.cross.success",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "시야가 트이는 쪽으로 빠르게 움직였다. 골목 끝의 상자에서 남은 물자를 발견해 챙겼다."
+    ]
+  },
+  {
+    "id": "E03.cross.failure",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "어둠 속의 장애물을 미처 피하지 못했다. 넘어졌다가 몸을 일으켜 반대편으로 빠져나온다. 거친 숨과 통증이 따라온다."
+    ]
+  },
+  {
+    "id": "E03.wait.success",
+    "eventId": "E03",
+    "choiceId": "E03.wait",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 뒤에서 소리가 멀어지기를 기다렸다. 몸은 덜 썼지만 긴 침묵 속에서 긴장이 쌓였다. 움직임이 잦아든 뒤 골목을 건넜다."
+    ]
+  },
+  {
+    "id": "E03.distract.success",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "챙겨 온 물자를 골목 반대편으로 던졌다. 소리가 난 쪽으로 움직임이 쏠린 사이 길을 건너고, 짧게 숨을 내쉰다."
+    ]
+  }
+]

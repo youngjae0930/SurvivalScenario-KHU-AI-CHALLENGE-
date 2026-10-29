@@ -1,0 +1,81 @@
+[
+  {
+    "id": "E02.scene",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점 유리문이 반쯤 열려 있다. 흩어진 상품 사이에서 누군가 벽에 기대 앉아 있다. 당신을 본 생존자가 빈 물병을 들어 보인다.",
+      "진열대 안쪽에는 아직 챙길 만한 물자가 남아 있다. 눈앞의 사람을 도울 것인가, 앞으로 쓸 물자를 먼저 확보할 것인가."
+    ]
+  },
+  {
+    "id": "E02.help.success",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "생존자가 건네받은 것을 품에 안는다. “이 근처 사람들과 연락할 방법을 찾아볼게요.” 짧은 약속을 남기고 각자의 길로 나선다."
+    ]
+  },
+  {
+    "id": "E02.supplies.success",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쓸 수 있는 물자를 골라 배낭에 넣었다. 생존자는 잠시 당신을 바라보다 시선을 내린다. 당신은 남은 길을 떠올리며 문밖으로 나선다."
+    ]
+  },
+  {
+    "id": "E02.first-aid.success",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구를 꺼내 생존자의 상처를 감쌌다. 스스로 몸을 일으키는 모습을 확인하니 숨이 조금 놓인다. 도움을 건넨 사실이 이번 여정에 남았다."
+    ]
+  },
+  {
+    "id": "E02.search-cabinet.success",
+    "eventId": "E02",
+    "choiceId": "E02.search-cabinet",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도움을 기다리는 생존자를 뒤로하고 안쪽 구급함을 열었다. 남아 있던 치료 도구를 내 가방에 넣었다."
+    ]
+  },
+  {
+    "id": "E02.search-cabinet.failure",
+    "eventId": "E02",
+    "choiceId": "E02.search-cabinet",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "내게 쓸 치료 도구를 찾다 깨진 선반에 팔을 긁혔다. 구급함은 비어 있었고, 생존자를 돕지도 못한 채 돌아섰다."
+    ]
+  }
+]

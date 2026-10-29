@@ -1,0 +1,310 @@
+[
+  {
+    "id": "E07.scene",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 부속 연구동 앞에 도착했다. 자료실로 이어지는 내부 통로는 열지 못했지만 담장 옆 중계기에는 아직 안내등이 남아 있다.",
+      "연결함의 전원과 접점이 망가져 있다. 무기를 분해해 전원·연결 부품을 마련하거나 공용 물자를 쓸 수 있다. 자료를 더 찾지 않고 떠나는 방법도 있다."
+    ]
+  },
+  {
+    "id": "E07.scene.inside",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "access",
+        "value": true
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원에서 확보한 연결 통로가 연구동 내부 자료실로 이어진다. 복도 끝 벽면에는 대피 구역 표지와 낡은 단말기가 남아 있다.",
+      "서랍 속 문서와 단말기 기록을 대조하면 탈출에 필요한 자료를 확보할 수 있다. 조사를 끝까지 진행할지, 눈에 띄는 단서만 살피고 떠날지 정해야 한다."
+    ]
+  },
+  {
+    "id": "E07.scene.extreme",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "access",
+        "value": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 0,
+        "max": 22
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연구동 내부 자료실의 문을 열었다. 책상 위 문서와 끊긴 단말기 기록 사이에 설명되지 않는 부분이 눈에 걸린다.",
+      "지금은 자료를 끝까지 확인해야겠다는 생각이 앞선다. 곧장 파고들거나 도구와 물자를 준비하거나, 시간을 더 들여 하나씩 대조할 수 있다."
+    ]
+  },
+  {
+    "id": "E07.investigate.success",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "단말기의 조각난 기록을 문서와 맞춰 읽었다. 실제로 이동에 참고할 수 있는 탈출 자료를 확보했다."
+    ]
+  },
+  {
+    "id": "E07.investigate.failure",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "희미한 화면을 붙들고 기록을 읽다 깨진 책상 모서리에 상처를 입었다. 해독은 끝내지 못했고 새 자료도 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E07.clues.success",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍 위의 단서만 훑고 자료실을 나왔다. 새로운 탈출 자료는 확보하지 않았으며 이미 가진 자료는 그대로 챙겼다."
+    ]
+  },
+  {
+    "id": "E07.clean.success",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구의 세정 재료로 접점을 닦자 단말기 화면이 선명해졌다. 기록을 읽어 탈출 자료를 확보했다. 사용한 도구는 처치용으로 남지 않았다."
+    ]
+  },
+  {
+    "id": "E07.clean.failure",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "세정 재료를 썼지만 연결이 복구되지 않았다. 접점을 만지다 손을 다쳤고 새 자료도 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E07.crosscheck.success",
+    "eventId": "E07",
+    "choiceId": "E07.crosscheck",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여러 서랍을 오가며 표지와 기록을 하나씩 대조했다. 몸은 더 지쳤지만 이동에 필요한 자료를 확보했다."
+    ]
+  },
+  {
+    "id": "E07.crosscheck.failure",
+    "eventId": "E07",
+    "choiceId": "E07.crosscheck",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "반복해서 서랍을 뒤졌지만 기록의 빈칸을 채우지 못했다. 넘어져 상처를 입은 채 조사를 멈췄다. 새 자료는 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E07.urgent.success",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면과 문서에서 눈을 떼지 않고 끝까지 읽어 냈다. 탈출 자료와 남은 물자를 챙겼지만 긴장은 쉽게 풀리지 않았다."
+    ]
+  },
+  {
+    "id": "E07.urgent.failure",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "끝까지 해독하려 했지만 기록은 이어지지 않았다. 조급하게 움직이다 상처를 입었고 긴장만 더 쌓였다. 새 자료와 물자는 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E07.prepared.success",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "세정 재료로 접점을 정비하고 다시 기록을 읽었다. 탈출 자료를 확보한 뒤 서랍의 남은 물자도 챙겼다."
+    ]
+  },
+  {
+    "id": "E07.prepared.failure",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도구를 소모해 접점을 정비했지만 판독에 실패했다. 손을 다친 채 물러났고 새 자료와 물자는 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E07.insulate.success",
+    "eventId": "E07",
+    "choiceId": "E07.insulate",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자로 전선을 고정하자 기록이 잠시 이어졌다. 탈출 자료와 남은 물자를 확보했다. 준비에 쓴 물자만큼 새 물자를 보충했다."
+    ]
+  },
+  {
+    "id": "E07.insulate.failure",
+    "eventId": "E07",
+    "choiceId": "E07.insulate",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비한 물자를 썼지만 전원은 다시 끊겼다. 맨손으로 배선을 잡다 상처를 입었고 새 자료와 물자는 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E07.exhaustive.success",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록을 한 줄씩 다시 대조하며 자료의 빈칸을 채웠다. 탈출 자료와 물자를 확보했지만 긴 시간 집중한 탓에 긴장이 더해졌다."
+    ]
+  },
+  {
+    "id": "E07.exhaustive.failure",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막까지 기록을 대조했지만 해독을 끝내지 못했다. 상처와 긴장을 안고 물러났으며 새 자료와 물자는 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E07.dismantle.success",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 분해해 고정대와 금속 연결 부품을 마련했다. 전원 접점을 이어 중계기를 가동하고 탈출 자료를 읽었다. 무기는 더 이상 사용할 수 없다."
+    ]
+  },
+  {
+    "id": "E07.abandon.success",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "중계기에서 손을 떼고 연구동을 뒤로했다. 새 자료는 확보하지 않았고, 이미 갖고 있던 자료는 그대로 챙겼다."
+    ]
+  },
+  {
+    "id": "E07.power.success",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "공용 물자에서 전원과 연결 재료를 꺼내 중계기에 연결했다. 물자 두 개를 소모해 탈출 자료를 읽었다. 무기 부품은 사용하지 않았다."
+    ]
+  },
+  {
+    "id": "E07.mark.success",
+    "eventId": "E07",
+    "choiceId": "E07.mark",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "건물 바깥의 표지와 주변 방향을 확인한 뒤 천천히 발걸음을 옮겼다. 긴장은 조금 풀렸지만 새 탈출 자료는 얻지 않았다. 이미 가진 자료는 그대로다."
+    ]
+  }
+]

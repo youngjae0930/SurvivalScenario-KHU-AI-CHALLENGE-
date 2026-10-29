@@ -1,0 +1,323 @@
+import type { CoreAction, CoreActionPreview } from '../../domain/actions'
+import type { CatalogChoice, CatalogContext, CatalogDecisionSituation, CatalogEvent, CatalogPack, CatalogRun, CatalogScript, CompanionContext } from '../../domain/catalog'
+import type { ResolvedQuestionnaireAnswer } from '../../domain/types'
+import { validateCoreState } from '../../domain/validation'
+import { previewCoreAction, resolveCoreAction } from '../actions'
+import { createInitialCoreState } from '../initial-state'
+import { initializeRandom } from '../random'
+import { buildRecoveryAction, recoveryTrustAfter, resolveRecovery } from '../recovery'
+import { buildEscapeAction, getEscapeOptions, resolveEscape } from '../escape'
+import { asCompanionChoice, isCompanionContext, selectIntervention, sourceChoiceId } from './intervention'
+import { allChoices, eventFits } from './compile'
+import { matches } from './conditions'
+import { weightedPick } from './random'
+import { planRoute } from './route'
+import { assessChoice } from './assessment'
+import { evaluateRelationship, type TrustChange } from './relationship'
+import { selectGeneralRecommendation, type GeneralRecommendation } from './recommendation'
+import { decisionMemoryFor } from './decision-memory'
+import { equalRememberedAction, findRememberedDecision, representativeGoal } from './decision-echo'
+import { activeCatalogCompanion, reuniteCatalogCompanion } from './companion-journey'
+
+export class CatalogRuntimeError extends Error {
+  readonly code: 'action-unavailable' | 'stale-context' | 'invalid-phase' | 'content-invalid'
+  constructor(code: CatalogRuntimeError['code'], message: string) { super(message); this.code = code }
+}
+function unwrap<T>(result: { ok: true; value: T } | { ok: false; error: { message: string } }): T {
+  if (!result.ok) throw new CatalogRuntimeError('action-unavailable', result.error.message)
+  return result.value
+}
+export function catalogContext(pack: CatalogPack, run: CatalogRun): CatalogContext {
+  const location = pack.locations.find(item => item.id === run.route[run.visitIndex])
+  if (!location) throw new CatalogRuntimeError('content-invalid', '현재 장소가 콘텐츠에 없습니다.')
+  return { core: run.core, companion: activeCatalogCompanion(run), facts: run.facts, visited: run.route.slice(0, run.visitIndex + 1), location }
+}
+export function currentEvent(pack: CatalogPack, run: CatalogRun): CatalogEvent {
+  const event = pack.events.find(item => item.id === run.visits[run.visitIndex]?.eventId)
+  if (!event) throw new CatalogRuntimeError('content-invalid', '현재 사건이 콘텐츠에 없습니다.')
+  return event
+}
+export function currentGroup(pack: CatalogPack, run: CatalogRun) {
+  const context = catalogContext(pack, run)
+  const groups = [...currentEvent(pack, run).groups].sort((a, b) => b.priority - a.priority || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
+  const group = groups.find(item => matches(item.conditions, context))
+  if (!group) throw new CatalogRuntimeError('content-invalid', '현재 조건의 선택 그룹이 없습니다.')
+  return group
+}
+function selectScript(pack: CatalogPack, run: CatalogRun, slot: CatalogScript['slot'], choiceId: string | null, deterministic = false): { script: CatalogScript; rngState: number } {
+  const context = catalogContext(pack, run)
+  const eventId = run.visits[run.visitIndex].eventId
+  const eligible = pack.scripts.filter(script => script.eventId === eventId && script.choiceId === choiceId && script.slot === slot
+    && (!script.once || !run.usedScripts.includes(script.id)) && matches(script.conditions, context))
+  const priority = Math.max(...eligible.map(script => script.priority))
+  const candidates = eligible.filter(script => script.priority === priority)
+  const unseen = candidates.filter(script => !run.usedScripts.includes(script.id))
+  const pool = unseen.length ? unseen : candidates
+  if (!pool.length) throw new CatalogRuntimeError('content-invalid', '현재 조건의 결과 문구가 없습니다.')
+  const picked = deterministic ? { item: [...pool].sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)[0], rngState: run.rngState } : weightedPick(pool, run.rngState)
+  return { script: picked.item, rngState: picked.rngState }
+}
+function enterLocation(pack: CatalogPack, run: CatalogRun): CatalogRun {
+  run = reuniteCatalogCompanion(run, catalogContext(pack, run))
+  const context = catalogContext(pack, run)
+  const picked = weightedPick(pack.events.filter(event => eventFits(event, context.location) && matches(event.conditions, context)), run.rngState)
+  if (allChoices(picked.item).some(choice => choice.behavior.kind === 'escape') && run.visitIndex !== run.route.length - 1) throw new CatalogRuntimeError('content-invalid', '탈출 장소는 여정의 마지막이어야 합니다.')
+  const provisional: CatalogRun = { ...run, rngState: picked.rngState, visits: [...run.visits, { locationId: context.location.id, eventId: picked.item.id, sceneScriptId: '' }] }
+  const scene = selectScript(pack, provisional, 'scene', null)
+  return { ...provisional, rngState: scene.rngState, visits: [...run.visits, { locationId: context.location.id, eventId: picked.item.id, sceneScriptId: scene.script.id }], usedScripts: [...run.usedScripts, scene.script.id] }
+}
+export function createCatalogRun(pack: CatalogPack, input: { runId: string; name: string; seed: number; answers: readonly ResolvedQuestionnaireAnswer[]; companion?: CompanionContext | null }): CatalogRun {
+  if (!input.runId || input.runId.length > 200 || !input.name.trim() || input.name.trim().length > 40) throw new CatalogRuntimeError('content-invalid', '회차 이름/ID를 확인해 주세요.')
+  if (input.companion && !isCompanionContext(input.companion)) throw new CatalogRuntimeError('content-invalid', '동료 문맥 값이 올바르지 않습니다.')
+  const core = unwrap(createInitialCoreState(input.name.trim(), input.answers))
+  const random = unwrap(initializeRandom(input.seed))
+  const planned = planRoute(pack, random)
+  return enterLocation(pack, {
+    runId: input.runId, initialSeed: input.seed, rngState: planned.rngState, route: planned.route, visitIndex: 0, visits: [], usedScripts: [],
+    core, companion: input.companion ? structuredClone(input.companion) : null,
+    ...(input.companion ? { companionOrigin: structuredClone(input.companion) } : {}), facts: Object.fromEntries(pack.manifest.facts.map(id => [id, false])),
+    ...(input.companion && pack.manifest.autonomyVersion ? { companionJourney: { separation: null, reunions: [] } } : {}),
+    phase: 'choice', revision: 0, history: [], result: null, judgmentCounts: { rescue: 0, self: 0 },
+  })
+}
+export interface CatalogPreview extends CoreActionPreview {
+  readonly trustOutcomes?: { readonly success?: TrustChange; readonly failure?: TrustChange }
+  readonly executionActor?: 'protagonist' | 'companion'
+  readonly choice: CatalogChoice
+  readonly action: CoreAction
+  readonly treat: boolean
+  readonly trustChange?: import('../../domain/catalog').CatalogHistory['trustChange']
+}
+export function catalogIntervention(pack: CatalogPack, run: CatalogRun) {
+  return selectIntervention(currentEvent(pack, run), currentGroup(pack, run), catalogContext(pack, run))
+}
+/** Only recovery's already specified affect>=50 exception; no general neutral ranking. */
+export function catalogRecoveryOpinion(pack: CatalogPack, run: CatalogRun) {
+  const companion = activeCatalogCompanion(run)
+  if (!companion) return null
+  const group = currentGroup(pack, run)
+  const share = group.choices.find(choice => choice.behavior.kind === 'recovery' && choice.behavior.choice === 'share')
+  const maintain = group.choices.find(choice => choice.behavior.kind === 'recovery' && choice.behavior.choice === 'maintain')
+  if (!share || !maintain) return null
+  const prefersShare = companion.traits.affect >= 50
+  const choice = prefersShare && run.core.inventory.supply >= 1 ? share : maintain
+  return { choice, source: 'trait' as const,
+    text: choice === share ? '조금 나눠서 함께 쉬자. 다음 길도 같이 버텨야 하니까.' : '지금은 네 몸과 장비부터 추스르자.',
+    reason: choice === share ? '동료는 서로 돌보며 쉬는 쪽을 권합니다.' : prefersShare ? '나눌 물자가 없어 소모 없이 정비하는 쪽을 권합니다.' : '동료는 앞으로의 이동을 위한 정비를 권합니다.' }
+}
+export function catalogChoices(pack: CatalogPack, run: CatalogRun): readonly CatalogChoice[] {
+  const group = currentGroup(pack, run)
+  const intervention = catalogIntervention(pack, run)
+  return intervention ? group.choices.map(choice => choice.id === intervention.replaceChoiceId ? intervention.choice : choice) : group.choices
+}
+/** Read-only current candidates, using exactly the same availability and effects as play. */
+export function assessCatalogChoices(pack: CatalogPack, run: CatalogRun) {
+  return catalogChoices(pack, run).flatMap(choice => {
+    const assessment = assessChoice(run.core, previewCatalogAction(pack, run, choice.id))
+    return assessment ? [assessment] : []
+  })
+}
+export function catalogGeneralRecommendation(pack: CatalogPack, run: CatalogRun, useMemory = true): GeneralRecommendation {
+  const event = currentEvent(pack, run)
+  const companion = activeCatalogCompanion(run)
+  if (run.phase !== 'choice' || !companion || pack.manifest.recommendationVersion !== 'survival-1' || !event.recommendation
+    || catalogIntervention(pack, run) || catalogRecoveryOpinion(pack, run)) return { kind: 'inactive' }
+  const rememberedGoal = useMemory && pack.manifest.decisionEcho && run.previousLegacy?.decisionMemory
+    ? representativeGoal(pack.manifest.decisionEcho, run.previousLegacy, catalogDecisionSituation(pack, run)) : undefined
+  return selectGeneralRecommendation(event.recommendation, companion.traits, assessCatalogChoices(pack, run), rememberedGoal)
+}
+function baseOpinionChoice(pack: CatalogPack, run: CatalogRun) {
+  const special = catalogIntervention(pack, run) ?? catalogRecoveryOpinion(pack, run)
+  if (special) return special.choice
+  const general = catalogGeneralRecommendation(pack, run, false)
+  return general.kind === 'ready' ? general.choice : null
+}
+export function catalogRecommendedChoice(pack: CatalogPack, run: CatalogRun) {
+  const remembered = catalogRememberedChoice(pack, run)
+  const special = remembered ?? catalogIntervention(pack, run) ?? catalogRecoveryOpinion(pack, run)
+  if (special) return special.choice
+  const general = catalogGeneralRecommendation(pack, run)
+  return general.kind === 'ready' ? general.choice : null
+}
+/** User-approved order acceptance. Independent following still uses its separate trust80 policy. */
+export function catalogCommandOffer(pack: CatalogPack, run: CatalogRun, actionId: string) {
+  const choice = catalogChoices(pack, run).find(choice => choice.id === actionId)
+  if (pack.manifest.executionVersion !== 'command-1' || !choice?.execution || choice.behavior.kind !== 'action'
+    || actionId !== sourceChoiceId(actionId)) return null
+  const companion = activeCatalogCompanion(run)
+  const reasons = !companion ? ['지금 함께 행동할 동료가 없습니다.']
+    : !matches(choice.execution.conditions, catalogContext(pack, run)) ? ['이 행동을 동료에게 맡길 상황 조건을 충족하지 못했습니다.']
+      : companion.trust >= 60 || sourceChoiceId(catalogRecommendedChoice(pack, run)?.id ?? '') === actionId ? []
+        : ['동료는 이 행동을 권하지 않습니다. 다른 행동을 맡기려면 신뢰 60 이상이 필요합니다.']
+  return { policy: choice.execution, allowed: reasons.length === 0, reasons }
+}
+/** Same priority as the displayed opinion. No added rolls, hidden actions, or player effects. */
+export function catalogAutonomyDeparture(pack: CatalogPack, run: CatalogRun, actionId: string) {
+  const policy = currentEvent(pack, run).autonomy
+  if (!pack.manifest.autonomyVersion || !policy || !activeCatalogCompanion(run) || run.phase !== 'choice'
+    || actionId !== sourceChoiceId(actionId) || !matches(policy.conditions, catalogContext(pack, run))) return null
+  const chosen = catalogChoices(pack, run).find(choice => choice.id === actionId)
+  const preferred = catalogRecommendedChoice(pack, run)
+  const conflict = policy.conflicts?.find(conflict => conflict.playerGoalId === chosen?.goalId && conflict.companionGoalId === preferred?.goalId)
+  if (policy.conflicts) {
+    if (activeCatalogCompanion(run)!.trust >= 80 || !chosen || !preferred
+      || !conflict) return null
+  } else if (chosen?.judgment !== policy.playerJudgment || preferred?.judgment !== policy.companionJudgment) return null
+  return { eventId: currentEvent(pack, run).id, locationId: catalogContext(pack, run).location.id, visitIndex: run.visitIndex,
+    playerActionId: actionId, companionActionId: preferred.id, reunion: structuredClone(policy.reunion), ...(conflict ? { reason: conflict.reason } : {}) }
+}
+export function catalogRememberedChoice(pack: CatalogPack, run: CatalogRun) {
+  if (run.phase !== 'choice' || !activeCatalogCompanion(run) || !run.previousLegacy?.decisionMemory || !pack.manifest.decisionEcho) return null
+  const entry = findRememberedDecision(pack.manifest.decisionEcho, run.previousLegacy, catalogDecisionSituation(pack, run), remembered => {
+    try {
+      const preview = previewCatalogAction(pack, run, remembered.actionId, remembered.treat)
+      if (remembered.context.executionActor === 'companion' && (!pack.manifest.executionVersion || !preview.choice.execution
+        || !matches(preview.choice.execution.conditions, catalogContext(pack, run)))) return false
+      return preview.allowed && equalRememberedAction(preview.action, remembered.context.selectedAction)
+    } catch (error) {
+      if (error instanceof CatalogRuntimeError && error.code === 'action-unavailable') return false
+      throw error
+    }
+  })
+  return entry ? { choice: previewCatalogAction(pack, run, entry.actionId, entry.treat).choice, treat: entry.treat,
+    actor: entry.context.executionActor ?? 'protagonist' as const } : null
+}
+function withTrustPreview(pack: CatalogPack, run: CatalogRun, preview: CatalogPreview): CatalogPreview {
+  const companion = activeCatalogCompanion(run)
+  if (pack.manifest.trustVersion !== 'outcome-1' || !companion) return preview
+  const outcomes = assessChoice(run.core, preview)?.outcomes ?? []
+  return { ...preview, trustOutcomes: Object.fromEntries(outcomes.map(branch => [branch.outcome,
+    evaluateRelationship(run.core, branch.state, companion, preview.choice, branch.outcome,
+      preview.choice.behavior.kind === 'escape' && preview.choice.behavior.route !== 'request')])) }
+}
+export function previewCatalogAction(pack: CatalogPack, run: CatalogRun, actionId: string, treat = false, actor: 'protagonist' | 'companion' = 'protagonist'): CatalogPreview {
+  if (run.phase !== 'choice') throw new CatalogRuntimeError('invalid-phase', '선택 단계가 아닙니다.')
+  if (actor !== 'protagonist' && actor !== 'companion') throw new CatalogRuntimeError('action-unavailable', '실행 주체를 확인해 주세요.')
+  if (actor === 'companion') {
+    const preview = previewCatalogAction(pack, run, actionId, treat)
+    const offer = catalogCommandOffer(pack, run, actionId)
+    if (!offer) throw new CatalogRuntimeError('action-unavailable', '이 행동은 동료에게 맡길 수 없습니다.')
+    return { ...preview, executionActor: 'companion', allowed: preview.allowed && offer.allowed, reasons: [...preview.reasons, ...offer.reasons] }
+  }
+  unwrap(validateCoreState(run.core))
+  const choice = catalogChoices(pack, run).find(item => item.id === actionId)
+  if (!choice) throw new CatalogRuntimeError('action-unavailable', '현재 장면에서 제공하는 선택이 아닙니다.')
+  let action: CoreAction
+  if (choice.behavior.kind === 'escape') {
+    if (treat) throw new CatalogRuntimeError('action-unavailable', '탈출 중에는 추가 치료할 수 없습니다.')
+    const route = choice.behavior.route
+    action = { ...buildEscapeAction(route), id: choice.id }
+    const option = unwrap(getEscapeOptions(run.core)).find(item => item.route === route)!
+    const preview = unwrap(previewCoreAction({ state: run.core, action, eventId: 'E12', phase: 'choice', companionPresent: activeCatalogCompanion(run) !== null, cooperating: false }))
+    return withTrustPreview(pack, run, { ...preview, allowed: option.allowed, reasons: option.reasons, choice, action, treat })
+  } else if (choice.behavior.kind === 'recovery') {
+    const built = unwrap(buildRecoveryAction({ state: run.core, phase: 'choice', eventId: choice.behavior.ruleEventId, choice: choice.behavior.choice, treat,
+      companionTrust: choice.behavior.choice === 'share' ? run.companion?.trust ?? null : null }))
+    action = { ...built, id: choice.id }
+  } else {
+    if (treat) throw new CatalogRuntimeError('action-unavailable', '정비 행동에서만 치료할 수 있습니다.')
+    const variant = choice.behavior.variants.find(item => matches(item.conditions, catalogContext(pack, run)))
+    if (!variant) throw new CatalogRuntimeError('content-invalid', '현재 상태의 행동 정의가 없습니다.')
+    action = variant.action
+  }
+  if (choice.id !== sourceChoiceId(choice.id)) action = { ...action, id: choice.id, requires: { ...action.requires, companion: true } }
+  const preview = unwrap(previewCoreAction({ state: run.core, action, eventId: action.eventId, phase: 'choice', companionPresent: activeCatalogCompanion(run) !== null, cooperating: false }))
+  const intervention = catalogIntervention(pack, run)
+  return withTrustPreview(pack, run, { ...preview, allowed: preview.allowed && !(intervention?.choice.id === actionId && !intervention.allowed),
+    reasons: [...preview.reasons, ...(intervention?.choice.id === actionId && !intervention.allowed ? [intervention.lockReason] : [])], choice, action, treat,
+    ...(!pack.manifest.trustVersion && choice.behavior.kind === 'recovery' && choice.behavior.choice === 'share' && run.companion
+      ? { trustChange: { before: run.companion.trust, after: recoveryTrustAfter(run.companion.trust, 'share'), reason: '동료에게 물자를 양보했습니다.' } } : {}) })
+}
+/** Shared evidence for recording and comparing; querying it cannot choose or execute. */
+export function catalogDecisionSituation(pack: CatalogPack, run: CatalogRun): CatalogDecisionSituation {
+  if (run.phase !== 'choice') throw new CatalogRuntimeError('invalid-phase', '선택 단계가 아닙니다.')
+  return structuredClone({
+    ...(pack.manifest.trustVersion && activeCatalogCompanion(run)
+      ? { relationship: { version: pack.manifest.trustVersion, companion: activeCatalogCompanion(run)! } } : {}),
+    ...(pack.manifest.executionVersion && activeCatalogCompanion(run) && catalogChoices(pack, run).some(choice => choice.execution)
+      ? { commandTrustSufficient: activeCatalogCompanion(run)!.trust >= 60 } : {}),
+    ...(pack.manifest.autonomyVersion && currentEvent(pack, run).autonomy && activeCatalogCompanion(run)
+      && (pack.manifest.autonomyVersion !== 'journey-2' || activeCatalogCompanion(run)!.trust < 80)
+      && matches(currentEvent(pack, run).autonomy!.conditions, catalogContext(pack, run))
+      ? { autonomy: { policy: currentEvent(pack, run).autonomy!, preferredActionId: baseOpinionChoice(pack, run)?.id ?? null } } : {}),
+    content: { packId: pack.manifest.id, revision: pack.manifest.revision, rulesVersion: pack.manifest.rulesVersion },
+    eventId: currentEvent(pack, run).id, locationId: catalogContext(pack, run).location.id, stage: catalogContext(pack, run).location.stage,
+    groupId: currentGroup(pack, run).id, sceneScriptId: run.visits[run.visitIndex].sceneScriptId,
+    core: run.core, companion: activeCatalogCompanion(run), facts: run.facts, visitedLocationIds: run.route.slice(0, run.visitIndex + 1),
+    options: catalogChoices(pack, run).map(choice => {
+      const option = previewCatalogAction(pack, run, choice.id)
+      return { actionId: choice.id, goalId: choice.goalId, judgment: choice.judgment, behavior: choice.behavior.kind,
+        ...(choice.behavior.kind === 'escape' ? { route: choice.behavior.route } : {}), ...(choice.pace ? { pace: choice.pace } : {}),
+        ...(pack.manifest.executionVersion && choice.execution ? { execution: choice.execution } : {}),
+        ...(pack.manifest.trustVersion && choice.relationship ? { relationship: choice.relationship } : {}),
+        ...(option.trustOutcomes ? { trustOutcomes: Object.fromEntries(Object.entries(option.trustOutcomes).map(([branch, change]) => [branch, change.after - change.before])) } : {}),
+        action: option.action, preview: { allowed: option.allowed, reasons: option.reasons, check: option.check } }
+    }),
+  })
+}
+export function executeCatalogAction(pack: CatalogPack, run: CatalogRun, actionId: string, treat = false, actor: 'protagonist' | 'companion' = 'protagonist'): CatalogRun {
+  const preview = previewCatalogAction(pack, run, actionId, treat, actor)
+  if (!preview.allowed) throw new CatalogRuntimeError('action-unavailable', preview.reasons.join(' '))
+  const departure = actor === 'companion' ? null : catalogAutonomyDeparture(pack, run, actionId)
+  const decisionContext = pack.manifest.decisionMemoryVersion === 'context-1' ? { ...catalogDecisionSituation(pack, run), selectedAction: preview.action,
+    ...(actor === 'companion' ? { executionActor: 'companion' as const } : {}) } : null
+  const escape = preview.choice.behavior.kind === 'escape' ? unwrap(resolveEscape({ state: run.core, eventId: 'E12', phase: 'choice', route: preview.choice.behavior.route }, run.rngState)) : null
+  const sharing = !pack.manifest.trustVersion && preview.choice.behavior.kind === 'recovery' && preview.choice.behavior.choice === 'share'
+    ? unwrap(resolveRecovery({ state: run.core, phase: 'choice', eventId: preview.choice.behavior.ruleEventId, choice: 'share', treat, companionTrust: run.companion?.trust ?? null }, run.rngState)) : null
+  const resolution = escape ? { ...escape, actionId } : sharing ? { ...sharing, actionId }
+    : unwrap(resolveCoreAction({ state: run.core, action: preview.action, eventId: preview.action.eventId, phase: 'choice', companionPresent: activeCatalogCompanion(run) !== null, cooperating: false }, run.rngState))
+  const failure = resolution.check.outcome === 'failure'
+  const companion = activeCatalogCompanion(run)
+  const trustChange = pack.manifest.trustVersion && companion
+    ? evaluateRelationship(run.core, resolution.state, companion, preview.choice, failure ? 'failure' : 'success', escape?.reason === 'escaped')
+    : sharing ? preview.trustChange : undefined
+  const facts = { ...run.facts, ...(failure ? preview.choice.failureFacts : preview.choice.successFacts) }
+  const next = { ...run, core: resolution.state, facts, rngState: resolution.check.rngState,
+    ...(trustChange && run.companion ? { companion: { ...run.companion, trust: trustChange.after } } : {}) }
+  const selected = selectScript(pack, next, failure ? 'failure' : 'success', sourceChoiceId(actionId), escape !== null)
+  const result = { resultId: `${run.runId}:result:${run.revision + 1}`, visitIndex: run.visitIndex, eventId: currentEvent(pack, run).id, actionId, treat, judgment: preview.choice.judgment, resultScriptId: selected.script.id, resolution,
+    ...(actor === 'companion' ? { execution: { actor: 'companion' as const, role: preview.choice.execution!.role, sharedRisk: preview.choice.execution!.sharedRisk } } : {}),
+    ...(departure && !resolution.fatal && !escape ? { companionDeparture: departure } : {}),
+    ...(decisionContext ? { decisionContext: structuredClone(decisionContext) } : {}),
+    ...(escape ? { escape: { ending: escape.ending, reason: escape.reason } } : {}),
+    ...(trustChange ? { trustChange } : {}) }
+  return {
+    ...next, phase: escape || resolution.fatal ? 'ending' : 'result', rngState: selected.rngState, revision: run.revision + 1,
+    ...(result.companionDeparture && run.companionJourney ? { companionJourney: { ...run.companionJourney, separation: result.companionDeparture } } : {}),
+    usedScripts: [...run.usedScripts, selected.script.id], history: [...run.history, result], result,
+    judgmentCounts: { rescue: run.judgmentCounts.rescue + (preview.choice.judgment === 'rescue' ? 1 : 0), self: run.judgmentCounts.self + (preview.choice.judgment === 'self' ? 1 : 0) },
+  }
+}
+export function acknowledgeCatalogResult(pack: CatalogPack, run: CatalogRun, resultId: string): CatalogRun {
+  if (run.phase !== 'result' || run.result?.resultId !== resultId) throw new CatalogRuntimeError('stale-context', '현재 확인할 결과가 아닙니다.')
+  if (run.visitIndex + 1 === run.route.length) return { ...run, phase: 'segment-complete', revision: run.revision + 1, result: null }
+  return enterLocation(pack, { ...run, phase: 'choice', visitIndex: run.visitIndex + 1, revision: run.revision + 1, result: null })
+}
+export function renderCatalogScript(pack: CatalogPack, run: CatalogRun, scriptId: string): string[] {
+  const script = pack.scripts.find(item => item.id === scriptId)
+  if (!script) throw new CatalogRuntimeError('content-invalid', '저장된 문구가 없습니다.')
+  const values: Record<string, string | undefined> = { 'protagonist.name': run.core.protagonist.name, 'companion.name': run.companion?.name, 'location.name': catalogContext(pack, run).location.name }
+  return script.text.map(line => line.replace(/\{\{([^{}]+)\}\}/g, (_, key: string) => {
+    if (values[key] === undefined) throw new CatalogRuntimeError('content-invalid', '문구에 필요한 인물이 없습니다.')
+    return values[key]
+  }))
+}
+export function catalogLegacy(pack: CatalogPack, run: CatalogRun): import('../../domain/catalog').CatalogLegacy | null {
+  if (run.phase !== 'ending') return null
+  return {
+    legacyId: `${run.runId}:legacy`, sourceRunId: run.runId, name: run.core.protagonist.name, traits: run.core.protagonist.traits,
+    rescueDecision: run.core.flags.rescueDecision, judgmentCounts: run.judgmentCounts,
+    // Keep approved representative slots; do not invent preferences from other events (D08).
+    representativeActions: { E02: run.history.find(entry => entry.eventId === 'E02')?.actionId ?? null,
+      E07: run.history.find(entry => entry.eventId === 'E07')?.actionId ?? null, E10: run.history.find(entry => entry.eventId === 'E10')?.actionId ?? null },
+    ending: run.result?.escape?.ending ?? 'escape-failed', rulesVersion: pack.manifest.rulesVersion, contentRevision: pack.manifest.revision,
+    ...(pack.manifest.decisionMemoryVersion === 'context-1' ? { decisionMemory: decisionMemoryFor(run) } : {}),
+  }
+}
+export function findCatalogChoice(pack: CatalogPack, eventId: string, actionId: string): CatalogChoice {
+  const event = pack.events.find(item => item.id === eventId)
+  const companion = event?.intervention?.mode === 'companion-choice' && actionId !== sourceChoiceId(actionId)
+  const choice = event && allChoices(event).find(item => item.id === (companion ? sourceChoiceId(actionId) : actionId))
+  if (!choice) throw new CatalogRuntimeError('content-invalid', '결과의 선택 정의가 없습니다.')
+  return companion ? asCompanionChoice(choice) : choice
+}

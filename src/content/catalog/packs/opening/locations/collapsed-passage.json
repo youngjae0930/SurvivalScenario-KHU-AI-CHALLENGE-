@@ -1,0 +1,17 @@
+{
+  "id": "collapsed-passage",
+  "name": "연구동 너머 · 붕괴 연결 통로",
+  "stage": "middle",
+  "tags": [
+    "road",
+    "crossing"
+  ],
+  "fromTags": [
+    "research"
+  ],
+  "after": [
+    "research"
+  ],
+  "required": true,
+  "weight": 1
+}

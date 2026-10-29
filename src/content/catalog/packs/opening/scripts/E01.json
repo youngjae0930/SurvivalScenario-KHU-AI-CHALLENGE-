@@ -1,0 +1,81 @@
+[
+  {
+    "id": "E01.scene",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 대피 방송은 같은 문장을 세 번 반복하다 끊겼다. 창밖의 교차로에는 버려진 차량들만 줄지어 있다.",
+      "구조대가 있다는 도시 외곽으로 가야 한다. 익숙한 도로를 확인하고 출발할 수도, 담장 너머의 좁은 지름길로 들어설 수도 있다. 문을 여는 것은 당신이다."
+    ]
+  },
+  {
+    "id": "E01.safe.success",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차량 사이와 건물 출입구를 확인한 뒤 길을 나선다. 잠깐의 침묵 속에서 다음 발걸음을 정한다."
+    ]
+  },
+  {
+    "id": "E01.shortcut.success",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "담장 너머를 무사히 통과했다. 버려진 공구함에서 손에 맞는 쇠지렛대를 찾아 배낭에 고정한다."
+    ]
+  },
+  {
+    "id": "E01.shortcut.failure",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 담장 끝에서 발을 헛디뎠다. 간신히 통로를 빠져나왔지만 몸에 상처가 남았다. 무기로 쓸 만한 것은 찾지 못했다."
+    ]
+  },
+  {
+    "id": "E01.plan.success",
+    "eventId": "E01",
+    "choiceId": "E01.plan",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "낡은 지도와 도로 표지를 번갈아 살폈다. 주변 길의 방향을 정리한 뒤 발걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E01.compose.success",
+    "eventId": "E01",
+    "choiceId": "E01.compose",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "담장에서 시선을 거두고 큰길을 택했다. 걸음과 호흡을 맞추자 굳어 있던 어깨가 조금 풀린다."
+    ]
+  }
+]

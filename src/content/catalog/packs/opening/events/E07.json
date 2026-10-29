@@ -1,0 +1,776 @@
+{
+  "id": "E07",
+  "title": "연구동 자료 조사",
+  "locationIds": [
+    "research"
+  ],
+  "locationTags": [
+    "research"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "exterior",
+      "priority": 0,
+      "conditions": [],
+      "notices": [
+        "병원 내부 접근로가 없어 연구동 바깥의 중계기를 이용합니다. 분석 극단은 적용하지 않습니다."
+      ],
+      "choices": [
+        {
+          "id": "E07.dismantle",
+          "goalId": "investigate",
+          "label": "무기를 분해해 중계기를 가동한다",
+          "intention": "보유 무기를 전원·연결 부품으로 소모해 판정 없이 탈출 자료를 확보한다. 무기는 사라진다.",
+          "target": "외곽 중계기",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.dismantle",
+                  "eventId": "E07",
+                  "requires": {
+                    "weapon": true
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-weapon",
+                      "value": false
+                    },
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.abandon",
+          "goalId": "leave",
+          "label": "자료를 더 찾지 않고 떠난다",
+          "intention": "체력만 조금 소모하며 연구동 구역을 벗어난다. 이미 가진 자료는 버리지 않는다.",
+          "target": "연구동 외곽",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.abandon",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.power",
+          "goalId": "investigate",
+          "label": "물자 두 개로 전원과 배선을 잇는다",
+          "intention": "공용 물자 두 개를 소모해 중계기를 가동한다. 무기를 보존하며 판정 없이 탈출 자료를 확보한다.",
+          "target": "외곽 중계기",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.power",
+                  "eventId": "E07",
+                  "requires": {
+                    "supply": 2
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 2,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.mark",
+          "goalId": "leave",
+          "label": "표지를 기록하고 천천히 물러난다",
+          "intention": "체력을 조금 더 써 주변 표지만 살피고 떠나며 스트레스를 낮춘다. 새 탈출 자료는 얻지 않는다.",
+          "target": "연구동 외곽",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.mark",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow"
+        }
+      ]
+    },
+    {
+      "id": "inside",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "flag",
+          "flag": "access",
+          "value": true
+        }
+      ],
+      "notices": [
+        "병원에서 확보한 접근로 덕분에 연구동 내부 자료실을 조사할 수 있습니다. 내부 위험 조사에는 접근 보정 +5가 적용됩니다."
+      ],
+      "choices": [
+        {
+          "id": "E07.investigate",
+          "goalId": "investigate",
+          "label": "문서와 단말기 기록을 조사한다",
+          "intention": "체력을 써 기록을 분석한다. 성공하면 탈출 자료를 확보하고, 실패하면 스트레스와 부상이 늘어난다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.investigate",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.clues",
+          "goalId": "leave",
+          "label": "눈에 띄는 단서만 확인한다",
+          "intention": "조사는 끝까지 하지 않고 떠난다. 체력만 조금 소모하며 이미 가진 자료는 유지한다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.clues",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.clean",
+          "goalId": "investigate",
+          "label": "치료 도구로 접점을 세척해 읽는다",
+          "intention": "치료 도구 하나를 접점 세척에 써 판독을 시도한다. 내 부상을 치료하는 행동은 아니다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.clean",
+                  "eventId": "E07",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": {
+                    "base": 75,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.crosscheck",
+          "goalId": "investigate",
+          "label": "체력을 더 써 기록을 교차 검증한다",
+          "intention": "물자와 치료 도구를 보존하고 더 많은 체력을 써 자료를 대조한다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.crosscheck",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 75,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "extreme",
+      "priority": 20,
+      "conditions": [
+        {
+          "kind": "flag",
+          "flag": "access",
+          "value": true
+        },
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "cognition",
+          "min": 0,
+          "max": 22
+        }
+      ],
+      "notices": [
+        "분석 극단: 자료 확보라는 목표 안에서 네 조사 방식 중 선택합니다. 체력·부상·무기 보정은 적용하지 않습니다."
+      ],
+      "choices": [
+        {
+          "id": "E07.urgent",
+          "goalId": "investigate",
+          "label": "즉시 기록 해독에 몰두한다",
+          "intention": "도구 없이 곧장 조사한다. 성공하면 자료와 물자를 얻지만 체력 소모와 스트레스 부담이 크다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.urgent",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.prepared",
+          "goalId": "investigate",
+          "label": "치료 도구로 접점을 정비하고 해독한다",
+          "intention": "치료 도구 하나를 소모해 조사한다. 성공하면 자료와 물자를 확보한다. 부상 치료는 포함하지 않는다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.prepared",
+                  "eventId": "E07",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": {
+                    "base": 75,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.insulate",
+          "goalId": "investigate",
+          "label": "물자로 배선을 고정하고 해독한다",
+          "intention": "공용 물자 하나로 배선을 고정한다. 성공하면 자료와 물자 하나를 확보하고 실패하면 준비한 물자를 잃는다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.insulate",
+                  "eventId": "E07",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 75,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E07.exhaustive",
+          "goalId": "investigate",
+          "label": "체력을 더 써 자료를 끝까지 대조한다",
+          "intention": "소모 도구 대신 체력을 더 써 끝까지 조사한다. 성공하면 자료와 물자를 확보하지만 긴장 부담이 남는다.",
+          "target": "연구동 자료",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.exhaustive",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "intervention": {
+    "groupId": "extreme",
+    "axis": "cognition",
+    "extremePole": "left",
+    "replaceChoiceId": "E07.exhaustive",
+    "alternatives": [
+      {
+        "groupId": "inside",
+        "choiceId": "E07.clues"
+      }
+    ],
+    "judgment": null,
+    "text": "눈에 보이는 단서만 확인하고 여기서 나가자.",
+    "notices": [
+      "분석 극단: 자료 확보라는 목표 안에서 세 조사 방식 중 선택합니다. 체력·부상·무기 보정은 적용하지 않습니다.",
+      "본인 선택 세 개와 동료 선택 한 개를 표시합니다. 본인의 반대 목표는 잠기며, 동료 선택은 동료의 성향·판단에 따라 반대 목표가 될 수 있습니다. 신뢰도 제한은 없지만 필요한 체력과 물자는 소모됩니다."
+    ],
+    "mode": "companion-choice"
+  },
+  "recommendation": {
+    "axis": "cognition"
+  }
+}

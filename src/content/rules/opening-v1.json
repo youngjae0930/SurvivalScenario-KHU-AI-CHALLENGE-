@@ -1,0 +1,72 @@
+{
+  "rulesVersion": "1.2-stress-1",
+  "contentRevision": "opening-core-stress-1",
+  "events": [
+    { "id": "E01", "nextEventId": "E02", "choices": [
+      { "id": "E01.safe", "kind": "fixed", "judgment": null, "variants": [
+        { "when": "always", "action": {
+          "id": "E01.safe", "eventId": "E01", "requires": {},
+          "costs": { "stamina": 0, "supply": 0, "medkit": 0 }, "check": null,
+          "traitDelta": { "risk": 8, "cognition": 0, "affect": 0 }, "successEffects": [], "failureEffects": []
+        } }
+      ] },
+      { "id": "E01.shortcut", "kind": "fixed", "judgment": null, "variants": [
+        { "when": "always", "action": {
+          "id": "E01.shortcut", "eventId": "E01", "requires": {},
+          "costs": { "stamina": 10, "supply": 0, "medkit": 0 },
+          "check": { "base": 70, "physical": true, "weaponBonus": false, "traitWeights": [{ "axis": "risk", "pole": "left", "weight": 1 }] },
+          "traitDelta": { "risk": -8, "cognition": 0, "affect": 0 },
+          "successEffects": [{ "kind": "set-weapon", "value": true }],
+          "failureEffects": [{ "kind": "add", "stat": "stress", "amount": 10 }, { "kind": "add", "stat": "injury", "amount": 1 }]
+        } }
+      ] }
+    ] },
+    { "id": "E02", "nextEventId": "E03", "choices": [
+      { "id": "E02.help", "kind": "fixed", "judgment": "rescue", "variants": [
+        { "when": "supply-present", "action": {
+          "id": "E02.help", "eventId": "E02", "requires": {},
+          "costs": { "stamina": 0, "supply": 1, "medkit": 0 }, "check": null,
+          "traitDelta": { "risk": 0, "cognition": 0, "affect": 8 },
+          "successEffects": [{ "kind": "set-rescue-decision", "value": "rescue" }, { "kind": "set-flag", "flag": "helpEstablished", "value": true }], "failureEffects": []
+        } },
+        { "when": "supply-empty", "action": {
+          "id": "E02.help", "eventId": "E02", "requires": {},
+          "costs": { "stamina": 10, "supply": 0, "medkit": 0 }, "check": null,
+          "traitDelta": { "risk": 0, "cognition": 0, "affect": 8 },
+          "successEffects": [{ "kind": "set-rescue-decision", "value": "rescue" }, { "kind": "set-flag", "flag": "helpEstablished", "value": true }], "failureEffects": []
+        } }
+      ] },
+      { "id": "E02.supplies", "kind": "fixed", "judgment": "self", "variants": [
+        { "when": "always", "action": {
+          "id": "E02.supplies", "eventId": "E02", "requires": {},
+          "costs": { "stamina": 0, "supply": 0, "medkit": 0 }, "check": null,
+          "traitDelta": { "risk": 0, "cognition": 0, "affect": -8 },
+          "successEffects": [{ "kind": "add", "stat": "supply", "amount": 1 }, { "kind": "set-rescue-decision", "value": "self" }], "failureEffects": []
+        } }
+      ] }
+    ] },
+    { "id": "E03", "nextEventId": "E04", "choices": [
+      { "id": "E03.observe", "kind": "fixed", "judgment": null, "variants": [
+        { "when": "always", "action": {
+          "id": "E03.observe", "eventId": "E03", "requires": {},
+          "costs": { "stamina": 5, "supply": 0, "medkit": 0 }, "check": null,
+          "traitDelta": { "risk": 0, "cognition": -8, "affect": 0 }, "successEffects": [], "failureEffects": []
+        } }
+      ] },
+      { "id": "E03.cross", "kind": "fixed", "judgment": null, "variants": [
+        { "when": "always", "action": {
+          "id": "E03.cross", "eventId": "E03", "requires": {},
+          "costs": { "stamina": 10, "supply": 0, "medkit": 0 },
+          "check": { "base": 70, "physical": true, "weaponBonus": false, "traitWeights": [{ "axis": "cognition", "pole": "right", "weight": 1 }] },
+          "traitDelta": { "risk": 0, "cognition": 8, "affect": 0 },
+          "successEffects": [{ "kind": "add", "stat": "supply", "amount": 1 }],
+          "failureEffects": [{ "kind": "add", "stat": "stress", "amount": 10 }, { "kind": "add", "stat": "injury", "amount": 1 }]
+        } }
+      ] }
+    ] },
+    { "id": "E04", "nextEventId": "E05", "choices": [
+      { "id": "E04.maintain", "kind": "recovery", "choice": "maintain", "judgment": null },
+      { "id": "E04.rest", "kind": "recovery", "choice": "rest", "judgment": null }
+    ] }
+  ]
+}

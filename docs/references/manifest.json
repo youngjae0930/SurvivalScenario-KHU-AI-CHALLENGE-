@@ -1,0 +1,33 @@
+{
+  "analyzed_on": "2026-10-29",
+  "sources": [
+    {
+      "file": "Codex_개발_인계서.docx",
+      "original_path": "C:\\Users\\young\\Downloads\\Codex_개발_인계서.docx",
+      "sha256": "fbda7dbc5511d96f9f87a23f38da3c92239594907e2bd1f40bd0b4d117025353",
+      "drawings": 0,
+      "tracked_insertions": 0,
+      "tracked_deletions": 0,
+      "extracted_path": "docs/references/handoff.md",
+      "extracted_chars": 8308
+    },
+    {
+      "file": "생존_시나리오_봉쇄_도시_상세_기술_설계_초안_v0.2.pdf",
+      "original_path": "C:\\Users\\young\\Downloads\\생존_시나리오_봉쇄_도시_상세_기술_설계_초안_v0.2.pdf",
+      "sha256": "1795d21f51955b23b3645e90c71f36f8d529eea3fba97ebff000da25f4ff9fc3",
+      "pages": 29,
+      "extracted_path": "docs/references/technical-design-v0.2.md",
+      "extracted_chars": 38108
+    },
+    {
+      "file": "개발착수용_기획안_v1.2.docx",
+      "original_path": "C:\\Users\\young\\Downloads\\개발착수용_기획안_v1.2.docx",
+      "sha256": "7d3e6323709a88fd08d3cbfec18d2abe627b248466db5860e2d71dd8f5bde9ba",
+      "drawings": 0,
+      "tracked_insertions": 0,
+      "tracked_deletions": 0,
+      "extracted_path": "docs/references/product-plan-v1.2.md",
+      "extracted_chars": 23783
+    }
+  ]
+}

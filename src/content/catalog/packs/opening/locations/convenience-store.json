@@ -1,0 +1,17 @@
+{
+  "id": "convenience-store",
+  "name": "서부 주거지 · 상가 구역",
+  "stage": "early",
+  "tags": [
+    "road",
+    "store"
+  ],
+  "fromTags": [
+    "road"
+  ],
+  "after": [
+    "villa"
+  ],
+  "required": true,
+  "weight": 1
+}

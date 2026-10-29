@@ -1,0 +1,220 @@
+[
+  {
+    "id": "E05.scene",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "응급실 앞에 멈춰 선 구급차의 문이 열려 있다. 안쪽 복도에는 뒤집힌 의자와 떨어진 방역 테이프가 이어진다. 간헐적인 마찰음이 어둠 속에서 들려온다.",
+      "병원 내부로 통하는 길을 확보하면 이후 조사에 도움이 된다. 문과 통로를 살피며 들어갈 것인지, 건물을 돌아 지나갈 것인지 판단해야 한다."
+    ]
+  },
+  {
+    "id": "E05.scene.extreme",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 0,
+        "max": 22
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "어두운 응급실 너머의 움직임에서 시선을 떼기 어렵다. 문을 돌아갈 길은 보이지만, 지금 구역을 확보하지 않으면 안쪽으로 통할 기회를 놓칠 것 같다.",
+      "곧장 돌입하거나 물자로 통로를 열 수 있다. 무기를 쓰거나 몸을 낮춰 틈을 뚫는 방법도 있다. 어느 쪽이든 내부 접근로를 확보하려는 시도이며 부상 위험이 남는다."
+    ]
+  },
+  {
+    "id": "E05.explore.success",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막힌 문을 우회해 안쪽 복도까지 통하는 길을 찾았다. 잠금장치와 문 위치를 확인하고 돌아 나와 내부 접근로를 기억해 둔다."
+    ]
+  },
+  {
+    "id": "E05.explore.failure",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "통로의 장애물을 피하다 균형을 잃었다. 상처를 안고 되돌아왔으며 병원 내부로 들어갈 길은 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E05.bypass.success",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "출입문에서 물러나 건물 외벽을 따라 걸었다. 병원 내부로 들어가는 길은 확보하지 않은 채 다음 통로로 향한다."
+    ]
+  },
+  {
+    "id": "E05.rush.success",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문을 밀고 들어가 통로를 가로막던 장애물을 치웠다. 안쪽으로 갈 길과 치료 도구를 확보했지만 긴장이 쉽게 가라앉지 않는다."
+    ]
+  },
+  {
+    "id": "E05.rush.failure",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "돌입하던 중 시야 밖 장애물에 부딪혔다. 상처를 안고 물러났고 내부 접근로와 치료 도구는 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E05.tools.success",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "챙긴 물자로 임시 도구를 만들어 통로를 열었다. 안쪽으로 들어갈 길을 확보하고 치료 도구도 찾아 챙겼다."
+    ]
+  },
+  {
+    "id": "E05.tools.failure",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도구로 장애물을 치우려 했지만 통로가 더 무너졌다. 준비한 물자를 잃고 상처를 입은 채 물러났다."
+    ]
+  },
+  {
+    "id": "E05.prepare.success",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자로 임시 도구를 만들어 입구의 장애물을 치웠다. 준비한 물자를 소모했지만 안쪽 복도까지 통하는 길을 확보했다."
+    ]
+  },
+  {
+    "id": "E05.prepare.failure",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "임시 도구가 장애물을 버티지 못하고 부러졌다. 물자를 소모하고 상처를 입었으며 내부 접근로도 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E05.slow-bypass.success",
+    "eventId": "E05",
+    "choiceId": "E05.slow-bypass",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외벽을 따라 먼 쪽으로 돌아갔다. 걸음은 늘었지만 문 안의 소리에서 멀어지자 긴장이 조금 가라앉았다. 병원 내부 접근로는 확보하지 않았다."
+    ]
+  },
+  {
+    "id": "E05.force.success",
+    "eventId": "E05",
+    "choiceId": "E05.force",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 틈에 끼워 장애물을 밀어냈다. 안쪽 복도로 들어갈 틈을 확보한 뒤 더 깊이 뒤지지 않고 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E05.force.failure",
+    "eventId": "E05",
+    "choiceId": "E05.force",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "장애물이 갑자기 기울며 몸을 덮쳤다. 무기는 놓치지 않았지만 상처를 입었고 내부 접근로도 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E05.crawl.success",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "바닥에 몸을 붙이고 장애물 아래의 좁은 틈을 통과했다. 몸은 많이 지쳤지만 안쪽 복도로 이어지는 길을 확보했다."
+    ]
+  },
+  {
+    "id": "E05.crawl.failure",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈을 지나다 드러난 모서리에 몸을 긁혔다. 체력을 소모하고 상처를 입은 채 되돌아왔으며 내부 접근로도 확보하지 못했다."
+    ]
+  }
+]

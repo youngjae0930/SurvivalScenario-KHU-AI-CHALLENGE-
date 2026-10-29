@@ -1,0 +1,17 @@
+{
+  "id": "hospital-exit",
+  "name": "서부 종합병원 · 연결 통로",
+  "stage": "middle",
+  "tags": [
+    "road",
+    "hospital-exit"
+  ],
+  "fromTags": [
+    "road"
+  ],
+  "after": [
+    "hospital-entry"
+  ],
+  "required": true,
+  "weight": 1
+}

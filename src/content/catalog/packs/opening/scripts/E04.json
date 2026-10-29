@@ -1,0 +1,101 @@
+[
+  {
+    "id": "E04.scene",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안쪽에서 문을 걸어 잠그자 거리에 울리던 소음이 조금 멀어진다. 먼지 낀 책상 옆에 앉아 숨을 고른다.",
+      "다음 건물로 향하기 전, 배낭과 몸 상태를 확인할 시간이다. 물자로 몸을 추스르거나, 물자를 아끼고 조금 더 쉴 수 있다. 부상이 있다면 정비 중 치료 도구를 함께 쓸 수 있다."
+    ]
+  },
+  {
+    "id": "E04.maintain.success",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭을 정리하고 몸을 추슬렀다. 여전히 갈 길은 남아 있지만, 다시 움직일 준비가 되었다."
+    ]
+  },
+  {
+    "id": "E04.rest.success",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 등을 기대고 호흡이 고르게 돌아올 때까지 기다렸다. 배낭은 그대로 두고 다시 일어선다."
+    ]
+  },
+  {
+    "id": "E04.first-aid.success",
+    "eventId": "E04",
+    "choiceId": "E04.first-aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구를 펴고 몸의 상처를 확인해 필요한 곳을 처치했다. 식량과 장비는 그대로 둔다. 오래 쉬지는 않았지만 몸을 살피고 나니 긴장이 조금 누그러진다."
+    ]
+  },
+  {
+    "id": "E04.organize.success",
+    "eventId": "E04",
+    "choiceId": "E04.organize",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앉아 쉬는 대신 바닥의 장애물을 밀어내고 주변을 정리했다. 몸은 조금 더 썼지만 확인할 수 있는 공간이 넓어지자 긴장이 풀린다."
+    ]
+  },
+  {
+    "id": "E04.share.success",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료에게 물자를 건넸다. 배낭의 여유는 줄었지만 나란히 앉아 잠시 숨을 고른다.",
+      "내 몸을 충분히 추스르는 대신, 서로를 믿고 다음 길로 향할 힘을 나눴다."
+    ]
+  },
+  {
+    "id": "E04.scene.companion",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안쪽에서 문을 걸어 잠그자 거리에 울리던 소음이 조금 멀어진다. 먼지 낀 책상 옆에 앉아 숨을 고른다.",
+      "동료와 배낭을 내려놓고 서로의 상태를 살핀다. 물자로 내 몸과 장비를 정비하거나, 동료에게 물자를 양보하고 함께 쉴 수 있다. 부상 치료는 정비 중 함께 하거나 치료 도구로 따로 처치할 수 있다."
+    ]
+  }
+]

@@ -1,0 +1,223 @@
+{
+  "id": "E03",
+  "title": "소리가 멎은 골목",
+  "locationIds": [
+    "alley"
+  ],
+  "locationTags": [
+    "alley"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E03.observe",
+          "goalId": "E03.observe",
+          "label": "먼저 골목을 관찰한다",
+          "intention": "주변의 흔적과 움직임을 확인하며 건넌다.",
+          "target": "골목 통과",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E03.observe",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 골목 앞쪽을 살피고 주인공은 뒤에서 이동과 후퇴를 지원한다. 두 사람이 함께 이동하며 체력 소모는 주인공에게도 적용된다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "E03.cross",
+          "goalId": "E03.cross",
+          "label": "멈추지 않고 통과한다",
+          "intention": "직감을 따라 골목을 곧장 가로지른다.",
+          "target": "골목 통과",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E03.cross",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "fast",
+          "execution": {
+            "role": "정찰",
+            "conditions": [],
+            "sharedRisk": "동료가 골목 앞쪽을 먼저 건너고 주인공도 뒤따라 움직이며 퇴로를 확보한다. 실패하면 공동 이동 중 주인공도 다칠 수 있다."
+          }
+        },
+        {
+          "id": "E03.wait",
+          "goalId": "wait",
+          "label": "움직임이 잦아들 때까지 기다린다",
+          "intention": "체력과 물자를 쓰지 않지만 기다리는 동안 스트레스가 오른다.",
+          "target": "골목 통과",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E03.wait",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow"
+        },
+        {
+          "id": "E03.distract",
+          "goalId": "distract",
+          "label": "물자로 반대편에 소리를 낸다",
+          "intention": "물자 하나를 써 시선을 돌리고 추가 부상 판정 없이 건넌다.",
+          "target": "골목 통과",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E03.distract",
+                  "eventId": "E03",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "cognition"
+  }
+}

@@ -1,32 +1,78 @@
-# React + TypeScript + Vite
+# 생존 시나리오: 봉쇄 도시
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## 최신 기능: 다음 회차와 계승 동료 (2026-10-29)
 
-Currently, two official plugins are available:
+결말에서 새 주인공 설문을 작성하고, 이전 성향·판단을 반영한 동료와 다음 여정을 시작할 수 있다. 준비 취소는 이전 결말로 돌아가며, 새 저장 성공 뒤에 출발한다. 실제 계승 동료의 E05 우회 제안·이어하기·동행 E12 완주를 확인했다. 계약0.6.0, 추정 약95%. 동료의 일반 추천과 협력/신뢰 변화는 후속이다. 상세 [회차 계승](docs/succession-progression.md). 아래 새 회차 미제공 설명은 과거 단계다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 최신 플레이 구간: E01~E12 완주 (2026-10-29)
 
-## React Compiler
+**생존 시나리오: 봉쇄 도시**의 첫 단독 회차를 빌라에서 탈출 결말까지 플레이할 수 있다. 마지막 네 선택은 누적 체력·부상·통로 정보를 사용하며 자료 보유 여부에 따라 결말이 달라진다. 일반 탈출/자료 회수 탈출/구조 대기와 실제 선택·계승 기록 저장/이어하기를 연결했다. 신규 팩 catalog-escape-1은 12장소/12사건/141문구다. 기존 저장은 원래 팩을 유지한다. 최신 분량의 무저장 체험은 개발 서버의 /?content-preview=opening이다. 전체 프로토타입 추정 **약 90%**, 동료와 다음 회차 영향 확인이 남았다. 새 회차 시작은 아직 제공하지 않는다. 상세는 [E12 진행](docs/escape-progression.md). 아래 E11/85%는 과거 기록이다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 최신 플레이 구간: E01~E11 (2026-10-29)
 
-## Expanding the Oxlint configuration
+**생존 시나리오: 봉쇄 도시**는 E11 최종 정비까지 플레이할 수 있다. 탈출 전 네 정비 선택과 자원별 회복·선택적 치료·탈출 조건 안내를 제공한다. 저장/이어하기를 실제 브라우저에서 확인했다. 신규 팩 catalog-final-rest-1(11장소/11사건/133문구), 기존 저장은 원래 팩을 유지한다. 상세는 `docs/final-rest-progression.md`. 전체 추정85%, 다음은E12 탈출·결말이다. 아래 E10/82%는 과거 기록이다.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 최신 플레이 구간: E01~E10 (2026-10-29)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+**생존 시나리오: 봉쇄 도시**는 E10 연락과 구조까지 플레이할 수 있다. 편의점에서 생긴 연락망으로 탈출 통로 정보를 얻거나 생존자를 구조한다. 감정 극단 네 선택·자원 잠금·실제 성향/비용 계산·저장/이어하기를 제공한다. 신규 팩 catalog-contact-1(10장소/10사건/127문구), 기존 저장은 원래 팩 유지. 상세는 `docs/contact-progression.md`. 전체 추정82%, 다음E11 최종 정비다. 아래 E09/78%는 과거 기록이다.
+
+## 최신 플레이 구간 (2026-10-29)
+
+**생존 시나리오: 봉쇄 도시**는 E01~E09까지 플레이할 수 있다. 격리 구역의 일반/이성 극단 네 선택·스트레스·자원·기록·저장 복원을 연결했다. catalog-quarantine-1은9장소/9사건/60행동/109문구, 전체 추정78%다. 다음은 E10 연락과 구조다. [E09 진행](docs/quarantine-progression.md), [실제 계산 흐름](docs/gameplay-data-flow.md), [로드맵](docs/roadmap.md)을 참고한다. 최신 분량의 무저장 체험은 개발 서버의 `/?content-preview=opening`이다. 기존 저장은 원래 구간을 유지한다. 아래 이전 구간/수치는 과거 기록이다.
+
+## 현재 플레이 구간 (2026-10-29)
+
+**생존 시나리오: 봉쇄 도시**는 E01~E08까지 플레이할 수 있다. 붕괴 통로의 일반/직관 극단 네 선택·체력 보존·저장/이어하기를 연결했다. 현재 catalog-crossing-1은8장소/8사건/52행동/93문구, 추정 진척도75%다. 다음은 E09 격리 구역이다. 상세는 [E08 진행](docs/crossing-progression.md), [로드맵](docs/roadmap.md)을 참고한다. 기존 저장은 원래 구간을 유지한다. 최신 분량을 저장 없이 확인하려면 개발 서버의 `/?content-preview=opening`을 사용한다. 프로토타입 완주 뒤 목적지 선택 이동과 랜덤 콘텐츠를 확장한다. 아래 이전 구간/수치는 과거 기록이다.
+
+저장소 식별자: `choice-echoes`.
+
+선택·성향·자원·관계를 쌓고 다음 회차의 동료로 계승하는 브라우저 텍스트 생존 게임 프로토타입이다. 기획안 v1.2와 기술 설계 검토 초안 v0.2를 기준으로 하며, 후속 요청에 따라 장소와 사건을 데이터로 확장하는 구조를 구현했다.
+
+Codex가 코어·UI·디자인·스토리·저장·통합을 모두 맡는다. 작업 기준은 [AGENTS.md](AGENTS.md), 개발 방식은 [개발·통합 기준](docs/collaboration.md), 구현 순서는 [로드맵](docs/roadmap.md), 현재 상태와 과거 검증은 [개발 메모리](docs/development-memory.md)에 있다.
+
+## 현재 상태
+
+최신 신규 회차는 **E01~E07 연구동 자료 조사까지 플레이**한다. 병원에서 확보한 접근로에 따라 내부 자료실 또는 외곽 중계기를 이용하며 세 맥락(일반/분석 극단/외곽)에 각각 네 선택을 제공한다. 자료 확보·무기 소모·물자 사용과 조사 결과를 저장한다. E07 뒤는 E08 대기다. 팩은 장소7개·사건7개·행동44개·문구76개, 전체 추정 약70%다. [연구동 진행 설명](docs/research-progression.md)을 따른다. 기존 저장 회차는 원래 구간을 유지하며 새 장소를 자동 삽입하지 않는다. 아래 E06/65%는 이전 단계 기록이다.
+
+최신 요청에 따라 **새 회차의 선택지는 일반/성향 극단 모두4개 고정**이다. E01~E06에16개 행동과22개 결과 문구를 추가했다. 자원이 부족한 행동은 잠금 이유를 표시한다. 새 콘텐츠는 정확히4개인지 검사하며 기존 저장은 원래 선택 수로 보존한다. [네 선택 변경 내용](docs/four-choice-update.md)을 따른다. 아래32개 문구 수는 이전 전환 시점이며 현재는54개다.
+
+최신 UI 계약은 **0.5.0**이다. 기존 E01~E06을 장소6개·사건6개·스크립트32개의 JSON 콘텐츠로 전환했다. `src/content/catalog/packs/`에 파일을 추가하면 자동 등록하며 단계·연결·필수 방문·주인공/동료 상태 조건과 문구 추첨을 지원한다. 현재 팩은 기존 순서를 보존한다. 동료 조건은 엔진 준비 범위이며 실제 동료 플레이는 후속이다.
+
+새 회차는 **schema6**에 사용 콘텐츠를 함께 고정하고, 기존 schema4/5 저장은 원래 엔진으로 이어한다. 아래0.4.0 설명은 이전 병원 단계 기록이다. [콘텐츠 작성 지침](docs/content-authoring.md)과 [모델 전달용 지시문](docs/content-model-prompt.md)을 따른다. 개발 서버의 `/?content-preview=opening`은 기존 저장을 건드리지 않는 세션 미리보기다. 제품 빌드에서는 이 옵션을 사용하지 않는다.
+
+공개 UI 계약0.4.0과 실제 GameClient로 **설문부터 E06 병원 이탈까지 직접 플레이**할 수 있다. 이야기·선택 확인·비용/확률/성패 효과·상태판·치료·결과와 구간완료 화면이 연결되어 있다. 병원에서는 모험·안정 극단에 따라 선택지가 달라진다. 치명 부상 시 실제 결말과 계승 기록을 함께 저장한다. 생존해 E06을 마치면 E07 대기이며 게임 결말이 아니다.
+
+이 브라우저에 **자동 저장·이어하기**를 지원한다. 선택과 이미 나온 결과를 복원하고, 한 탭에서만 진행한다. 정신력은 **스트레스(초기30, 낮을수록 안정)**로 전환했다. 기존 E04 저장도 보존하며 명시적으로 병원으로 이어간다. 저장 실패 재시도와 호환 정책은 [저장 설명](docs/persistence.md), 병원 규칙은 [병원 진행](docs/hospital-progression.md)을 따른다. 다음 E07은 D04 규칙 확인 후 확장한다. 전체 프로토타입 추정 진척도는 약65%다.
+
+## 실행과 검증
+
+의존성이 없는 최초 환경에서는 `npm ci`로 package-lock 기준 설치한다.
+
+```sh
+npm run dev
+npm run lint
+npm run test:run
+npm run build
+npm run preview
+npm run content:check
+npm run content:schema
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+React19 · TypeScript7 · Vite8 · Tailwind4 · Vitest5 · Oxlint를 사용한다. 정확한 의존성은 package-lock.json을 따른다.
+
+## 구조
+
+| 경로 | 책임 |
+|---|---|
+| src/app | 명령·상태 조정·GameClient·화면 모델 변환 |
+| src/ui | 화면·컴포넌트·UI 상태·스타일 |
+| src/contracts | 앱과 UI의 공개 경계 |
+| src/domain / src/engine | 내부 타입/검증 / 순수 게임 규칙 |
+| src/storage | 저장·복원·호환 |
+| src/content/rules / texts | 수치·조건 / 한국어 이야기·표시 문구 |
+| src/content/catalog/packs | 신규 회차의 자동 등록 장소·사건·선택지·스크립트 JSON |
+| src/engine/catalog | 콘텐츠 검증·단계별 경로·조건·가중 추첨·진행 |
+| src/assets / public | 번들 자산 / URL로 제공할 정적 자산 |
+| docs/references | 원문 추출본과 출처 정보 |
+
+예정된 하위 구조와 단계별 완료 기준은 로드맵에 있다. 빈 영역은 실제 기능을 구현하면서 채운다.

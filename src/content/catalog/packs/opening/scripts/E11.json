@@ -1,0 +1,125 @@
+[
+  {
+    "id": "E11.scene",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "통신소를 지나 외곽 집결지의 차량 대기소에 도착했다. 멀리서 구조 차량의 엔진 소리가 들리지만, 여기서부터는 남은 체력과 상처가 이동 방법을 결정한다.",
+      "연락망으로 열린 우회 통로를 확인하지 못한 상태다. 단거리를 이용하려면 체력 15 이상과 부상 1 이하가 필요하다. 마지막으로 몸을 추스를지, 도구로 상처를 돌볼지 선택할 시간이다."
+    ]
+  },
+  {
+    "id": "E11.scene.route",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "routeKnown",
+        "value": true
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "통신소를 지나 차량 대기소에 도착했다. 앞서 연락망으로 확인한 우회 통로 정보가 남아 있다. 가까운 길이 버겁다면 체력 30 이상·부상 2 이하일 때 우회를 고려할 수 있다.",
+      "차량에 닿기 전 마지막 정비 시간이다. 단거리 조건은 체력 15 이상·부상 1 이하이며, 지금의 상태와 회복 후 남을 자원을 함께 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E11.maintain.success",
+    "eventId": "E11",
+    "choiceId": "E11.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭과 장비를 정리하고 몸을 추슬렀다. 숨을 고르고 다시 움직일 준비를 마쳤다.",
+      "구조 차량으로 향하기 전, 지금 남은 체력과 부상을 확인한다."
+    ]
+  },
+  {
+    "id": "E11.rest.success",
+    "eventId": "E11",
+    "choiceId": "E11.rest",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자와 치료 도구는 아끼고 벽에 기대 마지막 휴식을 취했다. 호흡이 고르게 돌아왔지만 상처가 저절로 낫지는 않았다.",
+      "다시 일어서서 탈출에 필요한 체력과 부상 조건을 확인한다."
+    ]
+  },
+  {
+    "id": "E11.first-aid.success",
+    "eventId": "E11",
+    "choiceId": "E11.first-aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구를 펴고 몸 상태를 살펴 필요한 곳을 처치했다. 도구 하나를 사용했고, 오래 쉬지 않아 체력은 그대로다.",
+      "탈출 전에 남은 상처와 체력을 다시 확인한다."
+    ]
+  },
+  {
+    "id": "E11.organize.success",
+    "eventId": "E11",
+    "choiceId": "E11.organize",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 끈과 장비를 정돈했다. 몸은 조금 더 썼지만 손이 닿을 위치를 확인하자 긴장이 가라앉았다.",
+      "상처와 물자는 그대로다. 남은 체력이 탈출 조건을 충족하는지 확인한다."
+    ]
+  },
+  {
+    "id": "E11.share.success",
+    "eventId": "E11",
+    "choiceId": "E11.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료에게 물자를 건넸다. 배낭의 여유는 줄었지만 나란히 앉아 잠시 숨을 고른다.",
+      "내 몸을 충분히 추스르는 대신, 서로를 믿고 다음 길로 향할 힘을 나눴다."
+    ]
+  },
+  {
+    "id": "E11.scene.companion",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "통신소를 지나 외곽 집결지의 차량 대기소에 도착했다. 멀리서 구조 차량의 엔진 소리가 들리지만, 여기서부터는 남은 체력과 상처가 이동 방법을 결정한다.",
+      "탈출을 앞두고 동료와 마지막으로 몸과 배낭을 확인한다. 내 회복을 우선할지, 물자를 동료에게 양보하고 함께 쉴지 결정해야 한다. 부상 치료는 정비 중 함께 하거나 치료 도구로 따로 처치할 수 있다."
+    ]
+  }
+]

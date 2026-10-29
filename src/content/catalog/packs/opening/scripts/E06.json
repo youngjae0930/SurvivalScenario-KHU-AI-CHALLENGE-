@@ -1,0 +1,214 @@
+[
+  {
+    "id": "E06.scene",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막힌 구역과 열린 통로의 경계에서 다시 바깥빛이 보인다. 출구 쪽으로 몸을 돌리자 안쪽에서 무언가 무너지는 소리가 난다.",
+      "지금 떠나면 병원과 거리를 벌릴 수 있다. 통로 끝에는 회수할 만한 상자가 남아 있지만, 돌아가면 그만큼 더 위험을 감수해야 한다."
+    ]
+  },
+  {
+    "id": "E06.scene.extreme",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 78,
+        "max": 100
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "건물 안쪽에서 다시 무너지는 소리가 난다. 더 머물기보다 안전하게 거리를 벌려야겠다는 생각이 앞선다.",
+      "짐을 버리거나 물자를 써서 철수할 수 있다. 무기로 거리를 벌리거나 몸을 낮춰 천천히 빠져나갈 수도 있다. 더 챙기려는 생각보다 이곳을 벗어나는 일이 앞선다."
+    ]
+  },
+  {
+    "id": "E06.scene.exterior",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "access",
+        "value": false
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 외벽을 돌아 나오자 바깥으로 이어지는 연결 통로가 보인다. 안쪽에서 무언가 무너지는 소리가 난다.",
+      "이대로 구역을 벗어나거나 통로 끝의 상자에 남은 물자를 회수할 수 있다. 내부 접근로는 확보하지 못했지만, 이곳에서 떠나는 방법은 직접 정해야 한다."
+    ]
+  },
+  {
+    "id": "E06.withdraw.success",
+    "eventId": "E06",
+    "choiceId": "E06.withdraw",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "돌아갈 생각을 접고 출구를 향해 움직였다. 남은 짐을 그대로 지닌 채 병원과 거리를 벌린다."
+    ]
+  },
+  {
+    "id": "E06.salvage.success",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "통로 안으로 한 번 더 들어가 쓸 수 있는 물자를 회수했다. 챙긴 짐을 붙잡고 출구로 돌아왔다."
+    ]
+  },
+  {
+    "id": "E06.salvage.failure",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자를 꺼내려다 무너진 구조물에 몸을 다쳤다. 물자는 챙기지 못하고 출구로 돌아왔다."
+    ]
+  },
+  {
+    "id": "E06.abandon.success",
+    "eventId": "E06",
+    "choiceId": "E06.abandon",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 물자를 내려놓고 움직임에 걸리는 것을 줄였다. 부상 부위의 부담을 덜어내고 건물 밖으로 빠져나와 숨을 고른다."
+    ]
+  },
+  {
+    "id": "E06.defend.success",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비한 물자로 파편을 막아내며 출구까지 이동했다. 건물과 거리를 벌린 뒤 부상 부위를 정리하고 호흡을 되찾는다."
+    ]
+  },
+  {
+    "id": "E06.defend.failure",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자로 몸을 보호하며 움직였지만 무너지는 장애물을 모두 피하지 못했다. 상처를 입은 채 출구 쪽으로 물러났다."
+    ]
+  },
+  {
+    "id": "E06.screen.success",
+    "eventId": "E06",
+    "choiceId": "E06.screen",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자로 이동 흔적과 시야를 가리고 출구 쪽으로 몸을 옮겼다. 추가 물자는 챙기지 않았지만 긴장을 덜어낸 채 병원 구역을 벗어났다."
+    ]
+  },
+  {
+    "id": "E06.search-kit.success",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "출구 주변을 뒤져 남아 있던 치료 도구를 찾아 가방에 넣었다. 지친 몸을 일으켜 병원 구역을 벗어났다."
+    ]
+  },
+  {
+    "id": "E06.search-kit.failure",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "출구 주변을 뒤졌지만 치료 도구는 찾지 못했다. 깨진 모서리에 상처까지 입고 나서야 탐색을 멈추고 철수했다."
+    ]
+  },
+  {
+    "id": "E06.guard.success",
+    "eventId": "E06",
+    "choiceId": "E06.guard",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 앞세워 거리를 벌리고 천천히 뒤로 물러났다. 추가 물자를 찾지 않고 병원 구역을 벗어난 뒤에야 굳은 숨을 풀었다."
+    ]
+  },
+  {
+    "id": "E06.guard.failure",
+    "eventId": "E06",
+    "choiceId": "E06.guard",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 내밀며 물러나던 중 뒤쪽 장애물에 걸렸다. 상처를 입었지만 추가 탐색을 멈추고 병원 구역 밖으로 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E06.low-retreat.success",
+    "eventId": "E06",
+    "choiceId": "E06.low-retreat",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐을 버리지 않고 낮은 자세로 천천히 빠져나왔다. 체력은 더 소모했지만 추가 탐색 없이 구역을 벗어나자 긴장이 조금 풀렸다."
+    ]
+  }
+]

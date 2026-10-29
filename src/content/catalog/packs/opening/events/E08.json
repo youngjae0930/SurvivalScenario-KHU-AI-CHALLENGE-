@@ -1,0 +1,556 @@
+{
+  "id": "E08",
+  "title": "붕괴 통로",
+  "locationIds": [
+    "collapsed-passage"
+  ],
+  "locationTags": [
+    "crossing"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "extreme",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "cognition",
+          "min": 78,
+          "max": 100
+        }
+      ],
+      "notices": [
+        "직관 극단: 지금 통과한다는 목표 안에서 네 실행 방식 중 선택합니다. 체력·부상·스트레스 보정이 적용됩니다."
+      ],
+      "choices": [
+        {
+          "id": "E08.leap",
+          "goalId": "cross",
+          "label": "난간을 넘어 즉시 건넌다",
+          "intention": "곧장 난간을 넘는다. 성공 시 체력 보상 15로 기본 소모 15를 상쇄하지만 스트레스가 오른다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.leap",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "fast"
+        },
+        {
+          "id": "E08.gap",
+          "goalId": "cross",
+          "label": "물자로 잔해 틈을 받치고 통과한다",
+          "intention": "물자 하나를 써 틈을 확보한다. 성공하면 체력 보상 15를 비용 10과 합산한다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.gap",
+                  "eventId": "E08",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 75,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 15
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E08.support",
+          "goalId": "cross",
+          "label": "물자 두 개로 발 디딜 곳을 이어 건넌다",
+          "intention": "물자 두 개로 디딤판을 이어 빠르게 통과한다. 성공하면 체력 보상 15를 비용 5와 합산한다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.support",
+                  "eventId": "E08",
+                  "requires": {
+                    "supply": 2
+                  },
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 2,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 80,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 15
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E08.squeeze",
+          "goalId": "cross",
+          "label": "몸을 낮춰 좁은 틈을 밀고 나간다",
+          "intention": "최소 체력 20이 필요하다. 도구 없이 힘으로 통과하며 성공하면 체력 보상 15를 비용 20과 합산하지만 스트레스가 오른다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.squeeze",
+                  "eventId": "E08",
+                  "requires": {
+                    "stamina": 20
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "priority": 0,
+      "conditions": [],
+      "notices": [
+        "길을 확인하는 선택도 위험 판정이 있습니다. 성공 체력 보상은 기본 비용과 합산해 적용합니다."
+      ],
+      "choices": [
+        {
+          "id": "E08.inspect",
+          "goalId": "inspect",
+          "label": "발판을 확인하며 건넌다",
+          "intention": "잔해와 발판을 분석하며 건넌다. 확인에도 체력을 쓰며 실패하면 부상과 스트레스가 남는다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.inspect",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E08.instinct",
+          "goalId": "cross",
+          "label": "직감을 따라 곧장 건넌다",
+          "intention": "눈에 들어온 길로 건넌다. 성공하면 체력 보상 5를 비용과 합산해 소모를 줄인다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.instinct",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E08.brace",
+          "goalId": "inspect",
+          "label": "물자로 발판을 고정하고 건넌다",
+          "intention": "물자 하나로 흔들리는 발판을 고정한 뒤 분석하며 건넌다. 준비해도 실패 위험은 남는다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.brace",
+                  "eventId": "E08",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 80,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E08.detour",
+          "goalId": "inspect",
+          "label": "벽 쪽의 긴 통로를 돌아 건넌다",
+          "intention": "체력 20을 써 벽에 붙은 긴 통로로 건넌다. 확정 행동이며 탈출용 우회 경로를 발견하는 선택은 아니다.",
+          "target": "붕괴 연결 통로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E08.detour",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow"
+        }
+      ]
+    }
+  ],
+  "intervention": {
+    "groupId": "extreme",
+    "axis": "cognition",
+    "extremePole": "right",
+    "replaceChoiceId": "E08.squeeze",
+    "alternatives": [
+      {
+        "groupId": "general",
+        "choiceId": "E08.inspect"
+      }
+    ],
+    "judgment": null,
+    "text": "바로 뛰어들기 전에 발판부터 확인하자.",
+    "notices": [
+      "직관 극단: 지금 통과한다는 목표 안에서 세 실행 방식 중 선택합니다. 체력·부상·스트레스 보정이 적용됩니다.",
+      "본인 선택 세 개와 동료 선택 한 개를 표시합니다. 본인의 반대 목표는 잠기며, 동료 선택은 동료의 성향·판단에 따라 반대 목표가 될 수 있습니다. 신뢰도 제한은 없지만 필요한 체력과 물자는 소모됩니다."
+    ],
+    "mode": "companion-choice"
+  },
+  "recommendation": {
+    "axis": "cognition"
+  }
+}

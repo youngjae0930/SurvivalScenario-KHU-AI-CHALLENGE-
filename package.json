@@ -9,7 +9,10 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "content:check": "vitest run src/content/catalog/catalog.test.ts --reporter=verbose",
+    "content:schema": "node scripts/export-content-schemas.mjs",
+    "content:journeys": "node scripts/report-journeys.mjs"
 
   },
   "dependencies": {

@@ -1,0 +1,17 @@
+{
+  "id": "research",
+  "name": "병원 부속 연구동",
+  "stage": "middle",
+  "tags": [
+    "road",
+    "research"
+  ],
+  "fromTags": [
+    "hospital-exit"
+  ],
+  "after": [
+    "hospital-exit"
+  ],
+  "required": true,
+  "weight": 1
+}

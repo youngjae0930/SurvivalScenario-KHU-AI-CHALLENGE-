@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "manifest",
+  "type": "object",
+  "properties": {
+    "formatVersion": {
+      "enum": [
+        1
+      ]
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+    },
+    "rulesVersion": {
+      "enum": [
+        "1.2-stress-1"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "startLocationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+    },
+    "routeVersion": {
+      "enum": [
+        "stages-1"
+      ]
+    },
+    "trustVersion": {
+      "enum": [
+        "outcome-1"
+      ]
+    },
+    "executionVersion": {
+      "enum": [
+        "command-1"
+      ]
+    },
+    "autonomyVersion": {
+      "enum": [
+        "journey-1",
+        "journey-2"
+      ]
+    },
+    "presentationVersion": {
+      "enum": [
+        "reflection-1"
+      ]
+    },
+    "recommendationVersion": {
+      "enum": [
+        "survival-1"
+      ]
+    },
+    "decisionMemoryVersion": {
+      "enum": [
+        "context-1"
+      ]
+    },
+    "decisionEcho": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "enum": [
+            "echo-1"
+          ]
+        },
+        "compatibleRevisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+          },
+          "minItems": 1,
+          "maxItems": 50
+        }
+      },
+      "required": [
+        "version",
+        "compatibleRevisions"
+      ],
+      "additionalProperties": false
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "enum": [
+              "early",
+              "middle",
+              "late"
+            ]
+          },
+          "minVisits": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 16
+          },
+          "maxVisits": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 16
+          }
+        },
+        "required": [
+          "id",
+          "minVisits",
+          "maxVisits"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80,
+        "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+      },
+      "minItems": 0,
+      "maxItems": 100
+    },
+    "boundary": {
+      "type": "object",
+      "properties": {
+        "nextEventId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "text": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          },
+          "minItems": 1,
+          "maxItems": 10
+        }
+      },
+      "required": [
+        "nextEventId",
+        "title",
+        "text"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "formatVersion",
+    "id",
+    "revision",
+    "rulesVersion",
+    "title",
+    "startLocationId",
+    "stages",
+    "facts",
+    "boundary"
+  ],
+  "additionalProperties": false
+}

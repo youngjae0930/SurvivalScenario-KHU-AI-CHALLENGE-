@@ -1,0 +1,233 @@
+[
+  {
+    "id": "E08.scene",
+    "eventId": "E08",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연구동을 나와 격리 구역으로 향하는 연결 통로에 도착했다. 바닥 일부가 내려앉았고, 난간 너머로 부서진 보행로가 이어진다.",
+      "발판을 살피며 건너거나 눈앞에 보이는 길로 곧장 통과할 수 있다. 남은 물자로 길을 보강할 수도, 벽 쪽의 긴 통로를 택할 수도 있다."
+    ]
+  },
+  {
+    "id": "E08.scene.extreme",
+    "eventId": "E08",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 78,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기울어진 난간과 잔해 사이로 반대편 검문등이 보인다. 머뭇거리기보다 지금 건너야 한다는 생각이 앞선다.",
+      "난간을 넘거나 잔해 틈을 통과할 수 있다. 물자를 써 발판을 받칠지, 가진 힘으로 밀고 나갈지 정해야 한다."
+    ]
+  },
+  {
+    "id": "E08.inspect.success",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발판을 두드리고 흔들림을 살피며 반대편에 도착했다. 이동에 필요한 체력을 썼지만 새 탈출 경로를 확보한 것은 아니다."
+    ]
+  },
+  {
+    "id": "E08.inspect.failure",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발판을 확인하던 중 잔해가 밀렸다. 몸을 부딪쳐 상처를 입고 더 긴장한 채 반대편으로 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E08.instinct.success",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "눈에 들어온 디딤돌을 연달아 밟아 건넜다. 짧은 이동 덕분에 기본 비용 10에서 체력 보상 5만큼 소모를 아꼈다."
+    ]
+  },
+  {
+    "id": "E08.instinct.failure",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곧장 건너다 발을 헛디뎠다. 간신히 통로 반대편으로 몸을 끌어올렸지만 상처와 긴장이 남았다."
+    ]
+  },
+  {
+    "id": "E08.brace.success",
+    "eventId": "E08",
+    "choiceId": "E08.brace",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자 하나로 흔들리는 발판을 고정한 뒤 건넜다. 준비에 쓴 물자와 체력은 돌아오지 않았다."
+    ]
+  },
+  {
+    "id": "E08.brace.failure",
+    "eventId": "E08",
+    "choiceId": "E08.brace",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "고정한 발판 옆의 잔해가 무너졌다. 준비한 물자를 잃고 상처를 입은 채 반대편으로 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E08.detour.success",
+    "eventId": "E08",
+    "choiceId": "E08.detour",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 붙은 긴 통로를 따라 천천히 건넜다. 체력은 더 들었지만 추가 부상 판정 없이 반대편에 도착했다. 탈출용 우회 경로를 알아낸 것은 아니다."
+    ]
+  },
+  {
+    "id": "E08.leap.success",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간을 넘어 반대편으로 뛰어들었다. 체력 보상 15가 기본 비용 15를 상쇄했지만 긴장은 더 높아졌다."
+    ]
+  },
+  {
+    "id": "E08.leap.failure",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간을 넘다 거친 모서리에 몸을 부딪쳤다. 통로를 빠져나왔지만 체력과 상처, 큰 긴장 부담이 남았다."
+    ]
+  },
+  {
+    "id": "E08.gap.success",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자 하나로 잔해 틈을 받쳐 짧은 길로 통과했다. 체력 보상 15를 기본 비용 10과 합산해 체력을 5 아꼈다."
+    ]
+  },
+  {
+    "id": "E08.gap.failure",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받쳐 둔 잔해가 움직였다. 사용한 물자는 회수하지 못했고 상처와 긴장을 안고 반대편으로 나왔다."
+    ]
+  },
+  {
+    "id": "E08.support.success",
+    "eventId": "E08",
+    "choiceId": "E08.support",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물자 두 개를 디딤판으로 써 짧게 건넜다. 체력 보상 15를 기본 비용 5와 합산해 체력을 10 보존했다."
+    ]
+  },
+  {
+    "id": "E08.support.failure",
+    "eventId": "E08",
+    "choiceId": "E08.support",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "디딤판이 기울어 넘어졌다. 물자 두 개를 소모했고 상처와 긴장을 안고 반대편으로 몸을 끌어올렸다."
+    ]
+  },
+  {
+    "id": "E08.squeeze.success",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈을 밀고 나가 통로를 건넜다. 체력 보상 15로 기본 비용 20의 부담을 줄였지만 긴장은 남았다."
+    ]
+  },
+  {
+    "id": "E08.squeeze.failure",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "틈에 걸린 잔해에 긁혔다. 힘을 많이 쓴 뒤 상처와 큰 긴장을 안고 통로를 벗어났다."
+    ]
+  }
+]
