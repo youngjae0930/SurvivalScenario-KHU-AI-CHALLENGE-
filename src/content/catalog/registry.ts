@@ -19,7 +19,7 @@ export function readCatalogPacks(): CatalogPack[] {
   return packs
 }
 export function readDefaultCatalog(): CatalogPack {
-  const pack = readCatalogPacks().find(pack => pack.manifest.id === 'opening')
-  if (!pack) throw new Error('opening 콘텐츠 팩이 없습니다.')
+  const pack = readCatalogPacks().find(pack => pack.manifest.id === 'stage19')
+  if (!pack) throw new Error('stage19 콘텐츠 팩이 없습니다.')
   return pack
 }

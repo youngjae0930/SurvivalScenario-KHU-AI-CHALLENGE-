@@ -28,6 +28,16 @@
       "tracked_deletions": 0,
       "extracted_path": "docs/references/product-plan-v1.2.md",
       "extracted_chars": 23783
+    },
+    {
+      "file": "봉쇄도시_19스테이지_장소_스토리라인_v1.pdf",
+      "original_path": "C:\\Users\\young\\Downloads\\봉쇄도시_19스테이지_장소_스토리라인_v1.pdf",
+      "sha256": "2b14e60469636094eef9cc1fb6e1b790badd198dc0d2201c16398df6b8b3e5ba",
+      "pages": 9,
+      "analyzed_on": "2026-10-30",
+      "extracted_path": "docs/references/location-storyline-19-stages-v1.md",
+      "extracted_chars": 7125
     }
-  ]
+  ],
+  "last_updated_on": "2026-10-30"
 }

@@ -27,6 +27,8 @@ export interface CatalogLocation {
   readonly weight: number
 }
 export interface CatalogChoice {
+  /** Append this authored route segment after committing this navigation action. */
+  readonly destinationSegmentId?: string
   /** Authored story consequences, in evaluation units, never a direct trust delta. */
   readonly relationship?: { readonly success: readonly RelationshipImpact[]; readonly failure: readonly RelationshipImpact[] }
   /** Author-defined command role and explicit shared-risk explanation; never inferred from physical. */
@@ -93,9 +95,13 @@ export interface CatalogScript {
   readonly text: readonly string[]
 }
 export interface CatalogManifest {
+  readonly slotPlan?: {
+    readonly startSegmentId: string
+    readonly segments: readonly CatalogSegment[]
+  }
   /** Authored dialogue channels; display lookup never consumes gameplay randomness. */
   readonly dialogueVersion?: 'scripts-1'
-  readonly routeVersion?: 'stages-1'
+  readonly routeVersion?: 'stages-1' | 'slots-1'
   readonly trustVersion?: 'outcome-1'
   readonly executionVersion?: 'command-1'
   readonly autonomyVersion?: 'journey-1' | 'journey-2'
@@ -116,6 +122,14 @@ export interface CatalogManifest {
   readonly stages: readonly { readonly id: StageId; readonly minVisits: number; readonly maxVisits: number }[]
   readonly facts: readonly string[]
   readonly boundary: { readonly nextEventId: string; readonly title: string; readonly text: readonly string[] }
+}
+export interface CatalogSegment {
+  readonly id: string
+  readonly stage: StageId
+  readonly slots: readonly { readonly number: number; readonly candidates: readonly string[] }[]
+  readonly nextSegmentIds: readonly string[]
+  /** Unresolved hidden-route policy stays explicitly unavailable. */
+  readonly lockedReason?: string
 }
 export interface CatalogPack {
   readonly manifest: CatalogManifest

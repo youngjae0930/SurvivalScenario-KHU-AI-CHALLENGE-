@@ -44,6 +44,8 @@ export function GameRoot({ client }: GameRootProps) {
   const disabled = pending || snapshot.commit.kind !== 'ready'
   const stage = 'context' in view ? Number(view.context.eventId.slice(1)) : view.kind === 'segment-complete' ? view.completedEventIds.length : 0
   const journey = snapshot.presentation?.journey ?? ['대피소 출발', '편의점', '골목', '회복', '병원 진입', '병원 이탈'].map((label, index) => ({ id: label, label, state: index + 1 === stage ? 'current' : index + 1 < stage ? 'visited' : 'upcoming' }))
+  const currentStage = journey.findIndex(step => step.state === 'current') + 1
+  const sceneLabel = snapshot.presentation && currentStage > 0 ? `STAGE ${String(currentStage).padStart(2, '0')}` : 'context' in view ? view.context.eventId : ''
   const completesSegment = view.kind === 'result' && (view.completesSegment ?? view.nextEventId === 'E07')
   return <div className="game-shell">
     <header className="site-header"><div className="brand"><span className="brand-symbol" aria-hidden="true">封</span><div>생존 시나리오:<span>봉쇄 도시</span></div></div><div className="edition">PROTOTYPE <span>{snapshot.presentation?.edition ?? '병원 구간까지 / 01—06'}</span></div></header>
@@ -59,8 +61,8 @@ export function GameRoot({ client }: GameRootProps) {
         <nav className="journey" aria-label="체험 구간 진행"><ol>{journey.map((step, index) => <li key={step.id} className={step.state === 'upcoming' ? '' : step.state} aria-current={step.state === 'current' ? 'step' : undefined}><span>{String(index + 1).padStart(2, '0')}</span>{step.label}</li>)}</ol><span className="journey-note">도시 외곽을 향해</span></nav>
         <div className="play-layout"><section className="scene">
           {view.kind === 'choice' && <>
-            <span className="eyebrow">{view.context.eventId} / SURVIVAL JOURNEY</span><h1>{view.title}</h1>
-            <div className={`scene-art art-${view.context.eventId}`} aria-hidden="true"><div className="city-silhouette" /><div className="scene-mark">{view.context.eventId}<small>봉쇄 도시</small></div></div>
+            <span className="eyebrow">{sceneLabel} / SURVIVAL JOURNEY</span><h1>{view.title}</h1>
+            <div className={`scene-art art-${view.context.eventId}`} aria-hidden="true"><div className="city-silhouette" /><div className="scene-mark">{sceneLabel}<small>봉쇄 도시</small></div></div>
             <div className="story">{view.story.map(block => <p key={block.key.textId}>{block.text}</p>)}</div>
             {view.notices.map(line => <p className="consequence" key={line}>{line}</p>)}
             {view.companion.kind === 'present' && view.companion.opinion.kind === 'ready' && <section className="companion-advice" aria-label="동료 의견"><strong>{view.companion.name} · 신뢰 {view.companion.trust}</strong><p>{view.companion.opinion.text}</p><small>{view.companion.opinion.reason}</small></section>}
@@ -70,7 +72,7 @@ export function GameRoot({ client }: GameRootProps) {
             {view.recentResult && <details className="recent-result"><summary>직전 선택 · {view.recentResult.label}</summary><ul>{view.recentResult.text.map((line, index) => <li key={index}>{line}</li>)}</ul></details>}
           </>}
           {view.kind === 'result' && <>
-            <span className="eyebrow">{view.context.eventId} / AFTER THE CHOICE</span><div className={`outcome-badge outcome-${view.outcome}`}>{view.outcome === 'failure' ? '위험 판정 · 실패' : view.outcome === 'success' ? '위험 판정 · 성공' : '확정 행동'}</div>
+            <span className="eyebrow">{sceneLabel} / AFTER THE CHOICE</span><div className={`outcome-badge outcome-${view.outcome}`}>{view.outcome === 'failure' ? '위험 판정 · 실패' : view.outcome === 'success' ? '위험 판정 · 성공' : '확정 행동'}</div>
             <h1>{view.actionLabel}</h1><div className="story result-story">{view.text.map(line => <p key={line}>{line}</p>)}</div>
             <section className="changes" aria-label="이번 선택의 변화"><h2>선택이 남긴 것</h2><dl>{view.changes.map((change, index) => <div key={index}><dt>{change.label}</dt><dd>{change.text}</dd></div>)}</dl>{view.changes.length === 0 && <p>수치 변화 없음</p>}</section>
             {view.trustReasons.map(line => <p className="consequence" key={line}>{line}</p>)}

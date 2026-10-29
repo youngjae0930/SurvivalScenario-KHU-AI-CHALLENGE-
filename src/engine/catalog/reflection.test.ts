@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { catalogGameView } from '../../app/view-models/catalog'
 import { resolveAnswers } from '../../app/questionnaire'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+import { makeDialogueCatalogFixture as readDefaultCatalog } from '../../test/catalog-fixtures'
 import { reflectionCopy } from '../../content/texts/reflection'
 import type { CatalogRun } from '../../domain/catalog'
 import { decodeCatalogSave, encodeCatalogSave } from '../../storage/catalog-save'

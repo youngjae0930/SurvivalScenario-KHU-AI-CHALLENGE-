@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { resolveAnswers } from '../../app/questionnaire'
 import { createProductClient } from '../../app/catalog-client'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+import { makeDialogueCatalogFixture as readDefaultCatalog } from '../../test/catalog-fixtures'
 import type { CatalogPack, CatalogRun, CompanionContext } from '../../domain/catalog'
 import { makeOrigin } from '../../test/opening-paths'
 import { makeRecommendationCatalogFixture, makeVariableChoicesCatalogFixture } from '../../test/catalog-fixtures'

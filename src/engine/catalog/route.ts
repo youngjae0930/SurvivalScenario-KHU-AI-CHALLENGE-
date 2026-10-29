@@ -1,8 +1,13 @@
 import type { CatalogPack } from '../../domain/catalog'
 import { weightedPick } from './random'
+import { planSlotSegment } from './slots'
 
 /** A bounded search rejects impossible routes instead of silently skipping anchors. */
 export function planRoute(pack: CatalogPack, initialRngState: number, requiredLocationIds: readonly string[] = []): { route: string[]; rngState: number } {
+  if (pack.manifest.routeVersion === 'slots-1') {
+    if (requiredLocationIds.length) throw new Error('슬롯 경로의 후속 장소는 플레이 중 목적지 선택으로 확정합니다. 강제 방문 목록을 함께 사용할 수 없습니다.')
+    return planSlotSegment(pack, pack.manifest.slotPlan!.startSegmentId, initialRngState)
+  }
   let rngState = initialRngState
   let attempts = 0
   const flexible = pack.manifest.routeVersion === 'stages-1'

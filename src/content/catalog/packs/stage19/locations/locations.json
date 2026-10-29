@@ -1,0 +1,828 @@
+[
+  {
+    "id": "villa",
+    "name": "빌라",
+    "stage": "early",
+    "tags": [
+      "slot-1",
+      "early"
+    ],
+    "fromTags": [],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "villa-stairs",
+    "name": "빌라 계단",
+    "stage": "early",
+    "tags": [
+      "slot-2",
+      "early"
+    ],
+    "fromTags": [
+      "slot-1"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "apartment-parking",
+    "name": "아파트 주차장",
+    "stage": "early",
+    "tags": [
+      "slot-2",
+      "early"
+    ],
+    "fromTags": [
+      "slot-1"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "residential-alley",
+    "name": "주택가 골목길",
+    "stage": "early",
+    "tags": [
+      "slot-3",
+      "early"
+    ],
+    "fromTags": [
+      "slot-2"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "main-road",
+    "name": "도로 한복판",
+    "stage": "early",
+    "tags": [
+      "slot-3",
+      "early"
+    ],
+    "fromTags": [
+      "slot-2"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "store",
+    "name": "편의점",
+    "stage": "early",
+    "tags": [
+      "slot-4",
+      "early"
+    ],
+    "fromTags": [
+      "slot-3"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "bus-stop",
+    "name": "버스 정류장",
+    "stage": "early",
+    "tags": [
+      "slot-5",
+      "early"
+    ],
+    "fromTags": [
+      "slot-4"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "laundromat",
+    "name": "세탁소",
+    "stage": "early",
+    "tags": [
+      "slot-5",
+      "early"
+    ],
+    "fromTags": [
+      "slot-4"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "railway-bridge",
+    "name": "철도 육교",
+    "stage": "early",
+    "tags": [
+      "slot-6",
+      "early"
+    ],
+    "fromTags": [
+      "slot-5"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "gas-station",
+    "name": "주유소",
+    "stage": "early",
+    "tags": [
+      "slot-6",
+      "early"
+    ],
+    "fromTags": [
+      "slot-5"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "shelter",
+    "name": "대피소",
+    "stage": "early",
+    "tags": [
+      "slot-7",
+      "early",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-6"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "hospital-desk",
+    "name": "병원 데스크",
+    "stage": "middle",
+    "tags": [
+      "slot-8",
+      "hospital",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-7"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "er-waiting",
+    "name": "응급실 대기실",
+    "stage": "middle",
+    "tags": [
+      "slot-9",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-8"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "hospital-security",
+    "name": "병원 보안실",
+    "stage": "middle",
+    "tags": [
+      "slot-9",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-8"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "pharmacy",
+    "name": "약제실",
+    "stage": "middle",
+    "tags": [
+      "slot-10",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-9"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "surgery-prep",
+    "name": "수술 준비실",
+    "stage": "middle",
+    "tags": [
+      "slot-10",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-9"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "operating-room",
+    "name": "병원 수술방",
+    "stage": "middle",
+    "tags": [
+      "slot-11",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-10"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "icu",
+    "name": "중환자실",
+    "stage": "middle",
+    "tags": [
+      "slot-12",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-11"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "medical-records",
+    "name": "의료 기록실",
+    "stage": "middle",
+    "tags": [
+      "slot-12",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-11"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "hospital-rooftop-comms",
+    "name": "병원 옥상 통신실",
+    "stage": "middle",
+    "tags": [
+      "slot-13",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-12"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "ward-stairs",
+    "name": "병동 비상계단",
+    "stage": "middle",
+    "tags": [
+      "slot-13",
+      "hospital"
+    ],
+    "fromTags": [
+      "slot-12"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "inpatient-ward",
+    "name": "병원 입원동",
+    "stage": "middle",
+    "tags": [
+      "slot-14",
+      "hospital",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-13"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "department-hall",
+    "name": "백화점 홀",
+    "stage": "middle",
+    "tags": [
+      "slot-8",
+      "department",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-7"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "clothing-store",
+    "name": "의류 매장",
+    "stage": "middle",
+    "tags": [
+      "slot-9",
+      "department"
+    ],
+    "fromTags": [
+      "slot-8"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "department-security",
+    "name": "백화점 보안실",
+    "stage": "middle",
+    "tags": [
+      "slot-9",
+      "department"
+    ],
+    "fromTags": [
+      "slot-8"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "escalator",
+    "name": "에스컬레이터 구역",
+    "stage": "middle",
+    "tags": [
+      "slot-10",
+      "department"
+    ],
+    "fromTags": [
+      "slot-9"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "electronics",
+    "name": "가전제품 매장",
+    "stage": "middle",
+    "tags": [
+      "slot-10",
+      "department"
+    ],
+    "fromTags": [
+      "slot-9"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "food-hall",
+    "name": "백화점 식품관",
+    "stage": "middle",
+    "tags": [
+      "slot-11",
+      "department"
+    ],
+    "fromTags": [
+      "slot-10"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "warehouse",
+    "name": "물류창고",
+    "stage": "middle",
+    "tags": [
+      "slot-12",
+      "department"
+    ],
+    "fromTags": [
+      "slot-11"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "staff-lounge",
+    "name": "직원 휴게실",
+    "stage": "middle",
+    "tags": [
+      "slot-12",
+      "department"
+    ],
+    "fromTags": [
+      "slot-11"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "department-stairs",
+    "name": "백화점 비상계단",
+    "stage": "middle",
+    "tags": [
+      "slot-13",
+      "department"
+    ],
+    "fromTags": [
+      "slot-12"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "loading-dock",
+    "name": "지하 하역장",
+    "stage": "middle",
+    "tags": [
+      "slot-13",
+      "department"
+    ],
+    "fromTags": [
+      "slot-12"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "department-parking",
+    "name": "백화점 주차장",
+    "stage": "middle",
+    "tags": [
+      "slot-14",
+      "department",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-13"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "turnstiles",
+    "name": "지하철 개찰구",
+    "stage": "late",
+    "tags": [
+      "slot-15",
+      "subway",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-14"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "platform",
+    "name": "지하 승강장",
+    "stage": "late",
+    "tags": [
+      "slot-16",
+      "subway"
+    ],
+    "fromTags": [
+      "slot-15"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "station-office",
+    "name": "역무실",
+    "stage": "late",
+    "tags": [
+      "slot-16",
+      "subway"
+    ],
+    "fromTags": [
+      "slot-15"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "train-carriage",
+    "name": "전동차 내부",
+    "stage": "late",
+    "tags": [
+      "slot-17",
+      "subway"
+    ],
+    "fromTags": [
+      "slot-16"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "subway-control",
+    "name": "지하철 관제실",
+    "stage": "late",
+    "tags": [
+      "slot-17",
+      "subway"
+    ],
+    "fromTags": [
+      "slot-16"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "train-connection",
+    "name": "열차 연결 구간",
+    "stage": "late",
+    "tags": [
+      "slot-18",
+      "subway"
+    ],
+    "fromTags": [
+      "slot-17"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "southern-tunnel",
+    "name": "남부 지하터널",
+    "stage": "late",
+    "tags": [
+      "slot-19",
+      "subway",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-18"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "school-playground",
+    "name": "학교 운동장",
+    "stage": "late",
+    "tags": [
+      "slot-15",
+      "school",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-14"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "convoy-road",
+    "name": "남부 간선도로 대피 행렬",
+    "stage": "late",
+    "tags": [
+      "slot-16",
+      "school"
+    ],
+    "fromTags": [
+      "slot-15"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "riverside-path",
+    "name": "하천변 우회 보행로",
+    "stage": "late",
+    "tags": [
+      "slot-16",
+      "school"
+    ],
+    "fromTags": [
+      "slot-15"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "outskirts-crossroads",
+    "name": "외곽 진입 교차로",
+    "stage": "late",
+    "tags": [
+      "slot-17",
+      "school"
+    ],
+    "fromTags": [
+      "slot-16"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "temporary-barrier",
+    "name": "임시 검역 차단선",
+    "stage": "late",
+    "tags": [
+      "slot-17",
+      "school"
+    ],
+    "fromTags": [
+      "slot-16"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1
+  },
+  {
+    "id": "evacuation-convoy",
+    "name": "외곽 이동 행렬",
+    "stage": "late",
+    "tags": [
+      "slot-18",
+      "school"
+    ],
+    "fromTags": [
+      "slot-17"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "outskirts-checkpoint",
+    "name": "도시 외곽 검문소",
+    "stage": "late",
+    "tags": [
+      "slot-19",
+      "school",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-18"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1
+  },
+  {
+    "id": "research-wing",
+    "name": "병원 연구동",
+    "stage": "late",
+    "tags": [
+      "slot-15",
+      "research",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-14"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1,
+    "enabled": false
+  },
+  {
+    "id": "research-archives",
+    "name": "연구 자료실",
+    "stage": "late",
+    "tags": [
+      "slot-16",
+      "research"
+    ],
+    "fromTags": [
+      "slot-15"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1,
+    "enabled": false
+  },
+  {
+    "id": "sample-lab",
+    "name": "시료 분석실",
+    "stage": "late",
+    "tags": [
+      "slot-16",
+      "research"
+    ],
+    "fromTags": [
+      "slot-15"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1,
+    "enabled": false
+  },
+  {
+    "id": "cold-storage",
+    "name": "저온 보관실",
+    "stage": "late",
+    "tags": [
+      "slot-17",
+      "research"
+    ],
+    "fromTags": [
+      "slot-16"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1,
+    "enabled": false
+  },
+  {
+    "id": "research-isolation",
+    "name": "연구동 격리실",
+    "stage": "late",
+    "tags": [
+      "slot-17",
+      "research"
+    ],
+    "fromTags": [
+      "slot-16"
+    ],
+    "after": [],
+    "required": false,
+    "weight": 1,
+    "enabled": false
+  },
+  {
+    "id": "infected-lab",
+    "name": "감염 연구실",
+    "stage": "late",
+    "tags": [
+      "slot-18",
+      "research"
+    ],
+    "fromTags": [
+      "slot-17"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1,
+    "enabled": false
+  },
+  {
+    "id": "research-helipad",
+    "name": "연구동 옥상 헬기장",
+    "stage": "late",
+    "tags": [
+      "slot-19",
+      "research",
+      "safe-hub"
+    ],
+    "fromTags": [
+      "slot-18"
+    ],
+    "after": [],
+    "required": true,
+    "weight": 1,
+    "enabled": false
+  }
+]

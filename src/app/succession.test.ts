@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { GameClient } from '../contracts'
-import { readDefaultCatalog } from '../content/catalog/registry'
+import { makeDialogueCatalogFixture as readDefaultCatalog } from '../test/catalog-fixtures'
 import { prepareNextCatalogRun, isCatalogLegacy } from '../engine/catalog/inheritance'
 import { acknowledgeCatalogResult, catalogLegacy, createCatalogRun, currentEvent, executeCatalogAction } from '../engine/catalog/runtime'
 import { decodeCatalogSave, encodeCatalogSave } from '../storage/catalog-save'
@@ -8,7 +8,7 @@ import type { SaveStore } from '../storage/browser-store'
 import { makeOrigin } from '../test/opening-paths'
 import { makeEscapeCatalogFixture } from '../test/catalog-fixtures'
 import { resolveAnswers } from './questionnaire'
-import { createProductClient } from './catalog-client'
+import { createCatalogClient, createProductClient } from './catalog-client'
 
 const pack = readDefaultCatalog()
 const sourceOrigin = { ...makeOrigin(), runId: 'source-a-marker', name: '이전 인물' }
@@ -31,7 +31,8 @@ function setup() {
     if (fail) throw new Error('저장 실패')
     raw = next
   } }
-  const client = createProductClient({ store, makeSeed: () => { count++; return 987654 }, makeRunId: () => 'successor-b-marker' })
+  // Pin this twelve-event regression suite; stage19 succession has its own end-to-end coverage.
+  const client = createCatalogClient({ pack, store, makeSeed: () => { count++; return 987654 }, makeRunId: () => 'successor-b-marker' })
   return { client, store, writes, raw: () => raw!, fail: (value: boolean) => { fail = value }, count: () => count }
 }
 async function prepare(client: GameClient) {

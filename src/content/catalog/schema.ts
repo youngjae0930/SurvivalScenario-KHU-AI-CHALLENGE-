@@ -74,7 +74,7 @@ function makeEventSchema(minChoices: number, maxChoices: number): Shape { return
     ['groupId', 'axis', 'extremePole', 'replaceChoiceId', 'alternatives', 'judgment', 'text', 'notices']),
   groups: array(object({
     id, priority: int(0, 1000), conditions, notices: array(str(), 0, 10),
-    choices: array(object({ id, goalId: id, label: str(200), intention: str(), target: str(200), judgment: enumeration('rescue', 'self', null), pace: enumeration('slow', 'balanced', 'fast'),
+    choices: array(object({ id, goalId: id, label: str(200), intention: str(), target: str(200), judgment: enumeration('rescue', 'self', null), pace: enumeration('slow', 'balanced', 'fast'), destinationSegmentId: id,
       behavior: one(
         object({ kind: enumeration('action'), variants: array(object({ conditions, action }), 1, 10) }),
         object({ kind: enumeration('recovery'), ruleEventId: enumeration('E04', 'E11'), choice: enumeration('maintain', 'share', 'rest') }),
@@ -92,7 +92,11 @@ export const scriptSchema = object({ id, eventId: id, choiceId: nullable(id), sl
   priority: int(0, 1000), weight: int(1, 1000), once: bool, text: array(str(), 1, 20) })
 export const manifestSchema = object({ formatVersion: enumeration(1), id, revision: id, rulesVersion: enumeration('1.2-stress-1'), title: str(100), startLocationId: id,
   dialogueVersion: enumeration('scripts-1'),
-  routeVersion: enumeration('stages-1'),
+  routeVersion: enumeration('stages-1', 'slots-1'),
+  slotPlan: object({ startSegmentId: id, segments: array(object({ id, stage,
+    slots: array(object({ number: int(1, 48), candidates: array(id, 1, 20) }), 1, 16),
+    nextSegmentIds: array(id, 0, 20), lockedReason: str(),
+  }, ['id', 'stage', 'slots', 'nextSegmentIds']), 1, 20) }),
   trustVersion: enumeration('outcome-1'),
   executionVersion: enumeration('command-1'),
   autonomyVersion: enumeration('journey-1', 'journey-2'),

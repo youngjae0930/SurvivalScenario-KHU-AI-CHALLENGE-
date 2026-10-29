@@ -92,3 +92,6 @@ export function makeCatalogFixture(): CatalogPack {
 }
 
 export function makeNarrativeCatalogFixture(): CatalogPack { return compileCatalog(narrativeSnapshot) }
+
+import dialogueSnapshot from './opening-catalog-v22.json'
+export function makeDialogueCatalogFixture(): CatalogPack { return compileCatalog(dialogueSnapshot) }

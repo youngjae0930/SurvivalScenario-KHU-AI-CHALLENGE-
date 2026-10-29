@@ -12,6 +12,7 @@ import { allChoices, eventFits } from './compile'
 import { matches } from './conditions'
 import { weightedPick } from './random'
 import { planRoute } from './route'
+import { destinationLock, planSlotSegment } from './slots'
 import { assessChoice } from './assessment'
 import { evaluateRelationship, type TrustChange } from './relationship'
 import { selectGeneralRecommendation, type GeneralRecommendation } from './recommendation'
@@ -224,8 +225,9 @@ export function previewCatalogAction(pack: CatalogPack, run: CatalogRun, actionI
   if (choice.id !== sourceChoiceId(choice.id)) action = { ...action, id: choice.id, requires: { ...action.requires, companion: true } }
   const preview = unwrap(previewCoreAction({ state: run.core, action, eventId: action.eventId, phase: 'choice', companionPresent: activeCatalogCompanion(run) !== null, cooperating: false }))
   const intervention = catalogIntervention(pack, run)
-  return withTrustPreview(pack, run, { ...preview, allowed: preview.allowed && !(intervention?.choice.id === actionId && !intervention.allowed),
-    reasons: [...preview.reasons, ...(intervention?.choice.id === actionId && !intervention.allowed ? [intervention.lockReason] : [])], choice, action, treat,
+  const routeLock = choice.destinationSegmentId ? destinationLock(pack, run.route[run.visitIndex], choice.destinationSegmentId) : null
+  return withTrustPreview(pack, run, { ...preview, allowed: preview.allowed && !routeLock && !(intervention?.choice.id === actionId && !intervention.allowed),
+    reasons: [...preview.reasons, ...(routeLock ? [routeLock] : []), ...(intervention?.choice.id === actionId && !intervention.allowed ? [intervention.lockReason] : [])], choice, action, treat,
     ...(!pack.manifest.trustVersion && choice.behavior.kind === 'recovery' && choice.behavior.choice === 'share' && run.companion
       ? { trustChange: { before: run.companion.trust, after: recoveryTrustAfter(run.companion.trust, 'share'), reason: '동료에게 물자를 양보했습니다.' } } : {}) })
 }
@@ -277,6 +279,8 @@ export function executeCatalogAction(pack: CatalogPack, run: CatalogRun, actionI
   const next = { ...run, core: resolution.state, facts, rngState: resolution.check.rngState,
     ...(trustChange && run.companion ? { companion: { ...run.companion, trust: trustChange.after } } : {}) }
   const selected = selectScript(pack, next, failure ? 'failure' : 'success', sourceChoiceId(actionId), escape !== null)
+  const extension = preview.choice.destinationSegmentId && !failure && !resolution.fatal
+    ? planSlotSegment(pack, preview.choice.destinationSegmentId, selected.rngState) : null
   const result = { resultId: `${run.runId}:result:${run.revision + 1}`, visitIndex: run.visitIndex, eventId: currentEvent(pack, run).id, actionId, treat, judgment: preview.choice.judgment, resultScriptId: selected.script.id, resolution,
     ...(actor === 'companion' ? { execution: { actor: 'companion' as const, role: preview.choice.execution!.role, sharedRisk: preview.choice.execution!.sharedRisk } } : {}),
     ...(departure && !resolution.fatal && !escape ? { companionDeparture: departure } : {}),
@@ -284,7 +288,7 @@ export function executeCatalogAction(pack: CatalogPack, run: CatalogRun, actionI
     ...(escape ? { escape: { ending: escape.ending, reason: escape.reason } } : {}),
     ...(trustChange ? { trustChange } : {}) }
   return {
-    ...next, phase: escape || resolution.fatal ? 'ending' : 'result', rngState: selected.rngState, revision: run.revision + 1,
+    ...next, ...(extension ? { route: [...run.route, ...extension.route] } : {}), phase: escape || resolution.fatal ? 'ending' : 'result', rngState: extension?.rngState ?? selected.rngState, revision: run.revision + 1,
     ...(result.companionDeparture && run.companionJourney ? { companionJourney: { ...run.companionJourney, separation: result.companionDeparture } } : {}),
     usedScripts: [...run.usedScripts, selected.script.id], history: [...run.history, result], result,
     judgmentCounts: { rescue: run.judgmentCounts.rescue + (preview.choice.judgment === 'rescue' ? 1 : 0), self: run.judgmentCounts.self + (preview.choice.judgment === 'self' ? 1 : 0) },

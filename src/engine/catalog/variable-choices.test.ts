@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest'
 import { resolveAnswers } from '../../app/questionnaire'
 import { catalogGameView } from '../../app/view-models/catalog'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+import { makeDialogueCatalogFixture as readDefaultCatalog } from '../../test/catalog-fixtures'
 import { decodeCatalogSave, encodeCatalogSave } from '../../storage/catalog-save'
 import { makeCatalogFixture, makeFlexibleStagesCatalogFixture } from '../../test/catalog-fixtures'
 import { makeOrigin } from '../../test/opening-paths'

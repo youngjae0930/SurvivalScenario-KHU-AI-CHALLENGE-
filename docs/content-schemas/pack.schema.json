@@ -46,8 +46,102 @@
         },
         "routeVersion": {
           "enum": [
-            "stages-1"
+            "stages-1",
+            "slots-1"
           ]
+        },
+        "slotPlan": {
+          "type": "object",
+          "properties": {
+            "startSegmentId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80,
+              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+            },
+            "segments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80,
+                    "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                  },
+                  "stage": {
+                    "enum": [
+                      "early",
+                      "middle",
+                      "late"
+                    ]
+                  },
+                  "slots": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 48
+                        },
+                        "candidates": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 80,
+                            "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                          },
+                          "minItems": 1,
+                          "maxItems": 20
+                        }
+                      },
+                      "required": [
+                        "number",
+                        "candidates"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 1,
+                    "maxItems": 16
+                  },
+                  "nextSegmentIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80,
+                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                    },
+                    "minItems": 0,
+                    "maxItems": 20
+                  },
+                  "lockedReason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 5000
+                  }
+                },
+                "required": [
+                  "id",
+                  "stage",
+                  "slots",
+                  "nextSegmentIds"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 20
+            }
+          },
+          "required": [
+            "startSegmentId",
+            "segments"
+          ],
+          "additionalProperties": false
         },
         "trustVersion": {
           "enum": [
@@ -2088,6 +2182,12 @@
                           "balanced",
                           "fast"
                         ]
+                      },
+                      "destinationSegmentId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
                       },
                       "behavior": {
                         "anyOf": [

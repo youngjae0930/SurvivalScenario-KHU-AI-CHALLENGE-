@@ -1808,6 +1808,12 @@
                     "fast"
                   ]
                 },
+                "destinationSegmentId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80,
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                },
                 "behavior": {
                   "anyOf": [
                     {

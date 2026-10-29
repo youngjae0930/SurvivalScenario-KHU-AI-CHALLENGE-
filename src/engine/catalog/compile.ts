@@ -3,6 +3,7 @@ import { packSchema, savedPackSchema, validateShape } from '../../content/catalo
 import { isCoreAction } from '../actions'
 import { planRoute } from './route'
 import { previewCoreAction } from '../actions'
+import { validateSlotPlan } from './slots'
 
 export class ContentError extends Error {
   readonly issues: readonly string[]
@@ -26,6 +27,8 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
   const locations = new Map(pack.locations.map(location => [location.id, location]))
   const events = new Map(pack.events.map(event => [event.id, event]))
   const facts = new Set(pack.manifest.facts)
+  if (pack.manifest.routeVersion === 'slots-1') issues.push(...validateSlotPlan(pack))
+  else check(!pack.manifest.slotPlan && pack.events.every(event => allChoices(event).every(choice => !choice.destinationSegmentId)), 'slotPlan/목적지에는 slots-1 경로 버전이 필요합니다.')
   if (pack.manifest.decisionEcho) {
     check(pack.manifest.decisionMemoryVersion === 'context-1' && pack.manifest.recommendationVersion === 'survival-1', 'decisionEcho: 상황 기록과 일반 추천 버전이 필요합니다.')
     unique(pack.manifest.decisionEcho.compatibleRevisions, 'decisionEcho.compatibleRevisions')
@@ -43,7 +46,7 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
   check(pack.manifest.stages[0].minVisits >= 1, 'stages: 시작 구간은 최소 1개 장소가 필요합니다.')
   const start = locations.get(pack.manifest.startLocationId)
   check(!!start && start.stage === 'early' && start.required && start.after.length === 0, 'startLocationId: 전반부의 필수 장소이며 선행 조건이 없어야 합니다.')
-  if (pack.manifest.routeVersion) for (const stage of pack.manifest.stages) {
+  if (pack.manifest.routeVersion === 'stages-1') for (const stage of pack.manifest.stages) {
     const active = pack.locations.filter(location => location.stage === stage.id && location.enabled !== false)
     check(active.length >= stage.minVisits && active.filter(location => location.required).length <= stage.maxVisits,
       `stage ${stage.id}: 활성 장소 수·필수 장소 수와 최소/최대 방문 수가 맞지 않습니다.`)
@@ -59,8 +62,8 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
     }
   }
   for (const location of pack.locations) {
-    check(location.enabled === undefined || pack.manifest.routeVersion === 'stages-1', `location ${location.id}: 활성 여부에는 stages-1 경로 버전이 필요합니다.`)
-    check(location.enabled !== false || !location.required, `location ${location.id}: 필수 장소는 비활성화할 수 없습니다.`)
+    check(location.enabled === undefined || !!pack.manifest.routeVersion, `location ${location.id}: 활성 여부에는 경로 버전이 필요합니다.`)
+    check(pack.manifest.routeVersion === 'slots-1' || location.enabled !== false || !location.required, `location ${location.id}: 필수 장소는 비활성화할 수 없습니다.`)
     unique(location.tags, `location ${location.id}.tags`); unique(location.after, `location ${location.id}.after`)
     for (const id of location.after) check(id !== location.id && locations.has(id) && stages.indexOf(locations.get(id)!.stage) <= stages.indexOf(location.stage), `location ${location.id}: 잘못된 선행 장소 ${id}`)
     check(pack.events.some(event => eventFits(event, location) && event.conditions.length === 0), `location ${location.id}: 조건 없는 기본 사건이 필요합니다.`)
@@ -199,7 +202,7 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
       }
     }
     verifyTerminal(planRoute(result, 1).route)
-    for (const location of result.locations.filter(location => location.enabled !== false)) verifyTerminal(planRoute(result, 1, [location.id]).route)
+    if (result.manifest.routeVersion !== 'slots-1') for (const location of result.locations.filter(location => location.enabled !== false)) verifyTerminal(planRoute(result, 1, [location.id]).route)
   } catch (error) { throw new ContentError([error instanceof Error ? error.message : '경로 검증 실패']) }
   function freeze(value: unknown): void { if (value && typeof value === 'object') { Object.freeze(value); Object.values(value).forEach(freeze) } }
   freeze(result)
