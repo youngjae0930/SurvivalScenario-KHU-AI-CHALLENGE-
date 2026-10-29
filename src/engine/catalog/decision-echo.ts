@@ -15,6 +15,8 @@ function equalData(a: unknown, b: unknown): boolean {
 function comparable(situation: CatalogDecisionSituation) {
   const { traits, stamina, stress, injury } = situation.core.protagonist
   return {
+    infection: situation.infection ?? null,
+    opportunities: situation.opportunities ?? null,
     autonomy: situation.autonomy ?? null,
     commandTrustSufficient: situation.commandTrustSufficient ?? null,
     packId: situation.content.packId, rulesVersion: situation.content.rulesVersion,
@@ -26,6 +28,8 @@ function comparable(situation: CatalogDecisionSituation) {
       actionId: option.actionId, goalId: option.goalId, judgment: option.judgment, behavior: option.behavior,
       route: option.route ?? null, pace: option.pace ?? null, action: option.action,
       execution: option.execution ?? null,
+      infection: option.infection ?? null,
+      ending: option.ending ?? null,
       relationship: option.relationship ?? null,
       trustOutcomes: { success: option.trustOutcomes?.success ?? 0, failure: option.trustOutcomes?.failure ?? 0 },
       allowed: option.preview.allowed, check: option.preview.check,

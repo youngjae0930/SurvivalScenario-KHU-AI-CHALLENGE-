@@ -1,0 +1,1032 @@
+[
+  {
+    "id": "local.text.721",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다."
+    ]
+  },
+  {
+    "id": "local.text.722",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.723",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.724",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.725",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.726",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.727",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.728",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림판을 밀어 빈틈을 만들었다. 넘어진 사람을 뒤로한 채 차단선 쪽으로 빠져나왔다."
+    ]
+  },
+  {
+    "id": "local.text.729",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림판을 밀어 빈틈을 만들었다. 넘어진 사람을 뒤로한 채 차단선 쪽으로 빠져나왔다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.730",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가림판 뒤에 틈이 있어. 먼저 빠질 공간을 만들자."
+    ]
+  },
+  {
+    "id": "local.text.731",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.732",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.733",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.734",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품 한 몫을 버리고 엉킨 사람들 사이에서 빠져나왔다. 남겨 둔 물건과 목소리가 뒤로 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.735",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품 한 몫을 버리고 엉킨 사람들 사이에서 빠져나왔다. 남겨 둔 물건과 목소리가 뒤로 멀어졌다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.736",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭이 걸렸어. 물품 하나를 버리고 공간을 만들자. 붙잡고 있다가 같이 넘어질 수 있어."
+    ]
+  },
+  {
+    "id": "local.text.737",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.738",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.739",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.740",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차단선의 열린 틈을 확인하고 몸을 뺐다. 넘어진 사람에게 돌아가지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.741",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차단선의 열린 틈을 확인하고 몸을 뺐다. 넘어진 사람에게 돌아가지는 못했다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.742",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 틈이 막혔는지 알아야 해. 아무 데로나 뛰었다가 더 좁은 데 갇히고 싶지 않아."
+    ]
+  },
+  {
+    "id": "local.text.743",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.744",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.745",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.746",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.comply",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬에서 빠져나와 차단선 쪽으로 물러났다. 뒤에서는 구조를 청하는 목소리가 이어졌다."
+    ]
+  },
+  {
+    "id": "local.text.747",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.comply",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬에서 빠져나와 차단선 쪽으로 물러났다. 뒤에서는 구조를 청하는 목소리가 이어졌다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.748",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.comply",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서로 밀치기 시작했어. 지금 간격을 벌리지 않으면 우리도 넘어질 거야."
+    ]
+  },
+  {
+    "id": "local.text.749",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "넘어진 사람을 일으켜 행렬 바깥으로 옮겼다. 그가 스스로 걷기 시작하자 짧게 숨을 돌렸다."
+    ]
+  },
+  {
+    "id": "local.text.750",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "넘어진 사람을 일으켜 행렬 바깥으로 옮겼다. 그가 스스로 걷기 시작하자 짧게 숨을 돌렸다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.751",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "넘어져서 못 나오는 거야. 일으켜 세우기만 하면 같이 빠질 수 있어."
+    ]
+  },
+  {
+    "id": "local.text.752",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.753",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.754",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.755",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리를 받쳐 준 사람을 차단선 옆까지 옮겼다. 기침은 이어졌지만 당장의 발길질에서는 벗어났다."
+    ]
+  },
+  {
+    "id": "local.text.756",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리를 받쳐 준 사람을 차단선 옆까지 옮겼다. 기침은 이어졌지만 당장의 발길질에서는 벗어났다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.757",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리를 끌고 있어. 붕대로 받쳐서라도 이 줄 밖으로 옮기자."
+    ]
+  },
+  {
+    "id": "local.text.758",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.759",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무너진 행렬에 몸이 휩쓸렸다. 넘어지며 상처를 입고서야 바깥으로 빠져나왔다. 넘어진 사람을 함께 데려오지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.760",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.761",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.762",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.protect",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.763",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.764",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.discard",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.765",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.766",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.verify",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.767",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.comply",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.768",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.comply",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.769",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.770",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.help",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.771",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.772",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": "encounter.evacuation-convoy.aid",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.861",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "symptoms-noticed",
+        "value": true
+      }
+    ],
+    "priority": 4,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
+      "조금 전 뒤쪽에서 들었던 기침이 떠오른다. 그 사람인지는 알 수 없다. 지금은 추측보다 밀려드는 무리를 피할 틈을 봐야 한다."
+    ]
+  },
+  {
+    "id": "route.text.24",
+    "eventId": "encounter.evacuation-convoy",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "convoy-supported",
+        "value": true
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "행렬 한가운데의 사람이 갑자기 앞사람을 물어뜯는다. 비명과 함께 좀비의 움직임이 줄을 타고 번진다. 넘어져 일어나지 못한 사람이 손을 뻗고 있고, 차단선까지 남은 거리는 짧다.",
+      "운동장에서 물을 건넸던 사람이 어디 있는지 잠깐 찾는다. 엉킨 사람들 사이로는 보이지 않는다. 함께 출발했다는 기억이 발을 붙든다."
+    ]
+  }
+]

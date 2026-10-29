@@ -1,0 +1,173 @@
+{
+  "id": "encounter.riverside-path",
+  "title": "난간에 걸린 천",
+  "locationIds": [
+    "riverside-path"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.riverside-path.maintain",
+          "goalId": "E04.maintain",
+          "label": "다리 밑 마른 바닥에서 몸과 짐을 정비한다",
+          "intention": "물가에서 떨어져 몸을 추스른다.",
+          "target": "하천변 우회 보행로",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.riverside-path.bend",
+          "goalId": "E03.observe",
+          "label": "강변 굽이 너머의 소리를 확인한다",
+          "intention": "난간에서 떨어져 움직임이 멀어지는 것을 살핀다.",
+          "target": "하천변 우회 보행로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.riverside-path.bend",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        }
+      ]
+    },
+    {
+      "id": "normal-companion",
+      "priority": 1,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.riverside-path.maintain",
+          "goalId": "E04.maintain",
+          "label": "다리 밑 마른 바닥에서 몸과 짐을 정비한다",
+          "intention": "물가에서 떨어져 몸을 추스른다.",
+          "target": "하천변 우회 보행로",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.riverside-path.bend",
+          "goalId": "E03.observe",
+          "label": "강변 굽이 너머의 소리를 확인한다",
+          "intention": "난간에서 떨어져 움직임이 멀어지는 것을 살핀다.",
+          "target": "하천변 우회 보행로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.riverside-path.bend",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.riverside-path.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "target": "하천변 우회 보행로",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

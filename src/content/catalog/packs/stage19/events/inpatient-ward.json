@@ -1,0 +1,136 @@
+{
+  "id": "encounter.inpatient-ward",
+  "title": "병동 끝의 지도",
+  "locationIds": [
+    "inpatient-ward"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "route",
+      "priority": 0,
+      "conditions": [],
+      "notices": [
+        "일반 탈출 경로로 향하거나, 병원에서 확인한 출입로가 있다면 연구동으로 갈 수 있다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.inpatient-ward.subway",
+          "goalId": "subway",
+          "label": "지하철 진입로로 향한다",
+          "intention": "지하철은 닫힌 객차와 연결문을 지나는 길이다. 작업 통로의 정보를 확인하며 갈지, 쉬거나 주변을 살피며 갈지 고른다.",
+          "target": "다음 경로",
+          "judgment": null,
+          "destinationSegmentId": "subway",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.inpatient-ward.subway",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.inpatient-ward.school",
+          "goalId": "school",
+          "label": "학교 운동장의 생존자 접선지로 향한다",
+          "intention": "학교 운동장에서 외곽 행렬에 합류한다. 자신의 몸을 돌볼지 다른 생존자를 도울지 고르며 노출된 도로를 함께 이동한다.",
+          "target": "다음 경로",
+          "judgment": null,
+          "destinationSegmentId": "school",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.inpatient-ward.school",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.inpatient-ward.research",
+          "goalId": "research",
+          "label": "수송 기록의 출입로를 따라 연구동으로 향한다",
+          "intention": "병원에서 조사한 기록이 있을 때만 들어갈 수 있다. 변형된 좀비가 있는 위험한 길이지만 치료제 연구의 흔적이 남아 있다.",
+          "target": "다음 경로",
+          "judgment": null,
+          "destinationSegmentId": "research",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.inpatient-ward.research",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

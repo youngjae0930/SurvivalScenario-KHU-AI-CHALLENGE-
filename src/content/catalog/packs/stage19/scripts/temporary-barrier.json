@@ -1,0 +1,328 @@
+[
+  {
+    "id": "local.text.596",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "임시 차단선에서 행렬이 좁은 통로로 줄을 선다. 한 사람이 주저앉아 기침하고 있고, 뒤편 좀비의 발소리 때문에 오래 기다릴 여유는 없다. 검사는 진행되지 않는다."
+    ]
+  },
+  {
+    "id": "local.text.597",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "임시 차단선에서 행렬이 좁은 통로로 줄을 선다. 한 사람이 주저앉아 기침하고 있고, 뒤편 좀비의 발소리 때문에 오래 기다릴 여유는 없다. 검사는 진행되지 않는다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.598",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "임시 차단선에서 행렬이 좁은 통로로 줄을 선다. 한 사람이 주저앉아 기침하고 있고, 뒤편 좀비의 발소리 때문에 오래 기다릴 여유는 없다. 검사는 진행되지 않는다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.599",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "임시 차단선에서 행렬이 좁은 통로로 줄을 선다. 한 사람이 주저앉아 기침하고 있고, 뒤편 좀비의 발소리 때문에 오래 기다릴 여유는 없다. 검사는 진행되지 않는다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.600",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.601",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.602",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.603",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.line",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞사람과 간격을 두고 차단선을 지났다. 검사나 안전 확인을 받은 것은 아니며, 뒤쪽 사람의 기침은 계속 들렸다."
+    ]
+  },
+  {
+    "id": "local.text.604",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.line",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞사람과 간격을 두고 차단선을 지났다. 검사나 안전 확인을 받은 것은 아니며, 뒤쪽 사람의 기침은 계속 들렸다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.605",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.line",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "통로가 좁아. 붙어 서지는 말자. 여기서 답을 얻을 수는 없어 보여."
+    ]
+  },
+  {
+    "id": "local.text.606",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.support",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "사람을 차단선 밖까지 부축했다. 다른 일행이 자리를 내줬지만 기침의 원인은 여전히 알 수 없었다."
+    ]
+  },
+  {
+    "id": "local.text.607",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.support",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "사람을 차단선 밖까지 부축했다. 다른 일행이 자리를 내줬지만 기침의 원인은 여전히 알 수 없었다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.608",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.support",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "검사를 기다리는 줄도 아니잖아. 앉은 채로 두면 뒤에서 오는 걸 피하지 못해."
+    ]
+  },
+  {
+    "id": "local.text.609",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.support",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 통로에서 몸이 엉켰다. 급히 물러나며 다쳤고 사람을 끝까지 옮기지 못했다."
+    ]
+  },
+  {
+    "id": "local.text.610",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.support",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 통로에서 몸이 엉켰다. 급히 물러나며 다쳤고 사람을 끝까지 옮기지 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.611",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": "encounter.temporary-barrier.support",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.860",
+    "eventId": "encounter.temporary-barrier",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "hospital-records",
+        "value": true
+      }
+    ],
+    "priority": 4,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "임시 차단선에서 행렬이 좁은 통로로 줄을 선다. 한 사람이 주저앉아 기침하고 있고, 뒤편 좀비의 발소리 때문에 오래 기다릴 여유는 없다. 검사는 진행되지 않는다.",
+      "기록실의 관찰 메모와 눈앞의 기침이 겹쳐 떠오른다. 손에 든 기록으로 이 사람의 상태까지 확인할 수는 없다."
+    ]
+  }
+]

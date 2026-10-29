@@ -4,7 +4,7 @@ import { choiceSnapshotFixture, safePreviewFixture, shortcutPreviewFixture, uiSc
 
 describe('UI와 코어의 공개 계약', () => {
   it('세션·저장·샘플 능력을 구분하고 개발 구간완료를 결말과 구분한다', () => {
-    expect(choiceSnapshotFixture.contractVersion).toBe('0.8.0')
+    expect(choiceSnapshotFixture.contractVersion).toBe('0.11.0')
     expect(choiceSnapshotFixture.persistence.kind).toBe('fixture')
     expect(uiScenarios.segmentComplete.view.kind).toBe('segment-complete')
     expect(uiScenarios.segmentComplete.view).not.toHaveProperty('ending')

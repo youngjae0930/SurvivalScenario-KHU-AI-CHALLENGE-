@@ -1,0 +1,274 @@
+{
+  "id": "encounter.department-hall",
+  "title": "반짝이는 바닥의 소리",
+  "locationIds": [
+    "department-hall"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.department-hall.reflection",
+          "goalId": "E03.observe",
+          "label": "매장 유리에 비친 그림자의 방향을 읽는다",
+          "intention": "안내판 아래로 바로 들어가지 않고 반사된 움직임을 살핀다.",
+          "target": "백화점 홀",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-hall.reflection",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.department-hall.sound",
+          "goalId": "distract",
+          "label": "배낭 물품을 반대편 빈 진열대로 던진다",
+          "intention": "물품을 소리 미끼로 써 안내판 아래를 지난다.",
+          "target": "백화점 홀",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-hall.sound",
+                  "eventId": "E03",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.department-hall.delivery",
+          "goalId": "salvage",
+          "label": "폐점 카트의 밀봉 식품을 회수한다",
+          "intention": "유리 장식 아래의 카트에 접근한다. 식량을 얻을 수 있지만 기울어진 장식과 그림자가 걸린다.",
+          "target": "백화점 홀",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-hall.delivery",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "department-food": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-equipped",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "supply",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.department-hall.reflection",
+          "goalId": "E03.observe",
+          "label": "매장 유리에 비친 그림자의 방향을 읽는다",
+          "intention": "안내판 아래로 바로 들어가지 않고 반사된 움직임을 살핀다.",
+          "target": "백화점 홀",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-hall.reflection",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.department-hall.sound",
+          "goalId": "distract",
+          "label": "배낭 물품을 반대편 빈 진열대로 던진다",
+          "intention": "물품을 소리 미끼로 써 안내판 아래를 지난다.",
+          "target": "백화점 홀",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-hall.sound",
+                  "eventId": "E03",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

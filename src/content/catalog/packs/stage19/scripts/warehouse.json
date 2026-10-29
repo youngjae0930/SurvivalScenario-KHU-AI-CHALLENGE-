@@ -1,0 +1,308 @@
+[
+  {
+    "id": "local.text.391",
+    "eventId": "encounter.warehouse",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다."
+    ]
+  },
+  {
+    "id": "local.text.392",
+    "eventId": "encounter.warehouse",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.393",
+    "eventId": "encounter.warehouse",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.394",
+    "eventId": "encounter.warehouse",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물류창고에는 밀봉된 식품 상자가 남아 있다. 상자 옆 납품표에는 하역장과 남쪽 출구를 잇는 실제 운송 경로가 그려져 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.395",
+    "eventId": "encounter.warehouse",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.396",
+    "eventId": "encounter.warehouse",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.397",
+    "eventId": "encounter.warehouse",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.398",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.route",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 남은 납품표에서 남쪽 하역 통로를 확인했다. 외곽 우회 진입점을 기억한 뒤 상자 더미에서 떨어졌다."
+    ]
+  },
+  {
+    "id": "local.text.399",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.route",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 남은 납품표에서 남쪽 하역 통로를 확인했다. 외곽 우회 진입점을 기억한 뒤 상자 더미에서 떨어졌다.",
+      "동료가 주변을 살피며 낮게 말한다. “어느 표지를 찾아야 할지는 알겠네. 길에 들어갈 때도 직접 확인하자.”"
+    ]
+  },
+  {
+    "id": "local.text.400",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.route",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건보다 이 납품표가 먼저 보여. 차가 드나든 길이면 사람도 돌아갈 곳이 있을 거야."
+    ]
+  },
+  {
+    "id": "local.text.401",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자 더미가 기울기 전에 밀봉 식품을 꺼냈다. 옮길 분량만 챙겨 통로로 돌아왔다."
+    ]
+  },
+  {
+    "id": "local.text.402",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자 더미가 기울기 전에 밀봉 식품을 꺼냈다. 옮길 분량만 챙겨 통로로 돌아왔다.",
+      "동료가 주변을 살피며 낮게 말한다. “가지고 갈 몫은 골랐어. 더 뒤지다 여기 갇히고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "local.text.403",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "포장이 남아 있어. 무너지기 전에 위쪽 한 상자만 내려보자."
+    ]
+  },
+  {
+    "id": "local.text.404",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자 더미가 무너지며 통로를 덮었다. 팔을 긁힌 채 빠져나왔고 식량은 가져오지 못했다."
+    ]
+  },
+  {
+    "id": "local.text.405",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자 더미가 무너지며 통로를 덮었다. 팔을 긁힌 채 빠져나왔고 식량은 가져오지 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.406",
+    "eventId": "encounter.warehouse",
+    "choiceId": "encounter.warehouse.food",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  }
+]

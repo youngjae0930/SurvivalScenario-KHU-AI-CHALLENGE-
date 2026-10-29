@@ -1,0 +1,413 @@
+[
+  {
+    "id": "encounter.research-helipad.scene",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.short.success",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.short",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "헬기에 올라 봉쇄 도시의 지붕이 멀어지는 것을 보았다. 연구물을 모두 회수하지는 못했지만 살아서 도시를 벗어났다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.short.opinion",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.short",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가져온 것부터 확인하자. 지금 갈 수 있는 길로 헬기까지 가는 거야."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.short.cure",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록과 봉인 시료, 최종 인계함을 구조대 연구 담당자에게 건넸다. 서로 일치하는 자료를 확인한 그가 치료제 후보를 되살릴 수 있다고 답한다. 도시를 벗어나는 헬기 안에서, 누군가의 다음 생존을 이어 줄 연구가 다시 시작된다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.detour.success",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.detour",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "헬기에 올라 봉쇄 도시의 지붕이 멀어지는 것을 보았다. 연구물을 모두 회수하지는 못했지만 살아서 도시를 벗어났다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.detour.opinion",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가져온 것부터 확인하자. 지금 갈 수 있는 길로 헬기까지 가는 거야."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.detour.cure",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록과 봉인 시료, 최종 인계함을 구조대 연구 담당자에게 건넸다. 서로 일치하는 자료를 확인한 그가 치료제 후보를 되살릴 수 있다고 답한다. 도시를 벗어나는 헬기 안에서, 누군가의 다음 생존을 이어 줄 연구가 다시 시작된다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.request.success",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.request",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "탑승 지점까지 갈 힘이 남지 않았다. 출입문을 닫고 구조대의 다음 접근을 기다린다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.request.opinion",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.request",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "가져온 것부터 확인하자. 지금 갈 수 있는 길로 헬기까지 가는 거야."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.000",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "연구 기록, 봉인 시료, 최종 인계함을(를) 확보하지 못했다. 이번에는 치료제 연구 전체를 인계할 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.001",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "인계할 수 있는 연구물은 최종 인계함이다.",
+      "연구 기록, 봉인 시료을(를) 확보하지 못했다. 이번에는 치료제 연구 전체를 인계할 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.010",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "인계할 수 있는 연구물은 봉인 시료이다.",
+      "연구 기록, 최종 인계함을(를) 확보하지 못했다. 이번에는 치료제 연구 전체를 인계할 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.011",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "인계할 수 있는 연구물은 봉인 시료, 최종 인계함이다.",
+      "연구 기록을(를) 확보하지 못했다. 이번에는 치료제 연구 전체를 인계할 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.100",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "인계할 수 있는 연구물은 연구 기록이다.",
+      "봉인 시료, 최종 인계함을(를) 확보하지 못했다. 이번에는 치료제 연구 전체를 인계할 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.101",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "인계할 수 있는 연구물은 연구 기록, 최종 인계함이다.",
+      "봉인 시료을(를) 확보하지 못했다. 이번에는 치료제 연구 전체를 인계할 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.110",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "인계할 수 있는 연구물은 연구 기록, 봉인 시료이다.",
+      "최종 인계함을(를) 확보하지 못했다. 이번에는 치료제 연구 전체를 인계할 수 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.111",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동하고, 가지고 온 연구물을 인계해야 한다.",
+      "인계할 수 있는 연구물은 연구 기록, 봉인 시료, 최종 인계함이다.",
+      "필요한 연구물이 모두 남아 있다. 이제 살아서 헬기에 오르면 연구를 이어 줄 수 있다."
+    ]
+  }
+]

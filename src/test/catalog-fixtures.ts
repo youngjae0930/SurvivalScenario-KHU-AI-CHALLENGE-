@@ -95,3 +95,18 @@ export function makeNarrativeCatalogFixture(): CatalogPack { return compileCatal
 
 import dialogueSnapshot from './opening-catalog-v22.json'
 export function makeDialogueCatalogFixture(): CatalogPack { return compileCatalog(dialogueSnapshot) }
+
+import stage19Snapshot from './stage19-catalog-v1.json'
+export function makeStage19CatalogFixture(): CatalogPack { return compileCatalog(stage19Snapshot) }
+
+import localStoriesSnapshot from './local-stories-catalog-v1.json'
+export function makeLocalStoriesCatalogFixture(): CatalogPack { return compileCatalog(localStoriesSnapshot) }
+
+import routeIdentitySnapshot from './route-identity-catalog-v1.json'
+export function makeRouteIdentityCatalogFixture(): CatalogPack { return compileCatalog(routeIdentitySnapshot) }
+
+import infectionSnapshot from './infection-catalog-v1.json'
+export function makeInfectionCatalogFixture(): CatalogPack { return compileCatalog(infectionSnapshot) }
+
+import researchRouteSnapshot from './research-catalog-v1.json'
+export function makeResearchRouteCatalogFixture(): CatalogPack { return compileCatalog(researchRouteSnapshot) }

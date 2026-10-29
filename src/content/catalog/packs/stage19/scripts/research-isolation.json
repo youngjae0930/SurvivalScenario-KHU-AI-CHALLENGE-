@@ -1,0 +1,77 @@
+[
+  {
+    "id": "encounter.research-isolation.scene",
+    "eventId": "encounter.research-isolation",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "관찰창 너머의 변형 좀비는 팔을 비틀어 고정대를 끊고 있다. 바깥 인계함에는 봉인된 후보 약제 시료가 놓여 있다. 안으로 들어가지 않고 꺼낼 수 있다."
+    ]
+  },
+  {
+    "id": "encounter.research-isolation.collect.success",
+    "eventId": "encounter.research-isolation",
+    "choiceId": "encounter.research-isolation.collect",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉인이 온전한 시료를 배낭 깊숙이 고정했다. 연구실을 빠져나갈 때까지 깨뜨리지 않아야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-isolation.collect.opinion",
+    "eventId": "encounter.research-isolation",
+    "choiceId": "encounter.research-isolation.collect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 연구를 이어받을 사람이 필요할 거야. 가져갈 수 있는 건 챙기자."
+    ]
+  },
+  {
+    "id": "encounter.research-isolation.leave.success",
+    "eventId": "encounter.research-isolation",
+    "choiceId": "encounter.research-isolation.leave",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "더 가까이 다가가지 않고 구획을 통과했다. 뒤에 남긴 연구물은 배낭에 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-isolation.leave.opinion",
+    "eventId": "encounter.research-isolation",
+    "choiceId": "encounter.research-isolation.leave",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 우리 상태부터 지키자. 다음 문까지 거리를 벌리는 게 좋겠어."
+    ]
+  }
+]

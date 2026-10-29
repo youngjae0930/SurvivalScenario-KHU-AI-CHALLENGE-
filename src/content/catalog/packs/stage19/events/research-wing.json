@@ -1,0 +1,50 @@
+{
+  "id": "encounter.research-wing",
+  "title": "봉쇄문 안의 정적",
+  "locationIds": [
+    "research-wing"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.research-wing.maintain",
+          "goalId": "recover",
+          "label": "문을 잠그고 몸과 장비를 정비한다",
+          "intention": "잠긴 구획에서 다음 문을 열기 전에 몸을 추스른다.",
+          "target": "연구동 입구",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.research-wing.rest",
+          "goalId": "recover",
+          "label": "물자를 아끼며 숨을 고른다",
+          "intention": "잠긴 구획에서 다음 문을 열기 전에 몸을 추스른다.",
+          "target": "연구동 입구",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "rest"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

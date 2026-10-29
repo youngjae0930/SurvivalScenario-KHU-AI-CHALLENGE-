@@ -1,0 +1,77 @@
+[
+  {
+    "id": "encounter.research-wing.scene",
+    "eventId": "encounter.research-wing",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수송 기록의 표식이 봉쇄문 안쪽까지 이어진다. 격벽 너머의 좀비는 부푼 관절로 문을 휘게 만든다. 치료제 개발 중 변형됐다는 경고가 벽에 남아 있다. 지금은 문을 잠그고 숨을 고를 틈이 있다."
+    ]
+  },
+  {
+    "id": "encounter.research-wing.maintain.success",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉쇄문 걸쇠를 다시 확인했다. 잠깐의 정적 속에서 호흡을 가다듬고 안쪽 기록 구획으로 향한다."
+    ]
+  },
+  {
+    "id": "encounter.research-wing.maintain.opinion",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 버티는 동안 쉬자. 저 안에서는 오래 멈추기 힘들 것 같아."
+    ]
+  },
+  {
+    "id": "encounter.research-wing.rest.success",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.rest",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉쇄문 걸쇠를 다시 확인했다. 잠깐의 정적 속에서 호흡을 가다듬고 안쪽 기록 구획으로 향한다."
+    ]
+  },
+  {
+    "id": "encounter.research-wing.rest.opinion",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 버티는 동안 쉬자. 저 안에서는 오래 멈추기 힘들 것 같아."
+    ]
+  }
+]

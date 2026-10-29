@@ -1,0 +1,90 @@
+[
+  {
+    "id": "encounter.infected-lab.scene",
+    "eventId": "encounter.infected-lab",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연구자를 가뒀던 구획의 잠금이 풀리며 격벽이 연달아 흔들린다. 변형된 좀비가 기이하게 긴 팔을 뻗어 연구 인계함을 막고 있다. 기록과 시료를 최종 인계함에 담으려면 이곳에서 회수 절차를 마쳐야 한다."
+    ]
+  },
+  {
+    "id": "encounter.infected-lab.recover.success",
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.recover",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "변형 좀비가 격벽에 부딪히는 틈에 인계함을 빼냈다. 손에 남은 연구물부터 확인하고 옥상 출입문을 닫았다."
+    ]
+  },
+  {
+    "id": "encounter.infected-lab.recover.opinion",
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.recover",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연구를 여기서 끝낼 수는 없겠지. 그래도 손이 닿으면 끝이야. 빠질 틈부터 보고 움직이자."
+    ]
+  },
+  {
+    "id": "encounter.infected-lab.recover.failure",
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.recover",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "인계함 앞에서 변형 좀비에게 붙잡혔다."
+    ]
+  },
+  {
+    "id": "encounter.infected-lab.withdraw.success",
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.withdraw",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭을 붙잡고 옥상 계단으로 물러났다. 최종 인계함은 무너지는 구획 안에 남았다."
+    ]
+  },
+  {
+    "id": "encounter.infected-lab.withdraw.opinion",
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.withdraw",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 팔이 닿기 전에 나가자. 살아서 문 밖으로 나가는 게 먼저야."
+    ]
+  }
+]

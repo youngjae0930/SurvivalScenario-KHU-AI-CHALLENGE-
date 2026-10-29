@@ -39,6 +39,58 @@
           "maxLength": 80,
           "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
         },
+        "reactionVersion": {
+          "enum": [
+            "responsibility-1"
+          ]
+        },
+        "infectionVersion": {
+          "enum": [
+            "immediate-1"
+          ]
+        },
+        "researchVersion": {
+          "enum": [
+            "research-1"
+          ]
+        },
+        "endingVersion": {
+          "enum": [
+            "routes-1"
+          ]
+        },
+        "opportunities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80,
+                "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+              },
+              "locationTags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80,
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                },
+                "minItems": 1,
+                "maxItems": 30
+              }
+            },
+            "required": [
+              "id",
+              "locationTags"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 20
+        },
         "dialogueVersion": {
           "enum": [
             "scripts-1"
@@ -123,6 +175,285 @@
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 5000
+                  },
+                  "entry": {
+                    "type": "object",
+                    "properties": {
+                      "conditions": {
+                        "type": "array",
+                        "items": {
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "opportunity"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80,
+                                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "id"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "number"
+                                  ]
+                                },
+                                "subject": {
+                                  "enum": [
+                                    "protagonist",
+                                    "companion"
+                                  ]
+                                },
+                                "stat": {
+                                  "enum": [
+                                    "stress",
+                                    "stamina",
+                                    "injury",
+                                    "risk",
+                                    "cognition",
+                                    "affect",
+                                    "trust"
+                                  ]
+                                },
+                                "min": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 100
+                                },
+                                "max": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 100
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "subject",
+                                "stat",
+                                "min",
+                                "max"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "resource"
+                                  ]
+                                },
+                                "resource": {
+                                  "enum": [
+                                    "supply",
+                                    "medkit"
+                                  ]
+                                },
+                                "min": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 3
+                                },
+                                "max": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 3
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "resource",
+                                "min",
+                                "max"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "companion"
+                                  ]
+                                },
+                                "present": {
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "present"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "weapon"
+                                  ]
+                                },
+                                "value": {
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "value"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "flag"
+                                  ]
+                                },
+                                "flag": {
+                                  "enum": [
+                                    "access",
+                                    "data",
+                                    "helpEstablished",
+                                    "routeKnown"
+                                  ]
+                                },
+                                "value": {
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "flag",
+                                "value"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "fact"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80,
+                                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                },
+                                "value": {
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "id",
+                                "value"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "visited"
+                                  ]
+                                },
+                                "locationId": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80,
+                                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                },
+                                "value": {
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "locationId",
+                                "value"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "location-tag"
+                                  ]
+                                },
+                                "tag": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80,
+                                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "tag"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "stage"
+                                  ]
+                                },
+                                "stage": {
+                                  "enum": [
+                                    "early",
+                                    "middle",
+                                    "late"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "stage"
+                              ],
+                              "additionalProperties": false
+                            }
+                          ]
+                        },
+                        "minItems": 0,
+                        "maxItems": 30
+                      },
+                      "reason": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 5000
+                      }
+                    },
+                    "required": [
+                      "conditions",
+                      "reason"
+                    ],
+                    "additionalProperties": false
                   }
                 },
                 "required": [
@@ -387,6 +718,27 @@
                     "type": "array",
                     "items": {
                       "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "opportunity"
+                              ]
+                            },
+                            "id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80,
+                              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "id"
+                          ],
+                          "additionalProperties": false
+                        },
                         {
                           "type": "object",
                           "properties": {
@@ -666,6 +1018,27 @@
                               "properties": {
                                 "kind": {
                                   "enum": [
+                                    "opportunity"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80,
+                                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "id"
+                              ],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
                                     "number"
                                   ]
                                 },
@@ -924,6 +1297,27 @@
                     "type": "array",
                     "items": {
                       "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "opportunity"
+                              ]
+                            },
+                            "id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80,
+                              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "id"
+                          ],
+                          "additionalProperties": false
+                        },
                         {
                           "type": "object",
                           "properties": {
@@ -1219,6 +1613,27 @@
                         "type": "array",
                         "items": {
                           "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "enum": [
+                                    "opportunity"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80,
+                                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                }
+                              },
+                              "required": [
+                                "kind",
+                                "id"
+                              ],
+                              "additionalProperties": false
+                            },
                             {
                               "type": "object",
                               "properties": {
@@ -1529,6 +1944,27 @@
             "type": "array",
             "items": {
               "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "opportunity"
+                      ]
+                    },
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80,
+                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "id"
+                  ],
+                  "additionalProperties": false
+                },
                 {
                   "type": "object",
                   "properties": {
@@ -1893,6 +2329,27 @@
                         "properties": {
                           "kind": {
                             "enum": [
+                              "opportunity"
+                            ]
+                          },
+                          "id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 80,
+                            "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "id"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "kind": {
+                            "enum": [
                               "number"
                             ]
                           },
@@ -2208,6 +2665,27 @@
                                       "type": "array",
                                       "items": {
                                         "anyOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "kind": {
+                                                "enum": [
+                                                  "opportunity"
+                                                ]
+                                              },
+                                              "id": {
+                                                "type": "string",
+                                                "minLength": 1,
+                                                "maxLength": 80,
+                                                "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                              }
+                                            },
+                                            "required": [
+                                              "kind",
+                                              "id"
+                                            ],
+                                            "additionalProperties": false
+                                          },
                                           {
                                             "type": "object",
                                             "properties": {
@@ -3004,6 +3482,27 @@
                                   "properties": {
                                     "kind": {
                                       "enum": [
+                                        "opportunity"
+                                      ]
+                                    },
+                                    "id": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "maxLength": 80,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "id"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
                                         "number"
                                       ]
                                     },
@@ -3418,6 +3917,325 @@
                           "failure"
                         ],
                         "additionalProperties": false
+                      },
+                      "infection": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "source": {
+                              "enum": [
+                                "infected-person",
+                                "protagonist",
+                                "companion",
+                                "actor"
+                              ]
+                            },
+                            "target": {
+                              "enum": [
+                                "protagonist",
+                                "companion",
+                                "actor",
+                                "other"
+                              ]
+                            },
+                            "contact": {
+                              "enum": [
+                                "bite",
+                                "blood"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "source",
+                            "target",
+                            "contact"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "minItems": 1,
+                        "maxItems": 4
+                      },
+                      "ending": {
+                        "type": "object",
+                        "properties": {
+                          "conditions": {
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "opportunity"
+                                      ]
+                                    },
+                                    "id": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "maxLength": 80,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "id"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "number"
+                                      ]
+                                    },
+                                    "subject": {
+                                      "enum": [
+                                        "protagonist",
+                                        "companion"
+                                      ]
+                                    },
+                                    "stat": {
+                                      "enum": [
+                                        "stress",
+                                        "stamina",
+                                        "injury",
+                                        "risk",
+                                        "cognition",
+                                        "affect",
+                                        "trust"
+                                      ]
+                                    },
+                                    "min": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 100
+                                    },
+                                    "max": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 100
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "subject",
+                                    "stat",
+                                    "min",
+                                    "max"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "resource"
+                                      ]
+                                    },
+                                    "resource": {
+                                      "enum": [
+                                        "supply",
+                                        "medkit"
+                                      ]
+                                    },
+                                    "min": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 3
+                                    },
+                                    "max": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 3
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "resource",
+                                    "min",
+                                    "max"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "companion"
+                                      ]
+                                    },
+                                    "present": {
+                                      "type": "boolean"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "present"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "weapon"
+                                      ]
+                                    },
+                                    "value": {
+                                      "type": "boolean"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "value"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "flag"
+                                      ]
+                                    },
+                                    "flag": {
+                                      "enum": [
+                                        "access",
+                                        "data",
+                                        "helpEstablished",
+                                        "routeKnown"
+                                      ]
+                                    },
+                                    "value": {
+                                      "type": "boolean"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "flag",
+                                    "value"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "fact"
+                                      ]
+                                    },
+                                    "id": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "maxLength": 80,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                    },
+                                    "value": {
+                                      "type": "boolean"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "id",
+                                    "value"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "visited"
+                                      ]
+                                    },
+                                    "locationId": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "maxLength": 80,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                    },
+                                    "value": {
+                                      "type": "boolean"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "locationId",
+                                    "value"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "location-tag"
+                                      ]
+                                    },
+                                    "tag": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "maxLength": 80,
+                                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "tag"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "enum": [
+                                        "stage"
+                                      ]
+                                    },
+                                    "stage": {
+                                      "enum": [
+                                        "early",
+                                        "middle",
+                                        "late"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "stage"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              ]
+                            },
+                            "minItems": 0,
+                            "maxItems": 30
+                          },
+                          "kind": {
+                            "enum": [
+                              "cure-discovery",
+                              "tunnel-escape",
+                              "outskirts-escape"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "conditions",
+                          "kind"
+                        ],
+                        "additionalProperties": false
                       }
                     },
                     "required": [
@@ -3511,6 +4329,27 @@
             "type": "array",
             "items": {
               "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "opportunity"
+                      ]
+                    },
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80,
+                      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "id"
+                  ],
+                  "additionalProperties": false
+                },
                 {
                   "type": "object",
                   "properties": {

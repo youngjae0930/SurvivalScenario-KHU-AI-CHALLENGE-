@@ -1,0 +1,308 @@
+[
+  {
+    "id": "local.text.359",
+    "eventId": "encounter.escalator",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 에스컬레이터 위로 진열대 조각이 흘러내렸다. 가장자리의 일반 계단은 길고, 중앙의 좁은 틈은 짧지만 불안정하다."
+    ]
+  },
+  {
+    "id": "local.text.360",
+    "eventId": "encounter.escalator",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 에스컬레이터 위로 진열대 조각이 흘러내렸다. 가장자리의 일반 계단은 길고, 중앙의 좁은 틈은 짧지만 불안정하다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.361",
+    "eventId": "encounter.escalator",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 에스컬레이터 위로 진열대 조각이 흘러내렸다. 가장자리의 일반 계단은 길고, 중앙의 좁은 틈은 짧지만 불안정하다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.362",
+    "eventId": "encounter.escalator",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "멈춘 에스컬레이터 위로 진열대 조각이 흘러내렸다. 가장자리의 일반 계단은 길고, 중앙의 좁은 틈은 짧지만 불안정하다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.363",
+    "eventId": "encounter.escalator",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.364",
+    "eventId": "encounter.escalator",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.365",
+    "eventId": "encounter.escalator",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.366",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.stairs",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "일반 계단을 따라 돌아 올라갔다. 에스컬레이터 위의 잔해는 건드리지 않았다."
+    ]
+  },
+  {
+    "id": "local.text.367",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.stairs",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "일반 계단을 따라 돌아 올라갔다. 에스컬레이터 위의 잔해는 건드리지 않았다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.368",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.stairs",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 계단은 멈췄어도 잔해는 움직일 거야. 옆으로 돌아가자."
+    ]
+  },
+  {
+    "id": "local.text.369",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.gap",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해가 구르기 전에 빈틈을 넘었다. 돌아갈 힘을 조금 남긴 채 위층 바닥에 섰다."
+    ]
+  },
+  {
+    "id": "local.text.370",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.gap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해가 구르기 전에 빈틈을 넘었다. 돌아갈 힘을 조금 남긴 채 위층 바닥에 섰다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.371",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.gap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해 사이로 발 디딜 곳은 보여. 지금 조용할 때 넘어가고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.372",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.gap",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밟은 조각이 미끄러졌다. 계단 모서리에 다리를 부딪친 뒤에야 위층으로 올라왔다."
+    ]
+  },
+  {
+    "id": "local.text.373",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밟은 조각이 미끄러졌다. 계단 모서리에 다리를 부딪친 뒤에야 위층으로 올라왔다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.374",
+    "eventId": "encounter.escalator",
+    "choiceId": "encounter.escalator.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  }
+]

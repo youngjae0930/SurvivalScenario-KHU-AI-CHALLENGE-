@@ -1,0 +1,390 @@
+{
+  "id": "encounter.villa-stairs",
+  "title": "닫힌 문 너머",
+  "locationIds": [
+    "villa-stairs"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.villa-stairs.water",
+          "goalId": "E02.help",
+          "label": "문틈으로 물과 먹을 것을 건넨다",
+          "intention": "나눌 물자가 없으면 계단 아래의 수도와 비상 보관함을 확인한다.",
+          "target": "빌라 계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [
+                  {
+                    "kind": "resource",
+                    "resource": "supply",
+                    "min": 1,
+                    "max": 3
+                  }
+                ],
+                "action": {
+                  "id": "encounter.villa-stairs.water",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              },
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.villa-stairs.water",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.villa-stairs.keep",
+          "goalId": "E02.supplies",
+          "label": "비상식량함의 봉지를 챙겨 계단을 내려간다",
+          "intention": "도움을 청하는 사람을 뒤로하고 남은 식량을 배낭에 넣는다.",
+          "target": "빌라 계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.villa-stairs.keep",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.villa-stairs.bandage",
+          "goalId": "E02.help",
+          "label": "문틈으로 붕대와 처치 방법을 건넨다",
+          "intention": "내 치료 도구를 써서 문 뒤 생존자의 다리를 돌본다.",
+          "target": "빌라 계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.villa-stairs.bandage",
+                  "eventId": "E02",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "stocked",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "supply",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.villa-stairs.water",
+          "goalId": "E02.help",
+          "label": "문틈으로 물과 먹을 것을 건넨다",
+          "intention": "나눌 물자가 없으면 계단 아래의 수도와 비상 보관함을 확인한다.",
+          "target": "빌라 계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [
+                  {
+                    "kind": "resource",
+                    "resource": "supply",
+                    "min": 1,
+                    "max": 3
+                  }
+                ],
+                "action": {
+                  "id": "encounter.villa-stairs.water",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              },
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.villa-stairs.water",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.villa-stairs.bandage",
+          "goalId": "E02.help",
+          "label": "문틈으로 붕대와 처치 방법을 건넨다",
+          "intention": "내 치료 도구를 써서 문 뒤 생존자의 다리를 돌본다.",
+          "target": "빌라 계단",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.villa-stairs.bandage",
+                  "eventId": "E02",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

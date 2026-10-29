@@ -1,5 +1,5 @@
 /** UI contract version; unrelated to save schemaVersion or game rulesVersion. */
-export const UI_CONTRACT_VERSION = '0.8.0' as const
+export const UI_CONTRACT_VERSION = '0.11.0' as const
 
 /** Narrative IDs come from validated content; mechanical E01~E12 IDs stay internal. */
 export type EventId = string
@@ -7,7 +7,7 @@ export type DecisionId =
   | 'D01' | 'D02' | 'D03' | 'D04' | 'D05'
   | 'D06' | 'D07' | 'D08' | 'D09'
 export type TraitAxis = 'risk' | 'cognition' | 'affect'
-export type EndingKind = 'data-and-escape' | 'escape' | 'escape-failed'
+export type EndingKind = 'data-and-escape' | 'escape' | 'escape-failed' | 'infection-death' | 'cure-discovery' | 'tunnel-escape' | 'outskirts-escape'
 
 export interface TextKey {
   readonly textId: string

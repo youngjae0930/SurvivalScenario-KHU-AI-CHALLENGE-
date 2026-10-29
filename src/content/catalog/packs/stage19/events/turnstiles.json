@@ -1,0 +1,287 @@
+{
+  "id": "encounter.turnstiles",
+  "title": "열리지 않는 개찰구",
+  "locationIds": [
+    "turnstiles"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.turnstiles.gate",
+          "goalId": "E03.observe",
+          "label": "비상 통행문 너머를 듣고 개찰구를 지난다",
+          "intention": "개찰구를 강제로 작동시키지 않고 열린 길을 확인한다.",
+          "target": "지하철 개찰구",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.turnstiles.gate",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.turnstiles.maintain",
+          "goalId": "E04.maintain",
+          "label": "역무원 의자에서 내려갈 채비를 한다",
+          "intention": "계단으로 내려가기 전에 몸과 짐을 정비한다.",
+          "target": "지하철 개찰구",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.turnstiles.work-map",
+          "goalId": "confirm",
+          "label": "개찰구 옆 작업자 지도를 확인한다",
+          "intention": "시간이 적힌 수기 통과 기록을 지도와 대조해 남쪽 작업 통로의 진입점을 기억한다.",
+          "target": "지하철 개찰구",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.turnstiles.work-map",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "subway-map": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          },
+          "pace": "slow"
+        }
+      ]
+    },
+    {
+      "id": "normal-companion",
+      "priority": 1,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.turnstiles.gate",
+          "goalId": "E03.observe",
+          "label": "비상 통행문 너머를 듣고 개찰구를 지난다",
+          "intention": "개찰구를 강제로 작동시키지 않고 열린 길을 확인한다.",
+          "target": "지하철 개찰구",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.turnstiles.gate",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 먼저 주변을 살피고 주인공은 가까이서 함께 이동합니다. 기존 행동 비용은 주인공에게 적용됩니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.turnstiles.maintain",
+          "goalId": "E04.maintain",
+          "label": "역무원 의자에서 내려갈 채비를 한다",
+          "intention": "계단으로 내려가기 전에 몸과 짐을 정비한다.",
+          "target": "지하철 개찰구",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.turnstiles.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "target": "지하철 개찰구",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.turnstiles.work-map",
+          "goalId": "confirm",
+          "label": "개찰구 옆 작업자 지도를 확인한다",
+          "intention": "시간이 적힌 수기 통과 기록을 지도와 대조해 남쪽 작업 통로의 진입점을 기억한다.",
+          "target": "지하철 개찰구",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.turnstiles.work-map",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "subway-map": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          },
+          "pace": "slow"
+        }
+      ]
+    }
+  ]
+}

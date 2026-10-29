@@ -1,0 +1,305 @@
+[
+  {
+    "id": "local.text.407",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "직원 휴게실에는 이름이 적힌 컵들이 놓여 있다. 전기포트는 꺼져 있고 남은 음식은 없다. 의자 몇 개와 비어 있는 식탁이 잠깐의 자리를 내준다."
+    ]
+  },
+  {
+    "id": "local.text.408",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "직원 휴게실에는 이름이 적힌 컵들이 놓여 있다. 전기포트는 꺼져 있고 남은 음식은 없다. 의자 몇 개와 비어 있는 식탁이 잠깐의 자리를 내준다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.409",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "직원 휴게실에는 이름이 적힌 컵들이 놓여 있다. 전기포트는 꺼져 있고 남은 음식은 없다. 의자 몇 개와 비어 있는 식탁이 잠깐의 자리를 내준다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.410",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "직원 휴게실에는 이름이 적힌 컵들이 놓여 있다. 전기포트는 꺼져 있고 남은 음식은 없다. 의자 몇 개와 비어 있는 식탁이 잠깐의 자리를 내준다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.411",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.412",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.413",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.414",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이름 적힌 컵을 건드리지 않고 의자에 앉았다. 가지고 온 짐을 펼쳐 몸과 장비를 돌봤다."
+    ]
+  },
+  {
+    "id": "local.text.415",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이름 적힌 컵을 건드리지 않고 의자에 앉았다. 가지고 온 짐을 펼쳐 몸과 장비를 돌봤다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.416",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "누가 쓰던 자리인지 이름이 남아 있네. 잠깐 빌려서 숨을 돌리자."
+    ]
+  },
+  {
+    "id": "local.text.417",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.rest",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "불이 들어오지 않는 전기포트 옆에서 호흡을 골랐다. 다시 일어설 때 의자를 식탁 아래로 밀어 넣었다."
+    ]
+  },
+  {
+    "id": "local.text.418",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.rest",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "불이 들어오지 않는 전기포트 옆에서 호흡을 골랐다. 다시 일어설 때 의자를 식탁 아래로 밀어 넣었다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.419",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기까지 와서도 계속 서 있을 필요는 없잖아. 한숨만 돌리고 가자."
+    ]
+  },
+  {
+    "id": "local.text.420",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다."
+    ]
+  },
+  {
+    "id": "local.text.421",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+    ]
+  },
+  {
+    "id": "local.text.422",
+    "eventId": "encounter.staff-lounge",
+    "choiceId": "encounter.staff-lounge.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "네 몫이 줄어드는 건 알아. 그래도 지금 나눠 준다면 잊지 않을게."
+    ]
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "id": "encounter.research-archives",
+  "title": "남겨진 연구 절차",
+  "locationIds": [
+    "research-archives"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.research-archives.collect",
+          "goalId": "collect",
+          "label": "연구 절차를 읽고 기록을 챙긴다",
+          "intention": "헬기 인계에 필요한 연구 기록을 확보한다.",
+          "target": "research-archives",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.research-archives.collect",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-record": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.research-archives.leave",
+          "goalId": "leave",
+          "label": "연구물을 남겨 두고 다음 구획으로 향한다",
+          "intention": "멈춰 조사하지 않고 문 너머의 위협과 거리를 유지한다.",
+          "target": "research-archives",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.research-archives.leave",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "cognition"
+  }
+}

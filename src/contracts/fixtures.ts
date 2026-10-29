@@ -164,4 +164,34 @@ export const uiScenarios = {
       newRun: { kind: 'available' },
     },
   },
+  infectionEnding: {
+    ...choiceSnapshotFixture,
+    view: {
+      kind: 'ending', runId: 'fixture-infection-run', resultId: 'fixture-infection-result',
+      ending: 'infection-death', title: '감염 · 끝나 버린 여정', text: ['감염 사망 화면 배치용 예시입니다.'],
+      status: { ...status, infection: { protagonist: 'dead', companion: null } }, changes: [],
+      legacySummary: ['감염 상태는 다음 회차에 계승하지 않습니다.'], newRun: { kind: 'available' },
+    },
+  },
+  cureEnding: {
+    ...choiceSnapshotFixture,
+    view: {
+      kind: 'ending', runId: 'fixture-cure-run', resultId: 'fixture-cure-result',
+      ending: 'cure-discovery', title: '치료제 발견 · 이어지는 생존',
+      text: ['연구 기록·봉인 시료·최종 인계함을 구조대에 전달하는 화면 예시입니다.'], status, changes: [],
+      legacySummary: ['연구물은 이번 회차의 성과이며 다음 회차에 아이템으로 이어지지 않습니다.'], newRun: { kind: 'available' },
+    },
+  },
+  tunnelEnding: {
+    ...choiceSnapshotFixture,
+    view: { kind: 'ending', runId: 'fixture-tunnel', resultId: 'fixture-tunnel-result', ending: 'tunnel-escape',
+      title: '지하터널 탈출 · 어둠 너머의 새벽', text: ['터널 출구에서 맞는 새벽의 화면 예시입니다.'],
+      status, changes: [], legacySummary: ['선택의 방향이 다음 동료에게 이어집니다.'], newRun: { kind: 'available' } },
+  },
+  outskirtsEnding: {
+    ...choiceSnapshotFixture,
+    view: { kind: 'ending', runId: 'fixture-outskirts', resultId: 'fixture-outskirts-result', ending: 'outskirts-escape',
+      title: '도시 외곽 탈출 · 차단선 너머로', text: ['검문소 바깥에 도달한 화면 예시입니다.'],
+      status, changes: [], legacySummary: ['선택의 방향이 다음 동료에게 이어집니다.'], newRun: { kind: 'available' } },
+  },
 } as const satisfies Readonly<Record<string, AppSnapshot>>

@@ -1,0 +1,426 @@
+{
+  "id": "E07",
+  "title": "나눌 몫과 가져갈 몫",
+  "locationIds": [
+    "food-hall"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "general",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E07.share-food",
+          "goalId": "rescue",
+          "label": "식품을 나눠 남은 사람들의 이동을 돕는다",
+          "intention": "내 물자가 없으면 조리대에서 마실 물을 찾아 나눈다.",
+          "target": "백화점 식품관",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [
+                  {
+                    "kind": "resource",
+                    "resource": "supply",
+                    "min": 1,
+                    "max": 3
+                  }
+                ],
+                "action": {
+                  "id": "E07.share-food",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              },
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.share-food",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E07.keep-food",
+          "goalId": "self",
+          "label": "밀봉 식품을 챙겨 식품관을 떠난다",
+          "intention": "남은 사람들에게 나누지 않고 내 배낭을 채운다.",
+          "target": "백화점 식품관",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.keep-food",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E07.aid",
+          "goalId": "rescue",
+          "label": "치료 도구로 생존자의 손을 감아 준다",
+          "intention": "다친 손을 처치해 스스로 짐을 들 수 있게 돕는다.",
+          "target": "백화점 식품관",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.aid",
+                  "eventId": "E02",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "extreme",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "affect",
+          "min": 78,
+          "max": 100
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E07.share-food",
+          "goalId": "rescue",
+          "label": "식품을 나눠 남은 사람들의 이동을 돕는다",
+          "intention": "내 물자가 없으면 조리대에서 마실 물을 찾아 나눈다.",
+          "target": "백화점 식품관",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [
+                  {
+                    "kind": "resource",
+                    "resource": "supply",
+                    "min": 1,
+                    "max": 3
+                  }
+                ],
+                "action": {
+                  "id": "E07.share-food",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              },
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.share-food",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E07.aid",
+          "goalId": "rescue",
+          "label": "치료 도구로 생존자의 손을 감아 준다",
+          "intention": "다친 손을 처치해 스스로 짐을 들 수 있게 돕는다.",
+          "target": "백화점 식품관",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E07.aid",
+                  "eventId": "E02",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ],
+  "autonomy": {
+    "conditions": [],
+    "conflicts": [
+      {
+        "playerGoalId": "self",
+        "companionGoalId": "rescue",
+        "reason": "동료는 아직 도움을 기다리는 사람에게서 발을 떼지 못한다."
+      }
+    ],
+    "reunion": {
+      "conditions": [],
+      "minVisits": 1,
+      "locationTags": [
+        "safe-hub"
+      ]
+    }
+  },
+  "intervention": {
+    "mode": "companion-choice",
+    "groupId": "extreme",
+    "axis": "affect",
+    "extremePole": "right",
+    "replaceChoiceId": "E07.aid",
+    "alternatives": [
+      {
+        "groupId": "general",
+        "choiceId": "E07.keep-food"
+      }
+    ],
+    "judgment": "self",
+    "text": "나누고 싶은 마음은 알아. 그래도 우리 몫을 남기고 떠나고 싶어.",
+    "notices": [
+      "동료는 자기 생각에 따라 다른 행동을 제안할 수 있다."
+    ]
+  }
+}

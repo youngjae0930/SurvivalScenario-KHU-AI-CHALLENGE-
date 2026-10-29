@@ -1,0 +1,1137 @@
+[
+  {
+    "id": "local.text.612",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "전원이 꺼진 수술방에서 생존자가 쓰러진 이동 침대에 다리를 눌린 채 도움을 청한다. 벽의 수신기에서는 남쪽 호출이 새어 나온다. 수술을 할 상황은 아니지만 침대를 옮겨 사람을 빼낼 수는 있을 듯하다."
+    ]
+  },
+  {
+    "id": "local.text.613",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "전원이 꺼진 수술방에서 생존자가 쓰러진 이동 침대에 다리를 눌린 채 도움을 청한다. 벽의 수신기에서는 남쪽 호출이 새어 나온다. 수술을 할 상황은 아니지만 침대를 옮겨 사람을 빼낼 수는 있을 듯하다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.614",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "전원이 꺼진 수술방에서 생존자가 쓰러진 이동 침대에 다리를 눌린 채 도움을 청한다. 벽의 수신기에서는 남쪽 호출이 새어 나온다. 수술을 할 상황은 아니지만 침대를 옮겨 사람을 빼낼 수는 있을 듯하다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.615",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "전원이 꺼진 수술방에서 생존자가 쓰러진 이동 침대에 다리를 눌린 채 도움을 청한다. 벽의 수신기에서는 남쪽 호출이 새어 나온다. 수술을 할 상황은 아니지만 침대를 옮겨 사람을 빼낼 수는 있을 듯하다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.616",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.617",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.618",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.619",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대 아래에서 생존자를 끌어냈다. 출구 쪽으로 움직이게 된 사람이 비상식량을 나눠 주었다."
+    ]
+  },
+  {
+    "id": "local.text.620",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대 아래에서 생존자를 끌어냈다. 출구 쪽으로 움직이게 된 사람이 비상식량을 나눠 주었다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.621",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 틈으로 바로 들어갈 수 있어. 목소리가 더 약해지기 전에 꺼내고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.622",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.623",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.624",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.625",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품으로 침대를 받치고 생존자를 꺼냈다. 복도 쪽으로 옮겨 간 사람이 비상식량을 건넸다."
+    ]
+  },
+  {
+    "id": "local.text.626",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물품으로 침대를 받치고 생존자를 꺼냈다. 복도 쪽으로 옮겨 간 사람이 비상식량을 건넸다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.627",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 다시 내려앉지 않게 받치자. 가진 것 하나를 써도 저 사람을 꺼낼 틈은 만들고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.628",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.629",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.630",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.631",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "장비를 밀고 침대 주변을 넓혀 생존자를 꺼냈다. 생존자는 출구로 몸을 끌며 비상식량을 나눠 주었다."
+    ]
+  },
+  {
+    "id": "local.text.632",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "장비를 밀고 침대 주변을 넓혀 생존자를 꺼냈다. 생존자는 출구로 몸을 끌며 비상식량을 나눠 주었다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.633",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "돌아갈 자리를 먼저 만들자. 힘이 들더라도 저 틈에 둘 다 갇히고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "local.text.634",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.635",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.636",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.637",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "알려 받은 호출과 같은 주파수에서 남쪽 우회 안내를 확인했다. 침대에 눌린 사람을 꺼내지는 못한 채 출구로 향했다."
+    ]
+  },
+  {
+    "id": "local.text.638",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "알려 받은 호출과 같은 주파수에서 남쪽 우회 안내를 확인했다. 침대에 눌린 사람을 꺼내지는 못한 채 출구로 향했다.",
+      "동료가 주변을 살피며 낮게 말한다. “어느 표지를 찾아야 할지는 알겠네. 길에 들어갈 때도 직접 확인하자.”"
+    ]
+  },
+  {
+    "id": "local.text.639",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "전에 들은 주파수부터 맞추자. 출구를 확인해야 우리도 여기서 빠져나갈 수 있어."
+    ]
+  },
+  {
+    "id": "local.text.640",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대를 들어 다리를 빼냈다. 생존자는 복도 쪽으로 몸을 끌며 자신의 비상식량을 나눠 주었다. 떨리는 다리로 복도에 선 사람이 벽을 짚고 숨을 골랐다."
+    ]
+  },
+  {
+    "id": "local.text.641",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대를 들어 다리를 빼냈다. 생존자는 복도 쪽으로 몸을 끌며 자신의 비상식량을 나눠 주었다. 떨리는 다리로 복도에 선 사람이 벽을 짚고 숨을 골랐다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.642",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리가 눌려 못 움직이는 거야. 침대만 들어 주면 나올 수 있어. 그냥 두고 가고 싶지 않아."
+    ]
+  },
+  {
+    "id": "local.text.643",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.644",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.645",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.646",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "처치 도구로 다리를 받치고 침대 밖으로 옮겼다. 생존자가 비상식량을 건네며 복도 쪽으로 몸을 끌었다."
+    ]
+  },
+  {
+    "id": "local.text.647",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "처치 도구로 다리를 받치고 침대 밖으로 옮겼다. 생존자가 비상식량을 건네며 복도 쪽으로 몸을 끌었다.",
+      "동료가 주변을 살피며 낮게 말한다. “일단 여기서 벗어나자. 아직 주변을 놓칠 수는 없어.”"
+    ]
+  },
+  {
+    "id": "local.text.648",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다리를 그냥 잡아당기면 더 다치겠어. 붕대로 받치고 옮기자."
+    ]
+  },
+  {
+    "id": "local.text.649",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다."
+    ]
+  },
+  {
+    "id": "local.text.650",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대가 갑자기 기울었다. 생존자를 완전히 꺼내지 못하고 몸을 빼다 상처를 입었다. 식량을 받지는 못했다.",
+      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.651",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.652",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수신기에서는 남쪽이라는 말만 반복됐다. 출처는 확인하지 못한 채 침대 아래의 목소리를 뒤로했다."
+    ]
+  },
+  {
+    "id": "local.text.653",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수신기에서는 남쪽이라는 말만 반복됐다. 출처는 확인하지 못한 채 침대 아래의 목소리를 뒤로했다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.654",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 침대를 옮길 힘이 남아 있는지 모르겠어. 우선 출구 쪽으로 가고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.655",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.656",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.657",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.658",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.659",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.660",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.661",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.662",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.663",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.664",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.665",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.666",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "local.text.667",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.668",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 도움을 청하는 쪽으로 돌아선다. “지금 네 길을 막지는 않을게. 하지만 나는 확인하고 가야 해. 살아서 다음 거점에서 보자.” 서로의 발소리가 다른 방향으로 멀어진다."
+    ]
+  },
+  {
+    "id": "route.text.19",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "hospital-kit",
+        "value": true
+      },
+      {
+        "kind": "resource",
+        "resource": "medkit",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "전원이 꺼진 수술방에서 생존자가 쓰러진 이동 침대에 다리를 눌린 채 도움을 청한다. 벽의 수신기에서는 남쪽 호출이 새어 나온다. 수술을 할 상황은 아니지만 침대를 옮겨 사람을 빼낼 수는 있을 듯하다.",
+      "접수대에서 처치함을 찾았지만 지금 배낭에는 치료 도구가 남지 않았다. 침대에 눌린 다리를 보며 빈 수납칸을 더듬는다."
+    ]
+  },
+  {
+    "id": "route.text.20",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "hospital-kit",
+        "value": true
+      },
+      {
+        "kind": "resource",
+        "resource": "medkit",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "전원이 꺼진 수술방에서 생존자가 쓰러진 이동 침대에 다리를 눌린 채 도움을 청한다. 벽의 수신기에서는 남쪽 호출이 새어 나온다. 수술을 할 상황은 아니지만 침대를 옮겨 사람을 빼낼 수는 있을 듯하다.",
+      "접수대에서 회수한 처치 도구가 떠오른다. 저 사람을 옮기는 데 쓸지, 내 상처를 위해 남길지까지 생각해야 한다."
+    ]
+  }
+]

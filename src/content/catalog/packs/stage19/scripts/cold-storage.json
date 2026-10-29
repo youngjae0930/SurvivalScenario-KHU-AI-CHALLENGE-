@@ -1,0 +1,77 @@
+[
+  {
+    "id": "encounter.cold-storage.scene",
+    "eventId": "encounter.cold-storage",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "닫힌 보관함 안에 후보 약제 시료가 남아 있다. 봉인과 표식이 일치하는 용기를 골라야 한다. 냉각 장비 너머에서는 문을 두드리는 소리가 난다."
+    ]
+  },
+  {
+    "id": "encounter.cold-storage.collect.success",
+    "eventId": "encounter.cold-storage",
+    "choiceId": "encounter.cold-storage.collect",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉인이 온전한 시료를 배낭 깊숙이 고정했다. 연구실을 빠져나갈 때까지 깨뜨리지 않아야 한다."
+    ]
+  },
+  {
+    "id": "encounter.cold-storage.collect.opinion",
+    "eventId": "encounter.cold-storage",
+    "choiceId": "encounter.cold-storage.collect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 연구를 이어받을 사람이 필요할 거야. 가져갈 수 있는 건 챙기자."
+    ]
+  },
+  {
+    "id": "encounter.cold-storage.leave.success",
+    "eventId": "encounter.cold-storage",
+    "choiceId": "encounter.cold-storage.leave",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "더 가까이 다가가지 않고 구획을 통과했다. 뒤에 남긴 연구물은 배낭에 없다."
+    ]
+  },
+  {
+    "id": "encounter.cold-storage.leave.opinion",
+    "eventId": "encounter.cold-storage",
+    "choiceId": "encounter.cold-storage.leave",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 우리 상태부터 지키자. 다음 문까지 거리를 벌리는 게 좋겠어."
+    ]
+  }
+]

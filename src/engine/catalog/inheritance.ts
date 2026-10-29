@@ -30,7 +30,7 @@ export function isCatalogLegacy(value: unknown): value is CatalogLegacy {
   if (!isRecord(value) || keys.some(key => !Object.hasOwn(value, key)) || Object.keys(value).some(key => !keys.includes(key) && key !== 'decisionMemory')
     || !isRecord(value.judgmentCounts) || typeof value.sourceRunId !== 'string' || !value.sourceRunId || value.sourceRunId.length > 200
     || value.legacyId !== `${value.sourceRunId}:legacy` || typeof value.contentRevision !== 'string' || !/^[A-Za-z][A-Za-z0-9_.-]{0,79}$/.test(value.contentRevision)
-    || value.rulesVersion !== '1.2-stress-1' || !['data-and-escape', 'escape', 'escape-failed'].includes(String(value.ending))
+    || value.rulesVersion !== '1.2-stress-1' || !['data-and-escape', 'escape', 'escape-failed', 'infection-death', 'cure-discovery', 'tunnel-escape', 'outskirts-escape'].includes(String(value.ending))
     || ![null, 'rescue', 'self'].includes(value.rescueDecision as null | string) || !isTraits(value.traits) || Object.keys(value.traits).length !== 3
     || !isCompanionContext({ name: value.name, traits: value.traits, trust: 50, judgmentCounts: value.judgmentCounts }) || !isRecord(value.representativeActions)) return false
   const actions = value.representativeActions

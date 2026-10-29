@@ -185,7 +185,8 @@
     "stage": "middle",
     "tags": [
       "slot-9",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-8"
@@ -200,7 +201,8 @@
     "stage": "middle",
     "tags": [
       "slot-9",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-8"
@@ -215,7 +217,8 @@
     "stage": "middle",
     "tags": [
       "slot-10",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-9"
@@ -230,7 +233,8 @@
     "stage": "middle",
     "tags": [
       "slot-10",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-9"
@@ -260,7 +264,8 @@
     "stage": "middle",
     "tags": [
       "slot-12",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-11"
@@ -275,7 +280,8 @@
     "stage": "middle",
     "tags": [
       "slot-12",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-11"
@@ -290,7 +296,8 @@
     "stage": "middle",
     "tags": [
       "slot-13",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-12"
@@ -305,7 +312,8 @@
     "stage": "middle",
     "tags": [
       "slot-13",
-      "hospital"
+      "hospital",
+      "research-clue-site"
     ],
     "fromTags": [
       "slot-12"
@@ -726,7 +734,7 @@
     "after": [],
     "required": true,
     "weight": 1,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "research-archives",
@@ -742,7 +750,7 @@
     "after": [],
     "required": false,
     "weight": 1,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "sample-lab",
@@ -758,7 +766,7 @@
     "after": [],
     "required": false,
     "weight": 1,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "cold-storage",
@@ -774,7 +782,7 @@
     "after": [],
     "required": false,
     "weight": 1,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "research-isolation",
@@ -790,7 +798,7 @@
     "after": [],
     "required": false,
     "weight": 1,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "infected-lab",
@@ -806,7 +814,7 @@
     "after": [],
     "required": true,
     "weight": 1,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "research-helipad",
@@ -823,6 +831,6 @@
     "after": [],
     "required": true,
     "weight": 1,
-    "enabled": false
+    "enabled": true
   }
 ]

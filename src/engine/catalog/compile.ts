@@ -27,6 +27,14 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
   const locations = new Map(pack.locations.map(location => [location.id, location]))
   const events = new Map(pack.events.map(event => [event.id, event]))
   const facts = new Set(pack.manifest.facts)
+  const opportunities = new Set(pack.manifest.opportunities?.map(p => p.id))
+  if (pack.manifest.reactionVersion) check(pack.manifest.dialogueVersion === 'scripts-1', 'reactionVersion: 동료 대사 버전이 필요합니다.')
+  if (pack.manifest.opportunities) {
+    check(pack.manifest.researchVersion === 'research-1' && pack.manifest.routeVersion === 'slots-1', 'opportunities: research-1/slots-1이 필요합니다.')
+    unique(pack.manifest.opportunities.map(p => p.id), 'opportunities')
+    for (const policy of pack.manifest.opportunities) for (const tag of policy.locationTags)
+      check(pack.locations.some(l => l.tags.includes(tag) && l.enabled !== false), `opportunity ${policy.id}: 활성 장소 태그가 없습니다: ${tag}`)
+  }
   if (pack.manifest.routeVersion === 'slots-1') issues.push(...validateSlotPlan(pack))
   else check(!pack.manifest.slotPlan && pack.events.every(event => allChoices(event).every(choice => !choice.destinationSegmentId)), 'slotPlan/목적지에는 slots-1 경로 버전이 필요합니다.')
   if (pack.manifest.decisionEcho) {
@@ -53,12 +61,19 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
   }
   const verifyConditions = (conditions: readonly Condition[], path: string) => {
     for (const condition of conditions) {
+      if (condition.kind === 'opportunity') check(opportunities.has(condition.id), `${path}: 선언하지 않은 opportunity ${condition.id}`)
       if (condition.kind === 'number' || condition.kind === 'resource') check(condition.min <= condition.max, `${path}: min > max`)
       if (condition.kind === 'resource') check(condition.max <= (condition.resource === 'medkit' ? 2 : 3), `${path}: 자원 보유 상한을 벗어난 조건입니다.`)
       if (condition.kind === 'number' && condition.stat === 'injury') check(condition.max <= 3, `${path}: 부상 상한은 3입니다.`)
       if (condition.kind === 'number') check(condition.subject === 'companion' ? ['risk', 'cognition', 'affect', 'trust'].includes(condition.stat) : condition.stat !== 'trust', `${path}: 해당 주체에 없는 파라미터입니다.`)
       if (condition.kind === 'visited') check(locations.has(condition.locationId), `${path}: 없는 장소 ${condition.locationId}`)
       if (condition.kind === 'fact') check(facts.has(condition.id), `${path}: 선언하지 않은 fact ${condition.id}`)
+    }
+  }
+  for (const segment of pack.manifest.slotPlan?.segments ?? []) {
+    if (segment.entry) {
+      verifyConditions(segment.entry.conditions, `segment ${segment.id}.entry`)
+      check(segment.id !== pack.manifest.slotPlan!.startSegmentId, '시작 구간에는 진입 조건을 지정할 수 없습니다.')
     }
   }
   for (const location of pack.locations) {
@@ -129,6 +144,17 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
         check(group.choices.some(choice => choice.behavior.kind === 'escape' && choice.behavior.route === route), `group ${event.id}/${group.id}: 탈출 경로 ${route}가 필요합니다.`)
       }
       for (const choice of group.choices) {
+        if (choice.ending) {
+          check(choice.behavior.kind === 'escape' && (pack.manifest.endingVersion === 'routes-1'
+            || (choice.ending.kind === 'cure-discovery' && pack.manifest.researchVersion === 'research-1')), `choice ${choice.id}: 조건부 결말에는 호환되는 결말 버전과 탈출 행동이 필요합니다.`)
+          verifyConditions(choice.ending.conditions, `choice ${choice.id}.ending`)
+        }
+        if (choice.infection) {
+          check(pack.manifest.infectionVersion === 'immediate-1', `choice ${choice.id}: 감염 버전이 필요합니다.`)
+          check(choice.behavior.kind === 'action' && choice.behavior.variants.every(v => v.action.check !== null), `choice ${choice.id}: 감염 노출에는 실패 가능한 행동만 사용할 수 있습니다.`)
+          check(!choice.destinationSegmentId, `choice ${choice.id}: 경로 선택에 감염 노출을 지정할 수 없습니다.`)
+          check(choice.infection.every(c => c.source !== c.target), `choice ${choice.id}: 자기 자신에게 전염시킬 수 없습니다.`)
+        }
         if (choice.relationship) check(pack.manifest.trustVersion === 'outcome-1', `choice ${choice.id}: 결과 기반 신뢰 버전이 필요합니다.`)
         if (choice.execution) {
           check(pack.manifest.executionVersion === 'command-1', `choice ${choice.id}: 동료 명령 버전이 필요합니다.`)

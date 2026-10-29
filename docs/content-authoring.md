@@ -1,6 +1,16 @@
 # 장소·사건·선택·스토리 작성 기준
 
+## 최신 신규 팩: catalog-playtest-1 (2026-10-30)
+
+신규reactionVersion=responsibility-1은 실행 전에 실제로 추천한 행동의 실패/신뢰 감소에 공통 책임 반응을 추가한다. 장소별 대사가 추천 여부를 추측해 ‘내가 제안했다’고 단정하지 않도록 한다. 이름 뒤 ‘이’를 붙이지 말고 ‘동료가’ 또는 조사가 필요 없는 문장으로 작성한다. 단서 설명은 특정 수납물에 고정하지 않으며 개발 변경량(예: 기존보다15%p 낮음)은 상황 본문에 넣지 않는다. 정확한 확률·감염 경고는 확인창에서 제공한다. [실화면 점검과 범위](playtest-2026-10-30.md). 아래catalog-balance-1은 이전 팩이다.
+
+## 최신 신규 팩: catalog-balance-1 (2026-10-30)
+
+일반 행동 성향은 사용자 승인±4 기준으로 작성한다(이전±8을 복사하지 않는다). 비용·극단 경계·설문 수치 변경 권한을 뜻하지 않는다. 지하터널/도시 외곽 탈출 결말은 manifest `endingVersion: routes-1`과 escape 행동의 조건부 ending으로 연결한다. [작성 파일·저장·검증](route-endings-balance.md). 아래catalog-research-1은 직전 버전이다.
+
 ## 현재 신규 팩: 19스테이지 (2026-10-30)
+
+현재 revision은 `catalog-research-1`이다. 활성54곳의 고유 사건을 `stage19/events/<locationId>.json`, 상황·결과·대사를 `stage19/scripts/<locationId>.json`에서 편집한다. 무작위 조사 기회·진입·치료제 결말은 [연구동 작성법](research-route.md), 감염 접촉은 [감염 작성법](infection.md), 경로 행동/사실은 [경로별 특징](route-identities.md)을 참조한다. 새 장소/문구도 자동 수집되지만 슬롯 후보와 사건 대상·조건을 함께 확인해야 한다.
 
 신규 기본 콘텐츠는 `src/content/catalog/packs/stage19/`다. 슬롯 후보·7/14번 경로 선택·작성 파일·저장 호환은 [19스테이지 구현/작성 지침](stage19-progression.md)을 먼저 읽는다. 아래12사건 필수 경로는 기존 팩 기록이다. 기존 조건부 사건·문구·동료 대화 작성 방법은 새 팩에도 적용한다.
 

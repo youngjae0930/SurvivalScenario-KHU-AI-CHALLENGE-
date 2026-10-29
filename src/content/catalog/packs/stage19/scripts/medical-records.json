@@ -1,0 +1,378 @@
+[
+  {
+    "id": "local.text.272",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.273",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+    ]
+  },
+  {
+    "id": "local.text.274",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+    ]
+  },
+  {
+    "id": "local.text.275",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.276",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+    ]
+  },
+  {
+    "id": "local.text.277",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+    ]
+  },
+  {
+    "id": "local.text.278",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+    ]
+  },
+  {
+    "id": "local.text.279",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.records",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이송 기록에서 최근에 사용된 남쪽 통로를 찾았다. 증상에 대한 메모는 읽었지만 그것만으로 누가 감염됐는지 단정하지 않았다."
+    ]
+  },
+  {
+    "id": "local.text.280",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.records",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이송 기록에서 최근에 사용된 남쪽 통로를 찾았다. 증상에 대한 메모는 읽었지만 그것만으로 누가 감염됐는지 단정하지 않았다.",
+      "동료가 주변을 살피며 낮게 말한다. “어느 표지를 찾아야 할지는 알겠네. 길에 들어갈 때도 직접 확인하자.”"
+    ]
+  },
+  {
+    "id": "local.text.281",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.records",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "증상 몇 줄로 사람을 골라낼 수는 없어. 대신 어디로 이동했는지는 확인할 수 있겠어."
+    ]
+  },
+  {
+    "id": "local.text.282",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.leave",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서류를 다시 덮고 병동 표지를 따라갔다. 눈에 남은 증상 이름만으로 답을 얻을 수는 없었다."
+    ]
+  },
+  {
+    "id": "local.text.283",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.leave",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서류를 다시 덮고 병동 표지를 따라갔다. 눈에 남은 증상 이름만으로 답을 얻을 수는 없었다.",
+      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+    ]
+  },
+  {
+    "id": "local.text.284",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.leave",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기 적힌 건 과거 이야기야. 지금 길을 찾는 일이 먼저일 수도 있어."
+    ]
+  },
+  {
+    "id": "encounter.medical-records.transport-record.success",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.transport-record",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수송 기록의 뒷면에서 연구동 출입로와 비상 인계 표식을 찾았다. 병동 끝 갈림길에서 이 길로 들어갈 수 있을 것이다."
+    ]
+  },
+  {
+    "id": "encounter.medical-records.transport-record.opinion",
+    "eventId": "encounter.medical-records",
+    "choiceId": "encounter.medical-records.transport-record",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이 표식, 평범한 물품 기록이 아니야. 잠깐만 읽어 보자. 막힌 길을 피할 방법이 있을지도 몰라."
+    ]
+  },
+  {
+    "id": "encounter.medical-records.transport-scene.0",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.medical-records.transport-scene.1",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다.",
+      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.medical-records.transport-scene.2",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 102,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다.",
+      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  },
+  {
+    "id": "encounter.medical-records.transport-scene.3",
+    "eventId": "encounter.medical-records",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 103,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의료 기록실 서류에는 고열과 공격성에 대한 관찰이 반복된다. 이 기록만으로 감염 여부를 판단할 수는 없다. 옆 게시판에는 환자 이송 경로와 날짜가 남아 있다.",
+      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다."
+    ]
+  }
+]

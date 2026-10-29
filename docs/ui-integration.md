@@ -1,5 +1,17 @@
 # UI와 앱 연결 기준
 
+## 최신 계약0.11.0: 경로별 탈출 결말
+
+`EndingKind.tunnel-escape` / `outskirts-escape`와 fixtures `tunnelEnding` / `outskirtsEnding`을 추가했다. 실제 예상 결말·제목·회고는 앱이 제공한다. 치료제 발견·구조 대기 결말은 유지하며 UI에서 경로를 재판정하지 않는다. [변경과 검증](route-endings-balance.md). 아래0.10.0은 이전 단계다.
+
+## 최신 계약0.10.0: 치료제 발견 결말
+
+`EndingKind.cure-discovery`와 fixture `cureEnding`을 추가했다. 미리보기의 실제 예상 결말과 헬기장의 확보/누락 연구물 문구는 앱·엔진이 제공한다. UI는 진입 조건이나 치료제 성과를 재계산하지 않는다. [연구동 연결](research-route.md). 아래0.9.0은 이전 단계 기록이다.
+
+## 최신 계약0.9.0: 감염 상태와 감염 사망
+
+`StatusViewModel.infection`은 감염 팩에서만 제공한다. UI는 주인공/동료의 clear/dead를 표시하며 코어를 직접 읽거나 전염을 계산하지 않는다. `EndingKind`의 `infection-death`와 미리보기의 실제 실행자별 감염 경고를 사용한다. 과거 팩에는 이 상태가 생략된다. 샘플은 `snapshotFixtures.infectionEnding`, 세부는 [감염 연결](infection.md)이다. 아래 단계별 계약 버전은 당시 기록이다.
+
 ## 최신: 선택 개수 고정 해제 (2026-10-29)
 
 사용자가4개 고정을 철회했다. 장면마다 필요한 행동만 정의하며 수를 맞추는 복제 선택을 만들지 않는다. 극단 본인 목표 제한·독립 동료 슬롯·무자원 대안은 유지한다. 신규 팩 catalog-variable-choices-1의 E12는 중복 단거리 제거 후3개다. 기존 저장은 원래 선택 수를 유지한다. 아래 네 선택 고정은 과거 기록이다. 상세 [가변 선택](variable-choices.md), 이후 순서는 [동료 서사 보강](companion-experience-roadmap.md).

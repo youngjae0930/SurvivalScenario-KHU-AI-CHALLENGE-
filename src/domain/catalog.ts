@@ -3,6 +3,7 @@ import type { CoreState, EventId, Traits } from './types'
 
 export type StageId = 'early' | 'middle' | 'late'
 export type Condition =
+  | { readonly kind: 'opportunity'; readonly id: string }
   | { readonly kind: 'number'; readonly subject: 'protagonist' | 'companion'; readonly stat: 'stress' | 'stamina' | 'injury' | keyof Traits | 'trust'; readonly min: number; readonly max: number }
   | { readonly kind: 'resource'; readonly resource: 'supply' | 'medkit'; readonly min: number; readonly max: number }
   | { readonly kind: 'companion'; readonly present: boolean }
@@ -27,6 +28,9 @@ export interface CatalogLocation {
   readonly weight: number
 }
 export interface CatalogChoice {
+  readonly ending?: { readonly conditions: readonly Condition[]; readonly kind: 'cure-discovery' | 'tunnel-escape' | 'outskirts-escape' }
+  /** Ordered contacts on a failed check only; each source must actually be infected. */
+  readonly infection?: readonly InfectionContact[]
   /** Append this authored route segment after committing this navigation action. */
   readonly destinationSegmentId?: string
   /** Authored story consequences, in evaluation units, never a direct trust delta. */
@@ -95,6 +99,11 @@ export interface CatalogScript {
   readonly text: readonly string[]
 }
 export interface CatalogManifest {
+  readonly reactionVersion?: 'responsibility-1'
+  readonly endingVersion?: 'routes-1'
+  readonly researchVersion?: 'research-1'
+  readonly opportunities?: readonly { readonly id: string; readonly locationTags: readonly string[] }[]
+  readonly infectionVersion?: 'immediate-1'
   readonly slotPlan?: {
     readonly startSegmentId: string
     readonly segments: readonly CatalogSegment[]
@@ -124,6 +133,8 @@ export interface CatalogManifest {
   readonly boundary: { readonly nextEventId: string; readonly title: string; readonly text: readonly string[] }
 }
 export interface CatalogSegment {
+  /** State-based entry gate; static lockedReason remains a separate authoring switch. */
+  readonly entry?: { readonly conditions: readonly Condition[]; readonly reason: string }
   readonly id: string
   readonly stage: StageId
   readonly slots: readonly { readonly number: number; readonly candidates: readonly string[] }[]
@@ -144,6 +155,8 @@ export interface CompanionContext {
   readonly judgmentCounts?: { readonly rescue: number; readonly self: number }
 }
 export interface CatalogContext {
+  readonly opportunities?: readonly string[]
+  readonly infection?: { readonly protagonist: boolean; readonly companion: boolean }
   readonly core: CoreState
   readonly companion: CompanionContext | null
   readonly facts: Readonly<Record<string, boolean>>
@@ -156,6 +169,9 @@ export interface CatalogVisit {
   readonly sceneScriptId: string
 }
 export interface CatalogHistory {
+  /** Captured before execution; never infer a past recommendation from the outcome. */
+  readonly followedCompanionRecommendation?: true
+  readonly infectionDeaths?: readonly InfectionDeath[]
   readonly execution?: { readonly actor: 'companion'; readonly role: string; readonly sharedRisk: string }
   readonly companionDeparture?: CatalogSeparation
   readonly decisionContext?: CatalogDecisionContext
@@ -168,10 +184,12 @@ export interface CatalogHistory {
   readonly resultScriptId: string
   readonly resolution: CoreActionResolution
   readonly trustChange?: { readonly before: number; readonly after: number; readonly reason: string }
-  readonly escape?: { readonly ending: 'data-and-escape' | 'escape' | 'escape-failed'; readonly reason: 'escaped' | 'rescue-wait' }
+  readonly escape?: { readonly ending: 'data-and-escape' | 'escape' | 'escape-failed' | 'cure-discovery' | 'tunnel-escape' | 'outskirts-escape'; readonly reason: 'escaped' | 'rescue-wait' }
 }
 /** Before-state evidence, not a policy for deciding whether two scenes are the same. */
 export interface CatalogDecisionContext {
+  readonly opportunities?: readonly string[]
+  readonly infection?: { readonly protagonist: boolean; readonly companion: boolean }
   /** Non-four groups record their count; absent in historical four-choice evidence. */
   readonly optionCount?: number
   readonly relationship?: { readonly version: 'outcome-1'; readonly companion: CompanionContext }
@@ -197,6 +215,8 @@ export interface CatalogDecisionContext {
     readonly pace?: CatalogChoice['pace']
     readonly execution?: NonNullable<CatalogChoice['execution']>
     readonly relationship?: NonNullable<CatalogChoice['relationship']>
+    readonly infection?: readonly InfectionContact[]
+    readonly ending?: CatalogChoice['ending']
     readonly trustOutcomes?: Readonly<Partial<Record<'success' | 'failure', number>>>
     readonly action: CoreAction
     readonly preview: CoreActionPreview
@@ -225,11 +245,13 @@ export interface CatalogLegacy {
   readonly rescueDecision: CoreState['flags']['rescueDecision']
   readonly judgmentCounts: { readonly rescue: number; readonly self: number }
   readonly representativeActions: Readonly<Record<'E02' | 'E07' | 'E10', string | null>>
-  readonly ending: 'data-and-escape' | 'escape' | 'escape-failed'
+  readonly ending: 'data-and-escape' | 'escape' | 'escape-failed' | 'infection-death' | 'cure-discovery' | 'tunnel-escape' | 'outskirts-escape'
   readonly rulesVersion: '1.2-stress-1'
   readonly contentRevision: string
 }
 export interface CatalogRun {
+  readonly opportunities?: Readonly<Record<string, string>>
+  readonly infectionDeaths?: readonly InfectionDeath[]
   readonly companionJourney?: {
     readonly separation: CatalogSeparation | null
     readonly reunions: readonly { readonly separation: CatalogSeparation; readonly visitIndex: number; readonly locationId: string }[]
@@ -251,6 +273,19 @@ export interface CatalogRun {
   readonly history: readonly CatalogHistory[]
   readonly result: CatalogHistory | null
   readonly judgmentCounts: { readonly rescue: number; readonly self: number }
+}
+export interface InfectionContact {
+  readonly source: 'infected-person' | 'protagonist' | 'companion' | 'actor'
+  readonly target: 'protagonist' | 'companion' | 'actor' | 'other'
+  readonly contact: 'bite' | 'blood'
+}
+export interface InfectionDeath {
+  readonly subject: 'protagonist' | 'companion'
+  readonly source: 'infected-person' | 'protagonist' | 'companion'
+  readonly contact: 'bite' | 'blood'
+  readonly visitIndex: number
+  readonly eventId: string
+  readonly actionId: string
 }
 /** Rule event IDs retain their existing mechanical meaning; narrative IDs are open. */
 export type RuleEventId = EventId

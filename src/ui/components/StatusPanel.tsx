@@ -5,6 +5,8 @@ export function StatusPanel({ status, companion }: { status: StatusViewModel; co
   return <aside className="status-panel" aria-label="현재 상태">
     <div className="panel-heading"><span className="eyebrow">SURVIVOR / 생존자</span><span className="live-dot">{companion?.kind === 'present' ? '동행 중' : companion?.kind === 'absent' ? '단독 이동' : '이동 기록'}</span></div>
     <h2>{status.name}</h2>
+    {status.infection && <p className="panel-footnote" aria-label="감염 상태">감염 · {status.infection.protagonist === 'dead' ? '감염 사망' : '감염 없음'}
+      {status.infection.companion && <><br />{status.infection.companion.name} · {status.infection.companion.status === 'dead' ? '감염 사망' : '감염 없음'}</>}</p>}
     <div className="vitals">
       {[{ label: '스트레스', value: status.stress, stress: true }, { label: '스태미나', value: status.stamina, stress: false }].map(({ label, value, stress }) => <div className={`vital${stress ? ' vital-stress' : ''}`} key={label}>
         <div><span>{label}</span><strong>{value}<small>/100</small></strong></div>
