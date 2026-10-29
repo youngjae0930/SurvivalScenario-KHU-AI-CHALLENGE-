@@ -2,7 +2,7 @@
 
 ## 최신: JSON 동료 대사 연결 (2026-10-29)
 
-사용자 승인으로 대사 표시 구조와 가이드를 함께 확장했다. 신규 팩 catalog-dialogue-1, dialogueVersion=scripts-1을 사용한다. 성향별 결과는 기존 success/failure 조건 문구로 작성하고, 추천·망설임·이별 예고·이별·부재·재회만 새 슬롯으로 작성한다. 상세 [대사 작성 가이드](dialogue-authoring.md)를 우선한다. 문구 작성자는 JSON만 수정하며 새 시스템을 임의로 만들지 않는다. 이번 개발자가 연결부를 구현한 것과 이후 콘텐츠 작성 범위는 구별한다. 추천 대상·신뢰·이별/재회 판정·성향 효과 공식은 유지한다. 기존 companion-narrative.ts는 catalog-narrative-1 저장 전용으로 동결한다.
+신규 팩 catalog-dialogue-1, dialogueVersion=scripts-1을 사용한다. 성향별 결과는 기존 success/failure 조건 문구로 작성하고, 추천·망설임·이별 예고·이별·부재·재회만 새 슬롯으로 작성한다. 상세 [대사 작성 가이드](dialogue-authoring.md)를 우선한다. 콘텐츠 작성은 JSON에서 처리하며 새 대사 슬롯에는 별도의 엔진 연결이 필요하다. 추천 대상·신뢰·이별/재회 판정·성향 효과 공식은 유지한다. 기존 companion-narrative.ts는 catalog-narrative-1 저장 전용으로 동결한다.
 
 
 ## 최신: 선택 개수 고정 해제 (2026-10-29)
