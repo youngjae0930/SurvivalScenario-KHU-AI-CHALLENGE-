@@ -19,8 +19,8 @@
         {
           "id": "E01.safe",
           "goalId": "E01.safe",
-          "label": "안전을 확인하고 출발한다",
-          "intention": "주변을 살피고 익숙한 도로로 이동한다.",
+          "label": "큰 도로를 따라 이동한다",
+          "intention": "좀비를 경계하며 천천히 간다. 다칠 위험은 없지만 긴장이 쌓인다.",
           "target": "출발 경로",
           "judgment": null,
           "behavior": {
@@ -33,7 +33,7 @@
                   "eventId": "E01",
                   "requires": {},
                   "costs": {
-                    "stamina": 0,
+                    "stamina": 8,
                     "supply": 0,
                     "medkit": 0
                   },
@@ -43,7 +43,13 @@
                     "cognition": 0,
                     "affect": 0
                   },
-                  "successEffects": [],
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
                   "failureEffects": []
                 }
               }
@@ -55,8 +61,8 @@
         {
           "id": "E01.shortcut",
           "goalId": "E01.shortcut",
-          "label": "담장 너머 지름길로 간다",
-          "intention": "위험을 감수하고 좁은 통로를 통과한다.",
+          "label": "담장 너머 좁은 지름길로 간다",
+          "intention": "다칠 수도 있지만 빠르게 갈 수 있다. 골목의 공구함도 살펴본다.",
           "target": "출발 경로",
           "judgment": null,
           "behavior": {
@@ -69,7 +75,7 @@
                   "eventId": "E01",
                   "requires": {},
                   "costs": {
-                    "stamina": 10,
+                    "stamina": 4,
                     "supply": 0,
                     "medkit": 0
                   },
@@ -115,85 +121,6 @@
           "successFacts": {},
           "failureFacts": {},
           "pace": "fast"
-        },
-        {
-          "id": "E01.plan",
-          "goalId": "plan",
-          "label": "지도를 대조해 출발 경로를 정한다",
-          "intention": "체력을 조금 써 주변 표지와 지도를 대조한다. 물자를 얻지는 않는다.",
-          "target": "출발 경로",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E01.plan",
-                  "eventId": "E01",
-                  "requires": {},
-                  "costs": {
-                    "stamina": 5,
-                    "supply": 0,
-                    "medkit": 0
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 4,
-                    "cognition": -8,
-                    "affect": 0
-                  },
-                  "successEffects": [],
-                  "failureEffects": []
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {}
-        },
-        {
-          "id": "E01.compose",
-          "goalId": "compose",
-          "label": "호흡을 가다듬고 큰길로 간다",
-          "intention": "체력을 조금 써 서두르지 않고 이동하며 스트레스를 낮춘다.",
-          "target": "출발 경로",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E01.compose",
-                  "eventId": "E01",
-                  "requires": {},
-                  "costs": {
-                    "stamina": 5,
-                    "supply": 0,
-                    "medkit": 0
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 8,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -5
-                    }
-                  ],
-                  "failureEffects": []
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {},
-          "pace": "slow"
         }
       ]
     }

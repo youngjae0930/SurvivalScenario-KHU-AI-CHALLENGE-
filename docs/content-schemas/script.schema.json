@@ -32,7 +32,13 @@
       "enum": [
         "scene",
         "success",
-        "failure"
+        "failure",
+        "opinion",
+        "hesitation",
+        "departure-warning",
+        "departure",
+        "absent",
+        "reunion"
       ]
     },
     "conditions": {

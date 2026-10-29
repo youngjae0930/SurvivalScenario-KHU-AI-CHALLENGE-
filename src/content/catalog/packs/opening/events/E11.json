@@ -14,18 +14,13 @@
       "id": "normal",
       "priority": 0,
       "conditions": [],
-      "notices": [
-        "탈출 전 마지막 회복 기회입니다. 네 행동 중 하나만 실행하며, 정비에서는 부상과 치료 도구가 있으면 치료를 함께 선택할 수 있습니다.",
-        "E12 단거리: 체력 15 이상·부상 1 이하, 체력 15 소모. 우회: 통로 정보 확보·체력 30 이상·부상 2 이하, 체력 30 소모.",
-        "두 경로 모두 불가능하면 구조 요청으로 탈출 실패·구조 대기 결말입니다. 탈출 성공 시 연구 자료가 있으면 자료 회수 결말이 됩니다. 새 성공 추첨은 없습니다.",
-        "현재 상태는 상태판에서, 회복할 양은 선택 확인창에서 확인하세요. 정비와 치료는 함께 한 번만 처리되며, 결과 확인 후 같은 정비를 반복할 수 없습니다."
-      ],
+      "notices": [],
       "choices": [
         {
           "id": "E11.maintain",
           "goalId": "E11.maintain",
-          "label": "탈출을 앞두고 몸과 장비를 정비한다",
-          "intention": "물자가 있으면 1개를 써 체력을 25 회복하고 스트레스를 15 낮춘다. 없으면 체력을 10 회복하고 스트레스를 5 낮춘다. 부상이 있으면 도구 1개로 치료를 함께 선택할 수 있다.",
+          "label": "마지막으로 몸과 장비를 정비한다",
+          "intention": "남은 먹을 것으로 힘을 되찾는다. 치료 도구가 있다면 상처도 함께 돌본다.",
           "target": "현재 상태",
           "judgment": null,
           "behavior": {
@@ -39,105 +34,14 @@
         {
           "id": "E11.rest",
           "goalId": "E11.rest",
-          "label": "물자를 아끼고 마지막 휴식을 취한다",
-          "intention": "물자와 치료 도구를 쓰지 않고 체력 15를 회복하며 스트레스를 10 낮춘다. 부상은 치료하지 않는다.",
+          "label": "배낭을 아끼며 마지막으로 쉰다",
+          "intention": "아무것도 쓰지 않고 힘을 회복한다. 상처는 남는다.",
           "target": "현재 상태",
           "judgment": null,
           "behavior": {
             "kind": "recovery",
             "ruleEventId": "E11",
             "choice": "rest"
-          },
-          "successFacts": {},
-          "failureFacts": {}
-        },
-        {
-          "id": "E11.first-aid",
-          "goalId": "first-aid",
-          "label": "치료 도구로 상처를 점검하고 처치한다",
-          "intention": "치료 도구 1개를 써 부상이 있으면 한 단계 낮추고 스트레스를 5 낮춘다. 체력 회복과 추가 치료는 없다.",
-          "target": "현재 부상",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E11.first-aid",
-                  "eventId": "E11",
-                  "requires": {
-                    "medkit": 1
-                  },
-                  "costs": {
-                    "stamina": 0,
-                    "supply": 0,
-                    "medkit": 1
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 0,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "injury",
-                      "amount": -1
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -5
-                    }
-                  ],
-                  "failureEffects": []
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {}
-        },
-        {
-          "id": "E11.organize",
-          "goalId": "organize",
-          "label": "배낭을 정리하며 긴장을 가라앉힌다",
-          "intention": "체력 5를 써 장비를 정돈하고 스트레스를 15 낮춘다. 물자와 치료 도구를 쓰지 않으며 부상과 성향은 바뀌지 않는다.",
-          "target": "현재 상태",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E11.organize",
-                  "eventId": "E11",
-                  "requires": {},
-                  "costs": {
-                    "stamina": 5,
-                    "supply": 0,
-                    "medkit": 0
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 0,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -15
-                    }
-                  ],
-                  "failureEffects": []
-                }
-              }
-            ]
           },
           "successFacts": {},
           "failureFacts": {}
@@ -153,15 +57,13 @@
           "present": true
         }
       ],
-      "notices": [
-        "동료와 함께 쉬는 중입니다. 물자를 양보하면 회복량은 줄지만 신뢰를 회복할 수 있습니다."
-      ],
+      "notices": [],
       "choices": [
         {
           "id": "E11.maintain",
           "goalId": "E11.maintain",
-          "label": "탈출을 앞두고 몸과 장비를 정비한다",
-          "intention": "물자가 있으면 1개를 써 체력을 25 회복하고 스트레스를 15 낮춘다. 없으면 체력을 10 회복하고 스트레스를 5 낮춘다. 부상이 있으면 도구 1개로 치료를 함께 선택할 수 있다.",
+          "label": "마지막으로 몸과 장비를 정비한다",
+          "intention": "남은 먹을 것으로 힘을 되찾는다. 치료 도구가 있다면 상처도 함께 돌본다.",
           "target": "현재 상태",
           "judgment": null,
           "behavior": {
@@ -175,8 +77,8 @@
         {
           "id": "E11.share",
           "goalId": "recover",
-          "label": "동료에게 물자를 양보하고 함께 쉰다",
-          "intention": "물자 하나를 동료에게 양보한다. 체력과 스트레스가 조금 회복되고 동료 신뢰가 오른다. 치료는 함께 할 수 없다.",
+          "label": "마지막 먹을 것을 나눈다",
+          "intention": "내 회복을 조금 양보하고 동료와 함께 쉰다.",
           "target": "동료와의 신뢰 회복",
           "judgment": null,
           "behavior": {
@@ -196,97 +98,6 @@
             ],
             "failure": []
           }
-        },
-        {
-          "id": "E11.first-aid",
-          "goalId": "first-aid",
-          "label": "치료 도구로 상처를 점검하고 처치한다",
-          "intention": "치료 도구 1개를 써 부상이 있으면 한 단계 낮추고 스트레스를 5 낮춘다. 체력 회복과 추가 치료는 없다.",
-          "target": "현재 부상",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E11.first-aid",
-                  "eventId": "E11",
-                  "requires": {
-                    "medkit": 1
-                  },
-                  "costs": {
-                    "stamina": 0,
-                    "supply": 0,
-                    "medkit": 1
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 0,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "injury",
-                      "amount": -1
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -5
-                    }
-                  ],
-                  "failureEffects": []
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {}
-        },
-        {
-          "id": "E11.organize",
-          "goalId": "organize",
-          "label": "배낭을 정리하며 긴장을 가라앉힌다",
-          "intention": "체력 5를 써 장비를 정돈하고 스트레스를 15 낮춘다. 물자와 치료 도구를 쓰지 않으며 부상과 성향은 바뀌지 않는다.",
-          "target": "현재 상태",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E11.organize",
-                  "eventId": "E11",
-                  "requires": {},
-                  "costs": {
-                    "stamina": 5,
-                    "supply": 0,
-                    "medkit": 0
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 0,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -15
-                    }
-                  ],
-                  "failureEffects": []
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {}
         }
       ]
     }

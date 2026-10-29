@@ -39,6 +39,11 @@
           "maxLength": 80,
           "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
         },
+        "dialogueVersion": {
+          "enum": [
+            "scripts-1"
+          ]
+        },
         "routeVersion": {
           "enum": [
             "stages-1"
@@ -3393,7 +3398,13 @@
             "enum": [
               "scene",
               "success",
-              "failure"
+              "failure",
+              "opinion",
+              "hesitation",
+              "departure-warning",
+              "departure",
+              "absent",
+              "reunion"
             ]
           },
           "conditions": {

@@ -9,8 +9,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "연구동을 나와 격리 구역으로 향하는 연결 통로에 도착했다. 바닥 일부가 내려앉았고, 난간 너머로 부서진 보행로가 이어진다.",
-      "발판을 살피며 건너거나 눈앞에 보이는 길로 곧장 통과할 수 있다. 남은 물자로 길을 보강할 수도, 벽 쪽의 긴 통로를 택할 수도 있다."
+      "연구동 너머 보행로가 중간에서 내려앉았다. 건너편에는 격리 구역으로 이어지는 철문이 보인다.",
+      "끊긴 난간 아래로 잔해가 떨어진다. 좁은 발판을 하나씩 확인해 건널 수는 있을 듯하다. 멀리 벽 쪽에는 온전하지만 긴 통로가 남아 있다.",
+      "가까운 틈을 곧장 건널지, 발판을 확인할지, 먼 길을 돌아갈지 판단한다."
     ]
   },
   {
@@ -31,8 +32,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "기울어진 난간과 잔해 사이로 반대편 검문등이 보인다. 머뭇거리기보다 지금 건너야 한다는 생각이 앞선다.",
-      "난간을 넘거나 잔해 틈을 통과할 수 있다. 물자를 써 발판을 받칠지, 가진 힘으로 밀고 나갈지 정해야 한다."
+      "난간이 흔들리는 순간, 건널 수 있는 틈이 눈에 들어온다.",
+      "지금 움직이면 된다. 멈춰 따져 보는 사이 기회를 놓칠 것 같아 몸이 먼저 앞으로 쏠린다.",
+      "난간을 넘거나, 틈을 받치거나, 몸을 옆으로 틀어 통과할 수 있다."
     ]
   },
   {
@@ -45,7 +47,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "발판을 두드리고 흔들림을 살피며 반대편에 도착했다. 이동에 필요한 체력을 썼지만 새 탈출 경로를 확보한 것은 아니다."
+      "발판을 두드려 흔들리는 곳을 골라냈다. 발을 옮길 때마다 멈춰 아래를 확인하며 반대편에 닿았다."
     ]
   },
   {
@@ -58,7 +60,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "발판을 확인하던 중 잔해가 밀렸다. 몸을 부딪쳐 상처를 입고 더 긴장한 채 반대편으로 빠져나왔다."
+      "딛는 순간 발판이 기울었다. 난간을 붙잡고 올라왔지만 다리에 상처가 남았다. 숨을 고른 뒤 남은 틈을 건넜다."
     ]
   },
   {
@@ -71,7 +73,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "눈에 들어온 디딤돌을 연달아 밟아 건넜다. 짧은 이동 덕분에 기본 비용 10에서 체력 보상 5만큼 소모를 아꼈다."
+      "난간이 멈춘 순간 틈을 건넜다. 길게 돌아가지 않아 힘을 아낄 수 있었다. 건너편에서야 숨을 내쉬었다."
     ]
   },
   {
@@ -84,33 +86,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곧장 건너다 발을 헛디뎠다. 간신히 통로 반대편으로 몸을 끌어올렸지만 상처와 긴장이 남았다."
-    ]
-  },
-  {
-    "id": "E08.brace.success",
-    "eventId": "E08",
-    "choiceId": "E08.brace",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "물자 하나로 흔들리는 발판을 고정한 뒤 건넜다. 준비에 쓴 물자와 체력은 돌아오지 않았다."
-    ]
-  },
-  {
-    "id": "E08.brace.failure",
-    "eventId": "E08",
-    "choiceId": "E08.brace",
-    "slot": "failure",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "고정한 발판 옆의 잔해가 무너졌다. 준비한 물자를 잃고 상처를 입은 채 반대편으로 빠져나왔다."
+      "눈대중으로 짚은 발판이 내려앉았다. 벽에 부딪혀 상처를 입고, 난간을 잡은 채 남은 구간을 건넜다."
     ]
   },
   {
@@ -123,7 +99,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "벽에 붙은 긴 통로를 따라 천천히 건넜다. 체력은 더 들었지만 추가 부상 판정 없이 반대편에 도착했다. 탈출용 우회 경로를 알아낸 것은 아니다."
+      "온전한 벽 쪽 통로를 따라 한참을 걸었다. 다리는 무거워졌지만 흔들리는 발판을 밟지 않고 격리 구역 앞에 도착했다."
     ]
   },
   {
@@ -136,7 +112,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "난간을 넘어 반대편으로 뛰어들었다. 체력 보상 15가 기본 비용 15를 상쇄했지만 긴장은 더 높아졌다."
+      "망설임 없이 난간을 넘었다. 먼 길을 걷는 수고는 덜었지만 아래에서 들린 붕괴음에 심장이 오래 뛰었다."
     ]
   },
   {
@@ -149,7 +125,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "난간을 넘다 거친 모서리에 몸을 부딪쳤다. 통로를 빠져나왔지만 체력과 상처, 큰 긴장 부담이 남았다."
+      "뛰어오른 발끝이 난간에 걸렸다. 상처를 감싼 채 몸을 끌어올렸다. 건너편에 닿고도 한동안 손이 떨렸다."
     ]
   },
   {
@@ -162,7 +138,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "물자 하나로 잔해 틈을 받쳐 짧은 길로 통과했다. 체력 보상 15를 기본 비용 10과 합산해 체력을 5 아꼈다."
+      "배낭의 물건을 틈에 끼워 지지대를 만들었다. 짧은 길로 건너 힘을 아꼈지만 받침으로 쓴 물건은 회수하지 못했다."
     ]
   },
   {
@@ -175,33 +151,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "받쳐 둔 잔해가 움직였다. 사용한 물자는 회수하지 못했고 상처와 긴장을 안고 반대편으로 나왔다."
-    ]
-  },
-  {
-    "id": "E08.support.success",
-    "eventId": "E08",
-    "choiceId": "E08.support",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "물자 두 개를 디딤판으로 써 짧게 건넜다. 체력 보상 15를 기본 비용 5와 합산해 체력을 10 보존했다."
-    ]
-  },
-  {
-    "id": "E08.support.failure",
-    "eventId": "E08",
-    "choiceId": "E08.support",
-    "slot": "failure",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "디딤판이 기울어 넘어졌다. 물자 두 개를 소모했고 상처와 긴장을 안고 반대편으로 몸을 끌어올렸다."
+      "받침이 밀려나며 잔해가 내려앉았다. 상처를 입은 채 틈을 빠져나왔다. 물건은 잔해 아래에 남았다."
     ]
   },
   {
@@ -214,7 +164,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "좁은 틈을 밀고 나가 통로를 건넜다. 체력 보상 15로 기본 비용 20의 부담을 줄였지만 긴장은 남았다."
+      "몸을 옆으로 틀어 잔해 사이를 빠져나왔다. 다리를 오래 굽히고 있어야 했지만, 멈춰 섰을 때는 철문이 바로 앞이었다."
     ]
   },
   {
@@ -227,7 +177,1661 @@
     "weight": 1,
     "once": false,
     "text": [
-      "틈에 걸린 잔해에 긁혔다. 힘을 많이 쓴 뒤 상처와 큰 긴장을 안고 통로를 벗어났다."
+      "좁은 틈에서 몸이 걸렸다. 옷을 찢고 빠져나오다 피부까지 긁혔다. 벽을 짚고 남은 길을 건넜다."
+    ]
+  },
+  {
+    "id": "E08.inspect.success.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발판을 두드려 흔들리는 곳을 골라냈다. 발을 옮길 때마다 멈춰 아래를 확인하며 반대편에 닿았다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E08.inspect.success.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발판을 두드려 흔들리는 곳을 골라냈다. 발을 옮길 때마다 멈춰 아래를 확인하며 반대편에 닿았다.",
+      "{{companion.name}}의 목소리가 들린다. “딛고 온 곳과 아직 흔들리는 곳을 기억해 두자. 철문까지는 붙어서 가자.”"
+    ]
+  },
+  {
+    "id": "E08.inspect.success.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발판을 두드려 흔들리는 곳을 골라냈다. 발을 옮길 때마다 멈춰 아래를 확인하며 반대편에 닿았다.",
+      "{{companion.name}}의 목소리가 들린다. “돌아보지 말고 저 철문으로 가자. 지금은 그쪽이 맞는 것 같아.”"
+    ]
+  },
+  {
+    "id": "E08.inspect.failure.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "딛는 순간 발판이 기울었다. 난간을 붙잡고 올라왔지만 다리에 상처가 남았다. 숨을 고른 뒤 남은 틈을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E08.inspect.failure.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "딛는 순간 발판이 기울었다. 난간을 붙잡고 올라왔지만 다리에 상처가 남았다. 숨을 고른 뒤 남은 틈을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E08.inspect.failure.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "딛는 순간 발판이 기울었다. 난간을 붙잡고 올라왔지만 다리에 상처가 남았다. 숨을 고른 뒤 남은 틈을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E08.inspect.failure.companion.fatal",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E08.instinct.success.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간이 멈춘 순간 틈을 건넜다. 길게 돌아가지 않아 힘을 아낄 수 있었다. 건너편에서야 숨을 내쉬었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E08.instinct.success.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간이 멈춘 순간 틈을 건넜다. 길게 돌아가지 않아 힘을 아낄 수 있었다. 건너편에서야 숨을 내쉬었다.",
+      "{{companion.name}}의 목소리가 들린다. “딛고 온 곳과 아직 흔들리는 곳을 기억해 두자. 철문까지는 붙어서 가자.”"
+    ]
+  },
+  {
+    "id": "E08.instinct.success.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "난간이 멈춘 순간 틈을 건넜다. 길게 돌아가지 않아 힘을 아낄 수 있었다. 건너편에서야 숨을 내쉬었다.",
+      "{{companion.name}}의 목소리가 들린다. “돌아보지 말고 저 철문으로 가자. 지금은 그쪽이 맞는 것 같아.”"
+    ]
+  },
+  {
+    "id": "E08.instinct.failure.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "눈대중으로 짚은 발판이 내려앉았다. 벽에 부딪혀 상처를 입고, 난간을 잡은 채 남은 구간을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E08.instinct.failure.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "눈대중으로 짚은 발판이 내려앉았다. 벽에 부딪혀 상처를 입고, 난간을 잡은 채 남은 구간을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E08.instinct.failure.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "눈대중으로 짚은 발판이 내려앉았다. 벽에 부딪혀 상처를 입고, 난간을 잡은 채 남은 구간을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E08.instinct.failure.companion.fatal",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E08.detour.success.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "온전한 벽 쪽 통로를 따라 한참을 걸었다. 다리는 무거워졌지만 흔들리는 발판을 밟지 않고 격리 구역 앞에 도착했다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E08.detour.success.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "온전한 벽 쪽 통로를 따라 한참을 걸었다. 다리는 무거워졌지만 흔들리는 발판을 밟지 않고 격리 구역 앞에 도착했다.",
+      "{{companion.name}}의 목소리가 들린다. “딛고 온 곳과 아직 흔들리는 곳을 기억해 두자. 철문까지는 붙어서 가자.”"
+    ]
+  },
+  {
+    "id": "E08.detour.success.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "온전한 벽 쪽 통로를 따라 한참을 걸었다. 다리는 무거워졌지만 흔들리는 발판을 밟지 않고 격리 구역 앞에 도착했다.",
+      "{{companion.name}}의 목소리가 들린다. “돌아보지 말고 저 철문으로 가자. 지금은 그쪽이 맞는 것 같아.”"
+    ]
+  },
+  {
+    "id": "E08.leap.success.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "망설임 없이 난간을 넘었다. 먼 길을 걷는 수고는 덜었지만 아래에서 들린 붕괴음에 심장이 오래 뛰었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E08.leap.success.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "망설임 없이 난간을 넘었다. 먼 길을 걷는 수고는 덜었지만 아래에서 들린 붕괴음에 심장이 오래 뛰었다.",
+      "{{companion.name}}의 목소리가 들린다. “딛고 온 곳과 아직 흔들리는 곳을 기억해 두자. 철문까지는 붙어서 가자.”"
+    ]
+  },
+  {
+    "id": "E08.leap.success.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "망설임 없이 난간을 넘었다. 먼 길을 걷는 수고는 덜었지만 아래에서 들린 붕괴음에 심장이 오래 뛰었다.",
+      "{{companion.name}}의 목소리가 들린다. “돌아보지 말고 저 철문으로 가자. 지금은 그쪽이 맞는 것 같아.”"
+    ]
+  },
+  {
+    "id": "E08.leap.failure.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뛰어오른 발끝이 난간에 걸렸다. 상처를 감싼 채 몸을 끌어올렸다. 건너편에 닿고도 한동안 손이 떨렸다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E08.leap.failure.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뛰어오른 발끝이 난간에 걸렸다. 상처를 감싼 채 몸을 끌어올렸다. 건너편에 닿고도 한동안 손이 떨렸다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E08.leap.failure.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뛰어오른 발끝이 난간에 걸렸다. 상처를 감싼 채 몸을 끌어올렸다. 건너편에 닿고도 한동안 손이 떨렸다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E08.leap.failure.companion.fatal",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E08.gap.success.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물건을 틈에 끼워 지지대를 만들었다. 짧은 길로 건너 힘을 아꼈지만 받침으로 쓴 물건은 회수하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E08.gap.success.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물건을 틈에 끼워 지지대를 만들었다. 짧은 길로 건너 힘을 아꼈지만 받침으로 쓴 물건은 회수하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “딛고 온 곳과 아직 흔들리는 곳을 기억해 두자. 철문까지는 붙어서 가자.”"
+    ]
+  },
+  {
+    "id": "E08.gap.success.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물건을 틈에 끼워 지지대를 만들었다. 짧은 길로 건너 힘을 아꼈지만 받침으로 쓴 물건은 회수하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “돌아보지 말고 저 철문으로 가자. 지금은 그쪽이 맞는 것 같아.”"
+    ]
+  },
+  {
+    "id": "E08.gap.failure.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받침이 밀려나며 잔해가 내려앉았다. 상처를 입은 채 틈을 빠져나왔다. 물건은 잔해 아래에 남았다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E08.gap.failure.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받침이 밀려나며 잔해가 내려앉았다. 상처를 입은 채 틈을 빠져나왔다. 물건은 잔해 아래에 남았다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E08.gap.failure.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받침이 밀려나며 잔해가 내려앉았다. 상처를 입은 채 틈을 빠져나왔다. 물건은 잔해 아래에 남았다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E08.gap.failure.companion.fatal",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E08.squeeze.success.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 옆으로 틀어 잔해 사이를 빠져나왔다. 다리를 오래 굽히고 있어야 했지만, 멈춰 섰을 때는 철문이 바로 앞이었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E08.squeeze.success.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 옆으로 틀어 잔해 사이를 빠져나왔다. 다리를 오래 굽히고 있어야 했지만, 멈춰 섰을 때는 철문이 바로 앞이었다.",
+      "{{companion.name}}의 목소리가 들린다. “딛고 온 곳과 아직 흔들리는 곳을 기억해 두자. 철문까지는 붙어서 가자.”"
+    ]
+  },
+  {
+    "id": "E08.squeeze.success.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 옆으로 틀어 잔해 사이를 빠져나왔다. 다리를 오래 굽히고 있어야 했지만, 멈춰 섰을 때는 철문이 바로 앞이었다.",
+      "{{companion.name}}의 목소리가 들린다. “돌아보지 말고 저 철문으로 가자. 지금은 그쪽이 맞는 것 같아.”"
+    ]
+  },
+  {
+    "id": "E08.squeeze.failure.companion.neutral",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈에서 몸이 걸렸다. 옷을 찢고 빠져나오다 피부까지 긁혔다. 벽을 짚고 남은 길을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E08.squeeze.failure.companion.left",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈에서 몸이 걸렸다. 옷을 찢고 빠져나오다 피부까지 긁혔다. 벽을 짚고 남은 길을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E08.squeeze.failure.companion.right",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈에서 몸이 걸렸다. 옷을 찢고 빠져나오다 피부까지 긁혔다. 벽을 짚고 남은 길을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E08.squeeze.failure.companion.fatal",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.leap",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 건너자. 난간이 멈췄어. 기회를 놓치고 싶지 않아."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.leap.left",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 건너자. 난간이 멈췄어. 기회를 놓치고 싶지 않아. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.leap.right",
+    "eventId": "E08",
+    "choiceId": "E08.leap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 건너자. 난간이 멈췄어. 기회를 놓치고 싶지 않아. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.gap",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐으로 틈을 받치자. 적어도 몸이 빠져나갈 때까지 버텨 줄 거야."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.gap.left",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐으로 틈을 받치자. 적어도 몸이 빠져나갈 때까지 버텨 줄 거야. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.gap.right",
+    "eventId": "E08",
+    "choiceId": "E08.gap",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐으로 틈을 받치자. 적어도 몸이 빠져나갈 때까지 버텨 줄 거야. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.squeeze",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기 몸이 들어갈 틈이 있어. 천천히 몸을 돌려서 빠져나가자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.squeeze.left",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기 몸이 들어갈 틈이 있어. 천천히 몸을 돌려서 빠져나가자. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.squeeze.right",
+    "eventId": "E08",
+    "choiceId": "E08.squeeze",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기 몸이 들어갈 틈이 있어. 천천히 몸을 돌려서 빠져나가자. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.inspect",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잠깐. 방금 난간이 흔들렸어. 발 디딜 곳부터 하나씩 확인하자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.inspect.left",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잠깐. 방금 난간이 흔들렸어. 발 디딜 곳부터 하나씩 확인하자. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.inspect.right",
+    "eventId": "E08",
+    "choiceId": "E08.inspect",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잠깐. 방금 난간이 흔들렸어. 발 디딜 곳부터 하나씩 확인하자. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.instinct",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 틈으로 갈 수 있겠어. 길게 돌아가면 다리에 힘이 더 빠질 거야."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.instinct.left",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 틈으로 갈 수 있겠어. 길게 돌아가면 다리에 힘이 더 빠질 거야. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.instinct.right",
+    "eventId": "E08",
+    "choiceId": "E08.instinct",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 틈으로 갈 수 있겠어. 길게 돌아가면 다리에 힘이 더 빠질 거야. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.detour",
+    "eventId": "E08",
+    "choiceId": "E08.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 쪽은 아직 온전해. 더 걸어야 해도 난 저쪽이 낫겠어."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.detour.left",
+    "eventId": "E08",
+    "choiceId": "E08.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 쪽은 아직 온전해. 더 걸어야 해도 난 저쪽이 낫겠어. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E08.dialogue.opinion.detour.right",
+    "eventId": "E08",
+    "choiceId": "E08.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 쪽은 아직 온전해. 더 걸어야 해도 난 저쪽이 낫겠어. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E08.dialogue.hesitation",
+    "eventId": "E08",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E08.dialogue.absent",
+    "eventId": "E08",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E08.dialogue.reunion",
+    "eventId": "E08",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E08.dialogue.reunion.rational",
+    "eventId": "E08",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E08.dialogue.reunion.emotional",
+    "eventId": "E08",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
     ]
   }
 ]

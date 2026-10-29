@@ -71,7 +71,7 @@ describe('일반 추천의 읽기 전용 행동 평가 기반', () => {
     expect(prepared.assessment!.successPercent).toBeGreaterThan(weak.assessment!.successPercent)
   })
 
-  it('네 선택과 상태·난수·저장 원문을 바꾸지 않고 복원 뒤 같은 평가를 만든다', () => {
+  it('현재 선택과 상태·난수·저장 원문을 바꾸지 않고 복원 뒤 같은 평가를 만든다', () => {
     const pack = readDefaultCatalog()
     const origin = makeOrigin()
     const answers = resolveAnswers(origin.answers)
@@ -80,7 +80,7 @@ describe('일반 추천의 읽기 전용 행동 평가 기반', () => {
       companion: { name: '동료', trust: 0, traits: { risk: 50, cognition: 50, affect: 50 } } })
     const before = encodeCatalogSave(origin, pack, run)
     const assessed = assessCatalogChoices(pack, run)
-    expect(catalogChoices(pack, run)).toHaveLength(4)
+    expect(catalogChoices(pack, run)).toHaveLength(2)
     expect(assessed.map(a => a.choice.id)).toEqual(catalogChoices(pack, run).filter(c => previewCatalogAction(pack, run, c.id).allowed).map(c => c.id))
     expect(encodeCatalogSave(origin, pack, run)).toBe(before)
     expect(assessCatalogChoices(pack, run)).toEqual(assessed)

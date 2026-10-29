@@ -22,15 +22,13 @@
           "max": 100
         }
       ],
-      "notices": [
-        "안정 극단: 네 철수 방식 중에서 선택합니다."
-      ],
+      "notices": [],
       "choices": [
         {
           "id": "E06.abandon",
           "goalId": "withdraw",
-          "label": "짐을 버리고 이탈한다",
-          "intention": "남은 물자를 전부 내려놓고 부담을 줄여 빠져나간다.",
+          "label": "남은 짐을 버리고 빠져나간다",
+          "intention": "공용 물자를 모두 포기하고 몸을 가볍게 한다.",
           "target": "병원 철수",
           "judgment": null,
           "behavior": {
@@ -43,7 +41,7 @@
                   "eventId": "E06",
                   "requires": {},
                   "costs": {
-                    "stamina": 5,
+                    "stamina": 3,
                     "supply": 0,
                     "medkit": 0
                   },
@@ -61,12 +59,7 @@
                     {
                       "kind": "add",
                       "stat": "stress",
-                      "amount": -10
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "injury",
-                      "amount": -1
+                      "amount": -5
                     }
                   ],
                   "failureEffects": []
@@ -80,8 +73,8 @@
         {
           "id": "E06.defend",
           "goalId": "withdraw",
-          "label": "물자로 방어하며 이탈한다",
-          "intention": "물자 하나를 방어에 써서 부상을 줄이며 철수한다.",
+          "label": "물건으로 뒤를 막으며 물러난다",
+          "intention": "물자를 하나 써 출입문을 막는다. 실패하면 다칠 수 있다.",
           "target": "병원 철수",
           "judgment": null,
           "behavior": {
@@ -96,85 +89,14 @@
                     "supply": 1
                   },
                   "costs": {
-                    "stamina": 10,
+                    "stamina": 5,
                     "supply": 1,
                     "medkit": 0
                   },
                   "check": {
-                    "base": 75,
+                    "base": 85,
                     "physical": true,
                     "weaponBonus": false,
-                    "traitWeights": [
-                      {
-                        "axis": "risk",
-                        "pole": "right",
-                        "weight": 1
-                      }
-                    ]
-                  },
-                  "traitDelta": {
-                    "risk": 8,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -15
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "injury",
-                      "amount": -1
-                    }
-                  ],
-                  "failureEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": 10
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "injury",
-                      "amount": 1
-                    }
-                  ]
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {}
-        },
-        {
-          "id": "E06.guard",
-          "goalId": "withdraw",
-          "label": "무기로 접근을 막으며 철수한다",
-          "intention": "보유한 무기로 거리를 벌려 철수한다. 물자는 쓰지 않지만 부상 위험은 남는다.",
-          "target": "병원 철수",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E06.guard",
-                  "eventId": "E06",
-                  "requires": {
-                    "weapon": true
-                  },
-                  "costs": {
-                    "stamina": 10,
-                    "supply": 0,
-                    "medkit": 0
-                  },
-                  "check": {
-                    "base": 75,
-                    "physical": true,
-                    "weaponBonus": true,
                     "traitWeights": [
                       {
                         "axis": "risk",
@@ -217,8 +139,8 @@
         {
           "id": "E06.low-retreat",
           "goalId": "withdraw",
-          "label": "몸을 낮추고 천천히 빠져나간다",
-          "intention": "더 많은 체력을 써 낮은 자세로 철수한다. 물자와 치료 도구를 보존한다.",
+          "label": "벽을 따라 천천히 빠져나간다",
+          "intention": "물자를 지키는 대신 힘을 더 써 안전하게 물러난다.",
           "target": "병원 철수",
           "judgment": null,
           "behavior": {
@@ -231,7 +153,7 @@
                   "eventId": "E06",
                   "requires": {},
                   "costs": {
-                    "stamina": 15,
+                    "stamina": 12,
                     "supply": 0,
                     "medkit": 0
                   },
@@ -268,8 +190,8 @@
         {
           "id": "E06.withdraw",
           "goalId": "withdraw",
-          "label": "지금 철수한다",
-          "intention": "추가 물자 회수를 멈추고 병원 구역을 벗어난다.",
+          "label": "상자를 지나쳐 바로 나간다",
+          "intention": "더 챙기지 않고 연구동 쪽으로 이동한다.",
           "target": "병원 철수",
           "judgment": null,
           "behavior": {
@@ -304,8 +226,8 @@
         {
           "id": "E06.salvage",
           "goalId": "salvage",
-          "label": "잔여 물자를 회수한다",
-          "intention": "위험을 감수하고 통로 끝의 상자에서 물자를 챙긴다.",
+          "label": "운반 상자의 음식을 챙긴다",
+          "intention": "위험을 감수하고 남은 식량을 회수한다.",
           "target": "남은 물자",
           "judgment": null,
           "behavior": {
@@ -366,54 +288,10 @@
           "failureFacts": {}
         },
         {
-          "id": "E06.screen",
-          "goalId": "withdraw",
-          "label": "물자로 시야를 가리고 철수한다",
-          "intention": "물자 하나를 써 이동을 가리고 스트레스를 낮춘다. 추가 물자 탐색은 하지 않는다.",
-          "target": "병원 철수",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E06.screen",
-                  "eventId": "E06",
-                  "requires": {
-                    "supply": 1
-                  },
-                  "costs": {
-                    "stamina": 0,
-                    "supply": 1,
-                    "medkit": 0
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 8,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -10
-                    }
-                  ],
-                  "failureEffects": []
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {}
-        },
-        {
           "id": "E06.search-kit",
           "goalId": "salvage",
-          "label": "출구 주변에서 치료 도구를 찾는다",
-          "intention": "체력과 부상 위험을 감수하고 치료 도구를 하나 더 찾은 뒤 떠난다.",
+          "label": "출구 옆 구급 가방을 꺼낸다",
+          "intention": "안쪽까지 손을 뻗어 치료 도구를 찾는다. 시간이 더 걸린다.",
           "target": "출구 주변 치료 도구",
           "judgment": null,
           "behavior": {
@@ -488,10 +366,9 @@
       }
     ],
     "judgment": null,
-    "text": "남은 물자를 회수할 방법을 다시 살펴보자.",
+    "text": "저 상자만 확인하자. 다음에 먹을 것을 구할 곳이 없을 수도 있어. 내가 곁에서 살필게.",
     "notices": [
-      "안정 극단: 세 철수 방식 중에서 선택합니다.",
-      "본인 선택 세 개와 동료 선택 한 개를 표시합니다. 본인의 반대 목표는 잠기며, 동료 선택은 동료의 성향·판단에 따라 반대 목표가 될 수 있습니다. 신뢰도 제한은 없지만 필요한 체력과 물자는 소모됩니다."
+      "지금은 한 가지 생각이 다른 판단을 밀어내고 있다. 동료가 곁에 있다면 다른 길을 제안할 수 있다."
     ],
     "mode": "companion-choice"
   },

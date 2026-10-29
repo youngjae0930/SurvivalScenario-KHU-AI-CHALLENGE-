@@ -18,6 +18,7 @@ import { selectGeneralRecommendation, type GeneralRecommendation } from './recom
 import { decisionMemoryFor } from './decision-memory'
 import { equalRememberedAction, findRememberedDecision, representativeGoal } from './decision-echo'
 import { activeCatalogCompanion, reuniteCatalogCompanion } from './companion-journey'
+import { findDialogue, type DialogueSlot } from './dialogue'
 
 export class CatalogRuntimeError extends Error {
   readonly code: 'action-unavailable' | 'stale-context' | 'invalid-phase' | 'content-invalid'
@@ -302,6 +303,22 @@ export function renderCatalogScript(pack: CatalogPack, run: CatalogRun, scriptId
     if (values[key] === undefined) throw new CatalogRuntimeError('content-invalid', '문구에 필요한 인물이 없습니다.')
     return values[key]
   }))
+}
+
+/** Only an actual engine event can open its presentation channel. */
+export function catalogDialogue(pack: CatalogPack, run: CatalogRun, slot: DialogueSlot, actionId: string | null = null): string[] {
+  const active = activeCatalogCompanion(run)
+  if (slot === 'opinion' && (run.phase !== 'choice' || !active || !actionId
+    || sourceChoiceId(catalogRecommendedChoice(pack, run)?.id ?? '') !== sourceChoiceId(actionId))) return []
+  if (slot === 'hesitation' && (run.phase !== 'choice' || !active || catalogRecommendedChoice(pack, run) || catalogGeneralRecommendation(pack, run).kind !== 'withheld')) return []
+  if (slot === 'departure-warning' && (!actionId || run.phase !== 'choice' || !catalogAutonomyDeparture(pack, run, actionId))) return []
+  if (slot === 'departure' && (!run.result?.companionDeparture || actionId !== run.result.actionId)) return []
+  if (slot === 'absent' && (run.phase !== 'choice' || !run.companionJourney?.separation)) return []
+  if (slot === 'reunion' && (run.phase !== 'choice' || !active || run.companionJourney?.reunions.at(-1)?.visitIndex !== run.visitIndex)) return []
+  const context = catalogContext(pack, run)
+  const script = findDialogue(pack, slot === 'departure' ? { ...context, companion: run.companion } : context,
+    currentEvent(pack, run).id, slot, actionId === null ? null : sourceChoiceId(actionId))
+  return script ? renderCatalogScript(pack, run, script.id) : []
 }
 export function catalogLegacy(pack: CatalogPack, run: CatalogRun): import('../../domain/catalog').CatalogLegacy | null {
   if (run.phase !== 'ending') return null

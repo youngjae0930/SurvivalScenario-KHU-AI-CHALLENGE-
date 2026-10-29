@@ -3,7 +3,7 @@ import type { CatalogChoice, CatalogPack, CatalogRun, CompanionContext } from '.
 import type { SaveStore } from '../../storage/browser-store'
 import { makeCoreState } from '../../test/core-fixtures'
 import { makeOrigin } from '../../test/opening-paths'
-import { makeCompanionCommandCatalogFixture } from '../../test/catalog-fixtures'
+import { makeCompanionCommandCatalogFixture, makeVariableChoicesCatalogFixture } from '../../test/catalog-fixtures'
 import { readDefaultCatalog } from '../../content/catalog/registry'
 import { resolveAnswers } from '../../app/questionnaire'
 import { createProductClient } from '../../app/catalog-client'
@@ -69,7 +69,8 @@ describe('실제 결과를 종합한 신뢰', () => {
     const same = makeCoreState({ supply: 3, data: true })
     expect(delta(evaluateRelationship(same, same, companion, choice, 'success'))).toBe(0)
   })
-  it('성공·실패 미리보기는 실제 실행과 같고 난수나 비용을 추가하지 않는다', () => {
+  it('이전 팩의 성공·실패 미리보기는 실제 실행과 같고 난수나 비용을 추가하지 않는다', () => {
+    const pack = makeVariableChoicesCatalogFixture()
     const old = makeCompanionCommandCatalogFixture()
     const observed = new Set<string>()
     for (const seed of [1, 0x9e3779b9, 0x3c6ef372, 0xdaa66d2b]) {
@@ -125,7 +126,7 @@ describe('실제 결과를 종합한 신뢰', () => {
   it('새 신뢰·판단 근거를 저장 재생하고 위조를 거부하며 구 팩은 고정+10을 보존한다', () => {
     const result = executeCatalogAction(pack, start(), 'E01.safe')
     const raw = encodeCatalogSave(origin, pack, result)
-    expect(JSON.parse(raw).runtimeVersion).toBe('catalog-companion-stages-1')
+    expect(JSON.parse(raw).runtimeVersion).toBe('catalog-companion-dialogue-1')
     expect(decodeCatalogSave(raw, resolveAnswers).run).toEqual(result)
     const fake = JSON.parse(raw); fake.checkpoint.history[0].trustChange.after += 1
     expect(() => decodeCatalogSave(JSON.stringify(fake), resolveAnswers)).toThrow()
@@ -181,14 +182,14 @@ function otherConflict() {
       reunion: { locationTags: ['safe-hub'], minVisits: 1, conditions: [] } } }) })
 }
 describe('이별로 이어지는 명시적 목표 갈등', () => {
-  it('구조 외 이동 갈등도79에서는 이별하고80에서는 동행하며 선택은4개다', () => {
+  it('구조 외 이동 갈등도79에서는 이별하고80에서는 동행하며 선택 구성을 유지한다', () => {
     const content = otherConflict()
     for (const trust of [79, 80]) {
       const run = start(content, { ...companion, trust, traits: { risk: 10, cognition: 50, affect: 50 } })
       expect(catalogRecommendedChoice(content, run)!.goalId).toBe('E01.shortcut')
       expect(catalogAutonomyDeparture(content, run, 'E01.safe') !== null).toBe(trust === 79)
       expect(activeCatalogCompanion(executeCatalogAction(content, run, 'E01.safe')) !== null).toBe(trust === 80)
-      expect(catalogChoices(content, run)).toHaveLength(4)
+      expect(catalogChoices(content, run)).toHaveLength(2)
     }
   })
   it('단순 의견 차이·선언되지 않은 목표 조합은 이별을 만들지 않는다', () => {

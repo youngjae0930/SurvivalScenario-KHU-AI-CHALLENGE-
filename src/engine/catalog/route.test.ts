@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { CatalogPack, CatalogRun } from '../../domain/catalog'
-import { makeCatalogFixture, makeCompanionOutcomeCatalogFixture } from '../../test/catalog-fixtures'
+import { makeCatalogFixture, makeCompanionOutcomeCatalogFixture, makeNarrativeCatalogFixture } from '../../test/catalog-fixtures'
 import { makeOrigin } from '../../test/opening-paths'
 import { readDefaultCatalog } from '../../content/catalog/registry'
 import { resolveAnswers } from '../../app/questionnaire'
@@ -13,7 +13,7 @@ import { planRoute } from './route'
 
 function flexible(): CatalogPack {
   const source = makeCatalogFixture()
-  const live = readDefaultCatalog()
+  const live = makeNarrativeCatalogFixture()
   return compileCatalog({ ...source,
     manifest: { ...source.manifest, routeVersion: 'stages-1', revision: 'flexible-test-1', recommendationVersion: 'survival-1',
       stages: [{ id: 'early', minVisits: 1, maxVisits: 3 }, { id: 'middle', minVisits: 1, maxVisits: 1 }, { id: 'late', minVisits: 1, maxVisits: 2 }] },
@@ -126,7 +126,7 @@ describe('D09 가변 방문 분량과 저장 호환', () => {
       const run = createCatalogRun(pack, { ...input, companion: { name: '동료', trust: 50, traits: { risk: 50, cognition: 50, affect: 50 } } })
       const raw = encodeCatalogSave(origin, pack, run)
       expect(decodeCatalogSave(raw, resolveAnswers).run).toEqual(run)
-      expect(JSON.parse(raw).runtimeVersion).toBe(pack === old ? 'catalog-companion-outcome-1' : 'catalog-companion-stages-1')
+      expect(JSON.parse(raw).runtimeVersion).toBe(pack === old ? 'catalog-companion-outcome-1' : 'catalog-companion-dialogue-1')
     }
     expect(planRoute(current, 12345)).toEqual(planRoute(old, 12345))
   })

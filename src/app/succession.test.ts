@@ -77,7 +77,7 @@ describe('실제 결말에서 다음 회차로 이어하기', () => {
     await s.client.dispatch({ type: 'resume' }); await prepare(s.client)
     expect((await s.client.dispatch(startCommand(s.client))).ok).toBe(true)
     const loaded = decodeCatalogSave(s.raw(), resolveAnswers)
-    expect(JSON.parse(s.raw())).toMatchObject({ schemaVersion: 8, runtimeVersion: 'catalog-succession-10' })
+    expect(JSON.parse(s.raw())).toMatchObject({ schemaVersion: 8, runtimeVersion: 'catalog-succession-11' })
     expect(loaded.origin).toMatchObject({ runId: 'successor-b-marker', seed: 987654, name: '새 주인공' })
     expect(loaded.run.core.protagonist).toMatchObject({ stress: 30, stamina: 70, injury: 0, traits: { risk: 30, cognition: 50, affect: 50 } })
     expect(loaded.run.core.inventory).toEqual({ supply: 1, medkit: 1, weapon: false })
@@ -110,7 +110,7 @@ describe('실제 결말에서 다음 회차로 이어하기', () => {
     expect(s.count()).toBe(1)
   })
 
-  it('이전 성향이 실제 E05 대안을 열고 저장 복원 후에도 같은 네 선택을 유지한다', async () => {
+  it('이전 성향이 실제 E05 대안을 열고 저장 복원 후에도 같은 선택 구성을 유지한다', async () => {
     const s = setup()
     await s.client.dispatch({ type: 'resume' }); await prepare(s.client); await s.client.dispatch(startCommand(s.client))
     for (const id of ['E01.shortcut', 'E02.supplies', 'E03.observe', 'E04.maintain']) await choose(s.client, id)
@@ -118,8 +118,8 @@ describe('실제 결말에서 다음 회차로 이어하기', () => {
     if (view.kind !== 'choice') throw new Error('선택 아님')
     expect(view.context.eventId).toBe('E05')
     expect(view.status.traits.find(trait => trait.axis === 'risk')?.value).toBe(22)
-    expect(view.companion).toMatchObject({ kind: 'present', trust: 55, opinion: { kind: 'ready', actionId: 'companion:E05.bypass' } })
-    expect(view.actions).toHaveLength(4)
+    expect(view.companion).toMatchObject({ kind: 'present', trust: 56, opinion: { kind: 'ready', actionId: 'companion:E05.bypass' } })
+    expect(view.actions).toHaveLength(3)
     expect(view.actions.find(action => action.actionId === 'companion:E05.bypass')?.availability.kind).toBe('available')
     const restored = createProductClient({ store: s.store }); await restored.dispatch({ type: 'resume' })
     expect(restored.getSnapshot().view).toEqual(view)

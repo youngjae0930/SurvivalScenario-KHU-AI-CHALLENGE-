@@ -9,8 +9,10 @@
     "weight": 1,
     "once": false,
     "text": [
-      "격리선을 벗어나자 통신소의 확성기에서 구조 차량의 신호가 끊겨 들린다. 외곽 집결지로 향하는 표지는 있지만, 어느 통로가 열려 있는지는 알 수 없다.",
-      "쓰러진 안내판 뒤에서 사람이 도움을 청한다. 신호를 확인하고 이동하거나, 잔해에 갇힌 생존자를 구조할 수 있다."
+      "통신소 확성기에서 “남쪽 집결지”라는 말이 끊겨 나온다. 그 너머로 구조 차량의 엔진 소리가 들린다.",
+      "주파수를 돌리던 중, 쓰러진 안내판 뒤에서 목소리가 들린다. “여기 사람 있어요!” 잔해 아래 사람이 갇혀 있다.",
+      "아는 연락처는 없다. 신호 방향을 확인하고 집결지로 갈지, 멈춰 사람을 꺼낼지 결정해야 한다.",
+      "“움직일 수 있어요?” 잔해 쪽으로 묻는다. “다리가 끼었어요.” 짧은 대답이 돌아온다."
     ]
   },
   {
@@ -29,8 +31,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "격리선을 지나 통신소에 도착하자, 편의점에서 도왔던 사람이 알려 준 호출 번호가 떠오른다. 이 연락망으로 외곽의 열린 통로를 물어볼 수 있다.",
-      "한편 쓰러진 안내판 뒤에서는 생존자가 도움을 청한다. 통로 정보를 먼저 얻을지, 위험을 감수하고 구조할지 결정해야 한다."
+      "통신소에 들어서자 편의점에서 건네받은 연락처가 떠오른다. 무전기의 주파수를 맞추니 익숙한 목소리가 응답한다.",
+      "“도착했어요? 남쪽으로 빠지는 길을 확인했어요.”",
+      "그때 쓰러진 안내판 뒤에서도 구조 요청이 들린다. 연락을 이어 열린 통로를 확인할지, 먼저 잔해에 갇힌 사람을 꺼낼지 정해야 한다."
     ]
   },
   {
@@ -51,8 +54,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "통신소의 구조 신호 사이로 잔해에 갇힌 사람의 목소리가 들린다. 지금은 먼저 그 사람을 꺼내야 한다는 생각이 앞선다.",
-      "곧장 들어가거나 물자로 잔해를 받칠 수 있다. 치료 도구로 보호하거나 체력을 더 써 옆으로 진입하는 방식도 있다."
+      "잔해 사이로 손이 보인다. 그 손이 한 번 더 움직이는 순간 다른 소리가 멀어진다.",
+      "먼저 꺼내야 한다. 구조 차량의 신호가 들리지만 발길을 돌릴 수 없다.",
+      "곧장 들어가거나, 물건으로 잔해를 받치거나, 옆쪽을 기어 들어갈 수 있다."
     ]
   },
   {
@@ -65,7 +69,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "확성기 주파수와 집결 방향을 확인했다. 응답할 연락처가 없어 열린 통로까지는 알아내지 못했다. 뒤쪽 생존자는 구조 요청을 계속 보냈다."
+      "확성기가 가리키는 집결 방향을 확인했다. 응답할 연락처가 없어 우회 통로까지 알아내지는 못했다. 뒤쪽에서는 구조 요청이 이어졌다."
     ]
   },
   {
@@ -78,8 +82,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "편의점에서 도왔던 사람이 연결해 준 연락망에 응답이 왔다. 통신 상대가 외곽의 열린 우회 통로를 짚어 주었다. 탈출 통로 정보를 확보했다.",
-      "잔해 안의 사람에게는 구조 요청 신호가 이어지고 있음을 알리고, 다음 구역으로 향했다."
+      "편의점에서 도왔던 사람이 무전으로 길을 짚어 준다. 닫힌 철문 옆으로 빠져나가는 우회 통로를 기억해 뒀다. “거기서 꼭 나가요.” 응답이 끊기기 전 고맙다고 말했다."
     ]
   },
   {
@@ -92,7 +95,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "생존자를 잔해 밖으로 꺼냈다. 그 사람은 고맙다며 들고 있던 물자 하나를 나누어 주었다. 잠시 숨을 고른 뒤 각자 집결지로 향했다."
+      "잔해를 밀어 사람이 빠져나올 틈을 만들었다. 구조된 사람이 작은 음식 꾸러미를 건넨다. 각자 집결지로 향하기로 하고 일어섰다."
     ]
   },
   {
@@ -105,21 +108,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "구조를 시도하다 잔해에 부딪혀 상처를 입었다. 안쪽 생존자는 다른 구조 요청에도 응답하겠다며 먼저 안전한 곳으로 빠지라고 외쳤다.",
-      "사용한 물품과 체력을 되돌릴 수는 없다. 생존자를 꺼내지 못한 채 상처와 긴장을 안고 통신소 가장자리로 물러났다."
-    ]
-  },
-  {
-    "id": "E10.beacon.success",
-    "eventId": "E10",
-    "choiceId": "E10.beacon",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "물자로 표지를 고정하자 구조 신호의 방향이 분명해졌다. 긴장이 조금 풀렸다. 열린 탈출 통로 정보는 얻지 못했고, 생존자는 잔해 안에서 구조 요청을 이어 갔다."
+      "잔해가 다시 내려앉았다. 몸을 다친 채 밖으로 물러났다. 안쪽에서는 아직 목소리가 들리지만 혼자 다시 들어갈 수 없었다."
     ]
   },
   {
@@ -132,7 +121,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "치료 도구로 생존자의 상처를 감싼 뒤 잔해 밖으로 이끌었다. 생존자는 고맙다며 물자 하나를 건넸다. 내 상처가 함께 낫는 것은 아니지만 그 사람은 움직일 수 있게 되었다."
+      "다친 곳을 묶어 주고 몸을 끌어냈다. 사람이 고맙다며 먹을 것을 건넨다. 사용한 치료 도구를 정리하고 집결지로 향했다."
     ]
   },
   {
@@ -145,8 +134,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "구조를 시도하다 잔해에 부딪혀 상처를 입었다. 안쪽 생존자는 다른 구조 요청에도 응답하겠다며 먼저 안전한 곳으로 빠지라고 외쳤다.",
-      "사용한 물품과 체력을 되돌릴 수는 없다. 생존자를 꺼내지 못한 채 상처와 긴장을 안고 통신소 가장자리로 물러났다."
+      "붕대를 둘렀지만 잔해가 움직이며 통로가 좁아졌다. 상처를 입고 물러났다. 도구를 썼어도 구조를 마치지는 못했다."
     ]
   },
   {
@@ -159,7 +147,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "잔해 안으로 들어가 생존자를 끌어냈다. 팔에 힘이 풀렸지만 그 사람의 안도하는 목소리에 긴장이 조금 내려갔다. 생존자는 물자 하나를 나누어 주고 집결지로 향했다."
+      "목소리를 따라 잔해 안으로 들어가 사람을 끌어냈다. 건네받은 먹을 것을 쥔 채 한참 숨을 골랐다. 밖으로 나온 얼굴을 보고서야 긴장이 조금 풀렸다."
     ]
   },
   {
@@ -172,8 +160,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "구조를 시도하다 잔해에 부딪혀 상처를 입었다. 안쪽 생존자는 다른 구조 요청에도 응답하겠다며 먼저 안전한 곳으로 빠지라고 외쳤다.",
-      "사용한 물품과 체력을 되돌릴 수는 없다. 생존자를 꺼내지 못한 채 상처와 긴장을 안고 통신소 가장자리로 물러났다."
+      "잔해를 들어 올리다 균형을 잃었다. 상처를 입고 바깥으로 물러났다. 안쪽의 목소리가 계속 귀에 남았다."
     ]
   },
   {
@@ -186,7 +173,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "물자로 잔해를 받쳐 생존자를 꺼냈다. 생존자가 물자 하나를 건네 사용한 만큼을 보충했다. 숨을 고르자 긴장이 내려갔다."
+      "짐에서 꺼낸 물건으로 잔해를 받치고 사람을 꺼냈다. 구조된 사람이 음식 꾸러미를 건넨다. 놓친 숨을 길게 내쉬었다."
     ]
   },
   {
@@ -199,35 +186,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "구조를 시도하다 잔해에 부딪혀 상처를 입었다. 안쪽 생존자는 다른 구조 요청에도 응답하겠다며 먼저 안전한 곳으로 빠지라고 외쳤다.",
-      "사용한 물품과 체력을 되돌릴 수는 없다. 생존자를 꺼내지 못한 채 상처와 긴장을 안고 통신소 가장자리로 물러났다."
-    ]
-  },
-  {
-    "id": "E10.wrap.success",
-    "eventId": "E10",
-    "choiceId": "E10.wrap",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "치료 도구로 생존자를 보호한 뒤 잔해 밖으로 이끌었다. 그 사람은 물자 하나를 건네고 거듭 고맙다고 말했다. 긴장이 내려갔지만 내 부상은 그대로였다."
-    ]
-  },
-  {
-    "id": "E10.wrap.failure",
-    "eventId": "E10",
-    "choiceId": "E10.wrap",
-    "slot": "failure",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "구조를 시도하다 잔해에 부딪혀 상처를 입었다. 안쪽 생존자는 다른 구조 요청에도 응답하겠다며 먼저 안전한 곳으로 빠지라고 외쳤다.",
-      "사용한 물품과 체력을 되돌릴 수는 없다. 생존자를 꺼내지 못한 채 상처와 긴장을 안고 통신소 가장자리로 물러났다."
+      "받침이 버티지 못했다. 상처를 입고 물러나며 사용한 물건도 놓쳤다. 생존자는 아직 잔해 안에 있다."
     ]
   },
   {
@@ -240,7 +199,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "옆으로 돌아 잔해를 들어 올리고 생존자를 끌어냈다. 체력을 많이 썼지만 그 사람이 빠져나오자 조금 안도했다. 생존자는 물자 하나를 나누어 주었다."
+      "잔해 옆을 파고들어 돌아가는 틈을 만들었다. 사람을 꺼내고 건네받은 음식을 챙겼다. 무릎을 짚고 쉬어야 했지만 마음은 조금 가벼워졌다."
     ]
   },
   {
@@ -253,8 +212,1893 @@
     "weight": 1,
     "once": false,
     "text": [
-      "구조를 시도하다 잔해에 부딪혀 상처를 입었다. 안쪽 생존자는 다른 구조 요청에도 응답하겠다며 먼저 안전한 곳으로 빠지라고 외쳤다.",
-      "사용한 물품과 체력을 되돌릴 수는 없다. 생존자를 꺼내지 못한 채 상처와 긴장을 안고 통신소 가장자리로 물러났다."
+      "돌아가는 틈까지 무너졌다. 상처를 입고 기어 나왔다. 힘을 쏟았지만 안쪽 사람에게 닿지는 못했다."
+    ]
+  },
+  {
+    "id": "E10.signal.success.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "확성기가 가리키는 집결 방향을 확인했다. 응답할 연락처가 없어 우회 통로까지 알아내지는 못했다. 뒤쪽에서는 구조 요청이 이어졌다.",
+      "{{companion.name}}이 뒤쪽을 돌아본다. 잠시 말이 없다."
+    ]
+  },
+  {
+    "id": "E10.signal.success.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "확성기가 가리키는 집결 방향을 확인했다. 응답할 연락처가 없어 우회 통로까지 알아내지는 못했다. 뒤쪽에서는 구조 요청이 이어졌다.",
+      "{{companion.name}}이 배낭 끈을 고쳐 쥐며 뒤쪽을 돌아본다."
+    ]
+  },
+  {
+    "id": "E10.signal.success.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "확성기가 가리키는 집결 방향을 확인했다. 응답할 연락처가 없어 우회 통로까지 알아내지는 못했다. 뒤쪽에서는 구조 요청이 이어졌다.",
+      "{{companion.name}}의 시선은 아직 도움을 부르던 사람 쪽에 머물러 있다."
+    ]
+  },
+  {
+    "id": "E10.network.success.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점에서 도왔던 사람이 무전으로 길을 짚어 준다. 닫힌 철문 옆으로 빠져나가는 우회 통로를 기억해 뒀다. “거기서 꼭 나가요.” 응답이 끊기기 전 고맙다고 말했다.",
+      "{{companion.name}}이 뒤쪽을 돌아본다. 잠시 말이 없다."
+    ]
+  },
+  {
+    "id": "E10.network.success.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점에서 도왔던 사람이 무전으로 길을 짚어 준다. 닫힌 철문 옆으로 빠져나가는 우회 통로를 기억해 뒀다. “거기서 꼭 나가요.” 응답이 끊기기 전 고맙다고 말했다.",
+      "{{companion.name}}이 배낭 끈을 고쳐 쥐며 뒤쪽을 돌아본다."
+    ]
+  },
+  {
+    "id": "E10.network.success.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점에서 도왔던 사람이 무전으로 길을 짚어 준다. 닫힌 철문 옆으로 빠져나가는 우회 통로를 기억해 뒀다. “거기서 꼭 나가요.” 응답이 끊기기 전 고맙다고 말했다.",
+      "{{companion.name}}의 시선은 아직 도움을 부르던 사람 쪽에 머물러 있다."
+    ]
+  },
+  {
+    "id": "E10.rescue.success.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해를 밀어 사람이 빠져나올 틈을 만들었다. 구조된 사람이 작은 음식 꾸러미를 건넨다. 각자 집결지로 향하기로 하고 일어섰다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E10.rescue.success.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해를 밀어 사람이 빠져나올 틈을 만들었다. 구조된 사람이 작은 음식 꾸러미를 건넨다. 각자 집결지로 향하기로 하고 일어섰다.",
+      "{{companion.name}}의 목소리가 들린다. “차가 있는 방향부터 놓치지 말자. 아직 우리도 밖으로 나가야 해.”"
+    ]
+  },
+  {
+    "id": "E10.rescue.success.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해를 밀어 사람이 빠져나올 틈을 만들었다. 구조된 사람이 작은 음식 꾸러미를 건넨다. 각자 집결지로 향하기로 하고 일어섰다.",
+      "{{companion.name}}의 목소리가 들린다. “아까 들었던 목소리가 계속 귀에 남아. 잠깐만, 숨 좀 고를게.”"
+    ]
+  },
+  {
+    "id": "E10.rescue.failure.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해가 다시 내려앉았다. 몸을 다친 채 밖으로 물러났다. 안쪽에서는 아직 목소리가 들리지만 혼자 다시 들어갈 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E10.rescue.failure.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해가 다시 내려앉았다. 몸을 다친 채 밖으로 물러났다. 안쪽에서는 아직 목소리가 들리지만 혼자 다시 들어갈 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “지금은 남은 힘과 상처를 먼저 봐야 해. 무리해서 더 잃을 수는 없어.”"
+    ]
+  },
+  {
+    "id": "E10.rescue.failure.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해가 다시 내려앉았다. 몸을 다친 채 밖으로 물러났다. 안쪽에서는 아직 목소리가 들리지만 혼자 다시 들어갈 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “많이 아파? 잠깐만, 급하게 움직이지 마. 여기서 혼자 두지는 않을게.”"
+    ]
+  },
+  {
+    "id": "E10.rescue.failure.companion.fatal",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E10.aid.success.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다친 곳을 묶어 주고 몸을 끌어냈다. 사람이 고맙다며 먹을 것을 건넨다. 사용한 치료 도구를 정리하고 집결지로 향했다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E10.aid.success.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다친 곳을 묶어 주고 몸을 끌어냈다. 사람이 고맙다며 먹을 것을 건넨다. 사용한 치료 도구를 정리하고 집결지로 향했다.",
+      "{{companion.name}}의 목소리가 들린다. “차가 있는 방향부터 놓치지 말자. 아직 우리도 밖으로 나가야 해.”"
+    ]
+  },
+  {
+    "id": "E10.aid.success.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다친 곳을 묶어 주고 몸을 끌어냈다. 사람이 고맙다며 먹을 것을 건넨다. 사용한 치료 도구를 정리하고 집결지로 향했다.",
+      "{{companion.name}}의 목소리가 들린다. “아까 들었던 목소리가 계속 귀에 남아. 잠깐만, 숨 좀 고를게.”"
+    ]
+  },
+  {
+    "id": "E10.aid.failure.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕대를 둘렀지만 잔해가 움직이며 통로가 좁아졌다. 상처를 입고 물러났다. 도구를 썼어도 구조를 마치지는 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E10.aid.failure.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕대를 둘렀지만 잔해가 움직이며 통로가 좁아졌다. 상처를 입고 물러났다. 도구를 썼어도 구조를 마치지는 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “지금은 남은 힘과 상처를 먼저 봐야 해. 무리해서 더 잃을 수는 없어.”"
+    ]
+  },
+  {
+    "id": "E10.aid.failure.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕대를 둘렀지만 잔해가 움직이며 통로가 좁아졌다. 상처를 입고 물러났다. 도구를 썼어도 구조를 마치지는 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “많이 아파? 잠깐만, 급하게 움직이지 마. 여기서 혼자 두지는 않을게.”"
+    ]
+  },
+  {
+    "id": "E10.aid.failure.companion.fatal",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E10.rush.success.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "목소리를 따라 잔해 안으로 들어가 사람을 끌어냈다. 건네받은 먹을 것을 쥔 채 한참 숨을 골랐다. 밖으로 나온 얼굴을 보고서야 긴장이 조금 풀렸다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E10.rush.success.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "목소리를 따라 잔해 안으로 들어가 사람을 끌어냈다. 건네받은 먹을 것을 쥔 채 한참 숨을 골랐다. 밖으로 나온 얼굴을 보고서야 긴장이 조금 풀렸다.",
+      "{{companion.name}}의 목소리가 들린다. “차가 있는 방향부터 놓치지 말자. 아직 우리도 밖으로 나가야 해.”"
+    ]
+  },
+  {
+    "id": "E10.rush.success.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "목소리를 따라 잔해 안으로 들어가 사람을 끌어냈다. 건네받은 먹을 것을 쥔 채 한참 숨을 골랐다. 밖으로 나온 얼굴을 보고서야 긴장이 조금 풀렸다.",
+      "{{companion.name}}의 목소리가 들린다. “아까 들었던 목소리가 계속 귀에 남아. 잠깐만, 숨 좀 고를게.”"
+    ]
+  },
+  {
+    "id": "E10.rush.failure.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해를 들어 올리다 균형을 잃었다. 상처를 입고 바깥으로 물러났다. 안쪽의 목소리가 계속 귀에 남았다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E10.rush.failure.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해를 들어 올리다 균형을 잃었다. 상처를 입고 바깥으로 물러났다. 안쪽의 목소리가 계속 귀에 남았다.",
+      "{{companion.name}}의 목소리가 들린다. “지금은 남은 힘과 상처를 먼저 봐야 해. 무리해서 더 잃을 수는 없어.”"
+    ]
+  },
+  {
+    "id": "E10.rush.failure.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해를 들어 올리다 균형을 잃었다. 상처를 입고 바깥으로 물러났다. 안쪽의 목소리가 계속 귀에 남았다.",
+      "{{companion.name}}의 목소리가 들린다. “많이 아파? 잠깐만, 급하게 움직이지 마. 여기서 혼자 두지는 않을게.”"
+    ]
+  },
+  {
+    "id": "E10.rush.failure.companion.fatal",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E10.prepare.success.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐에서 꺼낸 물건으로 잔해를 받치고 사람을 꺼냈다. 구조된 사람이 음식 꾸러미를 건넨다. 놓친 숨을 길게 내쉬었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E10.prepare.success.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐에서 꺼낸 물건으로 잔해를 받치고 사람을 꺼냈다. 구조된 사람이 음식 꾸러미를 건넨다. 놓친 숨을 길게 내쉬었다.",
+      "{{companion.name}}의 목소리가 들린다. “차가 있는 방향부터 놓치지 말자. 아직 우리도 밖으로 나가야 해.”"
+    ]
+  },
+  {
+    "id": "E10.prepare.success.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐에서 꺼낸 물건으로 잔해를 받치고 사람을 꺼냈다. 구조된 사람이 음식 꾸러미를 건넨다. 놓친 숨을 길게 내쉬었다.",
+      "{{companion.name}}의 목소리가 들린다. “아까 들었던 목소리가 계속 귀에 남아. 잠깐만, 숨 좀 고를게.”"
+    ]
+  },
+  {
+    "id": "E10.prepare.failure.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받침이 버티지 못했다. 상처를 입고 물러나며 사용한 물건도 놓쳤다. 생존자는 아직 잔해 안에 있다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E10.prepare.failure.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받침이 버티지 못했다. 상처를 입고 물러나며 사용한 물건도 놓쳤다. 생존자는 아직 잔해 안에 있다.",
+      "{{companion.name}}의 목소리가 들린다. “지금은 남은 힘과 상처를 먼저 봐야 해. 무리해서 더 잃을 수는 없어.”"
+    ]
+  },
+  {
+    "id": "E10.prepare.failure.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받침이 버티지 못했다. 상처를 입고 물러나며 사용한 물건도 놓쳤다. 생존자는 아직 잔해 안에 있다.",
+      "{{companion.name}}의 목소리가 들린다. “많이 아파? 잠깐만, 급하게 움직이지 마. 여기서 혼자 두지는 않을게.”"
+    ]
+  },
+  {
+    "id": "E10.prepare.failure.companion.fatal",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E10.haul.success.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해 옆을 파고들어 돌아가는 틈을 만들었다. 사람을 꺼내고 건네받은 음식을 챙겼다. 무릎을 짚고 쉬어야 했지만 마음은 조금 가벼워졌다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E10.haul.success.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해 옆을 파고들어 돌아가는 틈을 만들었다. 사람을 꺼내고 건네받은 음식을 챙겼다. 무릎을 짚고 쉬어야 했지만 마음은 조금 가벼워졌다.",
+      "{{companion.name}}의 목소리가 들린다. “차가 있는 방향부터 놓치지 말자. 아직 우리도 밖으로 나가야 해.”"
+    ]
+  },
+  {
+    "id": "E10.haul.success.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해 옆을 파고들어 돌아가는 틈을 만들었다. 사람을 꺼내고 건네받은 음식을 챙겼다. 무릎을 짚고 쉬어야 했지만 마음은 조금 가벼워졌다.",
+      "{{companion.name}}의 목소리가 들린다. “아까 들었던 목소리가 계속 귀에 남아. 잠깐만, 숨 좀 고를게.”"
+    ]
+  },
+  {
+    "id": "E10.haul.failure.companion.neutral",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "돌아가는 틈까지 무너졌다. 상처를 입고 기어 나왔다. 힘을 쏟았지만 안쪽 사람에게 닿지는 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E10.haul.failure.companion.left",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "돌아가는 틈까지 무너졌다. 상처를 입고 기어 나왔다. 힘을 쏟았지만 안쪽 사람에게 닿지는 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “지금은 남은 힘과 상처를 먼저 봐야 해. 무리해서 더 잃을 수는 없어.”"
+    ]
+  },
+  {
+    "id": "E10.haul.failure.companion.right",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "돌아가는 틈까지 무너졌다. 상처를 입고 기어 나왔다. 힘을 쏟았지만 안쪽 사람에게 닿지는 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “많이 아파? 잠깐만, 급하게 움직이지 마. 여기서 혼자 두지는 않을게.”"
+    ]
+  },
+  {
+    "id": "E10.haul.failure.companion.fatal",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.rush",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 손이 아직 움직여. 지금 들어가자. 보고도 그냥 갈 수는 없어."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.rush.left",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 손이 아직 움직여. 지금 들어가자. 보고도 그냥 갈 수는 없어. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.rush.right",
+    "eventId": "E10",
+    "choiceId": "E10.rush",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 손이 아직 움직여. 지금 들어가자. 보고도 그냥 갈 수는 없어. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.prepare",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해부터 받치자. 한 번 더 무너지면 꺼낼 틈도 없어져."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.prepare.left",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해부터 받치자. 한 번 더 무너지면 꺼낼 틈도 없어져. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.prepare.right",
+    "eventId": "E10",
+    "choiceId": "E10.prepare",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잔해부터 받치자. 한 번 더 무너지면 꺼낼 틈도 없어져. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.haul",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옆쪽으로 돌아 들어가 보자. 힘은 더 들겠지만 손이 닿을 수도 있어."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.haul.left",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옆쪽으로 돌아 들어가 보자. 힘은 더 들겠지만 손이 닿을 수도 있어. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.haul.right",
+    "eventId": "E10",
+    "choiceId": "E10.haul",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옆쪽으로 돌아 들어가 보자. 힘은 더 들겠지만 손이 닿을 수도 있어. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.network",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점에서 받은 주파수 기억하지? 먼저 연락해 보자. 아직 열린 길을 알 수도 있어."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.network.left",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점에서 받은 주파수 기억하지? 먼저 연락해 보자. 아직 열린 길을 알 수도 있어. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.network.right",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점에서 받은 주파수 기억하지? 먼저 연락해 보자. 아직 열린 길을 알 수도 있어. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.warning.network",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "{{companion.name}}의 시선은 아직 남은 사람에게 향해 있다. 이대로 이동하면 여기서 헤어진다. 이후 같은 거점에 닿으면 다시 만날 수 있다."
+    ]
+  },
+  {
+    "id": "E10.dialogue.departure.network",
+    "eventId": "E10",
+    "choiceId": "E10.network",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뒤에 남은 {{companion.name}}이 고개를 젓는다. “난 그냥 못 가. 먼저 가도 괜찮아.” 더는 같은 방향으로 발소리가 이어지지 않는다."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.rescue",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안에서 대답했어. 아직 살아 있어. 저 잔해만 밀면 손이 닿을 거야."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.rescue.left",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안에서 대답했어. 아직 살아 있어. 저 잔해만 밀면 손이 닿을 거야. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.rescue.right",
+    "eventId": "E10",
+    "choiceId": "E10.rescue",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안에서 대답했어. 아직 살아 있어. 저 잔해만 밀면 손이 닿을 거야. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.aid",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다친 곳부터 묶어 주고 꺼내자. 무작정 끌면 더 다칠 것 같아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.aid.left",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다친 곳부터 묶어 주고 꺼내자. 무작정 끌면 더 다칠 것 같아. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.aid.right",
+    "eventId": "E10",
+    "choiceId": "E10.aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다친 곳부터 묶어 주고 꺼내자. 무작정 끌면 더 다칠 것 같아. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.signal",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우선 차가 있는 방향부터 확인하자. 구조하러 들어갔다가 우리도 못 나올 수 있어."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.signal.left",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우선 차가 있는 방향부터 확인하자. 구조하러 들어갔다가 우리도 못 나올 수 있어. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E10.dialogue.opinion.signal.right",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우선 차가 있는 방향부터 확인하자. 구조하러 들어갔다가 우리도 못 나올 수 있어. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E10.dialogue.warning.signal",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "{{companion.name}}의 시선은 아직 남은 사람에게 향해 있다. 이대로 이동하면 여기서 헤어진다. 이후 같은 거점에 닿으면 다시 만날 수 있다."
+    ]
+  },
+  {
+    "id": "E10.dialogue.departure.signal",
+    "eventId": "E10",
+    "choiceId": "E10.signal",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뒤에 남은 {{companion.name}}이 고개를 젓는다. “난 그냥 못 가. 먼저 가도 괜찮아.” 더는 같은 방향으로 발소리가 이어지지 않는다."
+    ]
+  },
+  {
+    "id": "E10.dialogue.hesitation",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E10.dialogue.absent",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E10.dialogue.reunion",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E10.dialogue.reunion.rational",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E10.dialogue.reunion.emotional",
+    "eventId": "E10",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
     ]
   }
 ]

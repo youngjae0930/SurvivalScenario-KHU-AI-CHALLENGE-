@@ -9,8 +9,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "막힌 구역과 열린 통로의 경계에서 다시 바깥빛이 보인다. 출구 쪽으로 몸을 돌리자 안쪽에서 무언가 무너지는 소리가 난다.",
-      "지금 떠나면 병원과 거리를 벌릴 수 있다. 통로 끝에는 회수할 만한 상자가 남아 있지만, 돌아가면 그만큼 더 위험을 감수해야 한다."
+      "병원 뒤편 출구로 빛이 들어온다. 안쪽에서 선반이 넘어지고, 먼지 너머로 몇 개의 그림자가 움직인다.",
+      "출구 옆 운반 상자에 물과 붕대가 보인다. 조금 더 챙길 수는 있겠지만, 발소리가 가까워진다.",
+      "지금 연구동 쪽으로 빠져나갈지, 상자까지 돌아갈지 망설인다."
     ]
   },
   {
@@ -31,8 +32,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "건물 안쪽에서 다시 무너지는 소리가 난다. 더 머물기보다 안전하게 거리를 벌려야겠다는 생각이 앞선다.",
-      "짐을 버리거나 물자를 써서 철수할 수 있다. 무기로 거리를 벌리거나 몸을 낮춰 천천히 빠져나갈 수도 있다. 더 챙기려는 생각보다 이곳을 벗어나는 일이 앞선다."
+      "무너지는 소리가 바로 뒤까지 따라온다. 손에 든 짐이 유난히 무겁다.",
+      "더 챙기겠다는 생각은 들지 않는다. 여기를 빠져나가는 것만이 중요하다.",
+      "짐을 버리고 달아날지, 물건으로 뒤를 막을지, 몸을 낮춰 빠져나갈지 정한다."
     ]
   },
   {
@@ -51,8 +53,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "병원 외벽을 돌아 나오자 바깥으로 이어지는 연결 통로가 보인다. 안쪽에서 무언가 무너지는 소리가 난다.",
-      "이대로 구역을 벗어나거나 통로 끝의 상자에 남은 물자를 회수할 수 있다. 내부 접근로는 확보하지 못했지만, 이곳에서 떠나는 방법은 직접 정해야 한다."
+      "병원 외벽을 따라 걷다 서비스 출입구에 닿는다. 철문 너머 상자에 물병과 구급 가방이 보인다.",
+      "문틈으로 팔 하나가 느리게 움직인다. 조금만 들어가면 닿을 것 같지만 오래 머물 곳은 아니다.",
+      "연구동으로 곧장 갈지, 출입구에 남은 물품을 챙길지 정한다."
     ]
   },
   {
@@ -65,7 +68,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "돌아갈 생각을 접고 출구를 향해 움직였다. 남은 짐을 그대로 지닌 채 병원과 거리를 벌린다."
+      "상자를 지나쳐 바깥으로 나왔다. 뒤에서 문이 크게 울렸지만 돌아보지 않았다. 연구동 쪽으로 걸음을 옮겼다."
     ]
   },
   {
@@ -78,7 +81,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "통로 안으로 한 번 더 들어가 쓸 수 있는 물자를 회수했다. 챙긴 짐을 붙잡고 출구로 돌아왔다."
+      "운반 상자에서 물과 먹을 것을 꺼냈다. 짐을 붙잡고 뛰어나오자 등 뒤에서 문이 닫혔다."
     ]
   },
   {
@@ -91,7 +94,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "상자를 꺼내려다 무너진 구조물에 몸을 다쳤다. 물자는 챙기지 못하고 출구로 돌아왔다."
+      "상자를 끌어내다 선반을 건드렸다. 쏟아지는 물건에 상처를 입고 빈손으로 물러났다."
     ]
   },
   {
@@ -104,7 +107,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "남은 물자를 내려놓고 움직임에 걸리는 것을 줄였다. 부상 부위의 부담을 덜어내고 건물 밖으로 빠져나와 숨을 고른다."
+      "식량과 잡동사니를 내려놓자 어깨가 가벼워졌다. 뒤따르는 소리가 멀어질 때까지 걸었다. 비어 버린 배낭이 등에 닿는다."
     ]
   },
   {
@@ -117,7 +120,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "준비한 물자로 파편을 막아내며 출구까지 이동했다. 건물과 거리를 벌린 뒤 부상 부위를 정리하고 호흡을 되찾는다."
+      "남은 물건으로 출입문을 막았다. 문을 두드리는 소리를 등지고 병원 구역에서 빠져나왔다."
     ]
   },
   {
@@ -130,20 +133,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "물자로 몸을 보호하며 움직였지만 무너지는 장애물을 모두 피하지 못했다. 상처를 입은 채 출구 쪽으로 물러났다."
-    ]
-  },
-  {
-    "id": "E06.screen.success",
-    "eventId": "E06",
-    "choiceId": "E06.screen",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "물자로 이동 흔적과 시야를 가리고 출구 쪽으로 몸을 옮겼다. 추가 물자는 챙기지 않았지만 긴장을 덜어낸 채 병원 구역을 벗어났다."
+      "급히 세운 장애물이 무너졌다. 몸을 스치는 잔해에 상처를 입고 빈손으로 출구를 넘었다."
     ]
   },
   {
@@ -156,7 +146,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "출구 주변을 뒤져 남아 있던 치료 도구를 찾아 가방에 넣었다. 지친 몸을 일으켜 병원 구역을 벗어났다."
+      "먼지 쌓인 구급 가방에서 쓸 수 있는 붕대와 소독제를 골랐다. 가까워지는 발소리를 피해 출구로 빠져나왔다."
     ]
   },
   {
@@ -169,33 +159,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "출구 주변을 뒤졌지만 치료 도구는 찾지 못했다. 깨진 모서리에 상처까지 입고 나서야 탐색을 멈추고 철수했다."
-    ]
-  },
-  {
-    "id": "E06.guard.success",
-    "eventId": "E06",
-    "choiceId": "E06.guard",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "무기를 앞세워 거리를 벌리고 천천히 뒤로 물러났다. 추가 물자를 찾지 않고 병원 구역을 벗어난 뒤에야 굳은 숨을 풀었다."
-    ]
-  },
-  {
-    "id": "E06.guard.failure",
-    "eventId": "E06",
-    "choiceId": "E06.guard",
-    "slot": "failure",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "무기를 내밀며 물러나던 중 뒤쪽 장애물에 걸렸다. 상처를 입었지만 추가 탐색을 멈추고 병원 구역 밖으로 빠져나왔다."
+      "구급 가방을 잡아당기자 뒤편 선반이 무너졌다. 상처를 감싼 채 가방을 놓고 출구로 돌아왔다."
     ]
   },
   {
@@ -208,7 +172,1425 @@
     "weight": 1,
     "once": false,
     "text": [
-      "짐을 버리지 않고 낮은 자세로 천천히 빠져나왔다. 체력은 더 소모했지만 추가 탐색 없이 구역을 벗어나자 긴장이 조금 풀렸다."
+      "시선을 낮추고 벽을 따라 천천히 움직였다. 다리가 후들거렸지만 뒤따르는 손에 닿지 않고 병원을 벗어났다."
+    ]
+  },
+  {
+    "id": "E06.withdraw.success.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.withdraw",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자를 지나쳐 바깥으로 나왔다. 뒤에서 문이 크게 울렸지만 돌아보지 않았다. 연구동 쪽으로 걸음을 옮겼다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E06.withdraw.success.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.withdraw",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자를 지나쳐 바깥으로 나왔다. 뒤에서 문이 크게 울렸지만 돌아보지 않았다. 연구동 쪽으로 걸음을 옮겼다.",
+      "{{companion.name}}의 목소리가 들린다. “조금 더 챙길 수 있었을까 싶지만…… 이제 연구동으로 가자.”"
+    ]
+  },
+  {
+    "id": "E06.withdraw.success.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.withdraw",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자를 지나쳐 바깥으로 나왔다. 뒤에서 문이 크게 울렸지만 돌아보지 않았다. 연구동 쪽으로 걸음을 옮겼다.",
+      "{{companion.name}}의 목소리가 들린다. “소리가 멀어졌어. 여기서 벗어나니 겨우 숨이 쉬어진다.”"
+    ]
+  },
+  {
+    "id": "E06.salvage.success.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "운반 상자에서 물과 먹을 것을 꺼냈다. 짐을 붙잡고 뛰어나오자 등 뒤에서 문이 닫혔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E06.salvage.success.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "운반 상자에서 물과 먹을 것을 꺼냈다. 짐을 붙잡고 뛰어나오자 등 뒤에서 문이 닫혔다.",
+      "{{companion.name}}의 목소리가 들린다. “조금 더 챙길 수 있었을까 싶지만…… 이제 연구동으로 가자.”"
+    ]
+  },
+  {
+    "id": "E06.salvage.success.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "운반 상자에서 물과 먹을 것을 꺼냈다. 짐을 붙잡고 뛰어나오자 등 뒤에서 문이 닫혔다.",
+      "{{companion.name}}의 목소리가 들린다. “소리가 멀어졌어. 여기서 벗어나니 겨우 숨이 쉬어진다.”"
+    ]
+  },
+  {
+    "id": "E06.salvage.failure.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자를 끌어내다 선반을 건드렸다. 쏟아지는 물건에 상처를 입고 빈손으로 물러났다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E06.salvage.failure.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자를 끌어내다 선반을 건드렸다. 쏟아지는 물건에 상처를 입고 빈손으로 물러났다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E06.salvage.failure.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "상자를 끌어내다 선반을 건드렸다. 쏟아지는 물건에 상처를 입고 빈손으로 물러났다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E06.salvage.failure.companion.fatal",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E06.abandon.success.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.abandon",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식량과 잡동사니를 내려놓자 어깨가 가벼워졌다. 뒤따르는 소리가 멀어질 때까지 걸었다. 비어 버린 배낭이 등에 닿는다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E06.abandon.success.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.abandon",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식량과 잡동사니를 내려놓자 어깨가 가벼워졌다. 뒤따르는 소리가 멀어질 때까지 걸었다. 비어 버린 배낭이 등에 닿는다.",
+      "{{companion.name}}의 목소리가 들린다. “조금 더 챙길 수 있었을까 싶지만…… 이제 연구동으로 가자.”"
+    ]
+  },
+  {
+    "id": "E06.abandon.success.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.abandon",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식량과 잡동사니를 내려놓자 어깨가 가벼워졌다. 뒤따르는 소리가 멀어질 때까지 걸었다. 비어 버린 배낭이 등에 닿는다.",
+      "{{companion.name}}의 목소리가 들린다. “소리가 멀어졌어. 여기서 벗어나니 겨우 숨이 쉬어진다.”"
+    ]
+  },
+  {
+    "id": "E06.defend.success.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 물건으로 출입문을 막았다. 문을 두드리는 소리를 등지고 병원 구역에서 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E06.defend.success.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 물건으로 출입문을 막았다. 문을 두드리는 소리를 등지고 병원 구역에서 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “조금 더 챙길 수 있었을까 싶지만…… 이제 연구동으로 가자.”"
+    ]
+  },
+  {
+    "id": "E06.defend.success.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 물건으로 출입문을 막았다. 문을 두드리는 소리를 등지고 병원 구역에서 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “소리가 멀어졌어. 여기서 벗어나니 겨우 숨이 쉬어진다.”"
+    ]
+  },
+  {
+    "id": "E06.defend.failure.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "급히 세운 장애물이 무너졌다. 몸을 스치는 잔해에 상처를 입고 빈손으로 출구를 넘었다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E06.defend.failure.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "급히 세운 장애물이 무너졌다. 몸을 스치는 잔해에 상처를 입고 빈손으로 출구를 넘었다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E06.defend.failure.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "급히 세운 장애물이 무너졌다. 몸을 스치는 잔해에 상처를 입고 빈손으로 출구를 넘었다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E06.defend.failure.companion.fatal",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E06.search-kit.success.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먼지 쌓인 구급 가방에서 쓸 수 있는 붕대와 소독제를 골랐다. 가까워지는 발소리를 피해 출구로 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E06.search-kit.success.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먼지 쌓인 구급 가방에서 쓸 수 있는 붕대와 소독제를 골랐다. 가까워지는 발소리를 피해 출구로 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “조금 더 챙길 수 있었을까 싶지만…… 이제 연구동으로 가자.”"
+    ]
+  },
+  {
+    "id": "E06.search-kit.success.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먼지 쌓인 구급 가방에서 쓸 수 있는 붕대와 소독제를 골랐다. 가까워지는 발소리를 피해 출구로 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “소리가 멀어졌어. 여기서 벗어나니 겨우 숨이 쉬어진다.”"
+    ]
+  },
+  {
+    "id": "E06.search-kit.failure.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "구급 가방을 잡아당기자 뒤편 선반이 무너졌다. 상처를 감싼 채 가방을 놓고 출구로 돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E06.search-kit.failure.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "구급 가방을 잡아당기자 뒤편 선반이 무너졌다. 상처를 감싼 채 가방을 놓고 출구로 돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E06.search-kit.failure.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "구급 가방을 잡아당기자 뒤편 선반이 무너졌다. 상처를 감싼 채 가방을 놓고 출구로 돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E06.search-kit.failure.companion.fatal",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E06.low-retreat.success.companion.neutral",
+    "eventId": "E06",
+    "choiceId": "E06.low-retreat",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "시선을 낮추고 벽을 따라 천천히 움직였다. 다리가 후들거렸지만 뒤따르는 손에 닿지 않고 병원을 벗어났다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E06.low-retreat.success.companion.left",
+    "eventId": "E06",
+    "choiceId": "E06.low-retreat",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "시선을 낮추고 벽을 따라 천천히 움직였다. 다리가 후들거렸지만 뒤따르는 손에 닿지 않고 병원을 벗어났다.",
+      "{{companion.name}}의 목소리가 들린다. “조금 더 챙길 수 있었을까 싶지만…… 이제 연구동으로 가자.”"
+    ]
+  },
+  {
+    "id": "E06.low-retreat.success.companion.right",
+    "eventId": "E06",
+    "choiceId": "E06.low-retreat",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "시선을 낮추고 벽을 따라 천천히 움직였다. 다리가 후들거렸지만 뒤따르는 손에 닿지 않고 병원을 벗어났다.",
+      "{{companion.name}}의 목소리가 들린다. “소리가 멀어졌어. 여기서 벗어나니 겨우 숨이 쉬어진다.”"
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.abandon",
+    "eventId": "E06",
+    "choiceId": "E06.abandon",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐은 놓고 가자. 살아서 나가야 다시 구할 수도 있어."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.abandon.left",
+    "eventId": "E06",
+    "choiceId": "E06.abandon",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐은 놓고 가자. 살아서 나가야 다시 구할 수도 있어. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.abandon.right",
+    "eventId": "E06",
+    "choiceId": "E06.abandon",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐은 놓고 가자. 살아서 나가야 다시 구할 수도 있어. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.defend",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저걸로 문을 막을 수 있겠어. 물건은 포기하더라도 뒤를 막고 나가자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.defend.left",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저걸로 문을 막을 수 있겠어. 물건은 포기하더라도 뒤를 막고 나가자. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.defend.right",
+    "eventId": "E06",
+    "choiceId": "E06.defend",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저걸로 문을 막을 수 있겠어. 물건은 포기하더라도 뒤를 막고 나가자. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.low-retreat",
+    "eventId": "E06",
+    "choiceId": "E06.low-retreat",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 쪽으로 붙어. 조금 느려도 조용히 빠져나갈 수 있어. 내가 같이 살필게."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.low-retreat.left",
+    "eventId": "E06",
+    "choiceId": "E06.low-retreat",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 쪽으로 붙어. 조금 느려도 조용히 빠져나갈 수 있어. 내가 같이 살필게. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.low-retreat.right",
+    "eventId": "E06",
+    "choiceId": "E06.low-retreat",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 쪽으로 붙어. 조금 느려도 조용히 빠져나갈 수 있어. 내가 같이 살필게. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.withdraw",
+    "eventId": "E06",
+    "choiceId": "E06.withdraw",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이제 나가자. 상자 하나 때문에 여기서 발목 잡히고 싶지 않아."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.withdraw.left",
+    "eventId": "E06",
+    "choiceId": "E06.withdraw",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이제 나가자. 상자 하나 때문에 여기서 발목 잡히고 싶지 않아. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.withdraw.right",
+    "eventId": "E06",
+    "choiceId": "E06.withdraw",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "이제 나가자. 상자 하나 때문에 여기서 발목 잡히고 싶지 않아. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.salvage",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 상자만 확인하자. 다음에 먹을 것을 구할 곳이 없을 수도 있어. 곁에서 살필게."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.salvage.left",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 상자만 확인하자. 다음에 먹을 것을 구할 곳이 없을 수도 있어. 곁에서 살필게. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.salvage.right",
+    "eventId": "E06",
+    "choiceId": "E06.salvage",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 상자만 확인하자. 다음에 먹을 것을 구할 곳이 없을 수도 있어. 곁에서 살필게. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.search-kit",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "출구 옆에 구급 가방이 보여. 상처가 더 나기 전에 치료할 걸 챙겨 두자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.search-kit.left",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "출구 옆에 구급 가방이 보여. 상처가 더 나기 전에 치료할 걸 챙겨 두자. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E06.dialogue.opinion.search-kit.right",
+    "eventId": "E06",
+    "choiceId": "E06.search-kit",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "출구 옆에 구급 가방이 보여. 상처가 더 나기 전에 치료할 걸 챙겨 두자. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E06.dialogue.hesitation",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E06.dialogue.absent",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E06.dialogue.reunion",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E06.dialogue.reunion.rational",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E06.dialogue.reunion.emotional",
+    "eventId": "E06",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
     ]
   }
 ]

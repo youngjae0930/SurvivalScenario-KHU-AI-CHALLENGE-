@@ -9,8 +9,10 @@
     "weight": 1,
     "once": false,
     "text": [
-      "통신소를 지나 외곽 집결지의 차량 대기소에 도착했다. 멀리서 구조 차량의 엔진 소리가 들리지만, 여기서부터는 남은 체력과 상처가 이동 방법을 결정한다.",
-      "연락망으로 열린 우회 통로를 확인하지 못한 상태다. 단거리를 이용하려면 체력 15 이상과 부상 1 이하가 필요하다. 마지막으로 몸을 추스를지, 도구로 상처를 돌볼지 선택할 시간이다."
+      "남쪽 집결지의 차량 대기소에 도착한다. 봉쇄선 너머로 구조 차량이 서 있다.",
+      "여기서 잠깐 몸을 추스를 수 있다. 마지막 길을 앞두고 배낭을 내려놓는다. 물자를 써 몸과 장비를 돌볼지, 남은 것을 아끼며 쉴지 정한다.",
+      "단거리는 스태미나 15 이상·부상 1 이하, 우회 통로는 통로 정보와 스태미나 30 이상·부상 2 이하가 필요하다. 이번이 마지막 회복 기회다.",
+      "‘조금만 더 가면 된다.’ 배낭 끈을 다시 잡는다."
     ]
   },
   {
@@ -29,8 +31,9 @@
     "weight": 1,
     "once": false,
     "text": [
-      "통신소를 지나 차량 대기소에 도착했다. 앞서 연락망으로 확인한 우회 통로 정보가 남아 있다. 가까운 길이 버겁다면 체력 30 이상·부상 2 이하일 때 우회를 고려할 수 있다.",
-      "차량에 닿기 전 마지막 정비 시간이다. 단거리 조건은 체력 15 이상·부상 1 이하이며, 지금의 상태와 회복 후 남을 자원을 함께 살펴야 한다."
+      "남쪽 집결지에 닿는다. 무전으로 들었던 우회 통로의 입구가 보인다. 돌아갈 길이 있다는 사실에 잠깐 숨이 놓인다.",
+      "구조 차량이 떠나기 전에 몸을 추슬러야 한다. 물자를 쓰거나 조금만 쉬고 나설 수 있다.",
+      "단거리는 스태미나 15 이상·부상 1 이하, 확보한 우회 통로는 스태미나 30 이상·부상 2 이하가 필요하다. 이번이 마지막 회복 기회다."
     ]
   },
   {
@@ -43,8 +46,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "배낭과 장비를 정리하고 몸을 추슬렀다. 숨을 고르고 다시 움직일 준비를 마쳤다.",
-      "구조 차량으로 향하기 전, 지금 남은 체력과 부상을 확인한다."
+      "남은 물품을 살펴 몸과 장비를 추슬렀다. 일어나 배낭 끈을 당긴다. 구조 차량의 불빛은 아직 같은 자리에 있다."
     ]
   },
   {
@@ -57,36 +59,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "물자와 치료 도구는 아끼고 벽에 기대 마지막 휴식을 취했다. 호흡이 고르게 돌아왔지만 상처가 저절로 낫지는 않았다.",
-      "다시 일어서서 탈출에 필요한 체력과 부상 조건을 확인한다."
-    ]
-  },
-  {
-    "id": "E11.first-aid.success",
-    "eventId": "E11",
-    "choiceId": "E11.first-aid",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "치료 도구를 펴고 몸 상태를 살펴 필요한 곳을 처치했다. 도구 하나를 사용했고, 오래 쉬지 않아 체력은 그대로다.",
-      "탈출 전에 남은 상처와 체력을 다시 확인한다."
-    ]
-  },
-  {
-    "id": "E11.organize.success",
-    "eventId": "E11",
-    "choiceId": "E11.organize",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "배낭의 끈과 장비를 정돈했다. 몸은 조금 더 썼지만 손이 닿을 위치를 확인하자 긴장이 가라앉았다.",
-      "상처와 물자는 그대로다. 남은 체력이 탈출 조건을 충족하는지 확인한다."
+      "짐을 풀지 않고 잠시 눈을 감았다. 엔진 소리가 들릴 때마다 눈을 떴다. 몸이 조금 풀리자 마지막 길로 나섰다."
     ]
   },
   {
@@ -99,27 +72,591 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료에게 물자를 건넸다. 배낭의 여유는 줄었지만 나란히 앉아 잠시 숨을 고른다.",
-      "내 몸을 충분히 추스르는 대신, 서로를 믿고 다음 길로 향할 힘을 나눴다."
+      "마지막 먹을 것을 나눴다. 잠깐 서로의 얼굴을 보다가 봉쇄선 쪽으로 시선을 돌린다. “가자. 저기까지는 같이.” 배낭을 고쳐 멨다."
     ]
   },
   {
-    "id": "E11.scene.companion",
+    "id": "E11.maintain.success.companion.neutral",
     "eventId": "E11",
-    "choiceId": null,
-    "slot": "scene",
+    "choiceId": "E11.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 물품을 살펴 몸과 장비를 추슬렀다. 일어나 배낭 끈을 당긴다. 구조 차량의 불빛은 아직 같은 자리에 있다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E11.maintain.success.companion.left",
+    "eventId": "E11",
+    "choiceId": "E11.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 물품을 살펴 몸과 장비를 추슬렀다. 일어나 배낭 끈을 당긴다. 구조 차량의 불빛은 아직 같은 자리에 있다.",
+      "{{companion.name}}의 목소리가 들린다. “마지막 길에 쓸 힘은 남겨야 해. 일어설 수 있으면 천천히 가자.”"
+    ]
+  },
+  {
+    "id": "E11.maintain.success.companion.right",
+    "eventId": "E11",
+    "choiceId": "E11.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 물품을 살펴 몸과 장비를 추슬렀다. 일어나 배낭 끈을 당긴다. 구조 차량의 불빛은 아직 같은 자리에 있다.",
+      "{{companion.name}}의 목소리가 들린다. “저 불빛까지 같이 가자. 마지막에 너를 놓치고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "E11.rest.success.companion.neutral",
+    "eventId": "E11",
+    "choiceId": "E11.rest",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐을 풀지 않고 잠시 눈을 감았다. 엔진 소리가 들릴 때마다 눈을 떴다. 몸이 조금 풀리자 마지막 길로 나섰다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E11.rest.success.companion.left",
+    "eventId": "E11",
+    "choiceId": "E11.rest",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐을 풀지 않고 잠시 눈을 감았다. 엔진 소리가 들릴 때마다 눈을 떴다. 몸이 조금 풀리자 마지막 길로 나섰다.",
+      "{{companion.name}}의 목소리가 들린다. “마지막 길에 쓸 힘은 남겨야 해. 일어설 수 있으면 천천히 가자.”"
+    ]
+  },
+  {
+    "id": "E11.rest.success.companion.right",
+    "eventId": "E11",
+    "choiceId": "E11.rest",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐을 풀지 않고 잠시 눈을 감았다. 엔진 소리가 들릴 때마다 눈을 떴다. 몸이 조금 풀리자 마지막 길로 나섰다.",
+      "{{companion.name}}의 목소리가 들린다. “저 불빛까지 같이 가자. 마지막에 너를 놓치고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "E11.share.success.companion.neutral",
+    "eventId": "E11",
+    "choiceId": "E11.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 먹을 것을 나눴다. 잠깐 서로의 얼굴을 보다가 봉쇄선 쪽으로 시선을 돌린다. “가자. 저기까지는 같이.” 배낭을 고쳐 멨다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E11.share.success.companion.left",
+    "eventId": "E11",
+    "choiceId": "E11.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 먹을 것을 나눴다. 잠깐 서로의 얼굴을 보다가 봉쇄선 쪽으로 시선을 돌린다. “가자. 저기까지는 같이.” 배낭을 고쳐 멨다.",
+      "{{companion.name}}의 목소리가 들린다. “마지막 길에 쓸 힘은 남겨야 해. 일어설 수 있으면 천천히 가자.”"
+    ]
+  },
+  {
+    "id": "E11.share.success.companion.right",
+    "eventId": "E11",
+    "choiceId": "E11.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 먹을 것을 나눴다. 잠깐 서로의 얼굴을 보다가 봉쇄선 쪽으로 시선을 돌린다. “가자. 저기까지는 같이.” 배낭을 고쳐 멨다.",
+      "{{companion.name}}의 목소리가 들린다. “저 불빛까지 같이 가자. 마지막에 너를 놓치고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.maintain",
+    "eventId": "E11",
+    "choiceId": "E11.maintain",
+    "slot": "opinion",
     "conditions": [
       {
         "kind": "companion",
         "present": true
       }
     ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 길이야. 지금 네 몸부터 돌보자. 문이 닫히기 전에 같이 가야지."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.maintain.left",
+    "eventId": "E11",
+    "choiceId": "E11.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
     "priority": 10,
     "weight": 1,
     "once": false,
     "text": [
-      "통신소를 지나 외곽 집결지의 차량 대기소에 도착했다. 멀리서 구조 차량의 엔진 소리가 들리지만, 여기서부터는 남은 체력과 상처가 이동 방법을 결정한다.",
-      "탈출을 앞두고 동료와 마지막으로 몸과 배낭을 확인한다. 내 회복을 우선할지, 물자를 동료에게 양보하고 함께 쉴지 결정해야 한다. 부상 치료는 정비 중 함께 하거나 치료 도구로 따로 처치할 수 있다."
+      "마지막 길이야. 지금 네 몸부터 돌보자. 문이 닫히기 전에 같이 가야지. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.maintain.right",
+    "eventId": "E11",
+    "choiceId": "E11.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 길이야. 지금 네 몸부터 돌보자. 문이 닫히기 전에 같이 가야지. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.rest",
+    "eventId": "E11",
+    "choiceId": "E11.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잠깐 숨만 돌리고 가자. 차는 아직 저기 있어."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.rest.left",
+    "eventId": "E11",
+    "choiceId": "E11.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잠깐 숨만 돌리고 가자. 차는 아직 저기 있어. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.rest.right",
+    "eventId": "E11",
+    "choiceId": "E11.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "잠깐 숨만 돌리고 가자. 차는 아직 저기 있어. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.share",
+    "eventId": "E11",
+    "choiceId": "E11.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 나눠 먹자. 여기까지 왔잖아. 마지막 길은 같이 걷고 싶어."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.share.left",
+    "eventId": "E11",
+    "choiceId": "E11.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 길이야. 먹을 건 조금씩 나누고 출발하자."
+    ]
+  },
+  {
+    "id": "E11.dialogue.opinion.share.right",
+    "eventId": "E11",
+    "choiceId": "E11.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 나눠 먹자. 여기까지 왔잖아. 마지막 길은 같이 걷고 싶어."
+    ]
+  },
+  {
+    "id": "E11.dialogue.hesitation",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E11.dialogue.absent",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E11.dialogue.reunion",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E11.dialogue.reunion.rational",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E11.dialogue.reunion.emotional",
+    "eventId": "E11",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
     ]
   }
 ]
