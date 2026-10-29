@@ -10,6 +10,8 @@ export function GameRoot({ client }: GameRootProps) {
   const [preview, setPreview] = useState<ActionPreviewViewModel | null>(null)
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
+  const [restartWarning, setRestartWarning] = useState(false)
+  const [startKey, setStartKey] = useState(0)
   const lock = useRef(false)
   const main = useRef<HTMLElement>(null)
   const view = snapshot.view
@@ -23,6 +25,7 @@ export function GameRoot({ client }: GameRootProps) {
       const result = await client.dispatch(command)
       if (!result.ok) { setError(result.error.message); if (['stale-context', 'save-failed', 'save-conflict'].includes(result.error.code)) setPreview(null); return false }
       setPreview(null)
+      if (command.type === 'restart' || (command.type === 'retry-save' && client.getSnapshot().view.kind === 'start')) setStartKey(key => key + 1)
       return true
     } catch { setError('진행을 처리하지 못했습니다. 다시 시도해 주세요.'); return false }
     finally { lock.current = false; setPending(false) }
@@ -45,13 +48,14 @@ export function GameRoot({ client }: GameRootProps) {
   return <div className="game-shell">
     <header className="site-header"><div className="brand"><span className="brand-symbol" aria-hidden="true">封</span><div>생존 시나리오:<span>봉쇄 도시</span></div></div><div className="edition">PROTOTYPE <span>{snapshot.presentation?.edition ?? '병원 구간까지 / 01—06'}</span></div></header>
     <div className="session-banner" role="note"><span className="signal" aria-hidden="true" />{snapshot.persistence.message}</div>
+    {(view.kind !== 'start' || view.canResume || view.succession) && <div className="restart-controls"><button className="secondary" disabled={disabled} onClick={() => setRestartWarning(true)}>처음부터 시작</button></div>}
     <main ref={main} tabIndex={-1} className="main-content" aria-busy={pending}>
       {snapshot.source === 'ui-fixture' && <p className="notice-text">개발 샘플 화면</p>}
       {snapshot.commit.kind === 'blocked' && <p role="alert" className="error-message">{snapshot.commit.message}</p>}
       {snapshot.commit.kind === 'saving' && <p role="status" className="notice-text">진행 저장 중… 창을 닫지 말아 주세요.</p>}
       {snapshot.commit.kind === 'save-failed' && <section role="alert" className="error-message"><p>{snapshot.commit.message}</p><button className="primary" disabled={pending} onClick={() => snapshot.commit.kind === 'save-failed' && send({ type: 'retry-save', operationId: snapshot.commit.operationId })}>같은 결과로 저장 재시도</button></section>}
       {error && snapshot.commit.kind === 'ready' && <p role="alert" className="error-message">{error}</p>}
-      {view.kind === 'start' ? <StartScreen view={view} pending={disabled} error={error} persistenceMessage={snapshot.persistence.message} edition={snapshot.presentation?.edition} onStart={send} /> : <>
+      {view.kind === 'start' ? <StartScreen key={startKey} view={view} pending={disabled} error={error} persistenceMessage={snapshot.persistence.message} edition={snapshot.presentation?.edition} onStart={send} /> : <>
         <nav className="journey" aria-label="체험 구간 진행"><ol>{journey.map((step, index) => <li key={step.id} className={step.state === 'upcoming' ? '' : step.state} aria-current={step.state === 'current' ? 'step' : undefined}><span>{String(index + 1).padStart(2, '0')}</span>{step.label}</li>)}</ol><span className="journey-note">도시 외곽을 향해</span></nav>
         <div className="play-layout"><section className="scene">
           {view.kind === 'choice' && <>
@@ -61,7 +65,7 @@ export function GameRoot({ client }: GameRootProps) {
             {view.notices.map(line => <p className="consequence" key={line}>{line}</p>)}
             {view.companion.kind === 'present' && view.companion.opinion.kind === 'ready' && <section className="companion-advice" aria-label="동료 의견"><strong>{view.companion.name} · 신뢰 {view.companion.trust}</strong><p>{view.companion.opinion.text}</p><small>{view.companion.opinion.reason}</small></section>}
             <div className="choice-heading"><h2>어떻게 하시겠습니까?</h2><span>선택 전 비용과 결과를 확인할 수 있습니다.</span></div>
-            <div className="action-list">{view.actions.map((action, index) => <button key={action.actionId} className="action-card" disabled={disabled || action.availability.kind !== 'available'} onClick={() => showPreview(view, action.actionId)}><span className="action-index">0{index + 1}</span><span><strong>{action.label}</strong>{(action.recommended || action.requiresCompanion) && <small className="recommendation-badge">{action.requiresCompanion ? '동료 선택' : '동료 추천'}</small>}<small>{action.intention}</small>{action.availability.kind === 'locked' && <small>{action.availability.reasons.join(' ')}</small>}</span><span className="action-arrow" aria-hidden="true">↗</span></button>)}</div>
+            <div className="action-list">{view.actions.map((action, index) => <button key={action.actionId} className="action-card" disabled={disabled || action.availability.kind !== 'available'} onClick={() => showPreview(view, action.actionId)}><span className="action-index">{String(index + 1).padStart(2, '0')}</span><span><strong>{action.label}</strong>{(action.recommended || action.requiresCompanion) && <small className="recommendation-badge">{action.requiresCompanion ? '동료 선택' : '동료 추천'}</small>}<small>{action.intention}</small>{action.availability.kind === 'locked' && <small>{action.availability.reasons.join(' ')}</small>}</span><span className="action-arrow" aria-hidden="true">↗</span></button>)}</div>
             {(view.treatmentActionIds?.length ?? (view.context.eventId === 'E04' ? 1 : 0)) > 0 && <p className="scene-hint">치료는 정비 선택의 확인창에서 함께 결정합니다. {view.treatment.kind === 'locked' ? view.treatment.reasons.join(' ') : '현재 치료 도구를 사용할 수 있습니다.'}</p>}
             {view.recentResult && <details className="recent-result"><summary>직전 선택 · {view.recentResult.label}</summary><ul>{view.recentResult.text.map((line, index) => <li key={index}>{line}</li>)}</ul></details>}
           </>}
@@ -79,6 +83,14 @@ export function GameRoot({ client }: GameRootProps) {
       </>}
     </main>
     <footer className="site-footer"><span>생존 시나리오: 봉쇄 도시</span><span>선택은 성향을 바꾸고, 결과는 다음 장면에 남습니다.</span></footer>
+    {restartWarning && <Modal title="처음부터 시작할까요?" onClose={() => { if (!pending) setRestartWarning(false) }}>
+      <p className="error-message">현재 진행과 이 저장에 포함된 결말·계승 동료 기록이 모두 삭제됩니다. 삭제한 데이터는 되돌릴 수 없습니다.</p>
+      <p>계승 없이 첫 회차의 이름과 설문부터 다시 시작합니다.</p>
+      <div className="dialog-actions"><button className="secondary" disabled={pending} onClick={() => setRestartWarning(false)}>취소하고 계속하기</button><button className="primary" disabled={disabled} onClick={async () => {
+        await send({ type: 'restart', confirmation: 'discard-saved-progress' })
+        setRestartWarning(false)
+      }}>데이터 삭제 후 처음부터 시작</button></div>
+    </Modal>}
     {preview && view.kind === 'choice' && <Modal title={preview.label} onClose={() => { if (!pending) setPreview(null) }}>
       <p>{preview.intention}</p>
       {preview.execution && <fieldset className="execution-options"><legend>실행 주체</legend>{preview.execution.options.map(option => <label className="treatment-option" key={option.actor}>

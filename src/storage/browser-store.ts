@@ -8,6 +8,8 @@ export interface SaveStore {
   /** Hold the exclusive player lock until this document closes or navigates away. */
   acquire(): Promise<boolean>
   compareAndSet(expected: string | null, next: string): Promise<void>
+  /** Optional for older adapters. Removes only the game slot under the same lock/conflict checks. */
+  compareAndRemove?(expected: string | null): Promise<void>
 }
 
 /** No IO or lock acquisition at construction (safe for React StrictMode initialization). */
@@ -15,6 +17,10 @@ export function createBrowserStore(): SaveStore {
   let held = false
   let acquiring: Promise<boolean> | null = null
   const read = () => window.localStorage.getItem(SAVE_KEY)
+  const check = (expected: string | null) => {
+    if (!held) throw new SaveError('save-conflict', '다른 탭과의 진행 충돌을 막기 위해 저장을 중단했습니다. 이 탭을 새로고침해 주세요.')
+    if (read() !== expected) throw new SaveError('save-conflict', '저장 내용이 다른 곳에서 변경되었습니다. 덮어쓰지 않습니다. 새로고침 후 이어해 주세요.')
+  }
   return {
     read,
     acquire() {
@@ -33,9 +39,12 @@ export function createBrowserStore(): SaveStore {
       return acquiring
     },
     async compareAndSet(expected, next) {
-      if (!held) throw new SaveError('save-conflict', '다른 탭과의 진행 충돌을 막기 위해 저장을 중단했습니다. 이 탭을 새로고침해 주세요.')
-      if (read() !== expected) throw new SaveError('save-conflict', '저장 내용이 다른 곳에서 변경되었습니다. 덮어쓰지 않습니다. 새로고침 후 이어해 주세요.')
+      check(expected)
       window.localStorage.setItem(SAVE_KEY, next)
+    },
+    async compareAndRemove(expected) {
+      check(expected)
+      window.localStorage.removeItem(SAVE_KEY)
     },
   }
 }

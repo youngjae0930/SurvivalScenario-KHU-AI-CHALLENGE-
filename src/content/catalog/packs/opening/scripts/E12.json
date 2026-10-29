@@ -82,40 +82,6 @@
     ]
   },
   {
-    "id": "E12.barrier.ending",
-    "eventId": "E12",
-    "choiceId": "E12.barrier",
-    "slot": "success",
-    "conditions": [],
-    "priority": 0,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "방벽 안쪽의 짧은 길을 따라 차량에 닿았다. 여기까지 버틴 몸으로 마지막 거리를 건넜다.",
-      "{{protagonist.name}}은 도시를 벗어났다. 지나온 선택과 마지막 성향이 기록으로 남는다."
-    ]
-  },
-  {
-    "id": "E12.barrier.ending.data",
-    "eventId": "E12",
-    "choiceId": "E12.barrier",
-    "slot": "success",
-    "conditions": [
-      {
-        "kind": "flag",
-        "flag": "data",
-        "value": true
-      }
-    ],
-    "priority": 5,
-    "weight": 1,
-    "once": false,
-    "text": [
-      "마지막 짧은 길을 건너 구조 차량에 도착했다.",
-      "배낭 속 연구 자료도 함께 도시 밖으로 나왔다. {{protagonist.name}}은 자료를 전달할 곳을 찾으며 이번 여정을 마친다."
-    ]
-  },
-  {
     "id": "E12.request.ending",
     "eventId": "E12",
     "choiceId": "E12.request",

@@ -35,7 +35,7 @@ const input = { ...origin, answers: resolved.value }
 function finish(pack: CatalogPack, start: CatalogRun) {
   let run = start
   while (run.phase === 'choice') {
-    expect(catalogChoices(pack, run)).toHaveLength(4)
+    expect(catalogChoices(pack, run)).toHaveLength(run.visitIndex === run.route.length - 1 ? 3 : 4)
     const id = run.visitIndex === run.route.length - 1 ? 'E12.short' : 'continue'
     run = executeCatalogAction(pack, run, id)
     if (run.phase === 'result') run = acknowledgeCatalogResult(pack, run, run.result!.resultId)

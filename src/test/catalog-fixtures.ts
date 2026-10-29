@@ -18,6 +18,10 @@ import decisionEchoSnapshot from './opening-catalog-v15.json'
 import companionJourneySnapshot from './opening-catalog-v16.json'
 import companionCommandSnapshot from './opening-catalog-v17.json'
 import companionOutcomeSnapshot from './opening-catalog-v18.json'
+import flexibleStagesSnapshot from './opening-catalog-v19.json'
+
+/** Last fixed-choice release; existing saved runs retain these choices. */
+export function makeFlexibleStagesCatalogFixture(): CatalogPack { return compileCatalog(flexibleStagesSnapshot) }
 
 export function makeCompanionOutcomeCatalogFixture(): CatalogPack { return compileCatalog(companionOutcomeSnapshot) }
 

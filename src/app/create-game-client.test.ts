@@ -34,7 +34,7 @@ describe('실제 세션 GameClient', () => {
     const client = create()
     const snapshot = client.getSnapshot()
     expect(snapshot).toBe(client.getSnapshot())
-    expect(snapshot).toMatchObject({ contractVersion: '0.7.0', source: 'core', persistence: { kind: 'session' }, commit: { kind: 'ready' }, view: { kind: 'start', canResume: false } })
+    expect(snapshot).toMatchObject({ contractVersion: '0.8.0', source: 'core', persistence: { kind: 'session' }, commit: { kind: 'ready' }, view: { kind: 'start', canResume: false } })
     expect(snapshot.persistence.message).toContain('새로고침')
     expect(snapshot.view).not.toHaveProperty('rngState')
     expect(Object.isFrozen(snapshot.view)).toBe(true)

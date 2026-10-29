@@ -30,6 +30,7 @@ const option = object({ actionId: commandId, goalId: id, judgment: enumeration(n
   relationship: relationshipSchema, trustOutcomes: object({ success: int(-5, 5), failure: int(-5, 5) }, ['success', 'failure']),
   action: runtimeAction, preview }, ['route', 'pace', 'execution', 'relationship', 'trustOutcomes'])
 const context = object({
+  optionCount: int(1, 20),
   relationship: object({ version: enumeration('outcome-1'), companion }),
   executionActor: enumeration('companion'), commandTrustSufficient: bool,
   autonomy: object({ policy: autonomySchema, preferredActionId: nullable(commandId) }),
@@ -37,8 +38,8 @@ const context = object({
   eventId: id, locationId: id, stage: enumeration('early', 'middle', 'late'), groupId: id, sceneScriptId: id,
   core, companion: nullable(companion),
   facts: { type: 'object', properties: {}, additionalProperties: bool },
-  visitedLocationIds: array(id, 1, 48), options: array(option, 4, 4), selectedAction: runtimeAction,
-}, ['autonomy', 'executionActor', 'commandTrustSufficient', 'relationship'])
+  visitedLocationIds: array(id, 1, 48), options: array(option, 1, 20), selectedAction: runtimeAction,
+}, ['autonomy', 'executionActor', 'commandTrustSufficient', 'relationship', 'optionCount'])
 const memorySchema = object({ version: enumeration('context-1'), entries: array(object({ eventId: id, actionId: commandId, treat: bool, context }), 0, 48) })
 
 function sameData(a: unknown, b: unknown): boolean {
@@ -68,7 +69,8 @@ export function isDecisionMemory(value: unknown): value is CatalogDecisionMemory
     return (!context.executionActor || (context.companion !== null && selected.execution !== undefined && selected.behavior === 'action'))
       && (!context.relationship || sameData(context.relationship.companion, context.companion))
       && context.eventId === entry.eventId && visited.length === index + 1 && visited.at(-1) === context.locationId
-      && new Set(visited).size === visited.length && new Set(context.options.map(option => option.actionId)).size === 4
+      && new Set(visited).size === visited.length && context.options.length === (context.optionCount ?? 4)
+      && new Set(context.options.map(option => option.actionId)).size === context.options.length
       && selected.preview.allowed && context.selectedAction.id === entry.actionId && isCoreAction(context.selectedAction)
       && sameData(selectedAction, context.selectedAction)
       && (!context.companion?.judgmentCounts || context.companion.judgmentCounts.rescue + context.companion.judgmentCounts.self <= 3)

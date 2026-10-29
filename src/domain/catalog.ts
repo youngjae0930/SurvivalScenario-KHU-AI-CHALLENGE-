@@ -156,6 +156,8 @@ export interface CatalogHistory {
 }
 /** Before-state evidence, not a policy for deciding whether two scenes are the same. */
 export interface CatalogDecisionContext {
+  /** Non-four groups record their count; absent in historical four-choice evidence. */
+  readonly optionCount?: number
   readonly relationship?: { readonly version: 'outcome-1'; readonly companion: CompanionContext }
   readonly executionActor?: 'companion'
   readonly commandTrustSufficient?: boolean

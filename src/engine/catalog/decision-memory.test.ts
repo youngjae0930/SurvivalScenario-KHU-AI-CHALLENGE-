@@ -113,7 +113,7 @@ describe('이전 선택 당시 상황의 보존', () => {
     const next = executeCatalogAction(pack, source, 'E12.short')
     const context = next.result!.decisionContext!
     expect(context.core).toEqual(source.core)
-    expect(context.options.map(o => o.route)).toEqual(['short', 'detour', 'short', 'request'])
+    expect(context.options.map(o => o.route)).toEqual(['short', 'detour', 'request'])
     expect(context.options.find(o => o.route === 'request')?.preview.allowed).toBe(false)
     const legacy = catalogLegacy(pack, next)!
     expect(legacy.decisionMemory!.entries).toHaveLength(12)

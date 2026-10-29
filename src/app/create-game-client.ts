@@ -12,6 +12,7 @@ import type { RunOrigin } from '../storage/opening-save'
 import type { EngineResult, ResolvedQuestionnaireAnswer } from '../domain/types'
 
 export interface RunDriver<R> {
+  restart?(): void
   readonly introduction?: readonly string[]
   create(input: { runId: string; name: string; seed: number; answers: readonly ResolvedQuestionnaireAnswer[] }): EngineResult<R>
   next?(previous: R, input: Parameters<RunDriver<R>['create']>[0]): EngineResult<R>
@@ -65,7 +66,7 @@ export function createDriverClient<R extends { readonly runId: string; readonly 
   let origin: RunOrigin | null = null
   let savedRaw: string | null = null
   let resumable: { origin: RunOrigin; run: R } | null = null
-  let pendingSave: { next: R; origin: RunOrigin; raw: string; operationId: string } | null = null
+  let pendingSave: { next: R | null; origin: RunOrigin | null; raw: string | null; operationId: string } | null = null
   const store = options.store
   let busy = false
   let counter = 0
@@ -106,18 +107,29 @@ export function createDriverClient<R extends { readonly runId: string; readonly 
     notify()
   }
   function setCommit(commit: AppSnapshot['commit']) { snapshot = freeze({ ...snapshot, commit }); notify() }
+  function publishRestart() {
+    driver.restart?.()
+    run = null; origin = null; resumable = null; preparingNext = false; issued = null
+    snapshot = wrap({ kind: 'start', introduction: driver.introduction ?? ['새로운 이야기입니다. 첫 회차를 혼자 시작합니다.', '이름과 여섯 응답으로 새 주인공을 정해 주세요.'],
+      questions: readQuestions(), previousAnswers: [], canResume: false, newRun: { kind: 'available' } })
+    notify()
+  }
   async function persistPending(): Promise<ContractResult<null>> {
     if (!store || !pendingSave) return fail('invalid-phase', '재시도할 저장이 없습니다.')
     const candidate = pendingSave
     setCommit({ kind: 'saving', operationId: candidate.operationId })
     try {
       if (!await store.acquire()) throw new SaveError('save-conflict', '다른 탭에서 플레이 중입니다. 그 탭을 닫은 뒤 이 탭을 새로고침해 주세요.')
-      await store.compareAndSet(savedRaw, candidate.raw)
+      if (candidate.raw === null) {
+        if (!store.compareAndRemove) throw new SaveError('save-failed', '이 저장소는 안전한 초기화를 지원하지 않습니다. 기존 진행을 유지합니다.')
+        await store.compareAndRemove(savedRaw)
+      } else await store.compareAndSet(savedRaw, candidate.raw)
       savedRaw = candidate.raw
       origin = candidate.origin
       pendingSave = null
       resumable = null
-      publish(candidate.next)
+      if (candidate.next === null) publishRestart()
+      else publish(candidate.next)
       return { ok: true, value: null }
     } catch (error) {
       if (error instanceof SaveError && error.code === 'save-conflict') {
@@ -125,7 +137,9 @@ export function createDriverClient<R extends { readonly runId: string; readonly 
         setCommit({ kind: 'blocked', message: error.message })
         return fail('save-conflict', error.message)
       }
-      const message = error instanceof SaveError ? error.message : '저장하지 못했습니다. 창을 닫지 말고 저장을 다시 시도해 주세요. 선택과 난수는 다시 처리하지 않습니다.'
+      const message = error instanceof SaveError ? error.message : candidate.next === null
+        ? '저장 데이터를 삭제하지 못했습니다. 기존 진행은 유지됩니다. 창을 닫지 말고 다시 시도해 주세요.'
+        : '저장하지 못했습니다. 창을 닫지 말고 저장을 다시 시도해 주세요. 선택과 난수는 다시 처리하지 않습니다.'
       setCommit({ kind: 'save-failed', operationId: candidate.operationId, message })
       return fail('save-failed', message)
     }
@@ -172,6 +186,14 @@ export function createDriverClient<R extends { readonly runId: string; readonly 
         // Lock synchronously before yielding so rapid calls cannot both commit the same input.
         await Promise.resolve()
         switch (command.type) {
+          case 'restart': {
+            if (command.confirmation !== 'discard-saved-progress') return fail('invalid-input', '데이터 삭제 경고를 확인한 뒤 처음부터 시작해 주세요.')
+            if (!run && !resumable) return fail('invalid-phase', '초기화할 회차가 없습니다.')
+            if (!store) { publishRestart(); return { ok: true, value: null } }
+            pendingSave = { next: null, origin: null, raw: null, operationId: `restart:save:${++counter}` }
+            issued = null
+            return await persistPending()
+          }
           case 'retry-save': {
             if (!pendingSave || command.operationId !== pendingSave.operationId) return fail('stale-context', '현재 재시도할 저장 요청이 아닙니다.')
             return await persistPending()

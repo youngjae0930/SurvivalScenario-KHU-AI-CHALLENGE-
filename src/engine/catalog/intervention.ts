@@ -59,7 +59,7 @@ export function selectIntervention(event: CatalogEvent, group: CatalogEvent['gro
   // Reuse the approved trait/count preference, independently of the historical trust gate.
   const opposing = selectTrustIntervention(event, group, { ...context, companion: { ...context.companion, trust: 100 } })
   if (opposing) return { ...opposing, choice: asCompanionChoice(opposing.choice), allowed: true, lockReason: '' }
-  // The authored fourth action remains the companion slot when no opposing preference applies.
+  // The explicitly designated action is the companion slot, regardless of group size.
   // This does not invent a neutral preference or a new action ranking.
   const choice = group.choices.find(item => item.id === policy.replaceChoiceId)!
   return { choice: asCompanionChoice(choice), replaceChoiceId: policy.replaceChoiceId, allowed: true, lockReason: '',

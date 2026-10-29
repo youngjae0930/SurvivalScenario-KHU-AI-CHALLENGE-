@@ -1,5 +1,5 @@
 /** UI contract version; unrelated to save schemaVersion or game rulesVersion. */
-export const UI_CONTRACT_VERSION = '0.7.0' as const
+export const UI_CONTRACT_VERSION = '0.8.0' as const
 
 /** Narrative IDs come from validated content; mechanical E01~E12 IDs stay internal. */
 export type EventId = string

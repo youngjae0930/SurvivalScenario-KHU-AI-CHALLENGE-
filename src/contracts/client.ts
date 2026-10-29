@@ -9,6 +9,7 @@ export interface PreviewActionRequest {
 }
 
 export type GameCommand =
+  | { readonly type: 'restart'; readonly confirmation: 'discard-saved-progress' }
   | { readonly type: 'start-run'; readonly name: string; readonly answers: readonly QuestionnaireAnswer[] }
   | { readonly type: 'prepare-next-run'; readonly sourceRunId: string; readonly sourceResultId: string }
   | { readonly type: 'cancel-next-run' }

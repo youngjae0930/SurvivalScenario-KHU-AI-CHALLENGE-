@@ -1,5 +1,6 @@
 import type { CatalogPack, CatalogRun, CompanionContext } from '../domain/catalog'
 import type { EngineResult } from '../domain/types'
+import type { GameClient } from '../contracts'
 import { readCatalogPacks, readDefaultCatalog } from '../content/catalog/registry'
 import { compileCatalog } from '../engine/catalog/compile'
 import { acknowledgeCatalogResult, CatalogRuntimeError, createCatalogRun, executeCatalogAction, previewCatalogAction } from '../engine/catalog/runtime'
@@ -25,6 +26,7 @@ export function createCatalogClient(options: ClientOptions & { pack?: CatalogPac
   }
   const forRun = (run: CatalogRun | null) => run && candidatePack?.runId === run.runId ? candidatePack.pack : pack()
   const driver: RunDriver<CatalogRun> = {
+    restart() { pinnedPack = options.pack ? compileCatalog(options.pack) : null; candidatePack = null },
     ...(options.companion ? { introduction: ['봉쇄된 도시. 동료와 함께 도시 외곽으로 이동합니다.', '여섯 응답으로 주인공 성향을 정합니다. 극단 장면의 동료 선택은 동료의 성향과 판단에 따라 달라집니다.'] } : {}),
     create: input => attempt(() => createCatalogRun(pack(), { ...input, companion: options.companion })),
     decode(raw) { const loaded = decodeCatalogSave(raw, resolveAnswers); pinnedPack = loaded.pack; return loaded },
@@ -55,9 +57,40 @@ export function createProductClient(options: ClientOptions = {}) {
       const raw = options.store.read()
       if (raw !== null) {
         const data: unknown = JSON.parse(raw)
-        if (!data || typeof data !== 'object' || !('schemaVersion' in data) || ![6, 7, 8].includes(Number(data.schemaVersion))) return createGameClient(options)
+        if (!data || typeof data !== 'object' || !('schemaVersion' in data) || ![6, 7, 8].includes(Number(data.schemaVersion))) return legacyProductClient(options)
       }
-    } catch { return createGameClient(options) }
+    } catch { return legacyProductClient(options) }
   }
   return createCatalogClient(options)
+}
+
+/** Preserve legacy rules until an explicit reset succeeds; fresh starts then use the current catalog. */
+function legacyProductClient(options: ClientOptions): GameClient {
+  let current = createGameClient(options)
+  let restarting = false
+  let dispatching = false
+  const listeners = new Set<() => void>()
+  const notify = () => { for (const listener of listeners) { try { listener() } catch { /* isolate observers */ } } }
+  let unsubscribe = current.subscribe(notify)
+  return {
+    getSnapshot: () => current.getSnapshot(),
+    subscribe(listener) { listeners.add(listener); return () => { listeners.delete(listener) } },
+    previewAction: request => current.previewAction(request),
+    async dispatch(command) {
+      if (dispatching) return { ok: false, error: { code: 'busy', message: '진행 중인 처리를 기다려 주세요.', decisions: [] } }
+      dispatching = true
+      try {
+        if (command.type === 'restart' && current.getSnapshot().commit.kind === 'ready') restarting = true
+        const result = await current.dispatch(command)
+        if (restarting && result.ok && (command.type === 'restart' || command.type === 'retry-save')) {
+          restarting = false
+          unsubscribe()
+          current = createCatalogClient(options)
+          unsubscribe = current.subscribe(notify)
+          notify()
+        } else if (current.getSnapshot().commit.kind !== 'save-failed') restarting = false
+        return result
+      } finally { dispatching = false }
+    },
+  }
 }

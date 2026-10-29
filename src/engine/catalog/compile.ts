@@ -31,7 +31,6 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
     unique(pack.manifest.decisionEcho.compatibleRevisions, 'decisionEcho.compatibleRevisions')
     check(pack.manifest.decisionEcho.compatibleRevisions.includes(pack.manifest.revision), 'decisionEcho: 현재 콘텐츠 revision을 포함해야 합니다.')
   }
-  if (pack.manifest.decisionMemoryVersion) check(pack.events.every(event => event.groups.every(group => group.choices.length === 4)), 'decisionMemory: 상황 기록 팩은 모든 그룹에 네 선택이 필요합니다.')
   if (pack.manifest.trustVersion) check(pack.manifest.recommendationVersion === 'survival-1', 'trust: 성향 평가에는 일반 추천 버전이 필요합니다.')
   if (pack.manifest.autonomyVersion === 'journey-2') check(pack.manifest.trustVersion === 'outcome-1', 'journey-2: 결과 기반 신뢰 버전이 필요합니다.')
   check(!!pack.manifest.recommendationVersion || pack.events.every(event => !event.recommendation && allChoices(event).every(choice => !choice.pace)),
@@ -102,7 +101,7 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
     if (event.intervention) {
       const policy = event.intervention
       const group = event.groups.find(item => item.id === policy.groupId)
-      check(!terminal && !!group && group.choices.length === 4, `event ${event.id}: 제지는 네 선택의 극단 그룹에서만 가능합니다.`)
+      check(!terminal && !!group && group.choices.length >= 2, `event ${event.id}: 동료 선택 그룹에는 본인 행동과 동료 슬롯이 필요합니다.`)
       check(!!group?.conditions.some(condition => condition.kind === 'number' && condition.subject === 'protagonist' && condition.stat === policy.axis
         && (policy.extremePole === 'left' ? condition.min === 0 && condition.max === 22 : condition.min === 78 && condition.max === 100)), `event ${event.id}: 제지 축/극이 그룹 발동 조건과 다릅니다.`)
       check(!!group?.choices.some(choice => choice.id === policy.replaceChoiceId), `event ${event.id}: 교체할 선택이 없습니다.`)

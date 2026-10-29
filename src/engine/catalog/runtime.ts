@@ -232,6 +232,7 @@ export function previewCatalogAction(pack: CatalogPack, run: CatalogRun, actionI
 export function catalogDecisionSituation(pack: CatalogPack, run: CatalogRun): CatalogDecisionSituation {
   if (run.phase !== 'choice') throw new CatalogRuntimeError('invalid-phase', '선택 단계가 아닙니다.')
   return structuredClone({
+    ...(catalogChoices(pack, run).length !== 4 ? { optionCount: catalogChoices(pack, run).length } : {}),
     ...(pack.manifest.trustVersion && activeCatalogCompanion(run)
       ? { relationship: { version: pack.manifest.trustVersion, companion: activeCatalogCompanion(run)! } } : {}),
     ...(pack.manifest.executionVersion && activeCatalogCompanion(run) && catalogChoices(pack, run).some(choice => choice.execution)

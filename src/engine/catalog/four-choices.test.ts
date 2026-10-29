@@ -24,12 +24,12 @@ function arrive(index: number): CatalogRun {
 }
 
 describe('새 회차의 네 선택과 기존 회차 보존', () => {
-  it.each([2, 3, 5])('새 콘텐츠 그룹에 %i개만 정의하면 등록을 거부한다', count => {
+  it.each([0, 5])('빈 그룹과 중복 행동으로 채운 %i개 그룹은 등록을 거부한다', count => {
     const source = structuredClone(pack)
     const event = source.events[0]
     const choices = event.groups[0].choices
     const invalid = { ...source, events: [{ ...event, groups: [{ ...event.groups[0], choices: count < 4 ? choices.slice(0, count) : [...choices, choices[0]] }] }, ...source.events.slice(1)] }
-    expect(() => compileCatalog(invalid)).toThrow('정확히 4개')
+    expect(() => compileCatalog(invalid)).toThrow()
   })
 
   it('기존 두 선택 행동의 비용·조건·효과는 전부 유지한다', () => {

@@ -3052,8 +3052,8 @@
               ],
               "additionalProperties": false
             },
-            "minItems": 4,
-            "maxItems": 4
+            "minItems": 1,
+            "maxItems": 20
           }
         },
         "required": [

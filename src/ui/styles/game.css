@@ -1338,3 +1338,4 @@ dialog::backdrop {
 .companion-advice { margin: 1.5rem 0; padding: 1rem 1.25rem; border: 1px solid var(--line, #455044); background: #252e24; }
 .companion-advice p { margin: .65rem 0; line-height: 1.8; }
 .companion-advice small, .recommendation-badge { color: #d5ae73; }
+.restart-controls { display: flex; justify-content: flex-end; margin: 1rem 0; }

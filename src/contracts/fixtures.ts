@@ -1,6 +1,10 @@
 /** UI-only display samples. Not executable content, engine output or saved game data. */
 import { UI_CONTRACT_VERSION } from './common'
 import type { ActionPreviewViewModel, AppSnapshot, ChoiceViewModel, StatusViewModel } from './views'
+import type { GameCommand } from './client'
+
+/** Dispatch only after the user confirms the irreversible save/legacy deletion warning. */
+export const restartCommandFixture = { type: 'restart', confirmation: 'discard-saved-progress' } as const satisfies GameCommand
 
 const status = {
   name: 'UI 샘플',

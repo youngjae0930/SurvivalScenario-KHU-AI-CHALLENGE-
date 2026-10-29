@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "opening",
-  "revision": "catalog-flexible-stages-1",
+  "revision": "catalog-variable-choices-1",
   "rulesVersion": "1.2-stress-1",
   "title": "빌라에서 탈출까지",
   "startLocationId": "villa",
@@ -36,7 +36,7 @@
   "decisionEcho": {
     "version": "echo-1",
     "compatibleRevisions": [
-      "catalog-flexible-stages-1"
+      "catalog-variable-choices-1"
     ]
   },
   "autonomyVersion": "journey-2",

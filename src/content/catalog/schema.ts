@@ -85,8 +85,8 @@ function makeEventSchema(minChoices: number, maxChoices: number): Shape { return
     }, ['id', 'goalId', 'label', 'intention', 'target', 'judgment', 'behavior', 'successFacts', 'failureFacts']), minChoices, maxChoices),
   }), 1, 20),
 }, ['id', 'title', 'locationIds', 'locationTags', 'conditions', 'weight', 'groups']) }
-/** New author files always provide four choices; saved packs retain their original count. */
-export const eventSchema = makeEventSchema(4, 4)
+/** Choice count follows the scene; never pad a group to fill UI slots. */
+export const eventSchema = makeEventSchema(1, 20)
 const savedEventSchema = makeEventSchema(1, 20)
 export const scriptSchema = object({ id, eventId: id, choiceId: nullable(id), slot: enumeration('scene', 'success', 'failure'), conditions,
   priority: int(0, 1000), weight: int(1, 1000), once: bool, text: array(str(), 1, 20) })
