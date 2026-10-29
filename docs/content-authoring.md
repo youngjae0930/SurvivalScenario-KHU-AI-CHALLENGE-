@@ -178,13 +178,15 @@ groups는 조건별 선택 묶음이다. 현재 조건에 맞는 그룹 중prior
 }
 ```
 
-이 예시는 **조건 형식 설명용**이며 실제 동료의 추천/협력을 구현하거나 승인하지 않는다. 현재 제품 회차는단독이다. 엔진은향후 동료 문맥을 받아 문구를 고를 수 있고유무·성향·신뢰 조건을 테스트했다. D01~D03의추천/신뢰/파견 규칙은그대로 미정이다.
+동료 유무·성향·신뢰 조건은 실제 동행 문맥에서 평가한다. 추천 대상과 신뢰·이별 여부는 기존 게임 규칙이 결정하며 대사는 그 결과를 표현한다.
 
-slot은scene/success/failure다. scene은choiceId=null, 나머지는실제 선택ID가 필요하다. 조건에맞는 문구 중최고priority에서 가중추첨한다. 같은 우선순위에서미사용 문구를 먼저 쓰고, once=true는같은 회차에서 재사용하지 않는다. 각 사건본문과실행 가능한성패에는conditions=[]/once=false인기본 문구가필요하다.
+기본 슬롯은 scene/success/failure다. scene은 choiceId=null, success/failure는 실제 선택 ID가 필요하다. 조건에 맞는 최고 priority에서 가중 추첨하며, 미사용 문구 우선·once 규칙을 유지한다. 기본 사건 본문과 실행 가능한 성패에는 conditions=[]/once=false인 기본 문구가 필요하다. 결과와 동료 반응은 함께 검수한 완성된 본문으로 작성한다.
 
-변수는{{protagonist.name}}/{{companion.name}}/{{location.name}}만 허용한다. 동료 이름에는present=true 조건이필수다. HTML/코드로실행하지 않고일반 텍스트로표시한다. scene은사건 진입 시상태, success/failure는실제 효과 적용 후상태로조건을판단한다. 선택한문구ID는저장하며미리보기/취소/이어하기에서다시추첨하지 않는다.
+manifest.dialogueVersion="scripts-1"인 팩은 opinion/hesitation/departure-warning/departure/absent/reunion 슬롯을 추가로 지원한다. opinion과 두 departure 슬롯에는 실제 선택 ID를 쓰고 나머지는 null이다. 이 채널은 이미 발생한 추천·이별·재회 상황에만 표시하며 최고 priority, ID 오름차순으로 하나를 고른다. weight=1/once=false만 허용하고 난수·진행·신뢰를 변경하지 않는다. 상세 규칙과 예시는 [동료 대사 작성](dialogue-authoring.md)을 따른다.
 
-문구를 여러파일/배열로대량추가해도 자동수집한다. 기본본문·주인공상태·동료반응을무조건붙이는방식은아직아니다. 현재는조건에맞는본문단위로선택하므로상충하는단편이동시에붙지않는다.
+변수는 {{protagonist.name}}/{{companion.name}}/{{location.name}}만 허용한다. 동료 이름에는 present=true 조건이 필수다. HTML/코드를 실행하지 않는다. scene은 진입 시점, success/failure는 효과 적용 후 상태로 판단한다. 선택된 본문 ID는 저장하며 이어하기에서 재추첨하지 않는다. 표시 전용 채널은 저장된 현재 상태에서 결정적으로 조회한다.
+
+주인공의 생각은 ‘남쪽까지 가야 하는데.’처럼 작은따옴표, 실제 발화는 “여기 사람이 있어요?”처럼 큰따옴표로 구분한다. 모든 문단을 대화로 만들지 말고 판단·감정이 드러나는 지점에만 넣는다. 기존 저장은 내장된 팩과 당시 표시 방식으로 복원하며 신규 대사를 소급 적용하지 않는다.
 
 ## 저렴한 모델에 전달할 자료
 

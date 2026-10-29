@@ -22,15 +22,13 @@
           "max": 22
         }
       ],
-      "notices": [
-        "모험 극단: 네 돌입 방식 중에서 선택합니다."
-      ],
+      "notices": [],
       "choices": [
         {
           "id": "E05.rush",
           "goalId": "clear",
-          "label": "즉시 돌입해 구역을 확보한다",
-          "intention": "도구를 준비하지 않고 직접 돌입해 병원 내부 길을 연다.",
+          "label": "문이 닫히기 전에 뛰어든다",
+          "intention": "거칠게 돌입해 통로와 약품을 찾는다. 다칠 위험이 크다.",
           "target": "병원 구역 확보",
           "judgment": null,
           "behavior": {
@@ -108,8 +106,8 @@
         {
           "id": "E05.tools",
           "goalId": "clear",
-          "label": "물자를 도구로 활용해 돌입한다",
-          "intention": "물자 하나를 써서 통로를 정리하며 내부 접근로를 확보한다.",
+          "label": "짐으로 퇴로를 확보하고 돌입한다",
+          "intention": "물건을 써 길을 받친다. 통로와 치료 도구를 찾을 수 있다.",
           "target": "병원 구역 확보",
           "judgment": null,
           "behavior": {
@@ -129,7 +127,7 @@
                     "medkit": 0
                   },
                   "check": {
-                    "base": 75,
+                    "base": 85,
                     "physical": true,
                     "weaponBonus": true,
                     "traitWeights": [
@@ -182,81 +180,10 @@
           "failureFacts": {}
         },
         {
-          "id": "E05.force",
-          "goalId": "clear",
-          "label": "무기로 장애물을 밀어 돌입한다",
-          "intention": "가진 무기를 지렛대로 써 내부 접근로를 연다. 치료 도구 탐색은 하지 않는다.",
-          "target": "병원 구역 확보",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E05.force",
-                  "eventId": "E05",
-                  "requires": {
-                    "weapon": true
-                  },
-                  "costs": {
-                    "stamina": 10,
-                    "supply": 0,
-                    "medkit": 0
-                  },
-                  "check": {
-                    "base": 75,
-                    "physical": true,
-                    "weaponBonus": true,
-                    "traitWeights": [
-                      {
-                        "axis": "risk",
-                        "pole": "left",
-                        "weight": 1
-                      }
-                    ]
-                  },
-                  "traitDelta": {
-                    "risk": -8,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "set-flag",
-                      "flag": "access",
-                      "value": true
-                    }
-                  ],
-                  "failureEffects": [
-                    {
-                      "kind": "set-flag",
-                      "flag": "access",
-                      "value": false
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": 10
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "injury",
-                      "amount": 1
-                    }
-                  ]
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {}
-        },
-        {
           "id": "E05.crawl",
           "goalId": "clear",
-          "label": "몸을 낮춰 통로를 뚫는다",
-          "intention": "더 많은 체력을 써 좁은 틈으로 돌입한다. 물자와 무기는 필요 없지만 부상 위험은 남는다.",
+          "label": "몸을 낮춰 침대 아래로 들어간다",
+          "intention": "시간과 힘을 들여 좁은 틈으로 들어간다.",
           "target": "병원 구역 확보",
           "judgment": null,
           "behavior": {
@@ -332,8 +259,8 @@
         {
           "id": "E05.explore",
           "goalId": "clear",
-          "label": "병원 내부를 탐사한다",
-          "intention": "주변을 분석하며 위험을 감수하고 내부 접근로를 확보한다.",
+          "label": "병원 안으로 들어가 길을 찾는다",
+          "intention": "복도를 살펴 연구동으로 이어지는 통로를 찾는다.",
           "target": "병원 내부 접근",
           "judgment": null,
           "behavior": {
@@ -404,15 +331,15 @@
           "failureFacts": {},
           "execution": {
             "conditions": [],
-            "sharedRisk": "동료가 병원 진입로를 먼저 확인하고 주인공은 옆에서 통로 확보와 후퇴를 지원한다. 실패하면 주인공도 무너진 통로를 수습하다 다칠 수 있다.",
+            "sharedRisk": "동료가 앞을 살피고 당신은 뒤에서 길과 퇴로를 지킨다. 둘 다 같은 위험을 감수한다.",
             "role": "진입"
           }
         },
         {
           "id": "E05.bypass",
           "goalId": "bypass",
-          "label": "병원을 우회한다",
-          "intention": "내부 접근을 포기하고 건물 바깥을 따라 이동한다.",
+          "label": "병원 바깥으로 돌아간다",
+          "intention": "위험한 내부를 포기하고 외벽을 따라 걷는다.",
           "target": "병원 우회",
           "judgment": null,
           "behavior": {
@@ -453,8 +380,8 @@
         {
           "id": "E05.prepare",
           "goalId": "clear",
-          "label": "물자를 써 내부 통로를 정리한다",
-          "intention": "물자 하나와 체력을 써 내부 접근로 확보를 시도한다. 치료 도구를 찾는 행동은 아니다.",
+          "label": "물건으로 문을 받치고 들어간다",
+          "intention": "배낭의 물품으로 퇴로를 확보한다. 준비해도 위험은 남는다.",
           "target": "병원 내부 접근",
           "judgment": null,
           "behavior": {
@@ -474,7 +401,7 @@
                     "medkit": 0
                   },
                   "check": {
-                    "base": 75,
+                    "base": 85,
                     "physical": true,
                     "weaponBonus": true,
                     "traitWeights": [
@@ -520,54 +447,6 @@
           },
           "successFacts": {},
           "failureFacts": {}
-        },
-        {
-          "id": "E05.slow-bypass",
-          "goalId": "bypass",
-          "label": "외벽을 따라 천천히 우회한다",
-          "intention": "체력을 더 써 천천히 돌아가며 스트레스를 줄인다. 내부 접근로는 확보하지 않는다.",
-          "target": "병원 우회",
-          "judgment": null,
-          "behavior": {
-            "kind": "action",
-            "variants": [
-              {
-                "conditions": [],
-                "action": {
-                  "id": "E05.slow-bypass",
-                  "eventId": "E05",
-                  "requires": {},
-                  "costs": {
-                    "stamina": 10,
-                    "supply": 0,
-                    "medkit": 0
-                  },
-                  "check": null,
-                  "traitDelta": {
-                    "risk": 8,
-                    "cognition": 0,
-                    "affect": 0
-                  },
-                  "successEffects": [
-                    {
-                      "kind": "set-flag",
-                      "flag": "access",
-                      "value": false
-                    },
-                    {
-                      "kind": "add",
-                      "stat": "stress",
-                      "amount": -5
-                    }
-                  ],
-                  "failureEffects": []
-                }
-              }
-            ]
-          },
-          "successFacts": {},
-          "failureFacts": {},
-          "pace": "slow"
         }
       ]
     }
@@ -584,10 +463,9 @@
       }
     ],
     "judgment": null,
-    "text": "지금은 병원에 들어서지 말고 우회하자.",
+    "text": "안에서 무슨 소리가 나는지 들었지? 통로도 중요하지만, 여기서 다치면 남쪽까지 못 가. 밖으로 돌자.",
     "notices": [
-      "모험 극단: 세 돌입 방식 중에서 선택합니다.",
-      "본인 선택 세 개와 동료 선택 한 개를 표시합니다. 본인의 반대 목표는 잠기며, 동료 선택은 동료의 성향·판단에 따라 반대 목표가 될 수 있습니다. 신뢰도 제한은 없지만 필요한 체력과 물자는 소모됩니다."
+      "지금은 한 가지 생각이 다른 판단을 밀어내고 있다. 동료가 곁에 있다면 다른 길을 제안할 수 있다."
     ],
     "mode": "companion-choice"
   },

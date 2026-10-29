@@ -13,6 +13,7 @@ function hasCompanionChoices(pack: CatalogPack): boolean {
   return pack.events.some(event => event.intervention?.mode === 'companion-choice')
 }
 function companionRuntimeVersion(pack: CatalogPack, succession: boolean) {
+  if (pack.manifest.dialogueVersion) return succession ? 'catalog-succession-11' : 'catalog-companion-dialogue-1'
   if (pack.manifest.routeVersion) return succession ? 'catalog-succession-10' : 'catalog-companion-stages-1'
   if (pack.manifest.trustVersion) return succession ? 'catalog-succession-9' : 'catalog-companion-outcome-1'
   if (pack.manifest.executionVersion) return succession ? 'catalog-succession-8' : 'catalog-companion-command-1'
@@ -26,6 +27,7 @@ function companionRuntimeVersion(pack: CatalogPack, succession: boolean) {
       : hasCompanionChoices(pack) ? 'catalog-companion-choice-1' : 'catalog-intervention-1'
 }
 function runtimeVersion(pack: CatalogPack) {
+  if (pack.manifest.dialogueVersion) return 'catalog-runtime-5'
   if (pack.manifest.routeVersion) return 'catalog-runtime-4'
   if (pack.manifest.decisionMemoryVersion === 'context-1') return 'catalog-runtime-3'
   return pack.events.some(event => event.groups.some(group => group.choices.some(choice => choice.behavior.kind === 'escape'))) ? 'catalog-runtime-2' : 'catalog-runtime-1'
@@ -55,10 +57,10 @@ export function decodeCatalogSave(raw: string, resolveAnswers: AnswerResolver): 
     if (raw.length > MAX_SAVE_LENGTH) throw invalid()
     const data: unknown = JSON.parse(raw)
     if (!isRecord(data) || data.policy !== 'single-slot-v1' || data.randomAlgorithm !== RANDOM_ALGORITHM || !isRecord(data.origin) || !isRecord(data.checkpoint)) throw invalid()
-    const succession = data.schemaVersion === 8 && data.kind === 'catalog-companion' && ['catalog-succession-1', 'catalog-succession-2', 'catalog-succession-3', 'catalog-succession-4', 'catalog-succession-5', 'catalog-succession-6', 'catalog-succession-7', 'catalog-succession-8', 'catalog-succession-9', 'catalog-succession-10'].includes(String(data.runtimeVersion))
+    const succession = data.schemaVersion === 8 && data.kind === 'catalog-companion' && ['catalog-succession-1', 'catalog-succession-2', 'catalog-succession-3', 'catalog-succession-4', 'catalog-succession-5', 'catalog-succession-6', 'catalog-succession-7', 'catalog-succession-8', 'catalog-succession-9', 'catalog-succession-10', 'catalog-succession-11'].includes(String(data.runtimeVersion))
     if (succession && !isCatalogLegacy(data.previousLegacy)) throw invalid()
-    const companion = succession || (data.schemaVersion === 7 && data.kind === 'catalog-companion' && ['catalog-intervention-1', 'catalog-companion-choice-1', 'catalog-companion-recovery-1', 'catalog-companion-recommendation-1', 'catalog-companion-memory-1', 'catalog-companion-echo-1', 'catalog-companion-autonomy-1', 'catalog-companion-command-1', 'catalog-companion-outcome-1', 'catalog-companion-stages-1'].includes(String(data.runtimeVersion)))
-    if (companion ? !isCompanionContext(data.companionOrigin) : data.schemaVersion !== 6 || data.kind !== 'catalog-solo' || !['catalog-runtime-1', 'catalog-runtime-2', 'catalog-runtime-3', 'catalog-runtime-4'].includes(String(data.runtimeVersion))) throw invalid()
+    const companion = succession || (data.schemaVersion === 7 && data.kind === 'catalog-companion' && ['catalog-intervention-1', 'catalog-companion-choice-1', 'catalog-companion-recovery-1', 'catalog-companion-recommendation-1', 'catalog-companion-memory-1', 'catalog-companion-echo-1', 'catalog-companion-autonomy-1', 'catalog-companion-command-1', 'catalog-companion-outcome-1', 'catalog-companion-stages-1', 'catalog-companion-dialogue-1'].includes(String(data.runtimeVersion)))
+    if (companion ? !isCompanionContext(data.companionOrigin) : data.schemaVersion !== 6 || data.kind !== 'catalog-solo' || !['catalog-runtime-1', 'catalog-runtime-2', 'catalog-runtime-3', 'catalog-runtime-4', 'catalog-runtime-5'].includes(String(data.runtimeVersion))) throw invalid()
     // Existing schema6 packs pin their original two-choice definitions.
     const pack = compileCatalog(data.pack, { allowLegacyChoices: true })
     if (!companion && data.runtimeVersion !== runtimeVersion(pack)) throw invalid()

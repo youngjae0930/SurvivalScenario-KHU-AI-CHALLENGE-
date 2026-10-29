@@ -1,3 +1,4 @@
+import narrativeSnapshot from './opening-catalog-v21.json'
 import type { CatalogChoice, CatalogPack } from '../domain/catalog'
 import { compileCatalog } from '../engine/catalog/compile'
 import openingSnapshot from './opening-catalog-v1.json'
@@ -18,7 +19,10 @@ import decisionEchoSnapshot from './opening-catalog-v15.json'
 import companionJourneySnapshot from './opening-catalog-v16.json'
 import companionCommandSnapshot from './opening-catalog-v17.json'
 import companionOutcomeSnapshot from './opening-catalog-v18.json'
+import variableChoicesSnapshot from './opening-catalog-v20.json'
 import flexibleStagesSnapshot from './opening-catalog-v19.json'
+
+export function makeVariableChoicesCatalogFixture(): CatalogPack { return compileCatalog(variableChoicesSnapshot) }
 
 /** Last fixed-choice release; existing saved runs retain these choices. */
 export function makeFlexibleStagesCatalogFixture(): CatalogPack { return compileCatalog(flexibleStagesSnapshot) }
@@ -86,3 +90,5 @@ export function makeCatalogFixture(): CatalogPack {
     ],
   })
 }
+
+export function makeNarrativeCatalogFixture(): CatalogPack { return compileCatalog(narrativeSnapshot) }

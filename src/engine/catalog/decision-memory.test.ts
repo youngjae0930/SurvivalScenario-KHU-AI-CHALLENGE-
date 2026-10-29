@@ -4,7 +4,7 @@ import { createProductClient } from '../../app/catalog-client'
 import { readDefaultCatalog } from '../../content/catalog/registry'
 import type { CatalogPack, CatalogRun, CompanionContext } from '../../domain/catalog'
 import { makeOrigin } from '../../test/opening-paths'
-import { makeRecommendationCatalogFixture } from '../../test/catalog-fixtures'
+import { makeRecommendationCatalogFixture, makeVariableChoicesCatalogFixture } from '../../test/catalog-fixtures'
 import { decodeCatalogSave, encodeCatalogSave } from '../../storage/catalog-save'
 import type { RunOrigin } from '../../storage/opening-save'
 import type { SaveStore } from '../../storage/browser-store'
@@ -47,11 +47,11 @@ describe('이전 선택 당시 상황의 보존', () => {
     expect(Object.hasOwn(situation, 'selectedAction')).toBe(false)
     expect(situation.core).toEqual(run.core)
     expect(situation.core).not.toBe(run.core)
-    expect(situation.options).toHaveLength(4)
+    expect(situation.options).toHaveLength(2)
     expect(encodeCatalogSave(origin, pack, run)).toBe(raw)
     expect(catalogDecisionSituation(pack, run)).toEqual(situation)
   })
-  it('조회는 기록하지 않고 실행 성공 시 선택 직전 상태와 네 후보를 분리 복사한다', () => {
+  it('조회는 기록하지 않고 실행 성공 시 선택 직전 상태와 현재 후보를 분리 복사한다', () => {
     const run = at('E01', friend)
     const before = structuredClone(run)
     previewCatalogAction(pack, run, 'E01.shortcut')
@@ -68,7 +68,7 @@ describe('이전 선택 당시 상황의 보존', () => {
     expect(context.options.map(o => o.actionId)).toEqual(catalogChoices(pack, run).map(c => c.id))
     expect(context.selectedAction).toEqual(previewCatalogAction(pack, run, 'E01.shortcut').action)
     expect(context.core.protagonist.stamina).toBe(70)
-    expect(next.core.protagonist.stamina).toBe(60)
+    expect(next.core.protagonist.stamina).toBe(66)
     expect(run).toEqual(before)
   })
 
@@ -81,7 +81,7 @@ describe('이전 선택 당시 상황의 보존', () => {
     expect(without.selectedAction.costs.supply).toBe(0)
     expect(without.selectedAction.costs.stamina).toBeGreaterThan(0)
     expect(without.options.find(o => o.actionId === 'E02.first-aid')?.preview).toMatchObject({ allowed: false })
-    expect(without.options).toHaveLength(4)
+    expect(without.options).toHaveLength(3)
   })
 
   it('치료를 함께 한 행동과 치료 전 기본 후보를 구분한다', () => {
@@ -100,11 +100,11 @@ describe('이전 선택 당시 상황의 보존', () => {
   it('양보 후 신뢰로 이전 상황을 덮어쓰지 않으며 저장 복원도 동일하다', () => {
     const source = at('E04', friend)
     const next = executeCatalogAction(pack, source, 'E04.share')
-    expect(next.result!.decisionContext!.companion!.trust).toBe(50)
+    expect(next.result!.decisionContext!.companion!.trust).toBe(source.companion!.trust)
     expect(next.companion!.trust).toBe(next.result!.trustChange!.after)
-    expect(next.companion!.trust).not.toBe(50)
+    expect(next.companion!.trust).not.toBe(source.companion!.trust)
     const raw = encodeCatalogSave(origin, pack, next)
-    expect(JSON.parse(raw).runtimeVersion).toBe('catalog-companion-stages-1')
+    expect(JSON.parse(raw).runtimeVersion).toBe('catalog-companion-dialogue-1')
     expect(decodeCatalogSave(raw, resolveAnswers).run).toEqual(next)
   })
 
@@ -120,7 +120,7 @@ describe('이전 선택 당시 상황의 보존', () => {
     expect(isDecisionMemory(legacy.decisionMemory)).toBe(true)
     expect(isCatalogLegacy(legacy)).toBe(true)
     const raw = encodeCatalogSave(origin, pack, next)
-    expect(JSON.parse(raw)).toMatchObject({ schemaVersion: 6, runtimeVersion: 'catalog-runtime-4' })
+    expect(JSON.parse(raw)).toMatchObject({ schemaVersion: 6, runtimeVersion: 'catalog-runtime-5' })
     expect(encodeCatalogSave(origin, pack, decodeCatalogSave(raw, resolveAnswers).run)).toBe(raw)
   })
 
@@ -135,7 +135,7 @@ describe('이전 선택 당시 상황의 보존', () => {
     expect(second.core.inventory).toEqual({ supply: 1, medkit: 1, weapon: false })
     expect(second.companion!.traits).toEqual(first.core.protagonist.traits)
     const raw = encodeCatalogSave(secondOrigin, pack, second)
-    expect(JSON.parse(raw)).toMatchObject({ schemaVersion: 8, runtimeVersion: 'catalog-succession-10' })
+    expect(JSON.parse(raw)).toMatchObject({ schemaVersion: 8, runtimeVersion: 'catalog-succession-11' })
     expect(decodeCatalogSave(raw, resolveAnswers).run).toEqual(second)
     const completed = finish(second)
     const third = prepareNextCatalogRun(pack, completed, pack, input({ ...origin, runId: 'memory-third', name: '세 번째 인물' })).run
@@ -195,9 +195,10 @@ describe('이전 선택 당시 상황의 보존', () => {
     expect(isCatalogLegacy(legacy)).toBe(true)
   })
 
-  it('상황 기록이 이전 팩과 같은 행동 결과·난수 순서를 유지한다', () => {
+  it('이전 콘텐츠의 상황 기록은 당시 행동 결과·난수 순서를 유지한다', () => {
+    const pack = makeVariableChoicesCatalogFixture()
     const old = makeRecommendationCatalogFixture()
-    let previous = at('E01', null, old), current = at('E01')
+    let previous = at('E01', null, old), current = at('E01', null, pack)
     for (const action of safe) {
       previous = executeCatalogAction(old, previous, action)
       current = executeCatalogAction(pack, current, action)

@@ -85,7 +85,7 @@ export interface CatalogScript {
   readonly id: string
   readonly eventId: string
   readonly choiceId: string | null
-  readonly slot: 'scene' | 'success' | 'failure'
+  readonly slot: 'scene' | 'success' | 'failure' | 'opinion' | 'hesitation' | 'departure-warning' | 'departure' | 'absent' | 'reunion'
   readonly conditions: readonly Condition[]
   readonly priority: number
   readonly weight: number
@@ -93,6 +93,8 @@ export interface CatalogScript {
   readonly text: readonly string[]
 }
 export interface CatalogManifest {
+  /** Authored dialogue channels; display lookup never consumes gameplay randomness. */
+  readonly dialogueVersion?: 'scripts-1'
   readonly routeVersion?: 'stages-1'
   readonly trustVersion?: 'outcome-1'
   readonly executionVersion?: 'command-1'
