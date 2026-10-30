@@ -55,9 +55,109 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
                     "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.er-waiting.form-affect-right",
+          "goalId": "encounter.er-waiting.form-affect-right",
+          "label": "넘어진 의자에 옷이 걸린 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "응급실 대기실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.er-waiting.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.er-waiting.open-affect-left",
+          "goalId": "encounter.er-waiting.open-affect-left",
+          "label": "개인의 요청보다 통과 가능한 위험 범위를 먼저 정한다",
+          "intention": "누군가의 사정에 끌리기보다 지금 확인되는 조건을 기준으로 이동한다.",
+          "target": "응급실 대기실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.er-waiting.open-affect-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
                   },
                   "successEffects": [],
                   "failureEffects": []
@@ -119,7 +219,7 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
                     "affect": 0
                   },
@@ -156,6 +256,106 @@
             ],
             "failure": []
           }
+        },
+        {
+          "id": "encounter.er-waiting.form-affect-right",
+          "goalId": "encounter.er-waiting.form-affect-right",
+          "label": "넘어진 의자에 옷이 걸린 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "응급실 대기실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.er-waiting.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.er-waiting.open-affect-left",
+          "goalId": "encounter.er-waiting.open-affect-left",
+          "label": "개인의 요청보다 통과 가능한 위험 범위를 먼저 정한다",
+          "intention": "누군가의 사정에 끌리기보다 지금 확인되는 조건을 기준으로 이동한다.",
+          "target": "응급실 대기실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.er-waiting.open-affect-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
         }
       ]
     },
@@ -208,7 +408,7 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
                     "affect": 0
                   },
@@ -246,7 +446,7 @@
                   "traitDelta": {
                     "risk": 0,
                     "cognition": 0,
-                    "affect": -4
+                    "affect": -8
                   },
                   "successEffects": [],
                   "failureEffects": []
@@ -257,6 +457,70 @@
           "successFacts": {
             "research-clue": true
           },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.er-waiting.form-affect-right",
+          "goalId": "encounter.er-waiting.form-affect-right",
+          "label": "넘어진 의자에 옷이 걸린 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "응급실 대기실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.er-waiting.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
           "failureFacts": {}
         }
       ]
@@ -314,7 +578,7 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
                     "affect": 0
                   },
@@ -377,7 +641,7 @@
                   "traitDelta": {
                     "risk": 0,
                     "cognition": 0,
-                    "affect": -4
+                    "affect": -8
                   },
                   "successEffects": [],
                   "failureEffects": []
@@ -388,6 +652,70 @@
           "successFacts": {
             "research-clue": true
           },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.er-waiting.form-affect-right",
+          "goalId": "encounter.er-waiting.form-affect-right",
+          "label": "넘어진 의자에 옷이 걸린 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "응급실 대기실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.er-waiting.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
           "failureFacts": {}
         }
       ]

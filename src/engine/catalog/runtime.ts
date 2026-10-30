@@ -7,7 +7,7 @@ import { createInitialCoreState } from '../initial-state'
 import { initializeRandom } from '../random'
 import { buildRecoveryAction, recoveryTrustAfter, resolveRecovery } from '../recovery'
 import { buildEscapeAction, getEscapeOptions, resolveEscape } from '../escape'
-import { asCompanionChoice, isCompanionContext, selectIntervention, sourceChoiceId } from './intervention'
+import { asCompanionChoice, interventionPolicies, isCompanionContext, selectIntervention, sourceChoiceId } from './intervention'
 import { allChoices, eventFits } from './compile'
 import { matches } from './conditions'
 import { weightedPick } from './random'
@@ -428,7 +428,7 @@ export function catalogLegacy(pack: CatalogPack, run: CatalogRun): import('../..
 }
 export function findCatalogChoice(pack: CatalogPack, eventId: string, actionId: string): CatalogChoice {
   const event = pack.events.find(item => item.id === eventId)
-  const companion = event?.intervention?.mode === 'companion-choice' && actionId !== sourceChoiceId(actionId)
+  const companion = event && interventionPolicies(event).some(policy => policy.mode === 'companion-choice') && actionId !== sourceChoiceId(actionId)
   const choice = event && allChoices(event).find(item => item.id === (companion ? sourceChoiceId(actionId) : actionId))
   if (!choice) throw new CatalogRuntimeError('content-invalid', '결과의 선택 정의가 없습니다.')
   return companion ? asCompanionChoice(choice) : choice

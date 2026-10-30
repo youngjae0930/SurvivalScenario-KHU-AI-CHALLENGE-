@@ -41,7 +41,7 @@
                   "check": null,
                   "traitDelta": {
                     "risk": 0,
-                    "cognition": -4,
+                    "cognition": -8,
                     "affect": 0
                   },
                   "successEffects": [],
@@ -92,8 +92,8 @@
                     ]
                   },
                   "traitDelta": {
-                    "risk": -4,
-                    "cognition": -4,
+                    "risk": -8,
+                    "cognition": -8,
                     "affect": 0
                   },
                   "successEffects": [
@@ -113,6 +113,106 @@
                       "kind": "add",
                       "stat": "injury",
                       "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.electronics.form-risk-right",
+          "goalId": "encounter.electronics.form-risk-right",
+          "label": "물품을 포기하고 가전제품 매장의 벽 쪽으로 우회한다",
+          "intention": "눈앞의 이익을 버리고 노출이 적은 길을 택한다.",
+          "target": "가전제품 매장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.electronics.form-risk-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.electronics.form-cognition-right",
+          "goalId": "encounter.electronics.form-cognition-right",
+          "label": "조사를 멈추고 가전제품 매장의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "가전제품 매장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.electronics.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
                     }
                   ]
                 }
@@ -161,7 +261,7 @@
                   "check": null,
                   "traitDelta": {
                     "risk": 0,
-                    "cognition": -4,
+                    "cognition": -8,
                     "affect": 0
                   },
                   "successEffects": [],
@@ -177,6 +277,170 @@
             "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
             "role": "정찰"
           }
+        },
+        {
+          "id": "encounter.electronics.form-risk-right",
+          "goalId": "encounter.electronics.form-risk-right",
+          "label": "물품을 포기하고 가전제품 매장의 벽 쪽으로 우회한다",
+          "intention": "눈앞의 이익을 버리고 노출이 적은 길을 택한다.",
+          "target": "가전제품 매장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.electronics.form-risk-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.electronics.form-cognition-right",
+          "goalId": "encounter.electronics.form-cognition-right",
+          "label": "조사를 멈추고 가전제품 매장의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "가전제품 매장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.electronics.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.electronics.open-risk-left",
+          "goalId": "encounter.electronics.open-risk-left",
+          "label": "가전 진열대 사이를 가로질러 짧게 통과한다",
+          "intention": "더 노출되는 짧은 길을 택해 우회를 줄인다. 실패하면 부상을 입을 수 있다.",
+          "target": "가전제품 매장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.electronics.open-risk-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 8
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
         }
       ]
     }

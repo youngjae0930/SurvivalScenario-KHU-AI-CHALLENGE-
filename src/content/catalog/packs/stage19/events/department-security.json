@@ -42,7 +42,7 @@
                   "traitDelta": {
                     "risk": 0,
                     "cognition": 0,
-                    "affect": -4
+                    "affect": -8
                   },
                   "successEffects": [
                     {
@@ -85,6 +85,70 @@
           },
           "successFacts": {},
           "failureFacts": {}
+        },
+        {
+          "id": "encounter.department-security.form-affect-right",
+          "goalId": "encounter.department-security.form-affect-right",
+          "label": "안쪽 통로에서 걸쇠를 붙들고 있는 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "백화점 보안실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-security.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
         }
       ]
     },
@@ -124,7 +188,7 @@
                   "traitDelta": {
                     "risk": 0,
                     "cognition": 0,
-                    "affect": -4
+                    "affect": -8
                   },
                   "successEffects": [
                     {
@@ -192,6 +256,70 @@
             ],
             "failure": []
           }
+        },
+        {
+          "id": "encounter.department-security.form-affect-right",
+          "goalId": "encounter.department-security.form-affect-right",
+          "label": "안쪽 통로에서 걸쇠를 붙들고 있는 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "백화점 보안실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.department-security.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
         }
       ]
     }

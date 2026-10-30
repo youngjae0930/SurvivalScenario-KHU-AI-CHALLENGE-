@@ -40,7 +40,7 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
                     "affect": 0
                   },
@@ -87,8 +87,8 @@
                     ]
                   },
                   "traitDelta": {
-                    "risk": -4,
-                    "cognition": -4,
+                    "risk": -8,
+                    "cognition": -8,
                     "affect": 0
                   },
                   "successEffects": [
@@ -108,6 +108,70 @@
                       "kind": "add",
                       "stat": "injury",
                       "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.form-cognition-right",
+          "goalId": "encounter.pharmacy.form-cognition-right",
+          "label": "조사를 멈추고 약제실의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
                     }
                   ]
                 }
@@ -155,8 +219,172 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.form-cognition-right",
+          "goalId": "encounter.pharmacy.form-cognition-right",
+          "label": "조사를 멈추고 약제실의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.open-risk-left",
+          "goalId": "encounter.pharmacy.open-risk-left",
+          "label": "약품 운반대 사이를 가로질러 짧게 통과한다",
+          "intention": "더 노출되는 짧은 길을 택해 우회를 줄인다. 실패하면 부상을 입을 수 있다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.open-risk-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 8
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.open-cognition-left",
+          "goalId": "encounter.pharmacy.open-cognition-left",
+          "label": "통로의 표지와 실제 흔적을 끝까지 대조한다",
+          "intention": "회수할 물품이 없어도 판단 근거를 확인하는 데 시간을 쓴다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.open-cognition-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
                     "affect": 0
                   },
                   "successEffects": [],
@@ -204,7 +432,7 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
                     "affect": 0
                   },
@@ -251,8 +479,8 @@
                     ]
                   },
                   "traitDelta": {
-                    "risk": -4,
-                    "cognition": -4,
+                    "risk": -8,
+                    "cognition": -8,
                     "affect": 0
                   },
                   "successEffects": [
@@ -306,7 +534,7 @@
                   "traitDelta": {
                     "risk": 0,
                     "cognition": 0,
-                    "affect": -4
+                    "affect": -8
                   },
                   "successEffects": [],
                   "failureEffects": []
@@ -317,6 +545,70 @@
           "successFacts": {
             "research-clue": true
           },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.form-cognition-right",
+          "goalId": "encounter.pharmacy.form-cognition-right",
+          "label": "조사를 멈추고 약제실의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
           "failureFacts": {}
         }
       ]
@@ -361,7 +653,7 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 4,
+                    "risk": 8,
                     "cognition": 0,
                     "affect": 0
                   },
@@ -399,7 +691,7 @@
                   "traitDelta": {
                     "risk": 0,
                     "cognition": 0,
-                    "affect": -4
+                    "affect": -8
                   },
                   "successEffects": [],
                   "failureEffects": []
@@ -410,6 +702,170 @@
           "successFacts": {
             "research-clue": true
           },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.form-cognition-right",
+          "goalId": "encounter.pharmacy.form-cognition-right",
+          "label": "조사를 멈추고 약제실의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.open-risk-left",
+          "goalId": "encounter.pharmacy.open-risk-left",
+          "label": "약품 운반대 사이를 가로질러 짧게 통과한다",
+          "intention": "더 노출되는 짧은 길을 택해 우회를 줄인다. 실패하면 부상을 입을 수 있다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.open-risk-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 8
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.pharmacy.open-cognition-left",
+          "goalId": "encounter.pharmacy.open-cognition-left",
+          "label": "통로의 표지와 실제 흔적을 끝까지 대조한다",
+          "intention": "회수할 물품이 없어도 판단 근거를 확인하는 데 시간을 쓴다.",
+          "target": "약제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.pharmacy.open-cognition-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
           "failureFacts": {}
         }
       ]

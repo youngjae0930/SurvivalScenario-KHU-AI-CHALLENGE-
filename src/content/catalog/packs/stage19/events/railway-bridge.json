@@ -40,7 +40,7 @@
                   },
                   "check": null,
                   "traitDelta": {
-                    "risk": 0,
+                    "risk": 4,
                     "cognition": -4,
                     "affect": 0
                   },
@@ -88,7 +88,7 @@
                     ]
                   },
                   "traitDelta": {
-                    "risk": 0,
+                    "risk": -4,
                     "cognition": 4,
                     "affect": 0
                   },

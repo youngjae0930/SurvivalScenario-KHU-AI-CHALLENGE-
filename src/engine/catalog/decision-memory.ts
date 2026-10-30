@@ -27,8 +27,8 @@ const preview = object({ allowed: bool, reasons: array(text(5000), 0, 30), check
 const runtimeAction: Shape = { ...catalogActionSchema, properties: { ...catalogActionSchema.properties, id: commandId } }
 const option = object({ actionId: commandId, goalId: id, judgment: enumeration(null, 'rescue', 'self'), behavior: enumeration('action', 'recovery', 'escape'),
   route: enumeration('short', 'detour', 'request'), pace: enumeration('slow', 'balanced', 'fast'), execution: executionSchema,
-  relationship: relationshipSchema, infection: infectionSchema, trustOutcomes: object({ success: int(-5, 5), failure: int(-5, 5) }, ['success', 'failure']),
-  baseTrustOutcomes: object({ success: int(-5, 5), failure: int(-5, 5) }, ['success', 'failure']),
+  relationship: relationshipSchema, infection: infectionSchema, trustOutcomes: object({ success: int(-10, 10), failure: int(-10, 10) }, ['success', 'failure']),
+  baseTrustOutcomes: object({ success: int(-10, 10), failure: int(-10, 10) }, ['success', 'failure']),
   ending: endingSchema, action: runtimeAction, preview }, ['route', 'pace', 'execution', 'relationship', 'trustOutcomes', 'baseTrustOutcomes', 'infection', 'ending'])
 const context = object({
   companionVitals: object({ stamina: int(0, 100), stress: int(0, 100), injury: int(0, 3) }),

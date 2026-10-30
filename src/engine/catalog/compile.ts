@@ -5,6 +5,7 @@ import { catalogTraitBounds } from './traits'
 import { planRoute } from './route'
 import { previewCoreAction } from '../actions'
 import { validateSlotPlan } from './slots'
+import { interventionPolicies } from './intervention'
 
 export class ContentError extends Error {
   readonly issues: readonly string[]
@@ -118,8 +119,9 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
     }
     unique(event.groups.map(group => group.id), `event ${event.id}.groups`)
     check(event.groups.filter(group => group.conditions.length === 0).length === 1, `event ${event.id}: 기본 그룹은 정확히 하나 필요합니다.`)
-    if (event.intervention) {
-      const policy = event.intervention
+    check(!event.interventions || pack.manifest.extremeExperienceVersion === 'middle-1', `event ${event.id}: 복수 극단에는 middle-1이 필요합니다.`)
+    unique(interventionPolicies(event).map(policy => policy.groupId), `event ${event.id}.interventions`)
+    for (const policy of interventionPolicies(event)) {
       const group = event.groups.find(item => item.id === policy.groupId)
       check(!terminal && !!group && group.choices.length >= 2, `event ${event.id}: 동료 선택 그룹에는 본인 행동과 동료 슬롯이 필요합니다.`)
       check(!!group?.conditions.some(condition => condition.kind === 'number' && condition.subject === 'protagonist' && condition.stat === policy.axis

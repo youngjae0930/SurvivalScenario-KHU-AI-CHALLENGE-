@@ -39,6 +39,11 @@
           "maxLength": 80,
           "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
         },
+        "extremeExperienceVersion": {
+          "enum": [
+            "middle-1"
+          ]
+        },
         "companionStateVersion": {
           "enum": [
             "separate-1"
@@ -2320,6 +2325,106 @@
               "notices"
             ],
             "additionalProperties": false
+          },
+          "interventions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "enum": [
+                    "companion-choice"
+                  ]
+                },
+                "groupId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80,
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                },
+                "axis": {
+                  "enum": [
+                    "risk",
+                    "cognition",
+                    "affect"
+                  ]
+                },
+                "extremePole": {
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "replaceChoiceId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80,
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                },
+                "alternatives": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "groupId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                      },
+                      "choiceId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                      }
+                    },
+                    "required": [
+                      "groupId",
+                      "choiceId"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 1,
+                  "maxItems": 20
+                },
+                "judgment": {
+                  "enum": [
+                    "rescue",
+                    "self",
+                    null
+                  ]
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 5000
+                },
+                "notices": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 5000
+                  },
+                  "minItems": 1,
+                  "maxItems": 10
+                }
+              },
+              "required": [
+                "groupId",
+                "axis",
+                "extremePole",
+                "replaceChoiceId",
+                "alternatives",
+                "judgment",
+                "text",
+                "notices"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 6
           },
           "groups": {
             "type": "array",

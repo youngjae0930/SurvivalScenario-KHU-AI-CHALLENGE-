@@ -1,3 +1,5 @@
+import previousSnapshot from '../../test/trust-scale-catalog-v1.json'
+import { compileCatalog } from './compile'
 import { expect, it } from 'vitest'
 import { readDefaultCatalog } from '../../content/catalog/registry'
 import { resolveAnswers } from '../../app/questionnaire'
@@ -11,7 +13,7 @@ const pack = readDefaultCatalog()
 it('선택 성향만 ±8에서 ±4로 바꾸고 비용·판정·효과와 옛 저장은 보존한다', () => {
   const old = makeResearchRouteCatalogFixture()
   let changed = 0
-  for (const event of pack.events) for (const group of event.groups) for (const choice of group.choices) {
+  for (const event of compileCatalog(previousSnapshot).events) for (const group of event.groups) for (const choice of group.choices) {
     if (choice.behavior.kind !== 'action') continue
     const previous = old.events.find(e => e.id === event.id)!.groups.find(g => g.id === group.id)!.choices.find(c => c.id === choice.id)!
     if (previous.behavior.kind !== 'action') throw new Error('행동 종류 변경')

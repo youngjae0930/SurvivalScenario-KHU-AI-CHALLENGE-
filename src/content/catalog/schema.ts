@@ -69,13 +69,15 @@ export const catalogActionSchema = object({
 const action = catalogActionSchema
 const factUpdates: Shape = { type: 'object', properties: {}, additionalProperties: bool }
 export const locationSchema = object({ id, name: str(100), stage, tags: array(id, 1, 30), fromTags: array(id, 0, 30), after: array(id, 0, 128), required: bool, weight: int(1, 1000), enabled: bool }, ['id', 'name', 'stage', 'tags', 'fromTags', 'after', 'required', 'weight'])
+const interventionSchema = object({ mode: enumeration('companion-choice'), groupId: id, axis, extremePole: enumeration('left', 'right'), replaceChoiceId: id,
+    alternatives: array(object({ groupId: id, choiceId: id }), 1, 20), judgment: enumeration('rescue', 'self', null), text: str(), notices: array(str(), 1, 10) },
+    ['groupId', 'axis', 'extremePole', 'replaceChoiceId', 'alternatives', 'judgment', 'text', 'notices'])
 function makeEventSchema(minChoices: number, maxChoices: number): Shape { return object({
   autonomy: autonomySchema,
   recommendation: object({ axis }),
   id, title: str(100), locationIds: array(id, 0, 128), locationTags: array(id, 0, 30), conditions, weight: int(1, 1000),
-  intervention: object({ mode: enumeration('companion-choice'), groupId: id, axis, extremePole: enumeration('left', 'right'), replaceChoiceId: id,
-    alternatives: array(object({ groupId: id, choiceId: id }), 1, 20), judgment: enumeration('rescue', 'self', null), text: str(), notices: array(str(), 1, 10) },
-    ['groupId', 'axis', 'extremePole', 'replaceChoiceId', 'alternatives', 'judgment', 'text', 'notices']),
+  intervention: interventionSchema,
+  interventions: array(interventionSchema, 1, 6),
   groups: array(object({
     id, priority: int(0, 1000), conditions, notices: array(str(), 0, 10),
     choices: array(object({ id, goalId: id, label: str(200), intention: str(), target: str(200), judgment: enumeration('rescue', 'self', null), pace: enumeration('slow', 'balanced', 'fast'), destinationSegmentId: id,
@@ -97,6 +99,7 @@ const savedEventSchema = makeEventSchema(1, 20)
 export const scriptSchema = object({ id, eventId: id, choiceId: nullable(id), slot: enumeration('scene', 'success', 'failure', 'opinion', 'hesitation', 'departure-warning', 'departure', 'absent', 'reunion', 'recommendation-failure', 'infection-ending'), conditions,
   priority: int(0, 1000), weight: int(1, 1000), once: bool, text: array(str(), 1, 20) })
 export const manifestSchema = object({ formatVersion: enumeration(1), id, revision: id, rulesVersion: enumeration('1.2-stress-1'), title: str(100), startLocationId: id,
+  extremeExperienceVersion: enumeration('middle-1'),
   companionStateVersion: enumeration('separate-1'),
   traitRangeVersion: enumeration('relaxed-1'),
   reactionVersion: enumeration('responsibility-1', 'contextual-1'),

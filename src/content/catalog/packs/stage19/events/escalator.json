@@ -41,7 +41,7 @@
                   "check": null,
                   "traitDelta": {
                     "risk": 0,
-                    "cognition": -4,
+                    "cognition": -8,
                     "affect": 0
                   },
                   "successEffects": [],
@@ -89,7 +89,7 @@
                   },
                   "traitDelta": {
                     "risk": 0,
-                    "cognition": 4,
+                    "cognition": 8,
                     "affect": 0
                   },
                   "successEffects": [
@@ -111,6 +111,106 @@
                       "amount": 1
                     }
                   ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.escalator.form-risk-left",
+          "goalId": "encounter.escalator.form-risk-left",
+          "label": "움직임이 돌아오기 전에 정지된 승강부 옆 비상함을 회수한다",
+          "intention": "배낭을 채우기 위해 노출을 감수한다. 실패하면 부상을 입을 수 있다.",
+          "target": "에스컬레이터 구역",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.escalator.form-risk-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.escalator.form-risk-right",
+          "goalId": "encounter.escalator.form-risk-right",
+          "label": "물품을 포기하고 에스컬레이터 구역의 벽 쪽으로 우회한다",
+          "intention": "눈앞의 이익을 버리고 노출이 적은 길을 택한다.",
+          "target": "에스컬레이터 구역",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.escalator.form-risk-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
                 }
               }
             ]

@@ -59,6 +59,8 @@ export interface CatalogChoice {
   readonly failureFacts: Readonly<Record<string, boolean>>
 }
 export interface CatalogEvent {
+  /** Additional authored extreme groups, each retaining an independent companion alternative. */
+  readonly interventions?: readonly NonNullable<CatalogEvent['intervention']>[]
   readonly autonomy?: CatalogAutonomyPolicy
   readonly recommendation?: { readonly axis: keyof Traits }
   readonly id: string
@@ -99,6 +101,7 @@ export interface CatalogScript {
   readonly text: readonly string[]
 }
 export interface CatalogManifest {
+  readonly extremeExperienceVersion?: 'middle-1'
   readonly traitRangeVersion?: 'relaxed-1'
   readonly companionStateVersion?: 'separate-1'
   readonly reactionVersion?: 'responsibility-1' | 'contextual-1'

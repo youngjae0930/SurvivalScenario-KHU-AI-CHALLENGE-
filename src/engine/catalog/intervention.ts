@@ -8,6 +8,8 @@ export const INTERVENTION_TRUST = 40
 // ':' is forbidden in authored IDs, so companion commands cannot collide with normal actions.
 export const companionChoiceId = (id: string) => `companion:${id}`
 export const sourceChoiceId = (id: string) => id.startsWith('companion:') ? id.slice('companion:'.length) : id
+export const interventionPolicies = (event: CatalogEvent) => [...(event.intervention ? [event.intervention] : []), ...(event.interventions ?? [])]
+export const interventionPolicy = (event: CatalogEvent, groupId: string) => interventionPolicies(event).find(policy => policy.groupId === groupId)
 export function asCompanionChoice(choice: CatalogChoice): CatalogChoice {
   return { ...choice, id: companionChoiceId(choice.id), label: `동료와 함께 · ${choice.label}` }
 }
@@ -22,7 +24,7 @@ export function isCompanionContext(value: unknown): value is CompanionContext {
 
 /** Only opposing-goal intervention. Neutral ranking and ordinary recommendations remain undecided. */
 function selectTrustIntervention(event: CatalogEvent, group: CatalogEvent['groups'][number], context: CatalogContext) {
-  const policy = event.intervention
+  const policy = interventionPolicy(event, group.id)
   const companion = context.companion
   if (!policy || !companion || policy.groupId !== group.id) return null
   const value = companion.traits[policy.axis]
@@ -53,7 +55,7 @@ function selectTrustIntervention(event: CatalogEvent, group: CatalogEvent['group
 
 /** New packs reserve one companion slot; trust never unlocks a player's own opposing goal. */
 export function selectIntervention(event: CatalogEvent, group: CatalogEvent['groups'][number], context: CatalogContext) {
-  const policy = event.intervention
+  const policy = interventionPolicy(event, group.id)
   if (policy?.mode !== 'companion-choice') return selectTrustIntervention(event, group, context)
   if (!context.companion || policy.groupId !== group.id) return null
   // Reuse the approved trait/count preference, independently of the historical trust gate.

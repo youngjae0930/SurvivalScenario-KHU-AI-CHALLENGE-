@@ -515,5 +515,953 @@
       "알려 받은 주파수에서 같은 호출을 확인했다. 남쪽 우회 통로의 표지와 진입 방향을 들었다.",
       "“길을 하나 알아 두니 덜 막막하네. 입구를 찾을 때 나도 같이 볼게.”"
     ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-0.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쓰러진 통신 장비 뒤 비상함의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-0.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-0.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-1.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쓰러진 통신 장비 뒤 비상함의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-1.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-1.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-2.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쓰러진 통신 장비 뒤 비상함의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-2.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-left-2.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.scene.scene.220",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 220,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 옥상 통신실의 안테나 지지대가 한쪽으로 기울었다. 쓰러진 장비 뒤 비상함에는 식품과 처치 도구가 남아 있다.",
+      "받침 아래에 깔린 생존자가 손을 내민다. 마지막 송신 기록과 배선을 대조하면 남쪽 피난 통로가 어느 쪽인지 확인할 수 있을 것 같다.",
+      "‘지금 쓰러진 통신 장비 뒤 비상함을 놓치면 다시는 못 얻어.’ 돌아갈 길보다 손에 넣을 물품만 또렷해진다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-0.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 통신실 뒤의 막힌 바람 없는 공간에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-0.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-0.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-1.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 통신실 뒤의 막힌 바람 없는 공간에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-1.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-1.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-2.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 통신실 뒤의 막힌 바람 없는 공간에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-2.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-risk-right-2.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-risk-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.scene.scene.220-85",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 220,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 옥상 통신실의 안테나 지지대가 한쪽으로 기울었다. 쓰러진 장비 뒤 비상함에는 식품과 처치 도구가 남아 있다.",
+      "받침 아래에 깔린 생존자가 손을 내민다. 마지막 송신 기록과 배선을 대조하면 남쪽 피난 통로가 어느 쪽인지 확인할 수 있을 것 같다.",
+      "‘저쪽을 완전히 막아야 움직일 수 있어.’ 그대로 지나칠 길이 보여도 흔들리는 안테나 지지대를 고정하지 않고는 발이 떨어지지 않는다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-0.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 송신 기록과 안테나 배선의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-0.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-0.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-1.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 송신 기록과 안테나 배선의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-1.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-1.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-2.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 송신 기록과 안테나 배선의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-2.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-left-2.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.scene.scene.230",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 230,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 옥상 통신실의 안테나 지지대가 한쪽으로 기울었다. 쓰러진 장비 뒤 비상함에는 식품과 처치 도구가 남아 있다.",
+      "받침 아래에 깔린 생존자가 손을 내민다. 마지막 송신 기록과 배선을 대조하면 남쪽 피난 통로가 어느 쪽인지 확인할 수 있을 것 같다.",
+      "‘마지막 송신 기록과 안테나 배선이 맞는지 끝까지 확인해야 해.’ 무너지는 소리가 나는데도 불일치한 흔적에서 눈을 떼지 못한다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-0.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 통신실 뒤의 막힌 바람 없는 공간에서 쉴 여유까지 얻어 체력을 크게 회복했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-0.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-0.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-1.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 통신실 뒤의 막힌 바람 없는 공간에서 쉴 여유까지 얻어 체력을 크게 회복했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-1.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-1.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-2.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 통신실 뒤의 막힌 바람 없는 공간에서 쉴 여유까지 얻어 체력을 크게 회복했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-2.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-cognition-right-2.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.scene.scene.230-85",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 230,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 옥상 통신실의 안테나 지지대가 한쪽으로 기울었다. 쓰러진 장비 뒤 비상함에는 식품과 처치 도구가 남아 있다.",
+      "받침 아래에 깔린 생존자가 손을 내민다. 마지막 송신 기록과 배선을 대조하면 남쪽 피난 통로가 어느 쪽인지 확인할 수 있을 것 같다.",
+      "‘지금 저 틈으로 나갈 수 있어.’ 마지막 송신 기록과 안테나 배선을 다시 볼 생각보다 몸이 먼저 움직인다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-0.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안테나 받침 아래 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-0.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-0.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-1.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안테나 받침 아래 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-1.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-1.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-2.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안테나 받침 아래 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-2.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-left-2.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.scene.scene.210",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "affect",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 210,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 옥상 통신실의 안테나 지지대가 한쪽으로 기울었다. 쓰러진 장비 뒤 비상함에는 식품과 처치 도구가 남아 있다.",
+      "받침 아래에 깔린 생존자가 손을 내민다. 마지막 송신 기록과 배선을 대조하면 남쪽 피난 통로가 어느 쪽인지 확인할 수 있을 것 같다.",
+      "안테나 받침 아래 생존자가 손을 내민다. ‘위험을 분리하는 게 먼저야.’ 도움 요청보다 사람과 물품의 경계를 가르는 일에만 매달린다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-0.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안테나 받침 아래 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-0.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-0.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-1.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안테나 받침 아래 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-1.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-1.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-2.success.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안테나 받침 아래 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-2.failure.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 흔들리는 안테나 지지대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.xp-affect-right-2.opinion.0",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": "encounter.hospital-rooftop-comms.xp-affect-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-rooftop-comms.xp.scene.scene.210-85",
+    "eventId": "encounter.hospital-rooftop-comms",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "affect",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 210,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 옥상 통신실의 안테나 지지대가 한쪽으로 기울었다. 쓰러진 장비 뒤 비상함에는 식품과 처치 도구가 남아 있다.",
+      "받침 아래에 깔린 생존자가 손을 내민다. 마지막 송신 기록과 배선을 대조하면 남쪽 피난 통로가 어느 쪽인지 확인할 수 있을 것 같다.",
+      "안테나 받침 아래 생존자의 손이 미끄러진다. ‘저 사람부터 꺼내야 해.’ 흔들리는 안테나 지지대가 무너질 가능성도, 먼저 나갈 길도 판단 밖으로 밀려난다."
+    ]
   }
 ]

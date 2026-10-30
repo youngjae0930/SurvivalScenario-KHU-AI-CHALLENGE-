@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "stage19",
-  "revision": "catalog-trust-scale-1",
+  "revision": "catalog-middle-extremes-1",
   "rulesVersion": "1.2-stress-1",
   "title": "19스테이지 · 갈림길의 선택",
   "startLocationId": "villa",
@@ -35,7 +35,13 @@
     "research-sample",
     "subway-map",
     "symptoms-noticed",
-    "warehouse-route"
+    "warehouse-route",
+    "extreme-risk-left-done",
+    "extreme-risk-right-done",
+    "extreme-cognition-left-done",
+    "extreme-cognition-right-done",
+    "extreme-affect-left-done",
+    "extreme-affect-right-done"
   ],
   "boundary": {
     "nextEventId": "post-prototype",
@@ -50,9 +56,7 @@
   "decisionEcho": {
     "version": "echo-1",
     "compatibleRevisions": [
-      "catalog-ui-history-1",
-      "catalog-narrative-polish-1",
-      "catalog-trust-scale-1"
+      "catalog-middle-extremes-1"
     ]
   },
   "autonomyVersion": "journey-2",
@@ -375,5 +379,6 @@
     }
   ],
   "endingVersion": "routes-1",
-  "reactionVersion": "contextual-1"
+  "reactionVersion": "contextual-1",
+  "extremeExperienceVersion": "middle-1"
 }

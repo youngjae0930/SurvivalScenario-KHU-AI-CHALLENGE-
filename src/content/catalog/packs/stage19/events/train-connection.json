@@ -20,13 +20,15 @@
           "max": 15
         }
       ],
-      "notices": [],
+      "notices": [
+        "이성 극단: 격리를 강행합니다. 강화 행동의 실패는 큰 부상으로 이어집니다."
+      ],
       "choices": [
         {
           "id": "E09.protect",
           "goalId": "quarantine",
-          "label": "문 옆 엄폐물을 끌어 닫을 공간을 확보한다",
-          "intention": "주변 위협을 감수하고 나갈 틈을 만든다.",
+          "label": "[이성 극단 · 강화] 문 옆 엄폐물을 끌어 닫을 공간을 확보한다",
+          "intention": "주변 위협을 감수하고 나갈 틈을 만든다. 격리 목표를 철회하기 어렵다. 성공하면 경로와 물품을 확보하지만 실패하면 부상 2를 입는다.",
           "target": "열차 연결 구간",
           "judgment": "self",
           "behavior": {
@@ -44,8 +46,8 @@
                     "medkit": 0
                   },
                   "check": {
-                    "base": 60,
-                    "physical": false,
+                    "base": 45,
+                    "physical": true,
                     "weaponBonus": false,
                     "traitWeights": [
                       {
@@ -62,21 +64,31 @@
                   },
                   "successEffects": [
                     {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
                       "kind": "add",
-                      "stat": "stress",
-                      "amount": -10
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
                     }
                   ],
                   "failureEffects": [
                     {
                       "kind": "add",
-                      "stat": "stress",
-                      "amount": 15
+                      "stat": "injury",
+                      "amount": 2
                     },
                     {
                       "kind": "add",
-                      "stat": "injury",
-                      "amount": 1
+                      "stat": "stress",
+                      "amount": 20
                     }
                   ]
                 }
@@ -101,8 +113,8 @@
         {
           "id": "E09.discard",
           "goalId": "quarantine",
-          "label": "물품 한 몫을 버려 문 앞을 비우고 물러난다",
-          "intention": "배낭 물품 하나를 버리고 연결문 밖으로 빠질 공간을 만든다.",
+          "label": "[이성 극단 · 강화] 물품 한 몫을 버려 문 앞을 비우고 물러난다",
+          "intention": "배낭 물품 하나를 버리고 연결문 밖으로 빠질 공간을 만든다. 격리 목표를 철회하기 어렵다. 성공하면 경로와 물품을 확보하지만 실패하면 부상 2를 입는다.",
           "target": "열차 연결 구간",
           "judgment": "self",
           "behavior": {
@@ -122,8 +134,8 @@
                     "medkit": 0
                   },
                   "check": {
-                    "base": 85,
-                    "physical": false,
+                    "base": 45,
+                    "physical": true,
                     "weaponBonus": false,
                     "traitWeights": [
                       {
@@ -140,21 +152,31 @@
                   },
                   "successEffects": [
                     {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
                       "kind": "add",
-                      "stat": "stress",
-                      "amount": -15
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
                     }
                   ],
                   "failureEffects": [
                     {
                       "kind": "add",
-                      "stat": "stress",
-                      "amount": 10
+                      "stat": "injury",
+                      "amount": 2
                     },
                     {
                       "kind": "add",
-                      "stat": "injury",
-                      "amount": 1
+                      "stat": "stress",
+                      "amount": 20
                     }
                   ]
                 }
@@ -179,8 +201,8 @@
         {
           "id": "E09.verify",
           "goalId": "quarantine",
-          "label": "연결문을 짚어 닫을 수 있는지 확인한다",
-          "intention": "문 주변에 접근해 통과할 틈을 확보한다.",
+          "label": "[이성 극단 · 강화] 연결문을 짚어 닫을 수 있는지 확인한다",
+          "intention": "문 주변에 접근해 통과할 틈을 확보한다. 격리 목표를 철회하기 어렵다. 성공하면 경로와 물품을 확보하지만 실패하면 부상 2를 입는다.",
           "target": "열차 연결 구간",
           "judgment": "self",
           "behavior": {
@@ -200,8 +222,8 @@
                     "medkit": 0
                   },
                   "check": {
-                    "base": 70,
-                    "physical": false,
+                    "base": 45,
+                    "physical": true,
                     "weaponBonus": false,
                     "traitWeights": [
                       {
@@ -218,21 +240,31 @@
                   },
                   "successEffects": [
                     {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
                       "kind": "add",
-                      "stat": "stress",
-                      "amount": -10
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
                     }
                   ],
                   "failureEffects": [
                     {
                       "kind": "add",
-                      "stat": "stress",
-                      "amount": 15
+                      "stat": "injury",
+                      "amount": 2
                     },
                     {
                       "kind": "add",
-                      "stat": "injury",
-                      "amount": 1
+                      "stat": "stress",
+                      "amount": 20
                     }
                   ]
                 }
@@ -506,7 +538,8 @@
     "judgment": "rescue",
     "text": "아직 손을 뻗고 있어. 저 사람을 데려올 길을 한 번 더 봐줘.",
     "notices": [
-      "지금은 한 가지 생각이 다른 판단을 밀어내고 있다. 동료가 곁에 있다면 다른 길을 제안할 수 있다."
+      "이성 극단: 격리를 강행합니다. 강화 행동의 실패는 큰 부상으로 이어집니다.",
+      "동료에게는 다른 판단이 남아 있을 수 있습니다."
     ],
     "mode": "companion-choice"
   },

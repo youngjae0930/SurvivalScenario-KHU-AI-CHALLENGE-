@@ -91,11 +91,11 @@ export function GameRoot({ client }: GameRootProps) {
           {view.kind === 'choice' && <>
             <span className="eyebrow">{sceneLabel} / SURVIVAL JOURNEY</span><h1>{view.title}</h1>
             {locationImage ? <img className="location-image" src={locationImage} alt={villaScene ? '어두운 빌라와 바깥 계단' : parkingScene ? '버려진 지하 주차장' : alleyScene ? '비 내린 주택가 골목길' : roadScene ? '황혼의 폐허 도시 도로' : storeScene ? '비 내린 도시의 편의점' : busStopScene ? '비 내리는 도시의 버스 정류장' : laundromatScene ? '비 내리는 골목의 세탁소' : bridgeScene ? '비 내리는 도시의 육교' : gasStationScene ? '비 내리는 도시의 주유소' : shelterScene ? '비 내리는 도시의 대피소 입구' : hospitalScene ? '버려진 병원의 접수대와 응급실 복도' : departmentScene ? '폐허가 된 백화점 내부' : schoolScene ? '황혼의 버려진 학교 운동장' : riversideScene ? '황혼의 폐허가 된 하천변 보행로' : checkpointScene ? '황혼의 폐허 도시 검문소' : subwayScene ? '폐허가 된 지하철역' : '버려진 연구동'} /> : <div className={`scene-art art-${view.context.eventId}`} aria-hidden="true"><div className="city-silhouette" /><div className="scene-mark">{sceneLabel}<small>봉쇄 도시</small></div></div>}
-            <TypewriterStory key={contextKey} paragraphs={view.story.map(block => block.text)} muted={soundVolume === 0} volume={soundVolume} />
+            <TypewriterStory key={`story:${contextKey}`} paragraphs={view.story.map(block => block.text)} muted={soundVolume === 0} volume={soundVolume} />
             {view.notices.filter(line => !line.startsWith('지금은 한 가지 생각이 다른 판단을 밀어내고 있다.')).map(line => /^(동료가|동료는|동료[ ·])|“/.test(line) ? <section className="companion-advice" aria-label="동료 대화" key={line}><strong>{view.companion.kind === 'present' ? view.companion.name : '동료'}{view.companion.kind === 'present' ? ` · 신뢰 ${view.companion.trust}` : ''}</strong><p>{line}</p></section> : <p className="consequence" key={line}>{line}</p>)}
             {view.companion.kind === 'present' && view.companion.opinion.kind === 'ready' && <section className="companion-advice" aria-label="동료 의견"><strong>{view.companion.name} · 신뢰 {view.companion.trust}</strong><p>{view.companion.opinion.text}</p><small>{view.companion.opinion.reason}</small></section>}
             <div className="choice-heading"><h2>어떻게 하시겠습니까?</h2><span>선택 전 비용과 결과를 확인할 수 있습니다.</span></div>
-            <ChoiceCards key={contextKey} client={client} view={view} disabled={disabled} onExecute={send} />
+            <ChoiceCards key={`choices:${contextKey}`} client={client} view={view} disabled={disabled} onExecute={send} />
           </>}
           {view.kind === 'result' && <>
             <span className="eyebrow">{sceneLabel} / AFTER THE CHOICE</span><div className={`outcome-badge outcome-${view.outcome}`}>{view.outcome === 'failure' ? '위험 판정 · 실패' : view.outcome === 'success' ? '위험 판정 · 성공' : '확정 행동'}</div>
