@@ -20,7 +20,7 @@
         {
           "id": "encounter.villa-stairs.water",
           "goalId": "E02.help",
-          "label": "문틈으로 물과 먹을 것을 건넨다",
+          "label": "문틈으로 마실 물을 건넨다",
           "intention": "나눌 물자가 없으면 계단 아래의 수도와 비상 보관함을 확인한다.",
           "target": "빌라 계단",
           "judgment": null,
@@ -238,7 +238,7 @@
         {
           "id": "encounter.villa-stairs.water",
           "goalId": "E02.help",
-          "label": "문틈으로 물과 먹을 것을 건넨다",
+          "label": "문틈으로 마실 물을 건넨다",
           "intention": "나눌 물자가 없으면 계단 아래의 수도와 비상 보관함을 확인한다.",
           "target": "빌라 계단",
           "judgment": null,

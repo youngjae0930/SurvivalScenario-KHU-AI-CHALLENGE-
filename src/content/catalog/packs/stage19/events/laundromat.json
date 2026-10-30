@@ -20,8 +20,8 @@
         {
           "id": "encounter.laundromat.maintain",
           "goalId": "E04.maintain",
-          "label": "담요 위에서 젖은 옷과 장비를 정리한다",
-          "intention": "쓸 수 있는 물자를 확인하며 몸을 추스른다. 상처 처치는 확인창에서 고를 수 있다.",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
           "target": "세탁소",
           "judgment": null,
           "behavior": {
@@ -114,8 +114,8 @@
         {
           "id": "encounter.laundromat.maintain",
           "goalId": "E04.maintain",
-          "label": "담요 위에서 젖은 옷과 장비를 정리한다",
-          "intention": "쓸 수 있는 물자를 확인하며 몸을 추스른다. 상처 처치는 확인창에서 고를 수 있다.",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
           "target": "세탁소",
           "judgment": null,
           "behavior": {
@@ -142,8 +142,8 @@
         {
           "id": "encounter.laundromat.maintain",
           "goalId": "E04.maintain",
-          "label": "담요 위에서 젖은 옷과 장비를 정리한다",
-          "intention": "쓸 수 있는 물자를 확인하며 몸을 추스른다. 상처 처치는 확인창에서 고를 수 있다.",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
           "target": "세탁소",
           "judgment": null,
           "behavior": {
@@ -222,7 +222,7 @@
           "id": "encounter.laundromat.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "세탁소",
           "judgment": null,
           "behavior": {
@@ -265,8 +265,8 @@
         {
           "id": "encounter.laundromat.maintain",
           "goalId": "E04.maintain",
-          "label": "담요 위에서 젖은 옷과 장비를 정리한다",
-          "intention": "쓸 수 있는 물자를 확인하며 몸을 추스른다. 상처 처치는 확인창에서 고를 수 있다.",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
           "target": "세탁소",
           "judgment": null,
           "behavior": {
@@ -281,7 +281,7 @@
           "id": "encounter.laundromat.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "세탁소",
           "judgment": null,
           "behavior": {

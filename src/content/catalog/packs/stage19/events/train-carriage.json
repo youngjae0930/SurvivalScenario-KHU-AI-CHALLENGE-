@@ -20,7 +20,7 @@
         {
           "id": "encounter.train-carriage.aisle",
           "goalId": "E03.observe",
-          "label": "좌석에 비친 움직임을 보고 통로를 지난다",
+          "label": "객차 유리에 비친 움직임을 보며 통로를 지난다",
           "intention": "가방을 건드리지 않고 연결부 쪽으로 간다.",
           "target": "전동차 내부",
           "judgment": null,
@@ -140,7 +140,7 @@
         {
           "id": "encounter.train-carriage.aisle",
           "goalId": "E03.observe",
-          "label": "좌석에 비친 움직임을 보고 통로를 지난다",
+          "label": "객차 유리에 비친 움직임을 보며 통로를 지난다",
           "intention": "가방을 건드리지 않고 연결부 쪽으로 간다.",
           "target": "전동차 내부",
           "judgment": null,

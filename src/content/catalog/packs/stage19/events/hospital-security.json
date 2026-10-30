@@ -75,7 +75,7 @@
           "id": "encounter.hospital-security.maintain",
           "goalId": "E04.maintain",
           "label": "경비원 의자에서 장비를 정비한다",
-          "intention": "문을 등지고 몸과 짐을 점검한다.",
+          "intention": "출입문 쪽 소리에 귀를 기울이며 몸과 짐을 점검한다.",
           "target": "병원 보안실",
           "judgment": null,
           "behavior": {
@@ -157,7 +157,7 @@
           "id": "encounter.hospital-security.maintain",
           "goalId": "E04.maintain",
           "label": "경비원 의자에서 장비를 정비한다",
-          "intention": "문을 등지고 몸과 짐을 점검한다.",
+          "intention": "출입문 쪽 소리에 귀를 기울이며 몸과 짐을 점검한다.",
           "target": "병원 보안실",
           "judgment": null,
           "behavior": {
@@ -172,7 +172,7 @@
           "id": "encounter.hospital-security.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "병원 보안실",
           "judgment": null,
           "behavior": {
@@ -264,7 +264,7 @@
           "id": "encounter.hospital-security.maintain",
           "goalId": "E04.maintain",
           "label": "경비원 의자에서 장비를 정비한다",
-          "intention": "문을 등지고 몸과 짐을 점검한다.",
+          "intention": "출입문 쪽 소리에 귀를 기울이며 몸과 짐을 점검한다.",
           "target": "병원 보안실",
           "judgment": null,
           "behavior": {
@@ -388,7 +388,7 @@
           "id": "encounter.hospital-security.maintain",
           "goalId": "E04.maintain",
           "label": "경비원 의자에서 장비를 정비한다",
-          "intention": "문을 등지고 몸과 짐을 점검한다.",
+          "intention": "출입문 쪽 소리에 귀를 기울이며 몸과 짐을 점검한다.",
           "target": "병원 보안실",
           "judgment": null,
           "behavior": {
@@ -403,7 +403,7 @@
           "id": "encounter.hospital-security.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "병원 보안실",
           "judgment": null,
           "behavior": {

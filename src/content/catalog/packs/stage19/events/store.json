@@ -20,7 +20,7 @@
         {
           "id": "E02.help",
           "goalId": "E02.help",
-          "label": "생존자와 먹을 것을 나눈다",
+          "label": "생존자에게 마실 것을 나눠 준다",
           "intention": "나눌 물자가 없으면 매장 안에서 마실 물을 찾아 돕는다.",
           "target": "편의점",
           "judgment": "rescue",
@@ -254,7 +254,7 @@
         {
           "id": "E02.help",
           "goalId": "E02.help",
-          "label": "생존자와 먹을 것을 나눈다",
+          "label": "생존자에게 마실 것을 나눠 준다",
           "intention": "나눌 물자가 없으면 매장 안에서 마실 물을 찾아 돕는다.",
           "target": "편의점",
           "judgment": "rescue",
