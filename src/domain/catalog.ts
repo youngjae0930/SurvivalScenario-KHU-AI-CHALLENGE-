@@ -1,4 +1,4 @@
-import type { CoreAction, CoreActionPreview, CoreActionResolution } from './actions'
+import type { CoreAction, CoreActionPreview, CoreActionResolution, StateChange } from './actions'
 import type { CoreState, EventId, Traits } from './types'
 
 export type StageId = 'early' | 'middle' | 'late'
@@ -91,7 +91,7 @@ export interface CatalogScript {
   readonly id: string
   readonly eventId: string
   readonly choiceId: string | null
-  readonly slot: 'scene' | 'success' | 'failure' | 'opinion' | 'hesitation' | 'departure-warning' | 'departure' | 'absent' | 'reunion'
+  readonly slot: 'scene' | 'success' | 'failure' | 'opinion' | 'hesitation' | 'departure-warning' | 'departure' | 'absent' | 'reunion' | 'recommendation-failure' | 'infection-ending'
   readonly conditions: readonly Condition[]
   readonly priority: number
   readonly weight: number
@@ -99,7 +99,9 @@ export interface CatalogScript {
   readonly text: readonly string[]
 }
 export interface CatalogManifest {
-  readonly reactionVersion?: 'responsibility-1'
+  readonly traitRangeVersion?: 'relaxed-1'
+  readonly companionStateVersion?: 'separate-1'
+  readonly reactionVersion?: 'responsibility-1' | 'contextual-1'
   readonly endingVersion?: 'routes-1'
   readonly researchVersion?: 'research-1'
   readonly opportunities?: readonly { readonly id: string; readonly locationTags: readonly string[] }[]
@@ -111,7 +113,7 @@ export interface CatalogManifest {
   /** Authored dialogue channels; display lookup never consumes gameplay randomness. */
   readonly dialogueVersion?: 'scripts-1'
   readonly routeVersion?: 'stages-1' | 'slots-1'
-  readonly trustVersion?: 'outcome-1'
+  readonly trustVersion?: 'outcome-1' | 'outcome-2'
   readonly executionVersion?: 'command-1'
   readonly autonomyVersion?: 'journey-1' | 'journey-2'
   /** Only explicitly compatible content revisions may share decision meanings. */
@@ -154,11 +156,17 @@ export interface CompanionContext {
   readonly trust: number
   readonly judgmentCounts?: { readonly rescue: number; readonly self: number }
 }
+export interface CompanionVitals {
+  readonly stamina: number
+  readonly stress: number
+  readonly injury: number
+}
 export interface CatalogContext {
+  readonly extremeBounds?: { readonly left: number; readonly right: number }
   readonly opportunities?: readonly string[]
   readonly infection?: { readonly protagonist: boolean; readonly companion: boolean }
   readonly core: CoreState
-  readonly companion: CompanionContext | null
+  readonly companion: (CompanionContext & Partial<CompanionVitals>) | null
   readonly facts: Readonly<Record<string, boolean>>
   readonly visited: readonly string[]
   readonly location: CatalogLocation
@@ -169,6 +177,7 @@ export interface CatalogVisit {
   readonly sceneScriptId: string
 }
 export interface CatalogHistory {
+  readonly companionChange?: { readonly before: CompanionVitals; readonly after: CompanionVitals; readonly changes: readonly StateChange[] }
   /** Captured before execution; never infer a past recommendation from the outcome. */
   readonly followedCompanionRecommendation?: true
   readonly infectionDeaths?: readonly InfectionDeath[]
@@ -188,11 +197,12 @@ export interface CatalogHistory {
 }
 /** Before-state evidence, not a policy for deciding whether two scenes are the same. */
 export interface CatalogDecisionContext {
+  readonly companionVitals?: CompanionVitals
   readonly opportunities?: readonly string[]
   readonly infection?: { readonly protagonist: boolean; readonly companion: boolean }
   /** Non-four groups record their count; absent in historical four-choice evidence. */
   readonly optionCount?: number
-  readonly relationship?: { readonly version: 'outcome-1'; readonly companion: CompanionContext }
+  readonly relationship?: { readonly version: 'outcome-1' | 'outcome-2'; readonly companion: CompanionContext }
   readonly executionActor?: 'companion'
   readonly commandTrustSufficient?: boolean
   readonly autonomy?: { readonly policy: CatalogAutonomyPolicy; readonly preferredActionId: string | null }
@@ -218,6 +228,8 @@ export interface CatalogDecisionContext {
     readonly infection?: readonly InfectionContact[]
     readonly ending?: CatalogChoice['ending']
     readonly trustOutcomes?: Readonly<Partial<Record<'success' | 'failure', number>>>
+    /** outcome-2 comparison evidence before the recommendation's loss protection. */
+    readonly baseTrustOutcomes?: Readonly<Partial<Record<'success' | 'failure', number>>>
     readonly action: CoreAction
     readonly preview: CoreActionPreview
   }[]
@@ -250,6 +262,7 @@ export interface CatalogLegacy {
   readonly contentRevision: string
 }
 export interface CatalogRun {
+  readonly companionVitals?: CompanionVitals
   readonly opportunities?: Readonly<Record<string, string>>
   readonly infectionDeaths?: readonly InfectionDeath[]
   readonly companionJourney?: {

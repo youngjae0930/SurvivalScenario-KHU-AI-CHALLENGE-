@@ -9,7 +9,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "연구자를 가뒀던 구획의 잠금이 풀리며 격벽이 연달아 흔들린다. 변형된 좀비가 기이하게 긴 팔을 뻗어 연구 인계함을 막고 있다. 기록과 시료를 최종 인계함에 담으려면 이곳에서 회수 절차를 마쳐야 한다."
+      "연구 인계함 앞을 긴 팔이 가로막는다. 고정대에서 벗어난 변형 좀비가 격벽을 짚고 몸을 끌어온다.",
+      "최종 회수 절차를 끝내려면 그 손이 닿는 곳에 들어가야 한다. 배낭을 당겨 몸에 붙인다. 지금 포기하면 옥상으로 물러날 길은 남아 있다."
     ]
   },
   {
@@ -85,6 +86,80 @@
     "once": false,
     "text": [
       "저 팔이 닿기 전에 나가자. 살아서 문 밖으로 나가는 게 먼저야."
+    ]
+  },
+  {
+    "id": "encounter.infected-lab.advice-injury.encounter.infected-lab.recover",
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.recover",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 격벽 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
+    ]
+  },
+  {
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.recover",
+    "slot": "infection-ending",
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "id": "encounter.infected-lab.infection-end.encounter.infected-lab.recover",
+    "conditions": [],
+    "text": [
+      "붙잡으려던 것이 손끝에서 멀어진다. 여기까지 버텨 온 길을 더는 이어갈 수 없다."
+    ]
+  },
+  {
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.recover",
+    "slot": "infection-ending",
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "id": "encounter.infected-lab.infection-end.records.encounter.infected-lab.recover",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      }
+    ],
+    "text": [
+      "배낭 안에는 접어 넣은 연구 기록이 남아 있다. 옥상까지 가져가야 한다는 생각이 잠깐 스치지만 손은 가방 끈을 잡지 못한다."
+    ]
+  },
+  {
+    "eventId": "encounter.infected-lab",
+    "choiceId": "encounter.infected-lab.recover",
+    "slot": "infection-ending",
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "id": "encounter.infected-lab.infection-end.both.encounter.infected-lab.recover",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      }
+    ],
+    "text": [
+      "기록도 시료도 배낭 안에 있다. 조금만 더 가면 인계할 수 있었는데, 가방 끈을 쥔 손에서 힘이 빠진다. 준비해 온 것들을 끝내 옥상까지 가져가지 못했다."
     ]
   }
 ]

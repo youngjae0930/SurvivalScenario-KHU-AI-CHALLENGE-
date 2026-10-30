@@ -5,6 +5,7 @@ import type { OpeningPreview, OpeningRun } from '../../domain/opening'
 import type { CoreState, TraitAxis } from '../../domain/types'
 import { classifyTrait, getOpeningLegacy, getTriggeredExtreme, listOpeningActions } from '../../engine'
 import { LEGACY_OPENING_CONTENT, openingEventIds, openingGoalId } from '../../engine/opening-content'
+import { originalTraitBounds } from '../../engine/traits'
 
 const statNames: Record<NumericStat, string> = { stress: '스트레스', stamina: '스태미나', injury: '부상', supply: '물자', medkit: '치료 도구', risk: '모험 ↔ 안정', cognition: '분석 ↔ 직관', affect: '이성 ↔ 감정' }
 const flagNames = { access: '내부 접근', data: '자료 확보', helpEstablished: '도움 연결', routeKnown: '우회 경로', weapon: '무기', rescueDecision: '편의점 판단' }
@@ -15,13 +16,13 @@ export function toContext(run: OpeningRun): ChoiceContext {
   return { runId: run.runId, eventId: run.eventId, stateRevision: run.revision, snapshotId: `${run.runId}:${run.contentRevision}:${run.revision}` }
 }
 
-export function toStatus(state: CoreState): StatusViewModel {
+export function toStatus(state: CoreState, bounds = originalTraitBounds): StatusViewModel {
   const actor = state.protagonist
   return {
     name: actor.name, stress: actor.stress, stamina: actor.stamina, injury: actor.injury,
     ...state.inventory,
     traits: (['risk', 'cognition', 'affect'] as const).map(axis => {
-      const band = classifyTrait(actor.traits[axis])
+      const band = classifyTrait(actor.traits[axis], bounds)
       if (!band.ok) throw new Error(band.error.message)
       return { axis, value: actor.traits[axis], leftLabel: poles[axis][0], rightLabel: poles[axis][1], band: band.value }
     }),
@@ -29,7 +30,8 @@ export function toStatus(state: CoreState): StatusViewModel {
 }
 
 export function toChange(change: StateChange): ChangeViewModel {
-  if (change.kind === 'number') return { label: statNames[change.field], text: `${change.before} → ${change.after} (${signed(change.delta)})`, actualDelta: change.delta }
+  if (change.kind === 'number') return { label: statNames[change.field], text: `${change.before} → ${change.after} (${signed(change.delta)})`, actualDelta: change.delta,
+    ...(['risk', 'cognition', 'affect'].includes(change.field) ? { traitAxis: change.field as TraitAxis } : {}) }
   const display = (value: typeof change.after) => value === 'rescue' ? '구조' : value === 'self' ? '자기 보존' : value === true ? '확보' : value === false ? '없음' : '미발생'
   return { label: flagNames[change.field], text: `${display(change.before)} → ${display(change.after)}`, actualDelta: null }
 }
@@ -136,7 +138,7 @@ export function toGameView(run: OpeningRun): GameViewModel {
       return { actionId: preview.action.id, goalId: openingGoalId(preview.action.id), label: text.label, intention: text.intention, availability: preview.allowed ? { kind: 'available' as const } : { kind: 'locked' as const, reasons: preview.reasons }, recommended: false, requiresCompanion: false }
     }),
     treatment: run.eventId === 'E04' && status.injury > 0 && status.medkit > 0 ? { kind: 'available' } : { kind: 'locked', reasons: [run.eventId !== 'E04' ? '회복 사건의 정비에서만 치료할 수 있습니다.' : status.injury === 0 ? '치료할 부상이 없습니다.' : '치료 도구가 없습니다.'] },
-    recentResult: previous ? { label: actionText[previous.selection.actionId].label, text: previous.resolution.changes.map(change => `${toChange(change).label} ${toChange(change).text}`) } : null,
+    recentResult: previous ? { label: actionText[previous.selection.actionId].label, text: previous.resolution.changes.filter(change => !toChange(change).traitAxis).map(change => `${toChange(change).label} ${toChange(change).text}`) } : null,
   }
 }
 

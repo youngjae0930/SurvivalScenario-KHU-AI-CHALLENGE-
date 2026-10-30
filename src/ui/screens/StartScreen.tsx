@@ -1,3 +1,4 @@
+import survivalMap from '../../assets/survival-map.png'
 import { useState } from 'react'
 import type { GameCommand, StartViewModel } from '../../contracts'
 import { Modal } from '../components/Modal'
@@ -14,7 +15,7 @@ export function StartScreen({ view, pending, error, persistenceMessage, edition,
         {view.introduction.map(line => <p key={line}>{line}</p>)}
         <div className="cover-tags"><span>{edition ?? '01—06 병원 구간까지'}</span><span>선택형 생존 게임</span><span>생존 프로토타입</span></div>
       </div>
-      <div className="city-map" aria-hidden="true"><div className="map-grid" /><div className="map-route" /><span className="map-label label-shelter">01 / 대피소</span><span className="map-label label-store">02 / 편의점</span><span className="map-label label-alley">03 / 골목</span><span className="map-label label-rest">04 / 회복</span><span className="map-caption">WEST DISTRICT<br />봉쇄 구역 · 이동 경로</span></div>
+      <img className="cover-map-image" src={survivalMap} alt="폐허가 된 도시의 생존 이동 경로 지도" />
     </section>
     {view.canResume && <section className="completion-note"><h2>남겨 둔 여정</h2><p>저장된 회차가 있습니다. 마지막으로 확정한 장면에서 이어합니다.</p><button className="primary" disabled={pending} onClick={() => onStart({ type: 'resume' })}>이어하기 <span aria-hidden="true">→</span></button></section>}
     {!view.canResume && <section className="questionnaire" aria-labelledby="questionnaire-title">
@@ -31,7 +32,6 @@ export function StartScreen({ view, pending, error, persistenceMessage, edition,
     {review && <Modal title="이대로 출발할까요?" onClose={() => { if (!pending) setReview(false) }}>
       <p><strong>{name.trim()}</strong>의 {view.succession ? '새로운' : '첫'} 이동을 시작합니다. 응답은 출발 성향을 정하고 이후 선택으로 바뀝니다.</p>
       {view.succession && <p className="notice-text">이어하기는 새 여정에서 계속됩니다. 직전 결말·성향·대표 선택 기록은 남고, 체력·물자·부상은 새로 시작합니다.</p>}
-      <ol className="review-list">{view.questions.map(question => <li key={question.questionId}>{question.answers.find(answer => answer.answerId === answers[question.questionId])?.label}</li>)}</ol>
       <p className="notice-text">{persistenceMessage}</p>
       {error && <p role="alert" className="error-message">{error}</p>}
       <div className="dialog-actions"><button className="secondary" disabled={pending} onClick={() => setReview(false)}>응답 수정</button><button className="primary" disabled={pending} onClick={async () => {

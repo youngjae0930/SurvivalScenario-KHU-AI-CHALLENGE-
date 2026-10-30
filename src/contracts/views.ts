@@ -11,6 +11,9 @@ export interface TraitViewModel {
 }
 
 export interface StatusViewModel {
+  /** Independent physical condition; inventory remains shared. Missing on older rules. */
+  readonly companion?: { readonly name: string; readonly stamina: number; readonly stress: number; readonly injury: number;
+    readonly state: 'present' | 'separated' | 'dead'; readonly deathCause?: 'injury' | 'infection' }
   /** Absent on historical packs whose rules contain no infection mechanic. */
   readonly infection?: { readonly protagonist: 'clear' | 'dead'; readonly companion: { readonly name: string; readonly status: 'clear' | 'dead' } | null }
   readonly name: string
@@ -32,6 +35,7 @@ export interface StoryBlockViewModel {
 }
 
 export interface ChangeViewModel {
+  readonly traitAxis?: TraitAxis
   readonly label: string
   readonly text: string
   /** Actual delta after clamping; null for non-numeric changes. */
@@ -72,6 +76,7 @@ export interface ActionViewModel {
 }
 
 export interface ChoiceViewModel {
+  readonly fixedStageHistory?: readonly FixedStageChoiceViewModel[]
   readonly treatmentActionIds?: readonly string[]
   readonly notices: readonly string[]
   readonly kind: 'choice'
@@ -87,6 +92,7 @@ export interface ChoiceViewModel {
 }
 
 export interface ResultViewModel {
+  readonly fixedStageHistory?: readonly FixedStageChoiceViewModel[]
   readonly kind: 'result'
   readonly context: ChoiceContext
   readonly resultId: string
@@ -103,6 +109,7 @@ export interface ResultViewModel {
 }
 
 export interface EndingViewModel {
+  readonly fixedStageHistory?: readonly FixedStageChoiceViewModel[]
   readonly kind: 'ending'
   readonly runId: string
   readonly resultId: string
@@ -118,6 +125,17 @@ export interface EndingViewModel {
 export interface QuestionnaireAnswer {
   readonly questionId: string
   readonly answerId: string
+}
+
+export interface FixedStageChoiceViewModel {
+  readonly resultText?: readonly string[]
+  readonly stageNumber: number
+  readonly locationId: string
+  readonly locationName: string
+  readonly actionLabel: string | null
+  readonly outcome: 'success' | 'failure' | 'certain' | null
+  readonly actor: 'protagonist' | 'companion' | null
+  readonly current: boolean
 }
 
 export interface StartViewModel {
@@ -183,6 +201,8 @@ export type ParticipationViewModel =
   }
 
 export interface ActionPreviewViewModel {
+  /** Treatment availability for the currently selected actor. */
+  readonly treatmentAvailability?: Availability
   /** Omitted for actions/old packs without an explicit actor option. No fifth story choice. */
   readonly execution?: {
     readonly actor: 'protagonist' | 'companion'

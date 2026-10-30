@@ -27,7 +27,7 @@ function selectTrustIntervention(event: CatalogEvent, group: CatalogEvent['group
   if (!policy || !companion || policy.groupId !== group.id) return null
   const value = companion.traits[policy.axis]
   // A companion's own designated extreme takes precedence over past judgment counts.
-  if (policy.extremePole === 'left' ? value <= 22 : value >= 78) return null
+  if (policy.extremePole === 'left' ? value <= (context.extremeBounds?.left ?? 22) : value >= (context.extremeBounds?.right ?? 78)) return null
   const counts = companion.judgmentCounts
   const dominant = counts && counts.rescue + counts.self >= 2 && Math.abs(counts.rescue - counts.self) >= 2
     ? counts.rescue > counts.self ? 'rescue' : 'self' : null

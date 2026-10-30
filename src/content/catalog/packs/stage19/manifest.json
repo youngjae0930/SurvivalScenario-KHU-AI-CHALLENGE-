@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "stage19",
-  "revision": "catalog-playtest-1",
+  "revision": "catalog-ui-history-1",
   "rulesVersion": "1.2-stress-1",
   "title": "19스테이지 · 갈림길의 선택",
   "startLocationId": "villa",
@@ -50,12 +50,14 @@
   "decisionEcho": {
     "version": "echo-1",
     "compatibleRevisions": [
-      "catalog-playtest-1"
+      "catalog-ui-history-1"
     ]
   },
   "autonomyVersion": "journey-2",
   "executionVersion": "command-1",
-  "trustVersion": "outcome-1",
+  "trustVersion": "outcome-2",
+  "companionStateVersion": "separate-1",
+  "traitRangeVersion": "relaxed-1",
   "routeVersion": "slots-1",
   "dialogueVersion": "scripts-1",
   "slotPlan": {
@@ -370,5 +372,5 @@
     }
   ],
   "endingVersion": "routes-1",
-  "reactionVersion": "responsibility-1"
+  "reactionVersion": "contextual-1"
 }

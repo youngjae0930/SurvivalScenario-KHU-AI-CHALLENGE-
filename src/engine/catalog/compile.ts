@@ -1,6 +1,7 @@
 import type { CatalogChoice, CatalogEvent, CatalogPack, Condition } from '../../domain/catalog'
 import { packSchema, savedPackSchema, validateShape } from '../../content/catalog/schema'
 import { isCoreAction } from '../actions'
+import { catalogTraitBounds } from './traits'
 import { planRoute } from './route'
 import { previewCoreAction } from '../actions'
 import { validateSlotPlan } from './slots'
@@ -29,6 +30,7 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
   const facts = new Set(pack.manifest.facts)
   const opportunities = new Set(pack.manifest.opportunities?.map(p => p.id))
   if (pack.manifest.reactionVersion) check(pack.manifest.dialogueVersion === 'scripts-1', 'reactionVersion: 동료 대사 버전이 필요합니다.')
+  if (pack.manifest.companionStateVersion) check(pack.manifest.executionVersion === 'command-1', 'companionStateVersion: 실행 주체 버전이 필요합니다.')
   if (pack.manifest.opportunities) {
     check(pack.manifest.researchVersion === 'research-1' && pack.manifest.routeVersion === 'slots-1', 'opportunities: research-1/slots-1이 필요합니다.')
     unique(pack.manifest.opportunities.map(p => p.id), 'opportunities')
@@ -43,7 +45,7 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
     check(pack.manifest.decisionEcho.compatibleRevisions.includes(pack.manifest.revision), 'decisionEcho: 현재 콘텐츠 revision을 포함해야 합니다.')
   }
   if (pack.manifest.trustVersion) check(pack.manifest.recommendationVersion === 'survival-1', 'trust: 성향 평가에는 일반 추천 버전이 필요합니다.')
-  if (pack.manifest.autonomyVersion === 'journey-2') check(pack.manifest.trustVersion === 'outcome-1', 'journey-2: 결과 기반 신뢰 버전이 필요합니다.')
+  if (pack.manifest.autonomyVersion === 'journey-2') check(!!pack.manifest.trustVersion, 'journey-2: 결과 기반 신뢰 버전이 필요합니다.')
   check(!!pack.manifest.recommendationVersion || pack.events.every(event => !event.recommendation && allChoices(event).every(choice => !choice.pace)),
     'recommendation: 추천 메타데이터는 manifest.recommendationVersion이 필요합니다.')
   if (pack.manifest.recommendationVersion) for (const event of pack.events) {
@@ -121,7 +123,7 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
       const group = event.groups.find(item => item.id === policy.groupId)
       check(!terminal && !!group && group.choices.length >= 2, `event ${event.id}: 동료 선택 그룹에는 본인 행동과 동료 슬롯이 필요합니다.`)
       check(!!group?.conditions.some(condition => condition.kind === 'number' && condition.subject === 'protagonist' && condition.stat === policy.axis
-        && (policy.extremePole === 'left' ? condition.min === 0 && condition.max === 22 : condition.min === 78 && condition.max === 100)), `event ${event.id}: 제지 축/극이 그룹 발동 조건과 다릅니다.`)
+        && (policy.extremePole === 'left' ? condition.min === 0 && condition.max === catalogTraitBounds(pack).extremeLeft : condition.min === catalogTraitBounds(pack).extremeRight && condition.max === 100)), `event ${event.id}: 제지 축/극이 그룹 발동 조건과 다릅니다.`)
       check(!!group?.choices.some(choice => choice.id === policy.replaceChoiceId), `event ${event.id}: 교체할 선택이 없습니다.`)
       if (policy.mode === 'companion-choice') check(group?.choices.find(choice => choice.id === policy.replaceChoiceId)?.behavior.kind === 'action',
         `event ${event.id}: 기본 동료 선택은 일반 행동이어야 합니다.`)
@@ -155,7 +157,7 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
           check(!choice.destinationSegmentId, `choice ${choice.id}: 경로 선택에 감염 노출을 지정할 수 없습니다.`)
           check(choice.infection.every(c => c.source !== c.target), `choice ${choice.id}: 자기 자신에게 전염시킬 수 없습니다.`)
         }
-        if (choice.relationship) check(pack.manifest.trustVersion === 'outcome-1', `choice ${choice.id}: 결과 기반 신뢰 버전이 필요합니다.`)
+        if (choice.relationship) check(!!pack.manifest.trustVersion, `choice ${choice.id}: 결과 기반 신뢰 버전이 필요합니다.`)
         if (choice.execution) {
           check(pack.manifest.executionVersion === 'command-1', `choice ${choice.id}: 동료 명령 버전이 필요합니다.`)
           check(choice.behavior.kind === 'action', `choice ${choice.id}: 정비·탈출에는 동료 선행 실행을 지정할 수 없습니다.`)
@@ -199,12 +201,13 @@ export function compileCatalog(input: unknown, options: { allowLegacyChoices?: b
     const event = events.get(script.eventId)
     check(!!event, `script ${script.id}: 없는 사건 ${script.eventId}`)
     const dialogue = !['scene', 'success', 'failure'].includes(script.slot)
-    const choiceSlot = ['success', 'failure', 'opinion', 'departure-warning', 'departure'].includes(script.slot)
+    const choiceSlot = ['success', 'failure', 'opinion', 'departure-warning', 'departure', 'recommendation-failure', 'infection-ending'].includes(script.slot)
     check(choiceSlot ? !!event && allChoices(event).some(choice => choice.id === script.choiceId) : script.choiceId === null, `script ${script.id}: 잘못된 선택/문구 슬롯 참조`)
     if (dialogue) {
       check(pack.manifest.dialogueVersion === 'scripts-1', `script ${script.id}: dialogueVersion이 필요합니다.`)
       check(script.weight === 1 && !script.once, `script ${script.id}: 대화 채널은 weight=1/once=false여야 합니다.`)
-      check(script.slot === 'absent' || script.conditions.some(c => c.kind === 'companion' && c.present), `script ${script.id}: 동행 대사에는 companion present=true가 필요합니다.`)
+      check(script.slot === 'absent' || script.slot === 'infection-ending' || script.conditions.some(c => c.kind === 'companion' && c.present), `script ${script.id}: 동행 대사에는 companion present=true가 필요합니다.`)
+      if (script.slot === 'recommendation-failure' || script.slot === 'infection-ending') check(pack.manifest.reactionVersion === 'contextual-1', `script ${script.id}: contextual-1 표시 정책이 필요합니다.`)
       if (script.slot === 'absent') check(script.conditions.some(c => c.kind === 'companion' && !c.present), `script ${script.id}: 부재 문구에는 companion present=false가 필요합니다.`)
       if (script.slot === 'departure' || script.slot === 'departure-warning') check(!!event?.autonomy, `script ${script.id}: 이별 정책이 없는 사건입니다.`)
     }

@@ -10,7 +10,8 @@
     "once": false,
     "text": [
       "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
-      "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
+      "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다.",
+      "명부의 화살표 끝이 의자 더미 뒤로 이어진다. 밀어 버릴지, 돌아갈 틈을 찾을지 허리를 낮춘다."
     ]
   },
   {
@@ -31,7 +32,8 @@
     "once": false,
     "text": [
       "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
-      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다.",
+      "허기가 느껴져도 지금 꺼낼 몫은 없다.",
+      "명부의 화살표 끝이 의자 더미 뒤로 이어진다. 밀어 버릴지, 돌아갈 틈을 찾을지 허리를 낮춘다.",
       "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
     ]
   },
@@ -54,7 +56,8 @@
     "once": false,
     "text": [
       "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
-      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다.",
+      "다친 쪽을 보호하려 몸을 돌린다. 지나갈 틈을 다시 가늠한다.",
+      "명부의 화살표 끝이 의자 더미 뒤로 이어진다. 밀어 버릴지, 돌아갈 틈을 찾을지 허리를 낮춘다.",
       "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
     ]
   },
@@ -77,7 +80,8 @@
     "once": false,
     "text": [
       "접수대의 대피 명부에는 병동으로 이어지는 화살표가 그려져 있다. 안쪽 통로는 넘어진 의자로 막혔고, 벽 쪽에는 좁게 돌아갈 공간이 남았다.",
-      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다.",
+      "옷깃이 스치는 소리에도 어깨가 굳는다. 천천히 숨을 내쉰다.",
+      "명부의 화살표 끝이 의자 더미 뒤로 이어진다. 밀어 버릴지, 돌아갈 틈을 찾을지 허리를 낮춘다.",
       "접수대 뒤 비상 처치함은 기울어진 보관대 너머에 있다. 병동 안을 더 찾을지, 지금 보이는 도구를 회수할지 망설여진다."
     ]
   },
@@ -96,7 +100,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+      "동료가 접수대 쪽에서 시선을 거둔다. “내 생각도 아직 정리가 안 돼. 너는 어떻게 하고 싶어?”"
     ]
   },
   {
@@ -114,7 +118,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+      "접수대 쪽을 살피다 곁을 돌아본다. 대답할 사람은 아직 없다."
     ]
   },
   {
@@ -132,7 +136,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+      "익숙한 얼굴이 보이자 부르려던 목소리가 멎는다. 동료도 몇 걸음 앞에서 멈춘다. “네가 먼저 간 건 알아. 그래도 여기서 다시 만나고 싶었어.”",
+      "“아직 같은 생각은 아니야.” 말하자 동료가 고개를 끄덕인다. 가방을 고쳐 메며 옆자리를 내준다. 하지 못한 말까지 풀린 것은 아니지만, 다음 길은 다시 나란히 살핀다."
     ]
   },
   {
@@ -171,7 +176,7 @@
     "once": false,
     "text": [
       "마지막 대피 시간이 적힌 줄을 찾았다. 발소리가 멀어진 뒤 의자를 피해 벽 쪽으로 지나갔다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "동료가 접수대 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
     ]
   },
   {
@@ -228,7 +233,7 @@
     "once": false,
     "text": [
       "의자가 기울기 전에 틈을 통과했다. 넓게 돌아갈 힘을 아끼고 병동 표지 앞으로 나왔다.",
-      "동료가 주변을 살피며 낮게 말한다. “여기서 오래 머물고 싶지는 않아. 다음 길도 소리부터 듣자.”"
+      "동료가 접수대 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
     ]
   },
   {
@@ -285,7 +290,7 @@
     "once": false,
     "text": [
       "몸이 걸린 의자가 무너졌다. 넘어지며 팔을 다친 채 통로 바깥으로 기어 나왔다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 접수대 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -424,6 +429,174 @@
     "once": false,
     "text": [
       "몸을 빼려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 출구를 향하던 시선이 바닥으로 내려앉았다."
+    ]
+  },
+  {
+    "id": "local.text.181.voice.0",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.roster",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 대피 시간이 적힌 줄을 찾았다. 발소리가 멀어진 뒤 의자를 피해 벽 쪽으로 지나갔다.",
+      "동료가 접수대 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.181.voice.1",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.roster",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마지막 대피 시간이 적힌 줄을 찾았다. 발소리가 멀어진 뒤 의자를 피해 벽 쪽으로 지나갔다.",
+      "“접수대 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.184.voice.0",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의자가 기울기 전에 틈을 통과했다. 넓게 돌아갈 힘을 아끼고 병동 표지 앞으로 나왔다.",
+      "동료가 접수대 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.184.voice.1",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "의자가 기울기 전에 틈을 통과했다. 넓게 돌아갈 힘을 아끼고 병동 표지 앞으로 나왔다.",
+      "“접수대 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-desk.advice-injury.encounter.hospital-desk.chairs",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.chairs",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 접수대 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.hospital-desk.advice-injury.encounter.hospital-desk.cabinet",
+    "eventId": "encounter.hospital-desk",
+    "choiceId": "encounter.hospital-desk.cabinet",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 접수대 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
     ]
   }
 ]

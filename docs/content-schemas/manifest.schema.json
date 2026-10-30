@@ -36,9 +36,20 @@
       "maxLength": 80,
       "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
     },
+    "companionStateVersion": {
+      "enum": [
+        "separate-1"
+      ]
+    },
+    "traitRangeVersion": {
+      "enum": [
+        "relaxed-1"
+      ]
+    },
     "reactionVersion": {
       "enum": [
-        "responsibility-1"
+        "responsibility-1",
+        "contextual-1"
       ]
     },
     "infectionVersion": {
@@ -473,7 +484,8 @@
     },
     "trustVersion": {
       "enum": [
-        "outcome-1"
+        "outcome-1",
+        "outcome-2"
       ]
     },
     "executionVersion": {

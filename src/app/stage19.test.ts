@@ -88,7 +88,7 @@ it('이전12사건 결말은 유지하고 명시적 다음 회차 출발부터19
   await client.dispatch({ type: 'prepare-next-run', sourceRunId: view.runId, sourceResultId: view.resultId })
   expect((await client.dispatch({ type: 'start-next-run', sourceRunId: view.runId, sourceResultId: view.resultId, name: '새 생존자', answers: origin.answers })).ok).toBe(true)
   const saved = decodeCatalogSave(env.raw(), resolveAnswers)
-  expect(saved.pack.manifest.revision).toBe('catalog-playtest-1')
+  expect(saved.pack.manifest.revision).toBe('catalog-ui-history-1')
   expect(saved.run.companion?.name).toBe(origin.name)
   expect(client.getSnapshot().presentation!.journey).toHaveLength(19)
 })

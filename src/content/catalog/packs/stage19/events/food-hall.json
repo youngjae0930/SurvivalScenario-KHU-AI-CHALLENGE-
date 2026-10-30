@@ -230,7 +230,7 @@
           "kind": "number",
           "subject": "protagonist",
           "stat": "affect",
-          "min": 78,
+          "min": 85,
           "max": 100
         }
       ],

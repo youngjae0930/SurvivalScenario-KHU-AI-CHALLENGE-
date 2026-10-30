@@ -1,5 +1,5 @@
 import type { CatalogChoice } from '../../domain/catalog'
-import type { CoreAction, CoreActionPreview } from '../../domain/actions'
+import type { AppliedEffects, CoreAction, CoreActionPreview } from '../../domain/actions'
 import type { CoreState } from '../../domain/types'
 import { commonEffects } from '../actions'
 import { applyStateEffects } from '../effects'
@@ -23,7 +23,8 @@ export interface ChoiceAssessment {
 }
 
 /** Locked choices are not candidates. Resource caps and effect semantics match execution. */
-export function assessChoice(state: CoreState, preview: CoreActionPreview & { readonly action: CoreAction; readonly choice: CatalogChoice; readonly infectionDeathsOnFailure?: readonly { readonly subject: string }[] }): ChoiceAssessment | null {
+export function assessChoice(state: CoreState, preview: CoreActionPreview & { readonly action: CoreAction; readonly choice: CatalogChoice; readonly infectionDeathsOnFailure?: readonly { readonly subject: string }[];
+  readonly companionOutcomes?: Readonly<Partial<Record<'success' | 'failure', AppliedEffects>>> }): ChoiceAssessment | null {
   if (!preview.allowed) return null
   const successPercent = preview.check.kind === 'certain' ? 100 : preview.check.probability.percent
   const branches = [
@@ -31,7 +32,8 @@ export function assessChoice(state: CoreState, preview: CoreActionPreview & { re
     { outcome: 'failure' as const, percent: 100 - successPercent, effects: preview.action.failureEffects },
   ].filter(branch => branch.percent > 0)
   const outcomes = branches.map(branch => {
-    const projected = applyStateEffects(state, [...commonEffects(preview.action), ...branch.effects])
+    const companion = preview.companionOutcomes?.[branch.outcome]
+    const projected = companion ? { ok: true as const, value: companion } : applyStateEffects(state, [...commonEffects(preview.action), ...branch.effects])
     if (!projected.ok) throw new Error(projected.error.message)
     return { outcome: branch.outcome, percent: branch.percent, state: projected.value.state, fatal: projected.value.fatal
       || (branch.outcome === 'failure' && !!preview.infectionDeathsOnFailure?.some(death => death.subject === 'protagonist')) }

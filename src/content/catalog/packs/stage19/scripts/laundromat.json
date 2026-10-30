@@ -9,7 +9,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "누군가 건조기 옆에 담요를 깔고 떠났다. 잠긴 세제 보관함 위에는 밀봉된 비상식량이 있고, 비스듬한 선반이 건드리면 넘어질 듯하다."
+      "누군가 건조기 옆에 담요를 깔고 떠났다. 잠긴 세제 보관함 위에는 밀봉된 비상식량이 있고, 비스듬한 선반이 건드리면 넘어질 듯하다.",
+      "담요를 옮겨 앉을 자리를 만들다가 선반 위 식량을 다시 본다. 지금 필요한 것이 휴식인지 먹을 것인지 가늠한다."
     ]
   },
   {
@@ -30,7 +31,8 @@
     "once": false,
     "text": [
       "누군가 건조기 옆에 담요를 깔고 떠났다. 잠긴 세제 보관함 위에는 밀봉된 비상식량이 있고, 비스듬한 선반이 건드리면 넘어질 듯하다.",
-      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+      "담요를 옮겨 앉을 자리를 만들다가 선반 위 식량을 다시 본다. 지금 필요한 것이 휴식인지 먹을 것인지 가늠한다.",
+      "가벼워진 배낭이 어깨에서 흔들린다. 다음에 쓸 먹을 것을 생각한다."
     ]
   },
   {
@@ -52,7 +54,8 @@
     "once": false,
     "text": [
       "누군가 건조기 옆에 담요를 깔고 떠났다. 잠긴 세제 보관함 위에는 밀봉된 비상식량이 있고, 비스듬한 선반이 건드리면 넘어질 듯하다.",
-      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+      "담요를 옮겨 앉을 자리를 만들다가 선반 위 식량을 다시 본다. 지금 필요한 것이 휴식인지 먹을 것인지 가늠한다.",
+      "상처가 당겨 잠시 자세를 고친다. 서두르는 길은 더 부담스럽다."
     ]
   },
   {
@@ -74,7 +77,8 @@
     "once": false,
     "text": [
       "누군가 건조기 옆에 담요를 깔고 떠났다. 잠긴 세제 보관함 위에는 밀봉된 비상식량이 있고, 비스듬한 선반이 건드리면 넘어질 듯하다.",
-      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+      "담요를 옮겨 앉을 자리를 만들다가 선반 위 식량을 다시 본다. 지금 필요한 것이 휴식인지 먹을 것인지 가늠한다.",
+      "숨을 세어 보지만 뒤쪽이 자꾸 신경 쓰인다."
     ]
   },
   {
@@ -92,7 +96,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+      "동료가 건조기 쪽에서 시선을 거둔다. “내 생각도 아직 정리가 안 돼. 너는 어떻게 하고 싶어?”"
     ]
   },
   {
@@ -110,7 +114,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+      "건조기 쪽을 살피다 곁을 돌아본다. 대답할 사람은 아직 없다."
     ]
   },
   {
@@ -128,7 +132,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+      "익숙한 얼굴이 보이자 부르려던 목소리가 멎는다. 동료도 몇 걸음 앞에서 멈춘다. “네가 먼저 간 건 알아. 그래도 여기서 다시 만나고 싶었어.”",
+      "“아직 같은 생각은 아니야.” 말하자 동료가 고개를 끄덕인다. 가방을 고쳐 메며 옆자리를 내준다. 하지 못한 말까지 풀린 것은 아니지만, 다음 길은 다시 나란히 살핀다."
     ]
   },
   {
@@ -167,7 +172,7 @@
     "once": false,
     "text": [
       "젖은 옷자락을 털고 담요 위에 앉아 배낭을 정리했다. 차가운 바닥에서 벗어나 잠시 호흡을 고를 수 있었다.",
-      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+      "동료가 건조기 쪽을 살핀다. “준비가 되면 말해. 일어나기 전에 짐부터 확인하자.”"
     ]
   },
   {
@@ -224,7 +229,7 @@
     "once": false,
     "text": [
       "기울어진 선반을 붙들고 비상식량을 꺼냈다. 가져갈 분량을 고른 뒤 선반에서 떨어졌다.",
-      "동료가 주변을 살피며 낮게 말한다. “가지고 갈 몫은 골랐어. 더 뒤지다 여기 갇히고 싶지는 않아.”"
+      "“건조기 쪽에서 꺼낸 건 잘 넣어 둬. 흘리고 갈 수는 없잖아.”"
     ]
   },
   {
@@ -281,7 +286,7 @@
     "once": false,
     "text": [
       "선반이 손에서 미끄러졌다. 떨어지는 통을 피하다 팔을 긁혔고 식량은 선반 뒤로 쏟아졌다.",
-      "동료가 멈춰 선다. “이렇게 될 줄은 몰랐어. 괜찮아? 일단 저 위험에서 떨어지자.”"
+      "동료가 건조기 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
     ]
   },
   {
@@ -341,7 +346,7 @@
     "once": false,
     "text": [
       "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
-      "동료가 주변을 살피며 낮게 말한다. “조금 숨이 돌아온 것 같아. 짐을 챙기면 다시 움직이자.”"
+      "“남은 몫은 조금씩 쓰자. 건네줘서 고마워.”"
     ]
   },
   {
@@ -359,7 +364,223 @@
     "weight": 1,
     "once": false,
     "text": [
-      "네 몫이 줄어드는 건 알아. 그래도 지금 나눠 준다면 잊지 않을게."
+      "동료가 건조기 옆에 짐을 내려놓는다. “조금 나눠 먹을 수 있을까? 네 몫도 남겨야 하는 건 알아.”"
+    ]
+  },
+  {
+    "id": "local.text.130.voice.0",
+    "eventId": "encounter.laundromat",
+    "choiceId": "encounter.laundromat.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "젖은 옷자락을 털고 담요 위에 앉아 배낭을 정리했다. 차가운 바닥에서 벗어나 잠시 호흡을 고를 수 있었다.",
+      "동료가 건조기 쪽을 살핀다. “준비가 되면 말해. 일어나기 전에 짐부터 확인하자.”"
+    ]
+  },
+  {
+    "id": "local.text.130.voice.1",
+    "eventId": "encounter.laundromat",
+    "choiceId": "encounter.laundromat.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "젖은 옷자락을 털고 담요 위에 앉아 배낭을 정리했다. 차가운 바닥에서 벗어나 잠시 호흡을 고를 수 있었다.",
+      "“조금 쉬었네. 혼자 서두르지 않을게. 준비되면 같이 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.133.voice.0",
+    "eventId": "encounter.laundromat",
+    "choiceId": "encounter.laundromat.locker",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기울어진 선반을 붙들고 비상식량을 꺼냈다. 가져갈 분량을 고른 뒤 선반에서 떨어졌다.",
+      "“건조기 쪽에서 꺼낸 건 잘 넣어 둬. 흘리고 갈 수는 없잖아.”"
+    ]
+  },
+  {
+    "id": "local.text.133.voice.1",
+    "eventId": "encounter.laundromat",
+    "choiceId": "encounter.laundromat.locker",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기울어진 선반을 붙들고 비상식량을 꺼냈다. 가져갈 분량을 고른 뒤 선반에서 떨어졌다.",
+      "동료가 배낭을 살핀다. “먹을 게 있으니 마음이 조금 놓여. 몸을 돌볼 때까지 잘 가지고 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.139.voice.0",
+    "eventId": "encounter.laundromat",
+    "choiceId": "encounter.laundromat.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "“남은 몫은 조금씩 쓰자. 건네줘서 고마워.”"
+    ]
+  },
+  {
+    "id": "local.text.139.voice.1",
+    "eventId": "encounter.laundromat",
+    "choiceId": "encounter.laundromat.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "동료가 건네받은 몫을 두 손으로 받친다. “나도 네가 버틸 수 있게 같이 볼게.”"
+    ]
+  },
+  {
+    "id": "encounter.laundromat.advice-injury.encounter.laundromat.locker",
+    "eventId": "encounter.laundromat",
+    "choiceId": "encounter.laundromat.locker",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 같이 해 보자고 했는데…… 다치게 해서 미안해.” 동료가 건조기 쪽에서 시선을 떼지 못한다. “지금은 네 상태부터 보자.”"
     ]
   }
 ]

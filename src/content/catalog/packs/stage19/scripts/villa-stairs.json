@@ -9,7 +9,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "계단참의 방화문 뒤에서 물을 달라는 목소리가 들린다. 문 아래로 보이는 발목에는 피가 묻었고, 옆 비상식량함에는 봉지가 하나 남아 있다."
+      "계단참의 방화문 뒤에서 물을 달라는 목소리가 들린다. 문 아래로 보이는 발목에는 피가 묻었고, 옆 비상식량함에는 봉지가 하나 남아 있다.",
+      "“문을 다 열지는 마세요.” 안쪽 사람이 덧붙인다. 식량함의 봉지와 문 아래의 손을 번갈아 본다."
     ]
   },
   {
@@ -30,7 +31,8 @@
     "once": false,
     "text": [
       "계단참의 방화문 뒤에서 물을 달라는 목소리가 들린다. 문 아래로 보이는 발목에는 피가 묻었고, 옆 비상식량함에는 봉지가 하나 남아 있다.",
-      "배낭에 나눌 먹을 것이 남지 않았다. 손이 자꾸 빈 수납칸으로 간다."
+      "“문을 다 열지는 마세요.” 안쪽 사람이 덧붙인다. 식량함의 봉지와 문 아래의 손을 번갈아 본다.",
+      "먹을 것을 찾다가 빈 수납칸을 닫는다."
     ]
   },
   {
@@ -52,7 +54,8 @@
     "once": false,
     "text": [
       "계단참의 방화문 뒤에서 물을 달라는 목소리가 들린다. 문 아래로 보이는 발목에는 피가 묻었고, 옆 비상식량함에는 봉지가 하나 남아 있다.",
-      "상처가 걸음마다 당긴다. 눈앞의 길보다 몸이 먼저 속도를 늦춘다."
+      "“문을 다 열지는 마세요.” 안쪽 사람이 덧붙인다. 식량함의 봉지와 문 아래의 손을 번갈아 본다.",
+      "발 디딜 곳을 고르다가 다친 곳부터 의식하게 된다."
     ]
   },
   {
@@ -74,7 +77,8 @@
     "once": false,
     "text": [
       "계단참의 방화문 뒤에서 물을 달라는 목소리가 들린다. 문 아래로 보이는 발목에는 피가 묻었고, 옆 비상식량함에는 봉지가 하나 남아 있다.",
-      "작은 소리에도 어깨가 움츠러든다. 숨을 천천히 세어 보지만 시선은 자꾸 뒤로 돌아간다."
+      "“문을 다 열지는 마세요.” 안쪽 사람이 덧붙인다. 식량함의 봉지와 문 아래의 손을 번갈아 본다.",
+      "움직이는 것을 본 듯해 잠시 멈춘다. 한 번 더 확인해야 마음이 놓일 것 같다."
     ]
   },
   {
@@ -92,7 +96,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "서두르고 싶지는 않아. 무엇을 잃을지 하나씩 생각해 보자. 네 생각도 듣고 싶어."
+      "“잠깐만 생각해 보자. 나도 지금은 어느 쪽이 낫다고 말하기 어려워.”"
     ]
   },
   {
@@ -110,7 +114,7 @@
     "weight": 1,
     "once": false,
     "text": [
-      "곁을 돌아보려다 시선을 거뒀다. 잠시 갈라진 뒤로는 발소리와 판단 모두 내 몫이다."
+      "두 사람 몫의 간격을 두고 걷다가 걸음을 고친다. 지금은 내 발소리만 따라온다."
     ]
   },
   {
@@ -128,7 +132,8 @@
     "weight": 1,
     "once": false,
     "text": [
-      "동료가 다가와 잠시 거리를 둔다. “끝까지 같은 생각은 아니었어. 그쪽에서 무슨 일이 있었는지는 걸으면서 말할게. 네가 여기 있나 먼저 보고 싶었어.” 나도 가방을 고쳐 메고 자리를 내준다. 아까의 선택은 사라지지 않았지만, 지금은 다시 같은 길을 살핀다."
+      "익숙한 얼굴이 보이자 부르려던 목소리가 멎는다. 동료도 몇 걸음 앞에서 멈춘다. “네가 먼저 간 건 알아. 그래도 여기서 다시 만나고 싶었어.”",
+      "“아직 같은 생각은 아니야.” 말하자 동료가 고개를 끄덕인다. 가방을 고쳐 메며 옆자리를 내준다. 하지 못한 말까지 풀린 것은 아니지만, 다음 길은 다시 나란히 살핀다."
     ]
   },
   {
@@ -167,7 +172,7 @@
     "once": false,
     "text": [
       "문 아래로 물과 먹을 것을 밀어 넣었다. 안쪽에서 숨을 고른 사람이 남쪽 대피소의 연락 주파수를 알려 주었다.",
-      "동료가 주변을 살피며 낮게 말한다. “저 사람이 숨을 고르는 걸 보니 나도 조금 놓여. 우리도 출구를 살피자.”"
+      "“방화문 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
     ]
   },
   {
@@ -224,7 +229,7 @@
     "once": false,
     "text": [
       "봉지의 먹을 것을 챙기고 계단을 내려갔다. 문 뒤의 목소리는 위층에 남았다.",
-      "동료가 주변을 살피며 낮게 말한다. “가지고 갈 몫은 골랐어. 더 뒤지다 여기 갇히고 싶지는 않아.”"
+      "동료가 배낭을 살핀다. “먹을 게 있으니 마음이 조금 놓여. 몸을 돌볼 때까지 잘 가지고 가자.”"
     ]
   },
   {
@@ -281,7 +286,7 @@
     "once": false,
     "text": [
       "붕대를 문틈으로 건네고 다리를 감는 것을 도왔다. 출혈을 누른 생존자가 떨리는 목소리로 대피소 연락 주파수를 전했다.",
-      "동료가 주변을 살피며 낮게 말한다. “저 사람이 숨을 고르는 걸 보니 나도 조금 놓여. 우리도 출구를 살피자.”"
+      "“방화문 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
     ]
   },
   {
@@ -300,6 +305,204 @@
     "once": false,
     "text": [
       "다리부터 감게 해 주자. 물만 마셔서는 저 계단을 내려오기 어려워 보여."
+    ]
+  },
+  {
+    "id": "local.text.25.voice.0",
+    "eventId": "encounter.villa-stairs",
+    "choiceId": "encounter.villa-stairs.water",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문 아래로 물과 먹을 것을 밀어 넣었다. 안쪽에서 숨을 고른 사람이 남쪽 대피소의 연락 주파수를 알려 주었다.",
+      "동료가 방화문 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.25.voice.1",
+    "eventId": "encounter.villa-stairs",
+    "choiceId": "encounter.villa-stairs.water",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문 아래로 물과 먹을 것을 밀어 넣었다. 안쪽에서 숨을 고른 사람이 남쪽 대피소의 연락 주파수를 알려 주었다.",
+      "“방화문 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.28.voice.0",
+    "eventId": "encounter.villa-stairs",
+    "choiceId": "encounter.villa-stairs.keep",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉지의 먹을 것을 챙기고 계단을 내려갔다. 문 뒤의 목소리는 위층에 남았다.",
+      "“방화문 쪽에서 꺼낸 건 잘 넣어 둬. 흘리고 갈 수는 없잖아.”"
+    ]
+  },
+  {
+    "id": "local.text.28.voice.1",
+    "eventId": "encounter.villa-stairs",
+    "choiceId": "encounter.villa-stairs.keep",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉지의 먹을 것을 챙기고 계단을 내려갔다. 문 뒤의 목소리는 위층에 남았다.",
+      "동료가 배낭을 살핀다. “먹을 게 있으니 마음이 조금 놓여. 몸을 돌볼 때까지 잘 가지고 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.31.voice.0",
+    "eventId": "encounter.villa-stairs",
+    "choiceId": "encounter.villa-stairs.bandage",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕대를 문틈으로 건네고 다리를 감는 것을 도왔다. 출혈을 누른 생존자가 떨리는 목소리로 대피소 연락 주파수를 전했다.",
+      "동료가 방화문 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.31.voice.1",
+    "eventId": "encounter.villa-stairs",
+    "choiceId": "encounter.villa-stairs.bandage",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "붕대를 문틈으로 건네고 다리를 감는 것을 도왔다. 출혈을 누른 생존자가 떨리는 목소리로 대피소 연락 주파수를 전했다.",
+      "“방화문 앞에 있을 때는 숨이 막혔어. 잠깐 호흡을 맞추고 가자.”"
     ]
   }
 ]

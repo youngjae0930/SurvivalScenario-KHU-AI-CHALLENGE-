@@ -1,6 +1,7 @@
 import { expect, it } from 'vitest'
 import balanceSnapshot from '../../test/balance-catalog-v1.json'
-import { readDefaultCatalog } from '../../content/catalog/registry'
+// Frozen responsibility-1 behavior remains valid for existing saves.
+import { makePlaytestCatalogFixture as readDefaultCatalog } from '../../test/catalog-fixtures'
 import { resolveAnswers } from '../../app/questionnaire'
 import { catalogGameView } from '../../app/view-models/catalog'
 import { makeOrigin } from '../../test/opening-paths'

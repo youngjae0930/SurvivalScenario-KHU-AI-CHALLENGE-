@@ -16,6 +16,7 @@ function comparable(situation: CatalogDecisionSituation) {
   const { traits, stamina, stress, injury } = situation.core.protagonist
   return {
     infection: situation.infection ?? null,
+    companionVitals: situation.companionVitals ?? null,
     opportunities: situation.opportunities ?? null,
     autonomy: situation.autonomy ?? null,
     commandTrustSufficient: situation.commandTrustSufficient ?? null,
@@ -31,7 +32,9 @@ function comparable(situation: CatalogDecisionSituation) {
       infection: option.infection ?? null,
       ending: option.ending ?? null,
       relationship: option.relationship ?? null,
-      trustOutcomes: { success: option.trustOutcomes?.success ?? 0, failure: option.trustOutcomes?.failure ?? 0 },
+      // Compare before recommendation protection so remembered recommendations cannot depend on themselves.
+      trustOutcomes: { success: (option.baseTrustOutcomes ?? option.trustOutcomes)?.success ?? 0,
+        failure: (option.baseTrustOutcomes ?? option.trustOutcomes)?.failure ?? 0 },
       allowed: option.preview.allowed, check: option.preview.check,
       // Sharing also has a relationship effect outside CoreAction. Compare its actual capped delta.
       trustDelta: !situation.relationship && option.behavior === 'recovery' && option.action.requires.companion === true && situation.companion

@@ -15,7 +15,7 @@ export function resolveInfectionContacts(pack: CatalogPack, run: CatalogRun, cho
   actor: 'protagonist' | 'companion', failed: boolean): InfectionDeath[] {
   if (pack.manifest.infectionVersion !== 'immediate-1' || !failed) return []
   const infected = infectionState(run)
-  const companionHere = !!run.companion && !run.companionJourney?.separation && !infected.companion
+  const companionHere = !!run.companion && !run.companionJourney?.separation && (run.companionVitals?.injury ?? 0) < 3 && !infected.companion
   const deaths: InfectionDeath[] = []
   for (const exposure of choice.infection ?? []) {
     const source = exposure.source === 'actor' ? actor : exposure.source

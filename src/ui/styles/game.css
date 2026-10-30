@@ -15,7 +15,14 @@
 }
 
 body {
-  margin:0
+  margin:0;
+  min-height:100vh;
+  background-color:#151917;
+  background-image:linear-gradient(rgba(8,13,18,.35),rgba(8,13,18,.55)),url('../../assets/background.png');
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed
 }
 
 button,input {
@@ -78,9 +85,11 @@ ul {
 }
 
 .game-shell {
-  max-width:1440px;
+  max-width:1800px;
   margin:auto;
-  padding:0 56px
+  padding:0 56px;
+  min-height:100vh;
+  background:rgba(15,20,18,.65)
 }
 
 .site-header {
@@ -92,11 +101,25 @@ ul {
   border-bottom:1px solid var(--line)
 }
 
+.header-actions { display:flex; align-items:center; gap:18px }
+.sound-toggle { display:grid; place-items:center; width:42px; height:42px; padding:10px; border:1px solid var(--line); background:var(--panel); color:var(--accent) }
+.sound-toggle:hover { border-color:var(--accent) }
+.sound-toggle svg { width:100%; height:100% }
+
+.cover-map-image {
+  display:block;
+  width:100%;
+  height:auto;
+  align-self:center;
+  border:1px solid var(--line)
+}
+
 .brand {
+  font-family:"Batang", "바탕", "Noto Serif KR", serif;
   display:flex;
   align-items:center;
   gap:14px;
-  font-size:.7rem;
+  font-size:.78rem;
   font-weight:600;
   letter-spacing:.1em;
   color:var(--muted)
@@ -124,7 +147,7 @@ ul {
 
 .edition {
   font-family:monospace;
-  font-size:.7rem;
+  font-size:.78rem;
   letter-spacing:.12em;
   color:var(--accent);
   text-align:right
@@ -166,7 +189,7 @@ ul {
   display:block;
   color:var(--accent);
   font-family:monospace;
-  font-size:.68rem;
+  font-size:.78rem;
   letter-spacing:.14em;
   margin-bottom:18px
 }
@@ -211,7 +234,7 @@ ul {
   border:1px solid var(--line);
   padding:6px 10px;
   color:#b8beb0;
-  font-size:.68rem
+  font-size:.78rem
 }
 
 .city-map {
@@ -258,7 +281,7 @@ ul {
   border:1px solid #5c6752;
   color:#d1d4bd;
   padding:6px 10px;
-  font-size:.65rem;
+  font-size:.78rem;
   letter-spacing:.08em
 }
 
@@ -366,7 +389,7 @@ legend {
   font-family:monospace;
   display:inline-block;
   color:var(--accent);
-  font-size:.7rem;
+  font-size:.78rem;
   margin-right:12px
 }
 
@@ -448,7 +471,7 @@ legend {
   padding:22px 0;
   margin-top:35px;
   border-top:1px solid var(--line);
-  font-size:.65rem;
+  font-size:.78rem;
   color:#8c9588;
   line-height:1.8
 }
@@ -468,11 +491,19 @@ legend {
   padding:0;
   margin:0;
   gap:22px;
-  flex-wrap:wrap
+  flex-wrap:nowrap;
+  flex:1;
+  min-width:0;
+  overflow-x:auto;
+  padding-bottom:10px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--accent) var(--panel)
 }
 
 .journey li {
   display:flex;
+  flex-shrink:0;
+  white-space:nowrap;
   align-items:center;
   gap:10px;
   font-size:.76rem;
@@ -504,7 +535,7 @@ legend {
 
 .journey-note {
   color:#8e9888;
-  font-size:.68rem;
+  font-size:.78rem;
   flex-shrink:0;
   white-space:nowrap
 }
@@ -593,9 +624,10 @@ legend {
 .art-E06 { background:linear-gradient(135deg,#62503b,#37372b 65%,#1e251f) }
 
 .story {
-  font-size:.94rem;
+  font-size:1.05rem;
   line-height:2;
-  color:#d3d7cb
+  color:#f0f2e9;
+  text-shadow:0 1px 3px rgba(0,0,0,.8)
 }
 
 .story p {
@@ -618,7 +650,7 @@ legend {
 }
 
 .choice-heading>span {
-  font-size:.68rem;
+  font-size:.78rem;
   color:var(--muted)
 }
 
@@ -653,7 +685,7 @@ legend {
 
 .action-card small {
   display:block;
-  font-size:.73rem;
+  font-size:.78rem;
   color:#b2bcaa;
   line-height:1.8;
   margin-top:7px;
@@ -674,7 +706,7 @@ legend {
 }
 
 .scene-hint {
-  font-size:.7rem;
+  font-size:.78rem;
   color:var(--muted);
   margin:18px 0
 }
@@ -684,7 +716,7 @@ legend {
   margin-top:25px;
   padding:18px 0;
   color:var(--muted);
-  font-size:.72rem;
+  font-size:.78rem;
   line-height:1.9
 }
 
@@ -696,9 +728,16 @@ legend {
   align-self:start;
   position:sticky;
   top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:24px
+}
+
+.protagonist-status, .status-panel .companion-vitals {
   background:var(--panel);
   border:1px solid #434d3e;
-  padding:24px
+  padding:24px;
+  margin:0
 }
 
 .panel-heading {
@@ -709,12 +748,12 @@ legend {
 }
 
 .panel-heading .eyebrow {
-  font-size:.58rem;
+  font-size:.78rem;
   margin:0
 }
 
 .live-dot {
-  font-size:.62rem;
+  font-size:.78rem;
   color:#a6bb91
 }
 
@@ -751,7 +790,7 @@ legend {
 }
 
 .status-panel small {
-  font-size:.64rem;
+  font-size:.78rem;
   color:#97a18e;
   margin-left:3px
 }
@@ -782,13 +821,6 @@ meter::-moz-meter-bar {
   background:#b0bb8d
 }
 
-.stress-help {
-  display:block;
-  margin-top:8px;
-  font-size:.65rem;
-  line-height:1.6;
-  color:#b8bcae
-}
 .vital-stress meter::-webkit-meter-suboptimum-value { background:#dfb666 }
 .vital-stress meter::-webkit-meter-even-less-good-value { background:#ed8d72 }
 
@@ -810,7 +842,7 @@ meter::-moz-meter-bar {
 }
 
 .inventory dt {
-  font-size:.7rem;
+  font-size:.78rem;
   color:#b0bba4
 }
 
@@ -821,7 +853,7 @@ meter::-moz-meter-bar {
 }
 
 .inventory .equipment {
-  font-size:.72rem
+  font-size:.78rem
 }
 
 .traits h3 {
@@ -829,7 +861,7 @@ meter::-moz-meter-bar {
 }
 
 .traits>p {
-  font-size:.65rem;
+  font-size:.78rem;
   color:#9ba78f
 }
 
@@ -841,13 +873,7 @@ meter::-moz-meter-bar {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  font-size:.73rem
-}
-
-.trait strong {
-  color:#c0bf99;
-  font-size:.7rem;
-  font-family:monospace
+  font-size:.78rem
 }
 
 .trait meter {
@@ -857,7 +883,7 @@ meter::-moz-meter-bar {
 .trait>small {
   display:block;
   text-align:center;
-  font-size:.6rem;
+  font-size:.78rem;
   margin-top:8px
 }
 
@@ -865,8 +891,44 @@ meter::-moz-meter-bar {
   color:var(--accent)
 }
 
+.choice-history {
+  margin-top:30px;
+  padding-top:24px;
+  border-top:1px solid var(--line)
+}
+.choice-history-heading {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px
+}
+.choice-history-heading h2 { margin:6px 0 0; font-size:1rem }
+.choice-history-heading p { margin:0; color:var(--muted); font-size:.75rem }
+.choice-history ol {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  gap:12px;
+  list-style:none;
+  margin:0;
+  padding:0
+}
+.choice-history li { padding:18px; border:1px solid var(--line); background:rgba(255,255,255,.025) }
+.choice-history li.current { border-left:2px solid var(--accent) }
+.choice-history-meta, .choice-history-outcome { display:flex; justify-content:space-between; gap:12px; font-size:.78rem; color:var(--muted) }
+.choice-history-meta>span { color:var(--accent); font-family:monospace; letter-spacing:.08em }
+.choice-history h3 { margin:12px 0 8px; font-size:.85rem }
+.choice-history li p { margin:0 0 16px; font-size:.8rem; line-height:1.7; overflow-wrap:anywhere }
+.choice-history li .choice-history-pending { margin-bottom:0; color:var(--muted) }
+
+.companion-vitals {
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid var(--line)
+}
 .panel-footnote {
-  font-size:.62rem;
+  font-size:.78rem;
   color:#99a38f;
   border-top:1px solid var(--line);
   padding-top:18px;
@@ -878,7 +940,7 @@ meter::-moz-meter-bar {
   border:1px solid #687756;
   color:#c9d5b6;
   padding:6px 10px;
-  font-size:.7rem;
+  font-size:.78rem;
   margin:8px 0 20px
 }
 
@@ -965,7 +1027,7 @@ meter::-moz-meter-bar {
 }
 
 .completion-note>span {
-  font-size:.7rem;
+  font-size:.78rem;
   color:#b2bd9f
 }
 
@@ -1023,7 +1085,7 @@ dialog::backdrop {
 }
 
 .preview-facts h3 {
-  font-size:.72rem;
+  font-size:.78rem;
   color:#d0c0a1;
   margin-bottom:10px
 }
@@ -1049,14 +1111,14 @@ dialog::backdrop {
 }
 
 .risk-box p {
-  font-size:.67rem;
+  font-size:.78rem;
   color:#aebaa2;
   line-height:1.8;
   margin:10px 0 0
 }
 
 .preview-warnings {
-  font-size:.68rem;
+  font-size:.78rem;
   color:#aab69e;
   line-height:1.9;
   padding-left:18px;
@@ -1100,7 +1162,7 @@ dialog::backdrop {
 .treatment-option small {
   display:block;
   color:#aeb99e;
-  font-size:.7rem;
+  font-size:.78rem;
   margin-top:8px
 }
 
@@ -1149,16 +1211,16 @@ dialog::backdrop {
     height:90px
   }
   .edition {
-    font-size:.6rem;
+    font-size:.78rem;
     letter-spacing:.02em
   }
   .edition>span {
     max-width:140px;
-    font-size:.58rem
+    font-size:.78rem
   }
   .brand {
     gap:9px;
-    font-size:.6rem
+    font-size:.78rem
   }
   .brand-symbol {
     width:32px;
@@ -1186,7 +1248,7 @@ dialog::backdrop {
     background-size:30px 30px
   }
   .map-label {
-    font-size:.56rem
+    font-size:.78rem
   }
   .section-heading {
     display:block
@@ -1220,14 +1282,13 @@ dialog::backdrop {
   }
   .journey ol {
     width:100%;
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px 8px
+    display:flex;
+    gap:18px
   }
   .journey li {
-    flex-direction:column;
+    flex-direction:row;
     align-items:center;
-    font-size:.65rem;
+    font-size:.78rem;
     gap:8px
   }
   .journey li>span {
@@ -1242,7 +1303,7 @@ dialog::backdrop {
   }
   .status-panel {
     position:static;
-    padding:22px
+    padding:0
   }
   .status-panel .vitals {
     display:grid;
@@ -1273,14 +1334,14 @@ dialog::backdrop {
     margin:8px 0
   }
   .trait>div {
-    font-size:.65rem
+    font-size:.78rem
   }
   .panel-footnote {
     margin-top:14px;
     padding-top:14px
   }
   .story {
-    font-size:.9rem
+    font-size:1rem
   }
   .scene-art {
     height:130px
@@ -1293,7 +1354,7 @@ dialog::backdrop {
     font-size:.83rem
   }
   .action-card small {
-    font-size:.7rem
+    font-size:.78rem
   }
   .dialog-body {
     padding:24px
@@ -1318,7 +1379,7 @@ dialog::backdrop {
     margin-top:25px
   }
   .session-banner {
-    font-size:.66rem
+    font-size:.78rem
   }
   .changes {
     padding:20px
@@ -1339,3 +1400,84 @@ dialog::backdrop {
 .companion-advice p { margin: .65rem 0; line-height: 1.8; }
 .companion-advice small, .recommendation-badge { color: #d5ae73; }
 .restart-controls { display: flex; justify-content: flex-end; margin: 1rem 0; }
+
+/* History occupies its own left column on wide screens. */
+@media(min-width:1200px) {
+  .play-layout:has(>.choice-history) { grid-template-columns:240px minmax(0,1fr) 280px; gap:28px }
+}
+.play-layout>.choice-history { margin:0; padding:20px; border:1px solid var(--line); background:var(--panel); min-width:0; align-self:start }
+.play-layout>.choice-history .choice-history-heading { display:block }
+.play-layout>.choice-history .choice-history-heading p { margin-top:12px }
+.play-layout>.choice-history ol {
+  display:flex;
+  flex-direction:column;
+  max-height:60vh;
+  overflow-y:auto;
+  overscroll-behavior-y:contain;
+  scrollbar-width:thin;
+  scrollbar-color:var(--accent) var(--panel);
+  scrollbar-gutter:stable;
+  padding-right:6px
+}
+.play-layout>.choice-history li { flex-shrink:0 }
+@media(min-width:761px) and (max-width:1199px) {
+  .play-layout>.choice-history { grid-column:1 / -1 }
+}
+
+.history-journal {
+  max-height:60vh;
+  overflow-y:auto;
+  overscroll-behavior-y:contain;
+  scrollbar-width:thin;
+  scrollbar-color:var(--accent) var(--panel);
+  scrollbar-gutter:stable;
+  padding-right:10px;
+  font-family:"Batang", "바탕", "Noto Serif KR", serif;
+  font-size:.95rem;
+  line-height:2;
+  color:var(--text)
+}
+.history-divider { border:0; border-top:1px solid var(--line); margin:0 0 24px }
+.history-journal p { margin:0 0 1.6em; overflow-wrap:anywhere }
+.history-journal p:last-child { margin-bottom:0 }
+.history-journal .choice-history-pending { color:var(--muted); font-size:.85rem }
+
+.action-card strong, .action-card small { font-size:1.05rem }
+@media(max-width:760px) {
+  .action-card strong, .action-card small { font-size:1rem }
+}
+
+.protagonist-status>.vitals,
+.protagonist-status>.inventory-section,
+.protagonist-status>.traits {
+  margin-top:26px;
+  padding-top:22px;
+  border-top:1px solid #56604e
+}
+.status-section-title {
+  margin:0 0 16px;
+  padding-left:10px;
+  border-left:3px solid var(--accent);
+  color:#f0f2e9;
+  font-size:.95rem;
+  font-weight:600;
+  letter-spacing:.04em
+}
+.protagonist-status .inventory { margin:0; padding:0; border:0 }
+@media(max-width:760px) {
+  .protagonist-status>.vitals>.status-section-title,
+  .protagonist-status>.traits>.status-section-title,
+  .protagonist-status>.traits>p { grid-column:1 / -1 }
+}
+
+.location-image { display:block; width:100%; height:auto; margin-bottom:28px; border:1px solid var(--line) }
+
+.volume-control { display:flex; align-items:center; gap:10px; color:var(--accent) }
+.volume-control svg { width:22px; height:22px; flex-shrink:0 }
+.volume-control input { width:110px; accent-color:var(--accent); cursor:pointer }
+.volume-control output { min-width:4ch; font-size:.8rem; color:#e5e8da; font-variant-numeric:tabular-nums }
+@media(max-width:760px) {
+  .volume-control { gap:5px }
+  .volume-control input { width:65px }
+  .header-actions { flex-wrap:wrap; justify-content:flex-end; gap:8px }
+}

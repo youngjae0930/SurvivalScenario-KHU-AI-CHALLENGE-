@@ -7,6 +7,7 @@ export const relationshipCopy = {
   positive: '동료는 선택의 실제 결과를 종합해 이득으로 받아들였습니다.',
   negative: '동료는 선택의 실제 결과를 종합해 손해로 받아들였습니다.',
   balanced: '동료가 받아들인 이득과 손해가 작거나 상쇄되어 신뢰를 유지했습니다.',
+  recommendationAccepted: '동료가 자신이 추천한 행동의 결과를 받아들여 신뢰를 유지했습니다.',
   details: '판단 근거',
   benefit: '이득', loss: '손해',
 } as const

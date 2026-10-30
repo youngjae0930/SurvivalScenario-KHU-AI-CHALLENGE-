@@ -1,8 +1,8 @@
 import type { CatalogRun } from '../../domain/catalog'
 import type { Traits } from '../../domain/types'
+import { originalTraitBounds } from '../traits'
 
 const axes = ['risk', 'cognition', 'affect'] as const
-const isExtreme = (value: number) => value <= 22 || value >= 78
 
 /** Reconstruct only recorded trait values. No missing old state or choice is invented. */
 export function catalogInitialTraits(run: CatalogRun): Traits {
@@ -16,7 +16,8 @@ export function catalogInitialTraits(run: CatalogRun): Traits {
 }
 
 /** One first occurrence across all axes and poles, derived from the committed history. */
-export function catalogFirstExtreme(run: CatalogRun) {
+export function catalogFirstExtreme(run: CatalogRun, bounds = originalTraitBounds) {
+  const isExtreme = (value: number) => value <= bounds.extremeLeft || value >= bounds.extremeRight
   const traits = { ...catalogInitialTraits(run) }
   const initial = axes.filter(axis => isExtreme(traits[axis]))
   if (initial.length) return { resultId: null, axes: initial }

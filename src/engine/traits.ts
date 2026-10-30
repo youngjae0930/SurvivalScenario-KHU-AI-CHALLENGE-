@@ -1,13 +1,17 @@
 import type { EngineResult, EventId, TraitAxis, TraitBand, TraitPole, Traits } from '../domain/types'
 import { isIntegerInRange, isTraits } from '../domain/validation'
 
-export function classifyTrait(value: number): EngineResult<TraitBand> {
+export interface TraitBounds { readonly extremeLeft: number; readonly warningLeft: number; readonly warningRight: number; readonly extremeRight: number }
+export const originalTraitBounds: TraitBounds = { extremeLeft: 22, warningLeft: 30, warningRight: 70, extremeRight: 78 }
+export const relaxedTraitBounds: TraitBounds = { extremeLeft: 15, warningLeft: 25, warningRight: 75, extremeRight: 85 }
+
+export function classifyTrait(value: number, bounds = originalTraitBounds): EngineResult<TraitBand> {
   if (!isIntegerInRange(value, 0, 100)) {
     return { ok: false, error: { code: 'invalid-state', message: '성향은 0~100 정수여야 합니다.' } }
   }
-  const band = value <= 22 ? 'extreme-left'
-    : value <= 30 ? 'warning-left'
-      : value < 70 ? 'normal' : value < 78 ? 'warning-right' : 'extreme-right'
+  const band = value <= bounds.extremeLeft ? 'extreme-left'
+    : value <= bounds.warningLeft ? 'warning-left'
+      : value < bounds.warningRight ? 'normal' : value < bounds.extremeRight ? 'warning-right' : 'extreme-right'
   return { ok: true, value: band }
 }
 

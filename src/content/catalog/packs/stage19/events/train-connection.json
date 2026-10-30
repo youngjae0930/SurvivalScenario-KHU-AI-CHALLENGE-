@@ -17,7 +17,7 @@
           "subject": "protagonist",
           "stat": "affect",
           "min": 0,
-          "max": 22
+          "max": 15
         }
       ],
       "notices": [],
@@ -396,7 +396,7 @@
             "role": "구조",
             "conditions": [],
             "risk": "hazardous",
-            "sharedRisk": "구조를 맡은 동료는 실패하면 좀비에게 물려 감염으로 사망한다. 주인공도 퇴로를 지키며 기존 부상 위험을 감수한다."
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다."
           }
         },
         {

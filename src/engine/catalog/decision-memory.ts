@@ -28,12 +28,14 @@ const runtimeAction: Shape = { ...catalogActionSchema, properties: { ...catalogA
 const option = object({ actionId: commandId, goalId: id, judgment: enumeration(null, 'rescue', 'self'), behavior: enumeration('action', 'recovery', 'escape'),
   route: enumeration('short', 'detour', 'request'), pace: enumeration('slow', 'balanced', 'fast'), execution: executionSchema,
   relationship: relationshipSchema, infection: infectionSchema, trustOutcomes: object({ success: int(-5, 5), failure: int(-5, 5) }, ['success', 'failure']),
-  ending: endingSchema, action: runtimeAction, preview }, ['route', 'pace', 'execution', 'relationship', 'trustOutcomes', 'infection', 'ending'])
+  baseTrustOutcomes: object({ success: int(-5, 5), failure: int(-5, 5) }, ['success', 'failure']),
+  ending: endingSchema, action: runtimeAction, preview }, ['route', 'pace', 'execution', 'relationship', 'trustOutcomes', 'baseTrustOutcomes', 'infection', 'ending'])
 const context = object({
+  companionVitals: object({ stamina: int(0, 100), stress: int(0, 100), injury: int(0, 3) }),
   opportunities: array(id, 0, 20),
   infection: object({ protagonist: bool, companion: bool }),
   optionCount: int(1, 20),
-  relationship: object({ version: enumeration('outcome-1'), companion }),
+  relationship: object({ version: enumeration('outcome-1', 'outcome-2'), companion }),
   executionActor: enumeration('companion'), commandTrustSufficient: bool,
   autonomy: object({ policy: autonomySchema, preferredActionId: nullable(commandId) }),
   content: object({ packId: id, revision: id, rulesVersion: enumeration('1.2-stress-1') }),
@@ -41,7 +43,7 @@ const context = object({
   core, companion: nullable(companion),
   facts: { type: 'object', properties: {}, additionalProperties: bool },
   visitedLocationIds: array(id, 1, 48), options: array(option, 1, 20), selectedAction: runtimeAction,
-}, ['autonomy', 'executionActor', 'commandTrustSufficient', 'relationship', 'optionCount', 'infection', 'opportunities'])
+}, ['autonomy', 'executionActor', 'commandTrustSufficient', 'relationship', 'optionCount', 'infection', 'opportunities', 'companionVitals'])
 const memorySchema = object({ version: enumeration('context-1'), entries: array(object({ eventId: id, actionId: commandId, treat: bool, context }), 0, 48) })
 
 function sameData(a: unknown, b: unknown): boolean {
@@ -64,11 +66,14 @@ export function isDecisionMemory(value: unknown): value is CatalogDecisionMemory
     let selectedAction = selected.action
     if (entry.treat) {
       if (selected.behavior !== 'recovery' || !['E04', 'E11'].includes(selected.action.eventId)) return false
-      const built = buildRecoveryAction({ state: context.core, eventId: selected.action.eventId as 'E04' | 'E11', phase: 'choice', choice: 'maintain', treat: true, companionTrust: null })
+      const state = context.executionActor === 'companion' && context.companionVitals && context.companion
+        ? { ...context.core, protagonist: { name: context.companion.name, traits: context.companion.traits, ...context.companionVitals } } : context.core
+      const built = buildRecoveryAction({ state, eventId: selected.action.eventId as 'E04' | 'E11', phase: 'choice', choice: 'maintain', treat: true, companionTrust: null })
       if (!built.ok) return false
       selectedAction = { ...built.value, id: selected.actionId }
     }
-    return (!context.executionActor || (context.companion !== null && selected.execution !== undefined && selected.behavior === 'action'))
+    return (!context.executionActor || (context.companion !== null && selected.execution !== undefined
+      && (selected.behavior === 'action' || (!!context.companionVitals && selected.behavior === 'recovery'))))
       && (!context.relationship || sameData(context.relationship.companion, context.companion))
       && context.eventId === entry.eventId && visited.length === index + 1 && visited.at(-1) === context.locationId
       && new Set(visited).size === visited.length && context.options.length === (context.optionCount ?? 4)

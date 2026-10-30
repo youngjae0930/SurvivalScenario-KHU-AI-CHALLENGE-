@@ -5,6 +5,13 @@ import { relationshipCopy as copy } from '../../content/texts/relationship'
 
 export type TrustChange = NonNullable<CatalogHistory['trustChange']>
 
+/** A companion accepts the downside of the action they actually recommended. */
+export function protectRecommendedTrust(change: TrustChange, followedRecommendation: boolean): TrustChange {
+  return followedRecommendation && change.after < change.before
+    ? { ...change, after: change.before, reason: copy.recommendationAccepted }
+    : change
+}
+
 /** Actual capped state differences plus explicitly authored narrative consequences.
  * No recommendation comparison, new roll, action-ID branch or trait-change reward.
  */
