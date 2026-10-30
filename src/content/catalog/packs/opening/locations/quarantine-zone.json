@@ -1,0 +1,17 @@
+{
+  "id": "quarantine-zone",
+  "name": "도시 외곽 · 격리 구역",
+  "stage": "late",
+  "tags": [
+    "road",
+    "quarantine"
+  ],
+  "fromTags": [
+    "crossing"
+  ],
+  "after": [
+    "collapsed-passage"
+  ],
+  "required": true,
+  "weight": 1
+}

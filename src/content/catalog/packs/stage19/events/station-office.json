@@ -1,0 +1,199 @@
+{
+  "id": "encounter.station-office",
+  "title": "비상 운행 일지",
+  "locationIds": [
+    "station-office"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.station-office.log",
+          "goalId": "confirm",
+          "label": "운행 일지의 작업자 우회 통로를 확인한다",
+          "intention": "지도와 실제 통과 기록이 일치하는 길을 기억한다.",
+          "target": "역무실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.station-office.log",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.station-office.maintain",
+          "goalId": "E04.maintain",
+          "label": "역무실 책상 옆에서 몸과 짐을 정비한다",
+          "intention": "어두운 객차로 들어가기 전에 호흡을 고른다.",
+          "target": "역무실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-companion",
+      "priority": 1,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.station-office.log",
+          "goalId": "confirm",
+          "label": "운행 일지의 작업자 우회 통로를 확인한다",
+          "intention": "지도와 실제 통과 기록이 일치하는 길을 기억한다.",
+          "target": "역무실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.station-office.log",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.station-office.maintain",
+          "goalId": "E04.maintain",
+          "label": "역무실 책상 옆에서 몸과 짐을 정비한다",
+          "intention": "어두운 객차로 들어가기 전에 호흡을 고른다.",
+          "target": "역무실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.station-office.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
+          "target": "역무실",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

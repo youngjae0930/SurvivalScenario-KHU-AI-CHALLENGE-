@@ -1,0 +1,650 @@
+{
+  "id": "encounter.hospital-desk",
+  "title": "명부 위의 화살표",
+  "locationIds": [
+    "hospital-desk"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.hospital-desk.roster",
+          "goalId": "E03.observe",
+          "label": "명부의 시간과 통로의 발소리를 확인한다",
+          "intention": "막힌 통로를 건드리지 않고 사람이 빠져나간 방향을 살핀다.",
+          "target": "병원 데스크",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.roster",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.hospital-desk.chairs",
+          "goalId": "cross",
+          "label": "의자 사이의 빈틈을 짧게 통과한다",
+          "intention": "흔들리는 의자를 피해 접수대 안쪽으로 몸을 밀어 넣는다.",
+          "target": "병원 데스크",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.chairs",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.cabinet",
+          "goalId": "salvage",
+          "label": "접수대 뒤 비상 처치함을 회수한다",
+          "intention": "기울어진 보관대를 넘어 밀봉 처치 도구를 찾는다. 무리하지 않고 통과하는 길도 남아 있다.",
+          "target": "병원 데스크",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.cabinet",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "hospital-kit": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.form-risk-right",
+          "goalId": "encounter.hospital-desk.form-risk-right",
+          "label": "물품을 포기하고 접수대의 벽 쪽으로 우회한다",
+          "intention": "눈앞의 이익을 버리고 노출이 적은 길을 택한다.",
+          "target": "접수대",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.form-risk-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.form-affect-left",
+          "goalId": "encounter.hospital-desk.form-affect-left",
+          "label": "도움 요청보다 통로의 안전 조건을 먼저 따진다",
+          "intention": "개인의 사정 대신 현재 확인할 수 있는 위험을 기준으로 이동한다.",
+          "target": "접수대",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.form-affect-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.form-affect-right",
+          "goalId": "encounter.hospital-desk.form-affect-right",
+          "label": "아래쪽에서 문을 두드리는 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "접수대",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-equipped",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "medkit",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.hospital-desk.roster",
+          "goalId": "E03.observe",
+          "label": "명부의 시간과 통로의 발소리를 확인한다",
+          "intention": "막힌 통로를 건드리지 않고 사람이 빠져나간 방향을 살핀다.",
+          "target": "병원 데스크",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.roster",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.hospital-desk.chairs",
+          "goalId": "cross",
+          "label": "의자 사이의 빈틈을 짧게 통과한다",
+          "intention": "흔들리는 의자를 피해 접수대 안쪽으로 몸을 밀어 넣는다.",
+          "target": "병원 데스크",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.chairs",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.form-risk-right",
+          "goalId": "encounter.hospital-desk.form-risk-right",
+          "label": "물품을 포기하고 접수대의 벽 쪽으로 우회한다",
+          "intention": "눈앞의 이익을 버리고 노출이 적은 길을 택한다.",
+          "target": "접수대",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.form-risk-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.form-affect-left",
+          "goalId": "encounter.hospital-desk.form-affect-left",
+          "label": "도움 요청보다 통로의 안전 조건을 먼저 따진다",
+          "intention": "개인의 사정 대신 현재 확인할 수 있는 위험을 기준으로 이동한다.",
+          "target": "접수대",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.form-affect-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.form-affect-right",
+          "goalId": "encounter.hospital-desk.form-affect-right",
+          "label": "아래쪽에서 문을 두드리는 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "접수대",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-desk.open-risk-left",
+          "goalId": "encounter.hospital-desk.open-risk-left",
+          "label": "접수대 의자 더미 사이를 가로질러 짧게 통과한다",
+          "intention": "더 노출되는 짧은 길을 택해 우회를 줄인다. 실패하면 부상을 입을 수 있다.",
+          "target": "병원 데스크",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-desk.open-risk-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 8
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

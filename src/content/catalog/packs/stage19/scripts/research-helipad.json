@@ -1,0 +1,413 @@
+[
+  {
+    "id": "encounter.research-helipad.scene",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.short.success",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.short",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "헬기에 올라 배낭을 끌어안았다. 발밑으로 봉쇄 도시의 지붕이 멀어졌다. 살아서 도시를 벗어났다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.short.opinion",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.short",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“지금 건널 수 있다면 곧장 가자. 저쪽에서 손짓하고 있어.”"
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.short.cure",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록과 봉인 시료, 최종 인계함을 구조대 연구 담당자에게 건넸다. 자료와 용기의 표식을 대조한 그가 말했다. “같은 실험의 기록과 시료가 맞습니다. 이걸로 치료제 후보 연구를 이어 갈 수 있겠어요.” 헬기가 도시를 벗어나는 동안에도 그의 손은 인계함을 단단히 붙들고 있었다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.detour.success",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.detour",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "헬기에 올라 배낭을 끌어안았다. 발밑으로 봉쇄 도시의 지붕이 멀어졌다. 살아서 도시를 벗어났다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.detour.opinion",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“알아 둔 통로 표지를 따라 돌아가자. 거친 바닥을 무리해서 건너고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.detour.cure",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록과 봉인 시료, 최종 인계함을 구조대 연구 담당자에게 건넸다. 자료와 용기의 표식을 대조한 그가 말했다. “같은 실험의 기록과 시료가 맞습니다. 이걸로 치료제 후보 연구를 이어 갈 수 있겠어요.” 헬기가 도시를 벗어나는 동안에도 그의 손은 인계함을 단단히 붙들고 있었다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.request.success",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.request",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "탑승 지점까지 갈 힘이 남지 않았다. 계단 출입문 뒤에 몸을 기대고 다시 구조 신호를 보냈다. 헬기 소리가 들리지만 아직 그곳까지 갈 수는 없다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.request.opinion",
+    "eventId": "encounter.research-helipad",
+    "choiceId": "encounter.research-helipad.request",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“지금은 저기까지 못 가겠어. 문 뒤에서 구조 신호를 보내자.”"
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.000",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "끝내 확보하지 못한 연구 기록, 봉인 시료, 최종 인계함의 빈자리가 마음에 걸린다. 지금은 살아서 올라가야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.001",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "배낭 안에 남은 것은 최종 인계함이다. 구조대의 손짓을 보며 가방 끈을 다시 잡는다.",
+      "끝내 확보하지 못한 연구 기록, 봉인 시료의 빈자리가 마음에 걸린다. 지금은 살아서 올라가야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.010",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "배낭 안에 남은 것은 봉인 시료이다. 구조대의 손짓을 보며 가방 끈을 다시 잡는다.",
+      "끝내 확보하지 못한 연구 기록, 최종 인계함의 빈자리가 마음에 걸린다. 지금은 살아서 올라가야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.011",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "배낭 안에 남은 것은 봉인 시료, 최종 인계함이다. 구조대의 손짓을 보며 가방 끈을 다시 잡는다.",
+      "끝내 확보하지 못한 연구 기록의 빈자리가 마음에 걸린다. 지금은 살아서 올라가야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.100",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "배낭 안에 남은 것은 연구 기록이다. 구조대의 손짓을 보며 가방 끈을 다시 잡는다.",
+      "끝내 확보하지 못한 봉인 시료, 최종 인계함의 빈자리가 마음에 걸린다. 지금은 살아서 올라가야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.101",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": false
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "배낭 안에 남은 것은 연구 기록, 최종 인계함이다. 구조대의 손짓을 보며 가방 끈을 다시 잡는다.",
+      "끝내 확보하지 못한 봉인 시료의 빈자리가 마음에 걸린다. 지금은 살아서 올라가야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.110",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": false
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "배낭 안에 남은 것은 연구 기록, 봉인 시료이다. 구조대의 손짓을 보며 가방 끈을 다시 잡는다.",
+      "끝내 확보하지 못한 최종 인계함의 빈자리가 마음에 걸린다. 지금은 살아서 올라가야 한다."
+    ]
+  },
+  {
+    "id": "encounter.research-helipad.scene.111",
+    "eventId": "encounter.research-helipad",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "research-record",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "research-sample",
+        "value": true
+      },
+      {
+        "kind": "fact",
+        "id": "cure-recovered",
+        "value": true
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "옥상 헬기장의 유도등이 켜졌다. 구조대가 계단 출입구를 향해 신호한다. 남은 힘으로 탑승 지점까지 이동해야 한다. 가져온 연구물이 있다면 구조대에 넘길 수 있다.",
+      "배낭 안에 남은 것은 연구 기록, 봉인 시료, 최종 인계함이다. 구조대의 손짓을 보며 가방 끈을 다시 잡는다.",
+      "필요한 연구물은 모두 있다. 배낭을 놓치지 않고 저 손짓까지 가야 한다."
+    ]
+  }
+]

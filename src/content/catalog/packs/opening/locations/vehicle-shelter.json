@@ -1,0 +1,18 @@
+{
+  "id": "vehicle-shelter",
+  "name": "외곽 집결지 · 차량 대기소",
+  "stage": "late",
+  "tags": [
+    "road",
+    "final-rest",
+    "safe-hub"
+  ],
+  "fromTags": [
+    "contact"
+  ],
+  "after": [
+    "relay-station"
+  ],
+  "required": true,
+  "weight": 1
+}

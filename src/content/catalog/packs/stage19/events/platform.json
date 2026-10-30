@@ -1,0 +1,173 @@
+{
+  "id": "encounter.platform",
+  "title": "바람이 지나가는 승강장",
+  "locationIds": [
+    "platform"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.platform.maintain",
+          "goalId": "E04.maintain",
+          "label": "기둥 뒤 벤치에서 몸과 장비를 정비한다",
+          "intention": "선로에서 떨어져 몸을 추스른다.",
+          "target": "지하 승강장",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.platform.doors",
+          "goalId": "E03.observe",
+          "label": "객차 문 사이의 그림자를 확인한다",
+          "intention": "소리와 움직임을 대조해 다음 객차로 갈 틈을 찾는다.",
+          "target": "지하 승강장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.platform.doors",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        }
+      ]
+    },
+    {
+      "id": "normal-companion",
+      "priority": 1,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.platform.maintain",
+          "goalId": "E04.maintain",
+          "label": "기둥 뒤 벤치에서 몸과 장비를 정비한다",
+          "intention": "선로에서 떨어져 몸을 추스른다.",
+          "target": "지하 승강장",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.platform.doors",
+          "goalId": "E03.observe",
+          "label": "객차 문 사이의 그림자를 확인한다",
+          "intention": "소리와 움직임을 대조해 다음 객차로 갈 틈을 찾는다.",
+          "target": "지하 승강장",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.platform.doors",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.platform.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
+          "target": "지하 승강장",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

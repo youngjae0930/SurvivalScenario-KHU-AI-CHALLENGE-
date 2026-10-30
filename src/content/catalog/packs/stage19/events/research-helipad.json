@@ -1,0 +1,108 @@
+{
+  "id": "encounter.research-helipad",
+  "title": "옥상의 마지막 신호",
+  "locationIds": [
+    "research-helipad"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.research-helipad.short",
+          "goalId": "escape",
+          "label": "옥상을 가로질러 헬기로 달려간다",
+          "intention": "계단 출입구에서 탑승 지점으로 곧장 이동한다. 기록과 봉인 시료, 최종 인계함을 모두 가져왔다면 구조대에 연구를 인계할 수 있다.",
+          "target": "구조 헬기",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "short"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "ending": {
+            "conditions": [
+              {
+                "kind": "fact",
+                "id": "research-record",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "research-sample",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "cure-recovered",
+                "value": true
+              }
+            ],
+            "kind": "cure-discovery"
+          }
+        },
+        {
+          "id": "encounter.research-helipad.detour",
+          "goalId": "escape",
+          "label": "알아 둔 통로 표지를 따라 헬기로 돌아간다",
+          "intention": "알아 둔 통로로 돌아 옥상의 거친 구간을 피한다. 기록과 봉인 시료, 최종 인계함을 모두 가져왔다면 구조대에 연구를 인계할 수 있다.",
+          "target": "구조 헬기",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "detour"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "ending": {
+            "conditions": [
+              {
+                "kind": "fact",
+                "id": "research-record",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "research-sample",
+                "value": true
+              },
+              {
+                "kind": "fact",
+                "id": "cure-recovered",
+                "value": true
+              }
+            ],
+            "kind": "cure-discovery"
+          }
+        },
+        {
+          "id": "encounter.research-helipad.request",
+          "goalId": "escape",
+          "label": "헬기장 아래에서 추가 구조를 기다린다",
+          "intention": "탑승 지점까지 갈 수 없어 계단 출입구에서 구조 신호를 보낸다. 가져온 연구물은 넘기지 못한 채 응답을 기다린다.",
+          "target": "구조 헬기",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "request"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "risk"
+  }
+}

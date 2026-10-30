@@ -1,0 +1,508 @@
+[
+  {
+    "id": "local.text.106",
+    "eventId": "encounter.bus-stop",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "폐버스 창문에 대피소로 향한 날짜와 남쪽 통행 메모가 적혀 있다. 바람을 피할 좌석은 남아 있지만 기록을 대조하려면 잠시 집중해야 한다.",
+      "서로 다른 날짜의 메모 위에 손가락을 올린다. 앉아서 쉬고 싶은 마음에 빈 좌석으로 자꾸 눈이 간다."
+    ]
+  },
+  {
+    "id": "local.text.107",
+    "eventId": "encounter.bus-stop",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "폐버스 창문에 대피소로 향한 날짜와 남쪽 통행 메모가 적혀 있다. 바람을 피할 좌석은 남아 있지만 기록을 대조하려면 잠시 집중해야 한다.",
+      "서로 다른 날짜의 메모 위에 손가락을 올린다. 앉아서 쉬고 싶은 마음에 빈 좌석으로 자꾸 눈이 간다.",
+      "가벼워진 배낭이 어깨에서 흔들린다. 다음에 쓸 먹을 것을 생각한다."
+    ]
+  },
+  {
+    "id": "local.text.108",
+    "eventId": "encounter.bus-stop",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "폐버스 창문에 대피소로 향한 날짜와 남쪽 통행 메모가 적혀 있다. 바람을 피할 좌석은 남아 있지만 기록을 대조하려면 잠시 집중해야 한다.",
+      "서로 다른 날짜의 메모 위에 손가락을 올린다. 앉아서 쉬고 싶은 마음에 빈 좌석으로 자꾸 눈이 간다.",
+      "상처가 당겨 잠시 자세를 고친다. 서두르는 길은 더 부담스럽다."
+    ]
+  },
+  {
+    "id": "local.text.109",
+    "eventId": "encounter.bus-stop",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "폐버스 창문에 대피소로 향한 날짜와 남쪽 통행 메모가 적혀 있다. 바람을 피할 좌석은 남아 있지만 기록을 대조하려면 잠시 집중해야 한다.",
+      "서로 다른 날짜의 메모 위에 손가락을 올린다. 앉아서 쉬고 싶은 마음에 빈 좌석으로 자꾸 눈이 간다.",
+      "숨을 세어 보지만 뒤쪽이 자꾸 신경 쓰인다."
+    ]
+  },
+  {
+    "id": "local.text.110",
+    "eventId": "encounter.bus-stop",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“하나를 고르면 다른 건 놓고 가야겠네. 네가 더 걱정하는 쪽을 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "local.text.111",
+    "eventId": "encounter.bus-stop",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "누군가에게 묻듯 입을 열었다가 다문다. 이번 길은 혼자 판단해야 한다."
+    ]
+  },
+  {
+    "id": "local.text.112",
+    "eventId": "encounter.bus-stop",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.113",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.read-map",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 맞는 메모와 노선도를 대조했다. 남쪽 우회 통로의 진입 표지를 기억해 두었다."
+    ]
+  },
+  {
+    "id": "local.text.114",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.read-map",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 맞는 메모와 노선도를 대조했다. 남쪽 우회 통로의 진입 표지를 기억해 두었다.",
+      "“차창에서 확인한 표지는 기억해 둘게. 실제 길에서도 맞는지 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.115",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.read-map",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“단순한 낙서 같지는 않아. 날짜가 이어지잖아. 어느 길이 열렸는지 확인하고 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.116",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좌석에 등을 기대고 배낭 끈과 몸 상태를 살폈다. 차창 밖 움직임이 멀어지기를 기다렸다."
+    ]
+  },
+  {
+    "id": "local.text.117",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좌석에 등을 기대고 배낭 끈과 몸 상태를 살폈다. 차창 밖 움직임이 멀어지기를 기다렸다.",
+      "동료가 차창 쪽을 살핀다. “준비가 되면 말해. 일어나기 전에 짐부터 확인하자.”"
+    ]
+  },
+  {
+    "id": "local.text.118",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“이 좌석에서 잠깐 쉬자. 기록을 읽고 나면 몸을 추스를 틈을 놓칠 수도 있어.”"
+    ]
+  },
+  {
+    "id": "local.text.119",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다."
+    ]
+  },
+  {
+    "id": "local.text.120",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "“남은 몫은 조금씩 쓰자. 건네줘서 고마워.”"
+    ]
+  },
+  {
+    "id": "local.text.121",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 차창 옆에 짐을 내려놓는다. “조금 나눠 먹을 수 있을까? 네 몫도 남겨야 하는 건 알아.”"
+    ]
+  },
+  {
+    "id": "local.text.114.voice.0",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.read-map",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 맞는 메모와 노선도를 대조했다. 남쪽 우회 통로의 진입 표지를 기억해 두었다.",
+      "“차창에서 확인한 표지는 기억해 둘게. 실제 길에서도 맞는지 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.114.voice.1",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.read-map",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜가 맞는 메모와 노선도를 대조했다. 남쪽 우회 통로의 진입 표지를 기억해 두었다.",
+      "“길을 하나 알아 두니 덜 막막하네. 입구를 찾을 때 나도 같이 볼게.”"
+    ]
+  },
+  {
+    "id": "local.text.117.voice.0",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좌석에 등을 기대고 배낭 끈과 몸 상태를 살폈다. 차창 밖 움직임이 멀어지기를 기다렸다.",
+      "동료가 차창 쪽을 살핀다. “준비가 되면 말해. 일어나기 전에 짐부터 확인하자.”"
+    ]
+  },
+  {
+    "id": "local.text.117.voice.1",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좌석에 등을 기대고 배낭 끈과 몸 상태를 살폈다. 차창 밖 움직임이 멀어지기를 기다렸다.",
+      "“조금 쉬었네. 혼자 서두르지 않을게. 준비되면 같이 가자.”"
+    ]
+  },
+  {
+    "id": "local.text.120.voice.0",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "“남은 몫은 조금씩 쓰자. 건네줘서 고마워.”"
+    ]
+  },
+  {
+    "id": "local.text.120.voice.1",
+    "eventId": "encounter.bus-stop",
+    "choiceId": "encounter.bus-stop.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "정비하던 짐에서 동료 몫을 덜어 건넸다. 동료가 잠시 손을 멈추고 고개를 끄덕였다.",
+      "동료가 건네받은 몫을 두 손으로 받친다. “고마워. 나도 힘내서 같이 갈게.”"
+    ]
+  }
+]

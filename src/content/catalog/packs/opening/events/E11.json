@@ -1,0 +1,105 @@
+{
+  "id": "E11",
+  "title": "탈출 전 최종 정비",
+  "locationIds": [
+    "vehicle-shelter"
+  ],
+  "locationTags": [
+    "final-rest"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E11.maintain",
+          "goalId": "E11.maintain",
+          "label": "마지막으로 몸과 장비를 정비한다",
+          "intention": "남은 먹을 것으로 힘을 되찾는다. 치료 도구가 있다면 상처도 함께 돌본다.",
+          "target": "현재 상태",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E11",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E11.rest",
+          "goalId": "E11.rest",
+          "label": "배낭을 아끼며 마지막으로 쉰다",
+          "intention": "아무것도 쓰지 않고 힘을 회복한다. 상처는 남는다.",
+          "target": "현재 상태",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E11",
+            "choice": "rest"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "companion",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E11.maintain",
+          "goalId": "E11.maintain",
+          "label": "마지막으로 몸과 장비를 정비한다",
+          "intention": "남은 먹을 것으로 힘을 되찾는다. 치료 도구가 있다면 상처도 함께 돌본다.",
+          "target": "현재 상태",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E11",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E11.share",
+          "goalId": "recover",
+          "label": "마지막 먹을 것을 나눈다",
+          "intention": "내 회복을 조금 양보하고 동료와 함께 쉰다.",
+          "target": "동료와의 신뢰 회복",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E11",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

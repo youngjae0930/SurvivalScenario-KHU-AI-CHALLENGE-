@@ -1,0 +1,18 @@
+{
+  "id": "management-office",
+  "name": "구역 경계 · 비어 있는 관리실",
+  "stage": "early",
+  "tags": [
+    "road",
+    "rest",
+    "safe-hub"
+  ],
+  "fromTags": [
+    "road"
+  ],
+  "after": [
+    "alley"
+  ],
+  "required": true,
+  "weight": 1
+}

@@ -1,0 +1,13 @@
+{
+  "id": "villa",
+  "name": "빌라 대피소",
+  "stage": "early",
+  "tags": [
+    "road",
+    "shelter"
+  ],
+  "fromTags": [],
+  "after": [],
+  "required": true,
+  "weight": 1
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "encounter.research-wing.scene",
+    "eventId": "encounter.research-wing",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수송 기록의 표식을 따라 봉쇄문 안으로 들어선다. 손잡이를 놓자 격벽 너머에서 무언가 몸을 부딪친다.",
+      "치료제 개발 중 변형된 사례라는 경고가 벽에 남아 있다. 부푼 관절이 문틈으로 언뜻 보인다. 이 구획의 잠금은 아직 버티고 있다. 다음 문을 열기 전에 숨을 고를 수 있다."
+    ]
+  },
+  {
+    "id": "encounter.research-wing.maintain.success",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉쇄문 걸쇠를 확인하고 짐을 내려놓았다. 잠깐의 정적 속에서 호흡을 가다듬은 뒤 안쪽 기록 구획으로 향했다."
+    ]
+  },
+  {
+    "id": "encounter.research-wing.maintain.opinion",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“문이 버티는 동안 쉬자. 저 안에서는 오래 멈추기 힘들 것 같아.”"
+    ]
+  },
+  {
+    "id": "encounter.research-wing.rest.success",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.rest",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "봉쇄문 걸쇠를 확인하고 짐을 내려놓았다. 잠깐의 정적 속에서 호흡을 가다듬은 뒤 안쪽 기록 구획으로 향했다."
+    ]
+  },
+  {
+    "id": "encounter.research-wing.rest.opinion",
+    "eventId": "encounter.research-wing",
+    "choiceId": "encounter.research-wing.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“문이 버티는 동안 쉬자. 저 안에서는 오래 멈추기 힘들 것 같아.”"
+    ]
+  }
+]

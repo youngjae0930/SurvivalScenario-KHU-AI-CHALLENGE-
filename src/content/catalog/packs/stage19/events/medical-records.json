@@ -1,0 +1,714 @@
+{
+  "id": "encounter.medical-records",
+  "title": "같은 증상, 다른 날짜",
+  "locationIds": [
+    "medical-records"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.medical-records.records",
+          "goalId": "confirm",
+          "label": "환자 이송 경로와 날짜를 대조한다",
+          "intention": "진단을 짐작하는 대신 실제로 사용된 남쪽 이동 통로를 확인한다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.records",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "hospital-records": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.medical-records.leave",
+          "goalId": "withdraw",
+          "label": "서류를 두고 병동 표지를 따라간다",
+          "intention": "기록에 머물지 않고 병동으로 나간다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.leave",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-risk-left",
+          "goalId": "encounter.medical-records.form-risk-left",
+          "label": "움직임이 돌아오기 전에 기록 보관대 아래 비상함을 회수한다",
+          "intention": "배낭을 채우기 위해 노출을 감수한다. 실패하면 부상을 입을 수 있다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-risk-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-cognition-left",
+          "goalId": "encounter.medical-records.form-cognition-left",
+          "label": "환자 이송 날짜와 통로의 흔적을 대조한 뒤 움직인다",
+          "intention": "시간과 체력을 써서 실제 흔적이 맞는 방향을 확인한다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-cognition-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-cognition-right",
+          "goalId": "encounter.medical-records.form-cognition-right",
+          "label": "조사를 멈추고 의료 기록실의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-affect-right",
+          "goalId": "encounter.medical-records.form-affect-right",
+          "label": "문 앞 수레를 밀지 못하는 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-transport",
+      "priority": 100,
+      "conditions": [
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.medical-records.records",
+          "goalId": "confirm",
+          "label": "환자 이송 경로와 날짜를 대조한다",
+          "intention": "진단을 짐작하는 대신 실제로 사용된 남쪽 이동 통로를 확인한다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.records",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "hospital-records": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.medical-records.leave",
+          "goalId": "withdraw",
+          "label": "서류를 두고 병동 표지를 따라간다",
+          "intention": "기록에 머물지 않고 병동으로 나간다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.leave",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "medical-records",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-risk-left",
+          "goalId": "encounter.medical-records.form-risk-left",
+          "label": "움직임이 돌아오기 전에 기록 보관대 아래 비상함을 회수한다",
+          "intention": "배낭을 채우기 위해 노출을 감수한다. 실패하면 부상을 입을 수 있다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-risk-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-cognition-left",
+          "goalId": "encounter.medical-records.form-cognition-left",
+          "label": "환자 이송 날짜와 통로의 흔적을 대조한 뒤 움직인다",
+          "intention": "시간과 체력을 써서 실제 흔적이 맞는 방향을 확인한다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-cognition-left",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -8,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-cognition-right",
+          "goalId": "encounter.medical-records.form-cognition-right",
+          "label": "조사를 멈추고 의료 기록실의 빈틈으로 곧장 움직인다",
+          "intention": "증거가 모이기 전에 지금 느낀 통과 기회를 따른다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-cognition-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 8,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.medical-records.form-affect-right",
+          "goalId": "encounter.medical-records.form-affect-right",
+          "label": "문 앞 수레를 밀지 못하는 사람을 먼저 돕는다",
+          "intention": "이동을 늦추고 노출을 감수하더라도 눈앞의 사람을 돕는다.",
+          "target": "의료 기록실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.medical-records.form-affect-right",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

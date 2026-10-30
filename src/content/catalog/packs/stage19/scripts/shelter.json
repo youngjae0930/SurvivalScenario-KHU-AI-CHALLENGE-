@@ -1,0 +1,222 @@
+[
+  {
+    "id": "local.text.795",
+    "eventId": "encounter.shelter",
+    "choiceId": "encounter.shelter.hospital",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 표지를 따라 접수대 방향으로 나섰다. 처치 도구가 남아 있을지는 직접 확인해야 한다."
+    ]
+  },
+  {
+    "id": "local.text.796",
+    "eventId": "encounter.shelter",
+    "choiceId": "encounter.shelter.hospital",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“상처를 돌볼 도구가 걱정돼. 병원을 거쳐 가고 싶어.”"
+    ]
+  },
+  {
+    "id": "local.text.797",
+    "eventId": "encounter.shelter",
+    "choiceId": "encounter.shelter.department",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 표지를 따라 홀 방향으로 나섰다. 식품관이 아직 온전한지는 알 수 없다."
+    ]
+  },
+  {
+    "id": "local.text.798",
+    "eventId": "encounter.shelter",
+    "choiceId": "encounter.shelter.department",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“먹을 것이 얼마나 남았는지 자꾸 생각나. 식품관 쪽을 지나가자.”"
+    ]
+  },
+  {
+    "id": "local.text.799",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피소 벽의 지도 앞에 선다. 남쪽으로 떠난 사람들이 남긴 안내 아래, 병원과 백화점을 거치는 두 길이 표시돼 있다.",
+      "병원 쪽에는 처치 도구와 이송 기록, 백화점 쪽에는 식품이 남았다는 표시가 있다. 마지막으로 확인한 날짜를 읽는다. 그 뒤의 상황까지 적어 둔 사람은 없다."
+    ]
+  },
+  {
+    "id": "local.text.800",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피소 벽의 지도 앞에 선다. 남쪽으로 떠난 사람들이 남긴 안내 아래, 병원과 백화점을 거치는 두 길이 표시돼 있다.",
+      "병원 쪽에는 처치 도구와 이송 기록, 백화점 쪽에는 식품이 남았다는 표시가 있다. 마지막으로 확인한 날짜를 읽는다. 그 뒤의 상황까지 적어 둔 사람은 없다.",
+      "배가 고프지만 배낭에는 꺼내 먹을 것이 없다."
+    ]
+  },
+  {
+    "id": "local.text.801",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피소 벽의 지도 앞에 선다. 남쪽으로 떠난 사람들이 남긴 안내 아래, 병원과 백화점을 거치는 두 길이 표시돼 있다.",
+      "병원 쪽에는 처치 도구와 이송 기록, 백화점 쪽에는 식품이 남았다는 표시가 있다. 마지막으로 확인한 날짜를 읽는다. 그 뒤의 상황까지 적어 둔 사람은 없다.",
+      "다친 쪽을 보호하려 몸을 돌린다. 지나갈 틈을 다시 가늠한다."
+    ]
+  },
+  {
+    "id": "local.text.802",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피소 벽의 지도 앞에 선다. 남쪽으로 떠난 사람들이 남긴 안내 아래, 병원과 백화점을 거치는 두 길이 표시돼 있다.",
+      "병원 쪽에는 처치 도구와 이송 기록, 백화점 쪽에는 식품이 남았다는 표시가 있다. 마지막으로 확인한 날짜를 읽는다. 그 뒤의 상황까지 적어 둔 사람은 없다.",
+      "옷깃이 스치는 소리에도 어깨가 굳는다. 천천히 숨을 내쉰다."
+    ]
+  },
+  {
+    "id": "local.text.803",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 지도 위 두 길을 번갈아 짚는다. “어느 쪽에도 놓고 가는 게 있네. 넌 뭘 먼저 챙기고 싶어?”"
+    ]
+  },
+  {
+    "id": "local.text.804",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지도 쪽을 살피다 곁을 돌아본다. 옆에서 답해 줄 목소리는 없다."
+    ]
+  },
+  {
+    "id": "local.text.805",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.858",
+    "eventId": "encounter.shelter",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "bus-notes",
+        "value": true
+      }
+    ],
+    "priority": 4,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피소 벽의 지도 앞에 선다. 남쪽으로 떠난 사람들이 남긴 안내 아래, 병원과 백화점을 거치는 두 길이 표시돼 있다.",
+      "병원 쪽에는 처치 도구와 이송 기록, 백화점 쪽에는 식품이 남았다는 표시가 있다. 마지막으로 확인한 날짜를 읽는다. 그 뒤의 상황까지 적어 둔 사람은 없다.",
+      "폐버스에서 확인한 남쪽 통행 메모를 지도와 맞춰 본다. 우회 진입점은 기억하지만 그곳까지 갈 중간 경로는 정해야 한다."
+    ]
+  }
+]

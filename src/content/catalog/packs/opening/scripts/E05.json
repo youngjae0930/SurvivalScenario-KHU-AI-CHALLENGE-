@@ -1,0 +1,1838 @@
+[
+  {
+    "id": "E05.scene",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원 응급실 앞에 구급차가 비스듬히 서 있다. 남쪽으로 가는 길은 이 건물 옆을 지난다.",
+      "유리문 너머 복도에서 흰 가운이 흔들린다. 그 아래 신발은 움직이지 않는다. 안내판에는 “연구동 연결 통로”라는 화살표와 함께, 기록을 외부 대피소로 보내 달라는 메모가 붙어 있다.",
+      "안으로 들어가면 통로와 남은 약품을 찾을 수 있다. 건물 밖으로 돌아가는 길도 있다.",
+      "‘저 안에 들어가면 돌아 나올 수 있을까.’ 열린 문 안쪽을 한 번 더 살핀다."
+    ]
+  },
+  {
+    "id": "E05.scene.extreme",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 0,
+        "max": 22
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "응급실의 반쯤 열린 문 너머로 약품장이 보인다. 안쪽에서 무언가 긁는 소리가 난다.",
+      "여기까지 와서 그냥 지나칠 수는 없다. 통로를 뚫고 들어가야 한다는 생각이 다른 판단을 밀어낸다.",
+      "지금 돌입할지, 가진 물건으로 길을 받칠지, 몸을 낮춰 들어갈지 정한다."
+    ]
+  },
+  {
+    "id": "E05.explore.success",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뒤집힌 침대를 밀어 안쪽으로 통하는 길을 찾았다. 연구동 연결 문의 위치를 기억해 두고 출구 쪽으로 물러났다."
+    ]
+  },
+  {
+    "id": "E05.explore.failure",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "복도 끝에서 좀비가 튀어나왔다. 돌아서다 깨진 유리에 상처를 입고 밖으로 빠졌다. 연결 통로는 확인하지 못했다."
+    ]
+  },
+  {
+    "id": "E05.bypass.success",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "응급실에서 시선을 거두고 외벽을 따라 걸었다. 문 너머 소리가 조금씩 멀어진다. 내부로 이어지는 길은 끝내 확인하지 않았다."
+    ]
+  },
+  {
+    "id": "E05.rush.success",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히기 전에 몸을 밀어 넣었다. 숨을 몰아쉬며 연결 통로를 확인하고 약품장에서 쓸 만한 치료 도구를 챙겼다."
+    ]
+  },
+  {
+    "id": "E05.rush.failure",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "어둠 속에서 내민 손을 늦게 발견했다. 몸을 비틀다 상처를 입고 출입구로 돌아왔다. 연결 통로를 찾을 여유는 없었다."
+    ]
+  },
+  {
+    "id": "E05.tools.success",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 고정하고 하나씩 방을 살폈다. 연결 통로와 남은 치료 도구를 찾은 뒤 받침을 포기하고 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E05.tools.failure",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문을 고정하던 물건이 부러졌다. 밀려오는 문에 몸을 다친 채 복도에서 물러났다. 통로도 약품도 확보하지 못했다."
+    ]
+  },
+  {
+    "id": "E05.prepare.success",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 받쳐 퇴로를 확보했다. 어두운 복도를 살펴 연구동으로 이어지는 문을 찾아냈다."
+    ]
+  },
+  {
+    "id": "E05.prepare.failure",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받쳐 둔 문이 밀려났다. 뒤로 물러나다 날카로운 침대 프레임에 상처를 입었다. 사용한 물건을 남겨 둔 채 병원 밖으로 나왔다."
+    ]
+  },
+  {
+    "id": "E05.crawl.success",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "바닥에 몸을 붙여 뒤집힌 침대 아래를 지났다. 먼지 속에서 연결 통로 표지를 확인하고 조용히 되돌아왔다."
+    ]
+  },
+  {
+    "id": "E05.crawl.failure",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈에서 옷이 걸렸다. 억지로 빠져나오다 상처를 입었다. 연결 통로는 찾지 못한 채 출입구로 돌아왔다."
+    ]
+  },
+  {
+    "id": "E05.explore.success.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뒤집힌 침대를 밀어 안쪽으로 통하는 길을 찾았다. 연구동 연결 문의 위치를 기억해 두고 출구 쪽으로 물러났다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E05.explore.success.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뒤집힌 침대를 밀어 안쪽으로 통하는 길을 찾았다. 연구동 연결 문의 위치를 기억해 두고 출구 쪽으로 물러났다.",
+      "{{companion.name}}의 목소리가 들린다. “여기서 멈추지 말자. 연구동까지 가서 남은 길을 확인하고 싶어.”"
+    ]
+  },
+  {
+    "id": "E05.explore.success.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "뒤집힌 침대를 밀어 안쪽으로 통하는 길을 찾았다. 연구동 연결 문의 위치를 기억해 두고 출구 쪽으로 물러났다.",
+      "{{companion.name}}의 목소리가 들린다. “밖으로 나갈 문부터 기억해 두자. 돌아올 길이 있어야 마음이 놓여.”"
+    ]
+  },
+  {
+    "id": "E05.explore.failure.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "복도 끝에서 좀비가 튀어나왔다. 돌아서다 깨진 유리에 상처를 입고 밖으로 빠졌다. 연결 통로는 확인하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.explore.failure.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "복도 끝에서 좀비가 튀어나왔다. 돌아서다 깨진 유리에 상처를 입고 밖으로 빠졌다. 연결 통로는 확인하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E05.explore.failure.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "복도 끝에서 좀비가 튀어나왔다. 돌아서다 깨진 유리에 상처를 입고 밖으로 빠졌다. 연결 통로는 확인하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.explore.failure.companion.fatal",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E05.bypass.success.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "응급실에서 시선을 거두고 외벽을 따라 걸었다. 문 너머 소리가 조금씩 멀어진다. 내부로 이어지는 길은 끝내 확인하지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E05.bypass.success.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "응급실에서 시선을 거두고 외벽을 따라 걸었다. 문 너머 소리가 조금씩 멀어진다. 내부로 이어지는 길은 끝내 확인하지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “여기서 멈추지 말자. 연구동까지 가서 남은 길을 확인하고 싶어.”"
+    ]
+  },
+  {
+    "id": "E05.bypass.success.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "응급실에서 시선을 거두고 외벽을 따라 걸었다. 문 너머 소리가 조금씩 멀어진다. 내부로 이어지는 길은 끝내 확인하지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “밖으로 나갈 문부터 기억해 두자. 돌아올 길이 있어야 마음이 놓여.”"
+    ]
+  },
+  {
+    "id": "E05.rush.success.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히기 전에 몸을 밀어 넣었다. 숨을 몰아쉬며 연결 통로를 확인하고 약품장에서 쓸 만한 치료 도구를 챙겼다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E05.rush.success.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히기 전에 몸을 밀어 넣었다. 숨을 몰아쉬며 연결 통로를 확인하고 약품장에서 쓸 만한 치료 도구를 챙겼다.",
+      "{{companion.name}}의 목소리가 들린다. “여기서 멈추지 말자. 연구동까지 가서 남은 길을 확인하고 싶어.”"
+    ]
+  },
+  {
+    "id": "E05.rush.success.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히기 전에 몸을 밀어 넣었다. 숨을 몰아쉬며 연결 통로를 확인하고 약품장에서 쓸 만한 치료 도구를 챙겼다.",
+      "{{companion.name}}의 목소리가 들린다. “밖으로 나갈 문부터 기억해 두자. 돌아올 길이 있어야 마음이 놓여.”"
+    ]
+  },
+  {
+    "id": "E05.rush.failure.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "어둠 속에서 내민 손을 늦게 발견했다. 몸을 비틀다 상처를 입고 출입구로 돌아왔다. 연결 통로를 찾을 여유는 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.rush.failure.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "어둠 속에서 내민 손을 늦게 발견했다. 몸을 비틀다 상처를 입고 출입구로 돌아왔다. 연결 통로를 찾을 여유는 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E05.rush.failure.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "어둠 속에서 내민 손을 늦게 발견했다. 몸을 비틀다 상처를 입고 출입구로 돌아왔다. 연결 통로를 찾을 여유는 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.rush.failure.companion.fatal",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E05.tools.success.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 고정하고 하나씩 방을 살폈다. 연결 통로와 남은 치료 도구를 찾은 뒤 받침을 포기하고 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E05.tools.success.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 고정하고 하나씩 방을 살폈다. 연결 통로와 남은 치료 도구를 찾은 뒤 받침을 포기하고 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기서 멈추지 말자. 연구동까지 가서 남은 길을 확인하고 싶어.”"
+    ]
+  },
+  {
+    "id": "E05.tools.success.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 고정하고 하나씩 방을 살폈다. 연결 통로와 남은 치료 도구를 찾은 뒤 받침을 포기하고 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “밖으로 나갈 문부터 기억해 두자. 돌아올 길이 있어야 마음이 놓여.”"
+    ]
+  },
+  {
+    "id": "E05.tools.failure.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문을 고정하던 물건이 부러졌다. 밀려오는 문에 몸을 다친 채 복도에서 물러났다. 통로도 약품도 확보하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.tools.failure.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문을 고정하던 물건이 부러졌다. 밀려오는 문에 몸을 다친 채 복도에서 물러났다. 통로도 약품도 확보하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E05.tools.failure.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문을 고정하던 물건이 부러졌다. 밀려오는 문에 몸을 다친 채 복도에서 물러났다. 통로도 약품도 확보하지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.tools.failure.companion.fatal",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E05.prepare.success.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 받쳐 퇴로를 확보했다. 어두운 복도를 살펴 연구동으로 이어지는 문을 찾아냈다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E05.prepare.success.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 받쳐 퇴로를 확보했다. 어두운 복도를 살펴 연구동으로 이어지는 문을 찾아냈다.",
+      "{{companion.name}}의 목소리가 들린다. “여기서 멈추지 말자. 연구동까지 가서 남은 길을 확인하고 싶어.”"
+    ]
+  },
+  {
+    "id": "E05.prepare.success.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건으로 문을 받쳐 퇴로를 확보했다. 어두운 복도를 살펴 연구동으로 이어지는 문을 찾아냈다.",
+      "{{companion.name}}의 목소리가 들린다. “밖으로 나갈 문부터 기억해 두자. 돌아올 길이 있어야 마음이 놓여.”"
+    ]
+  },
+  {
+    "id": "E05.prepare.failure.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받쳐 둔 문이 밀려났다. 뒤로 물러나다 날카로운 침대 프레임에 상처를 입었다. 사용한 물건을 남겨 둔 채 병원 밖으로 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.prepare.failure.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받쳐 둔 문이 밀려났다. 뒤로 물러나다 날카로운 침대 프레임에 상처를 입었다. 사용한 물건을 남겨 둔 채 병원 밖으로 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E05.prepare.failure.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "받쳐 둔 문이 밀려났다. 뒤로 물러나다 날카로운 침대 프레임에 상처를 입었다. 사용한 물건을 남겨 둔 채 병원 밖으로 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.prepare.failure.companion.fatal",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E05.crawl.success.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "바닥에 몸을 붙여 뒤집힌 침대 아래를 지났다. 먼지 속에서 연결 통로 표지를 확인하고 조용히 되돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E05.crawl.success.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "바닥에 몸을 붙여 뒤집힌 침대 아래를 지났다. 먼지 속에서 연결 통로 표지를 확인하고 조용히 되돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기서 멈추지 말자. 연구동까지 가서 남은 길을 확인하고 싶어.”"
+    ]
+  },
+  {
+    "id": "E05.crawl.success.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "바닥에 몸을 붙여 뒤집힌 침대 아래를 지났다. 먼지 속에서 연결 통로 표지를 확인하고 조용히 되돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “밖으로 나갈 문부터 기억해 두자. 돌아올 길이 있어야 마음이 놓여.”"
+    ]
+  },
+  {
+    "id": "E05.crawl.failure.companion.neutral",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈에서 옷이 걸렸다. 억지로 빠져나오다 상처를 입었다. 연결 통로는 찾지 못한 채 출입구로 돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.crawl.failure.companion.left",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈에서 옷이 걸렸다. 억지로 빠져나오다 상처를 입었다. 연결 통로는 찾지 못한 채 출입구로 돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E05.crawl.failure.companion.right",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "좁은 틈에서 옷이 걸렸다. 억지로 빠져나오다 상처를 입었다. 연결 통로는 찾지 못한 채 출입구로 돌아왔다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E05.crawl.failure.companion.fatal",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.rush",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히기 전에 들어가자. 안에 약품도 보여. 오래 머무르지는 말고."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.rush.left",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히기 전에 들어가자. 안에 약품도 보여. 오래 머무르지는 말고. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.rush.right",
+    "eventId": "E05",
+    "choiceId": "E05.rush",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문이 닫히기 전에 들어가자. 안에 약품도 보여. 오래 머무르지는 말고. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.tools",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐에서 받칠 만한 걸 꺼내 줘. 퇴로를 만들어 놓고 약품장을 보자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.tools.left",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐에서 받칠 만한 걸 꺼내 줘. 퇴로를 만들어 놓고 약품장을 보자. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.tools.right",
+    "eventId": "E05",
+    "choiceId": "E05.tools",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짐에서 받칠 만한 걸 꺼내 줘. 퇴로를 만들어 놓고 약품장을 보자. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.crawl",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대 아래로 길이 있어. 몸을 낮추고 가면 눈에 덜 띌 거야."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.crawl.left",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대 아래로 길이 있어. 몸을 낮추고 가면 눈에 덜 띌 거야. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.crawl.right",
+    "eventId": "E05",
+    "choiceId": "E05.crawl",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "침대 아래로 길이 있어. 몸을 낮추고 가면 눈에 덜 띌 거야. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.explore",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 연결 통로를 확인해 두면 좋겠어. 들어가 보자. 돌아올 문은 내가 살필게."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.explore.left",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 연결 통로를 확인해 두면 좋겠어. 들어가 보자. 돌아올 문은 내가 살필게. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.explore.right",
+    "eventId": "E05",
+    "choiceId": "E05.explore",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저 연결 통로를 확인해 두면 좋겠어. 들어가 보자. 돌아올 문은 내가 살필게. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.bypass",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안쪽 소리 들었지? 통로도 중요하지만 여기서 다치면 끝이야. 밖으로 돌아가자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.bypass.left",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안쪽 소리 들었지? 통로도 중요하지만 여기서 다치면 끝이야. 밖으로 돌아가자. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.bypass.right",
+    "eventId": "E05",
+    "choiceId": "E05.bypass",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "안쪽 소리 들었지? 통로도 중요하지만 여기서 다치면 끝이야. 밖으로 돌아가자. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.prepare",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "그냥 들어가지는 말자. 저 문부터 받쳐 두면 돌아 나올 틈은 남길 수 있어."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.prepare.left",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "그냥 들어가지는 말자. 저 문부터 받쳐 두면 돌아 나올 틈은 남길 수 있어. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E05.dialogue.opinion.prepare.right",
+    "eventId": "E05",
+    "choiceId": "E05.prepare",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "그냥 들어가지는 말자. 저 문부터 받쳐 두면 돌아 나올 틈은 남길 수 있어. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E05.dialogue.hesitation",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E05.dialogue.absent",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E05.dialogue.reunion",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E05.dialogue.reunion.rational",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E05.dialogue.reunion.emotional",
+    "eventId": "E05",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  }
+]

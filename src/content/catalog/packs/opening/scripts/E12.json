@@ -1,0 +1,912 @@
+[
+  {
+    "id": "E12.scene",
+    "eventId": "E12",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차량의 불빛이 봉쇄선 너머에서 흔들린다. 군인이 팔을 크게 저으며 이쪽을 부른다.",
+      "짧은 진입로는 길이 거칠다. 우회 통로를 알아 두었다면 더 걸어서 접근할 수도 있다. 지금 남은 힘과 상처를 살핀다.",
+      "움직일 수 없다면 엄폐물 뒤에서 구조를 요청해야 한다."
+    ]
+  },
+  {
+    "id": "E12.short.ending",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짧은 진입로를 건너 차량의 손잡이를 잡았다. 군인이 안으로 끌어 올리자 문이 닫힌다.",
+      "창밖의 봉쇄선이 멀어진다. 이제야 다리의 뻐근함이 느껴진다. 살아서 남쪽으로 나왔다."
+    ]
+  },
+  {
+    "id": "E12.short.ending.data",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차량에 올라탄 뒤에도 배낭을 놓지 않았다. 안에는 연구동에서 챙긴 기록이 들어 있다.",
+      "대피소에서 전달할 사람을 찾아야 한다. 창밖의 봉쇄선이 멀어지는 동안 접어 둔 메모를 다시 확인한다."
+    ]
+  },
+  {
+    "id": "E12.detour.ending",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무전으로 들었던 우회 통로를 따라 차량 뒤편에 닿았다. 마지막 계단을 오르자 다리가 풀린다.",
+      "차창에 이마를 기대고 멀어지는 도시를 바라본다. 길을 알아 둔 덕분에 여기까지 왔다."
+    ]
+  },
+  {
+    "id": "E12.detour.ending.data",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우회 통로 끝에서 구조 차량에 올라탔다. 배낭 속 연구 기록이 구겨지지 않았는지 먼저 확인한다.",
+      "무전으로 길을 알려 준 목소리를 떠올린다. 이 기록도 필요한 사람에게 전할 수 있기를 바란다."
+    ]
+  },
+  {
+    "id": "E12.request.ending",
+    "eventId": "E12",
+    "choiceId": "E12.request",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "한 걸음을 더 내디디려다 주저앉았다. 엄폐물 뒤로 몸을 옮겨 구조를 요청한다.",
+      "“여기 사람이 있어요.” 차량 쪽으로 손을 흔든다. 아직 도시를 벗어나지 못했다. 응답을 기다리며 손을 내리지 않는다."
+    ]
+  },
+  {
+    "id": "E12.short.ending.companion.neutral",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짧은 진입로를 건너 차량의 손잡이를 잡았다. 군인이 안으로 끌어 올리자 문이 닫힌다.",
+      "창밖의 봉쇄선이 멀어진다. 이제야 다리의 뻐근함이 느껴진다. 살아서 남쪽으로 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 같이 왔네. 한동안은 앉아 있고 싶어.”"
+    ]
+  },
+  {
+    "id": "E12.short.ending.companion.left",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짧은 진입로를 건너 차량의 손잡이를 잡았다. 군인이 안으로 끌어 올리자 문이 닫힌다.",
+      "창밖의 봉쇄선이 멀어진다. 이제야 다리의 뻐근함이 느껴진다. 살아서 남쪽으로 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 밖에 나가면 또 어떤 길이 있을까.”"
+    ]
+  },
+  {
+    "id": "E12.short.ending.companion.right",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짧은 진입로를 건너 차량의 손잡이를 잡았다. 군인이 안으로 끌어 올리자 문이 닫힌다.",
+      "창밖의 봉쇄선이 멀어진다. 이제야 다리의 뻐근함이 느껴진다. 살아서 남쪽으로 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “문이 닫혔어. 이제야 안심이 돼. 한동안은 아무 데도 안 가고 싶다.”"
+    ]
+  },
+  {
+    "id": "E12.short.ending.data.companion.neutral",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      },
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 105,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차량에 올라탄 뒤에도 배낭을 놓지 않았다. 안에는 연구동에서 챙긴 기록이 들어 있다.",
+      "대피소에서 전달할 사람을 찾아야 한다. 창밖의 봉쇄선이 멀어지는 동안 접어 둔 메모를 다시 확인한다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 같이 왔네. 한동안은 앉아 있고 싶어.”"
+    ]
+  },
+  {
+    "id": "E12.short.ending.data.companion.left",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      },
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 106,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차량에 올라탄 뒤에도 배낭을 놓지 않았다. 안에는 연구동에서 챙긴 기록이 들어 있다.",
+      "대피소에서 전달할 사람을 찾아야 한다. 창밖의 봉쇄선이 멀어지는 동안 접어 둔 메모를 다시 확인한다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 밖에 나가면 또 어떤 길이 있을까.”"
+    ]
+  },
+  {
+    "id": "E12.short.ending.data.companion.right",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      },
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 106,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "차량에 올라탄 뒤에도 배낭을 놓지 않았다. 안에는 연구동에서 챙긴 기록이 들어 있다.",
+      "대피소에서 전달할 사람을 찾아야 한다. 창밖의 봉쇄선이 멀어지는 동안 접어 둔 메모를 다시 확인한다.",
+      "{{companion.name}}의 목소리가 들린다. “문이 닫혔어. 이제야 안심이 돼. 한동안은 아무 데도 안 가고 싶다.”"
+    ]
+  },
+  {
+    "id": "E12.detour.ending.companion.neutral",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무전으로 들었던 우회 통로를 따라 차량 뒤편에 닿았다. 마지막 계단을 오르자 다리가 풀린다.",
+      "차창에 이마를 기대고 멀어지는 도시를 바라본다. 길을 알아 둔 덕분에 여기까지 왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 같이 왔네. 한동안은 앉아 있고 싶어.”"
+    ]
+  },
+  {
+    "id": "E12.detour.ending.companion.left",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무전으로 들었던 우회 통로를 따라 차량 뒤편에 닿았다. 마지막 계단을 오르자 다리가 풀린다.",
+      "차창에 이마를 기대고 멀어지는 도시를 바라본다. 길을 알아 둔 덕분에 여기까지 왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 밖에 나가면 또 어떤 길이 있을까.”"
+    ]
+  },
+  {
+    "id": "E12.detour.ending.companion.right",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무전으로 들었던 우회 통로를 따라 차량 뒤편에 닿았다. 마지막 계단을 오르자 다리가 풀린다.",
+      "차창에 이마를 기대고 멀어지는 도시를 바라본다. 길을 알아 둔 덕분에 여기까지 왔다.",
+      "{{companion.name}}의 목소리가 들린다. “문이 닫혔어. 이제야 안심이 돼. 한동안은 아무 데도 안 가고 싶다.”"
+    ]
+  },
+  {
+    "id": "E12.detour.ending.data.companion.neutral",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      },
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 105,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우회 통로 끝에서 구조 차량에 올라탔다. 배낭 속 연구 기록이 구겨지지 않았는지 먼저 확인한다.",
+      "무전으로 길을 알려 준 목소리를 떠올린다. 이 기록도 필요한 사람에게 전할 수 있기를 바란다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 같이 왔네. 한동안은 앉아 있고 싶어.”"
+    ]
+  },
+  {
+    "id": "E12.detour.ending.data.companion.left",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      },
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 106,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우회 통로 끝에서 구조 차량에 올라탔다. 배낭 속 연구 기록이 구겨지지 않았는지 먼저 확인한다.",
+      "무전으로 길을 알려 준 목소리를 떠올린다. 이 기록도 필요한 사람에게 전할 수 있기를 바란다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 밖에 나가면 또 어떤 길이 있을까.”"
+    ]
+  },
+  {
+    "id": "E12.detour.ending.data.companion.right",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "data",
+        "value": true
+      },
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 106,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "우회 통로 끝에서 구조 차량에 올라탔다. 배낭 속 연구 기록이 구겨지지 않았는지 먼저 확인한다.",
+      "무전으로 길을 알려 준 목소리를 떠올린다. 이 기록도 필요한 사람에게 전할 수 있기를 바란다.",
+      "{{companion.name}}의 목소리가 들린다. “문이 닫혔어. 이제야 안심이 돼. 한동안은 아무 데도 안 가고 싶다.”"
+    ]
+  },
+  {
+    "id": "E12.request.ending.companion.neutral",
+    "eventId": "E12",
+    "choiceId": "E12.request",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "한 걸음을 더 내디디려다 주저앉았다. 엄폐물 뒤로 몸을 옮겨 구조를 요청한다.",
+      "“여기 사람이 있어요.” 차량 쪽으로 손을 흔든다. 아직 도시를 벗어나지 못했다. 응답을 기다리며 손을 내리지 않는다.",
+      "{{companion.name}}의 목소리가 들린다. “목소리 아껴. 번갈아 부르자. 아직 듣고 있을 거야.”"
+    ]
+  },
+  {
+    "id": "E12.request.ending.companion.left",
+    "eventId": "E12",
+    "choiceId": "E12.request",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "한 걸음을 더 내디디려다 주저앉았다. 엄폐물 뒤로 몸을 옮겨 구조를 요청한다.",
+      "“여기 사람이 있어요.” 차량 쪽으로 손을 흔든다. 아직 도시를 벗어나지 못했다. 응답을 기다리며 손을 내리지 않는다.",
+      "{{companion.name}}의 목소리가 들린다. “목소리 아껴. 번갈아 부르자. 아직 듣고 있을 거야.”"
+    ]
+  },
+  {
+    "id": "E12.request.ending.companion.right",
+    "eventId": "E12",
+    "choiceId": "E12.request",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "한 걸음을 더 내디디려다 주저앉았다. 엄폐물 뒤로 몸을 옮겨 구조를 요청한다.",
+      "“여기 사람이 있어요.” 차량 쪽으로 손을 흔든다. 아직 도시를 벗어나지 못했다. 응답을 기다리며 손을 내리지 않는다.",
+      "{{companion.name}}의 목소리가 들린다. “목소리 아껴. 번갈아 부르자. 아직 듣고 있을 거야.”"
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.short",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저기 손잡이 보여? 가까운 길로 가자. 발밑은 내가 같이 살필게."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.short.left",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저기 손잡이 보여? 가까운 길로 가자. 발밑은 내가 같이 살필게. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.short.right",
+    "eventId": "E12",
+    "choiceId": "E12.short",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "저기 손잡이 보여? 가까운 길로 가자. 발밑은 내가 같이 살필게. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.detour",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "알아 둔 통로로 돌아가자. 조금 더 걸어야 하지만 거친 진입로는 피할 수 있어."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.detour.left",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "알아 둔 통로로 가자. 입구 위치는 확인했잖아. 더 걸어야 하니 지금 출발하자."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.detour.right",
+    "eventId": "E12",
+    "choiceId": "E12.detour",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "알아 둔 통로로 돌아가자. 조금 더 걸어도 거친 진입로는 피하고 싶어."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.request",
+    "eventId": "E12",
+    "choiceId": "E12.request",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기 몸을 숨기자. 내가 같이 신호를 보낼게. 아직 포기하지 마."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.request.left",
+    "eventId": "E12",
+    "choiceId": "E12.request",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기 몸을 숨기자. 내가 같이 신호를 보낼게. 아직 포기하지 마. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E12.dialogue.opinion.request.right",
+    "eventId": "E12",
+    "choiceId": "E12.request",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기 몸을 숨기자. 내가 같이 신호를 보낼게. 아직 포기하지 마. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E12.dialogue.hesitation",
+    "eventId": "E12",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E12.dialogue.absent",
+    "eventId": "E12",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E12.dialogue.reunion",
+    "eventId": "E12",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E12.dialogue.reunion.rational",
+    "eventId": "E12",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E12.dialogue.reunion.emotional",
+    "eventId": "E12",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  }
+]

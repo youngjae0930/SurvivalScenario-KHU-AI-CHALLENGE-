@@ -1,0 +1,510 @@
+{
+  "id": "E09",
+  "title": "격리 구역",
+  "locationIds": [
+    "quarantine-zone"
+  ],
+  "locationTags": [
+    "quarantine"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "extreme",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "affect",
+          "min": 0,
+          "max": 22
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E09.protect",
+          "goalId": "quarantine",
+          "label": "방호 경로로 곧장 들어간다",
+          "intention": "절차를 따르며 검문로를 빠져나간다. 넘어지는 울타리에 주의해야 한다.",
+          "target": "격리 구역",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E09.protect",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E09.discard",
+          "goalId": "quarantine",
+          "label": "의심스러운 물품을 버리고 통과한다",
+          "intention": "물자 하나를 포기하고 방호 경로를 따른다.",
+          "target": "격리 구역",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E09.discard",
+                  "eventId": "E09",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -15
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E09.verify",
+          "goalId": "quarantine",
+          "label": "표지를 끝까지 대조하고 통과한다",
+          "intention": "오래 서서 경로를 확인한다. 몸을 더 써야 한다.",
+          "target": "격리 구역",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E09.verify",
+                  "eventId": "E09",
+                  "requires": {
+                    "stamina": 20
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E09.comply",
+          "goalId": "quarantine",
+          "label": "표시된 길로 먼저 통과한다",
+          "intention": "내 안전을 우선해 차단선을 넘는다.",
+          "target": "격리 구역",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E09.comply",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E09.help",
+          "goalId": "rescue",
+          "label": "가방을 나눠 들고 함께 넘는다",
+          "intention": "남은 사람을 돕는다. 가까워지는 좀비 때문에 위험하다.",
+          "target": "격리선 옆 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E09.help",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E09.aid",
+          "goalId": "rescue",
+          "label": "상처를 묶어 주고 이동을 돕는다",
+          "intention": "치료 도구를 써 구조의 가능성을 높인다.",
+          "target": "격리선 옆 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E09.aid",
+                  "eventId": "E09",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 7,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ],
+  "intervention": {
+    "groupId": "extreme",
+    "axis": "affect",
+    "extremePole": "left",
+    "replaceChoiceId": "E09.verify",
+    "alternatives": [
+      {
+        "groupId": "general",
+        "choiceId": "E09.help"
+      }
+    ],
+    "judgment": "rescue",
+    "text": "저 사람 혼자서는 못 일어나. 가방만 나눠 들어도 같이 나갈 수 있어. 그냥 두고 가고 싶지 않아.",
+    "notices": [
+      "지금은 한 가지 생각이 다른 판단을 밀어내고 있다. 동료가 곁에 있다면 다른 길을 제안할 수 있다."
+    ],
+    "mode": "companion-choice"
+  },
+  "recommendation": {
+    "axis": "affect"
+  },
+  "autonomy": {
+    "conditions": [],
+    "conflicts": [
+      {
+        "playerGoalId": "quarantine",
+        "companionGoalId": "rescue",
+        "reason": "동료는 아직 도움을 기다리는 사람에게서 발을 떼지 못한다."
+      }
+    ],
+    "reunion": {
+      "conditions": [],
+      "minVisits": 1,
+      "locationTags": [
+        "safe-hub"
+      ]
+    }
+  }
+}

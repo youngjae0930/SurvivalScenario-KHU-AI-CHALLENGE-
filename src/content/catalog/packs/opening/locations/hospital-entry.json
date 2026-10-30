@@ -1,0 +1,17 @@
+{
+  "id": "hospital-entry",
+  "name": "서부 종합병원 · 응급실 출입구",
+  "stage": "middle",
+  "tags": [
+    "road",
+    "hospital-entry"
+  ],
+  "fromTags": [
+    "road"
+  ],
+  "after": [
+    "management-office"
+  ],
+  "required": true,
+  "weight": 1
+}

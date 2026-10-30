@@ -1,0 +1,467 @@
+[
+  {
+    "id": "local.text.1",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“정부는 감염자의 추가 확산을 막기 위해 봉쇄를—” 라디오는 같은 문장을 되풀이하다 잡음에 잠긴다.",
+      "대피소에서 남쪽 탈출로를 안내한다는 마지막 연락을 다시 읽는다. 식탁에는 빈 포장지만 남았다. 여기서 더 기다릴 수는 없다.",
+      "현관 너머에서 발소리가 끌린다. 출입구 옆 공구함의 뚜껑은 반쯤 열려 있다. 우선 이 문을 나설 틈부터 찾아야 한다."
+    ]
+  },
+  {
+    "id": "local.text.2",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“정부는 감염자의 추가 확산을 막기 위해 봉쇄를—” 라디오는 같은 문장을 되풀이하다 잡음에 잠긴다.",
+      "대피소에서 남쪽 탈출로를 안내한다는 마지막 연락을 다시 읽는다. 식탁에는 빈 포장지만 남았다. 여기서 더 기다릴 수는 없다.",
+      "현관 너머에서 발소리가 끌린다. 출입구 옆 공구함의 뚜껑은 반쯤 열려 있다. 우선 이 문을 나설 틈부터 찾아야 한다.",
+      "배가 고프지만 배낭에는 꺼내 먹을 것이 없다."
+    ]
+  },
+  {
+    "id": "local.text.3",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“정부는 감염자의 추가 확산을 막기 위해 봉쇄를—” 라디오는 같은 문장을 되풀이하다 잡음에 잠긴다.",
+      "대피소에서 남쪽 탈출로를 안내한다는 마지막 연락을 다시 읽는다. 식탁에는 빈 포장지만 남았다. 여기서 더 기다릴 수는 없다.",
+      "현관 너머에서 발소리가 끌린다. 출입구 옆 공구함의 뚜껑은 반쯤 열려 있다. 우선 이 문을 나설 틈부터 찾아야 한다.",
+      "다친 쪽을 보호하려 몸을 돌린다. 지나갈 틈을 다시 가늠한다."
+    ]
+  },
+  {
+    "id": "local.text.4",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“정부는 감염자의 추가 확산을 막기 위해 봉쇄를—” 라디오는 같은 문장을 되풀이하다 잡음에 잠긴다.",
+      "대피소에서 남쪽 탈출로를 안내한다는 마지막 연락을 다시 읽는다. 식탁에는 빈 포장지만 남았다. 여기서 더 기다릴 수는 없다.",
+      "현관 너머에서 발소리가 끌린다. 출입구 옆 공구함의 뚜껑은 반쯤 열려 있다. 우선 이 문을 나설 틈부터 찾아야 한다.",
+      "옷깃이 스치는 소리에도 어깨가 굳는다. 천천히 숨을 내쉰다."
+    ]
+  },
+  {
+    "id": "local.text.5",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 아직 모르겠어. 문 앞 상황부터 조금 더 보고 정하자.”"
+    ]
+  },
+  {
+    "id": "local.text.6",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문 쪽을 살피다 곁을 돌아본다. 옆에서 답해 줄 목소리는 없다."
+    ]
+  },
+  {
+    "id": "local.text.7",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.8",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문틈으로 그림자가 사라지는 것을 확인했다. 출발할 틈은 찾았지만 소리에 귀를 세우느라 긴장은 남았다."
+    ]
+  },
+  {
+    "id": "local.text.9",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문틈으로 그림자가 사라지는 것을 확인했다. 출발할 틈은 찾았지만 소리에 귀를 세우느라 긴장은 남았다.",
+      "“들었지? 아직 가까이에 있어. 안 보인다고 바로 나가지는 말자.”"
+    ]
+  },
+  {
+    "id": "local.text.10",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“문을 열기 전에 소리부터 듣자. 돌아올 수 있는 길도 보여야 마음이 놓이겠어.”"
+    ]
+  },
+  {
+    "id": "local.text.11",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 사이로 몸을 밀어 공구함을 열었다. 쇠지렛대를 쥐고 돌아 나올 공간부터 확인했다."
+    ]
+  },
+  {
+    "id": "local.text.12",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 사이로 몸을 밀어 공구함을 열었다. 쇠지렛대를 쥐고 돌아 나올 공간부터 확인했다.",
+      "동료가 지렛대 끝을 살핀다. “틈에 손을 넣을 때 조마조마했어. 가방에 걸리지 않게 넣자.”"
+    ]
+  },
+  {
+    "id": "local.text.13",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“저 공구함에 지렛대가 보여. 문이 막히면 쓸 수 있을 거야. 손 닿는지 내가 봐줄게.”"
+    ]
+  },
+  {
+    "id": "local.text.14",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "공구함 앞의 깨진 타일에 다리를 긁혔다. 소리를 참으며 몸을 뺐지만 지렛대는 꺼내지 못했다."
+    ]
+  },
+  {
+    "id": "local.text.15",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "공구함 앞의 깨진 타일에 다리를 긁혔다. 소리를 참으며 몸을 뺐지만 지렛대는 꺼내지 못했다.",
+      "동료가 문 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
+    ]
+  },
+  {
+    "id": "local.text.16",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.9.voice.0",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문틈으로 그림자가 사라지는 것을 확인했다. 출발할 틈은 찾았지만 소리에 귀를 세우느라 긴장은 남았다.",
+      "“들었지? 아직 가까이에 있어. 안 보인다고 바로 나가지는 말자.”"
+    ]
+  },
+  {
+    "id": "local.text.9.voice.1",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문틈으로 그림자가 사라지는 것을 확인했다. 출발할 틈은 찾았지만 소리에 귀를 세우느라 긴장은 남았다.",
+      "“기다리는 게 길게 느껴지네. 그래도 문 앞에서 부딪치는 건 피했어.”"
+    ]
+  },
+  {
+    "id": "local.text.12.voice.0",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 사이로 몸을 밀어 공구함을 열었다. 쇠지렛대를 쥐고 돌아 나올 공간부터 확인했다.",
+      "동료가 지렛대 끝을 살핀다. “틈에 손을 넣을 때 조마조마했어. 가방에 걸리지 않게 넣자.”"
+    ]
+  },
+  {
+    "id": "local.text.12.voice.1",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 사이로 몸을 밀어 공구함을 열었다. 쇠지렛대를 쥐고 돌아 나올 공간부터 확인했다.",
+      "“꺼냈네. 막힌 문을 만나도 이걸 쓸 수 있겠어.”"
+    ]
+  },
+  {
+    "id": "E01.advice-injury.E01.shortcut",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 권한 길인데…… 위험을 제대로 보지 못했어.” 동료가 공구함 쪽에서 시선을 떼지 못한다. “일단 상처를 살필 틈부터 찾자.”"
+    ]
+  }
+]

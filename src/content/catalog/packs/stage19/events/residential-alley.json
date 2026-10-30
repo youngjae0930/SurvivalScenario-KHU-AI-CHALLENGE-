@@ -1,0 +1,190 @@
+{
+  "id": "encounter.residential-alley",
+  "title": "담장에 비친 그림자",
+  "locationIds": [
+    "residential-alley"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.residential-alley.listen",
+          "goalId": "E03.observe",
+          "label": "빨랫줄 그림자가 멀어질 때까지 기다린다",
+          "intention": "담장 뒤에서 소리와 그림자의 방향을 대조한다.",
+          "target": "주택가 골목길",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.residential-alley.listen",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.residential-alley.parcel",
+          "goalId": "E03.cross",
+          "label": "그림자가 돌아선 틈에 배달 상자를 연다",
+          "intention": "골목을 짧게 가로질러 밀봉 식품을 챙긴다.",
+          "target": "주택가 골목길",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.residential-alley.parcel",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "fast",
+          "execution": {
+            "role": "정찰",
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다."
+          }
+        }
+      ]
+    },
+    {
+      "id": "stocked",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "supply",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.residential-alley.listen",
+          "goalId": "E03.observe",
+          "label": "빨랫줄 그림자가 멀어질 때까지 기다린다",
+          "intention": "담장 뒤에서 소리와 그림자의 방향을 대조한다.",
+          "target": "주택가 골목길",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.residential-alley.listen",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        }
+      ]
+    }
+  ]
+}

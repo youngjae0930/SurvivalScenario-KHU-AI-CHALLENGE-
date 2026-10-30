@@ -1,0 +1,772 @@
+[
+  {
+    "id": "E03.scene",
+    "eventId": "E03",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "편의점 뒤 골목으로 들어서자 쇠붙이 끌리는 소리가 들린다. 큰길은 버려진 차로 막혀 있어 이 골목을 건너야 한다.",
+      "모퉁이 너머로 그림자가 흔들린다. 깨진 유리 사이에는 배달 가방 하나가 떨어져 있다.",
+      "잠깐 멈춰 움직임을 살필 수도, 틈이 보일 때 곧장 빠져나갈 수도 있다. 가진 물건으로 반대쪽에 소리를 내는 방법도 있다.",
+      "‘저 소리만 확인하면 돼.’ 벽 가까이 몸을 붙인다."
+    ]
+  },
+  {
+    "id": "E03.observe.success",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 뒤에서 그림자를 살폈다. 바람에 흔들리는 간판과 좀비의 움직임을 구분하고, 조용해진 틈에 골목을 건넜다."
+    ]
+  },
+  {
+    "id": "E03.cross.success",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "그림자가 돌아선 순간 골목을 가로질렀다. 길가의 배달 가방에서 밀봉된 먹을 것을 집어 들고 모퉁이를 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E03.cross.failure",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "깨진 유리가 발밑에서 터졌다. 달려드는 손을 피하다 벽에 몸을 부딪쳤다. 배달 가방은 포기하고 골목 밖으로 빠져나왔다."
+    ]
+  },
+  {
+    "id": "E03.distract.success",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭에서 꺼낸 물건을 반대쪽 철문으로 던졌다. 그림자가 소리를 따라 움직이는 사이 발을 죽여 골목을 건넜다."
+    ]
+  },
+  {
+    "id": "E03.observe.success.companion.neutral",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 뒤에서 그림자를 살폈다. 바람에 흔들리는 간판과 좀비의 움직임을 구분하고, 조용해진 틈에 골목을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E03.observe.success.companion.left",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 뒤에서 그림자를 살폈다. 바람에 흔들리는 간판과 좀비의 움직임을 구분하고, 조용해진 틈에 골목을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “소리와 움직임이 달랐지? 다음 모퉁이에서도 먼저 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E03.observe.success.companion.right",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽 뒤에서 그림자를 살폈다. 바람에 흔들리는 간판과 좀비의 움직임을 구분하고, 조용해진 틈에 골목을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “모퉁이를 돌아서니 느낌이 달라졌어. 지금은 잠깐 쉬어도 될 것 같아.”"
+    ]
+  },
+  {
+    "id": "E03.cross.success.companion.neutral",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "그림자가 돌아선 순간 골목을 가로질렀다. 길가의 배달 가방에서 밀봉된 먹을 것을 집어 들고 모퉁이를 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E03.cross.success.companion.left",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "그림자가 돌아선 순간 골목을 가로질렀다. 길가의 배달 가방에서 밀봉된 먹을 것을 집어 들고 모퉁이를 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “소리와 움직임이 달랐지? 다음 모퉁이에서도 먼저 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E03.cross.success.companion.right",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "그림자가 돌아선 순간 골목을 가로질렀다. 길가의 배달 가방에서 밀봉된 먹을 것을 집어 들고 모퉁이를 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “모퉁이를 돌아서니 느낌이 달라졌어. 지금은 잠깐 쉬어도 될 것 같아.”"
+    ]
+  },
+  {
+    "id": "E03.cross.failure.companion.neutral",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "깨진 유리가 발밑에서 터졌다. 달려드는 손을 피하다 벽에 몸을 부딪쳤다. 배달 가방은 포기하고 골목 밖으로 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E03.cross.failure.companion.left",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "깨진 유리가 발밑에서 터졌다. 달려드는 손을 피하다 벽에 몸을 부딪쳤다. 배달 가방은 포기하고 골목 밖으로 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E03.cross.failure.companion.right",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "깨진 유리가 발밑에서 터졌다. 달려드는 손을 피하다 벽에 몸을 부딪쳤다. 배달 가방은 포기하고 골목 밖으로 빠져나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E03.cross.failure.companion.fatal",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E03.distract.success.companion.neutral",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭에서 꺼낸 물건을 반대쪽 철문으로 던졌다. 그림자가 소리를 따라 움직이는 사이 발을 죽여 골목을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E03.distract.success.companion.left",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭에서 꺼낸 물건을 반대쪽 철문으로 던졌다. 그림자가 소리를 따라 움직이는 사이 발을 죽여 골목을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “소리와 움직임이 달랐지? 다음 모퉁이에서도 먼저 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E03.distract.success.companion.right",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭에서 꺼낸 물건을 반대쪽 철문으로 던졌다. 그림자가 소리를 따라 움직이는 사이 발을 죽여 골목을 건넜다.",
+      "{{companion.name}}의 목소리가 들린다. “모퉁이를 돌아서니 느낌이 달라졌어. 지금은 잠깐 쉬어도 될 것 같아.”"
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.observe",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 기다려 봐. 저 소리가 간판인지 발소리인지부터 확인하자."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.observe.left",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 기다려 봐. 저 소리가 간판인지 발소리인지부터 확인하자. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.observe.right",
+    "eventId": "E03",
+    "choiceId": "E03.observe",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 기다려 봐. 저 소리가 간판인지 발소리인지부터 확인하자. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.cross",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 그림자가 돌아섰어. 이 틈에 건너자. 배달 가방도 손 닿는 데 있어."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.cross.left",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 그림자가 돌아섰어. 이 틈에 건너자. 배달 가방도 손 닿는 데 있어. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.cross.right",
+    "eventId": "E03",
+    "choiceId": "E03.cross",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금 그림자가 돌아섰어. 이 틈에 건너자. 배달 가방도 손 닿는 데 있어. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.distract",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건 하나만 저쪽에 던지자. 우리한테서 시선을 돌릴 수 있으면 아깝지 않아."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.distract.left",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건 하나만 저쪽에 던지자. 우리한테서 시선을 돌릴 수 있으면 아깝지 않아. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E03.dialogue.opinion.distract.right",
+    "eventId": "E03",
+    "choiceId": "E03.distract",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "물건 하나만 저쪽에 던지자. 우리한테서 시선을 돌릴 수 있으면 아깝지 않아. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E03.dialogue.hesitation",
+    "eventId": "E03",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E03.dialogue.absent",
+    "eventId": "E03",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E03.dialogue.reunion",
+    "eventId": "E03",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E03.dialogue.reunion.rational",
+    "eventId": "E03",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E03.dialogue.reunion.emotional",
+    "eventId": "E03",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  }
+]

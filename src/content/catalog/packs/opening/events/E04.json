@@ -1,0 +1,105 @@
+{
+  "id": "E04",
+  "title": "잠깐의 숨",
+  "locationIds": [
+    "management-office"
+  ],
+  "locationTags": [
+    "rest"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E04.maintain",
+          "goalId": "E04.maintain",
+          "label": "몸과 장비를 정비한다",
+          "intention": "먹을 것이 있으면 꺼내 몸을 추스른다. 치료 도구로 내 상처도 함께 돌볼 수 있다.",
+          "target": "현재 상태",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E04.rest",
+          "goalId": "E04.rest",
+          "label": "배낭을 아끼며 잠깐 쉰다",
+          "intention": "아무것도 쓰지 않고 숨을 고른다. 상처를 치료하지는 못한다.",
+          "target": "현재 상태",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "rest"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "companion",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E04.maintain",
+          "goalId": "E04.maintain",
+          "label": "몸과 장비를 정비한다",
+          "intention": "먹을 것이 있으면 꺼내 몸을 추스른다. 치료 도구로 내 상처도 함께 돌볼 수 있다.",
+          "target": "현재 상태",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E04.share",
+          "goalId": "recover",
+          "label": "먹을 것을 나누며 함께 쉰다",
+          "intention": "동료에게 물자를 나눈다. 내 회복은 적지만 함께 버틸 힘을 얻는다.",
+          "target": "동료와의 신뢰 회복",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

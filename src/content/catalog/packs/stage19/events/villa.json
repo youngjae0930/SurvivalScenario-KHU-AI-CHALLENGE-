@@ -1,0 +1,129 @@
+{
+  "id": "E01",
+  "title": "떠날 시간",
+  "locationIds": [
+    "villa"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E01.safe",
+          "goalId": "E01.safe",
+          "label": "현관 밖 발소리가 멀어질 때까지 기다린다",
+          "intention": "숨을 죽이고 출입로를 확인한 뒤 빌라를 나설 채비를 한다.",
+          "target": "빌라",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E01.safe",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E01.shortcut",
+          "goalId": "E01.shortcut",
+          "label": "출입구 옆 공구함에 손을 뻗는다",
+          "intention": "좁고 날카로운 틈을 감수하고 공구함의 쇠지렛대를 꺼낸다.",
+          "target": "빌라",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E01.shortcut",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 4,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-weapon",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "fast"
+        }
+      ]
+    }
+  ]
+}

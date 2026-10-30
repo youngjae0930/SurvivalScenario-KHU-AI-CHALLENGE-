@@ -1,0 +1,623 @@
+[
+  {
+    "id": "local.text.84",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“물 조금만 주세요.” 깨진 냉장고 앞에 앉은 사람이 빈 병을 들어 보인다. 다친 다리 옆에 무전기 하나가 놓여 있다.",
+      "계산대 아래에는 먹을 것이 조금 남아 있다. 생존자가 빈 병을 기울여 마지막 물방울을 기다리는 동안 배낭의 무게를 가늠한다.",
+      "‘남쪽까지 가야 하는데.’ 내 몫을 챙길지, 이 사람에게 나눌지 손이 쉽게 움직이지 않는다."
+    ]
+  },
+  {
+    "id": "local.text.85",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“물 조금만 주세요.” 깨진 냉장고 앞에 앉은 사람이 빈 병을 들어 보인다. 다친 다리 옆에 무전기 하나가 놓여 있다.",
+      "계산대 아래에는 먹을 것이 조금 남아 있다. 생존자가 빈 병을 기울여 마지막 물방울을 기다리는 동안 배낭의 무게를 가늠한다.",
+      "‘남쪽까지 가야 하는데.’ 내 몫을 챙길지, 이 사람에게 나눌지 손이 쉽게 움직이지 않는다.",
+      "배가 고프지만 배낭에는 꺼내 먹을 것이 없다."
+    ]
+  },
+  {
+    "id": "local.text.86",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“물 조금만 주세요.” 깨진 냉장고 앞에 앉은 사람이 빈 병을 들어 보인다. 다친 다리 옆에 무전기 하나가 놓여 있다.",
+      "계산대 아래에는 먹을 것이 조금 남아 있다. 생존자가 빈 병을 기울여 마지막 물방울을 기다리는 동안 배낭의 무게를 가늠한다.",
+      "‘남쪽까지 가야 하는데.’ 내 몫을 챙길지, 이 사람에게 나눌지 손이 쉽게 움직이지 않는다.",
+      "다친 쪽을 보호하려 몸을 돌린다. 지나갈 틈을 다시 가늠한다."
+    ]
+  },
+  {
+    "id": "local.text.87",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“물 조금만 주세요.” 깨진 냉장고 앞에 앉은 사람이 빈 병을 들어 보인다. 다친 다리 옆에 무전기 하나가 놓여 있다.",
+      "계산대 아래에는 먹을 것이 조금 남아 있다. 생존자가 빈 병을 기울여 마지막 물방울을 기다리는 동안 배낭의 무게를 가늠한다.",
+      "‘남쪽까지 가야 하는데.’ 내 몫을 챙길지, 이 사람에게 나눌지 손이 쉽게 움직이지 않는다.",
+      "옷깃이 스치는 소리에도 어깨가 굳는다. 천천히 숨을 내쉰다."
+    ]
+  },
+  {
+    "id": "local.text.88",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 빈 물병과 배낭을 번갈아 본다. “저 사람을 돕고 싶어. 그런데 우리 몫을 얼마나 남겨야 할지도 마음에 걸려.”"
+    ]
+  },
+  {
+    "id": "local.text.89",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "누군가에게 묻듯 입을 열었다가 다문다. 이번 길은 혼자 판단해야 한다."
+    ]
+  },
+  {
+    "id": "local.text.90",
+    "eventId": "E02",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.91",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마실 물을 건네고 생존자가 숨을 돌릴 때까지 기다렸다. 생존자는 빈 병을 내려놓고 대피소에서 쓰는 연락 주파수를 알려 주었다."
+    ]
+  },
+  {
+    "id": "local.text.92",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마실 물을 건네고 생존자가 숨을 돌릴 때까지 기다렸다. 생존자는 빈 병을 내려놓고 대피소에서 쓰는 연락 주파수를 알려 주었다.",
+      "“알려 준 주파수는 기억해 두자. 어디선가 같은 호출을 들을 수도 있어.”"
+    ]
+  },
+  {
+    "id": "local.text.93",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“계산대 앞까지 기어온 모양이야. 여기서 마실 것부터 나누자. 저대로 두고 나가고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "local.text.94",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "계산대 밑의 먹을 것을 챙겼다. 생존자와 시선을 맞추지 못한 채 편의점 문을 밀었다."
+    ]
+  },
+  {
+    "id": "local.text.95",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "계산대 밑의 먹을 것을 챙겼다. 생존자와 시선을 맞추지 못한 채 편의점 문을 밀었다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.96",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“남은 음식은 챙기자. 우리도 다음 구역까지 버텨야 해. 누군가에게 남기는 일이 이렇게 어려울 줄은 몰랐네.”"
+    ]
+  },
+  {
+    "id": "local.text.97",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "생존자의 다리에 붕대를 감고 물병을 손 가까이에 놓았다. 생존자는 고맙다는 말 대신 연락 주파수를 천천히 불러 주었다."
+    ]
+  },
+  {
+    "id": "local.text.98",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "생존자의 다리에 붕대를 감고 물병을 손 가까이에 놓았다. 생존자는 고맙다는 말 대신 연락 주파수를 천천히 불러 주었다.",
+      "“붕대가 버텨 주면 좋겠어. 알려 준 주파수도 기억해 두자.”"
+    ]
+  },
+  {
+    "id": "local.text.99",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“다리에서 피가 나고 있어. 붕대로 감아 주면 움직이는 데 도움이 될 거야.”"
+    ]
+  },
+  {
+    "id": "local.text.100",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.101",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
+    ]
+  },
+  {
+    "id": "local.text.102",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.103",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
+    ]
+  },
+  {
+    "id": "local.text.104",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.105",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
+    ]
+  },
+  {
+    "id": "local.text.92.voice.0",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마실 물을 건네고 생존자가 숨을 돌릴 때까지 기다렸다. 생존자는 빈 병을 내려놓고 대피소에서 쓰는 연락 주파수를 알려 주었다.",
+      "“알려 준 주파수는 기억해 두자. 어디선가 같은 호출을 들을 수도 있어.”"
+    ]
+  },
+  {
+    "id": "local.text.92.voice.1",
+    "eventId": "E02",
+    "choiceId": "E02.help",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "마실 물을 건네고 생존자가 숨을 돌릴 때까지 기다렸다. 생존자는 빈 병을 내려놓고 대피소에서 쓰는 연락 주파수를 알려 주었다.",
+      "동료가 물병을 쥔 사람을 돌아본다. “저렇게 숨 돌리는 걸 보니 그냥 지나오지 않길 잘했어.”"
+    ]
+  },
+  {
+    "id": "local.text.95.voice.0",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "계산대 밑의 먹을 것을 챙겼다. 생존자와 시선을 맞추지 못한 채 편의점 문을 밀었다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.95.voice.1",
+    "eventId": "E02",
+    "choiceId": "E02.supplies",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "계산대 밑의 먹을 것을 챙겼다. 생존자와 시선을 맞추지 못한 채 편의점 문을 밀었다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.98.voice.0",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "생존자의 다리에 붕대를 감고 물병을 손 가까이에 놓았다. 생존자는 고맙다는 말 대신 연락 주파수를 천천히 불러 주었다.",
+      "“붕대가 버텨 주면 좋겠어. 알려 준 주파수도 기억해 두자.”"
+    ]
+  },
+  {
+    "id": "local.text.98.voice.1",
+    "eventId": "E02",
+    "choiceId": "E02.first-aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "생존자의 다리에 붕대를 감고 물병을 손 가까이에 놓았다. 생존자는 고맙다는 말 대신 연락 주파수를 천천히 불러 주었다.",
+      "“표정이 조금 풀렸어. 붕대가 버텨 주면 좋겠다.”"
+    ]
+  }
+]

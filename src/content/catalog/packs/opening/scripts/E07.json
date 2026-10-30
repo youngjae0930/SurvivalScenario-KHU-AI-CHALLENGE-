@@ -1,0 +1,2383 @@
+[
+  {
+    "id": "E07.scene",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "연구동 정문은 안쪽에서 막혀 있다. 병원에서 길을 확보하지 못해 담장 바깥의 중계기 앞에 멈춰 선다.",
+      "전원이 끊긴 단말기 아래에 비상 기록 전송 절차가 붙어 있다. 배선을 다시 이으면 안에 남은 연구 기록을 받을 수 있을 듯하다.",
+      "쇠지렛대가 있다면 접점과 지지대로 쓸 수 있다. 배낭의 물품을 뜯어 배선을 잇는 방법도 있다. 필요한 물건이 없거나 아깝다면 그대로 떠나야 한다."
+    ]
+  },
+  {
+    "id": "E07.scene.inside",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "access",
+        "value": true
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "병원에서 확인해 둔 연결 통로를 지나 연구동 자료실에 들어선다. 단말기에는 전송되지 못한 연구 기록이 남아 있다.",
+      "책상 위 메모에는 감염 경과를 대피소로 보내 달라고 적혀 있다. 밖으로 가져갈 수 있다면 누군가에게 도움이 될지 모른다.",
+      "화면이 자꾸 끊긴다. 기록을 읽어 옮길지, 치료 도구의 소독제로 접점을 닦아 볼지, 여기서 그만둘지 정한다.",
+      "‘밖으로 가져가면 누군가는 읽을 수 있겠지.’ 메모를 책상 위에 펴 놓는다."
+    ]
+  },
+  {
+    "id": "E07.scene.extreme",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "flag",
+        "flag": "access",
+        "value": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 0,
+        "max": 22
+      }
+    ],
+    "priority": 20,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "같은 날짜의 기록들이 서로 맞지 않는다. 한 줄만 더 읽으면 이유를 알 것 같다.",
+      "이대로 나가면 중요한 것을 놓친다. 출구를 돌아보다 다시 화면 앞으로 몸을 기울인다.",
+      "기록 해독을 서두르거나, 접점을 손보거나, 남은 문서까지 끝까지 대조해야 한다."
+    ]
+  },
+  {
+    "id": "E07.investigate.success",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "흩어진 문서와 화면의 날짜를 맞췄다. 감염 경과가 정리된 연구 기록을 배낭에 넣었다. 전해 달라는 메모도 함께 접어 넣었다."
+    ]
+  },
+  {
+    "id": "E07.investigate.failure",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면이 꺼지기 전에 배선을 만지다 날카로운 금속에 손을 베었다. 온전한 연구 기록은 얻지 못했다."
+    ]
+  },
+  {
+    "id": "E07.clues.success",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍 위의 표지만 살피고 손을 뗐다. 연구 기록을 새로 얻지는 못했다. 밖에서 들리는 소리를 따라 출구로 향했다."
+    ]
+  },
+  {
+    "id": "E07.clean.success",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제로 접점을 닦자 화면의 잡음이 줄었다. 읽을 수 있는 연구 기록을 옮기고 빈 소독제 용기를 내려놓았다."
+    ]
+  },
+  {
+    "id": "E07.clean.failure",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 닦아도 화면은 돌아오지 않았다. 급히 덮개를 닫다 손을 베었다. 쓴 소독제도 되돌릴 수 없었다."
+    ]
+  },
+  {
+    "id": "E07.urgent.success",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문서를 넘기다 필요한 기록을 찾아냈다. 보관함에 남은 비상식량까지 챙겼지만, 문을 나설 때까지 손끝의 떨림이 가시지 않았다."
+    ]
+  },
+  {
+    "id": "E07.urgent.failure",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록을 붙잡고 시간을 보내는 사이 전선에서 불꽃이 튀었다. 손을 다치고 물러났다. 필요한 기록은 읽지 못했다."
+    ]
+  },
+  {
+    "id": "E07.prepared.success",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 손보고 문서의 날짜를 맞췄다. 연구 기록과 보관함의 비상식량을 챙겨 자료실을 나왔다."
+    ]
+  },
+  {
+    "id": "E07.prepared.failure",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제를 다 썼지만 잡음은 가시지 않았다. 덮개를 만지다 상처만 남겼다. 기록은 읽지 못했다."
+    ]
+  },
+  {
+    "id": "E07.exhaustive.success",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍을 비우고 기록을 한 장씩 대조했다. 필요한 연구 기록과 비상식량을 찾아냈다. 다리를 주무른 뒤에야 자리에서 일어설 수 있었다."
+    ]
+  },
+  {
+    "id": "E07.exhaustive.failure",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "책상 아래까지 뒤졌지만 날짜가 이어지지 않았다. 무너진 서랍에 손을 다친 뒤에야 조사를 멈췄다."
+    ]
+  },
+  {
+    "id": "E07.dismantle.success",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쇠지렛대를 휘어 접점과 지지대 사이에 끼웠다. 단말기가 켜지며 연구 기록을 내보낸다. 기록을 챙겼지만 지렛대는 틈에 박혀 꺼낼 수 없었다."
+    ]
+  },
+  {
+    "id": "E07.abandon.success",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "꺼진 화면에서 손을 뗐다. 들고 갈 기록을 새로 얻지는 못했다. 바깥 철문을 향해 걸음을 돌렸다."
+    ]
+  },
+  {
+    "id": "E07.power.success",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물품을 뜯어 배선을 잇고 전원을 고정했다. 화면에 나타난 연구 기록을 옮긴 뒤, 다시 꺼지는 단말기를 뒤로했다."
+    ]
+  },
+  {
+    "id": "E07.investigate.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "흩어진 문서와 화면의 날짜를 맞췄다. 감염 경과가 정리된 연구 기록을 배낭에 넣었다. 전해 달라는 메모도 함께 접어 넣었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.investigate.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "흩어진 문서와 화면의 날짜를 맞췄다. 감염 경과가 정리된 연구 기록을 배낭에 넣었다. 전해 달라는 메모도 함께 접어 넣었다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.investigate.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "흩어진 문서와 화면의 날짜를 맞췄다. 감염 경과가 정리된 연구 기록을 배낭에 넣었다. 전해 달라는 메모도 함께 접어 넣었다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.investigate.failure.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면이 꺼지기 전에 배선을 만지다 날카로운 금속에 손을 베었다. 온전한 연구 기록은 얻지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E07.investigate.failure.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면이 꺼지기 전에 배선을 만지다 날카로운 금속에 손을 베었다. 온전한 연구 기록은 얻지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E07.investigate.failure.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면이 꺼지기 전에 배선을 만지다 날카로운 금속에 손을 베었다. 온전한 연구 기록은 얻지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E07.investigate.failure.companion.fatal",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E07.clues.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍 위의 표지만 살피고 손을 뗐다. 연구 기록을 새로 얻지는 못했다. 밖에서 들리는 소리를 따라 출구로 향했다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.clues.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍 위의 표지만 살피고 손을 뗐다. 연구 기록을 새로 얻지는 못했다. 밖에서 들리는 소리를 따라 출구로 향했다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.clues.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍 위의 표지만 살피고 손을 뗐다. 연구 기록을 새로 얻지는 못했다. 밖에서 들리는 소리를 따라 출구로 향했다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.clean.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제로 접점을 닦자 화면의 잡음이 줄었다. 읽을 수 있는 연구 기록을 옮기고 빈 소독제 용기를 내려놓았다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.clean.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제로 접점을 닦자 화면의 잡음이 줄었다. 읽을 수 있는 연구 기록을 옮기고 빈 소독제 용기를 내려놓았다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.clean.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제로 접점을 닦자 화면의 잡음이 줄었다. 읽을 수 있는 연구 기록을 옮기고 빈 소독제 용기를 내려놓았다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.clean.failure.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 닦아도 화면은 돌아오지 않았다. 급히 덮개를 닫다 손을 베었다. 쓴 소독제도 되돌릴 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E07.clean.failure.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 닦아도 화면은 돌아오지 않았다. 급히 덮개를 닫다 손을 베었다. 쓴 소독제도 되돌릴 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E07.clean.failure.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 닦아도 화면은 돌아오지 않았다. 급히 덮개를 닫다 손을 베었다. 쓴 소독제도 되돌릴 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E07.clean.failure.companion.fatal",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E07.urgent.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문서를 넘기다 필요한 기록을 찾아냈다. 보관함에 남은 비상식량까지 챙겼지만, 문을 나설 때까지 손끝의 떨림이 가시지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.urgent.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문서를 넘기다 필요한 기록을 찾아냈다. 보관함에 남은 비상식량까지 챙겼지만, 문을 나설 때까지 손끝의 떨림이 가시지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.urgent.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "문서를 넘기다 필요한 기록을 찾아냈다. 보관함에 남은 비상식량까지 챙겼지만, 문을 나설 때까지 손끝의 떨림이 가시지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.urgent.failure.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록을 붙잡고 시간을 보내는 사이 전선에서 불꽃이 튀었다. 손을 다치고 물러났다. 필요한 기록은 읽지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E07.urgent.failure.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록을 붙잡고 시간을 보내는 사이 전선에서 불꽃이 튀었다. 손을 다치고 물러났다. 필요한 기록은 읽지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E07.urgent.failure.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기록을 붙잡고 시간을 보내는 사이 전선에서 불꽃이 튀었다. 손을 다치고 물러났다. 필요한 기록은 읽지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E07.urgent.failure.companion.fatal",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E07.prepared.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 손보고 문서의 날짜를 맞췄다. 연구 기록과 보관함의 비상식량을 챙겨 자료실을 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.prepared.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 손보고 문서의 날짜를 맞췄다. 연구 기록과 보관함의 비상식량을 챙겨 자료실을 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.prepared.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접점을 손보고 문서의 날짜를 맞췄다. 연구 기록과 보관함의 비상식량을 챙겨 자료실을 나왔다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.prepared.failure.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제를 다 썼지만 잡음은 가시지 않았다. 덮개를 만지다 상처만 남겼다. 기록은 읽지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E07.prepared.failure.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제를 다 썼지만 잡음은 가시지 않았다. 덮개를 만지다 상처만 남겼다. 기록은 읽지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E07.prepared.failure.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제를 다 썼지만 잡음은 가시지 않았다. 덮개를 만지다 상처만 남겼다. 기록은 읽지 못했다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E07.prepared.failure.companion.fatal",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E07.exhaustive.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍을 비우고 기록을 한 장씩 대조했다. 필요한 연구 기록과 비상식량을 찾아냈다. 다리를 주무른 뒤에야 자리에서 일어설 수 있었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.exhaustive.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍을 비우고 기록을 한 장씩 대조했다. 필요한 연구 기록과 비상식량을 찾아냈다. 다리를 주무른 뒤에야 자리에서 일어설 수 있었다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.exhaustive.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서랍을 비우고 기록을 한 장씩 대조했다. 필요한 연구 기록과 비상식량을 찾아냈다. 다리를 주무른 뒤에야 자리에서 일어설 수 있었다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.exhaustive.failure.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "책상 아래까지 뒤졌지만 날짜가 이어지지 않았다. 무너진 서랍에 손을 다친 뒤에야 조사를 멈췄다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E07.exhaustive.failure.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "책상 아래까지 뒤졌지만 날짜가 이어지지 않았다. 무너진 서랍에 손을 다친 뒤에야 조사를 멈췄다.",
+      "{{companion.name}}의 목소리가 들린다. “어디서 잘못 짚었는지 다시 생각해 볼게. 우선 상처부터 살피자.”"
+    ]
+  },
+  {
+    "id": "E07.exhaustive.failure.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "책상 아래까지 뒤졌지만 날짜가 이어지지 않았다. 무너진 서랍에 손을 다친 뒤에야 조사를 멈췄다.",
+      "{{companion.name}}의 목소리가 들린다. “뭔가 안 좋을 것 같았는데…… 말을 더 해 볼 걸 그랬어. 잠깐 쉬자.”"
+    ]
+  },
+  {
+    "id": "E07.exhaustive.failure.companion.fatal",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E07.dismantle.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쇠지렛대를 휘어 접점과 지지대 사이에 끼웠다. 단말기가 켜지며 연구 기록을 내보낸다. 기록을 챙겼지만 지렛대는 틈에 박혀 꺼낼 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.dismantle.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쇠지렛대를 휘어 접점과 지지대 사이에 끼웠다. 단말기가 켜지며 연구 기록을 내보낸다. 기록을 챙겼지만 지렛대는 틈에 박혀 꺼낼 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.dismantle.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "쇠지렛대를 휘어 접점과 지지대 사이에 끼웠다. 단말기가 켜지며 연구 기록을 내보낸다. 기록을 챙겼지만 지렛대는 틈에 박혀 꺼낼 수 없었다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.abandon.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "꺼진 화면에서 손을 뗐다. 들고 갈 기록을 새로 얻지는 못했다. 바깥 철문을 향해 걸음을 돌렸다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.abandon.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "꺼진 화면에서 손을 뗐다. 들고 갈 기록을 새로 얻지는 못했다. 바깥 철문을 향해 걸음을 돌렸다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.abandon.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "꺼진 화면에서 손을 뗐다. 들고 갈 기록을 새로 얻지는 못했다. 바깥 철문을 향해 걸음을 돌렸다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.power.success.companion.neutral",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물품을 뜯어 배선을 잇고 전원을 고정했다. 화면에 나타난 연구 기록을 옮긴 뒤, 다시 꺼지는 단말기를 뒤로했다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E07.power.success.companion.left",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물품을 뜯어 배선을 잇고 전원을 고정했다. 화면에 나타난 연구 기록을 옮긴 뒤, 다시 꺼지는 단말기를 뒤로했다.",
+      "{{companion.name}}의 목소리가 들린다. “어디까지 확인했는지 기억해 둘게. 못 알아낸 걸 아는 것도 중요하니까.”"
+    ]
+  },
+  {
+    "id": "E07.power.success.companion.right",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물품을 뜯어 배선을 잇고 전원을 고정했다. 화면에 나타난 연구 기록을 옮긴 뒤, 다시 꺼지는 단말기를 뒤로했다.",
+      "{{companion.name}}의 목소리가 들린다. “이제 이 화면은 그만 봐도 되겠지? 밖으로 나가고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.dismantle",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지렛대를 여기에 걸면 접점이 닿겠어. 다시 쓰기는 어렵겠지만 기록을 받을 수는 있어."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.dismantle.left",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지렛대를 여기에 걸면 접점이 닿겠어. 다시 쓰기는 어렵겠지만 기록을 받을 수는 있어. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.dismantle.right",
+    "eventId": "E07",
+    "choiceId": "E07.dismantle",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지렛대를 여기에 걸면 접점이 닿겠어. 다시 쓰기는 어렵겠지만 기록을 받을 수는 있어. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.abandon",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기서 더 쓸 것은 없어. 기록이 아깝지만 우리 발로 나가는 게 먼저야."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.abandon.left",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기서 더 쓸 것은 없어. 기록이 아깝지만 우리 발로 나가는 게 먼저야. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.abandon.right",
+    "eventId": "E07",
+    "choiceId": "E07.abandon",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "여기서 더 쓸 것은 없어. 기록이 아깝지만 우리 발로 나가는 게 먼저야. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.power",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물건으로 배선을 이어 보자. 지렛대는 앞으로 필요할 수도 있어."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.power.left",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물건으로 배선을 이어 보자. 지렛대는 앞으로 필요할 수도 있어. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.power.right",
+    "eventId": "E07",
+    "choiceId": "E07.power",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭의 물건으로 배선을 이어 보자. 지렛대는 앞으로 필요할 수도 있어. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.investigate",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜를 맞춰 보면 읽을 수 있을 것 같아. 저 메모를 두고 그냥 가기는 마음에 걸려."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.investigate.left",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜를 맞춰 보면 읽을 수 있을 것 같아. 저 메모를 두고 그냥 가기는 마음에 걸려. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.investigate.right",
+    "eventId": "E07",
+    "choiceId": "E07.investigate",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "날짜를 맞춰 보면 읽을 수 있을 것 같아. 저 메모를 두고 그냥 가기는 마음에 걸려. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.clues",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면이 자꾸 꺼져. 오래 붙잡고 있지 말고 지금 나가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.clues.left",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면이 자꾸 꺼져. 오래 붙잡고 있지 말고 지금 나가자. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.clues.right",
+    "eventId": "E07",
+    "choiceId": "E07.clues",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "화면이 자꾸 꺼져. 오래 붙잡고 있지 말고 지금 나가자. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.clean",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제로 접점을 닦아 보자. 맨손으로 만지다가 다치는 것보다는 낫겠어."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.clean.left",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제로 접점을 닦아 보자. 맨손으로 만지다가 다치는 것보다는 낫겠어. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.clean.right",
+    "eventId": "E07",
+    "choiceId": "E07.clean",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "소독제로 접점을 닦아 보자. 맨손으로 만지다가 다치는 것보다는 낫겠어. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.urgent",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 더 읽어 보자. 여기서 나가면 다시 확인할 수 없을지도 몰라."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.urgent.left",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 더 읽어 보자. 여기서 나가면 다시 확인할 수 없을지도 몰라. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.urgent.right",
+    "eventId": "E07",
+    "choiceId": "E07.urgent",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금만 더 읽어 보자. 여기서 나가면 다시 확인할 수 없을지도 몰라. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.prepared",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르기 전에 접점부터 손보자. 화면이 살아 있어야 뭐라도 읽지."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.prepared.left",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르기 전에 접점부터 손보자. 화면이 살아 있어야 뭐라도 읽지. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.prepared.right",
+    "eventId": "E07",
+    "choiceId": "E07.prepared",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서두르기 전에 접점부터 손보자. 화면이 살아 있어야 뭐라도 읽지. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.exhaustive",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 서랍도 확인하자. 앞뒤 기록이 맞는지 끝까지 보고 싶어."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.exhaustive.left",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 서랍도 확인하자. 앞뒤 기록이 맞는지 끝까지 보고 싶어. 어디를 밟고 무엇을 쓸지 확인하면서 가자."
+    ]
+  },
+  {
+    "id": "E07.dialogue.opinion.exhaustive.right",
+    "eventId": "E07",
+    "choiceId": "E07.exhaustive",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "남은 서랍도 확인하자. 앞뒤 기록이 맞는지 끝까지 보고 싶어. 확실히 설명하기는 어려워도 지금은 이쪽에 마음이 가."
+    ]
+  },
+  {
+    "id": "E07.dialogue.hesitation",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E07.dialogue.absent",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E07.dialogue.reunion",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E07.dialogue.reunion.rational",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E07.dialogue.reunion.emotional",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  }
+]

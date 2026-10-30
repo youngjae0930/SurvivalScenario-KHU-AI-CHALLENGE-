@@ -1,0 +1,78 @@
+{
+  "id": "encounter.outskirts-checkpoint",
+  "title": "차단봉 너머의 길",
+  "locationIds": [
+    "outskirts-checkpoint"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "escape",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.outskirts-checkpoint.short",
+          "goalId": "escape",
+          "label": "거친 차단봉 사이를 넘어 외곽으로 나간다",
+          "intention": "남은 체력과 상처로 좁은 장애물 구간을 버텨야 한다.",
+          "target": "도시 외곽 검문소",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "short"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "balanced",
+          "ending": {
+            "conditions": [],
+            "kind": "outskirts-escape"
+          }
+        },
+        {
+          "id": "encounter.outskirts-checkpoint.detour",
+          "goalId": "escape",
+          "label": "확인해 둔 남쪽 우회 진입로로 돌아 나간다",
+          "intention": "진입점을 알아 둔 길을 따라 장애물 구간을 피한다.",
+          "target": "도시 외곽 검문소",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "detour"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow",
+          "ending": {
+            "conditions": [],
+            "kind": "outskirts-escape"
+          }
+        },
+        {
+          "id": "encounter.outskirts-checkpoint.request",
+          "goalId": "request",
+          "label": "차단선 옆 엄폐물에서 구조 신호를 보낸다",
+          "intention": "더 걷지 않고 봉쇄 구역 안에서 응답을 기다린다.",
+          "target": "도시 외곽 검문소",
+          "judgment": null,
+          "behavior": {
+            "kind": "escape",
+            "ruleEventId": "E12",
+            "route": "request"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "risk"
+  }
+}

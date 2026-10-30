@@ -1,0 +1,757 @@
+{
+  "rulesVersion": "1.2-stress-1",
+  "contentRevision": "hospital-core-stress-2",
+  "events": [
+    {
+      "id": "E01",
+      "nextEventId": "E02",
+      "choices": [
+        {
+          "id": "E01.safe",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E01.safe",
+                "eventId": "E01",
+                "requires": {},
+                "costs": {
+                  "stamina": 0,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [],
+                "failureEffects": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "E01.shortcut",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E01.shortcut",
+                "eventId": "E01",
+                "requires": {},
+                "costs": {
+                  "stamina": 10,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": {
+                  "base": 70,
+                  "physical": true,
+                  "weaponBonus": false,
+                  "traitWeights": [
+                    {
+                      "axis": "risk",
+                      "pole": "left",
+                      "weight": 1
+                    }
+                  ]
+                },
+                "traitDelta": {
+                  "risk": -8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "set-weapon",
+                    "value": true
+                  }
+                ],
+                "failureEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 10
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E02",
+      "nextEventId": "E03",
+      "choices": [
+        {
+          "id": "E02.help",
+          "kind": "fixed",
+          "judgment": "rescue",
+          "variants": [
+            {
+              "when": "supply-present",
+              "action": {
+                "id": "E02.help",
+                "eventId": "E02",
+                "requires": {},
+                "costs": {
+                  "stamina": 0,
+                  "supply": 1,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 0,
+                  "cognition": 0,
+                  "affect": 8
+                },
+                "successEffects": [
+                  {
+                    "kind": "set-rescue-decision",
+                    "value": "rescue"
+                  },
+                  {
+                    "kind": "set-flag",
+                    "flag": "helpEstablished",
+                    "value": true
+                  }
+                ],
+                "failureEffects": []
+              }
+            },
+            {
+              "when": "supply-empty",
+              "action": {
+                "id": "E02.help",
+                "eventId": "E02",
+                "requires": {},
+                "costs": {
+                  "stamina": 10,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 0,
+                  "cognition": 0,
+                  "affect": 8
+                },
+                "successEffects": [
+                  {
+                    "kind": "set-rescue-decision",
+                    "value": "rescue"
+                  },
+                  {
+                    "kind": "set-flag",
+                    "flag": "helpEstablished",
+                    "value": true
+                  }
+                ],
+                "failureEffects": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "E02.supplies",
+          "kind": "fixed",
+          "judgment": "self",
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E02.supplies",
+                "eventId": "E02",
+                "requires": {},
+                "costs": {
+                  "stamina": 0,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 0,
+                  "cognition": 0,
+                  "affect": -8
+                },
+                "successEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "supply",
+                    "amount": 1
+                  },
+                  {
+                    "kind": "set-rescue-decision",
+                    "value": "self"
+                  }
+                ],
+                "failureEffects": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "nextEventId": "E04",
+      "choices": [
+        {
+          "id": "E03.observe",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E03.observe",
+                "eventId": "E03",
+                "requires": {},
+                "costs": {
+                  "stamina": 5,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 0,
+                  "cognition": -8,
+                  "affect": 0
+                },
+                "successEffects": [],
+                "failureEffects": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "E03.cross",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E03.cross",
+                "eventId": "E03",
+                "requires": {},
+                "costs": {
+                  "stamina": 10,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": {
+                  "base": 70,
+                  "physical": true,
+                  "weaponBonus": false,
+                  "traitWeights": [
+                    {
+                      "axis": "cognition",
+                      "pole": "right",
+                      "weight": 1
+                    }
+                  ]
+                },
+                "traitDelta": {
+                  "risk": 0,
+                  "cognition": 8,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "supply",
+                    "amount": 1
+                  }
+                ],
+                "failureEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 10
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "nextEventId": "E05",
+      "choices": [
+        {
+          "id": "E04.maintain",
+          "kind": "recovery",
+          "choice": "maintain",
+          "judgment": null
+        },
+        {
+          "id": "E04.rest",
+          "kind": "recovery",
+          "choice": "rest",
+          "judgment": null
+        }
+      ]
+    },
+    {
+      "id": "E05",
+      "nextEventId": "E06",
+      "choices": [
+        {
+          "id": "E05.explore",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E05.explore",
+                "eventId": "E05",
+                "requires": {},
+                "costs": {
+                  "stamina": 10,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": {
+                  "base": 70,
+                  "physical": true,
+                  "weaponBonus": true,
+                  "traitWeights": [
+                    {
+                      "axis": "risk",
+                      "pole": "left",
+                      "weight": 0.5
+                    },
+                    {
+                      "axis": "cognition",
+                      "pole": "left",
+                      "weight": 0.5
+                    }
+                  ]
+                },
+                "traitDelta": {
+                  "risk": -8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "set-flag",
+                    "flag": "access",
+                    "value": true
+                  }
+                ],
+                "failureEffects": [
+                  {
+                    "kind": "set-flag",
+                    "flag": "access",
+                    "value": false
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 10
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "E05.bypass",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E05.bypass",
+                "eventId": "E05",
+                "requires": {},
+                "costs": {
+                  "stamina": 5,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "set-flag",
+                    "flag": "access",
+                    "value": false
+                  }
+                ],
+                "failureEffects": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "E05.rush",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E05.rush",
+                "eventId": "E05",
+                "requires": {},
+                "costs": {
+                  "stamina": 15,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": {
+                  "base": 60,
+                  "physical": true,
+                  "weaponBonus": true,
+                  "traitWeights": [
+                    {
+                      "axis": "risk",
+                      "pole": "left",
+                      "weight": 1
+                    }
+                  ]
+                },
+                "traitDelta": {
+                  "risk": -8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "set-flag",
+                    "flag": "access",
+                    "value": true
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "medkit",
+                    "amount": 1
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 5
+                  }
+                ],
+                "failureEffects": [
+                  {
+                    "kind": "set-flag",
+                    "flag": "access",
+                    "value": false
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 15
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "E05.tools",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E05.tools",
+                "eventId": "E05",
+                "requires": {
+                  "supply": 1
+                },
+                "costs": {
+                  "stamina": 10,
+                  "supply": 1,
+                  "medkit": 0
+                },
+                "check": {
+                  "base": 75,
+                  "physical": true,
+                  "weaponBonus": true,
+                  "traitWeights": [
+                    {
+                      "axis": "risk",
+                      "pole": "left",
+                      "weight": 1
+                    }
+                  ]
+                },
+                "traitDelta": {
+                  "risk": -8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "set-flag",
+                    "flag": "access",
+                    "value": true
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "medkit",
+                    "amount": 1
+                  }
+                ],
+                "failureEffects": [
+                  {
+                    "kind": "set-flag",
+                    "flag": "access",
+                    "value": false
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 10
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "nextEventId": "E07",
+      "choices": [
+        {
+          "id": "E06.withdraw",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E06.withdraw",
+                "eventId": "E06",
+                "requires": {},
+                "costs": {
+                  "stamina": 5,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [],
+                "failureEffects": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "E06.salvage",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E06.salvage",
+                "eventId": "E06",
+                "requires": {},
+                "costs": {
+                  "stamina": 10,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": {
+                  "base": 70,
+                  "physical": true,
+                  "weaponBonus": false,
+                  "traitWeights": [
+                    {
+                      "axis": "risk",
+                      "pole": "left",
+                      "weight": 1
+                    }
+                  ]
+                },
+                "traitDelta": {
+                  "risk": -8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "supply",
+                    "amount": 1
+                  }
+                ],
+                "failureEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 10
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "E06.abandon",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E06.abandon",
+                "eventId": "E06",
+                "requires": {},
+                "costs": {
+                  "stamina": 5,
+                  "supply": 0,
+                  "medkit": 0
+                },
+                "check": null,
+                "traitDelta": {
+                  "risk": 8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "remove-all",
+                    "resource": "supply"
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": -10
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": -1
+                  }
+                ],
+                "failureEffects": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "E06.defend",
+          "kind": "fixed",
+          "judgment": null,
+          "variants": [
+            {
+              "when": "always",
+              "action": {
+                "id": "E06.defend",
+                "eventId": "E06",
+                "requires": {
+                  "supply": 1
+                },
+                "costs": {
+                  "stamina": 10,
+                  "supply": 1,
+                  "medkit": 0
+                },
+                "check": {
+                  "base": 75,
+                  "physical": true,
+                  "weaponBonus": false,
+                  "traitWeights": [
+                    {
+                      "axis": "risk",
+                      "pole": "right",
+                      "weight": 1
+                    }
+                  ]
+                },
+                "traitDelta": {
+                  "risk": 8,
+                  "cognition": 0,
+                  "affect": 0
+                },
+                "successEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": -15
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": -1
+                  }
+                ],
+                "failureEffects": [
+                  {
+                    "kind": "add",
+                    "stat": "stress",
+                    "amount": 10
+                  },
+                  {
+                    "kind": "add",
+                    "stat": "injury",
+                    "amount": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

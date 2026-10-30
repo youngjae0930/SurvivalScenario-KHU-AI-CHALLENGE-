@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "local.text.773",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 모아 둔 조리대 앞에서 생존자들이 서로의 몫을 가늠한다. 한 사람은 손에 천을 감은 채 떨어진 가방을 다시 집으려 한다.",
+      "“문 열리면 같이 나가요. 이것만 좀 들어 주면……” 말끝이 낮아진다. 음식을 나누고 이동을 도울 수도, 내 배낭부터 채울 수도 있다.",
+      "배급표와 셔터의 이동 흔적이 남쪽 통로 앞에 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.774",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 모아 둔 조리대 앞에서 생존자들이 서로의 몫을 가늠한다. 한 사람은 손에 천을 감은 채 떨어진 가방을 다시 집으려 한다.",
+      "“문 열리면 같이 나가요. 이것만 좀 들어 주면……” 말끝이 낮아진다. 음식을 나누고 이동을 도울 수도, 내 배낭부터 채울 수도 있다.",
+      "가벼워진 배낭이 어깨에서 흔들린다. 다음에 쓸 먹을 것을 생각한다.",
+      "배급표와 셔터의 이동 흔적이 남쪽 통로 앞에 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.775",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 모아 둔 조리대 앞에서 생존자들이 서로의 몫을 가늠한다. 한 사람은 손에 천을 감은 채 떨어진 가방을 다시 집으려 한다.",
+      "“문 열리면 같이 나가요. 이것만 좀 들어 주면……” 말끝이 낮아진다. 음식을 나누고 이동을 도울 수도, 내 배낭부터 채울 수도 있다.",
+      "상처가 당겨 잠시 자세를 고친다. 서두르는 길은 더 부담스럽다.",
+      "배급표와 셔터의 이동 흔적이 남쪽 통로 앞에 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.776",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 모아 둔 조리대 앞에서 생존자들이 서로의 몫을 가늠한다. 한 사람은 손에 천을 감은 채 떨어진 가방을 다시 집으려 한다.",
+      "“문 열리면 같이 나가요. 이것만 좀 들어 주면……” 말끝이 낮아진다. 음식을 나누고 이동을 도울 수도, 내 배낭부터 채울 수도 있다.",
+      "숨을 세어 보지만 뒤쪽이 자꾸 신경 쓰인다.",
+      "배급표와 셔터의 이동 흔적이 남쪽 통로 앞에 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.777",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나누고 나면 우리한테 얼마나 남을까. 그렇다고 저 손을 그냥 지나치기도 어렵네.”"
+    ]
+  },
+  {
+    "id": "local.text.778",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "누군가에게 묻듯 입을 열었다가 다문다. 이번 길은 혼자 판단해야 한다."
+    ]
+  },
+  {
+    "id": "local.text.779",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.780",
+    "eventId": "E07",
+    "choiceId": "E07.share-food",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조리대 앞 사람들에게 마실 물을 나눠 주었다. 사람들이 짐을 챙겨 출구로 움직이자, 한 사람이 대피소에서 쓰는 연락 주파수를 알려 주었다."
+    ]
+  },
+  {
+    "id": "local.text.781",
+    "eventId": "E07",
+    "choiceId": "E07.share-food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조리대 앞 사람들에게 마실 물을 나눠 주었다. 사람들이 짐을 챙겨 출구로 움직이자, 한 사람이 대피소에서 쓰는 연락 주파수를 알려 주었다.",
+      "동료가 조리대에 남은 몫을 살핀다. “나눴으니 우리도 아껴 써야겠어.”"
+    ]
+  },
+  {
+    "id": "local.text.782",
+    "eventId": "E07",
+    "choiceId": "E07.share-food",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“먹을 것이 눈앞에 있는데 저 사람은 일어날 힘도 없어 보여. 조금 나누고 같이 나가게 돕자.”"
+    ]
+  },
+  {
+    "id": "local.text.783",
+    "eventId": "E07",
+    "choiceId": "E07.keep-food",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 챙겨 식품관을 나섰다. 남겨진 사람들의 시선은 조리대 쪽에 머물렀다."
+    ]
+  },
+  {
+    "id": "local.text.784",
+    "eventId": "E07",
+    "choiceId": "E07.keep-food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 챙겨 식품관을 나섰다. 남겨진 사람들의 시선은 조리대 쪽에 머물렀다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.785",
+    "eventId": "E07",
+    "choiceId": "E07.keep-food",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“남쪽까지 얼마나 더 걸을지 모르잖아. 우리 몫부터 챙기고 싶어.”"
+    ]
+  },
+  {
+    "id": "local.text.786",
+    "eventId": "E07",
+    "choiceId": "E07.aid",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구로 손을 감아 주었다. 생존자는 손가락을 천천히 움직이고는 대피소 연락 주파수를 알려 주었다. 자신의 짐을 챙겨 출구로 향하는 뒷모습을 잠시 바라봤다."
+    ]
+  },
+  {
+    "id": "local.text.787",
+    "eventId": "E07",
+    "choiceId": "E07.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구로 손을 감아 주었다. 생존자는 손가락을 천천히 움직이고는 대피소 연락 주파수를 알려 주었다. 자신의 짐을 챙겨 출구로 향하는 뒷모습을 잠시 바라봤다.",
+      "“도구를 쓴 건 아쉽지만 이제 저 사람도 자기 짐을 들 수 있겠어.”"
+    ]
+  },
+  {
+    "id": "local.text.788",
+    "eventId": "E07",
+    "choiceId": "E07.aid",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“손에서 피가 나서 짐을 못 잡는 것 같아. 감아 주면 같이 나갈 수 있겠어.”"
+    ]
+  },
+  {
+    "id": "local.text.789",
+    "eventId": "E07",
+    "choiceId": "E07.share-food",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.790",
+    "eventId": "E07",
+    "choiceId": "E07.share-food",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
+    ]
+  },
+  {
+    "id": "local.text.791",
+    "eventId": "E07",
+    "choiceId": "E07.keep-food",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.792",
+    "eventId": "E07",
+    "choiceId": "E07.keep-food",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
+    ]
+  },
+  {
+    "id": "local.text.793",
+    "eventId": "E07",
+    "choiceId": "E07.aid",
+    "slot": "departure-warning",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“나는 저 사람을 두고 갈 수 없어. 네가 먼저 떠나도 여기 남아서 도울 생각이야.” 동료가 출구보다 도움을 청하는 쪽을 바라본다."
+    ]
+  },
+  {
+    "id": "local.text.794",
+    "eventId": "E07",
+    "choiceId": "E07.aid",
+    "slot": "departure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료의 발소리가 뒤에서 멈춘다. “너는 먼저 가. 나는 저 사람을 그냥 지나칠 수 없어.” 돌아보니 시선은 이미 도움을 청하는 쪽을 향해 있다.",
+      "무슨 말을 더 하려다 입을 다문다. 같은 출구를 향하던 두 사람 사이로 거리가 벌어진다."
+    ]
+  },
+  {
+    "id": "route.text.21",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "department-food",
+        "value": true
+      },
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 모아 둔 조리대 앞에서 생존자들이 서로의 몫을 가늠한다. 한 사람은 손에 천을 감은 채 떨어진 가방을 다시 집으려 한다.",
+      "“문 열리면 같이 나가요. 이것만 좀 들어 주면……” 말끝이 낮아진다. 음식을 나누고 이동을 도울 수도, 내 배낭부터 채울 수도 있다.",
+      "홀에서 식품을 챙겼지만 지금 나눌 물자는 남지 않았다. 조리대 앞 사람들을 보며 물을 구할 곳부터 찾는다.",
+      "배급표와 셔터의 이동 흔적이 남쪽 통로 앞에 남아 있다."
+    ]
+  },
+  {
+    "id": "route.text.22",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "department-food",
+        "value": true
+      },
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 1,
+        "max": 3
+      }
+    ],
+    "priority": 5,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 모아 둔 조리대 앞에서 생존자들이 서로의 몫을 가늠한다. 한 사람은 손에 천을 감은 채 떨어진 가방을 다시 집으려 한다.",
+      "“문 열리면 같이 나가요. 이것만 좀 들어 주면……” 말끝이 낮아진다. 음식을 나누고 이동을 도울 수도, 내 배낭부터 채울 수도 있다.",
+      "홀에서 챙긴 식품의 무게가 떠오른다. 손에 넣은 것을 여기서 나눌지, 남쪽까지 내 몫으로 가져갈지 다시 결정해야 한다.",
+      "배급표와 셔터의 이동 흔적이 남쪽 통로 앞에 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.781.voice.0",
+    "eventId": "E07",
+    "choiceId": "E07.share-food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조리대 앞 사람들에게 마실 물을 나눠 주었다. 사람들이 짐을 챙겨 출구로 움직이자, 한 사람이 대피소에서 쓰는 연락 주파수를 알려 주었다.",
+      "동료가 조리대에 남은 몫을 살핀다. “나눴으니 우리도 아껴 써야겠어.”"
+    ]
+  },
+  {
+    "id": "local.text.781.voice.1",
+    "eventId": "E07",
+    "choiceId": "E07.share-food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조리대 앞 사람들에게 마실 물을 나눠 주었다. 사람들이 짐을 챙겨 출구로 움직이자, 한 사람이 대피소에서 쓰는 연락 주파수를 알려 주었다.",
+      "“가방을 들었네. 나눠 먹은 걸로 저 사람들도 조금은 버틸 수 있겠지.”"
+    ]
+  },
+  {
+    "id": "local.text.784.voice.0",
+    "eventId": "E07",
+    "choiceId": "E07.keep-food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 챙겨 식품관을 나섰다. 남겨진 사람들의 시선은 조리대 쪽에 머물렀다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.784.voice.1",
+    "eventId": "E07",
+    "choiceId": "E07.keep-food",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "밀봉 식품을 챙겨 식품관을 나섰다. 남겨진 사람들의 시선은 조리대 쪽에 머물렀다.",
+      "동료는 쉽게 말을 잇지 못한다. 시선이 자꾸 도움을 청하던 쪽으로 돌아간다."
+    ]
+  },
+  {
+    "id": "local.text.787.voice.0",
+    "eventId": "E07",
+    "choiceId": "E07.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구로 손을 감아 주었다. 생존자는 손가락을 천천히 움직이고는 대피소 연락 주파수를 알려 주었다. 자신의 짐을 챙겨 출구로 향하는 뒷모습을 잠시 바라봤다.",
+      "“도구를 쓴 건 아쉽지만 이제 저 사람도 자기 짐을 들 수 있겠어.”"
+    ]
+  },
+  {
+    "id": "local.text.787.voice.1",
+    "eventId": "E07",
+    "choiceId": "E07.aid",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "치료 도구로 손을 감아 주었다. 생존자는 손가락을 천천히 움직이고는 대피소 연락 주파수를 알려 주었다. 자신의 짐을 챙겨 출구로 향하는 뒷모습을 잠시 바라봤다.",
+      "동료가 천을 감은 손을 돌아본다. “이제 저 사람도 가방을 들 수 있겠네.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-0.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "천장이 내려앉은 식품 진열대의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-0.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-0.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-1.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "천장이 내려앉은 식품 진열대의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-1.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-1.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-2.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "천장이 내려앉은 식품 진열대의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-2.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-left-2.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.scene.scene.220",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 220,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식품관 천장에서 떨어진 잔해가 냉장 진열대를 밀어낸다. 찌그러진 진열대 안에는 식품과 비상 구급함이 보인다.",
+      "카운터 아래 생존자가 손을 흔든다. 배급 기록에 적힌 통로는 반쯤 닫힌 셔터 뒤로 이어진다.",
+      "‘지금 천장이 내려앉은 식품 진열대를 놓치면 다시는 못 얻어.’ 돌아갈 길보다 손에 넣을 물품만 또렷해진다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-0.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 셔터 안쪽의 빈 점포에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-0.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-0.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-1.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 셔터 안쪽의 빈 점포에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-1.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-1.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-2.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 셔터 안쪽의 빈 점포에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-2.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-risk-right-2.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-risk-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.scene.scene.220-85",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 220,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식품관 천장에서 떨어진 잔해가 냉장 진열대를 밀어낸다. 찌그러진 진열대 안에는 식품과 비상 구급함이 보인다.",
+      "카운터 아래 생존자가 손을 흔든다. 배급 기록에 적힌 통로는 반쯤 닫힌 셔터 뒤로 이어진다.",
+      "‘저쪽을 완전히 막아야 움직일 수 있어.’ 그대로 지나칠 길이 보여도 기울어진 냉장 진열대를 고정하지 않고는 발이 떨어지지 않는다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-0.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배급 기록과 반쯤 닫힌 셔터의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-0.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-0.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-1.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배급 기록과 반쯤 닫힌 셔터의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-1.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-1.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-2.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배급 기록과 반쯤 닫힌 셔터의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-2.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-left-2.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.scene.scene.210",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 210,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식품관 천장에서 떨어진 잔해가 냉장 진열대를 밀어낸다. 찌그러진 진열대 안에는 식품과 비상 구급함이 보인다.",
+      "카운터 아래 생존자가 손을 흔든다. 배급 기록에 적힌 통로는 반쯤 닫힌 셔터 뒤로 이어진다.",
+      "‘배급 기록과 반쯤 닫힌 셔터가 맞는지 끝까지 확인해야 해.’ 무너지는 소리가 나는데도 불일치한 흔적에서 눈을 떼지 못한다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-0.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 셔터 안쪽의 빈 점포에서 쉴 여유까지 얻어 체력을 크게 회복했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-0.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-0.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-1.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 셔터 안쪽의 빈 점포에서 쉴 여유까지 얻어 체력을 크게 회복했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-1.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-1.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-2.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 셔터 안쪽의 빈 점포에서 쉴 여유까지 얻어 체력을 크게 회복했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-2.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-cognition-right-2.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-cognition-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.scene.scene.210-85",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 210,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식품관 천장에서 떨어진 잔해가 냉장 진열대를 밀어낸다. 찌그러진 진열대 안에는 식품과 비상 구급함이 보인다.",
+      "카운터 아래 생존자가 손을 흔든다. 배급 기록에 적힌 통로는 반쯤 닫힌 셔터 뒤로 이어진다.",
+      "‘지금 저 틈으로 나갈 수 있어.’ 배급 기록과 반쯤 닫힌 셔터를 다시 볼 생각보다 몸이 먼저 움직인다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-0.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "카운터 아래 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-0.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-0.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-1.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "카운터 아래 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-1.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-1.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-2.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "카운터 아래 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-2.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-left-2.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.scene.scene.230",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "affect",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 230,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식품관 천장에서 떨어진 잔해가 냉장 진열대를 밀어낸다. 찌그러진 진열대 안에는 식품과 비상 구급함이 보인다.",
+      "카운터 아래 생존자가 손을 흔든다. 배급 기록에 적힌 통로는 반쯤 닫힌 셔터 뒤로 이어진다.",
+      "카운터 아래 생존자가 손을 내민다. ‘위험을 분리하는 게 먼저야.’ 도움 요청보다 사람과 물품의 경계를 가르는 일에만 매달린다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-0.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "카운터 아래 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-0.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-0.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-1.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "카운터 아래 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-1.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-1.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-2.success.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "카운터 아래 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-2.failure.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 기울어진 냉장 진열대가 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "E07.xp.xp-affect-right-2.opinion.0",
+    "eventId": "E07",
+    "choiceId": "E07.xp-affect-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "E07.xp.scene.scene.230-85",
+    "eventId": "E07",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "affect",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 230,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "식품관 천장에서 떨어진 잔해가 냉장 진열대를 밀어낸다. 찌그러진 진열대 안에는 식품과 비상 구급함이 보인다.",
+      "카운터 아래 생존자가 손을 흔든다. 배급 기록에 적힌 통로는 반쯤 닫힌 셔터 뒤로 이어진다.",
+      "카운터 아래 생존자의 손이 미끄러진다. ‘저 사람부터 꺼내야 해.’ 기울어진 냉장 진열대가 무너질 가능성도, 먼저 나갈 길도 판단 밖으로 밀려난다."
+    ]
+  },
+  {
+    "id": "E07.form-cognition-left.success",
+    "eventId": "E07",
+    "choiceId": "E07.form-cognition-left",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조사한 흔적이 서로 맞는 방향을 찾았다. 확인에 시간을 쓴 뒤 남쪽 통로로 움직였다."
+    ]
+  },
+  {
+    "id": "E07.form-cognition-left.opinion",
+    "eventId": "E07",
+    "choiceId": "E07.form-cognition-left",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“확인할지 바로 움직일지부터 정하자.”"
+    ]
+  },
+  {
+    "id": "E07.form-cognition-right.success",
+    "eventId": "E07",
+    "choiceId": "E07.form-cognition-right",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "틈이 닫히기 전에 몸을 통과시켰다. 긴 조사를 생략한 만큼 체력을 아꼈다."
+    ]
+  },
+  {
+    "id": "E07.form-cognition-right.failure",
+    "eventId": "E07",
+    "choiceId": "E07.form-cognition-right",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "통로가 이어질 것이라는 짐작이 빗나갔다. 막힌 구조물에 부딪혀 다쳤다."
+    ]
+  },
+  {
+    "id": "E07.form-cognition-right.opinion",
+    "eventId": "E07",
+    "choiceId": "E07.form-cognition-right",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“확인할지 바로 움직일지부터 정하자.”"
+    ]
+  }
+]

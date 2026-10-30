@@ -1,0 +1,10 @@
+.playtest-panel { margin: 1rem auto 3rem; max-width: 1100px; padding: 1.25rem; border: 1px solid #56634f; background: #20271f; color: #e8e6d7; line-height: 1.7; }
+.playtest-panel h2 { font-size: 1.1rem; margin-top: 0; }
+.playtest-panel p { font-size: .85rem; }
+.playtest-controls { display: flex; gap: .75rem; flex-wrap: wrap; }
+.playtest-controls button { padding: .6rem 1rem; color: inherit; background: #303c2c; border: 1px solid #68785d; cursor: pointer; }
+.playtest-controls button:disabled { opacity: .45; cursor: default; }
+.playtest-panel li { padding-bottom: .75rem; }
+.playtest-panel table { width: 100%; text-align: left; font-size: .85rem; }
+.playtest-panel summary { cursor: pointer; }
+@media (max-width: 700px) { .playtest-panel { margin: 1rem; } }

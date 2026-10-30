@@ -1,0 +1,11 @@
+/** Sol app/engine integration entry point. UI continues to use contracts only. */
+export { calculateInitialTraits, createInitialCoreState } from './initial-state'
+export { classifyTrait, getTriggeredExtreme } from './traits'
+export { initializeRandom, drawRandom, RANDOM_ALGORITHM, ZERO_SEED_REPLACEMENT } from './random'
+export { previewCheck, resolveCheck, isSuccessfulRoll, roundHalfAwayFromZero } from './probability'
+export { applyStateEffects } from './effects'
+export { previewCoreAction, resolveCoreAction } from './actions'
+export { resolveRecovery } from './recovery'
+export { getEscapeOptions, resolveEscape } from './escape'
+export { createOpeningRun, getOpeningContext, listOpeningActions, previewOpeningAction, executeOpeningAction, acknowledgeOpeningResult } from './opening'
+export { continueOpeningSegment, getOpeningLegacy } from './opening'

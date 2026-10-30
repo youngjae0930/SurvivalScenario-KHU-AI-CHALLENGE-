@@ -1,0 +1,5 @@
+docs
+AGENTS.md
+*.log
+.codex
+.agents

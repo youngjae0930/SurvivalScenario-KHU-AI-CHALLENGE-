@@ -1,0 +1,184 @@
+{
+  "id": "encounter.gas-station",
+  "title": "금속판이 울리는 주유소",
+  "locationIds": [
+    "gas-station"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.gas-station.listen",
+          "goalId": "E03.observe",
+          "label": "금속판 소리와 발소리를 구분해 외곽으로 간다",
+          "intention": "바닥의 액체를 밟지 않고 움직임이 멀어질 때를 기다린다.",
+          "target": "주유소",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.gas-station.listen",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.gas-station.shelf",
+          "goalId": "salvage",
+          "label": "금속판이 멎은 틈에 매점의 보존식을 회수한다",
+          "intention": "좀비의 시선과 깨진 선반을 감수하고 매점 안에 들어간다.",
+          "target": "주유소",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.gas-station.shelf",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "stocked",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "supply",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.gas-station.listen",
+          "goalId": "E03.observe",
+          "label": "금속판 소리와 발소리를 구분해 외곽으로 간다",
+          "intention": "바닥의 액체를 밟지 않고 움직임이 멀어질 때를 기다린다.",
+          "target": "주유소",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.gas-station.listen",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        }
+      ]
+    }
+  ]
+}

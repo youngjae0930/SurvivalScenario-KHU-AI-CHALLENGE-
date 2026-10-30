@@ -1,0 +1,752 @@
+{
+  "id": "E10",
+  "title": "연락과 구조",
+  "locationIds": [
+    "relay-station"
+  ],
+  "locationTags": [
+    "contact"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "extreme",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "affect",
+          "min": 78,
+          "max": 100
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E10.rush",
+          "goalId": "rescue",
+          "label": "목소리를 따라 곧장 들어간다",
+          "intention": "도구 없이 잔해로 뛰어든다. 실패할 위험이 크다.",
+          "target": "통신소 앞 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.rush",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "fast",
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E10.prepare",
+          "goalId": "rescue",
+          "label": "짐으로 잔해를 받치고 구조한다",
+          "intention": "물자 하나를 써 틈이 무너지지 않도록 받친다.",
+          "target": "통신소 앞 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.prepare",
+                  "eventId": "E10",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E10.haul",
+          "goalId": "rescue",
+          "label": "옆을 파고들어 사람을 꺼낸다",
+          "intention": "도구 대신 힘을 더 써 잔해 옆으로 접근한다.",
+          "target": "통신소 앞 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.haul",
+                  "eventId": "E10",
+                  "requires": {
+                    "stamina": 20
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 80,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 15
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "priority": 5,
+      "conditions": [
+        {
+          "kind": "flag",
+          "flag": "helpEstablished",
+          "value": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E10.network",
+          "goalId": "confirm",
+          "label": "편의점에서 받은 주파수로 연락한다",
+          "intention": "앞서 도운 사람에게 열린 탈출 통로를 묻는다.",
+          "target": "외곽 통신소",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.network",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E10.rescue",
+          "goalId": "rescue",
+          "label": "잔해에 갇힌 사람을 꺼낸다",
+          "intention": "맨손으로 잔해를 들어 올린다. 성공하면 생존자가 먹을 것을 나눈다.",
+          "target": "통신소 앞 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.rescue",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E10.aid",
+          "goalId": "rescue",
+          "label": "상처를 묶어 주고 꺼낸다",
+          "intention": "치료 도구를 써 구조의 가능성을 높인다.",
+          "target": "통신소 앞 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.aid",
+                  "eventId": "E10",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 7,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E10.signal",
+          "goalId": "confirm",
+          "label": "신호 방향을 확인하고 떠난다",
+          "intention": "집결지 쪽으로 간다. 연락처가 없어 우회 통로는 알 수 없다.",
+          "target": "외곽 통신소",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.signal",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E10.rescue",
+          "goalId": "rescue",
+          "label": "잔해에 갇힌 사람을 꺼낸다",
+          "intention": "맨손으로 잔해를 들어 올린다. 성공하면 생존자가 먹을 것을 나눈다.",
+          "target": "통신소 앞 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.rescue",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E10.aid",
+          "goalId": "rescue",
+          "label": "상처를 묶어 주고 꺼낸다",
+          "intention": "치료 도구를 써 구조의 가능성을 높인다.",
+          "target": "통신소 앞 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E10.aid",
+                  "eventId": "E10",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 7,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ],
+  "intervention": {
+    "groupId": "extreme",
+    "axis": "affect",
+    "extremePole": "right",
+    "replaceChoiceId": "E10.haul",
+    "alternatives": [
+      {
+        "groupId": "network",
+        "choiceId": "E10.network"
+      },
+      {
+        "groupId": "general",
+        "choiceId": "E10.signal"
+      }
+    ],
+    "judgment": "self",
+    "text": "네가 들어가려는 건 알아. 하지만 우리도 더 버티기 어려워. 먼저 신호를 확인하자.",
+    "notices": [
+      "지금은 한 가지 생각이 다른 판단을 밀어내고 있다. 동료가 곁에 있다면 다른 길을 제안할 수 있다."
+    ],
+    "mode": "companion-choice"
+  },
+  "recommendation": {
+    "axis": "affect"
+  },
+  "autonomy": {
+    "conditions": [],
+    "conflicts": [
+      {
+        "playerGoalId": "confirm",
+        "companionGoalId": "rescue",
+        "reason": "동료는 아직 도움을 기다리는 사람에게서 발을 떼지 못한다."
+      }
+    ],
+    "reunion": {
+      "conditions": [],
+      "minVisits": 1,
+      "locationTags": [
+        "safe-hub"
+      ]
+    }
+  }
+}

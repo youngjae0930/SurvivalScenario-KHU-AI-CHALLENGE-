@@ -1,0 +1,124 @@
+{
+  "id": "encounter.railway-bridge",
+  "title": "흔들리는 난간",
+  "locationIds": [
+    "railway-bridge"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "cognition"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.railway-bridge.railing",
+          "goalId": "inspect",
+          "label": "난간 쪽 온전한 발판을 따라 돌아간다",
+          "intention": "시간과 힘이 더 들더라도 철판이 멀쩡한 길을 확인한다.",
+          "target": "철도 육교",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.railway-bridge.railing",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow"
+        },
+        {
+          "id": "encounter.railway-bridge.span",
+          "goalId": "cross",
+          "label": "들뜬 철판 사이를 단번에 건넌다",
+          "intention": "짧은 간격을 택해 이동 부담을 줄이지만 발을 헛디딜 수 있다.",
+          "target": "철도 육교",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.railway-bridge.span",
+                  "eventId": "E08",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

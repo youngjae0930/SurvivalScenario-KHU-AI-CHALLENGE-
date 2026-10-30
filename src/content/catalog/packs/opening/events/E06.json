@@ -1,0 +1,378 @@
+{
+  "id": "E06",
+  "title": "병원 이탈",
+  "locationIds": [
+    "hospital-exit"
+  ],
+  "locationTags": [
+    "hospital-exit"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "extreme",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "risk",
+          "min": 78,
+          "max": 100
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E06.abandon",
+          "goalId": "withdraw",
+          "label": "남은 짐을 버리고 빠져나간다",
+          "intention": "공용 물자를 모두 포기하고 몸을 가볍게 한다.",
+          "target": "병원 철수",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E06.abandon",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 3,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "remove-all",
+                      "resource": "supply"
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E06.defend",
+          "goalId": "withdraw",
+          "label": "물건으로 뒤를 막으며 물러난다",
+          "intention": "물자를 하나 써 출입문을 막는다. 실패하면 다칠 수 있다.",
+          "target": "병원 철수",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E06.defend",
+                  "eventId": "E06",
+                  "requires": {
+                    "supply": 1
+                  },
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 85,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E06.low-retreat",
+          "goalId": "withdraw",
+          "label": "벽을 따라 천천히 빠져나간다",
+          "intention": "물자를 지키는 대신 힘을 더 써 안전하게 물러난다.",
+          "target": "병원 철수",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E06.low-retreat",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 12,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "slow"
+        }
+      ]
+    },
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E06.withdraw",
+          "goalId": "withdraw",
+          "label": "상자를 지나쳐 바로 나간다",
+          "intention": "더 챙기지 않고 연구동 쪽으로 이동한다.",
+          "target": "병원 철수",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E06.withdraw",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E06.salvage",
+          "goalId": "salvage",
+          "label": "운반 상자의 음식을 챙긴다",
+          "intention": "위험을 감수하고 남은 식량을 회수한다.",
+          "target": "남은 물자",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E06.salvage",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E06.search-kit",
+          "goalId": "salvage",
+          "label": "출구 옆 구급 가방을 꺼낸다",
+          "intention": "안쪽까지 손을 뻗어 치료 도구를 찾는다. 시간이 더 걸린다.",
+          "target": "출구 주변 치료 도구",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E06.search-kit",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 60,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "intervention": {
+    "groupId": "extreme",
+    "axis": "risk",
+    "extremePole": "right",
+    "replaceChoiceId": "E06.low-retreat",
+    "alternatives": [
+      {
+        "groupId": "normal",
+        "choiceId": "E06.salvage"
+      }
+    ],
+    "judgment": null,
+    "text": "저 상자만 확인하자. 다음에 먹을 것을 구할 곳이 없을 수도 있어. 내가 곁에서 살필게.",
+    "notices": [
+      "지금은 한 가지 생각이 다른 판단을 밀어내고 있다. 동료가 곁에 있다면 다른 길을 제안할 수 있다."
+    ],
+    "mode": "companion-choice"
+  },
+  "recommendation": {
+    "axis": "risk"
+  }
+}

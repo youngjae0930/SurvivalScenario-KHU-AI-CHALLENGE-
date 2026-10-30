@@ -1,0 +1,144 @@
+{
+  "id": "encounter.outskirts-crossroads",
+  "title": "뒤처진 사람의 기침",
+  "locationIds": [
+    "outskirts-crossroads"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.outskirts-crossroads.watch",
+          "goalId": "E03.observe",
+          "label": "거리를 두고 주변 움직임과 행렬을 살핀다",
+          "intention": "증상만으로 단정하지 않고 통과할 틈을 확인한다.",
+          "target": "외곽 진입 교차로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.outskirts-crossroads.watch",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "symptoms-noticed": true
+          },
+          "failureFacts": {},
+          "execution": {
+            "conditions": [],
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다.",
+            "role": "정찰"
+          }
+        },
+        {
+          "id": "encounter.outskirts-crossroads.support",
+          "goalId": "rescue",
+          "label": "주저앉은 사람을 부축해 갈림길을 건넌다",
+          "intention": "주변 위협을 감수하고 이동을 돕는다.",
+          "target": "외곽 진입 교차로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.outskirts-crossroads.support",
+                  "eventId": "E09",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "symptoms-noticed": true
+          },
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

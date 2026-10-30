@@ -1,0 +1,642 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "manifest",
+  "type": "object",
+  "properties": {
+    "formatVersion": {
+      "enum": [
+        1
+      ]
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+    },
+    "rulesVersion": {
+      "enum": [
+        "1.2-stress-1"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "startLocationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+    },
+    "extremeExperienceVersion": {
+      "enum": [
+        "middle-1"
+      ]
+    },
+    "companionStateVersion": {
+      "enum": [
+        "separate-1"
+      ]
+    },
+    "traitRangeVersion": {
+      "enum": [
+        "relaxed-1"
+      ]
+    },
+    "reactionVersion": {
+      "enum": [
+        "responsibility-1",
+        "contextual-1"
+      ]
+    },
+    "infectionVersion": {
+      "enum": [
+        "immediate-1"
+      ]
+    },
+    "researchVersion": {
+      "enum": [
+        "research-1"
+      ]
+    },
+    "endingVersion": {
+      "enum": [
+        "routes-1"
+      ]
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+          },
+          "locationTags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80,
+              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+            },
+            "minItems": 1,
+            "maxItems": 30
+          }
+        },
+        "required": [
+          "id",
+          "locationTags"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 20
+    },
+    "dialogueVersion": {
+      "enum": [
+        "scripts-1"
+      ]
+    },
+    "routeVersion": {
+      "enum": [
+        "stages-1",
+        "slots-1"
+      ]
+    },
+    "slotPlan": {
+      "type": "object",
+      "properties": {
+        "startSegmentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80,
+                "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+              },
+              "stage": {
+                "enum": [
+                  "early",
+                  "middle",
+                  "late"
+                ]
+              },
+              "slots": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "number": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 48
+                    },
+                    "candidates": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80,
+                        "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                      },
+                      "minItems": 1,
+                      "maxItems": 20
+                    }
+                  },
+                  "required": [
+                    "number",
+                    "candidates"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 16
+              },
+              "nextSegmentIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80,
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                },
+                "minItems": 0,
+                "maxItems": 20
+              },
+              "lockedReason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 5000
+              },
+              "entry": {
+                "type": "object",
+                "properties": {
+                  "conditions": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "opportunity"
+                              ]
+                            },
+                            "id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80,
+                              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "id"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "number"
+                              ]
+                            },
+                            "subject": {
+                              "enum": [
+                                "protagonist",
+                                "companion"
+                              ]
+                            },
+                            "stat": {
+                              "enum": [
+                                "stress",
+                                "stamina",
+                                "injury",
+                                "risk",
+                                "cognition",
+                                "affect",
+                                "trust"
+                              ]
+                            },
+                            "min": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 100
+                            },
+                            "max": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "subject",
+                            "stat",
+                            "min",
+                            "max"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "resource"
+                              ]
+                            },
+                            "resource": {
+                              "enum": [
+                                "supply",
+                                "medkit"
+                              ]
+                            },
+                            "min": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 3
+                            },
+                            "max": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 3
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "resource",
+                            "min",
+                            "max"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "companion"
+                              ]
+                            },
+                            "present": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "present"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "weapon"
+                              ]
+                            },
+                            "value": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "flag"
+                              ]
+                            },
+                            "flag": {
+                              "enum": [
+                                "access",
+                                "data",
+                                "helpEstablished",
+                                "routeKnown"
+                              ]
+                            },
+                            "value": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "flag",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "fact"
+                              ]
+                            },
+                            "id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80,
+                              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                            },
+                            "value": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "id",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "visited"
+                              ]
+                            },
+                            "locationId": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80,
+                              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                            },
+                            "value": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "locationId",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "location-tag"
+                              ]
+                            },
+                            "tag": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80,
+                              "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "tag"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "enum": [
+                                "stage"
+                              ]
+                            },
+                            "stage": {
+                              "enum": [
+                                "early",
+                                "middle",
+                                "late"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "stage"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "minItems": 0,
+                    "maxItems": 30
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 5000
+                  }
+                },
+                "required": [
+                  "conditions",
+                  "reason"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "stage",
+              "slots",
+              "nextSegmentIds"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 20
+        }
+      },
+      "required": [
+        "startSegmentId",
+        "segments"
+      ],
+      "additionalProperties": false
+    },
+    "trustVersion": {
+      "enum": [
+        "outcome-1",
+        "outcome-2"
+      ]
+    },
+    "trustScale": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 2
+    },
+    "executionVersion": {
+      "enum": [
+        "command-1"
+      ]
+    },
+    "autonomyVersion": {
+      "enum": [
+        "journey-1",
+        "journey-2"
+      ]
+    },
+    "presentationVersion": {
+      "enum": [
+        "reflection-1"
+      ]
+    },
+    "recommendationVersion": {
+      "enum": [
+        "survival-1"
+      ]
+    },
+    "decisionMemoryVersion": {
+      "enum": [
+        "context-1"
+      ]
+    },
+    "decisionEcho": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "enum": [
+            "echo-1"
+          ]
+        },
+        "compatibleRevisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+          },
+          "minItems": 1,
+          "maxItems": 50
+        }
+      },
+      "required": [
+        "version",
+        "compatibleRevisions"
+      ],
+      "additionalProperties": false
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "enum": [
+              "early",
+              "middle",
+              "late"
+            ]
+          },
+          "minVisits": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 16
+          },
+          "maxVisits": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 16
+          }
+        },
+        "required": [
+          "id",
+          "minVisits",
+          "maxVisits"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80,
+        "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+      },
+      "minItems": 0,
+      "maxItems": 100
+    },
+    "boundary": {
+      "type": "object",
+      "properties": {
+        "nextEventId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "text": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          },
+          "minItems": 1,
+          "maxItems": 10
+        }
+      },
+      "required": [
+        "nextEventId",
+        "title",
+        "text"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "formatVersion",
+    "id",
+    "revision",
+    "rulesVersion",
+    "title",
+    "startLocationId",
+    "stages",
+    "facts",
+    "boundary"
+  ],
+  "additionalProperties": false
+}

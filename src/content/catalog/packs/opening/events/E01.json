@@ -1,0 +1,131 @@
+{
+  "id": "E01",
+  "title": "대피소 출발",
+  "locationIds": [
+    "villa"
+  ],
+  "locationTags": [
+    "shelter"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E01.safe",
+          "goalId": "E01.safe",
+          "label": "큰 도로를 따라 이동한다",
+          "intention": "좀비를 경계하며 천천히 간다. 다칠 위험은 없지만 긴장이 쌓인다.",
+          "target": "출발 경로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E01.safe",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "E01.shortcut",
+          "goalId": "E01.shortcut",
+          "label": "담장 너머 좁은 지름길로 간다",
+          "intention": "다칠 수도 있지만 빠르게 갈 수 있다. 골목의 공구함도 살펴본다.",
+          "target": "출발 경로",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E01.shortcut",
+                  "eventId": "E01",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 4,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -8,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-weapon",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "pace": "fast"
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "risk"
+  }
+}

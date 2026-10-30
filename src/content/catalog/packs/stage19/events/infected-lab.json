@@ -1,0 +1,140 @@
+{
+  "id": "encounter.infected-lab",
+  "title": "변형된 연구자",
+  "locationIds": [
+    "infected-lab"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [
+        "변형 좀비는 일반 좀비보다 위험하다. 물림 위험을 감수하지 않고 빠져나갈 수 있다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.infected-lab.recover",
+          "goalId": "recover",
+          "label": "변형 좀비를 피해 최종 인계함을 회수한다",
+          "intention": "길게 뻗는 팔을 피해 인계함을 가져온다. 물리면 감염되어 즉시 목숨을 잃는다.",
+          "target": "infected-lab",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.infected-lab.recover",
+                  "eventId": "E07",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 55,
+                    "physical": false,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "cure-recovered": true
+          },
+          "failureFacts": {},
+          "infection": [
+            {
+              "source": "infected-person",
+              "target": "actor",
+              "contact": "bite"
+            }
+          ],
+          "execution": {
+            "role": "회수",
+            "conditions": [],
+            "risk": "hazardous",
+            "sharedRisk": "동료가 행동의 체력 소모와 부상을 감수합니다. 물자와 치료 도구는 공용 재고에서 사용합니다. 감염 접촉 위험은 별도 안내를 따릅니다."
+          }
+        },
+        {
+          "id": "encounter.infected-lab.withdraw",
+          "goalId": "withdraw",
+          "label": "인계함을 포기하고 격벽 바깥으로 빠진다",
+          "intention": "변형 좀비와 거리를 두고 옥상 통로로 물러난다. 최종 인계함은 남겨 둔다.",
+          "target": "infected-lab",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.infected-lab.withdraw",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "cognition"
+  }
+}

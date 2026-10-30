@@ -1,0 +1,600 @@
+[
+  {
+    "id": "E01.scene",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“정부는 감염자의 추가 확산을 막기 위해 봉쇄를—”",
+      "라디오는 몇 번이고 같은 문장을 반복한다. 휴대전화에는 마지막으로 받은 메시지가 떠 있다.",
+      "“남쪽은 아직 군인들이 오기 전이래. 너도 빨리 출발해.”",
+      "도시 남쪽은 아직 봉쇄선이 완전하지 않다는 소문이 있다. 그곳으로 향하려면 먼저 편의점을 거쳐야 한다. 당장은 먹을 것이 부족하다.",
+      "문틈으로 바깥을 살핀다. 큰 도로에 좀비가 몇 보인다. 담장 너머로는 편의점 간판의 끝이 보인다."
+    ]
+  },
+  {
+    "id": "E01.safe.success",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 좀비를 경계하며 천천히 편의점으로 이동했다. 작은 소리에도 뒤를 돌아보느라 긴장이 쉽게 풀리지 않았다."
+    ]
+  },
+  {
+    "id": "E01.shortcut.success",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘어 편의점으로 이동했다. 골목의 버려진 공구함에서 쇠지렛대를 하나 챙겼다."
+    ]
+  },
+  {
+    "id": "E01.shortcut.failure",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘던 중 날카로운 돌에 다리를 긁혔다. 나오려는 비명을 참고 빠르게 편의점으로 이동했다."
+    ]
+  },
+  {
+    "id": "E01.safe.success.companion.neutral",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 좀비를 경계하며 천천히 편의점으로 이동했다. 작은 소리에도 뒤를 돌아보느라 긴장이 쉽게 풀리지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E01.safe.success.companion.left",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 좀비를 경계하며 천천히 편의점으로 이동했다. 작은 소리에도 뒤를 돌아보느라 긴장이 쉽게 풀리지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “길이 좀 길었네. 그래도 편의점까지 왔어. 안부터 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E01.safe.success.companion.right",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 좀비를 경계하며 천천히 편의점으로 이동했다. 작은 소리에도 뒤를 돌아보느라 긴장이 쉽게 풀리지 않았다.",
+      "{{companion.name}}의 목소리가 들린다. “천천히 와서 다행이야. 문은 열려 있어. 안에서도 서두르지 말자.”"
+    ]
+  },
+  {
+    "id": "E01.shortcut.success.companion.neutral",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘어 편의점으로 이동했다. 골목의 버려진 공구함에서 쇠지렛대를 하나 챙겼다.",
+      "{{companion.name}}이 편의점 안쪽을 살핀다. “넘어오는 소리는 크지 않았겠지? 안쪽도 조심해서 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E01.shortcut.success.companion.left",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘어 편의점으로 이동했다. 골목의 버려진 공구함에서 쇠지렛대를 하나 챙겼다.",
+      "{{companion.name}}이 편의점 안쪽을 살핀다. “금방 왔네. 챙긴 지렛대는 잘 넣어 둬. 안에서도 쓸 일이 있을지 몰라.”"
+    ]
+  },
+  {
+    "id": "E01.shortcut.success.companion.right",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘어 편의점으로 이동했다. 골목의 버려진 공구함에서 쇠지렛대를 하나 챙겼다.",
+      "{{companion.name}}이 편의점 안쪽을 살핀다. “생각보다 높은 담장이었네. 무사히 넘어서 다행이야. 안에서는 서두르지 말자.”"
+    ]
+  },
+  {
+    "id": "E01.shortcut.failure.companion.neutral",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘던 중 날카로운 돌에 다리를 긁혔다. 나오려는 비명을 참고 빠르게 편의점으로 이동했다.",
+      "{{companion.name}}의 목소리가 들린다. “상처는 어때? 여기서 잠깐 숨 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E01.shortcut.failure.companion.left",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘던 중 날카로운 돌에 다리를 긁혔다. 나오려는 비명을 참고 빠르게 편의점으로 이동했다.",
+      "{{companion.name}}의 목소리가 들린다. “급하게 움직이기에는 위험했네. 상처부터 봐. 다음 길은 다시 살펴보자.”"
+    ]
+  },
+  {
+    "id": "E01.shortcut.failure.companion.right",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "당신은 담장을 넘던 중 날카로운 돌에 다리를 긁혔다. 나오려는 비명을 참고 빠르게 편의점으로 이동했다.",
+      "{{companion.name}}의 목소리가 들린다. “더 다치면 안 돼. 잠깐 멈춰. 여기서 숨을 돌리고 움직이자.”"
+    ]
+  },
+  {
+    "id": "E01.shortcut.failure.companion.fatal",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 900,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "도중에 상처가 더 깊어졌다. 다리에 힘이 풀려 그 자리에 주저앉았다.",
+      "{{companion.name}}이 곁에 무릎을 꿇는다. “움직이지 마. 내가 도움을 불러 볼게.”"
+    ]
+  },
+  {
+    "id": "E01.dialogue.opinion.safe",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "큰길로 가자. 돌아오는 길은 잘 보이잖아. 서두르지만 않으면 피해서 갈 수 있어."
+    ]
+  },
+  {
+    "id": "E01.dialogue.opinion.safe.left",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "큰길로 가자. 돌아오는 길은 잘 보이잖아. 서두르지만 않으면 피해서 갈 수 있어. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E01.dialogue.opinion.safe.right",
+    "eventId": "E01",
+    "choiceId": "E01.safe",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "큰길로 가자. 돌아오는 길은 잘 보이잖아. 서두르지만 않으면 피해서 갈 수 있어. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E01.dialogue.opinion.shortcut",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "큰길에 오래 있고 싶지는 않아. 담장만 넘으면 편의점이야. 저쪽으로 가보자."
+    ]
+  },
+  {
+    "id": "E01.dialogue.opinion.shortcut.left",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "큰길에 오래 있고 싶지는 않아. 담장만 넘으면 편의점이야. 저쪽으로 가보자. 오래 망설이다 길을 놓치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E01.dialogue.opinion.shortcut.right",
+    "eventId": "E01",
+    "choiceId": "E01.shortcut",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "큰길에 오래 있고 싶지는 않아. 담장만 넘으면 편의점이야. 저쪽으로 가보자. 돌아 나올 길도 남겨 두고 움직이자."
+    ]
+  },
+  {
+    "id": "E01.dialogue.hesitation",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E01.dialogue.absent",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E01.dialogue.reunion",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E01.dialogue.reunion.rational",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E01.dialogue.reunion.emotional",
+    "eventId": "E01",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+[
+  { "questionId": "Q01", "axis": "risk", "answers": [{ "answerId": "a", "delta": -10 }, { "answerId": "b", "delta": 10 }] },
+  { "questionId": "Q02", "axis": "risk", "answers": [{ "answerId": "a", "delta": -10 }, { "answerId": "b", "delta": 10 }] },
+  { "questionId": "Q03", "axis": "cognition", "answers": [{ "answerId": "a", "delta": -10 }, { "answerId": "b", "delta": 10 }] },
+  { "questionId": "Q04", "axis": "cognition", "answers": [{ "answerId": "a", "delta": -10 }, { "answerId": "b", "delta": 10 }] },
+  { "questionId": "Q05", "axis": "affect", "answers": [{ "answerId": "a", "delta": -10 }, { "answerId": "b", "delta": 10 }] },
+  { "questionId": "Q06", "axis": "affect", "answers": [{ "answerId": "a", "delta": -10 }, { "answerId": "b", "delta": 10 }] }
+]

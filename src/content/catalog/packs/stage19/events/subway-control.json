@@ -1,0 +1,113 @@
+{
+  "id": "encounter.subway-control",
+  "title": "고정된 선로 전환기",
+  "locationIds": [
+    "subway-control"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.subway-control.manual",
+          "goalId": "confirm",
+          "label": "점검 기록에서 열린 작업 통로를 찾는다",
+          "intention": "제어 장치를 작동시키지 않고 남쪽 우회 진입점을 확인한다.",
+          "target": "지하철 관제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.subway-control.manual",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.subway-control.leave",
+          "goalId": "withdraw",
+          "label": "제어 장치를 두고 연결부로 향한다",
+          "intention": "패널을 만지지 않고 객차 쪽으로 돌아간다.",
+          "target": "지하철 관제실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.subway-control.leave",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ]
+}

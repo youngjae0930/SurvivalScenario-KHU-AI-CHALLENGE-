@@ -1,0 +1,308 @@
+{
+  "id": "encounter.laundromat",
+  "title": "동전 보관함 옆의 쉼터",
+  "locationIds": [
+    "laundromat"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "risk"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.laundromat.maintain",
+          "goalId": "E04.maintain",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.laundromat.locker",
+          "goalId": "salvage",
+          "label": "기울어진 선반의 비상식량을 꺼낸다",
+          "intention": "선반이 무너질 위험을 감수하고 밀봉 식량을 회수한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.laundromat.locker",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "stocked",
+      "priority": 10,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "supply",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.laundromat.maintain",
+          "goalId": "E04.maintain",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "normal-companion",
+      "priority": 1,
+      "conditions": [
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.laundromat.maintain",
+          "goalId": "E04.maintain",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.laundromat.locker",
+          "goalId": "salvage",
+          "label": "기울어진 선반의 비상식량을 꺼낸다",
+          "intention": "선반이 무너질 위험을 감수하고 밀봉 식량을 회수한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.laundromat.locker",
+                  "eventId": "E06",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 70,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 10
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.laundromat.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "stocked-companion",
+      "priority": 11,
+      "conditions": [
+        {
+          "kind": "resource",
+          "resource": "supply",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "kind": "companion",
+          "present": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.laundromat.maintain",
+          "goalId": "E04.maintain",
+          "label": "담요 위에서 몸과 장비를 정비한다",
+          "intention": "배낭을 내려놓고 몸을 추스른다. 필요하면 가진 도구로 상처도 처치한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "maintain"
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.laundromat.share",
+          "goalId": "recover",
+          "label": "정비하며 동료에게 물자 한 몫을 건넨다",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
+          "target": "세탁소",
+          "judgment": null,
+          "behavior": {
+            "kind": "recovery",
+            "ruleEventId": "E04",
+            "choice": "share"
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "support",
+                "magnitude": 2,
+                "reason": "동료에게 물자를 나누어 함께 회복함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ]
+}

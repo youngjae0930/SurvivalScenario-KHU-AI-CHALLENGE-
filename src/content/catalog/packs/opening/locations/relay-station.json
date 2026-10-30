@@ -1,0 +1,17 @@
+{
+  "id": "relay-station",
+  "name": "도시 외곽 · 통신소",
+  "stage": "late",
+  "tags": [
+    "road",
+    "contact"
+  ],
+  "fromTags": [
+    "quarantine"
+  ],
+  "after": [
+    "quarantine-zone"
+  ],
+  "required": true,
+  "weight": 1
+}

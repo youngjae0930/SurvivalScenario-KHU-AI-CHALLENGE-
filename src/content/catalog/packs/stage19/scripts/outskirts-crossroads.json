@@ -1,0 +1,484 @@
+[
+  {
+    "id": "local.text.580",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 갈림길에서 한 사람이 기침하며 주저앉았다. 행렬은 걸음을 늦추지만 그 원인이 감염인지 탈진인지 알 수 없다. 길가 포대 뒤에서는 다른 발소리가 들린다.",
+      "“조금만 쉬면 돼요.” 주저앉은 사람이 말한다. 그 말만 믿고 기다릴지, 몸을 부축할지 망설인다."
+    ]
+  },
+  {
+    "id": "local.text.581",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 갈림길에서 한 사람이 기침하며 주저앉았다. 행렬은 걸음을 늦추지만 그 원인이 감염인지 탈진인지 알 수 없다. 길가 포대 뒤에서는 다른 발소리가 들린다.",
+      "“조금만 쉬면 돼요.” 주저앉은 사람이 말한다. 그 말만 믿고 기다릴지, 몸을 부축할지 망설인다.",
+      "배가 고프지만 배낭에는 꺼내 먹을 것이 없다."
+    ]
+  },
+  {
+    "id": "local.text.582",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 갈림길에서 한 사람이 기침하며 주저앉았다. 행렬은 걸음을 늦추지만 그 원인이 감염인지 탈진인지 알 수 없다. 길가 포대 뒤에서는 다른 발소리가 들린다.",
+      "“조금만 쉬면 돼요.” 주저앉은 사람이 말한다. 그 말만 믿고 기다릴지, 몸을 부축할지 망설인다.",
+      "다친 쪽을 보호하려 몸을 돌린다. 지나갈 틈을 다시 가늠한다."
+    ]
+  },
+  {
+    "id": "local.text.583",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 갈림길에서 한 사람이 기침하며 주저앉았다. 행렬은 걸음을 늦추지만 그 원인이 감염인지 탈진인지 알 수 없다. 길가 포대 뒤에서는 다른 발소리가 들린다.",
+      "“조금만 쉬면 돼요.” 주저앉은 사람이 말한다. 그 말만 믿고 기다릴지, 몸을 부축할지 망설인다.",
+      "옷깃이 스치는 소리에도 어깨가 굳는다. 천천히 숨을 내쉰다."
+    ]
+  },
+  {
+    "id": "local.text.584",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 갈림길 쪽에서 시선을 거둔다. “내 생각도 아직 정리가 안 돼. 너는 어떻게 하고 싶어?”"
+    ]
+  },
+  {
+    "id": "local.text.585",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "갈림길 쪽을 살피다 곁을 돌아본다. 옆에서 답해 줄 목소리는 없다."
+    ]
+  },
+  {
+    "id": "local.text.586",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.587",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.watch",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기침의 원인은 알 수 없었다. 포대 뒤 움직임이 멀어진 뒤 행렬과 거리를 맞춰 갈림길을 지났다."
+    ]
+  },
+  {
+    "id": "local.text.588",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.watch",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기침의 원인은 알 수 없었다. 포대 뒤 움직임이 멀어진 뒤 행렬과 거리를 맞춰 갈림길을 지났다.",
+      "동료가 갈림길 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.589",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.watch",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“기침만 듣고 단정하고 싶지는 않아. 다만 저 포대 뒤 소리도 같이 살피자.”"
+    ]
+  },
+  {
+    "id": "local.text.590",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "사람을 부축해 갈림길을 건넜다. 일행이 그를 이어받자 손을 놓았다. 그의 기침은 멎지 않았고, 행렬도 다시 움직여야 했다."
+    ]
+  },
+  {
+    "id": "local.text.591",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "사람을 부축해 갈림길을 건넜다. 일행이 그를 이어받자 손을 놓았다. 그의 기침은 멎지 않았고, 행렬도 다시 움직여야 했다.",
+      "동료가 갈림길 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.592",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“일어날 힘이 없는 것 같아. 저 포대에서 멀어질 때까지만이라도 같이 걷게 돕자.”"
+    ]
+  },
+  {
+    "id": "local.text.593",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다른 발소리가 가까워져 몸을 급히 뺐다. 사람을 끝까지 옮기지 못했고 넘어지며 상처를 입었다."
+    ]
+  },
+  {
+    "id": "local.text.594",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "다른 발소리가 가까워져 몸을 급히 뺐다. 사람을 끝까지 옮기지 못했고 넘어지며 상처를 입었다.",
+      "동료가 갈림길 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
+    ]
+  },
+  {
+    "id": "local.text.595",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.859",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "fact",
+        "id": "hospital-records",
+        "value": true
+      }
+    ],
+    "priority": 4,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "외곽 갈림길에서 한 사람이 기침하며 주저앉았다. 행렬은 걸음을 늦추지만 그 원인이 감염인지 탈진인지 알 수 없다. 길가 포대 뒤에서는 다른 발소리가 들린다.",
+      "“조금만 쉬면 돼요.” 주저앉은 사람이 말한다. 그 말만 믿고 기다릴지, 몸을 부축할지 망설인다.",
+      "기록실에서 읽은 증상 메모가 떠오른다. 비슷해 보인다는 이유만으로 눈앞의 사람에게 같은 결론을 내릴 수는 없다."
+    ]
+  },
+  {
+    "id": "local.text.588.voice.0",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.watch",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기침의 원인은 알 수 없었다. 포대 뒤 움직임이 멀어진 뒤 행렬과 거리를 맞춰 갈림길을 지났다.",
+      "동료가 갈림길 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.588.voice.1",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.watch",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기침의 원인은 알 수 없었다. 포대 뒤 움직임이 멀어진 뒤 행렬과 거리를 맞춰 갈림길을 지났다.",
+      "“기침 소리가 마음에 걸려. 저 사람도 행렬을 놓치지 않았으면 좋겠어.”"
+    ]
+  },
+  {
+    "id": "local.text.591.voice.0",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "사람을 부축해 갈림길을 건넜다. 일행이 그를 이어받자 손을 놓았다. 그의 기침은 멎지 않았고, 행렬도 다시 움직여야 했다.",
+      "동료가 갈림길 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.591.voice.1",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "사람을 부축해 갈림길을 건넜다. 일행이 그를 이어받자 손을 놓았다. 그의 기침은 멎지 않았고, 행렬도 다시 움직여야 했다.",
+      "“기침 소리가 마음에 걸려. 저 사람도 행렬을 놓치지 않았으면 좋겠어.”"
+    ]
+  },
+  {
+    "id": "story.recommendation-failure.outskirts-crossroads.support",
+    "eventId": "encounter.outskirts-crossroads",
+    "choiceId": "encounter.outskirts-crossroads.support",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 권한 길인데…… 위험을 제대로 보지 못했어.” 동료가 갈림길 쪽에서 시선을 떼지 못한다. “일단 상처를 살필 틈부터 찾자.”"
+    ]
+  }
+]

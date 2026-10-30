@@ -1,0 +1,97 @@
+{
+  "id": "encounter.research-isolation",
+  "title": "관찰창 바깥의 인계함",
+  "locationIds": [
+    "research-isolation"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.research-isolation.collect",
+          "goalId": "collect",
+          "label": "봉인된 치료제 후보 시료를 챙긴다",
+          "intention": "감염 구획 바깥 인계함에서 봉인된 시료를 확보한다. 몸에 투여하지 않는다.",
+          "target": "research-isolation",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.research-isolation.collect",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-sample": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.research-isolation.leave",
+          "goalId": "leave",
+          "label": "연구물을 남겨 두고 다음 구획으로 향한다",
+          "intention": "멈춰 조사하지 않고 문 너머의 위협과 거리를 유지한다.",
+          "target": "research-isolation",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.research-isolation.leave",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 8,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "cognition"
+  }
+}

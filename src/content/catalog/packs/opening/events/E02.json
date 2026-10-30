@@ -1,0 +1,261 @@
+{
+  "id": "E02",
+  "title": "불 꺼진 편의점",
+  "locationIds": [
+    "convenience-store"
+  ],
+  "locationTags": [
+    "store"
+  ],
+  "conditions": [],
+  "weight": 1,
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "E02.help",
+          "goalId": "E02.help",
+          "label": "물과 먹을 것을 나눈다",
+          "intention": "다친 사람이 움직일 수 있도록 돕는다. 물자가 없다면 주변에서 필요한 것을 찾아 준다.",
+          "target": "편의점의 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [
+                  {
+                    "kind": "resource",
+                    "resource": "supply",
+                    "min": 1,
+                    "max": 3
+                  }
+                ],
+                "action": {
+                  "id": "E02.help",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-rescue-decision",
+                      "value": "rescue"
+                    },
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              },
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E02.help",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 10,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-rescue-decision",
+                      "value": "rescue"
+                    },
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E02.supplies",
+          "goalId": "E02.supplies",
+          "label": "남은 음식을 챙기고 떠난다",
+          "intention": "내 여정을 위해 배낭을 채운다. 계산대 뒤 사람을 돕지는 않는다.",
+          "target": "남은 물자",
+          "judgment": "self",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E02.supplies",
+                  "eventId": "E02",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "set-rescue-decision",
+                      "value": "self"
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "E02.first-aid",
+          "goalId": "E02.help",
+          "label": "치료 도구로 생존자의 다리를 돌본다",
+          "intention": "내 치료 도구를 내주고 상처를 묶는다.",
+          "target": "편의점의 생존자",
+          "judgment": "rescue",
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "E02.first-aid",
+                  "eventId": "E02",
+                  "requires": {
+                    "medkit": 1
+                  },
+                  "costs": {
+                    "stamina": 0,
+                    "supply": 0,
+                    "medkit": 1
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-rescue-decision",
+                      "value": "rescue"
+                    },
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "right",
+                "magnitude": 2,
+                "reason": "남은 사람을 돕는 목표 달성"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "axis": "affect"
+  },
+  "autonomy": {
+    "conditions": [],
+    "conflicts": [
+      {
+        "playerGoalId": "E02.supplies",
+        "companionGoalId": "E02.help",
+        "reason": "동료는 아직 도움을 기다리는 사람에게서 발을 떼지 못한다."
+      }
+    ],
+    "reunion": {
+      "conditions": [],
+      "minVisits": 1,
+      "locationTags": [
+        "safe-hub"
+      ]
+    }
+  }
+}

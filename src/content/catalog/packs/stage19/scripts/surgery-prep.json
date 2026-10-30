@@ -1,0 +1,732 @@
+[
+  {
+    "id": "local.text.237",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.238",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "가벼워진 배낭이 어깨에서 흔들린다. 다음에 쓸 먹을 것을 생각한다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.239",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "상처가 당겨 잠시 자세를 고친다. 서두르는 길은 더 부담스럽다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.240",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "숨을 세어 보지만 뒤쪽이 자꾸 신경 쓰인다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.241",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 준비대 쪽에서 시선을 거둔다. “내 생각도 아직 정리가 안 돼. 너는 어떻게 하고 싶어?”"
+    ]
+  },
+  {
+    "id": "local.text.242",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대 쪽을 살피다 곁을 돌아본다. 옆에서 답해 줄 목소리는 없다."
+    ]
+  },
+  {
+    "id": "local.text.243",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.244",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.leave",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대 바퀴를 건드리지 않고 옆으로 빠져나왔다. 밀봉 묶음은 바구니에 남겼다."
+    ]
+  },
+  {
+    "id": "local.text.245",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.leave",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대 바퀴를 건드리지 않고 옆으로 빠져나왔다. 밀봉 묶음은 바구니에 남겼다.",
+      "동료가 준비대 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.246",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.leave",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“바퀴가 움직이면 소리가 크게 날 거야. 옆으로만 빠져나갈 수 있어.”"
+    ]
+  },
+  {
+    "id": "local.text.247",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대를 붙들고 위쪽 바구니의 처치 묶음을 꺼냈다. 바퀴가 문턱을 넘기 전에 다시 몸을 뺐다."
+    ]
+  },
+  {
+    "id": "local.text.248",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대를 붙들고 위쪽 바구니의 처치 묶음을 꺼냈다. 바퀴가 문턱을 넘기 전에 다시 몸을 뺐다.",
+      "“밀봉은 그대로네. 필요할 때 찾을 수 있게 넣어 두자.”"
+    ]
+  },
+  {
+    "id": "local.text.249",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“바구니에 포장이 남아 있어. 준비대만 고정하면 꺼낼 수 있겠는데.”"
+    ]
+  },
+  {
+    "id": "local.text.250",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대가 갑자기 굴러왔다. 문틀에 팔을 부딪치고 물러났으며 처치 묶음은 바닥 너머로 떨어졌다."
+    ]
+  },
+  {
+    "id": "local.text.251",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대가 갑자기 굴러왔다. 문틀에 팔을 부딪치고 물러났으며 처치 묶음은 바닥 너머로 떨어졌다.",
+      "동료가 준비대 쪽을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
+    ]
+  },
+  {
+    "id": "local.text.252",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.transport-record.success",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.transport-record",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수송 기록의 뒷면에서 연구동 출입로와 비상 인계 표식을 찾았다. 병동 끝 갈림길에서 이 길로 들어갈 수 있을 것이다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.transport-record.opinion",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.transport-record",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“이 표식, 평범한 물품 기록이 아니야. 잠깐만 읽어 보자. 막힌 길을 피할 방법이 있을지도 몰라.”"
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.transport-scene.0",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.transport-scene.1",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "가벼워진 배낭이 어깨에서 흔들린다. 다음에 쓸 먹을 것을 생각한다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.transport-scene.2",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 102,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "상처가 당겨 잠시 자세를 고친다. 서두르는 길은 더 부담스럽다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.transport-scene.3",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      },
+      {
+        "kind": "opportunity",
+        "id": "research-transport"
+      }
+    ],
+    "priority": 103,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "수술 준비실의 바퀴 달린 준비대가 출입문을 비스듬히 막고 있다. 위쪽 바구니에는 밀봉된 처치용 묶음이 남아 있다.",
+      "준비대에 체중을 실으면 바퀴가 굴러갈 듯하다. 위쪽 바구니에 손을 대기 전에 발을 디딜 곳부터 살핀다.",
+      "숨을 세어 보지만 뒤쪽이 자꾸 신경 쓰인다.",
+      "흩어진 서류 사이에 ‘연구동 수송’이라 적힌 봉투가 눈에 띈다.",
+      "준비대 아래 처치 묶음 가까이에서 지지대가 흔들린다. 걸린 침대를 붙들고 도움을 청하는 사람도 있다. 이송 표지와 침대 바퀴 자국을 더 살필지, 지금 움직일지 결정해야 한다.",
+      "긴 벽 쪽 통로와 흔들리는 구조물 사이의 짧은 틈이 갈라진다. 표지와 바닥 흔적을 대조할 시간도 남아 있다."
+    ]
+  },
+  {
+    "id": "local.text.245.voice.0",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.leave",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대 바퀴를 건드리지 않고 옆으로 빠져나왔다. 밀봉 묶음은 바구니에 남겼다.",
+      "동료가 준비대 쪽으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.245.voice.1",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.leave",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대 바퀴를 건드리지 않고 옆으로 빠져나왔다. 밀봉 묶음은 바구니에 남겼다.",
+      "“준비대가 굴러올까 봐 계속 보고 있었어. 출입문에서 떨어지자.”"
+    ]
+  },
+  {
+    "id": "local.text.248.voice.0",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대를 붙들고 위쪽 바구니의 처치 묶음을 꺼냈다. 바퀴가 문턱을 넘기 전에 다시 몸을 뺐다.",
+      "“밀봉은 그대로네. 필요할 때 찾을 수 있게 넣어 두자.”"
+    ]
+  },
+  {
+    "id": "local.text.248.voice.1",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "risk",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "준비대를 붙들고 위쪽 바구니의 처치 묶음을 꺼냈다. 바퀴가 문턱을 넘기 전에 다시 몸을 뺐다.",
+      "“아직 쓸 수 있는 도구가 있어서 다행이야. 다치면 꼭 말해 줘.”"
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.advice-injury.encounter.surgery-prep.kit",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.kit",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 권한 길인데…… 위험을 제대로 보지 못했어.” 동료가 준비대 쪽에서 시선을 떼지 못한다. “일단 상처를 살필 틈부터 찾자.”"
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.xp.form-cognition-right.success.0",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.form-cognition-right",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "발이 닿을 곳을 확인할 틈 없이 몸을 밀어 넣었다. 예상보다 짧게 통로를 지나 체력을 아꼈다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.xp.form-cognition-right.failure.0",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.form-cognition-right",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "빈틈이 이어질 것이라는 짐작이 빗나갔다. 막힌 구조물에 부딪혀 다쳤다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.xp.form-cognition-right.opinion.0",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.form-cognition-right",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“위험과 얻을 것을 같이 보자. 결정은 네가 해.”"
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.open-risk-left.success",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.open-risk-left",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "기울어진 구조물 사이를 빠져나가 긴 우회를 줄였다. 물품 대신 이동에 쓸 체력을 아꼈다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.open-risk-left.failure",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.open-risk-left",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "짧게 통과하려던 틈이 막혔다. 흔들리는 구조물에 부딪혀 다쳤다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.open-risk-left.opinion",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.open-risk-left",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“챙길 물품만 보지 말고, 우리가 어떤 길을 고르는지도 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.open-cognition-left.success",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.open-cognition-left",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "서로 어긋난 표지와 흔적을 비교해 이동할 방향을 정했다. 확인을 마친 뒤에야 발을 옮겼다."
+    ]
+  },
+  {
+    "id": "encounter.surgery-prep.open-cognition-left.opinion",
+    "eventId": "encounter.surgery-prep",
+    "choiceId": "encounter.surgery-prep.open-cognition-left",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“챙길 물품만 보지 말고, 우리가 어떤 길을 고르는지도 보자.”"
+    ]
+  }
+]

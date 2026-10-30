@@ -1,0 +1,640 @@
+[
+  {
+    "id": "E04.scene",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "골목 끝 관리실의 문이 열린다. 안에서 걸쇠를 채우자 발소리가 벽 너머로 멀어진다.",
+      "의자에 앉으니 다리가 뒤늦게 떨린다. 병원을 지나야 남쪽으로 갈 수 있다. 다시 나서기 전에 먹을 것을 꺼내 몸을 추스를지, 배낭을 아끼며 조금만 쉴지 정한다.",
+      "치료 도구가 있다면 몸과 장비를 정비하면서 상처도 함께 돌볼 수 있다."
+    ]
+  },
+  {
+    "id": "E04.maintain.success",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것과 장비를 확인하고 몸을 추슬렀다. 문밖의 발소리가 멀어질 때까지 기다린 뒤 다시 배낭을 멨다."
+    ]
+  },
+  {
+    "id": "E04.rest.success",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭을 열지 않고 벽에 등을 기댔다. 숨이 고르게 돌아오자 천천히 일어섰다. 문을 열기 전 바깥 소리를 한 번 더 들었다."
+    ]
+  },
+  {
+    "id": "E04.share.success",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것을 둘로 나눴다. 잠시 포장지를 구기는 소리만 들린다. “아까부터 말할 틈도 없었네. 고마워.” 함께 문 쪽으로 몸을 돌렸다."
+    ]
+  },
+  {
+    "id": "E04.maintain.success.companion.neutral",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것과 장비를 확인하고 몸을 추슬렀다. 문밖의 발소리가 멀어질 때까지 기다린 뒤 다시 배낭을 멨다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E04.maintain.success.companion.left",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것과 장비를 확인하고 몸을 추슬렀다. 문밖의 발소리가 멀어질 때까지 기다린 뒤 다시 배낭을 멨다.",
+      "{{companion.name}}의 목소리가 들린다. “남은 물품은 다시 확인했어. 나갈 준비가 되면 말해.”"
+    ]
+  },
+  {
+    "id": "E04.maintain.success.companion.right",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것과 장비를 확인하고 몸을 추슬렀다. 문밖의 발소리가 멀어질 때까지 기다린 뒤 다시 배낭을 멨다.",
+      "{{companion.name}}의 목소리가 들린다. “이렇게 마주 앉으니 조금 살 것 같아. 다음 길도 같이 버텨 보자.”"
+    ]
+  },
+  {
+    "id": "E04.rest.success.companion.neutral",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭을 열지 않고 벽에 등을 기댔다. 숨이 고르게 돌아오자 천천히 일어섰다. 문을 열기 전 바깥 소리를 한 번 더 들었다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E04.rest.success.companion.left",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭을 열지 않고 벽에 등을 기댔다. 숨이 고르게 돌아오자 천천히 일어섰다. 문을 열기 전 바깥 소리를 한 번 더 들었다.",
+      "{{companion.name}}의 목소리가 들린다. “남은 물품은 다시 확인했어. 나갈 준비가 되면 말해.”"
+    ]
+  },
+  {
+    "id": "E04.rest.success.companion.right",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭을 열지 않고 벽에 등을 기댔다. 숨이 고르게 돌아오자 천천히 일어섰다. 문을 열기 전 바깥 소리를 한 번 더 들었다.",
+      "{{companion.name}}의 목소리가 들린다. “이렇게 마주 앉으니 조금 살 것 같아. 다음 길도 같이 버텨 보자.”"
+    ]
+  },
+  {
+    "id": "E04.share.success.companion.neutral",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 100,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것을 둘로 나눴다. 잠시 포장지를 구기는 소리만 들린다. “아까부터 말할 틈도 없었네. 고마워.” 함께 문 쪽으로 몸을 돌렸다.",
+      "{{companion.name}}의 목소리가 들린다. “여기까지 왔네. 잠깐 숨 좀 돌리자.”"
+    ]
+  },
+  {
+    "id": "E04.share.success.companion.left",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것을 둘로 나눴다. 잠시 포장지를 구기는 소리만 들린다. “아까부터 말할 틈도 없었네. 고마워.” 함께 문 쪽으로 몸을 돌렸다.",
+      "{{companion.name}}의 목소리가 들린다. “남은 물품은 다시 확인했어. 나갈 준비가 되면 말해.”"
+    ]
+  },
+  {
+    "id": "E04.share.success.companion.right",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 101,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "먹을 것을 둘로 나눴다. 잠시 포장지를 구기는 소리만 들린다. “아까부터 말할 틈도 없었네. 고마워.” 함께 문 쪽으로 몸을 돌렸다.",
+      "{{companion.name}}의 목소리가 들린다. “이렇게 마주 앉으니 조금 살 것 같아. 다음 길도 같이 버텨 보자.”"
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.maintain",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금은 네 몸부터 추스르자. 여기서 무리하면 다음 건물까지 가기도 힘들어."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.maintain.left",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금은 네 몸부터 추스르자. 여기서 무리하면 다음 건물까지 가기도 힘들어. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.maintain.right",
+    "eventId": "E04",
+    "choiceId": "E04.maintain",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "지금은 네 몸부터 추스르자. 여기서 무리하면 다음 건물까지 가기도 힘들어. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.rest",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭은 그대로 두자. 문도 잠겼으니 잠깐 숨만 고르고 가도 괜찮겠어."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.rest.left",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭은 그대로 두자. 문도 잠겼으니 잠깐 숨만 고르고 가도 괜찮겠어. 우리에게 남는 것도 생각해야 해."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.rest.right",
+    "eventId": "E04",
+    "choiceId": "E04.rest",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭은 그대로 두자. 문도 잠겼으니 잠깐 숨만 고르고 가도 괜찮겠어. 지금 눈앞의 일을 그냥 지나치고 싶지는 않아."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.share",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금 나눠서 먹자. 오늘 제대로 마주 앉은 것도 처음이네. 다음 길도 같이 버텨야지."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.share.left",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "조금씩 나눠 먹고 가자. 다음 길까지 버틸 만큼은 남겨 두고."
+    ]
+  },
+  {
+    "id": "E04.dialogue.opinion.share.right",
+    "eventId": "E04",
+    "choiceId": "E04.share",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "같이 먹자. 이렇게 마주 앉으니까 이제 좀 숨이 놓여."
+    ]
+  },
+  {
+    "id": "E04.dialogue.hesitation",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "동료가 한동안 말을 고른다. “어느 쪽도 쉽게 고르기는 어렵네. 네 생각도 듣고 싶어.”"
+    ]
+  },
+  {
+    "id": "E04.dialogue.absent",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "곁에서 나던 발소리가 더는 들리지 않는다. 지금은 혼자 다음 길을 살펴야 한다."
+    ]
+  },
+  {
+    "id": "E04.dialogue.reunion",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 잠깐 서로를 바라보다 가까이 다가간다. “아직 생각은 달라. 그래도 다시 만났네.” 하지 못한 말은 남아 있지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  },
+  {
+    "id": "E04.dialogue.reunion.rational",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. “지난 일은 생각이 달라. 그래도 여기서부터는 길을 같이 확인하자.” 한 걸음 거리를 두고 나란히 출구를 살핀다."
+    ]
+  },
+  {
+    "id": "E04.dialogue.reunion.emotional",
+    "eventId": "E04",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "affect",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "거점에서 {{companion.name}}의 모습을 발견한다. 한동안 말없이 서로를 바라본다. “다시 못 만날 줄 알았어.” 남은 이견을 다 말하지는 못했지만, 이번에는 같은 방향으로 걸음을 옮긴다."
+    ]
+  }
+]

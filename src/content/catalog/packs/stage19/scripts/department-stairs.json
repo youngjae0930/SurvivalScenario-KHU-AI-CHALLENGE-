@@ -1,0 +1,1411 @@
+[
+  {
+    "id": "local.text.423",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다.",
+      "벽에 손을 대면 진동이 느껴진다. 아래로 향할 길을 고르며 발을 천천히 옮긴다."
+    ]
+  },
+  {
+    "id": "local.text.424",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "resource",
+        "resource": "supply",
+        "min": 0,
+        "max": 0
+      }
+    ],
+    "priority": 1,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다.",
+      "벽에 손을 대면 진동이 느껴진다. 아래로 향할 길을 고르며 발을 천천히 옮긴다.",
+      "배낭 안을 더듬던 손을 거둔다. 꺼내 먹을 것은 남지 않았다."
+    ]
+  },
+  {
+    "id": "local.text.425",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 1,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다.",
+      "벽에 손을 대면 진동이 느껴진다. 아래로 향할 길을 고르며 발을 천천히 옮긴다.",
+      "다친 쪽에 체중이 실리자 걸음이 멈칫한다."
+    ]
+  },
+  {
+    "id": "local.text.426",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "stress",
+        "min": 61,
+        "max": 100
+      }
+    ],
+    "priority": 3,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단 아래로 발소리가 울린다. 안쪽 난간은 구부러졌고 벽 쪽 발판은 길게 이어진다.",
+      "벽에 손을 대면 진동이 느껴진다. 아래로 향할 길을 고르며 발을 천천히 옮긴다.",
+      "말라붙은 입술을 축인다. 작은 소리까지 구분하려 하니 숨이 짧아진다."
+    ]
+  },
+  {
+    "id": "local.text.427",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "hesitation",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“잠깐만 생각해 보자. 나도 지금은 어느 쪽이 낫다고 말하기 어려워.”"
+    ]
+  },
+  {
+    "id": "local.text.428",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "absent",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": false
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "두 사람 몫의 간격을 두고 걷다가 걸음을 고친다. 지금은 내 발소리만 따라온다."
+    ]
+  },
+  {
+    "id": "local.text.429",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "reunion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "앞쪽에서 익숙한 얼굴이 보인다. 서로를 알아보고 걸음을 멈춘다. 동료가 먼저 입을 연다. “여기서 다시 만났네.”",
+      "잠깐 말을 고르다 옆자리를 내준다. 헤어질 때의 생각이 모두 풀린 것은 아니다. 그래도 이번에는 같은 길을 바라보며 나란히 짐을 고쳐 멘다."
+    ]
+  },
+  {
+    "id": "local.text.430",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 손을 짚고 온전한 발판을 따라 내려갔다. 아래층 발소리가 멀어진 뒤 계단문 앞에 섰다."
+    ]
+  },
+  {
+    "id": "local.text.431",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 손을 짚고 온전한 발판을 따라 내려갔다. 아래층 발소리가 멀어진 뒤 계단문 앞에 섰다.",
+      "“계단이 또 꺼질까 봐 무서웠어. 문 앞에서 잠깐 숨을 돌리자.”"
+    ]
+  },
+  {
+    "id": "local.text.432",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“난간 쪽으로 기대지 말자. 벽에 붙으면 발 디딜 곳은 확인할 수 있어.”"
+    ]
+  },
+  {
+    "id": "local.text.433",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "층계가 더 무너지기 전에 아래 계단참으로 내려섰다. 길게 돌아갈 힘을 조금 아꼈다."
+    ]
+  },
+  {
+    "id": "local.text.434",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "층계가 더 무너지기 전에 아래 계단참으로 내려섰다. 길게 돌아갈 힘을 조금 아꼈다.",
+      "“계단이 또 꺼질까 봐 무서웠어. 문 앞에서 잠깐 숨을 돌리자.”"
+    ]
+  },
+  {
+    "id": "local.text.435",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“저 계단참까지는 닿겠어. 여기서 소리만 기다리다 지치고 싶지는 않아.”"
+    ]
+  },
+  {
+    "id": "local.text.436",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "내디딘 층계가 부서졌다. 난간에 몸을 부딪쳐 상처를 입고 계단참까지 내려왔다."
+    ]
+  },
+  {
+    "id": "local.text.437",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "priority": 2,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "내디딘 층계가 부서졌다. 난간에 몸을 부딪쳐 상처를 입고 계단참까지 내려왔다.",
+      "동료가 벽 쪽 발판을 경계하며 가까이 선다. 상처를 살필 틈을 찾는다."
+    ]
+  },
+  {
+    "id": "local.text.438",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "failure",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 3,
+        "max": 3
+      }
+    ],
+    "priority": 10,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "몸을 일으키려 했지만 다친 곳에 더는 힘이 들어가지 않았다. 다음 길로 이어지던 소리가 멀어졌다."
+    ]
+  },
+  {
+    "id": "local.text.431.voice.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 손을 짚고 온전한 발판을 따라 내려갔다. 아래층 발소리가 멀어진 뒤 계단문 앞에 섰다.",
+      "동료가 벽 쪽 발판으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.431.voice.1",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.wall",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "벽에 손을 짚고 온전한 발판을 따라 내려갔다. 아래층 발소리가 멀어진 뒤 계단문 앞에 섰다.",
+      "“계단이 또 꺼질까 봐 무서웠어. 문 앞에서 잠깐 숨을 돌리자.”"
+    ]
+  },
+  {
+    "id": "local.text.434.voice.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 0,
+        "max": 49
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "층계가 더 무너지기 전에 아래 계단참으로 내려섰다. 길게 돌아갈 힘을 조금 아꼈다.",
+      "동료가 벽 쪽 발판으로 시선을 돌린다. “지나온 쪽은 살폈어. 다음 움직임은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "local.text.434.voice.1",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "success",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      },
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "injury",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "kind": "number",
+        "subject": "companion",
+        "stat": "cognition",
+        "min": 51,
+        "max": 100
+      }
+    ],
+    "priority": 12,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "층계가 더 무너지기 전에 아래 계단참으로 내려섰다. 길게 돌아갈 힘을 조금 아꼈다.",
+      "“계단이 또 꺼질까 봐 무서웠어. 문 앞에서 잠깐 숨을 돌리자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.advice-injury.encounter.department-stairs.landing",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.landing",
+    "slot": "recommendation-failure",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“내가 권한 길인데…… 위험을 제대로 보지 못했어.” 동료가 벽 쪽 발판에서 시선을 떼지 못한다. “일단 상처를 살필 틈부터 찾자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-0.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "떨어진 계단참의 비상함의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-0.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-0.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-1.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "떨어진 계단참의 비상함의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-1.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-1.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-2.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "떨어진 계단참의 비상함의 밀봉 식품과 처치 묶음을 꺼내 사용 가능한 물품을 확보했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "배낭보다 더 먼 보관대까지 시선이 갔다. 위험을 감수해 얻은 물품이 다음 강행의 이유가 될 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-2.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-left-2.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.scene.scene.220",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 220,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단의 방화문이 기울며 계단참을 밀어낸다. 떨어진 비상함 안에는 식품과 처치 묶음이 남아 있다.",
+      "생존자 한 명의 가방끈이 철문에 걸렸다. 벽의 대피도와 무너진 층계 사이로 아래 관리실의 출입구가 보인다.",
+      "‘지금 떨어진 계단참의 비상함을 놓치면 다시는 못 얻어.’ 돌아갈 길보다 손에 넣을 물품만 또렷해진다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-0.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 계단 아래쪽의 빈 관리실에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-0.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-0.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-1.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 계단 아래쪽의 빈 관리실에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-1.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-1.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-2.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "접근로가 막혔다. 계단 아래쪽의 빈 관리실에서 숨을 고르며 안전하게 이어지는 길까지 확인했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "접근로가 막힌 것을 몇 번이고 확인한 뒤에야 손을 놓았다. 막지 않고 지나가는 선택은 여전히 떠올리기 어려웠다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-2.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-risk-right-2.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-risk-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.scene.scene.220-85",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "risk",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 220,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단의 방화문이 기울며 계단참을 밀어낸다. 떨어진 비상함 안에는 식품과 처치 묶음이 남아 있다.",
+      "생존자 한 명의 가방끈이 철문에 걸렸다. 벽의 대피도와 무너진 층계 사이로 아래 관리실의 출입구가 보인다.",
+      "‘저쪽을 완전히 막아야 움직일 수 있어.’ 그대로 지나칠 길이 보여도 천천히 기우는 방화문을 고정하지 않고는 발이 떨어지지 않는다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-0.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피도와 붕괴가 시작된 층계의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-0.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-0.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-1.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피도와 붕괴가 시작된 층계의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-1.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-1.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-2.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "대피도와 붕괴가 시작된 층계의 잘못된 표기를 찾아냈다. 실제 이동 기록과 남쪽 통과 경로를 함께 확보했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "확보한 기록을 접어 넣고도 마지막 표기를 다시 확인했다. 답을 얻었다는 안도감이 주변의 위험보다 앞섰다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-2.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-left-2.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.scene.scene.230",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 230,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단의 방화문이 기울며 계단참을 밀어낸다. 떨어진 비상함 안에는 식품과 처치 묶음이 남아 있다.",
+      "생존자 한 명의 가방끈이 철문에 걸렸다. 벽의 대피도와 무너진 층계 사이로 아래 관리실의 출입구가 보인다.",
+      "‘대피도와 붕괴가 시작된 층계이 맞는지 끝까지 확인해야 해.’ 무너지는 소리가 나는데도 불일치한 흔적에서 눈을 떼지 못한다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-0.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 계단 아래쪽의 빈 관리실에서 쉴 여유까지 얻어 체력을 크게 회복했다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-0.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-0.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-1.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 계단 아래쪽의 빈 관리실에서 쉴 여유까지 얻어 체력을 크게 회복했다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-1.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-1.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-2.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "막히기 직전 틈을 빠져나가 긴 우회를 생략했다. 계단 아래쪽의 빈 관리실에서 쉴 여유까지 얻어 체력을 크게 회복했다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "돌아보니 방금 통과한 틈은 이미 닫혀 있었다. 계획보다 먼저 움직인 감각을 다시 믿고 싶어졌다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-2.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-cognition-right-2.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-cognition-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.scene.scene.230-85",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "cognition",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 230,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단의 방화문이 기울며 계단참을 밀어낸다. 떨어진 비상함 안에는 식품과 처치 묶음이 남아 있다.",
+      "생존자 한 명의 가방끈이 철문에 걸렸다. 벽의 대피도와 무너진 층계 사이로 아래 관리실의 출입구가 보인다.",
+      "‘지금 저 틈으로 나갈 수 있어.’ 대피도와 붕괴가 시작된 층계을 다시 볼 생각보다 몸이 먼저 움직인다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-0.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철문에 가방끈이 걸린 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-0.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-0.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-1.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철문에 가방끈이 걸린 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-1.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-1.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-2.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철문에 가방끈이 걸린 생존자과의 통로는 닫혔다. 안전 쪽 밀봉 식품과 처치 도구를 분리해 확보했다. 도움을 청하던 목소리는 문 너머에 남았다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "문 너머의 목소리가 작아져도 분리한 물품부터 셌다. 사람의 사정보다 경계를 지켰다는 사실로 판단을 끝냈다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-2.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-left-2.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-left-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.scene.scene.210",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "affect",
+        "min": 0,
+        "max": 15
+      }
+    ],
+    "priority": 210,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단의 방화문이 기울며 계단참을 밀어낸다. 떨어진 비상함 안에는 식품과 처치 묶음이 남아 있다.",
+      "생존자 한 명의 가방끈이 철문에 걸렸다. 벽의 대피도와 무너진 층계 사이로 아래 관리실의 출입구가 보인다.",
+      "철문에 가방끈이 걸린 생존자가 손을 내민다. ‘위험을 분리하는 게 먼저야.’ 도움 요청보다 사람과 물품의 경계를 가르는 일에만 매달린다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-0.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-0",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철문에 가방끈이 걸린 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 맨몸으로 위험 안쪽을 파고들었다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-0.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-0",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "맨몸으로 위험 안쪽을 파고들었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-0.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-0",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-1.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-1",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철문에 가방끈이 걸린 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-1.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-1",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "배낭 물품을 꺼내 받침으로 쓰고 위험 안쪽에 손을 뻗었다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-1.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-1",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-2.success.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-2",
+    "slot": "success",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "철문에 가방끈이 걸린 생존자가 장애물 밖으로 빠져나왔다. 그는 비상 식품과 처치 묶음에서 가져갈 몫을 내주고 대피소 연락 주파수를 알려 주었다. 무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다.",
+      "구조한 사람이 손을 놓을 때까지 시선을 떼지 못했다. 다시 누가 손을 내밀어도 같은 위험으로 들어갈 것 같았다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-2.failure.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-2",
+    "slot": "failure",
+    "conditions": [],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "무기를 걸어 지지대를 버티며 위험 안쪽으로 들어갔다. 천천히 기우는 방화문이 예상보다 먼저 무너졌다. 강화 행동은 실패했고, 기둥과 바닥 사이에 몸이 짓눌려 심하게 다쳤다. 확보하려던 이익은 손에 넣지 못했다."
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.xp-affect-right-2.opinion.0",
+    "eventId": "encounter.department-stairs",
+    "choiceId": "encounter.department-stairs.xp-affect-right-2",
+    "slot": "opinion",
+    "conditions": [
+      {
+        "kind": "companion",
+        "present": true
+      }
+    ],
+    "priority": 0,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "“멈추기 어려운 건 알아. 그래도 무너지면 우리 몸으로 받는 거야. 방법은 같이 보자.”"
+    ]
+  },
+  {
+    "id": "encounter.department-stairs.xp.scene.scene.210-85",
+    "eventId": "encounter.department-stairs",
+    "choiceId": null,
+    "slot": "scene",
+    "conditions": [
+      {
+        "kind": "number",
+        "subject": "protagonist",
+        "stat": "affect",
+        "min": 85,
+        "max": 100
+      }
+    ],
+    "priority": 210,
+    "weight": 1,
+    "once": false,
+    "text": [
+      "백화점 비상계단의 방화문이 기울며 계단참을 밀어낸다. 떨어진 비상함 안에는 식품과 처치 묶음이 남아 있다.",
+      "생존자 한 명의 가방끈이 철문에 걸렸다. 벽의 대피도와 무너진 층계 사이로 아래 관리실의 출입구가 보인다.",
+      "철문에 가방끈이 걸린 생존자의 손이 미끄러진다. ‘저 사람부터 꺼내야 해.’ 천천히 기우는 방화문이 무너질 가능성도, 먼저 나갈 길도 판단 밖으로 밀려난다."
+    ]
+  }
+]

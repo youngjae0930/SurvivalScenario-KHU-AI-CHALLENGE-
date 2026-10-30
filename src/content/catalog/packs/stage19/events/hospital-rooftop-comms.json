@@ -1,0 +1,2026 @@
+{
+  "id": "encounter.hospital-rooftop-comms",
+  "title": "바람 속의 교신",
+  "locationIds": [
+    "hospital-rooftop-comms"
+  ],
+  "locationTags": [],
+  "conditions": [],
+  "weight": 1,
+  "recommendation": {
+    "axis": "affect"
+  },
+  "groups": [
+    {
+      "id": "normal",
+      "priority": 0,
+      "conditions": [],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.listen",
+          "goalId": "confirm",
+          "label": "잡음 사이의 호출을 잠시 듣는다",
+          "intention": "정체를 확인하지 못한 방송을 따라 나서지는 않는다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.listen",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "known-frequency",
+      "priority": 5,
+      "conditions": [
+        {
+          "kind": "flag",
+          "flag": "helpEstablished",
+          "value": true
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.listen",
+          "goalId": "confirm",
+          "label": "잡음 사이의 호출을 잠시 듣는다",
+          "intention": "정체를 확인하지 못한 방송을 따라 나서지는 않는다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.listen",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.contact",
+          "goalId": "confirm",
+          "label": "알고 있는 대피소 주파수로 수신을 맞춘다",
+          "intention": "앞서 도움을 주고 얻은 호출과 일치하는 안내를 찾는다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.contact",
+                  "eventId": "E10",
+                  "requires": {
+                    "flags": {
+                      "helpEstablished": true
+                    }
+                  },
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "normal-transport",
+      "priority": 100,
+      "conditions": [
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.listen",
+          "goalId": "confirm",
+          "label": "잡음 사이의 호출을 잠시 듣는다",
+          "intention": "정체를 확인하지 못한 방송을 따라 나서지는 않는다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.listen",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "hospital-rooftop-comms",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "known-frequency-transport",
+      "priority": 105,
+      "conditions": [
+        {
+          "kind": "flag",
+          "flag": "helpEstablished",
+          "value": true
+        },
+        {
+          "kind": "opportunity",
+          "id": "research-transport"
+        }
+      ],
+      "notices": [],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.listen",
+          "goalId": "confirm",
+          "label": "잡음 사이의 호출을 잠시 듣는다",
+          "intention": "정체를 확인하지 못한 방송을 따라 나서지는 않는다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.listen",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "다른 이의 구조보다 자기 보존을 택한 결과"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.contact",
+          "goalId": "confirm",
+          "label": "알고 있는 대피소 주파수로 수신을 맞춘다",
+          "intention": "앞서 도움을 주고 얻은 호출과 일치하는 안내를 찾는다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.contact",
+                  "eventId": "E10",
+                  "requires": {
+                    "flags": {
+                      "helpEstablished": true
+                    }
+                  },
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    }
+                  ],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {},
+          "failureFacts": {},
+          "relationship": {
+            "success": [
+              {
+                "kind": "value",
+                "axis": "affect",
+                "pole": "left",
+                "magnitude": 2,
+                "reason": "확인 가능한 통행 정보를 우선해 남쪽 길을 준비함"
+              }
+            ],
+            "failure": []
+          }
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.transport-record",
+          "goalId": "transport-record",
+          "label": "연구동 수송 기록을 조사한다",
+          "intention": "현장에 남은 수송 기록을 살펴 봉쇄된 연구동으로 이어지는 출입로를 찾는다.",
+          "target": "hospital-rooftop-comms",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.transport-record",
+                  "eventId": "E10",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 5,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": null,
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -8
+                  },
+                  "successEffects": [],
+                  "failureEffects": []
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "research-clue": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "extreme-risk-left",
+      "priority": 120,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "risk",
+          "min": 0,
+          "max": 15
+        }
+      ],
+      "notices": [
+        "모험 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-risk-left-0",
+          "goalId": "seize-stock",
+          "label": "[모험 극단 · 강화] 흔들리는 안테나 지지대 안으로 몸을 밀어 넣어 물품을 뜯어낸다",
+          "intention": "모험 성향으로 목표를 바꾸기 어렵다. 도구 없이 강행한다. 성공하면 물품을 크게 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-risk-left-0",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 40,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-risk-left-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-risk-left-1",
+          "goalId": "seize-stock",
+          "label": "[모험 극단 · 강화] 물자 한 몫으로 받침을 대고 쓰러진 통신 장비 뒤 비상함을 끌어낸다",
+          "intention": "모험 성향으로 목표를 바꾸기 어렵다. 물자 한 몫을 소모해 지지한다. 성공하면 물품을 크게 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-risk-left-1",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-risk-left-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-risk-left-2",
+          "goalId": "seize-stock",
+          "label": "[모험 극단 · 강화] 무기를 지렛대로 걸고 쓰러진 통신 장비 뒤 비상함을 당긴다",
+          "intention": "모험 성향으로 목표를 바꾸기 어렵다. 무기를 지렛대로 사용한다. 성공하면 물품을 크게 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-risk-left-2",
+                  "eventId": "E03",
+                  "requires": {
+                    "weapon": true
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": -4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-risk-left-done": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "extreme-risk-right",
+      "priority": 120,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "risk",
+          "min": 85,
+          "max": 100
+        }
+      ],
+      "notices": [
+        "안정 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-risk-right-0",
+          "goalId": "seal-retreat",
+          "label": "[안정 극단 · 강화] 흔들리는 안테나 지지대를 몸으로 밀어 뒤쪽 접근로를 봉쇄한다",
+          "intention": "안정 성향으로 목표를 바꾸기 어렵다. 도구 없이 강행한다. 성공하면 퇴로와 쉴 공간을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-risk-right-0",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 40,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 25
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -15
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-risk-right-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-risk-right-1",
+          "goalId": "seal-retreat",
+          "label": "[안정 극단 · 강화] 물자 한 몫을 쐐기로 써 흔들리는 안테나 지지대를 고정한다",
+          "intention": "안정 성향으로 목표를 바꾸기 어렵다. 물자 한 몫을 소모해 지지한다. 성공하면 퇴로와 쉴 공간을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-risk-right-1",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 25
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -15
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-risk-right-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-risk-right-2",
+          "goalId": "seal-retreat",
+          "label": "[안정 극단 · 강화] 무기를 끼워 흔들리는 안테나 지지대의 흔들림을 멈춘다",
+          "intention": "안정 성향으로 목표를 바꾸기 어렵다. 무기를 지렛대로 사용한다. 성공하면 퇴로와 쉴 공간을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-risk-right-2",
+                  "eventId": "E03",
+                  "requires": {
+                    "weapon": true
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "risk",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 4,
+                    "cognition": 0,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 25
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -15
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-risk-right-done": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "extreme-cognition-left",
+      "priority": 130,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "cognition",
+          "min": 0,
+          "max": 15
+        }
+      ],
+      "notices": [
+        "분석 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-cognition-left-0",
+          "goalId": "verify-proof",
+          "label": "[분석 극단 · 강화] 흔들리는 안테나 지지대 아래까지 들어가 마지막 송신 기록과 안테나 배선을 직접 대조한다",
+          "intention": "분석 성향으로 목표를 바꾸기 어렵다. 도구 없이 강행한다. 성공하면 자료와 통과 경로를 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-cognition-left-0",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 40,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    },
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-cognition-left-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-cognition-left-1",
+          "goalId": "verify-proof",
+          "label": "[분석 극단 · 강화] 물자 한 몫으로 흔들림을 붙잡고 마지막 송신 기록과 안테나 배선을 확보한다",
+          "intention": "분석 성향으로 목표를 바꾸기 어렵다. 물자 한 몫을 소모해 지지한다. 성공하면 자료와 통과 경로를 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-cognition-left-1",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    },
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-cognition-left-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-cognition-left-2",
+          "goalId": "verify-proof",
+          "label": "[분석 극단 · 강화] 무기로 걸쇠를 버텨 마지막 송신 기록과 안테나 배선의 가려진 부분을 확인한다",
+          "intention": "분석 성향으로 목표를 바꾸기 어렵다. 무기를 지렛대로 사용한다. 성공하면 자료와 통과 경로를 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-cognition-left-2",
+                  "eventId": "E03",
+                  "requires": {
+                    "weapon": true
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": -4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "data",
+                      "value": true
+                    },
+                    {
+                      "kind": "set-flag",
+                      "flag": "routeKnown",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -10
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-cognition-left-done": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "extreme-cognition-right",
+      "priority": 130,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "cognition",
+          "min": 85,
+          "max": 100
+        }
+      ],
+      "notices": [
+        "직관 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-cognition-right-0",
+          "goalId": "instant-breakthrough",
+          "label": "[직관 극단 · 강화] 흔들리는 안테나 지지대가 기우는 순간 열린 틈으로 뛰어든다",
+          "intention": "직관 성향으로 목표를 바꾸기 어렵다. 도구 없이 강행한다. 성공하면 긴 우회를 생략하고 크게 회복한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-cognition-right-0",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 40,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 40
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-cognition-right-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-cognition-right-1",
+          "goalId": "instant-breakthrough",
+          "label": "[직관 극단 · 강화] 물자 한 몫을 던져 움직임을 돌리고 즉시 틈을 넘는다",
+          "intention": "직관 성향으로 목표를 바꾸기 어렵다. 물자 한 몫을 소모해 지지한다. 성공하면 긴 우회를 생략하고 크게 회복한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-cognition-right-1",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 40
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-cognition-right-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-cognition-right-2",
+          "goalId": "instant-breakthrough",
+          "label": "[직관 극단 · 강화] 무기로 발판을 걸어 고정하고 단숨에 건너뛴다",
+          "intention": "직관 성향으로 목표를 바꾸기 어렵다. 무기를 지렛대로 사용한다. 성공하면 긴 우회를 생략하고 크게 회복한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-cognition-right-2",
+                  "eventId": "E03",
+                  "requires": {
+                    "weapon": true
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "cognition",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 4,
+                    "affect": 0
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "stamina",
+                      "amount": 40
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -5
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-cognition-right-done": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "extreme-affect-left",
+      "priority": 110,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "affect",
+          "min": 0,
+          "max": 15
+        }
+      ],
+      "notices": [
+        "이성 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-affect-left-0",
+          "goalId": "isolate-risk",
+          "label": "[이성 극단 · 강화] 안테나 받침 아래 생존자 쪽 통로를 막고 안전 쪽 비상 물품을 분리한다",
+          "intention": "이성 성향으로 목표를 바꾸기 어렵다. 도구 없이 강행한다. 성공하면 비상 물품을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-affect-left-0",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 40,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -20
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-affect-left-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-affect-left-1",
+          "goalId": "isolate-risk",
+          "label": "[이성 극단 · 강화] 물자 한 몫으로 경계를 고정한 뒤 비상 물품을 분리한다",
+          "intention": "이성 성향으로 목표를 바꾸기 어렵다. 물자 한 몫을 소모해 지지한다. 성공하면 비상 물품을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-affect-left-1",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -20
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-affect-left-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-affect-left-2",
+          "goalId": "isolate-risk",
+          "label": "[이성 극단 · 강화] 무기로 경계문을 걸어 잠그고 밀봉 물품만 골라낸다",
+          "intention": "이성 성향으로 목표를 바꾸기 어렵다. 무기를 지렛대로 사용한다. 성공하면 비상 물품을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-affect-left-2",
+                  "eventId": "E03",
+                  "requires": {
+                    "weapon": true
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "left",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": -4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": -20
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-affect-left-done": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    },
+    {
+      "id": "extreme-affect-right",
+      "priority": 110,
+      "conditions": [
+        {
+          "kind": "number",
+          "subject": "protagonist",
+          "stat": "affect",
+          "min": 85,
+          "max": 100
+        }
+      ],
+      "notices": [
+        "감정 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다."
+      ],
+      "choices": [
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-affect-right-0",
+          "goalId": "rescue-at-all-costs",
+          "label": "[감정 극단 · 강화] 흔들리는 안테나 지지대 아래로 들어가 안테나 받침 아래 생존자를 당긴다",
+          "intention": "감정 성향으로 목표를 바꾸기 어렵다. 도구 없이 강행한다. 성공하면 구조와 대피소 연락망을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-affect-right-0",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 15,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 40,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-affect-right-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-affect-right-1",
+          "goalId": "rescue-at-all-costs",
+          "label": "[감정 극단 · 강화] 물자 한 몫으로 받침을 대고 안테나 받침 아래 생존자를 끌어낸다",
+          "intention": "감정 성향으로 목표를 바꾸기 어렵다. 물자 한 몫을 소모해 지지한다. 성공하면 구조와 대피소 연락망을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-affect-right-1",
+                  "eventId": "E03",
+                  "requires": {},
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 1,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-affect-right-done": true
+          },
+          "failureFacts": {}
+        },
+        {
+          "id": "encounter.hospital-rooftop-comms.xp-affect-right-2",
+          "goalId": "rescue-at-all-costs",
+          "label": "[감정 극단 · 강화] 무기로 흔들리는 안테나 지지대를 버티며 안테나 받침 아래 생존자를 꺼낸다",
+          "intention": "감정 성향으로 목표를 바꾸기 어렵다. 무기를 지렛대로 사용한다. 성공하면 구조와 대피소 연락망을 확보한다. 실패하면 부상 2와 스트레스 20을 감수한다.",
+          "target": "병원 옥상 통신실",
+          "judgment": null,
+          "behavior": {
+            "kind": "action",
+            "variants": [
+              {
+                "conditions": [],
+                "action": {
+                  "id": "encounter.hospital-rooftop-comms.xp-affect-right-2",
+                  "eventId": "E03",
+                  "requires": {
+                    "weapon": true
+                  },
+                  "costs": {
+                    "stamina": 20,
+                    "supply": 0,
+                    "medkit": 0
+                  },
+                  "check": {
+                    "base": 50,
+                    "physical": true,
+                    "weaponBonus": false,
+                    "traitWeights": [
+                      {
+                        "axis": "affect",
+                        "pole": "right",
+                        "weight": 1
+                      }
+                    ]
+                  },
+                  "traitDelta": {
+                    "risk": 0,
+                    "cognition": 0,
+                    "affect": 4
+                  },
+                  "successEffects": [
+                    {
+                      "kind": "set-flag",
+                      "flag": "helpEstablished",
+                      "value": true
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "supply",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "medkit",
+                      "amount": 1
+                    }
+                  ],
+                  "failureEffects": [
+                    {
+                      "kind": "add",
+                      "stat": "injury",
+                      "amount": 2
+                    },
+                    {
+                      "kind": "add",
+                      "stat": "stress",
+                      "amount": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "successFacts": {
+            "extreme-affect-right-done": true
+          },
+          "failureFacts": {}
+        }
+      ]
+    }
+  ],
+  "interventions": [
+    {
+      "mode": "companion-choice",
+      "groupId": "extreme-risk-left",
+      "axis": "risk",
+      "extremePole": "left",
+      "replaceChoiceId": "encounter.hospital-rooftop-comms.xp-risk-left-2",
+      "alternatives": [
+        {
+          "groupId": "normal",
+          "choiceId": "encounter.hospital-rooftop-comms.listen"
+        }
+      ],
+      "judgment": null,
+      "text": "“잠깐, 나는 다른 길을 보겠어. 네가 못 놓는 목표까지 내가 따를 필요는 없잖아.”",
+      "notices": [
+        "모험 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다.",
+        "동료는 자신의 성향에 따라 다른 목표를 제안할 수 있습니다."
+      ]
+    },
+    {
+      "mode": "companion-choice",
+      "groupId": "extreme-risk-right",
+      "axis": "risk",
+      "extremePole": "right",
+      "replaceChoiceId": "encounter.hospital-rooftop-comms.xp-risk-right-2",
+      "alternatives": [
+        {
+          "groupId": "normal",
+          "choiceId": "encounter.hospital-rooftop-comms.listen"
+        }
+      ],
+      "judgment": null,
+      "text": "“잠깐, 나는 다른 길을 보겠어. 네가 못 놓는 목표까지 내가 따를 필요는 없잖아.”",
+      "notices": [
+        "안정 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다.",
+        "동료는 자신의 성향에 따라 다른 목표를 제안할 수 있습니다."
+      ]
+    },
+    {
+      "mode": "companion-choice",
+      "groupId": "extreme-cognition-left",
+      "axis": "cognition",
+      "extremePole": "left",
+      "replaceChoiceId": "encounter.hospital-rooftop-comms.xp-cognition-left-2",
+      "alternatives": [
+        {
+          "groupId": "normal",
+          "choiceId": "encounter.hospital-rooftop-comms.listen"
+        }
+      ],
+      "judgment": null,
+      "text": "“잠깐, 나는 다른 길을 보겠어. 네가 못 놓는 목표까지 내가 따를 필요는 없잖아.”",
+      "notices": [
+        "분석 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다.",
+        "동료는 자신의 성향에 따라 다른 목표를 제안할 수 있습니다."
+      ]
+    },
+    {
+      "mode": "companion-choice",
+      "groupId": "extreme-cognition-right",
+      "axis": "cognition",
+      "extremePole": "right",
+      "replaceChoiceId": "encounter.hospital-rooftop-comms.xp-cognition-right-2",
+      "alternatives": [
+        {
+          "groupId": "normal",
+          "choiceId": "encounter.hospital-rooftop-comms.listen"
+        }
+      ],
+      "judgment": null,
+      "text": "“잠깐, 나는 다른 길을 보겠어. 네가 못 놓는 목표까지 내가 따를 필요는 없잖아.”",
+      "notices": [
+        "직관 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다.",
+        "동료는 자신의 성향에 따라 다른 목표를 제안할 수 있습니다."
+      ]
+    },
+    {
+      "mode": "companion-choice",
+      "groupId": "extreme-affect-left",
+      "axis": "affect",
+      "extremePole": "left",
+      "replaceChoiceId": "encounter.hospital-rooftop-comms.xp-affect-left-2",
+      "alternatives": [
+        {
+          "groupId": "normal",
+          "choiceId": "encounter.hospital-rooftop-comms.listen"
+        }
+      ],
+      "judgment": null,
+      "text": "“잠깐, 나는 다른 길을 보겠어. 네가 못 놓는 목표까지 내가 따를 필요는 없잖아.”",
+      "notices": [
+        "이성 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다.",
+        "동료는 자신의 성향에 따라 다른 목표를 제안할 수 있습니다."
+      ]
+    },
+    {
+      "mode": "companion-choice",
+      "groupId": "extreme-affect-right",
+      "axis": "affect",
+      "extremePole": "right",
+      "replaceChoiceId": "encounter.hospital-rooftop-comms.xp-affect-right-2",
+      "alternatives": [
+        {
+          "groupId": "normal",
+          "choiceId": "encounter.hospital-rooftop-comms.listen"
+        }
+      ],
+      "judgment": null,
+      "text": "“잠깐, 나는 다른 길을 보겠어. 네가 못 놓는 목표까지 내가 따를 필요는 없잖아.”",
+      "notices": [
+        "감정 극단: 지금은 이 목표를 포기하기 어렵습니다. 강화 행동은 큰 이익과 치명적일 수 있는 실패 위험을 함께 가집니다.",
+        "동료는 자신의 성향에 따라 다른 목표를 제안할 수 있습니다."
+      ]
+    }
+  ]
+}
