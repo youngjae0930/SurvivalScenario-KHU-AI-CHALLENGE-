@@ -222,7 +222,7 @@
           "id": "encounter.icu.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "중환자실",
           "judgment": null,
           "behavior": {
@@ -281,7 +281,7 @@
           "id": "encounter.icu.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "중환자실",
           "judgment": null,
           "behavior": {
@@ -604,7 +604,7 @@
           "id": "encounter.icu.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "중환자실",
           "judgment": null,
           "behavior": {
@@ -705,7 +705,7 @@
           "id": "encounter.icu.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "중환자실",
           "judgment": null,
           "behavior": {

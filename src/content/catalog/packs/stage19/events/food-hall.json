@@ -20,7 +20,7 @@
         {
           "id": "E07.share-food",
           "goalId": "rescue",
-          "label": "식품을 나눠 남은 사람들의 이동을 돕는다",
+          "label": "마실 것을 나눠 남은 사람들의 이동을 돕는다",
           "intention": "내 물자가 없으면 조리대에서 마실 물을 찾아 나눈다.",
           "target": "백화점 식품관",
           "judgment": "rescue",
@@ -239,7 +239,7 @@
         {
           "id": "E07.share-food",
           "goalId": "rescue",
-          "label": "식품을 나눠 남은 사람들의 이동을 돕는다",
+          "label": "마실 것을 나눠 남은 사람들의 이동을 돕는다",
           "intention": "내 물자가 없으면 조리대에서 마실 물을 찾아 나눈다.",
           "target": "백화점 식품관",
           "judgment": "rescue",

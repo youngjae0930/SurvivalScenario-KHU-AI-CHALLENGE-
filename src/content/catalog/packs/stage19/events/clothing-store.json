@@ -20,7 +20,7 @@
         {
           "id": "encounter.clothing-store.maintain",
           "goalId": "E04.maintain",
-          "label": "직원용 의자에서 몸과 젖은 짐을 정비한다",
+          "label": "직원용 의자에서 몸과 짐을 정비한다",
           "intention": "가지고 온 물자를 확인하며 호흡을 고른다.",
           "target": "의류 매장",
           "judgment": null,
@@ -84,7 +84,7 @@
         {
           "id": "encounter.clothing-store.maintain",
           "goalId": "E04.maintain",
-          "label": "직원용 의자에서 몸과 젖은 짐을 정비한다",
+          "label": "직원용 의자에서 몸과 짐을 정비한다",
           "intention": "가지고 온 물자를 확인하며 호흡을 고른다.",
           "target": "의류 매장",
           "judgment": null,
@@ -136,7 +136,7 @@
           "id": "encounter.clothing-store.share",
           "goalId": "recover",
           "label": "정비하며 동료에게 물자 한 몫을 건넨다",
-          "intention": "내 물자를 동료에게 나누며 함께 몸을 추스른다.",
+          "intention": "가진 물자 한 몫을 동료에게 건네고 출발할 채비를 함께 한다.",
           "target": "의류 매장",
           "judgment": null,
           "behavior": {

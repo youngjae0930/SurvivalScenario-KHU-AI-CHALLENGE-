@@ -99,7 +99,7 @@
           "id": "encounter.infected-lab.withdraw",
           "goalId": "withdraw",
           "label": "인계함을 포기하고 격벽 바깥으로 빠진다",
-          "intention": "변형 좀비와 거리를 두고 옥상 통로로 물러난다. 치료제 최종 회수는 포기한다.",
+          "intention": "변형 좀비와 거리를 두고 옥상 통로로 물러난다. 최종 인계함은 남겨 둔다.",
           "target": "infected-lab",
           "judgment": null,
           "behavior": {
