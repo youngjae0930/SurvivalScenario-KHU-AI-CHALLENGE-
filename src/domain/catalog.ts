@@ -114,6 +114,7 @@ export interface CatalogManifest {
   readonly dialogueVersion?: 'scripts-1'
   readonly routeVersion?: 'stages-1' | 'slots-1'
   readonly trustVersion?: 'outcome-1' | 'outcome-2'
+  readonly trustScale?: 2
   readonly executionVersion?: 'command-1'
   readonly autonomyVersion?: 'journey-1' | 'journey-2'
   /** Only explicitly compatible content revisions may share decision meanings. */

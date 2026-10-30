@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
-import type { ActionPreviewViewModel, ChoiceViewModel, GameCommand, GameRootProps } from '../contracts'
+import type { GameCommand, GameRootProps } from '../contracts'
 import { Modal } from './components/Modal'
 import { StatusPanel } from './components/StatusPanel'
 import { FixedStageHistory } from './components/FixedStageHistory'
 import { BackgroundMusic } from './components/BackgroundMusic'
+import { ChoiceCards } from './components/ChoiceCards'
 import { TypewriterStory } from './components/TypewriterStory'
 import villaImage from '../assets/villa.png'
 import parkingImage from '../assets/parking.png'
@@ -26,7 +27,6 @@ import './styles/game.css'
 
 export function GameRoot({ client }: GameRootProps) {
   const snapshot = useSyncExternalStore(client.subscribe, client.getSnapshot, client.getSnapshot)
-  const [preview, setPreview] = useState<ActionPreviewViewModel | null>(null)
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
   const [restartWarning, setRestartWarning] = useState(false)
@@ -44,21 +44,11 @@ export function GameRoot({ client }: GameRootProps) {
     lock.current = true; setPending(true); setError('')
     try {
       const result = await client.dispatch(command)
-      if (!result.ok) { setError(result.error.message); if (['stale-context', 'save-failed', 'save-conflict'].includes(result.error.code)) setPreview(null); return false }
-      setPreview(null)
+      if (!result.ok) { setError(result.error.message); return false }
+
       if (command.type === 'restart' || (command.type === 'retry-save' && client.getSnapshot().view.kind === 'start')) setStartKey(key => key + 1)
       return true
     } catch { setError('진행을 처리하지 못했습니다. 다시 시도해 주세요.'); return false }
-    finally { lock.current = false; setPending(false) }
-  }
-  async function showPreview(choice: ChoiceViewModel, actionId: string, treatment: 'none' | 'medkit' = 'none') {
-    if (lock.current) return
-    lock.current = true; setPending(true); setError('')
-    try {
-      const result = await client.previewAction({ context: choice.context, actionId, treatment })
-      if (result.ok) setPreview(result.value)
-      else setError(result.error.message)
-    } catch { setError('선택 정보를 불러오지 못했습니다.') }
     finally { lock.current = false; setPending(false) }
   }
   const disabled = pending || snapshot.commit.kind !== 'ready'
@@ -102,22 +92,21 @@ export function GameRoot({ client }: GameRootProps) {
             <span className="eyebrow">{sceneLabel} / SURVIVAL JOURNEY</span><h1>{view.title}</h1>
             {locationImage ? <img className="location-image" src={locationImage} alt={villaScene ? '어두운 빌라와 바깥 계단' : parkingScene ? '버려진 지하 주차장' : alleyScene ? '비 내린 주택가 골목길' : roadScene ? '황혼의 폐허 도시 도로' : storeScene ? '비 내린 도시의 편의점' : busStopScene ? '비 내리는 도시의 버스 정류장' : laundromatScene ? '비 내리는 골목의 세탁소' : bridgeScene ? '비 내리는 도시의 육교' : gasStationScene ? '비 내리는 도시의 주유소' : shelterScene ? '비 내리는 도시의 대피소 입구' : hospitalScene ? '버려진 병원의 접수대와 응급실 복도' : departmentScene ? '폐허가 된 백화점 내부' : schoolScene ? '황혼의 버려진 학교 운동장' : riversideScene ? '황혼의 폐허가 된 하천변 보행로' : checkpointScene ? '황혼의 폐허 도시 검문소' : subwayScene ? '폐허가 된 지하철역' : '버려진 연구동'} /> : <div className={`scene-art art-${view.context.eventId}`} aria-hidden="true"><div className="city-silhouette" /><div className="scene-mark">{sceneLabel}<small>봉쇄 도시</small></div></div>}
             <TypewriterStory key={contextKey} paragraphs={view.story.map(block => block.text)} muted={soundVolume === 0} volume={soundVolume} />
-            {view.notices.map(line => <p className="consequence" key={line}>{line}</p>)}
+            {view.notices.filter(line => !line.startsWith('지금은 한 가지 생각이 다른 판단을 밀어내고 있다.')).map(line => /^(동료가|동료는|동료[ ·])|“/.test(line) ? <section className="companion-advice" aria-label="동료 대화" key={line}><strong>{view.companion.kind === 'present' ? view.companion.name : '동료'}{view.companion.kind === 'present' ? ` · 신뢰 ${view.companion.trust}` : ''}</strong><p>{line}</p></section> : <p className="consequence" key={line}>{line}</p>)}
             {view.companion.kind === 'present' && view.companion.opinion.kind === 'ready' && <section className="companion-advice" aria-label="동료 의견"><strong>{view.companion.name} · 신뢰 {view.companion.trust}</strong><p>{view.companion.opinion.text}</p><small>{view.companion.opinion.reason}</small></section>}
             <div className="choice-heading"><h2>어떻게 하시겠습니까?</h2><span>선택 전 비용과 결과를 확인할 수 있습니다.</span></div>
-            <div className="action-list">{view.actions.map(action => <button key={action.actionId} className="action-card" disabled={disabled || action.availability.kind !== 'available'} onClick={() => showPreview(view, action.actionId)}><span><strong>{action.label}</strong>{(action.recommended || action.requiresCompanion) && <small className="recommendation-badge">{action.requiresCompanion ? '동료 선택' : '동료 추천'}</small>}<small>{action.intention}</small>{action.availability.kind === 'locked' && <small>{action.availability.reasons.join(' ')}</small>}</span><span className="action-arrow" aria-hidden="true">↗</span></button>)}</div>
-            {(view.treatmentActionIds?.length ?? (view.context.eventId === 'E04' ? 1 : 0)) > 0 && <p className="scene-hint">치료는 정비 선택의 확인창에서 함께 결정합니다. {view.treatment.kind === 'locked' ? view.treatment.reasons.join(' ') : '현재 치료 도구를 사용할 수 있습니다.'}</p>}
+            <ChoiceCards key={contextKey} client={client} view={view} disabled={disabled} onExecute={send} />
           </>}
           {view.kind === 'result' && <>
             <span className="eyebrow">{sceneLabel} / AFTER THE CHOICE</span><div className={`outcome-badge outcome-${view.outcome}`}>{view.outcome === 'failure' ? '위험 판정 · 실패' : view.outcome === 'success' ? '위험 판정 · 성공' : '확정 행동'}</div>
             <h1>{view.actionLabel}</h1><div className="story result-story">{view.text.map(line => <p key={line}>{line}</p>)}</div>
-            <section className="changes" aria-label="이번 선택의 변화"><h2>선택이 남긴 것</h2><dl>{visibleChanges.map((change, index) => <div key={index}><dt>{change.label}</dt><dd>{change.text}</dd></div>)}</dl>{visibleChanges.length === 0 && <p>추가로 표시할 상태 변화가 없습니다.</p>}</section>
+            <section className="changes" aria-label="상태 변화"><h2>상태 변화</h2><dl>{visibleChanges.map((change, index) => <div key={index}><dt>{change.label}</dt><dd>{change.text}</dd></div>)}</dl>{visibleChanges.length === 0 && <p>추가로 표시할 상태 변화가 없습니다.</p>}</section>
             {view.trustReasons.map(line => <p className="consequence" key={line}>{line}</p>)}
             {view.consequences.map(line => <p className="consequence" key={line}>{line}</p>)}
             <div className="next-step"><span>{view.nextLabel ?? (completesSegment ? '병원 체험 구간의 마지막 결과입니다.' : `다음 사건 · ${view.nextEventId}`)}</span><button className="primary" disabled={disabled} onClick={() => send({ type: 'acknowledge-result', context: view.context, resultId: view.resultId })}>{completesSegment ? '체험 구간 마치기' : '다음 사건으로'} <span aria-hidden="true">→</span></button></div>
           </>}
           {view.kind === 'segment-complete' && <><span className="eyebrow">PLAY SEGMENT / COMPLETE</span><div className="complete-mark" aria-hidden="true">{String(view.completedEventIds.length).padStart(2, '0')}<span>/{String(journey.length).padStart(2, '0')}</span></div><h1>{view.title}</h1><div className="story">{view.text.map(line => <p key={line}>{line}</p>)}</div><div className="completion-note"><strong>{view.completedEventIds.length}개 사건 진행 완료</strong><p>{snapshot.persistence.message}</p>{view.continuation ? <button className="primary" disabled={disabled} onClick={() => view.continuation && send({ type: 'continue-segment', context: view.continuation.context })}>{view.continuation.label} →</button> : <span>다음 구현 구간 · {view.nextEventId}</span>}</div></>}
-          {view.kind === 'ending' && <><span className="eyebrow">JOURNEY / ENDED</span><h1>{view.title}</h1><div className="story">{view.text.map(line => <p key={line}>{line}</p>)}</div><section className="changes"><h2>마지막 선택이 남긴 것</h2><dl>{visibleChanges.map((change, index) => <div key={index}><dt>{change.label}</dt><dd>{change.text}</dd></div>)}</dl></section><div className="completion-note"><h2>이번 이야기를 마쳤습니다</h2>{view.legacySummary.filter(line => !/^(성향의 발자취|다음 동료에게 이어질 성향)/.test(line)).map(line => <p key={line}>{line}</p>)}{view.newRun.kind === 'locked' && <p>{view.newRun.reasons.join(' ')}</p>}{view.newRun.kind === 'available' && <button className="primary" disabled={disabled} onClick={() => send({ type: 'prepare-next-run', sourceRunId: view.runId, sourceResultId: view.resultId })}>새 주인공과 다음 회차 시작 →</button>}</div></>}
+          {view.kind === 'ending' && <section className="ending-card"><span className="eyebrow">THE END / 여정의 끝</span><h1>{view.title}</h1><div className="story">{view.text.map(line => <p key={line}>{line}</p>)}</div><div className="completion-note"><h2>이번 이야기를 마쳤습니다</h2>{view.legacySummary.filter(line => !/^(성향의 발자취|다음 동료에게 이어질 성향)/.test(line)).map(line => <p key={line}>{line}</p>)}{view.newRun.kind === 'locked' && <p>{view.newRun.reasons.join(' ')}</p>}{view.newRun.kind === 'available' && <button className="primary" disabled={disabled} onClick={() => send({ type: 'prepare-next-run', sourceRunId: view.runId, sourceResultId: view.resultId })}>새 주인공과 다음 회차 시작 →</button>}</div></section>}
 
         </section><StatusPanel status={view.status} companion={view.kind === 'choice' ? view.companion : undefined} /></div>
       </>}
@@ -131,17 +120,6 @@ export function GameRoot({ client }: GameRootProps) {
         setRestartWarning(false)
       }}>데이터 삭제 후 처음부터 시작</button></div>
     </Modal>}
-    {preview && view.kind === 'choice' && <Modal title={preview.label} onClose={() => { if (!pending) setPreview(null) }}>
-      <p>{preview.intention}</p>
-      {preview.requirements.length > 0 && <p className="notice-text">필요 조건 · {preview.requirements.join(' · ')}</p>}
-      <div className="preview-facts"><div><h3>공통 비용</h3><ul>{preview.costs.map(line => <li key={line}>{line}</li>)}</ul></div></div>
-      <div className="risk-box"><strong>{preview.risk.kind === 'certain' ? '확정 행동' : `성공 확률 ${preview.risk.percent}%`}</strong>{preview.risk.kind === 'probability' ? <p>{preview.risk.breakdown.filter(line => !line.startsWith('성향 ')).join(' · ')}</p> : <p>{preview.risk.explanation}</p>}</div>
-      <div className="preview-facts"><div><h3>{preview.risk.kind === 'certain' ? '행동 효과' : '성공하면'}</h3><ul>{preview.outcomes.success.map(line => <li key={line}>{line}</li>)}</ul></div>{preview.outcomes.failure.length > 0 && <div><h3>실패하면</h3><ul>{preview.outcomes.failure.map(line => <li key={line}>{line}</li>)}</ul></div>}</div>
-      {(view.treatmentActionIds?.includes(preview.actionId) ?? preview.actionId === 'E04.maintain') && <label className="treatment-option"><input type="checkbox" checked={preview.treatment === 'medkit'} disabled={disabled || (preview.treatmentAvailability ?? view.treatment).kind !== 'available'} onChange={event => showPreview(view, preview.actionId, event.target.checked ? 'medkit' : 'none')} /><span>치료 도구 1개로 내 부상 1 치료{(preview.treatmentAvailability ?? view.treatment).kind === 'locked' && <small>{((preview.treatmentAvailability ?? view.treatment) as { reasons: readonly string[] }).reasons.join(' ')}</small>}</span></label>}
-      <ul className="preview-warnings">{preview.warnings.map(line => <li key={line}>{line.startsWith('성향 변화와 비용') ? '행동 비용은 성공 여부와 관계없이 적용됩니다.' : line}</li>)}</ul>
-      {preview.availability.kind === 'locked' && <p role="alert">{preview.availability.reasons.join(' ')}</p>}
-      {error && <p role="alert" className="error-message">{error}</p>}
-      <div className="dialog-actions"><button className="secondary" disabled={pending} onClick={() => setPreview(null)}>돌아가기</button><button className="primary" disabled={disabled || preview.availability.kind !== 'available'} onClick={() => send({ type: 'execute-action', context: preview.context, previewToken: preview.previewToken })}>{pending ? '처리 중…' : '이 선택을 실행'}</button></div>
-    </Modal>}
+
   </div>
 }

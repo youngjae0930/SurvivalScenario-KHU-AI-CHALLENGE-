@@ -488,6 +488,11 @@
         "outcome-2"
       ]
     },
+    "trustScale": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 2
+    },
     "executionVersion": {
       "enum": [
         "command-1"

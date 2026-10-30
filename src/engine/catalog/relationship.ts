@@ -16,7 +16,7 @@ export function protectRecommendedTrust(change: TrustChange, followedRecommendat
  * No recommendation comparison, new roll, action-ID branch or trait-change reward.
  */
 export function evaluateRelationship(before: CoreState, after: CoreState, companion: CompanionContext,
-  choice: CatalogChoice, outcome: 'success' | 'failure', escaped = false): TrustChange {
+  choice: CatalogChoice, outcome: 'success' | 'failure', escaped = false, scale = 1): TrustChange {
   const safety = 0.75 + companion.traits.risk / 200
   const conservation = 0.75 + (100 - companion.traits.cognition) / 200
   const parts: { score: number; reason: string }[] = []
@@ -40,7 +40,7 @@ export function evaluateRelationship(before: CoreState, after: CoreState, compan
   const score = parts.reduce((sum, part) => sum + part.score, 0)
   // Symmetric rounding; Math.round alone would treat -0.5 differently from +0.5.
   const delta = Math.max(-balance.maxChange, Math.min(balance.maxChange, Math.sign(score) * Math.round(Math.abs(score))))
-  const afterTrust = Math.max(0, Math.min(100, companion.trust + delta))
+  const afterTrust = Math.max(0, Math.min(100, companion.trust + delta * scale))
   const reason = score >= 0.5 ? copy.positive : score <= -0.5 ? copy.negative : copy.balanced
   return { before: companion.trust, after: afterTrust,
     reason: `${reason}${parts.length ? ` ${copy.details}: ${[...new Set(parts.map(part => `${part.reason}(${part.score > 0 ? copy.benefit : copy.loss})`))].join(' · ')}.` : ''}` }

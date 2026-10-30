@@ -38,7 +38,7 @@ export function toChange(change: StateChange): ChangeViewModel {
 
 export function describeEffect(effect: StateEffect): string {
   switch (effect.kind) {
-    case 'add': return `${statNames[effect.stat]} ${signed(effect.amount)}${effect.stat === 'stress' ? effect.amount < 0 ? ' (최소 0)' : ' (최대 100)' : effect.amount > 0 && effect.stat !== 'injury' ? ' (상한 적용)' : ''}`
+    case 'add': return `${statNames[effect.stat]} ${signed(effect.amount)}`
     case 'set-weapon': return effect.value ? '무기 확보' : '무기 소모'
     case 'set-flag': return `${effect.flag === 'data' ? '탈출 자료' : flagNames[effect.flag]} ${effect.value ? '확보' : '해제'}`
     case 'set-rescue-decision': return `판단 기록: ${effect.value === 'rescue' ? '구조' : effect.value === 'self' ? '자기 보존' : '미발생'}`

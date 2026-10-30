@@ -111,6 +111,7 @@ export const manifestSchema = object({ formatVersion: enumeration(1), id, revisi
     nextSegmentIds: array(id, 0, 20), lockedReason: str(), entry: object({ conditions, reason: str() }),
   }, ['id', 'stage', 'slots', 'nextSegmentIds']), 1, 20) }),
   trustVersion: enumeration('outcome-1', 'outcome-2'),
+  trustScale: int(2, 2),
   executionVersion: enumeration('command-1'),
   autonomyVersion: enumeration('journey-1', 'journey-2'),
   presentationVersion: enumeration('reflection-1'),

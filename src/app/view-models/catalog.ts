@@ -17,6 +17,7 @@ import { companionActorState } from '../../engine/catalog/companion-vitals'
 import { catalogTraitBounds } from '../../engine/catalog/traits'
 import { infectionOutcome, infectionRisk } from '../../content/texts/infection'
 import { historyResultSummary } from '../../content/texts/history-summary'
+import { isStoryLineVisible } from '../../ui/story-copy'
 
 const stageLabels = { early: '전반부', middle: '중반부', late: '후반부' }
 const traitLabels = { risk: '모험–안정', cognition: '분석–직관', affect: '이성–감정' }
@@ -91,9 +92,8 @@ export function catalogPreviewView(pack: CatalogPack, run: CatalogRun, preview: 
     ...(preview.executionActor === 'companion' && offer ? separate ? ['동료의 개별 체력·스트레스·부상을 사용합니다. 물자와 치료 도구는 공용입니다.']
       : [`동료 선행 실행 · ${offer.policy.sharedRisk}`, '비용·성공률·피해는 직접 실행과 같습니다. 동료를 보내도 주인공의 위험은 사라지지 않습니다.'] : [])]
   if (preview.choice.behavior.kind === 'escape') {
-    const request = preview.choice.behavior.route === 'request'
     return { ...view, risk: { kind: 'certain', explanation: '현재 상태와 공개된 조건으로 결정합니다. 새 성공/실패 추첨은 없습니다.' },
-      outcomes: { success: [...view.outcomes.success, ...trustLines(preview.trustOutcomes?.success, usesNarrative(pack), pack.manifest.dialogueVersion === 'scripts-1'), request ? '탈출 실패 · 구조 대기 결말로 종료' : preview.escapeEnding === 'tunnel-escape' ? '지하터널 탈출 결말로 종료' : preview.escapeEnding === 'outskirts-escape' ? '도시 외곽 탈출 결말로 종료' : preview.escapeEnding === 'cure-discovery' ? '치료제 발견 · 연구물 인계 결말로 종료' : run.core.flags.data ? '연구 자료를 지닌 탈출 결말로 종료' : '탈출 결말로 종료'], failure: [] } }
+      outcomes: { success: [...view.outcomes.success, ...trustLines(preview.trustOutcomes?.success, usesNarrative(pack), pack.manifest.dialogueVersion === 'scripts-1')], failure: [] } }
   }
   return { ...view, ...(execution ? { execution } : {}),
     ...(separate && preview.choice.behavior.kind === 'recovery' && preview.choice.behavior.choice === 'maintain'
@@ -182,7 +182,7 @@ export function catalogGameView(pack: CatalogPack, run: CatalogRun, nextRunAllow
   const treatmentActionIds = group.choices.filter(choice => choice.behavior.kind === 'recovery' && choice.behavior.choice === 'maintain').map(choice => choice.id)
   const scene = run.visits[run.visitIndex].sceneScriptId
   return { kind: 'choice', context, title: event.title, fixedStageHistory, notices: [...(narrative || authored ? [] : journeyNotices), ...(intervention ? event.intervention!.notices : group.notices), ...(pack.manifest.presentationVersion ? extremeGuidance(run, pack) : []), ...(generalCopy?.kind === 'withheld' ? authored ? catalogDialogue(pack, run, 'hesitation') : [narrative && general.kind === 'withheld' ? companionHesitation(general.reason) : generalCopy.notice] : [])], status,
-    story: [...(narrative || authored ? journeyNotices : []), ...renderCatalogScript(pack, run, scene).map(line => line.replace('남쪽으로 빠져나간다는 마지막 연락을 다시 읽는다.', '대피소에서 사람들을 모으고 있다는 마지막 연락을 다시 읽는다.'))].map((text, index) => ({ key: { textId: `${scene}.${index}`, contentRevision: pack.manifest.revision, contextVariantId: `${location.id}:${run.visitIndex}` }, text, collapsible: false, initiallyCollapsed: false })),
+    story: [...(narrative || authored ? journeyNotices : []), ...renderCatalogScript(pack, run, scene).filter(isStoryLineVisible).map(line => line.replace('남쪽으로 빠져나간다는 마지막 연락을 다시 읽는다.', '대피소에서 사람들을 모으고 있다는 마지막 연락을 다시 읽는다.'))].map((text, index) => ({ key: { textId: `${scene}.${index}`, contentRevision: pack.manifest.revision, contextVariantId: `${location.id}:${run.visitIndex}` }, text, collapsible: false, initiallyCollapsed: false })),
     companion: companion ? { kind: 'present', name: companion.name, trust: companion.trust,
       opinion: opinion ? { kind: 'ready', actionId: opinion.choice.id, goalId: opinion.choice.goalId, text: authored ? catalogDialogue(pack, run, 'opinion', opinion.choice.id).join(' ') || opinion.text : narrative ? companionOpinion(opinion.choice, opinion.text) : opinion.text, reason: narrative || authored ? '' : opinion.reason, source: opinion.source }
         : { kind: 'not-applicable' } } : { kind: 'absent' },

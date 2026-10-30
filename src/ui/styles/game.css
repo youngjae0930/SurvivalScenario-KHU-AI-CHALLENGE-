@@ -1481,3 +1481,81 @@ dialog::backdrop {
   .volume-control input { width:65px }
   .header-actions { flex-wrap:wrap; justify-content:flex-end; gap:8px }
 }
+
+.inline-choice { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); border:1px solid #46503f; background:#242b23 }
+.inline-choice .action-card { border:0; height:100% }
+.choice-outcomes { display:grid; gap:14px; padding:22px; border-left:1px solid var(--line); font-size:1rem; line-height:1.7 }
+.choice-outcomes p { margin:5px 0 0 }
+.choice-success { color:#b3db9e }
+.choice-failure { color:#f0a09a }
+.action-card .choice-cost { color:#e9c48e; margin-top:14px }
+.choice-outcomes details { color:var(--muted); font-size:.85rem }
+.inline-treatment { grid-column:1 / -1; padding:14px 22px; border-top:1px solid var(--line); font-size:1rem }
+@media(max-width:760px) {
+  .inline-choice { grid-template-columns:1fr }
+  .choice-outcomes { border-left:0; border-top:1px solid var(--line) }
+}
+
+.inline-choice { grid-template-columns:minmax(0,2fr) minmax(0,1fr) }
+.inline-choice .action-card strong { font-size:.95rem }
+.inline-choice .action-card small { font-size:.9rem }
+.inline-choice .choice-outcomes { font-size:.9rem; padding:18px; gap:12px }
+@media(max-width:760px) {
+  .inline-choice { grid-template-columns:1fr }
+}
+
+/* Keep headings separated, but group related outcome values tightly. */
+.choice-outcomes .choice-success>strong,
+.choice-outcomes .choice-failure>strong { display:block; margin-bottom:8px }
+.choice-outcomes .choice-success>p,
+.choice-outcomes .choice-failure>p { margin:0; line-height:1.45 }
+.choice-outcomes .choice-success>p+p,
+.choice-outcomes .choice-failure>p+p { margin-top:2px }
+
+.inline-treatment { background:transparent; border:0; border-top:1px solid var(--line); text-align:left; padding:12px 22px; font-size:.8rem; color:var(--muted); cursor:pointer }
+.inline-treatment[aria-pressed="true"] { color:var(--accent) }
+.inline-treatment:disabled { cursor:default }
+
+.changes h2 { font-size:1.05rem; font-weight:600; color:#f0f2e9; letter-spacing:.03em }
+.changes dt { font-size:.85rem; font-weight:400; color:#bac3b1 }
+.changes dd { font-family:monospace; font-size:.95rem; font-weight:400; color:#e9c48e; font-variant-numeric:tabular-nums }
+
+.inline-choice.choice-risk { border-color:rgba(214,108,94,var(--risk-border)); background:linear-gradient(rgba(175,54,43,var(--risk-tint)),rgba(175,54,43,var(--risk-tint))),#242b23 }
+.choice-risk .action-card { background:transparent }
+.choice-risk .action-card:hover:enabled { background:rgba(185,74,59,.12) }
+.choice-risk .choice-cost { color:#f0b19a }
+
+.protagonist-status .inventory { grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px }
+.protagonist-status .inventory>div { flex-direction:column; align-items:flex-start; gap:8px }
+.protagonist-status .inventory dt { white-space:nowrap }
+@media(max-width:760px) {
+  .protagonist-status>.vitals { grid-template-columns:1fr }
+}
+
+.status-panel meter::-webkit-meter-optimum-value,
+.status-panel meter::-webkit-meter-suboptimum-value,
+.status-panel meter::-webkit-meter-even-less-good-value { background:var(--meter-color,#b0bb8d); transition:background-color .2s }
+.status-panel meter::-moz-meter-bar { background:var(--meter-color,#b0bb8d); transition:background-color .2s }
+
+.ending-card {
+  position:relative;
+  padding:56px 44px 40px;
+  border:1px solid #78664c;
+  border-top:3px solid var(--accent);
+  background:linear-gradient(160deg,rgba(47,45,31,.96),rgba(14,22,20,.96));
+  box-shadow:0 16px 48px rgba(0,0,0,.3);
+  text-align:center
+}
+.ending-card:before { content:'◆'; display:block; color:var(--accent); font-size:1rem; margin-bottom:24px }
+.scene .ending-card h1 { font-family:"Batang", "바탕", serif; font-size:clamp(1.8rem,2.7vw,2.7rem); line-height:1.6; margin:24px 0 32px; word-break:keep-all }
+.ending-card .story { text-align:left; max-width:760px; margin:0 auto 38px; line-height:2.2 }
+.ending-card .completion-note { text-align:left; background:transparent; border:0; border-top:1px solid #665b45; margin:0; padding:30px 0 0 }
+.ending-card .completion-note h2 { font-size:1rem; color:var(--accent); margin-bottom:20px }
+.ending-card .completion-note p { color:#bec5b5; font-size:.9rem; line-height:1.9 }
+.ending-card .completion-note .primary { display:block; margin:28px auto 0 }
+@media(max-width:760px) { .ending-card { padding:32px 22px } }
+
+.companion-advice { padding:20px 22px; border:1px solid #455044; border-left:2px solid var(--accent); background:#252e24 }
+.companion-advice>strong { display:block; font-size:.9rem; font-weight:600; color:#e5e8da }
+.companion-advice>p { margin:12px 0 0; font-size:1rem; font-weight:400; line-height:1.9; color:#e5e8da }
+.companion-advice>small { display:block; margin-top:10px; font-size:.8rem }

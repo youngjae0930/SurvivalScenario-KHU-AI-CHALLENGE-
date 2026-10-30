@@ -14,6 +14,7 @@ function hasCompanionChoices(pack: CatalogPack): boolean {
   return pack.events.some(event => event.intervention?.mode === 'companion-choice')
 }
 function companionRuntimeVersion(pack: CatalogPack, succession: boolean) {
+  if (pack.manifest.trustScale) return succession ? 'catalog-succession-20' : 'catalog-companion-trust-scale-1'
   if (pack.manifest.traitRangeVersion) return succession ? 'catalog-succession-19' : 'catalog-companion-ui-1'
   if (pack.manifest.companionStateVersion) return succession ? 'catalog-succession-18' : 'catalog-companion-vitals-1'
   if (pack.manifest.trustVersion === 'outcome-2') return succession ? 'catalog-succession-17' : 'catalog-companion-trust-2'
@@ -36,6 +37,7 @@ function companionRuntimeVersion(pack: CatalogPack, succession: boolean) {
       : hasCompanionChoices(pack) ? 'catalog-companion-choice-1' : 'catalog-intervention-1'
 }
 function runtimeVersion(pack: CatalogPack) {
+  if (pack.manifest.trustScale) return 'catalog-runtime-14'
   if (pack.manifest.traitRangeVersion) return 'catalog-runtime-13'
   if (pack.manifest.companionStateVersion) return 'catalog-runtime-12'
   if (pack.manifest.trustVersion === 'outcome-2') return 'catalog-runtime-11'
@@ -74,10 +76,10 @@ export function decodeCatalogSave(raw: string, resolveAnswers: AnswerResolver): 
     if (raw.length > MAX_SAVE_LENGTH) throw invalid()
     const data: unknown = JSON.parse(raw)
     if (!isRecord(data) || data.policy !== 'single-slot-v1' || data.randomAlgorithm !== RANDOM_ALGORITHM || !isRecord(data.origin) || !isRecord(data.checkpoint)) throw invalid()
-    const succession = data.schemaVersion === 8 && data.kind === 'catalog-companion' && ['catalog-succession-1', 'catalog-succession-2', 'catalog-succession-3', 'catalog-succession-4', 'catalog-succession-5', 'catalog-succession-6', 'catalog-succession-7', 'catalog-succession-8', 'catalog-succession-9', 'catalog-succession-10', 'catalog-succession-11', 'catalog-succession-12', 'catalog-succession-13', 'catalog-succession-14', 'catalog-succession-15', 'catalog-succession-16', 'catalog-succession-17', 'catalog-succession-18', 'catalog-succession-19'].includes(String(data.runtimeVersion))
+    const succession = data.schemaVersion === 8 && data.kind === 'catalog-companion' && ['catalog-succession-1', 'catalog-succession-2', 'catalog-succession-3', 'catalog-succession-4', 'catalog-succession-5', 'catalog-succession-6', 'catalog-succession-7', 'catalog-succession-8', 'catalog-succession-9', 'catalog-succession-10', 'catalog-succession-11', 'catalog-succession-12', 'catalog-succession-13', 'catalog-succession-14', 'catalog-succession-15', 'catalog-succession-16', 'catalog-succession-17', 'catalog-succession-18', 'catalog-succession-19', 'catalog-succession-20'].includes(String(data.runtimeVersion))
     if (succession && !isCatalogLegacy(data.previousLegacy)) throw invalid()
-    const companion = succession || (data.schemaVersion === 7 && data.kind === 'catalog-companion' && ['catalog-intervention-1', 'catalog-companion-choice-1', 'catalog-companion-recovery-1', 'catalog-companion-recommendation-1', 'catalog-companion-memory-1', 'catalog-companion-echo-1', 'catalog-companion-autonomy-1', 'catalog-companion-command-1', 'catalog-companion-outcome-1', 'catalog-companion-stages-1', 'catalog-companion-dialogue-1', 'catalog-companion-slots-1', 'catalog-companion-infection-1', 'catalog-companion-research-1', 'catalog-companion-endings-1', 'catalog-companion-reactions-1', 'catalog-companion-trust-2', 'catalog-companion-vitals-1', 'catalog-companion-ui-1'].includes(String(data.runtimeVersion)))
-    if (companion ? !isCompanionContext(data.companionOrigin) : data.schemaVersion !== 6 || data.kind !== 'catalog-solo' || !['catalog-runtime-1', 'catalog-runtime-2', 'catalog-runtime-3', 'catalog-runtime-4', 'catalog-runtime-5', 'catalog-runtime-6', 'catalog-runtime-7', 'catalog-runtime-8', 'catalog-runtime-9', 'catalog-runtime-10', 'catalog-runtime-11', 'catalog-runtime-12', 'catalog-runtime-13'].includes(String(data.runtimeVersion))) throw invalid()
+    const companion = succession || (data.schemaVersion === 7 && data.kind === 'catalog-companion' && ['catalog-intervention-1', 'catalog-companion-choice-1', 'catalog-companion-recovery-1', 'catalog-companion-recommendation-1', 'catalog-companion-memory-1', 'catalog-companion-echo-1', 'catalog-companion-autonomy-1', 'catalog-companion-command-1', 'catalog-companion-outcome-1', 'catalog-companion-stages-1', 'catalog-companion-dialogue-1', 'catalog-companion-slots-1', 'catalog-companion-infection-1', 'catalog-companion-research-1', 'catalog-companion-endings-1', 'catalog-companion-reactions-1', 'catalog-companion-trust-2', 'catalog-companion-vitals-1', 'catalog-companion-ui-1', 'catalog-companion-trust-scale-1'].includes(String(data.runtimeVersion)))
+    if (companion ? !isCompanionContext(data.companionOrigin) : data.schemaVersion !== 6 || data.kind !== 'catalog-solo' || !['catalog-runtime-1', 'catalog-runtime-2', 'catalog-runtime-3', 'catalog-runtime-4', 'catalog-runtime-5', 'catalog-runtime-6', 'catalog-runtime-7', 'catalog-runtime-8', 'catalog-runtime-9', 'catalog-runtime-10', 'catalog-runtime-11', 'catalog-runtime-12', 'catalog-runtime-13', 'catalog-runtime-14'].includes(String(data.runtimeVersion))) throw invalid()
     // Existing schema6 packs pin their original two-choice definitions.
     const pack = compileCatalog(data.pack, { allowLegacyChoices: true })
     if (!companion && data.runtimeVersion !== runtimeVersion(pack)) throw invalid()

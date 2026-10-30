@@ -215,7 +215,7 @@ function withTrustPreview(pack: CatalogPack, run: CatalogRun, preview: CatalogPr
     const body = preview.companionOutcomes?.[branch.outcome]
     const after = body ? { ...branch.state, protagonist: { ...before.protagonist, ...body.companionVitals } } : branch.state
     return [branch.outcome, evaluateRelationship(before, after, companion, preview.choice, branch.outcome,
-      preview.choice.behavior.kind === 'escape' && preview.choice.behavior.route !== 'request')]
+      preview.choice.behavior.kind === 'escape' && preview.choice.behavior.route !== 'request', pack.manifest.trustScale ?? 1)]
   })) }
 }
 export function previewCatalogAction(pack: CatalogPack, run: CatalogRun, actionId: string, treat = false, actor: 'protagonist' | 'companion' = 'protagonist'): CatalogPreview {
@@ -346,7 +346,7 @@ export function executeCatalogAction(pack: CatalogPack, run: CatalogRun, actionI
   const relationshipBefore = body ? companionActorState(run) : run.core
   const relationshipAfter = body ? { ...resolution.state, protagonist: { ...relationshipBefore.protagonist, ...body.companionVitals } } : resolution.state
   const trustChange = pack.manifest.trustVersion && companion
-    ? protectRecommendedTrust(evaluateRelationship(relationshipBefore, relationshipAfter, companion, preview.choice, failure ? 'failure' : 'success', escape?.reason === 'escaped'),
+    ? protectRecommendedTrust(evaluateRelationship(relationshipBefore, relationshipAfter, companion, preview.choice, failure ? 'failure' : 'success', escape?.reason === 'escaped', pack.manifest.trustScale ?? 1),
       pack.manifest.trustVersion === 'outcome-2' && !!followedRecommendation)
     : sharing ? preview.trustChange : undefined
   const facts = { ...run.facts, ...(failure ? preview.choice.failureFacts : preview.choice.successFacts) }
